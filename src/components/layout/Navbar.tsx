@@ -42,13 +42,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
         <NavDropdown title="Services" items={navData.services} />
         <NavDropdown title="Solutions" items={navData.solutions} />
         <NavDropdown title="Accelerators" items={navData.accelerators} />
-        <NavDropdown title="Join Us" items={navData.joinUs} />
-        <a href="/#partnerships" className="hover:text-accent transition-colors whitespace-nowrap">
-          Partnerships
-        </a>
-        <a href="/#about" className="hover:text-accent transition-colors whitespace-nowrap">
-          About
-        </a>
+        <NavDropdown title="About Us" items={navData.aboutUs} />
         <Link to="/contact" className="hover:text-accent transition-colors whitespace-nowrap">
           Contact
         </Link>

@@ -76,19 +76,25 @@ export const Footer = () => {
                 Resources
               </h5>
               <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
-                {['Insurance', 'Manufacturing', 'FMCG', 'Oil & Gas', 'Airlines', 'ITSM', 'HSE'].map(
-                  (item) => (
-                    <li key={item}>
-                      <a
-                        href="#"
-                        className="flex items-center justify-between w-full pr-2 hover:text-accent transition-colors group"
-                      >
-                        <span>{item}</span>
-                        <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
-                      </a>
-                    </li>
-                  ),
-                )}
+                {[
+                  { label: 'Insurance', href: '/insurance-analytics' },
+                  { label: 'Manufacturing', href: '/manufacturing-analytics' },
+                  { label: 'FMCG', href: '/fmcg-analytics' },
+                  { label: 'Oil & Gas', href: '/refinery-operations' },
+                  { label: 'Airlines', href: '/airlines-analytics' },
+                  { label: 'ITSM', href: '/itsm-analytics' },
+                  { label: 'HSE', href: '/hse-analytics' },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      to={item.href}
+                      className="flex items-center justify-between w-full pr-2 hover:text-accent transition-colors group"
+                    >
+                      <span>{item.label}</span>
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -98,12 +104,12 @@ export const Footer = () => {
               </h5>
               <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
                 {[
-                  { label: 'About Us', href: '/#about' },
+                  { label: 'About Us', href: '/about' },
                   { label: 'FAQ', href: '/faq' },
                   { label: 'Careers', href: '/careers' },
                   { label: 'Contact', href: '/contact' },
-                  { label: 'Partnerships', href: '/#partnerships' },
-                  { label: 'Our Story', href: '/#about' },
+                  { label: 'Partnerships', href: '/partnerships' },
+                  { label: 'Our Story', href: '/about' },
                 ].map((item) => (
                   <li key={item.label}>
                     <Link
