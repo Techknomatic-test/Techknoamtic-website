@@ -192,7 +192,7 @@ const MarketSection = () => {
       country: "🇺🇸 United States",
       partner: "Inspirational Global",
       desc: "Enabling go-to-market and solution expansion in the United States",
-      image: "images/Global Market/United States.jpg",
+      image: "images/Global Market/United States.webp",
     },
   ];
 
@@ -227,20 +227,28 @@ const MarketSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-slate-50 dark:bg-brand-900 p-12 rounded-[3.5rem] border border-slate-100 dark:border-white/5 hover:border-accent/30 transition-all group"
+              className="bg-slate-50 dark:bg-brand-900 p-0 rounded-[3.5rem] border border-slate-100 dark:border-white/5 hover:border-accent/30 transition-all group overflow-hidden"
             >
-              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-950 flex items-center justify-center text-accent mb-8 shadow-sm group-hover:scale-110 transition-transform">
-                <Globe className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2">
-                {region.country}
-              </h3>
-              <p className="text-accent font-black text-[12px] uppercase tracking-widest mb-6">
-                {region.partner}
-              </p>
-              <p className="text-lg font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                {region.desc}
-              </p>
+              <div className="h-56 w-full overflow-hidden">
+  <img
+    src={region.image}
+    alt={region.country}
+    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+    referrerPolicy="no-referrer"
+  />
+</div>
+
+<div className="p-12">
+  <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2">
+    {region.country}
+  </h3>
+  <p className="text-accent font-black text-[12px] uppercase tracking-widest mb-6">
+    {region.partner}
+  </p>
+  <p className="text-lg font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+    {region.desc}
+  </p>
+</div>
             </motion.div>
           ))}
         </div>
