@@ -85,7 +85,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex min-w-0 items-center justify-between gap-3 px-4 sm:px-6 py-3 transition-all duration-500 rounded-2xl ${isScrolled ? 'w-[90%] lg:w-[85%] xl:w-[80%] glass shadow-xl border-slate-200/50 dark:border-white/10' : 'w-[94%] lg:w-[96%] xl:w-[85%] bg-transparent border-transparent'}`}
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex min-w-0 items-center justify-between gap-2 px-4 sm:px-6 py-3 transition-all duration-500 rounded-2xl ${isScrolled ? 'w-[90%] lg:w-[85%] xl:w-[80%] glass shadow-xl border-slate-200/50 dark:border-white/10' : 'w-[94%] lg:w-[96%] xl:w-[85%] bg-transparent border-transparent'}`}
       >
         <Link
           to="/"
