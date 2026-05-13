@@ -1,4 +1,4 @@
-import { Activity, ArrowUpRight, Mail, Menu, Minus, Moon, Plus, Sun, X } from 'lucide-react';
+import { ArrowUpRight, Mail, Menu, Minus, Moon, Plus, Sun, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -87,19 +87,13 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
       <nav
         className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between px-4 sm:px-6 py-3 transition-all duration-500 rounded-2xl ${isScrolled ? 'w-[90%] lg:w-[85%] xl:w-[80%] glass shadow-xl border-slate-200/50 dark:border-white/10' : 'w-[94%] lg:w-[96%] xl:w-[85%] bg-transparent border-transparent'}`}
       >
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-brand-950 dark:bg-accent rounded-lg flex items-center justify-center text-white shrink-0">
-            <Link to="/">
-              <Activity className="w-5 h-5" />
-            </Link>
-          </div>
-          <Link
-            to="/"
-            className="text-lg lg:text-xl font-display font-bold tracking-tight text-brand-950 dark:text-white whitespace-nowrap uppercase"
-          >
-            TECHKNOMATIC
-          </Link>
-        </div>
+        <Link
+          to="/"
+          aria-label="Techknomatic home"
+          className="relative block h-9 w-[min(180px,42vw)] shrink-0 overflow-hidden rounded-lg bg-[url('/Images/TKS-logo.png')] bg-contain bg-left bg-no-repeat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 sm:h-10 sm:w-[200px] lg:w-[220px]"
+        >
+          <span className="sr-only">Techknomatic</span>
+        </Link>
 
         <div
           className={`hidden lg:flex items-center transition-all duration-300 text-[13px] xl:text-[14px] font-medium text-slate-600 dark:text-slate-300 ${isScrolled ? 'gap-3 xl:gap-5' : 'gap-5 xl:gap-8'}`}
