@@ -45,7 +45,7 @@ export const navData: SiteNavData = {
     },
     {
       label: 'CallOps AI - AI-Powered Call Operations',
-      href: '#',
+      href: '/callops-ai',
       icon: Activity,
     },
     {

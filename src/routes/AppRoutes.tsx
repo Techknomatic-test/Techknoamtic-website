@@ -4,6 +4,7 @@ import { AboutUsPage } from '../pages/AboutUsPage';
 import { AgenticAIITSMPage } from '../pages/AgenticAIITSMPage';
 import { AirlinesAnalyticsPage } from '../pages/AirlinesAnalyticsPage';
 import { BIServicesPage } from '../pages/BIServicesPage';
+import { CallOpsAiPage } from '../pages/CallOpsAiPage';
 import { CareersPage } from '../pages/CareersPage';
 import { ContactPage } from '../pages/ContactPage';
 import { CustomDevPage } from '../pages/CustomDevPage';
@@ -55,6 +56,7 @@ export const AppRoutes = () => {
       <Route path="/parse-iq" element={<ParseIQPage />} />
       <Route path="/freight-iq" element={<FreightIQPage />} />
       <Route path="/agentic-ai-itsm" element={<AgenticAIITSMPage />} />
+      <Route path="/callops-ai" element={<CallOpsAiPage />} />
       <Route path="/hr-portal" element={<HRPortalPage />} />
       <Route path="/partnerships" element={<PartnershipsPage />} />
       <Route path="/job-description/:jobId" element={<JobDescriptionPage />} />
