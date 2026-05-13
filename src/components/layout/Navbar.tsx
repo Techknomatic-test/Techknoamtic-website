@@ -90,7 +90,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
         <Link
           to="/"
           aria-label="Techknomatic home"
-          className="relative block h-9 w-[min(180px,42vw)] shrink-0 overflow-hidden rounded-lg bg-[url('/Images/TKS-logo.png')] bg-contain bg-left bg-no-repeat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 sm:h-10 sm:w-[200px] lg:w-[220px]"
+          className="relative block h-12 w-[min(180px,42vw)] shrink-0 overflow-hidden rounded-lg bg-[url('/Images/TKS-logo.png')] bg-contain bg-left bg-no-repeat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 sm:h-16 sm:w-[200px] lg:w-[220px]"
         >
           <span className="sr-only">Techknomatic</span>
         </Link>
@@ -123,7 +123,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
             to="/contact"
             className="hidden sm:flex px-4 xl:px-6 py-2.5 text-[13px] xl:text-[14px] font-medium bg-accent text-white rounded-xl hover:bg-accent/90 transition-all group items-center gap-2 shadow-lg shadow-accent/20 whitespace-nowrap"
           >
-            Start a Conversation{' '}
+            Start a Conversation
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:rotate-45 transition-transform" />
           </Link>
 
