@@ -85,36 +85,31 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex min-w-0 items-center justify-between gap-3 px-4 sm:px-6 py-3 transition-all duration-500 rounded-2xl ${isScrolled ? 'w-[90%] lg:w-[85%] xl:w-[80%] glass shadow-xl border-slate-200/50 dark:border-white/10' : 'w-[94%] lg:w-[96%] xl:w-[85%] bg-transparent border-transparent'}`}
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between px-4 sm:px-6 py-3 transition-all duration-500 rounded-2xl ${isScrolled ? 'w-[90%] lg:w-[85%] xl:w-[80%] glass shadow-xl border-slate-200/50 dark:border-white/10' : 'w-[94%] lg:w-[96%] xl:w-[85%] bg-transparent border-transparent'}`}
       >
         <Link
           to="/"
           aria-label="Techknomatic home"
-          className={`relative block h-9 shrink-0 overflow-hidden rounded-lg bg-[url('/Images/TKS-logo.png')] bg-contain bg-left bg-no-repeat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 sm:h-10 ${isScrolled ? 'w-[min(160px,38vw)] sm:w-[176px] lg:w-[196px]' : 'w-[min(180px,42vw)] sm:w-[200px] lg:w-[220px]'}`}
+          className="relative block h-9 w-[min(180px,42vw)] shrink-0 overflow-hidden rounded-lg bg-[url('/Images/TKS-logo.png')] bg-contain bg-left bg-no-repeat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 sm:h-10 sm:w-[200px] lg:w-[220px]"
         >
           <span className="sr-only">Techknomatic</span>
         </Link>
 
-        <div className="hidden min-w-0 flex-1 justify-end lg:flex">
-          <div
-            className={`scrollbar-hide flex max-w-full flex-nowrap items-center overflow-x-auto text-[13px] xl:text-[14px] font-medium text-slate-600 dark:text-slate-300 ${isScrolled ? 'gap-3 xl:gap-4' : 'gap-4 xl:gap-7'}`}
-          >
-            <NavDropdown title="Services" items={navData.services} />
-            <NavDropdown title="Enterprise AI" items={navData.enterpriseAI} />
-            <NavDropdown title="Platforms" items={navData.platforms} />
-            <NavDropdown title="Industries" items={navData.industries} />
-            <NavDropdown title="About Us" items={navData.aboutUs} />
-            <NavDropdown title="Resources" items={navData.resources} />
-            <Link
-              to="/contact"
-              className="shrink-0 whitespace-nowrap hover:text-accent transition-colors"
-            >
-              Contact Us
-            </Link>
-          </div>
+        <div
+          className={`hidden lg:flex items-center transition-all duration-300 text-[13px] xl:text-[14px] font-medium text-slate-600 dark:text-slate-300 ${isScrolled ? 'gap-3 xl:gap-5' : 'gap-5 xl:gap-8'}`}
+        >
+          <NavDropdown title="Services" items={navData.services} />
+          <NavDropdown title="Enterprise AI" items={navData.enterpriseAI} />
+          <NavDropdown title="Platforms" items={navData.platforms} />
+          <NavDropdown title="Industries" items={navData.industries} />
+          <NavDropdown title="About Us" items={navData.aboutUs} />
+          <NavDropdown title="Resources" items={navData.resources} />
+          <Link to="/contact" className="hover:text-accent transition-colors whitespace-nowrap">
+            Contact Us
+          </Link>
         </div>
 
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
             type="button"
             onClick={toggleTheme}

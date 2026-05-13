@@ -61,17 +61,14 @@ export const NavDropdown = ({ title, items }: NavDropdownProps) => {
 
   return (
     <div
-      className="relative shrink-0 group"
+      className="relative group"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <button
-        type="button"
-        className="flex max-w-none items-center gap-1 whitespace-nowrap hover:text-accent transition-colors"
-      >
+      <button type="button" className="flex items-center gap-1 hover:text-accent transition-colors">
         {title}
         <ChevronDown
-          className={`w-3 h-3 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
       <AnimatePresence>
