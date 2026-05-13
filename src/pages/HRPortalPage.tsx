@@ -1,4 +1,6 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { Link } from "react-router-dom";
+import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
   Users,
   ArrowRight,
@@ -12,77 +14,86 @@ import {
   TrendingUp,
   Award,
   GraduationCap,
+  RefreshCw
 } from "lucide-react";
 
-const Card = ({
-  title,
-  description,
-  icon: Icon,
-  delay = 0,
-}: {
-  title: string;
-  description: string | string[];
-  icon: any;
-  delay?: number;
-}) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.8 }}
-      className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100/50 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.06)] dark:shadow-none hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group h-full flex flex-col"
-    >
-      <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-        <Icon className="w-6 h-6" />
-      </div>
-      <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-4 tracking-tight group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      <p className="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
-        {description}
-      </p>
-    </motion.div>
-  );
-};
+const CapabilityCard = ({ title, description, image, delay = 0 }: { title: string; description: string; image: string; delay?: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
+  >
+    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        referrerPolicy="no-referrer"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-brand-950/20 to-transparent opacity-40" />
+    </div>
+    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
+      {description}
+    </p>
+  </motion.div>
+);
+
+const DifferentiatorCard = ({ title, description, idx }: { title: string; description: string; idx: number }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: idx * 0.1 }}
+    className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full"
+  >
+    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
+      <CheckCircle2 className="w-6 h-6 text-accent" />
+    </div>
+    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
+      {title}
+    </h3>
+    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+      {description}
+    </p>
+  </motion.div>
+);
 
 export const HRPortalPage = () => {
-  const whatWeSolve = [
+    const caps = [
     {
       title: "Employee Self-Service",
-      description:
-        "Allow employees to manage their own profiles, leaves, and documents without HR intervention.",
-      icon: Users,
+      description: "Allow employees to manage their own profiles, leaves, and documents without HR intervention.",
+      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&w=800"
     },
     {
       title: "Leave & Attendance",
-      description:
-        "Real-time tracking of time-off, shifts, and attendance with automated approval workflows.",
-      icon: Calendar,
+      description: "Real-time tracking of time-off, shifts, and attendance with automated approval workflows.",
+      image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800"
     },
     {
       title: "Performance Management",
-      description:
-        "Structured OKRs, 360-degree feedback, and continuous performance monitoring.",
-      icon: TrendingUp,
+      description: "Structured OKRs, 360-degree feedback, and continuous performance monitoring for growth.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800"
     },
     {
       title: "Payroll Integration",
-      description:
-        "Seamless synchronization with payroll systems for accurate salary and benefit processing.",
-      icon: Zap,
+      description: "Seamless synchronization with payroll systems for accurate salary and benefit processing.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800"
     },
     {
       title: "Compliance & Security",
-      description:
-        "Secure storage of employee data with role-based access control and audit logs.",
-      icon: ShieldCheck,
+      description: "Secure storage of employee data with role-based access control and detailed audit logs.",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800"
     },
     {
       title: "Internal Communication",
-      description:
-        "Centralized hub for company announcements, policies, and employee engagement.",
-      icon: FileText,
+      description: "Centralized hub for company announcements, policies, and meaningful employee engagement.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800"
     },
   ];
 
@@ -130,56 +141,101 @@ export const HRPortalPage = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-32 px-6 overflow-hidden bg-brand-950">
-        <div
-          className="absolute inset-0 z-0 opacity-10"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 2px 2px, #F17E21 1px, transparent 0)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="max-w-6xl mx-auto relative z-10">
+      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
+         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10 text-left">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="w-16 h-16 rounded-2xl bg-accent/20 text-accent flex items-center justify-center mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
           >
-            <Users className="w-8 h-8" />
+            Digital Workplace
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
           >
-            Internal HR Portal Accelerator
+            HR Portal Accelerator
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-2xl text-slate-400 max-w-4xl font-medium leading-relaxed"
-          >
-            A unified, high-performance portal for employee self-service, leave
-            management, and company culture.
-          </motion.p>
+          <div className="max-w-4xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
+            >
+              Building a high-performance home for your most valuable asset: People.
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+            >
+              A unified, high-performance portal for employee self-service, leave management, and company culture engineered for enterprise scale.
+            </motion.p>
+          </div>
         </div>
       </section>
 
-      {/* Solutions Section */}
-      <section className="py-24 px-6 bg-white dark:bg-brand-950">
+      {/* Intro Section */}
+      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl space-y-8 text-left">
+            <motion.p 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.1 }}
+               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+            >
+              The digital employee experience is no longer optional. Fragmented systems for leave, payroll, and benefits lead to frustration and decreased productivity. Techknomatic's HR Portal Accelerator bridges these silos into a single, intuitive interface that puts the employee at the center, reducing administrative overhead for HR teams.
+            </motion.p>
+            <motion.p 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.2 }}
+               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+            >
+              Our accelerator is more than a database; it is a cultural hub. We focus on 'Culture of Care' by designing for warmth and usability, ensuring that every touchpoint—from onboarding to performance reviews—reinforces your employer brand. Secure, mobile-friendly, and ready for global deployment, we turn HR operations into a competitive advantage.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities Section */}
+      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
+            >
+              PORTAL CAPABILITIES
+            </motion.h2>
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+            >
               Core Solutions
-            </h2>
+            </motion.h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whatWeSolve.map((item, i) => (
-              <Card key={i} {...item} delay={i * 0.1} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {caps.map((it, idx) => (
+              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
             ))}
           </div>
         </div>
@@ -281,12 +337,17 @@ export const HRPortalPage = () => {
       </section>
 
       {/* Results Section */}
-      <section className="py-24 px-6 bg-[#F8F9FA] dark:bg-brand-900">
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
-              Proven Engagement
-            </h2>
+          <div className="text-left mb-16">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+            >
+              Proven Impact
+            </motion.h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {results.map((stat, i) => (
@@ -296,7 +357,7 @@ export const HRPortalPage = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white dark:bg-white/5 p-10 rounded-[2.5rem] shadow-sm text-center border border-slate-100 dark:border-white/5"
+                className="bg-slate-50 dark:bg-white/5 p-10 rounded-[2.5rem] shadow-sm text-center border border-slate-100 dark:border-white/5"
               >
                 <div className="text-4xl md:text-6xl font-black text-accent mb-4 tracking-tighter">
                   {stat.value}
@@ -310,23 +371,64 @@ export const HRPortalPage = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-32 bg-accent px-6">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl md:text-5xl font-medium mb-8 tracking-tight">
-            Modernize Your Employee Experience
-          </h2>
-          <p className="text-xl opacity-90 mb-12 font-medium">
-            Build a digital home for your team that actually works. Talk to our
-            HR tech experts today.
-          </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <button className="px-12 py-5 bg-white text-accent font-black rounded-2xl hover:shadow-2xl transition-all active:scale-95 flex items-center gap-3 text-lg">
-              Request a Portal Demo <ArrowRight className="w-5 h-5" />
-            </button>
+      {/* Engagement Models Section */}
+      <section className="py-[120px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10 text-left">
+          <div className="mb-16">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
+            >
+              Delivery Approach
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-white/60 font-medium max-w-2xl"
+            >
+              A structured implementation path for your internal HR ecosystem.
+            </motion.p>
+          </div>
+          
+          <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
+            {[
+              { step: "01", title: "Audit", description: "Auditing existing HR data silos and user friction points." },
+              { step: "02", title: "UI/UX Design", description: "Mapping employee personas to specific portal journeys." },
+              { step: "03", title: "Integration", description: "Wiring the portal to payroll, ERP, and SSO systems." },
+              { step: "04", title: "Pilot", description: "Launching with a core group for feedback and hardening." },
+              { step: "05", title: "Go-Live", description: "Full organization rollout with change management support." }
+            ].map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="relative flex-1 min-w-[240px] p-8 rounded-[2.5rem] bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group"
+              >
+                <div className="absolute top-8 right-8 text-4xl font-black text-white/5 group-hover:text-accent/20 transition-colors">
+                  {step.step}
+                </div>
+                <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-12 transition-transform">
+                  <RefreshCw className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
+                  {step.title}
+                </h3>
+                <p className="text-[13px] font-medium text-white/40 leading-relaxed italic px-2 border-l-2 border-accent/20">
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
+
+      <PreFooterCTA />
     </div>
   );
 };

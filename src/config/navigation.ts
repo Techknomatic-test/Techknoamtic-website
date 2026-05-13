@@ -1,10 +1,12 @@
 import {
   Activity,
   BarChart3,
+  Brain,
   Database,
   Globe,
   Layout,
   LayoutDashboard,
+  Palette,
   ShieldCheck,
   Sparkles,
   Target,
@@ -13,40 +15,68 @@ import {
 } from 'lucide-react';
 import type { NavItem } from '../types/navigation';
 
-type NavData = {
+export type SiteNavData = {
   services: NavItem[];
-  solutions: NavItem[];
-  accelerators: NavItem[];
+  enterpriseAI: NavItem[];
+  platforms: NavItem[];
+  industries: NavItem[];
   aboutUs: NavItem[];
+  resources: NavItem[];
 };
 
-export const navData: NavData = {
+export const navData: SiteNavData = {
   services: [
-    { label: 'AI Services', href: '/ai-services', icon: Sparkles },
-    { label: 'BI Services', href: '/bi-services', icon: LayoutDashboard },
+    { label: 'Business Analytics', href: '/bi-services', icon: BarChart3 },
     { label: 'Data Engineering', href: '/data-engineering', icon: Database },
-    { label: 'Geospatial Analytics', href: '/geospatial-analytics', icon: Globe },
-    { label: 'Custom Development', href: '/custom-development', icon: Layout },
+    { label: 'Data Science', href: '/data-science', icon: Brain },
+    { label: 'Data & AI Strategy', href: '/ai-services', icon: Sparkles },
+    { label: 'GeoSpacial Analytics', href: '/geospatial-analytics', icon: Globe },
   ],
-  solutions: [
-    { label: 'Airlines Analytics', href: '/airlines-analytics', icon: BarChart3 },
-    { label: 'Insurance Analytics', href: '/insurance-analytics', icon: ShieldCheck },
-    { label: 'FMCG Analytics', href: '/fmcg-analytics', icon: Truck },
-    { label: 'HSE Analytics', href: '/hse-analytics', icon: Activity },
-    { label: 'ITSM Analytics', href: '/itsm-analytics', icon: Layout },
-    { label: 'Manufacturing Analytics', href: '/manufacturing-analytics', icon: Target },
-    { label: 'Refinery Operations', href: '/refinery-operations', icon: Activity },
+  enterpriseAI: [
+    {
+      label: 'AssistIQ - AI Agents/Avatar for Intelligent Self-Service',
+      href: '#',
+      icon: Sparkles,
+    },
+    {
+      label: 'TicketIQ - AI Agents for Intelligent Ticket Handling',
+      href: '/agentic-ai-itsm',
+      icon: Sparkles,
+    },
+    {
+      label: 'CallOps AI - AI-Powered Call Operations',
+      href: '#',
+      icon: Activity,
+    },
+    {
+      label: 'CXO Nexus - Conversational AI for CXOs',
+      href: '#',
+      icon: LayoutDashboard,
+    },
   ],
-  accelerators: [
-    { label: 'DataGuard', href: '/dataguard', icon: ShieldCheck },
-    { label: 'ITSM Plug & Play', href: '/itsm-plug-and-play', icon: Layout },
-    { label: 'Agentic AI for ITSM', href: '/agentic-ai-itsm', icon: Sparkles },
-    { label: 'Internal HR Portal', href: '/hr-portal', icon: Users },
+  platforms: [
+    { label: 'InsightSM', href: '/itsm-plug-and-play', icon: Layout },
+    { label: 'DataPulse IQ', href: '/dataguard', icon: ShieldCheck },
+    { label: 'ParseIQ', href: '/parse-iq', icon: Database },
+    { label: 'FreightIQ', href: '/freight-iq', icon: Truck },
+  ],
+  industries: [
+    { label: 'Oil & Gas', href: '/refinery-operations', icon: Activity },
+    { label: 'Manufacturing', href: '/manufacturing-analytics', icon: Target },
+    { label: 'BFSI', href: '/insurance-analytics', icon: ShieldCheck },
+    { label: 'Tech & IT Services', href: '/itsm-analytics', icon: Layout },
+    { label: 'FMCG', href: '/fmcg-analytics', icon: Truck },
+    { label: 'Healthcare', href: '/healthcare-analytics', icon: Activity },
   ],
   aboutUs: [
     { label: 'About the Company', href: '/about', icon: Users },
     { label: 'Partnerships', href: '/partnerships', icon: Globe },
     { label: 'Careers', href: '/careers', icon: Activity },
-    { label: 'FAQ', href: '/faq', icon: Sparkles },
+  ],
+  resources: [
+    { label: 'Blogs', href: '#', icon: Layout },
+    { label: 'FAQs', href: '/faq', icon: Sparkles },
+    { label: 'Customer Stories', href: '#', icon: Users },
+    { label: 'Brand Guidelines', href: '/brand', icon: Palette },
   ],
 };

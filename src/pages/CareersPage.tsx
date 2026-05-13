@@ -12,6 +12,7 @@ import {
   Brain,
   Globe,
   Star,
+  CheckCircle2,
   Mail,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -648,7 +649,7 @@ export const CareersPage = () => {
           </h2>
           <Link to="/contact">
             <button className="px-10 py-5 bg-white text-accent rounded-full font-black tracking-widest uppercase text-[12px] shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2 md:mx-auto">
-              🚀 Apply Now 
+              🚀 Apply Now{" "}
               <ArrowRight className="w-4 h-4 border border-accent rounded-full p-[2px]" />
             </button>
           </Link>
