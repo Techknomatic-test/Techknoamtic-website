@@ -3,6 +3,7 @@ import { AIServicesPage } from '../pages/AIServicesPage';
 import { AboutUsPage } from '../pages/AboutUsPage';
 import { AgenticAIITSMPage } from '../pages/AgenticAIITSMPage';
 import { AirlinesAnalyticsPage } from '../pages/AirlinesAnalyticsPage';
+import { AssistIQPage } from '../pages/AssistIQPage';
 import { BIServicesPage } from '../pages/BIServicesPage';
 import { CallOpsAiPage } from '../pages/CallOpsAiPage';
 import { CareersPage } from '../pages/CareersPage';
@@ -53,6 +54,7 @@ export const AppRoutes = () => {
       <Route path="/itsm-plug-and-play" element={<ITSMPlugAndPlayPage />} />
       <Route path="/parse-iq" element={<ParseIQPage />} />
       <Route path="/freight-iq" element={<FreightIQPage />} />
+      <Route path="/assistiq" element={<AssistIQPage />} />
       <Route path="/agentic-ai-itsm" element={<AgenticAIITSMPage />} />
       <Route path="/callops-ai" element={<CallOpsAiPage />} />
       <Route path="/hr-portal" element={<HRPortalPage />} />

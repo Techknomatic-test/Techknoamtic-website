@@ -33,7 +33,7 @@ export const navData: SiteNavData = {
   enterpriseAI: [
     {
       label: 'AssistIQ - AI Agents/Avatar for Intelligent Self-Service',
-      href: '#',
+      href: '/assistiq',
       icon: Sparkles,
     },
     {

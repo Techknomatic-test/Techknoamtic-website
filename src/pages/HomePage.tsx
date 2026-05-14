@@ -48,8 +48,7 @@ import * as THREE from "three";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 
-const homeImg = (file: string) =>
-  `${import.meta.env.BASE_URL}Images/home/${file}`;
+const homeImg = (file: string) => `/Images/home/${file}`;
 
 const HeroVisual = () => {
   const data = [
