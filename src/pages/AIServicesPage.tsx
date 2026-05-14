@@ -1,20 +1,18 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import type { LucideIcon } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
-  Cpu,
   Settings,
   CheckCircle2,
   ChevronDown,
   ChevronUp,
   Monitor,
-  MessageSquare,
-  Workflow,
-  FileSearch,
-  PieChart,
-  ClipboardList,
 } from "lucide-react";
+
+const DAIS_IMG_BASE = "Images/Data AI Strategy";
+const DAIS_HERO_IMG = `${DAIS_IMG_BASE}/Hero.jpg`;
+const DAIS_TOOLS_IMG = `${DAIS_IMG_BASE}/Tools and Technology.jpg`;
+const DAIS_CAP_IMG = `${DAIS_IMG_BASE}/Capabilities`;
 
 const AccordionItem = ({
   title,
@@ -79,12 +77,12 @@ const AccordionItem = ({
 const OfferCard = ({
   title,
   description,
-  icon: Icon,
+  image,
   delay = 0,
 }: {
   title: string;
   description: string;
-  icon: LucideIcon;
+  image: string;
   delay?: number;
 }) => (
   <motion.div
@@ -92,15 +90,19 @@ const OfferCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
+    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
   >
-    <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-brand-900/50 flex items-center justify-center mb-8 text-accent shadow-sm group-hover:scale-110 transition-transform duration-500">
-      <Icon className="w-6 h-6" />
+    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
+      <img
+        src={image}
+        alt={title}
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
     </div>
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
       {description}
     </p>
   </motion.div>
@@ -234,37 +236,37 @@ export const AIServicesPage = () => {
       title: "Custom Chatbots & LLM Assistants",
       description:
         "Intelligent conversational AI for customer service, HR, helpdesk, and internal knowledge management.",
-      icon: MessageSquare,
+      image: `${DAIS_CAP_IMG}/Custom Chatbots and LLM Assistants.jpg`,
     },
     {
       title: "Agentic AI Workflows",
       description:
         "Multi-step automation that understands context, makes decisions, and executes complex business processes.",
-      icon: Workflow,
+      image: `${DAIS_CAP_IMG}/Agentic AI Workflows.jpg`,
     },
     {
       title: "Document AI & NLP",
       description:
         "Extract insights from contracts, claims, reports, and unstructured documents with LLM-powered processing.",
-      icon: FileSearch,
+      image: `${DAIS_CAP_IMG}/Document AI and NLP.jpg`,
     },
     {
       title: "Conversational BI",
       description:
         "Natural-language analytics that lets anyone ask questions and get answers from their data — instantly.",
-      icon: PieChart,
+      image: `${DAIS_CAP_IMG}/Conversational BI.jpg`,
     },
     {
       title: "GenAI for Auto-Summaries",
       description:
         "Automated generation of summaries, reports, and emails from data — saving hours of manual work.",
-      icon: ClipboardList,
+      image: `${DAIS_CAP_IMG}/GenAI for Auto-Summaries.jpg`,
     },
     {
       title: "AI Strategy & Model Deployment",
       description:
         "End-to-end AI consulting — from use-case identification to production deployment and monitoring.",
-      icon: Cpu,
+      image: `${DAIS_CAP_IMG}/AI Strategy and Model Deployment.jpg`,
     },
   ];
 
@@ -387,17 +389,23 @@ export const AIServicesPage = () => {
     },
   ];
 
-  const gridDecorOpacity = [0.12, 0.18, 0.08, 0.22, 0.15, 0.1, 0.2, 0.14, 0.09, 0.17, 0.11, 0.19, 0.13, 0.16, 0.1, 0.21];
-
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative min-h-[min(72vh,720px)] py-40 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
+          <img
+            src={DAIS_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        <div className="max-w-6xl mx-auto relative z-10 text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -419,7 +427,7 @@ export const AIServicesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed"
             >
               Strategy, GenAI applications, agentic workflows, and production-grade model deployment — engineered to
               move enterprises from AI experimentation to measurable business outcomes.
@@ -519,19 +527,25 @@ export const AIServicesPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group"
+              className="flex flex-col overflow-hidden rounded-[3rem] bg-slate-100 ring-1 ring-slate-200/80 dark:bg-white/5 dark:ring-white/10"
             >
-              <div className="absolute inset-x-0 bottom-0 top-[20%] p-12 bg-gradient-to-t from-accent/20 flex flex-col justify-end">
-                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-900 shadow-2xl flex items-center justify-center mb-8 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
-                  <Monitor className="w-8 h-8 text-accent" />
-                </div>
-                <h4 className="text-2xl font-bold text-brand-950 dark:text-white mb-2">Modern AI Stack</h4>
-                <p className="text-slate-500 dark:text-slate-400 font-medium italic">Engineered for production-grade AI.</p>
+              <div className="relative aspect-[4/3] w-full shrink-0 lg:aspect-[5/4]">
+                <img
+                  src={DAIS_TOOLS_IMG}
+                  alt="Tools and technology for AI and data strategy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
               </div>
-              <div className="absolute top-12 left-12 right-12 bottom-1/2 grid grid-cols-4 gap-4 opacity-10 pointer-events-none">
-                {gridDecorOpacity.map((op, i) => (
-                  <div key={i} className="aspect-square bg-accent rounded-lg" style={{ opacity: op }} />
-                ))}
+              <div className="flex flex-col gap-5 bg-white p-8 dark:bg-brand-950">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-slate-50 shadow-md ring-1 ring-slate-200/80 dark:bg-brand-900 dark:ring-white/10">
+                  <Monitor className="h-8 w-8 text-accent" />
+                </div>
+                <div>
+                  <h4 className="mb-2 text-2xl font-bold text-brand-950 dark:text-white">Modern AI stack</h4>
+                  <p className="font-medium text-slate-600 dark:text-slate-400">
+                    Engineered for production-grade AI — models, vectors, orchestration, and MLOps.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
