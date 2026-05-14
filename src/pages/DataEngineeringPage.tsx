@@ -197,6 +197,7 @@ const UseCaseCard = ({ title, description, crux, industries }: { title: string; 
 const DE_CAP_IMG =
   "Images/Data Engineering Capabilities/Data Engineering Capabilities";
 const DE_HERO_IMG = "Images/Data Engineering Capabilities/Hero.jpg";
+const DE_TOOLS_IMG = `${DE_CAP_IMG}/Tools & Technology.jpg`;
 
 export const DataEngineeringPage = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
@@ -421,17 +422,22 @@ export const DataEngineeringPage = () => {
               viewport={{ once: true }}
               className="relative aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group"
             >
-               <div className="absolute inset-x-0 bottom-0 top-[20%] p-12 bg-gradient-to-t from-accent/20 flex flex-col justify-end">
+              <img
+                src={DE_TOOLS_IMG}
+                alt=""
+                className="absolute inset-0 z-0 w-full h-full object-cover opacity-40 dark:opacity-30 transition-opacity duration-500 group-hover:opacity-50 dark:group-hover:opacity-40"
+                aria-hidden
+              />
+              <div
+                className="absolute inset-0 z-[1] bg-gradient-to-br from-white/90 via-white/45 to-transparent dark:from-brand-950/90 dark:via-brand-950/55 dark:to-transparent"
+                aria-hidden
+              />
+               <div className="absolute inset-x-0 bottom-0 top-[20%] z-10 p-12 bg-gradient-to-t from-accent/25 dark:from-accent/15 to-transparent flex flex-col justify-end">
                 <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-900 shadow-2xl flex items-center justify-center mb-8 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500" id="monitor_icon">
                   <Monitor className="w-8 h-8 text-accent" />
                 </div>
                 <h4 className="text-2xl font-bold text-brand-950 dark:text-white mb-2">Platform Agnostic</h4>
                 <p className="text-slate-500 dark:text-slate-400 font-medium">Built for flexibility and performance.</p>
-              </div>
-              <div className="absolute top-12 left-12 right-12 bottom-1/2 grid grid-cols-4 gap-4 opacity-20 pointer-events-none">
-                {[...Array(16)].map((_, i) => (
-                  <div key={i} className="aspect-square bg-accent rounded-lg" style={{ opacity: Math.random() }} />
-                ))}
               </div>
             </motion.div>
             
