@@ -48,8 +48,6 @@ import * as THREE from "three";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 
-const HOME_IMG = "Images/home";
-
 const HeroVisual = () => {
   const data = [
     { name: "A", v1: 400, v2: 240, v3: 700 },
@@ -197,8 +195,8 @@ const HeroVisual = () => {
                   className="w-7 h-7 rounded-full bg-slate-100 dark:bg-white/10 border-2 border-white dark:border-brand-900 overflow-hidden"
                 >
                   <img
-                    src={`Images/avatars/tech-${i}.jpg`}
-                    alt=""
+                    src={`https://i.pravatar.cc/100?u=tech${i}`}
+                    alt="user"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -516,7 +514,7 @@ const ServicesSection = () => {
         "Turning data into decisions at speed and scale. Power BI, Tableau, Qlik — 500+ dashboards across industries.",
       moreLabel: "BI Services",
       icon: BarChart3,
-      imageUrl: `${HOME_IMG}/3d-graph-computer-illustration.jpg`,
+      imageUrl: "Images/3d-graph-computer-illustration.jpg",
       dark: false,
       href: "/bi-services",
     },
@@ -527,7 +525,8 @@ const ServicesSection = () => {
         "Cloud-native pipelines, modern data platforms, and real-time integration. Azure, Snowflake, Talend, Salesforce and beyond.",
       moreLabel: "Data Engineering",
       icon: Database,
-      imageUrl: `${HOME_IMG}/colorful-abstract-image-wave-made-up-binary-code-concept-movement-energy-as-well-as-idea-technology-digital-world.jpg`,
+      imageUrl:
+        "Images/colorful-abstract-image-wave-made-up-binary-code-concept-movement-energy-as-well-as-idea-technology-digital-world.jpg",
       dark: false,
       href: "/data-engineering",
     },
@@ -538,7 +537,7 @@ const ServicesSection = () => {
         "ESRI Silver Partner. Location intelligence for insurance, energy, utilities, and field operations.",
       moreLabel: "Geospatial",
       icon: Globe,
-      imageUrl: `${HOME_IMG}/Geospatial Analytics.jpg`,
+      imageUrl: "Images/Geospatial Analytics.jpg",
       dark: false,
       href: "/geospatial-analytics",
     },
@@ -549,7 +548,7 @@ const ServicesSection = () => {
         "LLM-powered assistants, agentic workflows, document AI, and conversational BI — enterprise-grade and governed.",
       moreLabel: "AI Services",
       icon: Sparkles,
-      imageUrl: `${HOME_IMG}/AI & GenAI.jpg`,
+      imageUrl: "Images/AI & GenAI.jpg",
       dark: false,
       href: "/ai-services",
     },
@@ -593,42 +592,42 @@ const SolutionsSection = () => {
       title: "Insurance Analytics",
       desc: "360° view across claims, policy performance, agents, and fraud trends.\n\n✦ 22% reduction in claim TA",
       moreLabel: "View Solution",
-      imageUrl: `${HOME_IMG}/12437.jpg`,
+      imageUrl: "Images/12437.jpg",
       href: "/insurance-analytics",
     },
     {
       title: "Manufacturing Analytics",
       desc: "From plant floor to boardroom — OEE, production, quality, maintenance, and energy.\n\n✦ 15% improvement in production efficiency",
       moreLabel: "View Solution",
-      imageUrl: `${HOME_IMG}/2152005500.jpg`,
+      imageUrl: "Images/2152005500.jpg",
       href: "/manufacturing-analytics",
     },
     {
       title: "FMCG Analytics",
       desc: "Sales, distribution, trade promotion, and territory intelligence in one platform.\n\n✦ 28% better promotion ROI tracking",
       moreLabel: "View Solution",
-      imageUrl: `${HOME_IMG}/2151680571.jpg`,
+      imageUrl: "Images/2151680571.jpg",
       href: "/fmcg-analytics",
     },
     {
       title: "Oil & Gas Analytics",
       desc: "Refinery operations, asset performance, energy monitoring, and safety — SCADA-integrated.\n\n✦ 18% downtime reduction",
       moreLabel: "View Solution",
-      imageUrl: `${HOME_IMG}/23498.jpg`,
+      imageUrl: "Images/23498.jpg",
       href: "/refinery-operations",
     },
     {
       title: "Airlines Analytics",
       desc: "Flight ops, crew management, ground handling, and route profitability — real-time.\n\n✦ 12-min average delay reduction",
       moreLabel: "View Solution",
-      imageUrl: `${HOME_IMG}/291956.jpg`,
+      imageUrl: "Images/291956.jpg",
       href: "/airlines-analytics",
     },
     {
       title: "ITSM Analytics",
       desc: "Complete visibility into SLAs, assets, team performance, and vendor contracts.\n\n✦ SLA compliance lifted from 68% → 91%",
       moreLabel: "View Solution",
-      imageUrl: `${HOME_IMG}/33931.jpg`,
+      imageUrl: "Images/33931.jpg",
       href: "/itsm-analytics",
     },
   ];
@@ -770,9 +769,10 @@ const AcceleratorsSection = () => {
       <div className="absolute inset-0 z-0 scale-110">
         <motion.div style={{ y }} className="w-full h-full">
           <img
-            src={`${HOME_IMG}/slider.jpg`}
+            src="Images/slider.jpg"
             alt="Accelerators Background"
             className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
           />
         </motion.div>
       </div>
@@ -843,7 +843,7 @@ const TestimonialsSection = () => {
       role: "CTO",
       company: "Stratum Logistics",
       text: "Techknomatic didn't just build us a dashboard; they built us a decision architecture. Knew how to respect our several constraints and collaborate with all our departments.",
-      image: "Images/avatars/person-marcus.jpg",
+      image: "https://i.pravatar.cc/150?u=marcus",
       logo: "STRATUM",
     },
     {
@@ -852,7 +852,7 @@ const TestimonialsSection = () => {
       role: "Head of Data",
       company: "Oasis Energy",
       text: "We had the chance to work with them four times on various projects. What we liked was their swiftness and the great quality of their design that will always get you that 'wow' effect.",
-      image: "Images/avatars/person-sarah.jpg",
+      image: "https://i.pravatar.cc/150?u=sarah",
       logo: "OASIS",
     },
     {
@@ -861,7 +861,7 @@ const TestimonialsSection = () => {
       role: "VP of Analytics",
       company: "Nexus Bank",
       text: "Creativity, Reactivity and always a very pleasant and attentive team. Enterprise-grade governance was delivered secure and scalable exactly as we wanted.",
-      image: "Images/avatars/person-arjun.jpg",
+      image: "https://i.pravatar.cc/150?u=arjun",
       logo: "NEXUS",
     },
     {
@@ -870,7 +870,7 @@ const TestimonialsSection = () => {
       role: "Director of IT",
       company: "Global Retail",
       text: "Their ability to translate complex business requirements into sleek, actionable visualizations is unparalleled. They are truly partners in our digital journey.",
-      image: "Images/avatars/person-elena.jpg",
+      image: "https://i.pravatar.cc/150?u=elena",
       logo: "GLOBAL",
     },
   ];
