@@ -194,6 +194,10 @@ const UseCaseCard = ({ title, description, crux, industries }: { title: string; 
   </motion.div>
 );
 
+const DE_CAP_IMG =
+  "Images/Data Engineering Capabilities/Data Engineering Capabilities";
+const DE_HERO_IMG = "Images/Data Engineering Capabilities/Hero.jpg";
+
 export const DataEngineeringPage = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
@@ -201,32 +205,32 @@ export const DataEngineeringPage = () => {
     {
       title: "ETL/ELT Pipelines & Automation",
       description: "Reliable, scalable pipelines built with Talend, Azure Data Factory, Informatica, dbt, and Python.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&q=80&w=800"
+      image: `${DE_CAP_IMG}/ETLELT Pipelines & Automation.jpg`,
     },
     {
       title: "Cloud & Platform Setup",
       description: "Modern data platforms on Azure Synapse, Snowflake, Databricks, and Redshift — engineered to scale",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+      image: `${DE_CAP_IMG}/Cloud & Platform Setup.jpg`,
     },
     {
       title: "Salesforce Cloud Integration",
       description: "Seamless Salesforce data integration to power a unified enterprise customer view",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+      image: `${DE_CAP_IMG}/Salesforce Cloud Integration.jpg`,
     },
     {
       title: "Metadata & Master Data Management",
       description: "Trusted data assets through MDM, metadata governance, and enterprise data catalogs",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800"
+      image: `${DE_CAP_IMG}/Metadata & Master Data Management.jpg`,
     },
     {
       title: "Real-Time & IoT Engineering",
       description: "Streaming pipelines on Kafka, Event Hubs, and Spark Streaming for low-latency insights",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+      image: `${DE_CAP_IMG}/RealTimeIoT Engineering.jpg`,
     },
     {
       title: "Data Quality & Governance",
       description: "Automated quality checks, cleansing routines, and governance frameworks for trusted data.",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+      image: `${DE_CAP_IMG}/Data Quality & Governance.jpg`,
     },
   ];
 
@@ -279,10 +283,20 @@ export const DataEngineeringPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative min-h-[min(72vh,720px)] py-40 px-6 overflow-hidden bg-[#020617]">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
+          <img
+            src={DE_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 w-full h-full object-cover object-center opacity-50 scale-105"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-[#020617]/80 via-[#020617]/55 to-[#020617]/88"
+            aria-hidden
+          />
+          <div className="absolute z-[1] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" aria-hidden />
+          <div className="absolute bottom-0 right-0 z-[1] w-96 h-96 bg-accent/5 rounded-full blur-[100px]" aria-hidden />
         </div>
         <div className="max-w-6xl mx-auto relative z-10 text-left">
           <motion.div
