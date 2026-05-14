@@ -4,32 +4,27 @@ import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
   BarChart,
   CheckCircle,
-  Cloud,
   Database,
   LayoutDashboard,
-  Lock,
   MessageSquare,
   Network,
-  RefreshCw,
-  Server,
   ShieldCheck,
   Workflow,
   Zap,
 } from "lucide-react";
 
-const IMG = (slug: string) => `Images/stock/photo-${slug}.jpg`;
+const ISM_BASE = "Images/InsightSM";
+const ISM_CHALLENGE = `${ISM_BASE}/Challenge.jpg`;
+const ISM_IND = `${ISM_BASE}/Industries`;
 
-/** Rotating art for stack / connector cards */
 const CONNECTOR_IMAGES = [
-  IMG("1551288049-bbda4e38f71"),
-  IMG("1558494949-ef010cbdcc4b"),
-  IMG("1518770660439-4636190af475"),
-  IMG("1550751827-4bd374c3f58b"),
-  IMG("1563986768609-322da13575f3"),
-  IMG("1451187580459-43490279c0fa"),
+  `${ISM_BASE}/Connectors/connector-01.jpg`,
+  `${ISM_BASE}/Connectors/connector-02.jpg`,
+  `${ISM_BASE}/Connectors/connector-03.jpg`,
+  `${ISM_BASE}/Connectors/connector-04.jpg`,
+  `${ISM_BASE}/Connectors/connector-05.jpg`,
+  `${ISM_BASE}/Connectors/connector-06.jpg`,
 ];
-
-const CHALLENGE_HERO = IMG("1460925895917-afdab827c52f");
 
 const CapabilityCard = ({
   title,
@@ -87,13 +82,14 @@ const IndustryCard = ({
     transition={{ delay }}
     className="group flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-slate-100 bg-white text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
   >
-    <div className="relative h-48 shrink-0 overflow-hidden">
+    <div className="relative h-48 overflow-hidden">
       <img
         src={image}
         alt={title}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
         referrerPolicy="no-referrer"
       />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 to-transparent" />
     </div>
     <div className="flex flex-1 flex-col p-10">
       <h3 className="mb-4 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
@@ -122,20 +118,21 @@ const ConnectorCard = ({
     transition={{ delay }}
     className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-100 bg-white text-left shadow-lg dark:border-white/10 dark:bg-white/5"
   >
-    <div className="relative h-48 shrink-0 overflow-hidden">
+    <div className="relative h-48 overflow-hidden">
       <img
         src={CONNECTOR_IMAGES[index % CONNECTOR_IMAGES.length]}
         alt=""
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
         aria-hidden
       />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
     </div>
     <div className="flex flex-grow flex-col p-8">
       <div className="mb-4 text-[12px] font-black uppercase tracking-widest text-accent">0{index + 1}</div>
       <h3 className="mb-4 text-lg font-bold text-brand-950 transition-colors group-hover:text-accent dark:text-white">
         {title}
       </h3>
-      <div className="mt-auto flex flex-wrap gap-x-2 gap-y-1 text-[12px] font-medium text-slate-500 dark:text-slate-400">
+      <div className="mt-auto flex flex-wrap gap-2 text-[12px] font-medium text-slate-500 dark:text-slate-400">
         {items.map((item, i) => (
           <span key={i} className="after:ml-2 after:content-['·'] last:after:content-['']">
             {item}
@@ -303,59 +300,56 @@ export const ITSMPlugAndPlayPage = () => {
       title: "Banking & Financial Services",
       description:
         "Centralized SLA and incident analytics across banking operations and compliance reporting.",
-      image: IMG("1454165833762-b104c18c942e"),
+      image: `${ISM_IND}/banking.jpg`,
     },
     {
       title: "Healthcare",
       description: "Hospital IT monitoring, application incident tracking, and uptime analytics for critical systems.",
-      image: IMG("1576091160550-2173dba999ef"),
+      image: `${ISM_IND}/healthcare.jpg`,
     },
     {
       title: "Telecom",
       description: "Network operations SLA monitoring, outage analytics, and multi-vendor operational visibility.",
-      image: IMG("1544620347-c4fd4a3d5957"),
+      image: `${ISM_IND}/telecom.jpg`,
     },
     {
       title: "Retail & E-Commerce",
-      description: "Store operations support, POS incident monitoring, and peak-season SLA performance tracking.",
-      image: IMG("1519389950473-47ba0277781c"),
+      description:
+        "Store operations support, POS incident monitoring, and peak-season SLA performance tracking.",
+      image: `${ISM_IND}/retail-ecommerce.jpg`,
     },
     {
       title: "Manufacturing",
       description: "Plant IT operations, production support incident analytics, and operational downtime tracking.",
-      image: IMG("1581091226825-a6a2a5aee158"),
+      image: `${ISM_IND}/manufacturing.jpg`,
     },
     {
       title: "Government & Public Sector",
       description: "Citizen service analytics, cross-department ITSM visibility, and shared services reporting.",
-      image: IMG("1460925895917-afdab827c52f"),
+      image: `${ISM_IND}/government.jpg`,
     },
   ];
 
   const steps = [
     {
-      step: "Connect",
       title: "Connect",
       content:
         "Plug-and-play connectors link to ServiceNow, BMC Remedy, Jira SM, SolarWinds, and other ITSM platforms via API or native DB. Automated schema discovery accelerates setup.",
       icon: Network,
     },
     {
-      step: "Analyze",
       title: "Analyze",
       content:
         "Sampled operational data is ingested and processed through pre-built ITSM data models. Standardized KPIs (MTTR, MTBF, SLA breach, first response) are computed automatically.",
       icon: Database,
     },
     {
-      step: "Validate",
       title: "Validate",
       content:
         "Pre-built dashboards (CXO, service desk, team-level) render on sampled data. Stakeholders review KPI definitions, drill-downs, and accuracy before full rollout.",
       icon: CheckCircle,
     },
     {
-      step: "Scale",
       title: "Scale",
       content:
         "Once validated, InsightSM transitions to enterprise production mode — full historical ingestion, incremental pipelines, and near real-time refresh, without rebuilding the analytics layer.",
@@ -367,32 +361,26 @@ export const ITSMPlugAndPlayPage = () => {
     {
       title: "ITSM Platforms",
       items: ["ServiceNow", "BMC Remedy", "Jira Service Management", "SolarWinds", "Extensible to any ITSM platform"],
-      icon: Server,
     },
     {
       title: "Connectivity Methods",
       items: ["REST APIs", "Native database connectivity", "Webhooks", "Automated schema discovery"],
-      icon: Network,
     },
     {
       title: "Data Refresh Modes",
       items: ["Sampled (validation phase)", "Batch (production)", "Near real-time", "Change-based synchronization"],
-      icon: RefreshCw,
     },
     {
       title: "BI & Visualization Layer",
       items: ["Pre-built InsightSM dashboards", "Export to Power BI", "Tableau", "Qlik (optional)"],
-      icon: LayoutDashboard,
     },
     {
       title: "Security & Access",
       items: ["Role-based access control (RBAC)", "Multi-tenant data isolation", "Audit logging", "Governance controls"],
-      icon: Lock,
     },
     {
       title: "Deployment Modes",
       items: ["AWS", "Azure", "GCP", "On-premise", "Hybrid"],
-      icon: Cloud,
     },
   ];
 
@@ -436,19 +424,20 @@ export const ITSMPlugAndPlayPage = () => {
       title: "Government & Public Sector",
       subtitle: "Cross-department ITSM visibility for citizen service operations.",
       crux: "InsightSM consolidates ITSM data across government departments — enabling unified citizen service analytics, operational KPI tracking, and SLA monitoring for public services. Shared services reporting and cross-department visibility delivered through a single analytics platform.",
-      focusAreas: "Citizen Service Analytics · Public Service KPIs · Cross-Department ITSM · Government SLAs · Shared Services",
+      focusAreas:
+        "Citizen Service Analytics · Public Service KPIs · Cross-Department ITSM · Government SLAs · Shared Services",
       outcome: "Faster citizen response · Cross-dept accountability · Standardized public-service reporting",
     },
   ];
 
   return (
     <div className="pt-[110px]">
-      <section className="relative min-h-[min(70vh,680px)] overflow-hidden bg-[#020617] px-6 py-40">
+      <section className="relative overflow-hidden bg-[#020617] px-6 py-40">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/5 blur-[100px]" />
         </div>
-        <div className="relative z-10 mx-auto max-w-6xl text-left drop-shadow-md">
+        <div className="relative z-10 mx-auto max-w-6xl text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -514,25 +503,22 @@ export const ITSMPlugAndPlayPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid items-start gap-16 lg:grid-cols-2 lg:gap-20">
+          <div className="grid items-center gap-20 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col overflow-hidden rounded-[3rem] ring-1 ring-slate-200/80 shadow-2xl dark:ring-white/10"
+              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
             >
-              <div className="relative aspect-[4/3] w-full shrink-0">
-                <img
-                  src={CHALLENGE_HERO}
-                  alt="ITSM analytics and operations"
-                  className="absolute inset-0 h-full w-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="border-t border-slate-200/80 bg-brand-950 px-8 py-6 dark:border-white/10 dark:bg-black/40">
+              <img
+                src={ISM_CHALLENGE}
+                alt="ITSM challenge"
+                className="h-full w-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-brand-950/80 via-transparent to-transparent p-8">
                 <p className="border-l-4 border-accent pl-4 text-sm font-bold italic leading-relaxed text-white">
-                  The result: delayed operational decisions, inconsistent SLA tracking, and a constant drain on BI
-                  teams.
+                  The result: delayed operational decisions, inconsistent SLA tracking, and a constant drain on BI teams.
                 </p>
               </div>
             </motion.div>
@@ -556,7 +542,7 @@ export const ITSMPlugAndPlayPage = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className="flex items-start gap-4"
+                  className="group flex items-start gap-4"
                 >
                   <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                   <p className="text-[16px] font-bold leading-tight text-brand-950 dark:text-white">{item}</p>
@@ -602,7 +588,7 @@ export const ITSMPlugAndPlayPage = () => {
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((it, idx) => (
-              <CapabilityCard key={idx} {...it} delay={idx * 0.05} />
+              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
             ))}
           </div>
         </div>
@@ -674,12 +660,12 @@ export const ITSMPlugAndPlayPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group rounded-[2.5rem] border border-slate-100 bg-white p-8 text-left shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
+                  className="group rounded-[2.5rem] border border-slate-100 bg-white p-8 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
                 >
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent transition-transform group-hover:scale-110">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <div className="mb-2 text-[11px] font-black uppercase tracking-[0.2em] text-accent/70">
+                  <div className="mb-2 text-[11px] font-black uppercase tracking-[0.2em] text-accent/50">
                     Step 0{idx + 1}
                   </div>
                   <h3 className="mb-4 text-left text-xl font-bold capitalize text-brand-950 transition-colors group-hover:text-accent dark:text-white">
@@ -745,7 +731,7 @@ export const ITSMPlugAndPlayPage = () => {
               viewport={{ once: true }}
               className="text-3xl font-medium uppercase tracking-tight text-brand-950 dark:text-white md:text-5xl"
             >
-              Use Cases
+              USE CASES
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -754,8 +740,8 @@ export const ITSMPlugAndPlayPage = () => {
               transition={{ delay: 0.1 }}
               className="mt-4 max-w-3xl text-lg font-medium text-slate-500 dark:text-slate-400"
             >
-              Six domain-specific deployments where InsightSM is replacing manual ITSM reporting with unified
-              operational intelligence.
+              Six domain-specific deployments where InsightSM is replacing manual ITSM reporting with unified operational
+              intelligence.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
