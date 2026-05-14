@@ -48,7 +48,7 @@ export const navData: SiteNavData = {
     },
     {
       label: 'CXO Nexus - Conversational AI for CXOs',
-      href: '#',
+      href: '/cxo-nexus',
       icon: LayoutDashboard,
     },
   ],

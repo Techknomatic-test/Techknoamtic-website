@@ -8,6 +8,7 @@ import { BIServicesPage } from '../pages/BIServicesPage';
 import { CallOpsAIPage } from '../pages/CallOpsAiPage';
 import { CareersPage } from '../pages/CareersPage';
 import { ContactPage } from '../pages/ContactPage';
+import { CXONexusPage } from '../pages/CXONexusPage';
 import { CustomDevPage } from '../pages/CustomDevPage';
 import { DataGuardPage } from '../pages/DataGuardPage';
 import { DataEngineeringPage } from '../pages/DataEngineeringPage';
@@ -57,6 +58,7 @@ export const AppRoutes = () => {
       <Route path="/assistiq" element={<AssistIQPage />} />
       <Route path="/agentic-ai-itsm" element={<AgenticAIITSMPage />} />
       <Route path="/callops-ai" element={<CallOpsAIPage />} />
+      <Route path="/cxo-nexus" element={<CXONexusPage />} />
       <Route path="/hr-portal" element={<HRPortalPage />} />
       <Route path="/partnerships" element={<PartnershipsPage />} />
       <Route path="/job-description/:jobId" element={<JobDescriptionPage />} />
