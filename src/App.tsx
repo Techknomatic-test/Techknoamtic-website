@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { motion, useScroll, useSpring } from 'motion/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Footer } from './components/layout/Footer';
