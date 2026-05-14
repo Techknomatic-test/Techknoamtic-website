@@ -21,8 +21,8 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-slate-400 font-medium leading-relaxed max-w-sm mb-6 text-base mx-auto md:mx-0">
-              Techknomatic empowers teams to transform raw data into clear, compelling visuals —
-              making insights easier to share, understand, and act on.
+              Techknomatic empowers teams to transform raw data into clear, compelling visuals — making
+              insights easier to share, understand, and act on.
             </p>
             <div className="text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-10">
               India · UAE · Oman
@@ -45,11 +45,9 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="md:col-span-7 md:col-start-6 grid grid-cols-1 md:grid-cols-3 gap-y-16 md:gap-x-12 lg:gap-x-16">
+          <div className="md:col-span-7 md:col-start-6 grid grid-cols-1 md:grid-cols-4 gap-y-16 md:gap-x-12 lg:gap-x-16">
             <div>
-              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">
-                Product
-              </h5>
+              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">Services</h5>
               <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
                 {[
                   { label: 'Business Intelligence', href: '/bi-services' },
@@ -72,18 +70,15 @@ export const Footer = () => {
             </div>
 
             <div>
-              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">
-                Resources
-              </h5>
+              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">Accelerators</h5>
               <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
                 {[
-                  { label: 'Insurance', href: '/insurance-analytics' },
-                  { label: 'Manufacturing', href: '/manufacturing-analytics' },
-                  { label: 'FMCG', href: '/fmcg-analytics' },
-                  { label: 'Oil & Gas', href: '/refinery-operations' },
-                  { label: 'Airlines', href: '/airlines-analytics' },
-                  { label: 'ITSM', href: '/itsm-analytics' },
-                  { label: 'HSE', href: '/hse-analytics' },
+                  { label: 'DataGuard', href: '/dataguard' },
+                  { label: 'ITSM Plug & Play', href: '/itsm-plug-and-play' },
+                  { label: 'Agentic AI', href: '/agentic-ai-itsm' },
+                  { label: 'HR Portal', href: '/hr-portal' },
+                  { label: 'ParseIQ', href: '/parse-iq' },
+                  { label: 'FreightIQ', href: '/freight-iq' },
                 ].map((item) => (
                   <li key={item.label}>
                     <Link
@@ -99,13 +94,38 @@ export const Footer = () => {
             </div>
 
             <div>
-              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">
-                Company
-              </h5>
+              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">Solutions</h5>
+              <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
+                {[
+                  { label: 'Insurance', href: '/insurance-analytics' },
+                  { label: 'Manufacturing', href: '/manufacturing-analytics' },
+                  { label: 'FMCG', href: '/fmcg-analytics' },
+                  { label: 'Oil & Gas', href: '/refinery-operations' },
+                  { label: 'Airlines', href: '/airlines-analytics' },
+                  { label: 'ITSM', href: '/itsm-analytics' },
+                  { label: 'HSE', href: '/hse-analytics' },
+                  { label: 'Healthcare', href: '/healthcare-analytics' },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      to={item.href}
+                      className="flex items-center justify-between w-full pr-2 hover:text-accent transition-colors group"
+                    >
+                      <span>{item.label}</span>
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">Company</h5>
               <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
                 {[
                   { label: 'About Us', href: '/about' },
                   { label: 'FAQ', href: '/faq' },
+                  { label: 'Brand Guidelines', href: '/brand' },
                   { label: 'Careers', href: '/careers' },
                   { label: 'Contact', href: '/contact' },
                   { label: 'Partnerships', href: '/partnerships' },

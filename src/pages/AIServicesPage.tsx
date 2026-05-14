@@ -1,345 +1,656 @@
-import { motion } from 'motion/react';
-import { 
-  Sparkles, 
-  Cpu, 
-  Brain,
-  ShieldCheck,
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
+import type { LucideIcon } from "lucide-react";
+import { PreFooterCTA } from "../components/PreFooterCTA";
+import {
+  Cpu,
   Settings,
-  Target,
-  ArrowRight,
-  Zap,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
   Monitor,
-  Code,
   MessageSquare,
-  BookOpen,
-  Lightbulb,
-  CheckCircle2
-} from 'lucide-react';
+  Workflow,
+  FileSearch,
+  PieChart,
+  ClipboardList,
+} from "lucide-react";
 
-const Card = ({ title, description, icon: Icon, delay = 0, variant = "default" }: { title: string, description: string | string[], icon: any, delay?: number, variant?: "default" | "minimal" | "list" }) => {
+const AccordionItem = ({
+  title,
+  content,
+  isOpen,
+  onClick,
+}: {
+  title: string;
+  content: string;
+  isOpen: boolean;
+  onClick: () => void;
+}) => {
+  const chips = content.split("·").map((s) => s.trim());
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.8 }}
-      className={`p-8 rounded-[2.5rem] border transition-all duration-500 group h-full flex flex-col ${
-        variant === "minimal" 
-          ? 'bg-slate-50/50 dark:bg-white/5 border-slate-100 dark:border-white/10 hover:bg-white dark:hover:bg-accent/10' 
-          : 'bg-white dark:bg-white/5 border-slate-100/50 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.06)] dark:shadow-none hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)]'
-      }`}
-    >
-      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${
-        variant === "minimal" 
-          ? 'bg-white dark:bg-white/10 text-slate-400 group-hover:text-accent group-hover:bg-accent/10' 
-          : 'bg-accent/10 text-accent group-hover:scale-110'
-      }`}>
-        <Icon className="w-6 h-6" />
-      </div>
-      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      {Array.isArray(description) ? (
-        <ul className="space-y-2 flex-1">
-          {description.map((item, idx) => (
-            <li key={idx} className="text-[13px] font-medium text-slate-500 dark:text-slate-400 flex items-start gap-2">
-              <span className="text-accent mt-1 shrink-0">•</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
-          {description}
-        </p>
-      )}
-    </motion.div>
+    <div className="border-b border-slate-100 dark:border-white/5 last:border-0 overflow-hidden text-left">
+      <button
+        type="button"
+        onClick={onClick}
+        className="w-full py-6 flex items-center justify-between text-left group transition-all"
+      >
+        <span className="text-[15px] font-bold text-brand-950 dark:text-white group-hover:text-accent transition-colors">
+          {title}
+        </span>
+        <div
+          className={`p-2 rounded-full transition-all duration-300 ${
+            isOpen
+              ? "bg-accent text-white"
+              : "bg-slate-50 dark:bg-white/5 text-slate-400 group-hover:bg-slate-100 dark:group-hover:bg-white/10"
+          }`}
+        >
+          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        </div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="pb-6">
+              <div className="flex flex-wrap gap-2">
+                {chips.map((chip, i) => (
+                  <span
+                    key={i}
+                    className="px-4 py-1.5 bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 rounded-full text-[12px] font-bold text-slate-600 dark:text-slate-400"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
+const OfferCard = ({
+  title,
+  description,
+  icon: Icon,
+  delay = 0,
+}: {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
+  >
+    <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-brand-900/50 flex items-center justify-center mb-8 text-accent shadow-sm group-hover:scale-110 transition-transform duration-500">
+      <Icon className="w-6 h-6" />
+    </div>
+    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+      {description}
+    </p>
+  </motion.div>
+);
+
+const ApproachStep = ({
+  num,
+  title,
+  description,
+  delay = 0,
+}: {
+  num: string;
+  title: string;
+  description: string;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="relative flex-1 min-w-[240px] p-8 rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group text-left"
+  >
+    <div className="absolute top-8 right-8 text-4xl font-black text-slate-200 dark:text-white/5 group-hover:text-accent/20 transition-colors">
+      {num}
+    </div>
+    <div className="w-12 h-12 rounded-xl bg-white dark:bg-white/10 flex items-center justify-center mb-8 text-accent shadow-sm group-hover:scale-110 transition-transform">
+      <Settings className="w-5 h-5" />
+    </div>
+    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
+      {title}
+    </h3>
+    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic px-2 border-l-2 border-accent/20">
+      {description}
+    </p>
+  </motion.div>
+);
+
+const DifferentiatorCard = ({
+  title,
+  description,
+  idx,
+}: {
+  title: string;
+  description: string;
+  idx: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: idx * 0.1 }}
+    className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full text-left"
+  >
+    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
+      <CheckCircle2 className="w-6 h-6 text-accent" />
+    </div>
+    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
+      {title}
+    </h3>
+    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+      {description}
+    </p>
+  </motion.div>
+);
+
+const UseCaseCard = ({
+  title,
+  subtitle,
+  crux,
+  industries,
+  impact,
+  techStack,
+}: {
+  title: string;
+  subtitle: string;
+  crux: string;
+  industries: string;
+  impact?: string;
+  techStack?: string;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group text-left h-full flex flex-col"
+  >
+    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-2 leading-tight group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    <p className="text-[15px] font-bold text-brand-950/70 dark:text-white/70 mb-8 leading-snug">
+      {subtitle}
+    </p>
+
+    <div className="space-y-6 mt-auto">
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Crux</h4>
+        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+          {crux}
+        </p>
+      </div>
+
+      {techStack && (
+        <div>
+          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Tech Stack</h4>
+          <p className="text-[13px] font-bold text-brand-950 dark:text-white">{techStack}</p>
+        </div>
+      )}
+
+      <div className="pt-4 border-t border-slate-100 dark:border-white/5 grid grid-cols-2 gap-4">
+        <div>
+          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Industries</h4>
+          <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">{industries}</p>
+        </div>
+        {impact && (
+          <div>
+            <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Impact</h4>
+            <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">{impact}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </motion.div>
+);
+
 export const AIServicesPage = () => {
-  const ourServices = [
+  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
+
+  const whatWeOffer = [
     {
       title: "Custom Chatbots & LLM Assistants",
-      description: "Enterprise-grade conversational AI for customer service, HR, IT helpdesk, and internal knowledge management.",
-      icon: MessageSquare
+      description:
+        "Intelligent conversational AI for customer service, HR, helpdesk, and internal knowledge management.",
+      icon: MessageSquare,
     },
     {
       title: "Agentic AI Workflows",
-      description: "Multi-step automation that understands context, makes decisions, and executes complex business processes.",
-      icon: Brain
+      description:
+        "Multi-step automation that understands context, makes decisions, and executes complex business processes.",
+      icon: Workflow,
     },
     {
       title: "Document AI & NLP",
-      description: "Extract insights from contracts, claims, reports, and unstructured documents with AI-powered document processing.",
-      icon: BookOpen
+      description:
+        "Extract insights from contracts, claims, reports, and unstructured documents with LLM-powered processing.",
+      icon: FileSearch,
     },
     {
       title: "Conversational BI",
-      description: "Natural language analytics that lets anyone ask questions and get answers from their data instantly.",
-      icon: Lightbulb
+      description:
+        "Natural-language analytics that lets anyone ask questions and get answers from their data — instantly.",
+      icon: PieChart,
     },
     {
       title: "GenAI for Auto-Summaries",
-      description: "Automated generation of summaries, reports, and emails from data — saving hours of manual work.",
-      icon: Settings
+      description:
+        "Automated generation of summaries, reports, and emails from data — saving hours of manual work.",
+      icon: ClipboardList,
     },
     {
       title: "AI Strategy & Model Deployment",
-      description: "End-to-end AI consulting from use case identification to production deployment and monitoring.",
-      icon: ShieldCheck
-    }
+      description:
+        "End-to-end AI consulting — from use-case identification to production deployment and monitoring.",
+      icon: Cpu,
+    },
   ];
 
-  const whyTechknomaticAI = [
+  const toolsTech = [
+    {
+      title: "Foundation Models",
+      content:
+        "Claude (Sonnet / Opus) · OpenAI (GPT-4o) · Azure OpenAI · Mistral · Gemini · Hugging Face",
+    },
+    {
+      title: "Orchestration & Agents",
+      content: "LangChain · LlamaIndex · Semantic Kernel · AutoGen · n8n",
+    },
+    {
+      title: "Vector Databases",
+      content: "Pinecone · Weaviate · Azure AI Search · pgvector",
+    },
+    {
+      title: "Document AI",
+      content: "Azure Document Intelligence · AWS Textract · NotebookLM · Custom Fine-Tuned Models",
+    },
+    {
+      title: "MLOps & Deployment",
+      content:
+        "Azure ML · AWS SageMaker · MLflow · Docker · Kubernetes · Vercel · Cloudflare · Render · Railway",
+    },
+  ];
+
+  const steps = [
+    {
+      num: "01",
+      title: "Discover",
+      description:
+        "Identify high-impact use cases, assess data readiness, and define success metrics and guardrails.",
+    },
+    {
+      num: "02",
+      title: "Design",
+      description:
+        "Prompt engineering, model selection, and responsible-AI architecture design — including fallback logic.",
+    },
+    {
+      num: "03",
+      title: "Build & Fine-Tune",
+      description: "RAG implementation, domain adaptation, and performance optimisation with evaluation harnesses.",
+    },
+    {
+      num: "04",
+      title: "Deploy",
+      description:
+        "API integration, safety logging, security hardening, and monitoring setup in your cloud environment.",
+    },
+    {
+      num: "05",
+      title: "Improve",
+      description: "Hallucination reduction, feedback loops, continuous evaluation, and model refresh cycles.",
+    },
+  ];
+
+  const differentiators = [
     {
       title: "AI + Data Engineering Under One Roof",
-      description: "Seamless integration between AI and your data infrastructure."
+      description:
+        "We build your AI and your data infrastructure — so they work together by design, not by accident.",
     },
     {
       title: "Multi-Model Expertise",
-      description: "Azure OpenAI, Hugging Face, private models — whatever fits your needs."
+      description:
+        "Claude, OpenAI, Azure OpenAI, Mistral, open-source — we select the right model for your needs and budget.",
     },
     {
       title: "Cross-Industry Experience",
-      description: "Deep expertise across BFSI, Pharma, Energy, and Manufacturing."
+      description: "Live deployments across BFSI, Pharma, Energy, Manufacturing, and Retail.",
     },
     {
       title: "Enterprise-Grade by Default",
-      description: "Secure, governed, scalable — built for enterprise requirements."
+      description: "Secure, governed, observable, and scalable — built for enterprise requirements from day one.",
     },
     {
       title: "No Black Boxes",
-      description: "Full transparency on model behavior, biases, and decision rationale."
-    }
+      description:
+        "Full transparency on model behaviour, biases, and decision rationale — with auditable evaluation harnesses.",
+    },
+    {
+      title: "Rapid Prototyping",
+      description: "Working AI prototypes in days — validate the concept before full commitment.",
+    },
   ];
 
-  const industryUseCases = [
+  const useCases = [
     {
-      title: "Insurance",
-      description: [
-        "Claim validation",
-        "Underwriting assistant",
-        "Policy chatbot",
-        "Fraud detection explanations"
-      ],
-      color: "bg-[#f0f9ff]/50 dark:bg-blue-900/10"
+      title: "Intelligent Document Processing & Contract Intelligence",
+      subtitle: "Automate extraction, review, and analysis of high-volume enterprise documents.",
+      crux: "Deploy AI-powered document processing pipelines that extract, classify, validate, and summarize structured and unstructured documents — contracts, invoices, clinical records, regulatory filings. Use LLMs with domain-specific fine-tuning to flag risks, compare clause variations, and generate review summaries, reducing manual review effort by up to 70%.",
+      industries: "Legal · BFSI · Insurance · Healthcare · Procurement",
+      impact: "70% reduction in manual review · Faster contract turnaround · Improved risk flagging",
     },
     {
-      title: "Pharma/Healthcare",
-      description: [
-        "Rep call notes analysis",
-        "Patient journey bots",
-        "Med literature search",
-        "Clinical trial insights"
-      ],
-      color: "bg-[#fffaf0]/50 dark:bg-orange-900/10"
+      title: "Intelligent Data Migration & AI-Assisted Schema Transformation",
+      subtitle: "Accelerate complex data migrations with AI that maps, transforms, and validates at scale.",
+      crux: "Deploy AI-assisted migration pipelines that automate schema mapping, data type reconciliation, transformation rule generation, and post-migration validation between heterogeneous sources — legacy warehouses, ERPs, SaaS platforms, and cloud databases. LLM-powered mapping assistants reduce manual effort, flag conflicts, and auto-generate reconciliation reports to ensure zero data loss.",
+      industries: "BFSI · Retail · Manufacturing · Healthcare · Any Enterprise Migration Program",
+      impact: "Faster migration timelines · Reduced manual mapping effort",
     },
     {
-      title: "Banking/Finance",
-      description: [
-        "Compliance alerts",
-        "Fraud explanations",
-        "Customer service AI",
-        "Report generation"
-      ],
-      color: "bg-[#f0fff4]/50 dark:bg-green-900/10"
+      title: "Agentic AI for IT Operations & Incident Resolution (AIOps)",
+      subtitle:
+        "Autonomous agents that detect, triage, investigate, and resolve IT incidents — end to end, without human bottlenecks.",
+      crux: "Deploy multi-agent AIOps systems that continuously monitor infrastructure telemetry, application logs, and ITSM queues — automatically classifying incidents by severity, correlating root causes across distributed systems, executing predefined runbooks, and generating plain-language resolution summaries for on-call engineers.",
+      techStack: "LangChain Agents · AutoGen · ServiceNow · Datadog · Splunk · Azure Monitor · PagerDuty",
+      industries: "FinTech · Telecom · SaaS Platforms · E-Commerce · Retail · Banking",
+      impact: "40–60% reduction in MTTR · Autonomous runbook execution",
     },
     {
-      title: "Energy/Manufacturing",
-      description: [
-        "Maintenance ticket summarization",
-        "Plant assistant",
-        "Safety report generation",
-        "Operational insights"
-      ],
-      color: "bg-[#faf5ff]/50 dark:bg-purple-900/10"
-    }
+      title: "Retail & E-Commerce AI — Recommendations & Sentiment Intelligence",
+      subtitle: "Personalize customer experiences and optimize retail operations with AI.",
+      crux: "Deploy AI-powered product recommendation engines, returns-reason classifiers, and review sentiment analysis pipelines that integrate with e-commerce and CRM platforms. Use LLM-driven customer intent modeling and behavioral signal processing to improve conversion rates and surface actionable insights.",
+      industries: "Retail · E-Commerce · D2C · FMCG · Marketplace Platforms",
+      impact: "Improved conversion · Reduced returns cost · Richer customer insights",
+    },
   ];
 
-  const ourApproach = [
-    {
-      step: "1",
-      title: "Discover",
-      description: "Identify high-impact use cases, assess data landscape, and define success metrics"
-    },
-    {
-      step: "2",
-      title: "Design",
-      description: "Prompt engineering, model selection, and architecture design"
-    },
-    {
-      step: "3",
-      title: "Build & Fine-Tune",
-      description: "RAG implementation, domain adaptation, and performance optimization"
-    },
-    {
-      step: "4",
-      title: "Deploy",
-      description: "API integration, audit logs, security hardening, and monitoring setup"
-    },
-    {
-      step: "5",
-      title: "Improve",
-      description: "Hallucination reduction, feedback loops, and continuous learning"
-    }
-  ];
+  const gridDecorOpacity = [0.12, 0.18, 0.08, 0.22, 0.15, 0.1, 0.2, 0.14, 0.09, 0.17, 0.11, 0.19, 0.13, 0.16, 0.1, 0.21];
 
   return (
-    <div className="pt-[120px]">
+    <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-24 px-6 overflow-hidden bg-brand-950">
-        <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #F17E21 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        <div className="max-w-6xl mx-auto relative z-10 text-center md:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.2em] text-accent uppercase bg-accent/5 rounded-full"
-          >
-            AI & Generative AI Specialist
-          </motion.div>
-          <motion.h1 
+      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10 text-left">
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-7xl font-display font-bold text-white mb-8 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
           >
-            Our AI Services
+            AI & Data Strategy
           </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-slate-400 max-w-2xl font-medium leading-relaxed"
-          >
-            Bridge the gap between experimental AI and production value. We build agentic, secure, and domain-intelligent AI systems.
-          </motion.p>
+          <div className="max-w-4xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
+            >
+              From Models to Momentum: Enterprise AI, Built for Impact
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+            >
+              Strategy, GenAI applications, agentic workflows, and production-grade model deployment — engineered to
+              move enterprises from AI experimentation to measurable business outcomes.
+            </motion.p>
+          </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 px-6 bg-white dark:bg-brand-950">
+      {/* Intro Section */}
+      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-950 dark:text-white tracking-tight mb-6">What We Deliver</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {ourServices.map((service, i) => (
-              <Card key={i} {...service} delay={i * 0.1} />
-            ))}
+          <div className="max-w-5xl space-y-8">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+            >
+              Most enterprises are no longer asking whether to invest in AI — they're asking how to operationalize
+              it. Pilots stall in proof-of-concept purgatory. Models work in notebooks but fail in production. GenAI
+              prototypes excite leadership but never make it past compliance. Techknomatic helps enterprises bridge that
+              gap with end-to-end AI and data strategy services that take ideas from discovery to deployment.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+            >
+              Our practice spans AI strategy and use-case identification, custom LLM applications and chatbots,
+              agentic AI workflows, document AI, conversational BI, and production model deployment with full MLOps.
+              Built on a multi-model foundation — Claude, OpenAI, Mistral, Gemini, and open-source — and tightly coupled
+              with our data engineering capability, we deliver enterprise-grade AI that is secure, governed, and
+              measurably impactful from day one.
+            </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Industry Use Cases Section */}
-      <section className="py-24 px-6 bg-white dark:bg-brand-950">
+      {/* What We Offer Section */}
+      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-950 dark:text-white tracking-tight">Industry Use Cases</h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
+            >
+              What We Offer
+            </motion.h2>
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+            >
+              Artificial Intelligence Services
+            </motion.h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industryUseCases.map((useCase, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`p-8 rounded-[2rem] ${useCase.color} border border-slate-100/50 dark:border-white/5 h-full`}
-              >
-                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-6">
-                  {useCase.title}
-                </h3>
-                <ul className="space-y-4">
-                  {useCase.description.map((item, idx) => (
-                    <li key={idx} className="text-[14px] font-medium text-slate-600 dark:text-slate-400 flex items-start gap-3">
-                      <span className="text-slate-400 mt-1.5 shrink-0">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whatWeOffer.map((it, idx) => (
+              <OfferCard key={idx} {...it} delay={idx * 0.1} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools & Technology Section */}
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6"
+            >
+              Tools and Technology
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+            >
+              A cutting-edge tech stack for the AI era — optimized for performance, scalability, and trust.
+            </motion.p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group"
+            >
+              <div className="absolute inset-x-0 bottom-0 top-[20%] p-12 bg-gradient-to-t from-accent/20 flex flex-col justify-end">
+                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-900 shadow-2xl flex items-center justify-center mb-8 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                  <Monitor className="w-8 h-8 text-accent" />
+                </div>
+                <h4 className="text-2xl font-bold text-brand-950 dark:text-white mb-2">Modern AI Stack</h4>
+                <p className="text-slate-500 dark:text-slate-400 font-medium italic">Engineered for production-grade AI.</p>
+              </div>
+              <div className="absolute top-12 left-12 right-12 bottom-1/2 grid grid-cols-4 gap-4 opacity-10 pointer-events-none">
+                {gridDecorOpacity.map((op, i) => (
+                  <div key={i} className="aspect-square bg-accent rounded-lg" style={{ opacity: op }} />
+                ))}
+              </div>
+            </motion.div>
+
+            <div className="bg-white dark:bg-transparent rounded-2xl">
+              {toolsTech.map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  title={`${index + 1}. ${item.title}`}
+                  content={item.content}
+                  isOpen={openAccordion === index}
+                  onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Our Approach Section */}
-      <section className="py-24 px-6 bg-white dark:bg-brand-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-950 dark:text-white tracking-tight">Our Approach</h2>
+      <section className="py-[120px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden text-left">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
+            >
+              Our Approach
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-white/60 font-medium max-w-2xl"
+            >
+              A proven 5-step delivery framework — from use case to production-grade, continuously improving AI.
+            </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {ourApproach.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.8 }}
-                className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_15px_40px_-20px_rgba(0,0,0,0.06)] dark:shadow-none hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 text-center flex flex-col items-center"
-              >
-                <div className="w-12 h-12 rounded-full bg-accent text-white font-bold flex items-center justify-center mb-6 text-xl shadow-lg shadow-accent/20">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-4 tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
+
+          <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
+            {steps.map((step, idx) => (
+              <ApproachStep key={idx} {...step} delay={idx * 0.1} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Techknomatic for AI Section */}
-      <section className="py-24 px-6 bg-[#F8F9FA] dark:bg-brand-900 transition-colors duration-500">
+      {/* Why Techknomatic Section */}
+      <section className="py-[120px] px-6 bg-slate-100 dark:bg-brand-900/50 text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-950 dark:text-white tracking-tight">Why Techknomatic for AI</h2>
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
+            >
+              Why Techknomatic for AI & GenAI
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
+            >
+              Six differentiators that separate AI demos from AI that ships and scales.
+            </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8">
-            {whyTechknomaticAI.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4"
-              >
-                <div className="shrink-0 mt-1">
-                  <CheckCircle2 className="w-8 h-8 text-green-500" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {differentiators.map((diff, idx) => (
+              <DifferentiatorCard key={idx} title={diff.title} description={diff.description} idx={idx} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-24 bg-accent px-6">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight">Ready to integrate intelligence?</h2>
-          <p className="text-lg opacity-90 mb-12 font-medium">Let's build AI features that actually move the needle for your business.</p>
-          <div className="flex flex-wrap justify-center gap-6">
-             <button className="px-10 py-4 bg-white text-accent font-black rounded-2xl hover:shadow-2xl transition-all active:scale-95 flex items-center gap-3">
-               Start AI Consulting <ArrowRight className="w-5 h-5" />
-             </button>
+      {/* Use Cases Section */}
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left pb-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
+            >
+              Production Ready
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
+            >
+              USE CASES
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium mt-4 max-w-3xl"
+            >
+              Four high-impact AI programs we deliver for enterprises — across document intelligence, data migration,
+              autonomous operations, and customer experience.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {useCases.map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} />
+            ))}
           </div>
         </div>
       </section>
+
+      <PreFooterCTA />
     </div>
   );
 };

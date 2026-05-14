@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
   CheckCircle2,
   ArrowRight,
@@ -19,7 +20,7 @@ import { Link } from "react-router-dom";
 
 const PartnershipHero = () => {
   return (
-    <section className="relative min-h-[60vh] flex flex-col items-center justify-center pt-[140px] pb-[80px] overflow-hidden px-6 bg-brand-950">
+    <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-[60px] pb-[80px] overflow-hidden px-6 bg-brand-950">
       <div className="absolute inset-0 z-0">
         <img
           src="Images/7660.jpg"
@@ -82,7 +83,7 @@ const OEMSection = () => {
   const oems = [
     {
       name: "Qlik",
-      imageUrl: "images/OEM Alliances/qlik.webp",
+      imageUrl: "Images/Qlik.webp",
       description:
         "Enabling real-time analytics, data integration, and active intelligence",
       features: [
@@ -93,7 +94,7 @@ const OEMSection = () => {
     },
     {
       name: "Esri",
-      imageUrl: "Images/OEM Alliances/esri.jpg",
+      imageUrl: "Images/esri.jpg",
       description:
         "Powering geospatial intelligence and location-driven decision systems",
       features: [
@@ -104,7 +105,7 @@ const OEMSection = () => {
     },
     {
       name: "Microsoft",
-      imageUrl: "Images/OEM Alliances/microsoft.webp",
+      imageUrl: "Images/Microsoft.webp",
       description:
         "Delivering cloud-scale data platforms, AI capabilities, and enterprise architectures",
       features: [
@@ -180,19 +181,19 @@ const MarketSection = () => {
       country: "🇴🇲 Oman",
       partner: "Primer Trading",
       desc: "Driving market engagement and solution delivery in Oman",
-      image: "images/Global Market/Oman.jpg",
+      icon: Building2,
     },
     {
       country: "🇦🇪 UAE",
       partner: "Aintisar Technologies",
       desc: "Supporting business development and client execution in the UAE",
-      image: "images/Global Market/UAE.jpg",
+      icon: Building2,
     },
     {
       country: "🇺🇸 United States",
       partner: "Inspirational Global",
       desc: "Enabling go-to-market and solution expansion in the United States",
-      image: "images/Global Market/United States.webp",
+      icon: Building2,
     },
   ];
 
@@ -227,28 +228,20 @@ const MarketSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-slate-50 dark:bg-brand-900 p-0 rounded-[3.5rem] border border-slate-100 dark:border-white/5 hover:border-accent/30 transition-all group overflow-hidden"
+              className="bg-slate-50 dark:bg-brand-900 p-12 rounded-[3.5rem] border border-slate-100 dark:border-white/5 hover:border-accent/30 transition-all group"
             >
-              <div className="h-56 w-full overflow-hidden">
-  <img
-    src={region.image}
-    alt={region.country}
-    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-    referrerPolicy="no-referrer"
-  />
-</div>
-
-<div className="p-12">
-  <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2">
-    {region.country}
-  </h3>
-  <p className="text-accent font-black text-[12px] uppercase tracking-widest mb-6">
-    {region.partner}
-  </p>
-  <p className="text-lg font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-    {region.desc}
-  </p>
-</div>
+              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-950 flex items-center justify-center text-accent mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                <Globe className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2">
+                {region.country}
+              </h3>
+              <p className="text-accent font-black text-[12px] uppercase tracking-widest mb-6">
+                {region.partner}
+              </p>
+              <p className="text-lg font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                {region.desc}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -259,64 +252,12 @@ const MarketSection = () => {
 
 export const PartnershipsPage = () => {
   return (
-    <div className="pb-0 overflow-hidden bg-white dark:bg-brand-950">
+    <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
       <PartnershipHero />
       <OEMSection />
       <MarketSection />
 
-      {/* Closing CTA */}
-      <section className="py-[120px] bg-accent px-6 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-[120px]" />
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-white rounded-full blur-[120px]" />
-        </div>
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-white uppercase bg-white/10 rounded-full border border-white/20"
-          >
-            Let's Scale Efficiency
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-normal text-brand-950 tracking-tight leading-[1.1] mb-8"
-          >
-            Let’s Build and Scale <br />
-            Data-Driven Solutions Together.
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            className="text-brand-950/70 text-lg md:text-xl font-medium mb-12 max-w-2xl mx-auto"
-          >
-            Whether you're a technology platform or a regional partner,
-            Techknomatic helps you take data & AI solutions to market with speed
-            and scale.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <Link
-              to="/contact"
-              className="px-10 py-5 bg-brand-950 text-white font-bold text-[14px] rounded-2xl hover:shadow-2xl transition-all flex items-center gap-3 group active:scale-95"
-            >
-              Start a Partnership Discussion{" "}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <PreFooterCTA />
     </div>
   );
 };

@@ -19,6 +19,7 @@ import {
   Globe,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PreFooterCTA } from "../components/PreFooterCTA";
 import { useState, useEffect, useRef } from "react";
 
 const AccordionItem = ({
@@ -79,21 +80,21 @@ const DifferentSection = () => {
       title: "Experienced Team",
       description:
         "We have experienced professionals with hands-on experience in delivering end-to-end data solutions. We can leverage BI tools to help clients convert their data into insights within less time.",
-      imageUrl: "Images/HeroSection.jpg",
+      imageUrl: "Images/2152005500.jpg",
     },
     {
       id: 2,
       title: "Proven Methodology",
       description:
         "By following a systematic approach, we construct BI solutions with well-defined processes that make it easy for you to manage all of the dashboards and changes.",
-      imageUrl: "Images/Makes Us Different/Proven Methodology.jpg",
+      imageUrl: "Images/2151680571.jpg",
     },
     {
       id: 3,
       title: "Less Turnaround Time",
       description:
         "In this dynamically changing analytics world, we give a minimum turnaround time for all our BI deliverables so you can make informed decisions anytime, anywhere.",
-      imageUrl: "Images/Makes Us Different/Less Turnaround Time.jpg",
+      imageUrl: "Images/33931.jpg",
     },
   ];
 
@@ -171,20 +172,20 @@ export const AboutUsPage = () => {
   }, []);
 
   const lifeImages = [
-    "images/LifeatTKS/DSC_0016.JPG",
-    "images/LifeatTKS/DSC_0056.JPG",
-    "images/LifeatTKS/DSC_0069.JPG",
-    "images/LifeatTKS/DSC_0100.JPG",
-    "images/LifeatTKS/DSC_0110.JPG",
-    "images/LifeatTKS/DSC_0234.JPG",
-    "images/LifeatTKS/DSC_0256.JPG",
-    "images/LifeatTKS/DSC_0294.JPG",
+    "Images/12437.jpg",
+    "Images/2151680571.jpg",
+    "Images/2152005500.jpg",
+    "Images/23498.jpg",
+    "Images/291956.jpg",
+    "Images/2988.jpg",
+    "Images/33931.jpg",
+    "Images/55251.jpg",
   ];
 
   return (
-    <div className="pb-0 overflow-hidden bg-white dark:bg-brand-950">
+    <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
       {/* 1. Hero Section - Styled as per Airline Hero */}
-      <section className="relative min-h-[60vh] flex flex-col items-center justify-center pt-[140px] pb-[80px] overflow-hidden px-6 bg-brand-950">
+      <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-[60px] pb-[80px] overflow-hidden px-6 bg-brand-950">
         <div className="absolute inset-0 z-0">
           <img
             src="Images/airline.jpg"
@@ -263,11 +264,11 @@ export const AboutUsPage = () => {
               {
                 label: "Integrity",
                 icon: ShieldCheck,
-                img: "Images/Our Culture/Integrity.jpg",
+                img: "Images/23498.jpg",
               },
-              { label: "Ethics", icon: Heart, img: "Images/Our Culture/Accountability.jpg" },
-              { label: "Inclusion", icon: Users, img: "Images/Our Culture/Knowledge Sharing.jpg" },
-              { label: "Innovation", icon: Zap, img: "Images/Our Culture/Responsibility.jpg" },
+              { label: "Ethics", icon: Heart, img: "Images/291956.jpg" },
+              { label: "Inclusion", icon: Users, img: "Images/2988.jpg" },
+              { label: "Innovation", icon: Zap, img: "Images/33931.jpg" },
             ].map((v, i) => (
               <motion.div
                 key={i}
@@ -416,55 +417,7 @@ export const AboutUsPage = () => {
         </div>
       </section>
 
-      {/* 5. Pre-Footer / CTA - Styled as per Airline CTA */}
-      <section className="py-[120px] bg-accent px-6 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-[120px]" />
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-white rounded-full blur-[120px]" />
-        </div>
-        <div className="max-w-4xl mx-auto relative z-10 text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-white uppercase bg-white/10 rounded-full border border-white/20"
-          >
-            Let's Build Together
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-normal text-brand-950 tracking-tight leading-[1.1] mb-12"
-          >
-            Tell us about your challenge. <br />
-            We'll tell you exactly how we'd approach it.
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-wrap justify-start gap-6"
-          >
-            <Link
-              to="/contact"
-              className="px-8 py-3.5 bg-white text-accent font-medium rounded-2xl hover:bg-white/90 transition-all shadow-2xl flex items-center gap-3 group active:scale-95"
-            >
-              Contact Us{" "}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              to="/contact"
-              className="px-8 py-3.5 bg-transparent border-2 border-white text-white font-medium rounded-2xl hover:bg-white/10 transition-all flex items-center gap-3 group active:scale-95"
-            >
-              Our Solutions{" "}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <PreFooterCTA />
     </div>
   );
 };
