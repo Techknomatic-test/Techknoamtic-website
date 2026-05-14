@@ -1,169 +1,513 @@
-import { motion, AnimatePresence } from "motion/react";
-import { Link } from "react-router-dom";
+import type { ComponentType } from "react";
+import { motion } from "motion/react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
-  Sparkles,
-  ArrowRight,
-  CheckCircle2,
   Zap,
+  ShieldCheck,
+  BarChart3,
+  Search,
   Brain,
   MessageSquare,
-  Search,
-  RefreshCw,
-  Clock,
-  Layout,
-  Monitor,
-  FileText,
-  ShieldAlert,
-  Cpu,
+  Workflow,
+  Layers,
+  Target,
+  ArrowRightLeft,
+  Database,
+  Users,
+  Computer,
   Globe,
 } from "lucide-react";
 
-const CapabilityCard = ({ title, description, image, delay = 0 }: { title: string; description: string; image: string; delay?: number }) => (
+/** Local assets under public/Images/TicketIQ (same pattern as Data Engineering capability images). */
+const TIQ_IMG = "Images/TicketIQ";
+const tiqImg = (file: string) => `${TIQ_IMG}/${file}`;
+
+const CapabilityCard = ({
+  title,
+  outcome,
+  items,
+  icon: Icon,
+  delay = 0,
+}: {
+  title: string;
+  outcome: string;
+  items: string[];
+  icon: ComponentType<{ className?: string }>;
+  delay?: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
+    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full text-left"
   >
-    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-brand-950/20 to-transparent opacity-40" />
+    <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
+      <Icon className="w-6 h-6" />
     </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-      {title}
-    </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
-      {description}
-    </p>
+    <div className="flex-1">
+      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
+        {title}
+      </h3>
+      <p className="text-[13px] font-bold text-brand-950/70 dark:text-white/60 mb-6 italic leading-snug">
+        Outcome: {outcome}
+      </p>
+      <ul className="space-y-3 pt-6 border-t border-slate-100 dark:border-white/5 list-none">
+        {items.map((item, i) => (
+          <li key={i} className="flex items-start gap-3 group/item">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent/40 mt-1.5 flex-shrink-0" />
+            <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400 group-hover/item:text-brand-950 dark:group-hover/item:text-white transition-colors text-left">
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   </motion.div>
 );
 
-const DifferentiatorCard = ({ title, description, idx }: { title: string; description: string; idx: number }) => (
+const UseCaseCard = ({
+  title,
+  subtitle,
+  crux,
+  focusAreas,
+  outcome,
+  delay = 0,
+}: {
+  title: string;
+  subtitle: string;
+  crux: string;
+  focusAreas: string;
+  outcome: string;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
+  >
+    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-2 leading-tight group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    <p className="text-[15px] font-bold text-brand-950/70 dark:text-white/70 mb-8 leading-snug">
+      {subtitle}
+    </p>
+
+    <div className="space-y-6 mb-10 flex-1">
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
+          Crux
+        </h4>
+        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+          {crux}
+        </p>
+      </div>
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
+          Focus Areas
+        </h4>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+          {focusAreas}
+        </p>
+      </div>
+    </div>
+
+    <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+          <Target className="w-4 h-4 text-accent" />
+        </div>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+          <span className="text-accent uppercase tracking-wider mr-2 not-italic">
+            Outcome:
+          </span>
+          {outcome}
+        </p>
+      </div>
+    </div>
+  </motion.div>
+);
+
+const IndustryCard = ({
+  title,
+  description,
+  image,
+  delay = 0,
+}: {
+  title: string;
+  description: string;
+  image: string;
+  delay?: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.95 }}
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true }}
-    transition={{ delay: idx * 0.1 }}
-    className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full"
+    transition={{ delay }}
+    className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all h-full text-left group overflow-hidden rounded-[2.5rem] flex flex-col"
   >
-    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-      <CheckCircle2 className="w-6 h-6 text-accent" />
+    <div className="relative h-48 overflow-hidden">
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 to-transparent" />
     </div>
-    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
-      {title}
-    </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-      {description}
-    </p>
+    <div className="p-10 flex-1 flex flex-col">
+      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
+        {title}
+      </h3>
+      <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+        {description}
+      </p>
+    </div>
   </motion.div>
 );
 
 export const AgenticAIITSMPage = () => {
-    const caps = [
+  const capabilities = [
     {
-      title: "Intelligent Ticket Classification",
-      description: "Automatically categorizes, prioritizes, and tags incoming tickets using advanced natural language understanding.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "Smart Auto-Routing",
-      description: "Routes tickets to the right team or engineer based on skill, availability, and historical resolution patterns.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "Auto-Response Generation",
-      description: "Drafts high-quality first-responses, resolution steps, or escalation notes using private LLM engines.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "Ticket Summarization",
-      description: "Condenses long incident threads into concise, actionable summaries for rapid manager review.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "Root Cause Suggestions",
-      description: "Analyzes patterns across similar historical tickets to recommend likely root causes and fixes.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "SLA Breach Prediction",
-      description: "Flags at-risk tickets before breach occurs and triggers proactive alerts to team leads.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&w=800"
-    },
-  ];
-
-  const integrationOptions = [
-    {
-      category: "Supported Platforms",
+      title: "Capability 1 — Multi-Channel Request Intake",
+      outcome:
+        "Every employee channel, captured — unstructured conversation turned into structured action.",
       items: [
-        "ServiceNow",
-        "ManageEngine",
-        "Freshservice",
-        "BMC Remedy",
-        "Jira Service Management",
+        "Email systems and shared service-desk inboxes",
+        "Microsoft Teams and Slack integrations",
+        "ITSM portals and enterprise self-service interfaces",
+        "Enterprise chat surfaces and intranet widgets",
+        "Automatic conversion of unstructured requests into structured intents",
+        "Unified ticket context across every channel an employee uses",
       ],
+      icon: Search,
     },
     {
-      category: "Deployment Options",
+      title: "Capability 2 — AI Intent Classification Engine",
+      outcome:
+        "Advanced AI that understands what the employee actually needs — even when they don’t say it clearly.",
       items: [
-        "API-based integration",
-        "Browser-based overlay",
-        "Embedded chatbot interface",
+        "Identity & Access Management, Software, Network, Device, Email categorization",
+        "IT knowledge queries and routine service requests",
+        "Handles ambiguous, partial, and conversational requests",
+        "Context-aware multi-step issue understanding",
+        "Conversational follow-ups for missing information",
+        "Continuous AI learning from resolved tickets",
       ],
+      icon: Brain,
+    },
+    {
+      title: "Capability 3 — Autonomous Resolution Engine",
+      outcome:
+        "Agentic AI that doesn’t just respond — it executes real IT actions inside enterprise systems.",
+      items: [
+        "Password reset, account unlock, MFA reconfiguration",
+        "VPN enablement and connectivity troubleshooting",
+        "Approved software installation and patch management",
+        "Network diagnostics and system configuration steps",
+        "Shared mailbox access and email collaboration fixes",
+        "Built-in safeguards ensure every action follows enterprise policy",
+      ],
+      icon: Zap,
+    },
+    {
+      title: "Capability 4 — Security-First Governance Layer",
+      outcome:
+        "Enterprise security and policy enforcement built into every autonomous action.",
+      items: [
+        "Role-based access control (RBAC) on every workflow",
+        "Approval-driven execution for sensitive request types",
+        "Secure identity verification (OTP / MFA) before high-risk actions",
+        "Risk-tiered automation — autonomous for low-risk, gated for high-risk",
+        "Complete audit visibility on every AI-executed action",
+        "Compliance-ready operations for regulated industries",
+      ],
+      icon: ShieldCheck,
+    },
+    {
+      title: "Capability 5 — Intelligent Escalation Framework",
+      outcome:
+        "The AI knows what it can resolve — and exactly when to hand off to a human engineer.",
+      items: [
+        "Automatic escalation when AI confidence is low",
+        "Policy-violation detection routes ticket to L2 with context",
+        "Out-of-scope requests handed off without losing conversation history",
+        "Full audit trail of actions taken before escalation",
+        "Seamless L1 to L2 transitions with verification status preserved",
+        "Human judgment retained where it actually matters",
+      ],
+      icon: ArrowRightLeft,
+    },
+    {
+      title: "Capability 6 — Conversational Clarification AI",
+      outcome:
+        "When information is missing, the agent asks — instead of acting on incomplete requests.",
+      items: [
+        "Natural-language clarification dialogs with employees",
+        "Targeted follow-up questions when intent or detail is unclear",
+        "Prevents incorrect autonomous actions on ambiguous requests",
+        "Maintains a frictionless support experience without endless email loops",
+        "Multi-turn conversation memory across the same ticket",
+        "Auto-populates structured ticket fields from conversational answers",
+      ],
+      icon: MessageSquare,
+    },
+    {
+      title: "Capability 7 — Enterprise Knowledge & Self-Service AI",
+      outcome:
+        "Instant answers to IT knowledge queries — grounded in your enterprise knowledge base.",
+      items: [
+        "“How do I connect to VPN?” — answered instantly",
+        "“How do I install approved software?” — returns catalog steps",
+        "“What is the escalation process?” — returns your IT policy",
+        "AI-powered retrieval from internal knowledge bases and SOPs",
+        "Reduces L1 ticket creation by deflecting knowledge queries",
+        "Grounded responses with source traceability",
+      ],
+      icon: Database,
+    },
+    {
+      title: "Capability 8 — Automated Ticketing & Audit Trails",
+      outcome:
+        "Every interaction logged with full decision history — enterprise-grade governance.",
+      items: [
+        "Native integration with Jira, ServiceNow, and logging systems",
+        "Decision history captured for every AI action",
+        "Actions executed, verification steps, and approval trails logged",
+        "SLA tracking with automated status updates",
+        "Audit-ready records for regulated environments",
+        "Single source of truth across AI and human tickets",
+      ],
+      icon: BarChart3,
     },
   ];
 
-  const llmOptions = [
-    "Azure OpenAI",
-    "Private/On-prem LLM",
-    "Open-source (LLaMA, Mistral)",
+  const industries = [
+    {
+      title: "BFSI & Financial Services",
+      description:
+        "Secure identity, access, and audit-ready IT support automation for regulated banking operations.",
+      image: tiqImg("bfsi.jpg"),
+    },
+    {
+      title: "Healthcare",
+      description:
+        "Hospital and clinical IT support automation with secure workstation and application access management.",
+      image: tiqImg("healthcare.jpg"),
+    },
+    {
+      title: "Retail & E-Commerce",
+      description:
+        "Store, POS, and workforce IT support — automated onboarding, access, and connectivity resolution.",
+      image: tiqImg("retail-ecommerce.jpg"),
+    },
+    {
+      title: "IT & Technology Services",
+      description:
+        "Developer environment provisioning and enterprise shared service desk automation at scale.",
+      image: tiqImg("it-technology.jpg"),
+    },
+    {
+      title: "Manufacturing",
+      description:
+        "Plant and operations IT support — industrial workstation troubleshooting and OT-friendly workflows.",
+      image: tiqImg("manufacturing.jpg"),
+    },
+    {
+      title: "Logistics & Supply Chain",
+      description:
+        "Warehouse and distributed workforce IT support, endpoint troubleshooting, and role-based access.",
+      image: tiqImg("logistics.jpg"),
+    },
+    {
+      title: "Telecom",
+      description:
+        "Internal workforce IT support, network and collaboration resolution, and high-volume ticket handling.",
+      image: tiqImg("telecom.jpg"),
+    },
   ];
 
-  const deliverables = [
-    { label: "Reduction in manual triage time", value: "40-60%" },
-    { label: "Misrouted or duplicate tickets", value: "Fewer" },
-    { label: "First-response SLA compliance", value: "Faster" },
+  const steps = [
+    {
+      title: "Intake",
+      content:
+        "Employee requests are captured across email, Microsoft Teams, Slack, and portals — with channel-native context carried into the workflow.",
+      icon: Search,
+    },
+    {
+      title: "Classify",
+      content:
+        "AI intent classification interprets the request, resolves ambiguity through dialogue, and maps to the right action and risk tier.",
+      icon: Brain,
+    },
+    {
+      title: "Verify",
+      content:
+        "Governance gates check identity (MFA / OTP), policy rules, and approval requirements based on risk level.",
+      icon: ShieldCheck,
+    },
+    {
+      title: "Resolve",
+      content:
+        "Engine executes approved IT actions inside connected systems — password resets, VPN, etc. — through APIs.",
+      icon: Zap,
+    },
+    {
+      title: "Escalate",
+      content:
+        "Low-confidence requests or policy violations are escalated to L2 with full history and context preserved.",
+      icon: ArrowRightLeft,
+    },
+    {
+      title: "Audit",
+      content:
+        "Every interaction is logged into ITSM and audit systems — decision history, approvals, and SLA tracking captured.",
+      icon: BarChart3,
+    },
+  ];
+
+  const stack = [
+    {
+      title: "Identity & Access",
+      icon: Users,
+      content:
+        "Azure Active Directory · Okta · Active Directory · SailPoint · Custom IAM systems",
+    },
+    {
+      title: "Endpoint & Device Management",
+      icon: Computer,
+      content:
+        "Microsoft Intune · Jamf · SCCM · Workspace ONE · Custom endpoint platforms",
+    },
+    {
+      title: "Collaboration & Email",
+      icon: Globe,
+      content:
+        "Microsoft 365 · Exchange · Google Workspace · Outlook · Mail and calendar systems",
+    },
+    {
+      title: "Automation & Orchestration",
+      icon: Workflow,
+      content:
+        "REST APIs · Webhooks · PowerShell and scripting orchestration · RPA and workflow platforms",
+    },
+    {
+      title: "Knowledge Sources",
+      icon: Database,
+      content:
+        "Enterprise IT knowledge bases · SOPs and runbooks · SharePoint · Confluence · Internal documentation",
+    },
+    {
+      title: "Security & Compliance",
+      icon: ShieldCheck,
+      content:
+        "MFA / OTP verification · RBAC · Approval workflows · Audit logging · PII controls",
+    },
+    {
+      title: "Deployment Modes",
+      icon: Layers,
+      content:
+        "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated and government environments)",
+    },
+  ];
+
+  const useCases = [
+    {
+      title: "BFSI & Financial Services",
+      subtitle:
+        "Secure, governance-driven IT support automation for regulated banking operations.",
+      crux: "TicketIQ automates secure identity/access management, employee support, and access provisioning — keeping every action policy-governed and audit-defensible.",
+      focusAreas:
+        "Identity & Access · Employee IT Support · Governance-Driven Provisioning · Audit Readiness · Compliance",
+      outcome: "Faster L1 resolution · Audit-ready operations · Stronger access governance",
+    },
+    {
+      title: "Healthcare",
+      subtitle:
+        "Hospital and clinical IT support automation with secure access workflows.",
+      crux: "Automate hospital IT support, clinical application access, and device troubleshooting — reducing delays while maintaining strict identity and access controls.",
+      focusAreas:
+        "Hospital IT Support · Clinical App Access · Workstation Troubleshooting · Secure Workflows · IT Governance",
+      outcome: "Faster clinical IT support · Reduced workstation downtime · Secure access compliance",
+    },
+    {
+      title: "Retail & E-Commerce",
+      subtitle:
+        "Store and workforce IT support automation across distributed operations.",
+      crux: "TicketIQ resolves store IT issues, POS problems, and onboarding/access provisioning — keeping stores running without an in-store IT engineer.",
+      focusAreas:
+        "Store IT Support · POS Resolution · Network Troubleshooting · Onboarding Automation · Distributed Workforce",
+      outcome: "Higher store uptime · Faster onboarding · Reduced field IT cost",
+    },
+    {
+      title: "IT & Technology Services",
+      subtitle:
+        "Developer environment provisioning and shared service desk automation at scale.",
+      crux: "Automate developer setup, app/infra support, and service desk workflows — freeing IT engineers from repetitive work and accelerating enablement.",
+      focusAreas:
+        "Developer Environments · App & Infra Support · ITSM Automation · Shared Service Desk · Enterprise IT",
+      outcome: "Faster developer onboarding · Lower L1 load · Scalable IT operations",
+    },
+    {
+      title: "Manufacturing",
+      subtitle:
+        "Plant and operations IT support automation across industrial environments.",
+      crux: "TicketIQ provides plant IT support, workstation troubleshooting, and OT workflows — keeping plant systems running while respecting industrial constraints.",
+      focusAreas:
+        "Plant IT Support · Industrial Workstations · Device Management · OT Workflows · Operations Continuity",
+      outcome: "Reduced plant IT downtime · Faster issue resolution · OT-aware governance",
+    },
+    {
+      title: "Logistics & Supply Chain",
+      subtitle:
+        "Warehouse, endpoint, and distributed workforce IT support automation.",
+      crux: "Automate warehouse support, connectivity troubleshooting, and role-based access for distributed workers — keeping operations productive without expanding headcount.",
+      focusAreas:
+        "Warehouse IT · Endpoint Troubleshooting · Role-Based Access · Distributed Workforce · Field Support",
+      outcome: "Better logistics uptime · Scalable distributed support · Lower IT cost per worker",
+    },
+    {
+      title: "Telecom",
+      subtitle:
+        "Internal workforce IT support and high-volume ticket handling automation.",
+      crux: "TicketIQ handles internal workforce support, network/collaboration issue resolution, and high-volume ticket flows — creating an autonomous operations layer.",
+      focusAreas:
+        "Workforce IT · Network Resolution · Collaboration Support · Service Desk Automation · High-Volume Handling",
+      outcome: "Massive L1 deflection · Faster resolution at scale · Lower service desk cost",
+    },
   ];
 
   return (
     <div className="pt-[110px]">
-      {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
-         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <section className="relative py-40 px-6 overflow-hidden bg-brand-950">
+        <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        <div className="max-w-7xl mx-auto relative z-10 text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
           >
-            AI Accelerator
+            TICKETIQ
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-8 tracking-tight leading-[1.1]"
           >
-            Agentic AI for ITSM
+            TicketIQ
           </motion.h1>
-          <div className="max-w-4xl">
+          <div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
+              className="text-2xl md:text-3xl font-medium text-white mb-6 tracking-tight leading-tight"
             >
-              AI That Reads, Routes, Summarizes, and Resolves IT Tickets.
+              Autonomous IT Support. Faster Resolutions. Zero-Touch Operations.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -171,219 +515,326 @@ export const AgenticAIITSMPage = () => {
               transition={{ delay: 0.3 }}
               className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
             >
-              Transform your IT service desk from a ticket queue into a self-learning operations engine powered by private LLM deployment.
+              Agentic AI that resolves L1 IT tickets autonomously — understanding
+              intent, executing approved actions, and enforcing enterprise governance
+              from intake to audit. Built for IT teams ready to move from reactive
+              service desks to zero-touch IT operations, without compromising security
+              or control.
             </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Intro Section */}
       <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-5xl space-y-8 text-left">
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.1 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Techknomatic's Agentic AI for ITSM is an intelligent automation layer that integrates directly into your existing ticket management lifecycle. By applying advanced Large Language Models (LLMs) to incoming request streams, we eliminate the bottleneck of manual triage and first-level support, allowing your engineers to focus on high-impact problem solving.
-            </motion.p>
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Our solution doesn't just categorize; it understands intent, context, and historical resolution patterns. Whether it's drafting a precise resolution reply, identifying a massive incident by clustering similar requests, or predicting SLA breaches before they occur, our AI agent acts as a force multiplier for your IT operations team.
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
-      {/* Capabilities Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
             >
-              AGENT CAPABILITIES
+              The Enterprise IT Support Challenge
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+            >
+              Enterprise IT support is stuck in a loop the business can’t scale out
+              of. The vast majority of tickets flowing into service desks are
+              repetitive L1 work — password resets, account unlocks, VPN issues,
+              software installs, mailbox access — yet each ticket still consumes a
+              human agent, an hour or more of resolution time, and an employee’s
+              entire workflow until it’s closed. Service desks scale headcount to
+              keep up. Employees lose hours waiting on routine fixes. And the IT
+              teams who should be enabling transformation spend their best capacity
+              firefighting the same five requests every day. Traditional chatbots and
+              scripted automations promise to fix this — but break the moment a
+              request is ambiguous, requires real action inside enterprise systems, or
+              needs governance the business can defend.
+            </motion.p>
+          </div>
+
+          <div className="grid lg:grid-cols-5 gap-20 items-start">
+            <div className="lg:col-span-3">
+              <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
+                <img
+                  src={tiqImg("challenge.jpg")}
+                  alt="IT Operations Center"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent" />
+                <div className="absolute bottom-10 left-10 right-10 text-left">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[11px] font-black tracking-widest text-white uppercase bg-accent rounded-full">
+                    Impact Framing
+                  </div>
+                  <p className="text-lg font-bold text-white leading-relaxed italic">
+                    The result: ticket backlogs, slower response and resolution times,
+                    rising operational cost, overloaded support teams, and degraded
+                    employee experience — while capacity that should fund
+                    modernization gets spent on repetitive work.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-2 space-y-6">
+              <div className="mb-10 text-left">
+                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight uppercase tracking-tight">
+                  Common Operational Pain Points
+                </h3>
+                <div className="w-12 h-1 bg-accent rounded-full" />
+              </div>
+              <ul className="space-y-4">
+                {[
+                  "High volumes of repetitive L1 tickets",
+                  "Manual triaging and classification delays",
+                  "Endless clarification loops with employees",
+                  "Slow resolution times for routine issues",
+                  "Rising service desk operational costs",
+                  "Overloaded teams unable to focus on strategy",
+                  "Poor employee experience and productivity loss",
+                  "Scripted chatbots that fail on ambiguity",
+                ].map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 + i * 0.05 }}
+                    className="flex items-start gap-3 group list-none text-left"
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <p className="text-[17px] font-bold text-brand-950 dark:text-white leading-tight">
+                      {item}
+                    </p>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-[120px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              What TicketIQ Solves
             </motion.h2>
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="text-xl md:text-2xl font-bold text-brand-950 dark:text-white mb-6 leading-tight uppercase tracking-tight"
             >
-              What the Agent Does
+              From reactive support → autonomous IT operations. Intake. Classify.
+              Verify. Resolve. Audit.
             </motion.h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caps.map((it, idx) => (
-              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Integrates Section */}
-      <section className="py-32 px-6 bg-[#F8F9FA] dark:bg-brand-900 overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
-              How It Integrates
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
-            {integrationOptions.map((option, i) => (
-              <div key={i} className="space-y-6">
-                <h3 className="text-2xl font-bold text-brand-950 dark:text-white">
-                  {option.category}
-                </h3>
-                <div className="space-y-4">
-                  {option.items.map((item, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1 }}
-                      className="flex items-center gap-3 text-slate-600 dark:text-slate-300 font-medium"
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-accent" />
-                      {item}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-8 bg-blue-50/50 dark:bg-white/5 border border-blue-100 dark:border-white/10 rounded-[2rem]"
-          >
-            <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-6 uppercase tracking-widest text-center">
-              LLM Options
-            </h4>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {llmOptions.map((llm, i) => (
-                <span
-                  key={i}
-                  className="px-6 py-2 bg-white dark:bg-white/10 text-accent font-bold text-sm rounded-full shadow-sm border border-slate-100 dark:border-white/10"
-                >
-                  {llm}
-                </span>
-              ))}
-            </div>
-            <p className="text-center text-slate-500 dark:text-slate-400 font-medium">
-              Works as an intelligent layer on top of your existing ITSM
-              platform — no rip-and-replace required.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* What It Delivers Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-20">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
-            >
-              Business Impact
-            </motion.h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {deliverables.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-slate-50 dark:bg-white/5 p-12 rounded-[4rem] text-center border border-slate-100 dark:border-white/5"
-              >
-                <div className="text-5xl md:text-7xl font-black text-accent mb-6 tracking-tighter">
-                  {stat.value}
-                </div>
-                <div className="text-[14px] font-bold text-slate-500 dark:text-slate-400 leading-tight">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <p className="text-center text-slate-400 dark:text-slate-500 font-medium">
-            Institutional knowledge captured and reused by the AI • Real-time visibility into ticket health
-          </p>
-        </div>
-      </section>
-
-      {/* Engagement Models Section */}
-      <section className="py-[120px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
-          <div className="mb-16">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
-            >
-              Delivery Approach
-            </motion.h2>
-            <motion.p 
+            <div className="w-20 h-1.5 bg-accent rounded-full mb-10" />
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-white/60 font-medium max-w-2xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
             >
-              Structured frameworks for LLM integration into enterprise ITSM platforms.
+              TicketIQ is an agentic AI ITSM platform that autonomously manages and
+              resolves L1 IT tickets across the enterprise. It captures requests from
+              email, Teams, Slack, and portals; classifies intent; verifies identity;
+              and executes approved actions inside connected systems — ensuring
+              security, consistency, and traceability.
             </motion.p>
           </div>
-          
-          <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
-            {[
-              { step: "01", title: "Discovery", description: "Analyzing ticket volume and distribution patterns." },
-              { step: "02", title: "PoC", description: "Deploying the agent on a specific sub-queue for testing." },
-              { step: "03", title: "Integration", description: "Full API-level wiring with your ITSM platform." },
-              { step: "04", title: "Optimization", description: "Fine-tuning prompts based on domain-specific data." },
-              { step: "05", title: "Scale", description: "Global rollout across all support tiers and regions." }
-            ].map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative flex-1 min-w-[240px] p-8 rounded-[2.5rem] bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group"
-              >
-                <div className="absolute top-8 right-8 text-4xl font-black text-white/5 group-hover:text-accent/20 transition-colors">
-                  {step.step}
-                </div>
-                <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-12 transition-transform">
-                  <RefreshCw className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="text-[13px] font-medium text-white/40 leading-relaxed italic px-2 border-l-2 border-accent/20">
-                  {step.description}
-                </p>
-              </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {capabilities.map((it, idx) => (
+              <CapabilityCard key={idx} {...it} delay={idx * 0.05} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              Industries We Serve
+            </motion.h2>
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 italic"
+            >
+              Purpose-built for enterprises with high-volume IT service desks —
+              wherever repetitive L1 tickets, governance demands, and scaling pressure
+              collide.
+            </motion.h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+            {industries.map((industry, idx) => (
+              <IndustryCard key={idx} {...industry} delay={idx * 0.05} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-[120px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              How TicketIQ Works
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+            >
+              TicketIQ is built as a layered agentic AI architecture purpose-built for
+              IT operations. It captures requests across employee channels, classifies
+              intent, verifies identity and policy, executes approved workflows via
+              APIs, escalates intelligently, and logs every step into ITSM and audit
+              systems.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {steps.map((step, idx) => {
+              const Icon = step.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative"
+                >
+                  <div className="absolute top-0 right-0 p-8">
+                    <span className="text-4xl font-black text-slate-100 dark:text-white/5">
+                      0{idx + 1}
+                    </span>
+                  </div>
+                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 text-accent group-hover:scale-110 transition-transform">
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
+                    {step.title}
+                  </h3>
+                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+                    {step.content}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              Built to Plug Into Your Enterprise IT Stack
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+            >
+              TicketIQ is designed as an ITSM-native, integration-flexible platform.
+              Whether your docs are in SharePoint or Confluence, your endpoints in
+              Intune or Jamf, and your service desk in ServiceNow or Jira — TicketIQ
+              connects through pre-built integrations and APIs to take autonomous
+              action.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {stack.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                  className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-accent/30 transition-all flex flex-col"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-6 text-accent">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-[17px] font-bold text-brand-950 dark:text-white mb-3 group-hover:text-accent transition-colors tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {item.content}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-[120px] px-6 bg-slate-50 dark:bg-white/5 text-left">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              Use Cases
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium italic"
+            >
+              Seven industry-specific deployments where TicketIQ is replacing manual
+              L1 IT support with autonomous, governance-driven AI resolution.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 text-left">
+            {useCases.map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} delay={idx * 0.1} />
             ))}
           </div>
         </div>
