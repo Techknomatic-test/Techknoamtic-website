@@ -109,7 +109,6 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         referrerPolicy="no-referrer"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-brand-950/20 to-transparent opacity-40" />
     </div>
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
@@ -289,17 +288,15 @@ export const DataEngineeringPage = () => {
           <img
             src={DE_HERO_IMG}
             alt=""
-            className="absolute inset-0 z-0 w-full h-full object-cover object-center opacity-50 scale-105"
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
             aria-hidden
           />
           <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-[#020617]/80 via-[#020617]/55 to-[#020617]/88"
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
             aria-hidden
           />
-          <div className="absolute z-[1] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" aria-hidden />
-          <div className="absolute bottom-0 right-0 z-[1] w-96 h-96 bg-accent/5 rounded-full blur-[100px]" aria-hidden />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        <div className="max-w-6xl mx-auto relative z-10 text-left drop-shadow-md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -328,7 +325,7 @@ export const DataEngineeringPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed"
             >
               Modern cloud-native data platforms — engineered for analytics, AI, and enterprise scale
             </motion.p>
@@ -420,24 +417,20 @@ export const DataEngineeringPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group"
+              className="relative aspect-square rounded-[3rem] bg-slate-100 dark:bg-white/5 overflow-hidden group ring-1 ring-slate-200/80 dark:ring-white/10"
             >
               <img
                 src={DE_TOOLS_IMG}
                 alt=""
-                className="absolute inset-0 z-0 w-full h-full object-cover opacity-40 dark:opacity-30 transition-opacity duration-500 group-hover:opacity-50 dark:group-hover:opacity-40"
+                className="absolute inset-0 z-0 h-full w-full object-cover"
                 aria-hidden
               />
-              <div
-                className="absolute inset-0 z-[1] bg-gradient-to-br from-white/90 via-white/45 to-transparent dark:from-brand-950/90 dark:via-brand-950/55 dark:to-transparent"
-                aria-hidden
-              />
-               <div className="absolute inset-x-0 bottom-0 top-[20%] z-10 p-12 bg-gradient-to-t from-accent/25 dark:from-accent/15 to-transparent flex flex-col justify-end">
-                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-900 shadow-2xl flex items-center justify-center mb-8 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500" id="monitor_icon">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-white via-white/90 to-transparent p-12 pt-28 dark:from-brand-950 dark:via-brand-950/92 dark:to-transparent">
+                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-900 shadow-xl flex items-center justify-center mb-8 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500 ring-1 ring-slate-200/60 dark:ring-white/10" id="monitor_icon">
                   <Monitor className="w-8 h-8 text-accent" />
                 </div>
                 <h4 className="text-2xl font-bold text-brand-950 dark:text-white mb-2">Platform Agnostic</h4>
-                <p className="text-slate-500 dark:text-slate-400 font-medium">Built for flexibility and performance.</p>
+                <p className="text-slate-600 dark:text-slate-400 font-medium">Built for flexibility and performance.</p>
               </div>
             </motion.div>
             
