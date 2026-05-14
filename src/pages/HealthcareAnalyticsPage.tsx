@@ -52,32 +52,32 @@ export const HealthcareAnalyticsPage = () => {
     {
       title: "Patient Journey Analytics",
       description: "Analyze the end-to-end patient lifecycle to improve outcomes and reduce operational friction.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1576091160550-2173dba999ef.jpg"
     },
     {
       title: "Clinical Decision Support",
       description: "Real-time AI insights to assist clinicians with diagnostic accuracy and treatment planning.",
-      image: "https://images.unsplash.com/photo-1579154238328-341efef8008d?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1579154238328-341efef8008d.jpg"
     },
     {
       title: "Population Health Mgmt",
       description: "Identify at-risk populations and optimize preventative care strategies across communities.",
-      image: "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1526256262350-7da7584cf5eb.jpg"
     },
     {
       title: "Operational Efficiency",
       description: "Optimize hospital staffing, bed utilization, and emergency room throughput with predictive models.",
-      image: "https://images.unsplash.com/photo-1519494140681-891f9302e4eb?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1519494140681-891f9302e4eb.jpg"
     },
     {
       title: "Revenue Cycle Analytics",
       description: "Minimize claims denials and optimize billing cycles through automated data reconciliation.",
-      image: "https://images.unsplash.com/photo-1454165833762-b104c18c942e?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1454165833762-b104c18c942e.jpg"
     },
     {
       title: "Adherence & Remote Care",
       description: "Monitor patient adherence and vitals through integrated IoT and wearable data streams.",
-      image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1559757175-5700dde675bc.jpg"
     }
   ];
 

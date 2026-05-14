@@ -308,33 +308,33 @@ export const CallOpsAiPage = () => {
       title: 'Telephony & Channel Layer',
       description:
         'Calls flow in/out via SIP, cloud telephony, and CCaaS integrations — supporting inbound queues and outbound dialers.',
-      image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800',
+      image: 'Images/stock/photo-1516321497487-e288fb19713f.jpg',
     },
     {
       title: 'Speech-to-Text (ASR)',
       description: 'Real-time speech recognition converts customer voice into text with low latency and accent adaptability.',
-      image: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=800',
+      image: 'Images/stock/photo-1589254065878-42c9da997008.jpg',
     },
     {
       title: 'NLU & Intent Engine',
       description: 'AI models detect intent, entities, and conversational context — driving the next best action.',
-      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800',
+      image: 'Images/stock/photo-1550751827-4bd374c3f58b.jpg',
     },
     {
       title: 'Reasoning & Generation',
       description: 'LLM-powered reasoning generates context-aware, human-like responses across multi-turn conversations.',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
+      image: 'Images/stock/photo-1677442136019-21780ecad995.jpg',
     },
     {
       title: 'Action & Workflow Layer',
       description:
         'AI agent executes business workflows — CRM updates, scheduling, ticket creation, payment links, escalations.',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800',
+      image: 'Images/stock/photo-1451187580459-43490279c0fa.jpg',
     },
     {
       title: 'Text-to-Speech (TTS) & Delivery',
       description: 'Natural-sounding voice synthesis delivers the response in real time, completing the conversational loop.',
-      image: 'https://images.unsplash.com/photo-1478737270239-2fccd27ee8fb?auto=format&fit=crop&q=80&w=800',
+      image: 'Images/stock/photo-1478737270239-2fccd27ee8fb.jpg',
     },
   ];
 
@@ -457,7 +457,7 @@ export const CallOpsAiPage = () => {
               className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200"
+                src="Images/stock/photo-1542744173-8e7e53415bb0.jpg"
                 alt="Call Center Operations"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

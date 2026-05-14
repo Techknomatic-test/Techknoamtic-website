@@ -53,32 +53,32 @@ export const FreightIQPage = () => {
     {
       title: "Real-Time Tracking",
       description: "End-to-end visibility of freight movement across air, sea, and road with live GPS integration.",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1586528116311-ad8dd3c8310d.jpg"
     },
     {
       title: "Route Optimization",
       description: "AI-driven route selection to minimize fuel consumption and delivery lead times.",
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1544620347-c4fd4a3d5957.jpg"
     },
     {
       title: "Predictive Analytics",
       description: "Identify potential delays before they happen based on weather, port congestion, and traffic patterns.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1519389950473-47ba0277781c.jpg"
     },
     {
       title: "Warehouse Efficiency",
       description: "Digital twin of warehouse operations to optimize inventory placement and picking paths.",
-      image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1587293852726-70cdb56c2866.jpg"
     },
     {
       title: "Carrier Management",
       description: "Benchmark carrier performance and costs to ensure optimal logistics partnership procurement.",
-      image: "https://images.unsplash.com/photo-1620054319806-25805562723c?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1620054319806-25805562723c.jpg"
     },
     {
       title: "Sustainable Logistics",
       description: "Track and optimize your carbon footprint across the entire supply chain with ESG reporting.",
-      image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1473341304170-971dccb5ac1e.jpg"
     }
   ];
 

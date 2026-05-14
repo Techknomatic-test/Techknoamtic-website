@@ -70,32 +70,32 @@ export const AgenticAIITSMPage = () => {
     {
       title: "Intelligent Ticket Classification",
       description: "Automatically categorizes, prioritizes, and tags incoming tickets using advanced natural language understanding.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1516321318423-f06f85e504b3.jpg"
     },
     {
       title: "Smart Auto-Routing",
       description: "Routes tickets to the right team or engineer based on skill, availability, and historical resolution patterns.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1551288049-bbda38a10ad5.jpg"
     },
     {
       title: "Auto-Response Generation",
       description: "Drafts high-quality first-responses, resolution steps, or escalation notes using private LLM engines.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1485827404703-89b55fcc595e.jpg"
     },
     {
       title: "Ticket Summarization",
       description: "Condenses long incident threads into concise, actionable summaries for rapid manager review.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1460925895917-afdab827c52f.jpg"
     },
     {
       title: "Root Cause Suggestions",
       description: "Analyzes patterns across similar historical tickets to recommend likely root causes and fixes.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1558494949-ef010cbdcc4b.jpg"
     },
     {
       title: "SLA Breach Prediction",
       description: "Flags at-risk tickets before breach occurs and triggers proactive alerts to team leads.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1551288049-bbda38a10ad5.jpg"
     },
   ];
 

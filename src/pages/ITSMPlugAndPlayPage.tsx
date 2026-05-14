@@ -50,32 +50,32 @@ export const ITSMPlugAndPlayPage = () => {
     {
       title: "20+ Pre-Built Dashboards",
       description: "Incident management, SLA tracking, change & service requests, asset CMDB, team productivity, and vendor performance.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1551288049-bbda38a10ad5.jpg"
     },
     {
       title: "Supported Platforms",
       description: "ServiceNow, ManageEngine, Freshservice, BMC Remedy, Jira Service Management.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1558494949-ef010cbdcc4b.jpg"
     },
     {
       title: "Power BI Output",
       description: "Reports ready to publish to your Power BI Service with seamless integration.",
-      image: "https://images.unsplash.com/photo-1543286386-2e6713cf67ad?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1543286386-2e6713cf67ad.jpg"
     },
     {
       title: "Role-Based Views",
       description: "CIO executive summary, IT Manager operational view, L1/L2 team performance.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1552664730-d307ca884978.jpg"
     },
     {
       title: "Automated Reports",
       description: "Scheduled weekly/daily report delivery to stakeholders via email.",
-      image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1557200134-90327ee9fafa.jpg"
     },
     {
       title: "SLA Breach Alerts",
       description: "Email/Teams notifications for at-risk tickets before SLA breach occurs.",
-      image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1551033406-611cf9a28f67.jpg"
     },
   ];
 

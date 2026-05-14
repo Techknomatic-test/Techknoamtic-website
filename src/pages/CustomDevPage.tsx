@@ -74,32 +74,32 @@ export const CustomDevPage = () => {
     {
       title: "Custom BI Portals",
       description: "White-labelled analytics portals embedded in your enterprise applications using React, Angular, Power BI Embedded, or Qlik Mashups.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1551288049-bbda38a10ad5.jpg"
     },
     {
       title: "AI-Powered Tools",
       description: "Custom LLM applications, chatbots, document processors, and decision assistants tailored to your high-value workflows.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1485827404703-89b55fcc595e.jpg"
     },
     {
       title: "Data Integration Apps",
       description: "Custom ETL tools, data sync utilities, and connector APIs between niche or legacy systems ensuring data continuity.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1558494949-ef010cbdcc4b.jpg"
     },
     {
       title: "Mobile Analytics Apps",
       description: "Offline-capable field tools for sales reps, inspectors, and plant operators needing real-time spatial insights.",
-      image: "https://images.unsplash.com/photo-1512428559087-56096ce17540?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1512428559087-56096ce17540.jpg"
     },
     {
       title: "Workflow Automation",
       description: "Custom dashboards with writeback capability, multi-level approval flows, and intelligent alerting logic.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1460925895917-afdab827c52f.jpg"
     },
     {
       title: "Geo-Intelligence Apps",
       description: "Map-based spatial tools with custom layers, filters, and field inputs for field force execution.",
-      image: "https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1542435503-956c469947f6.jpg"
     },
   ];
 

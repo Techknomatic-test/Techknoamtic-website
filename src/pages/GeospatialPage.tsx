@@ -204,32 +204,32 @@ export const GeospatialPage = () => {
     {
       title: "ArcGIS Platform Implementation",
       description: "Full-stack ArcGIS implementation across Enterprise, Online, and Pro for enterprise-grade GIS environments",
-      image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1526778548025-fa2f459cd5c1.jpg"
     },
     {
       title: "Geo-Dashboards & Visualisations",
       description: "Interactive map visualisations built in ArcGIS, Power BI Maps, Tableau, and Qlik.",
-      image: "https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1542435503-956c469947f6.jpg"
     },
     {
       title: "Field Operations & Mobile GIS",
       description: "ArcGIS Field Maps and Survey123 for real-time field data collection and asset management",
-      image: "https://images.unsplash.com/photo-1512428559087-56096ce17540?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1512428559087-56096ce17540.jpg"
     },
     {
       title: "Location Data Integration",
       description: "Seamless integration with SAP, Salesforce, IoT systems, and external geodata sources",
-      image: "https://images.unsplash.com/photo-1551288049-bbda4e38f71?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1551288049-bbda4e38f71.jpg"
     },
     {
       title: "Route Optimisation & Territory Planning",
       description: "Data-driven territory design and route optimisation for sales, service, and logistics teams",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1519389950473-47ba0277781c.jpg"
     },
     {
       title: "Spatial Risk & Pattern Detection",
       description: "Heatmaps, fraud clustering, and spatial pattern analysis for risk management and underwriting",
-      image: "https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1576085898323-218337e3e43c.jpg"
     },
   ];
 

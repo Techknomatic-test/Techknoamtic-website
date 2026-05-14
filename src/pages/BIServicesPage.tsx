@@ -73,32 +73,32 @@ export const BIServicesPage = () => {
     {
       title: "BI Roadmap & Architecture",
       description: "Ensuring secure, compliant, and trusted data environments through advanced access controls, audit trails, and scalable governance frameworks.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1460925895917-afdab827c52f.jpg"
     },
     {
       title: "Data Engineering",
       description: "Architecting modern data ecosystems with seamless ingestion, transformation, and orchestration — ensuring data is accurate, accessible, and ready for scale.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1558494949-ef010cbdcc4b.jpg"
     },
     {
       title: "Dashboard Design & Development",
       description: "Insight-driven dashboards crafted through Figma-led prototyping and delivered on Power BI, Tableau, Qlik, or custom tech stacks.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1551288049-bbda38a10ad5.jpg"
     },
     {
       title: "BI Governance & Security",
       description: "Row-level security, audit logging, and governance frameworks that enterprise security teams trust.",
-      image: "https://images.unsplash.com/photo-1454165833762-b104c18c942e?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1454165833762-b104c18c942e.jpg"
     },
     {
       title: "Market Insight Portals",
       description: "White-labeled analytics portals embedded in your applications. Self-service BI for business users and stakeholders.",
-      image: "https://images.unsplash.com/photo-1543286386-2e6713cf67ad?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1543286386-2e6713cf67ad.jpg"
     },
     {
       title: "Support, Training & CoE Setup",
       description: "Ongoing support, user training, and BI Center of Excellence setup for sustained adoption and data literacy.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1552664730-d307ca884978.jpg"
     },
   ];
 

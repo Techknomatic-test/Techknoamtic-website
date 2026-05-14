@@ -68,32 +68,32 @@ export const HRPortalPage = () => {
     {
       title: "Employee Self-Service",
       description: "Allow employees to manage their own profiles, leaves, and documents without HR intervention.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1551288049-bbda38a10ad5.jpg"
     },
     {
       title: "Leave & Attendance",
       description: "Real-time tracking of time-off, shifts, and attendance with automated approval workflows.",
-      image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1506784983877-45594efa4cbe.jpg"
     },
     {
       title: "Performance Management",
       description: "Structured OKRs, 360-degree feedback, and continuous performance monitoring for growth.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1460925895917-afdab827c52f.jpg"
     },
     {
       title: "Payroll Integration",
       description: "Seamless synchronization with payroll systems for accurate salary and benefit processing.",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1554224155-6726b3ff858f.jpg"
     },
     {
       title: "Compliance & Security",
       description: "Secure storage of employee data with role-based access control and detailed audit logs.",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1550751827-4bd374c3f58b.jpg"
     },
     {
       title: "Internal Communication",
       description: "Centralized hub for company announcements, policies, and meaningful employee engagement.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800"
+      image: "Images/stock/photo-1516321318423-f06f85e504b3.jpg"
     },
   ];
 

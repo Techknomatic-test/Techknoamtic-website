@@ -56,32 +56,32 @@ export const DataGuardPage = () => {
     {
       title: "Data Quality Monitoring",
       description: "Automated profiling, validation rules, and anomaly detection across your entire data estate.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1551288049-bbda38a10ad5.jpg"
     },
     {
       title: "AI Recommendations",
       description: "ML-powered suggestions for data quality improvements based on patterns and context.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1677442136019-21780ecad995.jpg"
     },
     {
       title: "Autonomous Data Agent",
       description: "AI agent that automatically fixes common data issues, validates corrections, and escalates complex problems.",
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fdecce1?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1531746790731-6c087fdecce1.jpg"
     },
     {
       title: "Business Rule Management",
       description: "Define, manage, and enforce business rules for data quality without coding.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1460925895917-afdab827c52f.jpg"
     },
     {
       title: "Data Governance",
       description: "Catalog, lineage, metadata management, and stewardship workflows.",
-      image: "https://images.unsplash.com/photo-1454165833762-b104c18c942e?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1454165833762-b104c18c942e.jpg"
     },
     {
       title: "Collaboration & Alerts",
       description: "Automated alerts, issue assignment, and resolution tracking for data teams.",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1551434678-e076c223a692.jpg"
     },
   ];
 

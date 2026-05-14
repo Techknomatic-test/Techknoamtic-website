@@ -195,7 +195,7 @@ const HeroVisual = () => {
                   className="w-7 h-7 rounded-full bg-slate-100 dark:bg-white/10 border-2 border-white dark:border-brand-900 overflow-hidden"
                 >
                   <img
-                    src={`https://i.pravatar.cc/100?u=tech${i}`}
+                    src={`Images/avatars/tech-${i}.jpg`}
                     alt="user"
                     className="w-full h-full object-cover"
                   />
@@ -843,7 +843,7 @@ const TestimonialsSection = () => {
       role: "CTO",
       company: "Stratum Logistics",
       text: "Techknomatic didn't just build us a dashboard; they built us a decision architecture. Knew how to respect our several constraints and collaborate with all our departments.",
-      image: "https://i.pravatar.cc/150?u=marcus",
+      image: "Images/avatars/person-marcus.jpg",
       logo: "STRATUM",
     },
     {
@@ -852,7 +852,7 @@ const TestimonialsSection = () => {
       role: "Head of Data",
       company: "Oasis Energy",
       text: "We had the chance to work with them four times on various projects. What we liked was their swiftness and the great quality of their design that will always get you that 'wow' effect.",
-      image: "https://i.pravatar.cc/150?u=sarah",
+      image: "Images/avatars/person-sarah.jpg",
       logo: "OASIS",
     },
     {
@@ -861,7 +861,7 @@ const TestimonialsSection = () => {
       role: "VP of Analytics",
       company: "Nexus Bank",
       text: "Creativity, Reactivity and always a very pleasant and attentive team. Enterprise-grade governance was delivered secure and scalable exactly as we wanted.",
-      image: "https://i.pravatar.cc/150?u=arjun",
+      image: "Images/avatars/person-arjun.jpg",
       logo: "NEXUS",
     },
     {
@@ -870,7 +870,7 @@ const TestimonialsSection = () => {
       role: "Director of IT",
       company: "Global Retail",
       text: "Their ability to translate complex business requirements into sleek, actionable visualizations is unparalleled. They are truly partners in our digital journey.",
-      image: "https://i.pravatar.cc/150?u=elena",
+      image: "Images/avatars/person-elena.jpg",
       logo: "GLOBAL",
     },
   ];

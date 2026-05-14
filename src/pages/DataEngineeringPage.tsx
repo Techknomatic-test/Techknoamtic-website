@@ -201,32 +201,32 @@ export const DataEngineeringPage = () => {
     {
       title: "ETL/ELT Pipelines & Automation",
       description: "Reliable, scalable pipelines built with Talend, Azure Data Factory, Informatica, dbt, and Python.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1558494949-ef010cbdcc4b.jpg"
     },
     {
       title: "Cloud & Platform Setup",
       description: "Modern data platforms on Azure Synapse, Snowflake, Databricks, and Redshift — engineered to scale",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1451187580459-43490279c0fa.jpg"
     },
     {
       title: "Salesforce Cloud Integration",
       description: "Seamless Salesforce data integration to power a unified enterprise customer view",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1552664730-d307ca884978.jpg"
     },
     {
       title: "Metadata & Master Data Management",
       description: "Trusted data assets through MDM, metadata governance, and enterprise data catalogs",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1504384308090-c894fdcc538d.jpg"
     },
     {
       title: "Real-Time & IoT Engineering",
       description: "Streaming pipelines on Kafka, Event Hubs, and Spark Streaming for low-latency insights",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1518770660439-4636190af475.jpg"
     },
     {
       title: "Data Quality & Governance",
       description: "Automated quality checks, cleansing routines, and governance frameworks for trusted data.",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1563986768609-322da13575f3.jpg"
     },
   ];
 

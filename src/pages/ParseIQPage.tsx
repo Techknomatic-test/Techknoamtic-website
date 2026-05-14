@@ -203,37 +203,37 @@ export const ParseIQPage = () => {
       num: "01", 
       title: "APIs & Developer Access", 
       description: "REST APIs · Webhooks · Batch endpoints · SDK access",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1555066931-4365d14bab8c.jpg"
     },
     { 
       num: "02", 
       title: "ERP Systems", 
       description: "SAP · Oracle · Microsoft Dynamics · NetSuite",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1460925895917-afdab827c52f.jpg"
     },
     { 
       num: "03", 
       title: "CRM Platforms", 
       description: "Salesforce · HubSpot · Zoho",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1552664730-d307ca884978.jpg"
     },
     { 
       num: "04", 
       title: "Workflow & Automation Engines", 
       description: "Camunda · Power Automate · Custom BPM tools",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1518770660439-4636190af475.jpg"
     },
     { 
       num: "05", 
       title: "Document Management Systems", 
       description: "SharePoint · Box · OpenText · Custom DMS",
-      image: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1568667256549-094345857637.jpg"
     },
     { 
       num: "06", 
       title: "Deployment Modes", 
       description: "Cloud · On-premise · Hybrid · Private VPC",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+      image: "Images/stock/photo-1451187580459-43490279c0fa.jpg"
     }
   ];
 
@@ -312,7 +312,7 @@ export const ParseIQPage = () => {
               className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1586282391129-56a992ad338c?auto=format&fit=crop&q=80&w=1200" 
+                src="Images/stock/photo-1586282391129-56a992ad338c.jpg" 
                 alt="Document Challenge" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -403,7 +403,7 @@ export const ParseIQPage = () => {
               className="relative aspect-[4/3] rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden shadow-2xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1544391682-17ef1f356b44?auto=format&fit=crop&q=80&w=1200" 
+                src="Images/stock/photo-1544391682-17ef1f356b44.jpg" 
                 alt="Architecture" 
                 className="w-full h-full object-cover p-12 opacity-50"
                 referrerPolicy="no-referrer"

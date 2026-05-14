@@ -268,42 +268,42 @@ export const CareersPage = () => {
               title="Real Consulting Exposure"
               desc="Work directly with business stakeholders, driving strategy rather than just backend execution."
               delay={0.1}
-              image="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80"
+              image="Images/stock/photo-1542838132-92c53300491e.jpg"
             />
             <WhyTechkoCard
               icon={TrendingUp}
               title="Fast Career Growth"
               desc="Accelerated learning paths across BI, Data Engineering & AI foundations for rapid progression."
               delay={0.2}
-              image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+              image="Images/stock/photo-1460925895917-afdab827c52f.jpg"
             />
             <WhyTechkoCard
               icon={Globe}
               title="Global Client Exposure"
               desc="Deliver high-impact projects across India, Middle East, USA, and other global markets."
               delay={0.3}
-              image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
+              image="Images/stock/photo-1451187580459-43490279c0fa.jpg"
             />
             <WhyTechkoCard
               icon={Zap}
               title="Ownership from Day One"
               desc="Solve real business problems with full accountability, not just closing development tickets."
               delay={0.4}
-              image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
+              image="Images/stock/photo-1581091226825-a6a2a5aee158.jpg"
             />
             <WhyTechkoCard
               icon={Brain}
               title="Skill Compounding"
               desc="Learn the intersection of technical tools, business context, and visual storytelling."
               delay={0.5}
-              image="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80"
+              image="Images/stock/photo-1544620347-c4fd4a3d5957.jpg"
             />
             <WhyTechkoCard
               icon={Star}
               title="Elite Peer Group"
               desc="Collaborate with some of the sharpest minds in the data and analytics ecosystem."
               delay={0.6}
-              image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+              image="Images/stock/photo-1522071820081-009f0129c71c.jpg"
             />
           </div>
         </div>
@@ -384,14 +384,14 @@ export const CareersPage = () => {
                 roles: ["BI Developer", "Data Analyst", "Dashboard Engineer"],
                 icon: Zap,
                 image:
-                  "https://images.unsplash.com/photo-1541872703-74c5e44368f1?auto=format&fit=crop&w=600&q=80",
+                  "Images/stock/photo-1541872703-74c5e44368f1.jpg",
               },
               {
                 level: "Mid-Level (2–5 Years)",
                 roles: ["Senior Analyst", "BI Consultant", "Data Engineer"],
                 icon: Briefcase,
                 image:
-                  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
+                  "Images/stock/photo-1581091226825-a6a2a5aee158.jpg",
               },
               {
                 level: "Experienced (5+ Years)",
@@ -402,7 +402,7 @@ export const CareersPage = () => {
                 ],
                 icon: Users,
                 image:
-                  "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80",
+                  "Images/stock/photo-1436491865332-7a61a109cc05.jpg",
               },
             ].map((track, i) => (
               <motion.div
