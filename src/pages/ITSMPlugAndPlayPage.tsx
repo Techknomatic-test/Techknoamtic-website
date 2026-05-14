@@ -1,338 +1,766 @@
-import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import type { LucideIcon } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
-  Layout,
-  ArrowRight,
-  CheckCircle2,
-  Database,
-  Zap,
-  Clock,
-  Users,
-  ShieldAlert,
   BarChart,
-  FileText,
-  Mail,
-  Bell,
-  Monitor,
-  RefreshCw
+  CheckCircle,
+  Cloud,
+  Database,
+  LayoutDashboard,
+  Lock,
+  MessageSquare,
+  Network,
+  RefreshCw,
+  Server,
+  ShieldCheck,
+  Workflow,
+  Zap,
 } from "lucide-react";
 
-const CapabilityCard = ({ title, description, image, delay = 0 }: { title: string; description: string; image: string; delay?: number }) => (
+const IMG = (slug: string) => `Images/stock/photo-${slug}.jpg`;
+
+/** Rotating art for stack / connector cards */
+const CONNECTOR_IMAGES = [
+  IMG("1551288049-bbda4e38f71"),
+  IMG("1558494949-ef010cbdcc4b"),
+  IMG("1518770660439-4636190af475"),
+  IMG("1550751827-4bd374c3f58b"),
+  IMG("1563986768609-322da13575f3"),
+  IMG("1451187580459-43490279c0fa"),
+];
+
+const CHALLENGE_HERO = IMG("1460925895917-afdab827c52f");
+
+const CapabilityCard = ({
+  title,
+  outcome,
+  items,
+  icon: Icon,
+  delay = 0,
+}: {
+  title: string;
+  outcome: string;
+  items: string[];
+  icon: LucideIcon;
+  delay?: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
+    className="group flex h-full flex-col rounded-[2.5rem] border border-slate-100 bg-white p-8 text-left shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
   >
-    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
+    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-50 text-accent shadow-sm transition-transform duration-500 group-hover:scale-110 dark:bg-brand-900/50">
+      <Icon className="h-6 w-6" />
+    </div>
+    <h3 className="mb-2 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+      {title}
+    </h3>
+    <p className="mb-6 text-[13px] font-bold italic text-brand-950/70 dark:text-white/60">{outcome}</p>
+    <div className="mt-auto space-y-3 border-t border-slate-100 pt-6 dark:border-white/5">
+      {items.map((item, i) => (
+        <div key={i} className="flex items-start gap-3">
+          <div className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+          <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400">{item}</span>
+        </div>
+      ))}
+    </div>
+  </motion.div>
+);
+
+const IndustryCard = ({
+  title,
+  description,
+  image,
+  delay = 0,
+}: {
+  title: string;
+  description: string;
+  image: string;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="group flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-slate-100 bg-white text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
+  >
+    <div className="relative h-48 shrink-0 overflow-hidden">
       <img
         src={image}
         alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         referrerPolicy="no-referrer"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-brand-950/20 to-transparent opacity-40" />
     </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
+    <div className="flex flex-1 flex-col p-10">
+      <h3 className="mb-4 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+        {title}
+      </h3>
+      <p className="text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">{description}</p>
+    </div>
+  </motion.div>
+);
+
+const ConnectorCard = ({
+  title,
+  items,
+  index,
+  delay = 0,
+}: {
+  title: string;
+  items: string[];
+  index: number;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-100 bg-white text-left shadow-lg dark:border-white/10 dark:bg-white/5"
+  >
+    <div className="relative h-48 shrink-0 overflow-hidden">
+      <img
+        src={CONNECTOR_IMAGES[index % CONNECTOR_IMAGES.length]}
+        alt=""
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        aria-hidden
+      />
+    </div>
+    <div className="flex flex-grow flex-col p-8">
+      <div className="mb-4 text-[12px] font-black uppercase tracking-widest text-accent">0{index + 1}</div>
+      <h3 className="mb-4 text-lg font-bold text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+        {title}
+      </h3>
+      <div className="mt-auto flex flex-wrap gap-x-2 gap-y-1 text-[12px] font-medium text-slate-500 dark:text-slate-400">
+        {items.map((item, i) => (
+          <span key={i} className="after:ml-2 after:content-['·'] last:after:content-['']">
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  </motion.div>
+);
+
+const UseCaseCard = ({
+  title,
+  subtitle,
+  crux,
+  focusAreas,
+  outcome,
+}: {
+  title: string;
+  subtitle: string;
+  crux: string;
+  focusAreas: string;
+  outcome: string;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="group flex h-full flex-col rounded-[3rem] border border-slate-100 bg-white p-10 text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] transition-all hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] dark:border-white/10 dark:bg-white/5"
+  >
+    <h3 className="mb-2 text-2xl font-bold leading-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
-      {description}
-    </p>
+    <p className="mb-8 text-[15px] font-bold leading-snug text-brand-950/70 dark:text-white/70">{subtitle}</p>
+
+    <div className="mt-auto space-y-6">
+      <div>
+        <h4 className="mb-3 text-[11px] font-black uppercase tracking-widest text-accent">Crux</h4>
+        <p className="text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">{crux}</p>
+      </div>
+
+      <div>
+        <h4 className="mb-3 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
+        <p className="text-[14px] font-bold italic text-brand-950 dark:text-white">{focusAreas}</p>
+      </div>
+
+      <div className="border-t border-slate-100 pt-4 dark:border-white/5">
+        <h4 className="mb-2 text-[11px] font-black uppercase tracking-widest text-accent">Outcome</h4>
+        <p className="text-[13px] font-bold tracking-tight text-brand-950 dark:text-white">{outcome}</p>
+      </div>
+    </div>
   </motion.div>
 );
 
 export const ITSMPlugAndPlayPage = () => {
   const capabilities = [
     {
-      title: "20+ Pre-Built Dashboards",
-      description: "Incident management, SLA tracking, change & service requests, asset CMDB, team productivity, and vendor performance.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 1 — Unified ITSM Connectivity Layer",
+      outcome: "Outcome: Connect every ITSM tool in your stack — without custom integration projects.",
+      items: [
+        "Plug-and-play connectors for ServiceNow, BMC Remedy, Jira SM, SolarWinds",
+        "Extensible to any third-party ITSM system",
+        "API-based and native database connectivity",
+        "Automated schema discovery",
+        "Table-level ingestion readiness",
+        "Minimal custom integration effort",
+      ],
+      icon: Network,
     },
     {
-      title: "Supported Platforms",
-      description: "ServiceNow, ManageEngine, Freshservice, BMC Remedy, Jira Service Management.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 2 — Intelligent Data Sampling Engine",
+      outcome: "Outcome: Validate dashboards and KPIs on sampled data — before committing to full-scale ingestion.",
+      items: [
+        "UI-driven dataset selection",
+        "Controlled sampling of operational datasets",
+        "Rapid ingestion into analytical environments",
+        "Fast KPI and dashboard validation without data overload",
+        "Faster stakeholder alignment with lower upfront cost",
+        "Early visibility before full deployment",
+      ],
+      icon: Zap,
     },
     {
-      title: "Power BI Output",
-      description: "Reports ready to publish to your Power BI Service with seamless integration.",
-      image: "https://images.unsplash.com/photo-1543286386-2e6713cf67ad?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 3 — Pre-Built ITSM Data Models",
+      outcome: "Outcome: Standardized data models eliminate manual schema harmonization across tools.",
+      items: [
+        "Incident lifecycle tracking",
+        "SLA performance analysis",
+        "Ticket workflow analytics",
+        "Service request trend analysis",
+        "Agent productivity metrics",
+        "Escalation and backlog monitoring",
+      ],
+      icon: Database,
     },
     {
-      title: "Role-Based Views",
-      description: "CIO executive summary, IT Manager operational view, L1/L2 team performance.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 4 — Enterprise KPI & Metrics Engine",
+      outcome: "Outcome: A standardized KPI framework — consistent across every team, tool, and report.",
+      items: [
+        "MTTR (Mean Time to Resolution)",
+        "MTBF (Mean Time Between Failures)",
+        "SLA compliance and breach analysis",
+        "First response time tracking",
+        "Incident aging trend analysis",
+        "Ticket backlog and resolution efficiency",
+      ],
+      icon: BarChart,
     },
     {
-      title: "Automated Reports",
-      description: "Scheduled weekly/daily report delivery to stakeholders via email.",
-      image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 5 — Pre-Built Operational Dashboards",
+      outcome: "Outcome: Production-ready dashboards for every stakeholder — without long BI cycles.",
+      items: [
+        "CXO-level operational views",
+        "Service desk performance dashboards",
+        "Team-level operational insights",
+        "Trend analysis and drill-down capability",
+        "Real-time and near real-time refresh",
+        "SLA monitoring and escalation visibility",
+      ],
+      icon: LayoutDashboard,
     },
     {
-      title: "SLA Breach Alerts",
-      description: "Email/Teams notifications for at-risk tickets before SLA breach occurs.",
-      image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 6 — Validation & Feedback Framework",
+      outcome:
+        "Outcome: Stakeholders validate dashboards before enterprise rollout — reducing rework and accelerating adoption.",
+      items: [
+        "Validate KPI definitions collaboratively",
+        "Test dashboard usability before production",
+        "Refine drill-down structures",
+        "Map operational workflows",
+        "Verify reporting accuracy",
+        "Faster adoption with reduced post-deployment rework",
+      ],
+      icon: MessageSquare,
+    },
+    {
+      title: "Capability 7 — Production Data Pipeline Framework",
+      outcome: "Outcome: Move from validated prototype to enterprise production — without rebuilding.",
+      items: [
+        "Full historical data ingestion",
+        "Incremental data pipelines",
+        "Batch and near real-time refresh",
+        "Change-based synchronization",
+        "Automated operational pipelines",
+        "Seamless prototype-to-production transition",
+      ],
+      icon: Workflow,
+    },
+    {
+      title: "Capability 8 — Secure Multi-Tenant Deployment",
+      outcome: "Outcome: Enterprise-grade security, governance, and deployment flexibility.",
+      items: [
+        "Cloud (AWS, Azure, GCP) and on-premise deployment options",
+        "Role-based access control (RBAC)",
+        "Multi-tenant architecture with data isolation",
+        "Secure processing layers",
+        "Auditability and governance controls",
+        "Designed for regulated industries",
+      ],
+      icon: ShieldCheck,
     },
   ];
 
-  const comparisons = [
+  const industries = [
     {
-      label: "3-6 Months",
-      desc: "Traditional ITSM analytics project timeline",
-      value: "Standard Approach",
+      title: "Banking & Financial Services",
+      description:
+        "Centralized SLA and incident analytics across banking operations and compliance reporting.",
+      image: IMG("1454165833762-b104c18c942e"),
     },
     {
-      label: "1-2 Weeks",
-      desc: "With ITSM Plug & Play Accelerator",
-      value: "Techknomatic Speed",
-      highlighted: true,
+      title: "Healthcare",
+      description: "Hospital IT monitoring, application incident tracking, and uptime analytics for critical systems.",
+      image: IMG("1576091160550-2173dba999ef"),
     },
     {
-      label: "0",
-      desc: "Custom development needed for standard KPIs",
-      value: "Effort Saved",
+      title: "Telecom",
+      description: "Network operations SLA monitoring, outage analytics, and multi-vendor operational visibility.",
+      image: IMG("1544620347-c4fd4a3d5957"),
+    },
+    {
+      title: "Retail & E-Commerce",
+      description: "Store operations support, POS incident monitoring, and peak-season SLA performance tracking.",
+      image: IMG("1519389950473-47ba0277781c"),
+    },
+    {
+      title: "Manufacturing",
+      description: "Plant IT operations, production support incident analytics, and operational downtime tracking.",
+      image: IMG("1581091226825-a6a2a5aee158"),
+    },
+    {
+      title: "Government & Public Sector",
+      description: "Citizen service analytics, cross-department ITSM visibility, and shared services reporting.",
+      image: IMG("1460925895917-afdab827c52f"),
     },
   ];
 
-  const howItWorks = [
+  const steps = [
     {
-      step: "1",
-      title: "Connector Setup",
-      description:
-        "We configure the data connection to your ITSM tool via API or direct database.",
+      step: "Connect",
+      title: "Connect",
+      content:
+        "Plug-and-play connectors link to ServiceNow, BMC Remedy, Jira SM, SolarWinds, and other ITSM platforms via API or native DB. Automated schema discovery accelerates setup.",
+      icon: Network,
     },
     {
-      step: "2",
-      title: "Data Validation",
-      description:
-        "We verify data mapping, completeness, and logic alignment with your ITSM.",
+      step: "Analyze",
+      title: "Analyze",
+      content:
+        "Sampled operational data is ingested and processed through pre-built ITSM data models. Standardized KPIs (MTTR, MTBF, SLA breach, first response) are computed automatically.",
+      icon: Database,
     },
     {
-      step: "3",
-      title: "Dashboard Deployment",
-      description: "Pre-built reports published to your Power BI environment.",
+      step: "Validate",
+      title: "Validate",
+      content:
+        "Pre-built dashboards (CXO, service desk, team-level) render on sampled data. Stakeholders review KPI definitions, drill-downs, and accuracy before full rollout.",
+      icon: CheckCircle,
     },
     {
-      step: "4",
-      title: "Handover & Training",
-      description: "2-hour walkthrough session for your team.",
+      step: "Scale",
+      title: "Scale",
+      content:
+        "Once validated, InsightSM transitions to enterprise production mode — full historical ingestion, incremental pipelines, and near real-time refresh, without rebuilding the analytics layer.",
+      icon: Zap,
+    },
+  ];
+
+  const stack = [
+    {
+      title: "ITSM Platforms",
+      items: ["ServiceNow", "BMC Remedy", "Jira Service Management", "SolarWinds", "Extensible to any ITSM platform"],
+      icon: Server,
     },
     {
-      step: "5",
-      title: "Customization (Optional)",
-      description:
-        "Optional sprint for org-specific KPIs or visual enhancements.",
+      title: "Connectivity Methods",
+      items: ["REST APIs", "Native database connectivity", "Webhooks", "Automated schema discovery"],
+      icon: Network,
+    },
+    {
+      title: "Data Refresh Modes",
+      items: ["Sampled (validation phase)", "Batch (production)", "Near real-time", "Change-based synchronization"],
+      icon: RefreshCw,
+    },
+    {
+      title: "BI & Visualization Layer",
+      items: ["Pre-built InsightSM dashboards", "Export to Power BI", "Tableau", "Qlik (optional)"],
+      icon: LayoutDashboard,
+    },
+    {
+      title: "Security & Access",
+      items: ["Role-based access control (RBAC)", "Multi-tenant data isolation", "Audit logging", "Governance controls"],
+      icon: Lock,
+    },
+    {
+      title: "Deployment Modes",
+      items: ["AWS", "Azure", "GCP", "On-premise", "Hybrid"],
+      icon: Cloud,
+    },
+  ];
+
+  const useCases = [
+    {
+      title: "Banking & Financial Services",
+      subtitle: "Centralized SLA, incident, and compliance visibility across banking IT operations.",
+      crux: "InsightSM consolidates ITSM data from core banking, digital channels, and shared services into unified SLA, incident, and compliance dashboards. Branch performance, channel uptime, and audit-ready visibility — all from one analytics layer.",
+      focusAreas: "SLA Monitoring · Digital Banking Incidents · Shared Services · IT Compliance · Branch Support",
+      outcome: "Faster compliance reporting · Unified ops visibility · Audit-ready dashboards",
+    },
+    {
+      title: "Healthcare",
+      subtitle: "Hospital IT operations and clinical application uptime intelligence.",
+      crux: "Track incident response across medical applications, monitor SLA for healthcare support, and ensure uptime visibility for critical systems like EHR and lab platforms. InsightSM gives hospital IT leaders the operational view they need without manual reporting cycles.",
+      focusAreas: "Hospital IT Monitoring · Medical App Incidents · Healthcare SLA · System Uptime · Service Desk",
+      outcome: "Higher critical-system uptime · Faster incident response · Lower IT effort",
+    },
+    {
+      title: "Telecom",
+      subtitle: "Network operations SLA and customer-impact incident analytics at scale.",
+      crux: "InsightSM unifies ITSM data across network operations, customer-impact incidents, and multi-vendor support. Real-time outage visibility, ticket escalation analytics, and SLA monitoring across the entire telecom support ecosystem — in one operational view.",
+      focusAreas: "Network Ops SLA · Outage Analytics · Customer-Impact Incidents · Multi-Vendor Ops · Support Center",
+      outcome: "Faster outage resolution · Better vendor accountability · Real-time ops visibility",
+    },
+    {
+      title: "Retail & E-Commerce",
+      subtitle: "Store, POS, and warehouse operations support — visible from one dashboard.",
+      crux: "Monitor store IT operations, POS and application incidents, warehouse and logistics support, and peak-season SLA performance. InsightSM gives retail IT and operations leaders the visibility to keep stores running and customers transacting through every season.",
+      focusAreas: "Store Ops · POS Incidents · Warehouse Support · Peak-Season SLA · Customer Support",
+      outcome: "Higher store uptime · Better peak-season readiness · Faster issue resolution",
+    },
+    {
+      title: "Manufacturing",
+      subtitle: "Plant IT operations and production support intelligence.",
+      crux: "Track plant IT operations, production support incidents, and operational downtime through unified ITSM analytics. Vendor support performance, enterprise service requests, and downtime root-cause visibility — all consolidated for plant and corporate IT leaders.",
+      focusAreas: "Plant IT Ops · Production Support · Downtime Tracking · Vendor Performance · Service Requests",
+      outcome: "Reduced production downtime · Better vendor SLAs · Consolidated plant visibility",
+    },
+    {
+      title: "Government & Public Sector",
+      subtitle: "Cross-department ITSM visibility for citizen service operations.",
+      crux: "InsightSM consolidates ITSM data across government departments — enabling unified citizen service analytics, operational KPI tracking, and SLA monitoring for public services. Shared services reporting and cross-department visibility delivered through a single analytics platform.",
+      focusAreas: "Citizen Service Analytics · Public Service KPIs · Cross-Department ITSM · Government SLAs · Shared Services",
+      outcome: "Faster citizen response · Cross-dept accountability · Standardized public-service reporting",
     },
   ];
 
   return (
     <div className="pt-[110px]">
-      {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
-         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
+      <section className="relative min-h-[min(70vh,680px)] overflow-hidden bg-[#020617] px-6 py-40">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/5 blur-[100px]" />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        <div className="relative z-10 mx-auto max-w-6xl text-left drop-shadow-md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[11px] font-black uppercase tracking-[0.3em] text-accent"
           >
-            Instant Visibility
+            Universal ITSM Analytics
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
+            className="mb-10 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[56px]"
           >
-            ITSM Plug & Play
+            InsightSM
           </motion.h1>
           <div className="max-w-4xl">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
+              className="mb-6 text-2xl font-medium tracking-tight text-white/90 md:text-3xl"
             >
-              Go Live in Days, Not Months — 20+ Pre-Built ITSM Dashboards Ready to Deploy.
+              Unified IT Operations Visibility Across Every ITSM Tool
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-lg font-medium leading-relaxed text-slate-400 md:text-xl"
             >
-              Techknomatic's accelerator that delivers instant visibility into your IT operations — right out of the box.
+              An AI-powered analytics wrapper that sits on top of your existing ITSM ecosystem — turning fragmented
+              operational data into unified, real-time intelligence. Deploy production-grade ITSM dashboards in days,
+              not months.
             </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-5xl space-y-8 text-left">
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.1 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Techknomatic's ITSM Plug & Play is a pre-configured analytics accelerator that delivers instant visibility into your IT operations — right out of the box. Built on top of our proven ITSM analytics framework, this accelerator connects to your ITSM platform, loads pre-built dashboards, and gives your team actionable insights within days of deployment.
-            </motion.p>
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Skip the 6-month development cycle. Our tool is designed for speed, bridging the gap between raw ticket data and executive-level clarity. With support for major ITSM platforms, you can finally move from reactive firefighting to proactive service management.
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
-      {/* What You Get Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
+      <section className="overflow-hidden border-b border-slate-100 bg-white px-6 py-[120px] text-left dark:border-white/5 dark:bg-brand-950">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
+              className="mb-6 text-3xl font-medium leading-tight tracking-tight text-brand-950 dark:text-white md:text-5xl"
             >
-              WHAT YOU GET
+              The Enterprise ITSM Challenge
             </motion.h2>
-            <motion.h3
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
             >
-              What You Get — Day One
-            </motion.h3>
+              Most large enterprises run their IT operations on multiple ITSM platforms simultaneously — ServiceNow in
+              one business unit, BMC Remedy in another, Jira Service Management for engineering, SolarWinds for
+              infrastructure monitoring. Each tool serves its purpose, but together they create a fragmented operational
+              landscape where leadership lacks a unified view of IT performance. SLA reporting is inconsistent. KPI
+              definitions vary by team. BI teams spend weeks building dashboards. And CIOs are left making operational
+              decisions on stale, siloed data.
+            </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid items-start gap-16 lg:grid-cols-2 lg:gap-20">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col overflow-hidden rounded-[3rem] ring-1 ring-slate-200/80 shadow-2xl dark:ring-white/10"
+            >
+              <div className="relative aspect-[4/3] w-full shrink-0">
+                <img
+                  src={CHALLENGE_HERO}
+                  alt="ITSM analytics and operations"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="border-t border-slate-200/80 bg-brand-950 px-8 py-6 dark:border-white/10 dark:bg-black/40">
+                <p className="border-l-4 border-accent pl-4 text-sm font-bold italic leading-relaxed text-white">
+                  The result: delayed operational decisions, inconsistent SLA tracking, and a constant drain on BI
+                  teams.
+                </p>
+              </div>
+            </motion.div>
+
+            <div className="space-y-6 self-start lg:pt-4">
+              <h4 className="mb-8 text-[14px] font-black uppercase tracking-widest text-accent">
+                Common Operational Pain Points
+              </h4>
+              {[
+                "No unified visibility across IT operations and ITSM platforms",
+                "Inconsistent KPI definitions and SLA reporting across teams",
+                "Delayed reporting cycles and manual dashboarding effort",
+                "High dependency on BI and data engineering teams for every report",
+                "Slow rollout of analytics initiatives — months to first dashboard",
+                "Limited operational intelligence for CIOs, CTOs, and service leaders",
+                "Lack of accountability and traceability across support functions",
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                  <p className="text-[16px] font-bold leading-tight text-brand-950 dark:text-white">{item}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50/50 px-6 py-[120px] text-left dark:bg-brand-900/20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-left">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-6 text-3xl font-medium leading-[1.1] tracking-tight text-brand-950 dark:text-white md:text-5xl"
+            >
+              What InsightSM Solves
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/50 px-4 py-2 text-[12px] font-bold text-brand-950/70 dark:border-white/10 dark:bg-white/5 dark:text-white/60"
+            >
+              From fragmented ITSM data → unified operational intelligence
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="w-full text-lg font-medium text-slate-500 dark:text-slate-400"
+            >
+              InsightSM is a rapid ITSM analytics accelerator that sits on top of your existing ITSM ecosystem —
+              delivering enterprise-grade operational intelligence in days. The platform connects multiple ITSM tools,
+              harmonizes operational data, standardizes KPIs, and deploys validated dashboards before committing to
+              full-scale enterprise rollout. No rip-and-replace. No multi-month BI projects. Just immediate, unified
+              visibility across IT operations.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((it, idx) => (
-              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
+              <CapabilityCard key={idx} {...it} delay={idx * 0.05} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Plug & Play Section */}
-      <section className="py-[120px] px-6 bg-slate-100 dark:bg-brand-900/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
-            >
-              Why Plug & Play?
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Proven impact on delivery speed and resource optimization.
-            </motion.p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {comparisons.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`p-12 rounded-[3.5rem] text-center border transition-all duration-500 ${
-                  item.highlighted
-                    ? "bg-accent text-white border-accent shadow-2xl scale-105 z-10"
-                    : "bg-white dark:bg-white/5 border-slate-100 dark:border-white/10"
-                }`}
-              >
-                <div
-                  className={`text-5xl md:text-7xl font-black mb-6 tracking-tighter ${item.highlighted ? "text-white" : "text-accent"}`}
-                >
-                  {item.label}
-                </div>
-                <h3
-                  className={`text-xl font-bold mb-4 ${item.highlighted ? "text-white" : "text-brand-950 dark:text-white"}`}
-                >
-                  {item.value}
-                </h3>
-                <p
-                  className={`text-sm font-medium ${item.highlighted ? "text-white/80" : "text-slate-500 dark:text-slate-400"}`}
-                >
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-[120px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+      <section className="bg-white px-6 py-[120px] text-left dark:bg-brand-950">
+        <div className="mx-auto max-w-6xl">
           <div className="mb-16">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
+              className="mb-4 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
             >
-              How it Works
+              Industries We Serve
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-white/60 font-medium max-w-2xl"
+              className="text-lg font-medium text-slate-500 dark:text-slate-400"
             >
-              Our automated deployment framework ensures you go live with minimal friction.
+              Purpose-built for any IT-heavy enterprise — wherever ITSM data fragmentation slows operational
+              decision-making.
             </motion.p>
           </div>
-          
-          <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
-            {howItWorks.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative flex-1 min-w-[240px] p-8 rounded-[2.5rem] bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group"
-              >
-                <div className="absolute top-8 right-8 text-4xl font-black text-white/5 group-hover:text-accent/20 transition-colors">
-                  0{step.step}
-                </div>
-                <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-12 transition-transform">
-                  <RefreshCw className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="text-[13px] font-medium text-white/40 leading-relaxed italic px-2 border-l-2 border-accent/20">
-                  {step.description}
-                </p>
-              </motion.div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {industries.map((ind, idx) => (
+              <IndustryCard key={idx} {...ind} delay={idx * 0.1} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-6 py-[120px] text-left dark:bg-white/5">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+            >
+              How InsightSM Works
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="max-w-5xl text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
+            >
+              InsightSM follows a systematic, four-stage deployment architecture designed for speed, accuracy, and
+              enterprise scale. By separating the validation phase from the production rollout, we allow stakeholders to
+              align on KPIs and dashboard usability with zero data risk—ensuring the final production environment is built
+              on trust, efficiency, and proven operational value. Our unique sample-first deployment flow transforms the
+              complexity of fragmented ITSM ecosystems into immediate, unified operational intelligence.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step, idx) => {
+              const Icon = step.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group rounded-[2.5rem] border border-slate-100 bg-white p-8 text-left shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
+                >
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent transition-transform group-hover:scale-110">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <div className="mb-2 text-[11px] font-black uppercase tracking-[0.2em] text-accent/70">
+                    Step 0{idx + 1}
+                  </div>
+                  <h3 className="mb-4 text-left text-xl font-bold capitalize text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+                    {step.title}
+                  </h3>
+                  <p className="text-left text-[14px] font-medium italic leading-relaxed text-slate-500 dark:text-slate-400">
+                    {step.content}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-[120px] text-left dark:bg-brand-950">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-6 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+            >
+              Built to Plug Into Your Enterprise IT Stack
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="w-full text-lg font-medium text-slate-500 dark:text-slate-400"
+            >
+              InsightSM is designed as a connector-first, deployment-flexible platform. Whether your operations live in
+              ServiceNow, BMC Remedy, Jira Service Management, SolarWinds — or a combination of all four — InsightSM
+              connects through reusable plug-and-play connectors and ingests data without disrupting your existing ITSM
+              workflows.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {stack.map((group, idx) => (
+              <ConnectorCard key={idx} index={idx} title={group.title} items={group.items} delay={idx * 0.1} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-6 py-[120px] text-left dark:bg-white/5">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[11px] font-black uppercase tracking-[0.3em] text-accent"
+            >
+              Production Ready
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl font-medium uppercase tracking-tight text-brand-950 dark:text-white md:text-5xl"
+            >
+              Use Cases
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="mt-4 max-w-3xl text-lg font-medium text-slate-500 dark:text-slate-400"
+            >
+              Six domain-specific deployments where InsightSM is replacing manual ITSM reporting with unified
+              operational intelligence.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {useCases.map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} />
             ))}
           </div>
         </div>
