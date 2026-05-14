@@ -52,7 +52,6 @@ export const Footer = () => {
                 {[
                   { label: 'Business Intelligence', href: '/bi-services' },
                   { label: 'Data Engineering', href: '/data-engineering' },
-                  { label: 'Data Science', href: '/data-science' },
                   { label: 'AI & GenAI', href: '/ai-services' },
                   { label: 'Geospatial Analytics', href: '/geospatial-analytics' },
                   { label: 'Custom Development', href: '/custom-development' },

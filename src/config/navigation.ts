@@ -1,7 +1,6 @@
 import {
   Activity,
   BarChart3,
-  Brain,
   Database,
   Globe,
   Layout,
@@ -28,7 +27,6 @@ export const navData: SiteNavData = {
   services: [
     { label: 'Business Analytics', href: '/bi-services', icon: BarChart3 },
     { label: 'Data Engineering', href: '/data-engineering', icon: Database },
-    { label: 'Data Science', href: '/data-science', icon: Brain },
     { label: 'Data & AI Strategy', href: '/ai-services', icon: Sparkles },
     { label: 'GeoSpacial Analytics', href: '/geospatial-analytics', icon: Globe },
   ],

@@ -10,7 +10,6 @@ import { ContactPage } from '../pages/ContactPage';
 import { CustomDevPage } from '../pages/CustomDevPage';
 import { DataGuardPage } from '../pages/DataGuardPage';
 import { DataEngineeringPage } from '../pages/DataEngineeringPage';
-import { DataSciencePage } from '../pages/DataSciencePage';
 import { FAQPage } from '../pages/FAQPage';
 import { FMCGAnalyticsPage } from '../pages/FMCGAnalyticsPage';
 import { FreightIQPage } from '../pages/FreightIQPage';
@@ -40,7 +39,6 @@ export const AppRoutes = () => {
       <Route path="/bi-services" element={<BIServicesPage />} />
       <Route path="/ai-services" element={<AIServicesPage />} />
       <Route path="/data-engineering" element={<DataEngineeringPage />} />
-      <Route path="/data-science" element={<DataSciencePage />} />
       <Route path="/geospatial-analytics" element={<GeospatialPage />} />
       <Route path="/custom-development" element={<CustomDevPage />} />
       <Route path="/airlines-analytics" element={<AirlinesAnalyticsPage />} />
