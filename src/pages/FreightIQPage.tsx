@@ -1,114 +1,427 @@
-import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import type { LucideIcon } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
   Truck,
-  ArrowRight,
-  CheckCircle2,
   Database,
   Zap,
-  Activity,
-  Globe,
-  Navigation,
   Clock,
   BarChart3,
-  Box,
-  TrendingUp,
-  MapPin,
+  Target,
+  Users,
+  Search,
+  Network,
+  Cpu,
+  Layers,
+  FileText,
   Anchor,
-  Plane,
-  ChevronUp,
-  ChevronDown
+  Server,
+  Code2,
 } from "lucide-react";
 
-const CapabilityCard = ({ title, description, image, delay = 0 }: { title: string; description: string; image: string; delay?: number }) => (
+const FIQ_BASE = "Images/FreightIQ";
+const FIQ_CHALLENGE = `${FIQ_BASE}/Challenge.jpg`;
+const FIQ_IND = `${FIQ_BASE}/Industries`;
+
+const CapabilityCard = ({
+  title,
+  outcome,
+  items,
+  icon: Icon,
+  delay = 0,
+}: {
+  title: string;
+  outcome: string;
+  items: string[];
+  icon: LucideIcon;
+  delay?: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
+    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full text-left"
   >
-    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
+    <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
+      <Icon className="w-6 h-6" />
+    </div>
+    <div className="flex-1">
+      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors capitalize">
+        {title}
+      </h3>
+      <p className="text-[13px] font-bold text-brand-950/70 dark:text-white/60 mb-6 italic leading-snug">
+        {outcome}
+      </p>
+      <ul className="space-y-3 pt-6 border-t border-slate-100 dark:border-white/5 list-none">
+        {items.map((item, i) => (
+          <li key={i} className="flex items-start gap-3 group/item">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent/40 mt-1.5 flex-shrink-0" />
+            <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400 group-hover/item:text-brand-950 dark:group-hover/item:text-white transition-colors">
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </motion.div>
+);
+
+const UseCaseCard = ({
+  title,
+  subtitle,
+  crux,
+  focusAreas,
+  outcome,
+  delay = 0,
+}: {
+  title: string;
+  subtitle: string;
+  crux: string;
+  focusAreas: string;
+  outcome: string;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
+  >
+    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-2 leading-tight group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    <p className="text-[15px] font-bold text-brand-950/70 dark:text-white/70 mb-8 leading-snug">
+      {subtitle}
+    </p>
+
+    <div className="space-y-6 mb-10 flex-1">
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Crux</h4>
+        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+          {crux}
+        </p>
+      </div>
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Focus Areas</h4>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+          {focusAreas}
+        </p>
+      </div>
+    </div>
+
+    <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+          <Target className="w-4 h-4 text-accent" />
+        </div>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+          <span className="text-accent uppercase tracking-wider mr-2 not-italic">Outcome:</span>
+          {outcome}
+        </p>
+      </div>
+    </div>
+  </motion.div>
+);
+
+const IndustryCard = ({
+  title,
+  description,
+  image,
+  delay = 0,
+}: {
+  title: string;
+  description: string;
+  image: string;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all h-full text-left group overflow-hidden rounded-[2.5rem] flex flex-col"
+  >
+    <div className="relative h-48 overflow-hidden">
       <img
         src={image}
         alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         referrerPolicy="no-referrer"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-brand-950/20 to-transparent opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 to-transparent" />
     </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-      {title}
-    </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
-      {description}
-    </p>
+    <div className="p-10 flex-1 flex flex-col">
+      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
+        {title}
+      </h3>
+      <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+        {description}
+      </p>
+    </div>
   </motion.div>
 );
 
 export const FreightIQPage = () => {
   const capabilities = [
     {
-      title: "Real-Time Tracking",
-      description: "End-to-end visibility of freight movement across air, sea, and road with live GPS integration.",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 1 — Real-Time Carrier API Integration",
+      outcome: "Outcome: Live carrier rates and capacity — directly in your quoting workflow.",
+      items: [
+        "Real-time carrier rate retrieval via API",
+        "Automated pricing synchronization across carriers",
+        "Multi-carrier rate comparison in a single view",
+        "Dynamic availability and capacity checks",
+        "Up-to-the-minute pricing accuracy",
+        "Reduced manual coordination effort",
+      ],
+      icon: Network,
     },
     {
-      title: "Route Optimization",
-      description: "AI-driven route selection to minimize fuel consumption and delivery lead times.",
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 2 — AI-Powered Dynamic Pricing Engine",
+      outcome: "Outcome: Market-aware pricing that protects margin and stays competitive.",
+      items: [
+        "Demand fluctuation modeling",
+        "Route and carrier capacity factoring",
+        "Shipment urgency-based rate adjustment",
+        "Historical pricing pattern intelligence",
+        "Seasonal freight trend awareness",
+        "Intelligent margin optimization",
+      ],
+      icon: Cpu,
     },
     {
-      title: "Predictive Analytics",
-      description: "Identify potential delays before they happen based on weather, port congestion, and traffic patterns.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 3 — Multi-Modal Freight Support",
+      outcome: "Outcome: Unified freight pricing across every shipment type and transport mode.",
+      items: [
+        "LCL (Less than Container Load) pricing",
+        "FCL (Full Container Load) pricing",
+        "Air freight quotation support",
+        "Multi-modal logistics operations",
+        "Mode-specific cost factor handling",
+        "Consistent pricing logic across modes",
+      ],
+      icon: Layers,
     },
     {
-      title: "Warehouse Efficiency",
-      description: "Digital twin of warehouse operations to optimize inventory placement and picking paths.",
-      image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 4 — Instant Quote Generation",
+      outcome: "Outcome: Customer-ready freight quotations in seconds — not hours.",
+      items: [
+        "Automated rate calculation across carriers",
+        "Intelligent rate comparison and ranking",
+        "Customer-ready quote document generation",
+        "Dynamic pricing adjustments at quote time",
+        "Fast sales-team turnaround",
+        "Higher win rate through speed-to-quote",
+      ],
+      icon: Zap,
     },
     {
-      title: "Carrier Management",
-      description: "Benchmark carrier performance and costs to ensure optimal logistics partnership procurement.",
-      image: "https://images.unsplash.com/photo-1620054319806-25805562723c?auto=format&fit=crop&q=80&w=800"
+      title: "Capability 5 — Historical Freight Analytics",
+      outcome: "Outcome: Turn historical pricing into forward-looking decisions.",
+      items: [
+        "Historical rate trend analysis",
+        "Carrier performance visibility",
+        "Margin and shipment profitability analysis",
+        "Route pricing intelligence",
+        "Market trend monitoring",
+        "Shipment cost optimization insights",
+      ],
+      icon: BarChart3,
     },
     {
-      title: "Sustainable Logistics",
-      description: "Track and optimize your carbon footprint across the entire supply chain with ESG reporting.",
-      image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800"
-    }
+      title: "Capability 6 — Intelligent Rate Comparison",
+      outcome: "Outcome: The right rate, every time — across cost, speed, and margin.",
+      items: [
+        "Best-cost option identification",
+        "Fastest-delivery option ranking",
+        "Margin impact analysis per option",
+        "Carrier competitiveness benchmarking",
+        "Operational efficiency visibility",
+        "Decision-ready pricing recommendations",
+      ],
+      icon: Search,
+    },
   ];
 
-  const results = [
-    { label: "Lower logistics costs", value: "15-20%" },
-    { label: "Increase in delivery speed", value: "25%" },
-    { label: "Inventory accuracy", value: "99.8%" },
+  const industries = [
+    {
+      title: "Freight Forwarding & 3PL",
+      description:
+        "Instant multi-carrier quoting and margin optimization for forwarders and 3PL providers.",
+      image: `${FIQ_IND}/freight-forwarding-3pl.jpg`,
+    },
+    {
+      title: "Import & Export",
+      description: "Dynamic landed-cost visibility and shipment cost estimation for global trade operations.",
+      image: `${FIQ_IND}/import-export.jpg`,
+    },
+    {
+      title: "E-Commerce & Retail Logistics",
+      description:
+        "Real-time shipping cost optimization and multi-modal pricing for retail supply chains.",
+      image: `${FIQ_IND}/ecommerce-retail-logistics.jpg`,
+    },
+    {
+      title: "Manufacturing & Industrial",
+      description: "Inbound and outbound shipment pricing automation for industrial supply chains.",
+      image: `${FIQ_IND}/manufacturing-industrial.jpg`,
+    },
+    {
+      title: "Air Cargo & Express",
+      description: "Dynamic, urgency-based pricing for time-critical air and express logistics.",
+      image: `${FIQ_IND}/air-cargo-express.jpg`,
+    },
+    {
+      title: "Global Shipping & Transport",
+      description: "Enterprise-wide freight pricing standardization across regions and routes.",
+      image: `${FIQ_IND}/global-shipping-transport.jpg`,
+    },
+  ];
+
+  const steps = [
+    {
+      title: "Carrier Connectivity",
+      content:
+        "Real-time API integrations pull live rates, capacity, and availability from multiple carriers across modes (LCL, FCL, air, multi-modal).",
+      icon: Network,
+    },
+    {
+      title: "Pricing Intelligence Layer",
+      content:
+        "AI engine processes carrier inputs against demand signals, route conditions, urgency, and seasonality to generate market-aware pricing.",
+      icon: Database,
+    },
+    {
+      title: "Margin & Optimization Engine",
+      content:
+        "Pricing options are evaluated for cost, delivery speed, carrier competitiveness, and margin impact — surfacing the best-fit options.",
+      icon: Zap,
+    },
+    {
+      title: "Historical Analytics Engine",
+      content:
+        "Continuously learning layer uses historical shipment, rate, and margin data to refine pricing recommendations and surface trends.",
+      icon: BarChart3,
+    },
+    {
+      title: "Quote Generation & Delivery",
+      content:
+        "Customer-ready freight quotations are generated automatically and delivered to sales teams or directly to customers via integrations.",
+      icon: FileText,
+    },
+  ];
+
+  const stack = [
+    {
+      title: "Carrier Systems",
+      content:
+        "Direct carrier APIs · Multi-carrier aggregator integrations · Sea / Air / Road carrier connectivity",
+      icon: Anchor,
+    },
+    {
+      title: "TMS Platforms",
+      content: "Transportation Management Systems · Freight execution platforms · Custom TMS via REST",
+      icon: Truck,
+    },
+    {
+      title: "ERP Systems",
+      content: "SAP · Oracle · Microsoft Dynamics · NetSuite · Custom ERPs",
+      icon: Database,
+    },
+    {
+      title: "CRM & Sales Platforms",
+      content: "Salesforce · HubSpot · Zoho · Custom CRMs · Quote-to-cash workflows",
+      icon: Users,
+    },
+    {
+      title: "APIs & Developer Access",
+      content: "REST APIs · Webhooks · Real-time pricing endpoints · SDK access",
+      icon: Code2,
+    },
+    {
+      title: "Data Refresh Modes",
+      content: "Real-time carrier rate sync · Scheduled refresh · On-demand rate fetch",
+      icon: Clock,
+    },
+    {
+      title: "Deployment Modes",
+      content: "Cloud SaaS · Private VPC · Hybrid · On-premise (enterprise logistics)",
+      icon: Server,
+    },
+  ];
+
+  const useCases = [
+    {
+      title: "Freight Forwarding & 3PL Providers",
+      subtitle: "Instant multi-carrier quoting and margin optimization for forwarders and 3PLs.",
+      crux: "FreightIQ generates instant freight quotations across carriers, compares rates, and applies customer-specific pricing rules. Sales teams quote faster, manage LCL/FCL shipments centrally, and gain operational pricing intelligence that lifts both win rate and margin.",
+      focusAreas:
+        "Instant Quotes · Multi-Carrier Comparison · Margin Optimization · LCL/FCL Management · Sales Intelligence",
+      outcome: "Faster quote turnaround · Higher win rate · Improved margin discipline",
+    },
+    {
+      title: "Import & Export Businesses",
+      subtitle: "Dynamic landed cost visibility for international trade.",
+      crux: "Estimate shipment costs across international routes, optimize carrier selection for exports, and gain dynamic landed-cost visibility for container shipments. FreightIQ also supports freight budgeting and procurement analytics for cross-border trade operations.",
+      focusAreas: "Landed Cost · Route Optimization · Carrier Selection · Container Pricing · Freight Budgeting",
+      outcome: "Sharper cost estimation · Better trade margin · Smarter procurement",
+    },
+    {
+      title: "E-Commerce & Retail Logistics",
+      subtitle: "Real-time shipping cost optimization across the retail supply chain.",
+      crux: "Optimize shipping costs in real time across multi-modal logistics, analyze regional delivery costs, and manage warehouse-to-customer shipment pricing. FreightIQ also provides peak-season freight pricing visibility for retail and D2C operations.",
+      focusAreas:
+        "Shipping Cost Optimization · Multi-Modal Pricing · Regional Delivery Analysis · Last-Mile Costs · Peak-Season Pricing",
+      outcome: "Lower shipping spend · Better peak-season readiness · Higher fulfillment margin",
+    },
+    {
+      title: "Manufacturing & Industrial Supply Chains",
+      subtitle: "Inbound and outbound shipment pricing for industrial supply chains.",
+      crux: "Automate inbound and outbound shipment pricing, compare vendor freight costs, and apply intelligent bulk cargo and container pricing. FreightIQ delivers supply chain transportation analytics and production logistics cost optimization across the industrial value chain.",
+      focusAreas:
+        "Inbound/Outbound Pricing · Vendor Comparison · Bulk Cargo · Supply Chain Analytics · Production Logistics",
+      outcome: "Lower transportation cost · Better vendor benchmarking · Stronger supply chain visibility",
+    },
+    {
+      title: "Air Cargo & Express Logistics",
+      subtitle: "Urgency-aware pricing for time-critical air and express logistics.",
+      crux: "Optimize pricing for urgent shipments, compare carrier availability and cost dynamically, and apply priority-based pricing logic. FreightIQ also enables express logistics margin analysis and international air freight quotation automation at enterprise scale.",
+      focusAreas:
+        "Urgent Shipment Pricing · Carrier Availability · Priority-Based Pricing · Express Margin Analysis · Air Freight Quoting",
+      outcome: "Faster express quoting · Stronger margin on urgency · Better carrier match",
+    },
+    {
+      title: "Global Shipping & Transportation Enterprises",
+      subtitle: "Enterprise-wide freight pricing standardization across regions and routes.",
+      crux: "Standardize freight pricing across the enterprise, monitor global route pricing intelligence, and analyze cross-region carrier performance. FreightIQ also delivers historical freight trend analysis and centralized pricing governance for global logistics networks.",
+      focusAreas:
+        "Enterprise Pricing Standardization · Global Route Intelligence · Cross-Region Analytics · Historical Trends · Pricing Governance",
+      outcome: "Consistent global pricing · Stronger governance · Network-wide intelligence",
+    },
   ];
 
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
-         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <section className="relative py-40 px-6 overflow-hidden bg-brand-950">
+        <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        <div className="max-w-7xl mx-auto relative z-10 text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
           >
-            SMART LOGISTICS
+            PLATFORM
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-8 tracking-tight leading-[1.1]"
           >
             FreightIQ
           </motion.h1>
@@ -117,9 +430,9 @@ export const FreightIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
+              className="text-2xl md:text-3xl font-medium text-white mb-6 tracking-tight leading-tight"
             >
-              Supply Chain & Logistics Analytics Platform — Precision in Motion.
+              Intelligent Freight Pricing for Faster Quotes and Higher Profitability
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -127,60 +440,132 @@ export const FreightIQPage = () => {
               transition={{ delay: 0.3 }}
               className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
             >
-              Techknomatic's logistics intelligence platform that brings predictive clarity to your global supply chain operations.
+              AI-powered dynamic freight pricing — real-time carrier rates, multi-modal support, and instant quote
+              generation. Built for logistics enterprises that compete on speed and margin.
             </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Intro Section */}
+      {/* Challenge Section */}
       <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-5xl space-y-8 text-left">
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.1 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              FreightIQ is Techknomatic's cornerstone platform for logistics and supply chain analytics. It provides a unified dashboard for multi-modal tracking, predictive ETA modelling, and cost optimization. By connecting siloed data from carriers, warehouses, and customs, FreightIQ creates a single source of truth for global logistics.
-            </motion.p>
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Logistics is increasingly complex, with global disruptions becoming the new norm. FreightIQ bridges the visibility gap by providing real-time alerts and actionable insights. Whether you're optimizing last-mile delivery or managing international shipping lanes, FreightIQ empowers your team to move faster and with greater cost-efficiency.
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
-      {/* Capabilities Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
             >
-              WHAT IT DOES
+              The Freight Pricing Challenge
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-5xl"
+            >
+              Every freight quote is a race against the clock. Customers expect rates in minutes. Carriers update
+              pricing daily. Routes shift with seasonality, capacity, and fuel. Yet most logistics providers still build
+              quotations through spreadsheets, email chains, and disconnected carrier portals — losing deals to faster
+              competitors and leaving margin on the table with every shipment. The pricing operations that should drive
+              profitability instead drain it.
+            </motion.p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="relative aspect-video lg:aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl">
+              <img
+                src={FIQ_CHALLENGE}
+                alt="Freight logistics"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/60 via-transparent to-transparent" />
+              <div className="absolute bottom-10 left-10 right-10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[11px] font-black tracking-widest text-white uppercase bg-accent rounded-full">
+                  Impact Framing
+                </div>
+                <p className="text-[15px] font-bold text-white leading-relaxed italic">
+                  The result: slower quote turnaround, reduced competitiveness, revenue leakage through under-priced
+                  shipments, higher operational overhead, and weaker customer experience — exactly when logistics buyers
+                  expect faster, sharper, more transparent pricing.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-6 self-start lg:pt-4">
+              <div className="mb-12">
+                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight">
+                  Common Operational Pain Points
+                </h3>
+                <div className="w-12 h-1 bg-accent rounded-full" />
+              </div>
+              <ul className="space-y-5 list-none">
+                {[
+                  "Manual freight rate calculations across multiple carriers and modes",
+                  "Delayed customer quote responses — hours or days, not minutes",
+                  "Inconsistent pricing across carriers, regions, and sales teams",
+                  "Rapidly changing market rates that spreadsheets can't keep up with",
+                  "Lack of centralized pricing intelligence across the business",
+                  "Difficulty optimizing margins across high-volume shipments",
+                  "Limited visibility into historical pricing trends and carrier performance",
+                ].map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + i * 0.1 }}
+                    className="flex items-start gap-3 group"
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <p className="text-[17px] font-bold text-brand-950 dark:text-white leading-tight">{item}</p>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions Section */}
+      <section className="py-[120px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              What FreightIQ Solves
             </motion.h2>
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="text-xl md:text-2xl font-bold text-brand-950 dark:text-white mb-6 leading-tight"
             >
-              FreightIQ Capabilities
+              From manual freight pricing → intelligent real-time rate optimization. Quote faster. Optimize better.
+              Scale smarter.
             </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-5xl"
+            >
+              FreightIQ is an AI-powered freight pricing and rate automation platform that intelligently calculates,
+              optimizes, and automates freight quotations across logistics operations. The platform combines real-time
+              carrier connectivity, AI-driven dynamic pricing, multi-modal support, and historical analytics to deliver
+              freight quotes in seconds — with the margin discipline of a centralized pricing function.
+            </motion.p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {capabilities.map((it, idx) => (
               <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
@@ -189,36 +574,173 @@ export const FreightIQPage = () => {
         </div>
       </section>
 
-      {/* Value Section */}
-      <section className="py-[120px] px-6 bg-slate-100 dark:bg-brand-900/50 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2 
+      {/* Industries Section */}
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 uppercase"
             >
-              Proven Value
+              Industries We Serve
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+            >
+              Purpose-built for freight-intensive operations across the global logistics value chain.
+            </motion.p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {results.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white dark:bg-white/5 p-12 rounded-[3rem] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all text-center border border-slate-100 dark:border-white/5"
-              >
-                <div className="text-5xl md:text-7xl font-black text-accent mb-6 tracking-tighter">
-                  {stat.value}
-                </div>
-                <div className="text-[14px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em] leading-tight">
-                  {stat.label}
-                </div>
-              </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {industries.map((industry, idx) => (
+              <IndustryCard key={idx} {...industry} delay={idx * 0.1} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-[120px] px-6 bg-slate-50 dark:bg-white/5 text-left overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              How FreightIQ Works
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-5xl"
+            >
+              FreightIQ is built as a layered pricing intelligence platform that connects to carrier systems in real
+              time, applies AI-driven dynamic pricing logic, optimizes across cost / speed / margin, and generates
+              customer-ready quotations — all within a single automated flow.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {steps.map((step, idx) => {
+              const Icon = step.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <div className="text-[11px] font-black tracking-[0.2em] text-accent/50 uppercase mb-2">
+                    Step 0{idx + 1}
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left capitalize">
+                    {step.title}
+                  </h3>
+                  <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+                    {step.content}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Section */}
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              Built to Plug Into Your Logistics Stack
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-5xl"
+            >
+              FreightIQ is designed as an API-first platform that plugs into the operational systems freight businesses
+              already run on. Whether you're issuing quotations from a CRM, executing shipments through a TMS, posting
+              costs into an ERP, or coordinating carriers directly — FreightIQ connects without disrupting your existing
+              workflows, and pushes intelligent, optimized pricing into every quote your team generates.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {stack.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-accent/30 transition-all flex flex-col"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-brand-950 border border-slate-100 dark:border-white/5 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-[17px] font-bold text-brand-950 dark:text-white mb-3 group-hover:text-accent transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {item.content}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-[120px] px-6 bg-slate-50 dark:bg-white/5 text-left">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 uppercase"
+            >
+              Use Cases
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium italic"
+            >
+              High-impact deployments where FreightIQ is transforming manual pricing into intelligent rate automation.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {useCases.map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} delay={idx * 0.05} />
             ))}
           </div>
         </div>
