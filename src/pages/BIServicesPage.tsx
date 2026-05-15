@@ -1,200 +1,449 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
-  BarChart3,
-  Database,
-  LayoutDashboard,
   ShieldCheck,
-  Users,
-  Settings,
   Target,
-  ArrowRight,
   CheckCircle2,
-  Cpu,
   Zap,
-  Globe,
-  Layout,
-  Layers,
-  Search,
   Monitor,
-  RefreshCw
+  RefreshCw,
+  ChevronDown,
+  ChevronUp,
+  Activity,
+  Droplets,
+  Factory,
+  ShoppingBag,
+  LucideIcon,
 } from "lucide-react";
 
-const CapabilityCard = ({ title, description, image, delay = 0 }: { title: string; description: string; image: string; delay?: number }) => (
+const AccordionItem = ({
+  title,
+  content,
+  isOpen,
+  onClick,
+}: {
+  title: string;
+  content: string;
+  isOpen: boolean;
+  onClick: () => void;
+}) => {
+  const chips = content.split("·").map((s) => s.trim());
+
+  return (
+    <div className="border-b border-slate-100 dark:border-white/5 last:border-0 overflow-hidden">
+      <button
+        onClick={onClick}
+        className="w-full py-6 flex items-center justify-between text-left group transition-all"
+      >
+        <div className="flex flex-col text-left">
+          <span className="text-[17px] font-bold text-brand-950 dark:text-white group-hover:text-accent transition-colors">
+            {title}
+          </span>
+          {!isOpen && (
+            <span className="text-[12px] text-slate-400 mt-1 line-clamp-1">
+              {chips.slice(0, 3).join(" · ")}...
+            </span>
+          )}
+        </div>
+        <div
+          className={`p-2 rounded-full transition-all duration-300 ${
+            isOpen
+              ? "bg-accent text-white"
+              : "bg-slate-50 dark:bg-white/5 text-slate-400 group-hover:bg-slate-100 dark:group-hover:bg-white/10"
+          }`}
+        >
+          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        </div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="pb-8">
+              <div className="flex flex-wrap gap-2">
+                {chips.map((chip, i) => (
+                  <span
+                    key={i}
+                    className="px-4 py-1.5 bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 rounded-full text-[12px] font-bold text-slate-600 dark:text-slate-400"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+const CapabilityCard = ({
+  title,
+  description,
+  items,
+  delay = 0,
+}: {
+  title: string;
+  description: string;
+  items: string[];
+  delay?: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full text-left"
   >
-    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-brand-950/20 to-transparent opacity-40" />
+    <div className="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-6 transition-transform">
+      <Zap className="w-7 h-7" />
     </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
+    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
+    <p className="text-[15px] font-medium text-brand-950/70 dark:text-white/60 mb-8 leading-relaxed italic border-l-4 border-accent/20 pl-4 py-2 text-left">
+      {description}
+    </p>
+    <ul className="space-y-3 pt-6 border-t border-slate-100 dark:border-white/5 list-none m-0">
+      {items.map((item, i) => (
+        <li key={i} className="flex items-start gap-3 group/item">
+          <div className="w-1.5 h-1.5 rounded-full bg-accent/40 mt-2 shrink-0" />
+          <span className="text-[14px] font-medium text-slate-500 dark:text-slate-400 group-hover/item:text-brand-950 dark:group-hover/item:text-white transition-colors text-left">
+            {item}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </motion.div>
+);
+
+const ApproachStep = ({
+  num,
+  title,
+  description,
+  delay = 0,
+}: {
+  num: string;
+  title: string;
+  description: string;
+  delay?: number;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="relative flex-1 min-w-[280px] p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-2xl hover:border-accent/20 transition-all duration-500 group text-left"
+  >
+    <div className="absolute top-10 right-10 text-5xl font-black text-slate-100 dark:text-white/5 group-hover:text-accent/10 transition-colors">
+      {num}
+    </div>
+    <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-white/10 flex items-center justify-center mb-10 text-accent group-hover:scale-110 transition-transform">
+      <RefreshCw className="w-7 h-7" />
+    </div>
+    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight">
+      {title}
+    </h3>
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/30 pl-4">
       {description}
     </p>
   </motion.div>
 );
 
-const DifferentiatorCard = ({ title, description, idx }: { title: string; description: string; idx: number }) => (
+const UseCaseCard = ({
+  industry,
+  subtitle,
+  crux,
+  examples,
+  outcome,
+  icon: Icon,
+}: {
+  industry: string;
+  subtitle: string;
+  crux: string;
+  examples: string;
+  outcome: string;
+  icon: LucideIcon;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
+  >
+    <div className="flex items-center gap-4 mb-6">
+      <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+        <Icon className="w-6 h-6" />
+      </div>
+      <div className="text-left">
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase">Industry</h4>
+        <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">
+          {industry}
+        </h3>
+      </div>
+    </div>
+
+    <p className="text-[15px] font-bold text-brand-950/70 dark:text-white/70 mb-8 leading-snug text-left">
+      {subtitle}
+    </p>
+
+    <div className="space-y-6 flex-1 mb-10 text-left">
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Crux</h4>
+        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+          {crux}
+        </p>
+      </div>
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
+          Example Dashboards
+        </h4>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">{examples}</p>
+      </div>
+    </div>
+
+    <div className="mt-auto pt-8 border-t border-slate-100 dark:border-white/5 text-left">
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+          <Target className="w-4 h-4 text-accent" />
+        </div>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+          <span className="text-accent uppercase tracking-wider mr-2 not-italic">Outcome:</span>
+          {outcome}
+        </p>
+      </div>
+    </div>
+  </motion.div>
+);
+
+const DifferentiatorCard = ({
+  title,
+  description,
+  idx,
+}: {
+  title: string;
+  description: string;
+  idx: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.95 }}
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true }}
     transition={{ delay: idx * 0.1 }}
-    className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full"
+    className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] hover:shadow-2xl hover:border-accent/20 transition-all h-full text-left group"
   >
-    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-      <CheckCircle2 className="w-6 h-6 text-accent" />
+    <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+      <CheckCircle2 className="w-7 h-7 text-accent" />
     </div>
-    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
+    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight">
       {title}
     </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+    <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4 text-left">
       {description}
     </p>
   </motion.div>
 );
 
 export const BIServicesPage = () => {
-    const caps = [
-    {
-      title: "BI Roadmap & Architecture",
-      description: "Ensuring secure, compliant, and trusted data environments through advanced access controls, audit trails, and scalable governance frameworks.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "Data Engineering",
-      description: "Architecting modern data ecosystems with seamless ingestion, transformation, and orchestration — ensuring data is accurate, accessible, and ready for scale.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "Dashboard Design & Development",
-      description: "Insight-driven dashboards crafted through Figma-led prototyping and delivered on Power BI, Tableau, Qlik, or custom tech stacks.",
-      image: "https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "BI Governance & Security",
-      description: "Row-level security, audit logging, and governance frameworks that enterprise security teams trust.",
-      image: "https://images.unsplash.com/photo-1454165833762-b104c18c942e?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "Market Insight Portals",
-      description: "White-labeled analytics portals embedded in your applications. Self-service BI for business users and stakeholders.",
-      image: "https://images.unsplash.com/photo-1543286386-2e6713cf67ad?auto=format&fit=crop&w=800"
-    },
-    {
-      title: "Support, Training & CoE Setup",
-      description: "Ongoing support, user training, and BI Center of Excellence setup for sustained adoption and data literacy.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800"
-    },
-  ];
+  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
-  const differentiators = [
+  const offerings = [
     {
-      title: "Design-Driven Development",
+      title: "Offering 1 — BI Strategy & Roadmap",
       description:
-        "We design dashboards in Figma before building — ensuring stakeholder alignment before development starts.",
-      icon: Layout,
+        "Define the analytics future state — platform, data, governance, and adoption — before writing the first dashboard.",
+      items: [
+        "Current-state BI maturity assessment across people, process, platform, and data",
+        "Target-state architecture and tool selection (Power BI / Tableau / Qlik / hybrid)",
+        "BI roadmap with phased delivery milestones and success metrics",
+        "BI Centre of Excellence (CoE) design and operating model",
+        "ROI modeling and business case development for analytics investments",
+      ],
     },
     {
-      title: "BI + Data Engineering End-to-End",
+      title: "Offering 2 — Dashboard Design & Development",
       description:
-        "We own the entire pipeline — from source to insight. No handoffs, no gaps.",
-      icon: Layers,
+        "Design-led dashboards engineered for executive clarity, operational decision speed, and analyst depth.",
+      items: [
+        "Executive, operational, and analytical dashboard development",
+        "Design-led UX with audience-appropriate information density",
+        "Power BI, Tableau, and Qlik native development",
+        "Custom visualization development for specialized analytical needs",
+        "Performance optimization for large-scale enterprise datasets",
+        "Mobile-responsive and embedded dashboard delivery",
+      ],
     },
     {
-      title: "Cross-Platform Expertise",
+      title: "Offering 3 — BI Governance & Centre of Excellence",
       description:
-        "We own the entire pipeline — from source to insight. No handoffs, no gaps.",
-      icon: Globe,
+        "Defensible governance that scales analytics without creating bottlenecks — trust as a delivery outcome.",
+      items: [
+        "BI governance framework definition and rollout",
+        "Row-level and object-level security implementation",
+        "Workspace, dataset, and dashboard certification standards",
+        "Version control, deployment pipelines, and DevOps for BI",
+        "BI Centre of Excellence operating model and team enablement",
+        "Audit, lineage, and compliance reporting",
+      ],
     },
     {
-      title: "Strong Governance",
+      title: "Offering 4 — Self-Service & Embedded Analytics",
       description:
-        "Enterprise-grade security, RLS, and audit trails built into every dashboard.",
-      icon: ShieldCheck,
+        "Extend BI beyond the BI team — with self-service for business users and embedded analytics.",
+      items: [
+        "Self-service BI enablement for business and operational users",
+        "Semantic model design for safe, governed self-service",
+        "Embedded analytics integration into customer and internal applications",
+        "Power BI Embedded and Tableau Embedded implementation",
+        "Dataset certification and shared semantic layers",
+        "Business user training and analytics literacy programs",
+      ],
     },
     {
-      title: "On-Prem & Cloud Experience",
+      title: "Offering 5 — BI Modernization & Migration",
       description:
-        "Whether your data lives in Azure, on-prem SQL, or hybrid environments — we handle it.",
-      icon: Database,
-    },
-    {
-      title: "500+ Dashboards Delivered",
-      description:
-        "Proven track record across industries — Insurance, Manufacturing, BFSI, Energy, and more.",
-      icon: BarChart3,
+        "Move from legacy BI estates to modern cloud analytics — without losing adoption or metadata.",
+      items: [
+        "Migration from legacy BI tools (SAP BO, Cognos, MicroStrategy) to modern platforms",
+        "Cloud BI modernization on Azure, AWS, and GCP",
+        "Report and dashboard rationalization — retire, replace, rebuild",
+        "Data model and semantic layer modernization",
+        "Coexistence strategy during phased migration",
+        "User onboarding and adoption acceleration",
+      ],
     },
   ];
 
   const tools = [
     {
-      title: "Power BI",
-      description: [
-        "Power BI Service & Premium",
-        "Microsoft Fabric",
-        "Embedded Analytics",
-        "Data Gateway",
-        "Row-Level Security (RLS)",
-      ],
-      icon: Monitor,
+      title: "Microsoft Power BI",
+      content:
+        "Dashboard development · Paginated reports · Power BI Premium and Embedded · DAX optimization · Dataflows and semantic models · Row-level security · Power BI Service governance · Azure Synapse and Fabric integration",
     },
     {
       title: "Tableau",
-      description: [
-        "Tableau Prep",
-        "Tableau Server",
-        "Tableau Cloud",
-        "Tableau Embedded",
-      ],
-      icon: LayoutDashboard,
+      content:
+        "Tableau Desktop and Server / Cloud · Custom visualization development · Tableau Prep data preparation · LOD calculations and advanced analytics · Embedded analytics · Multi-tenant governance · Data source certification · Performance optimization",
     },
     {
       title: "Qlik",
-      description: [
-        "Qlik Sense",
-        "Qlik AutoML",
-        "Qlik Mashups",
-        "Associative Engine",
-      ],
-      icon: Zap,
+      content:
+        "Qlik Sense and QlikView · Associative engine design · Set analysis and advanced expressions · Qlik NPrinting · Mashup and embedded development · Multi-stream and section-access security · Qlik Cloud governance · Data integration via Qlik connectors",
     },
   ];
 
-  const deliveryModels = [
-    { title: "Onsite", description: "Embedded in your team", icon: Users },
+  const steps = [
     {
-      title: "Offshore",
-      description: "Dedicated team from India",
-      icon: Globe,
+      num: "01",
+      title: "Discover",
+      description:
+        "Assess current BI estate, priorities, and gaps. Define success criteria and target outcomes.",
     },
-    { title: "Hybrid", description: "Best of both worlds", icon: Layers },
-    { title: "T&M", description: "Time & Materials", icon: Zap },
-    { title: "Fixed Price", description: "Predictable budgets", icon: Target },
     {
-      title: "Staff Augmentation",
-      description: "Extend your team",
-      icon: Users,
+      num: "02",
+      title: "Design",
+      description:
+        "Architect solution — data model, semantic layer, dashboard structure, and governance model.",
     },
-    { title: "Agile Sprints", description: "Rapid delivery", icon: Cpu },
     {
-      title: "CoE as a Service",
-      description: "Build and run your BI/Data CoE with our experts",
-      icon: Settings,
+      num: "03",
+      title: "Build",
+      description:
+        "Develop dashboards and models on chosen platform (Power BI / Tableau / Qlik) with iterative reviews.",
+    },
+    {
+      num: "04",
+      title: "Deploy",
+      description:
+        "Roll out with workspace setup, RLS, deployment pipelines, and performance tuning.",
+    },
+    {
+      num: "05",
+      title: "Sustain",
+      description:
+        "Drive adoption through training, CoE enablement, and continuous improvement cycles.",
+    },
+  ];
+
+  const differentiators = [
+    {
+      title: "1. Design-Led Development",
+      description:
+        "We design for the audience, the decision, and the moment of use. Executives, operators, and analysts each get the right density.",
+    },
+    {
+      title: "2. BI + Data Engineering",
+      description:
+        "Backed by deep Data Engineering — the pipeline behind every dashboard is as engineered as the dashboard itself.",
+    },
+    {
+      title: "3. Multi-Platform Certified",
+      description:
+        "Certified depth in Power BI, Tableau, and Qlik. We recommend the platform that fits your stack, skills, and scale.",
+    },
+    {
+      title: "4. Adoption-First Delivery",
+      description:
+        "Structured adoption plans included — user enablement and BI CoE models — because success is usage.",
+    },
+    {
+      title: "5. Industry-Depth Practice",
+      description:
+        "Deep experience in Insurance, ITSM, Energy, Manufacturing, and Retail — we bring domain context, not just tools.",
+    },
+    {
+      title: "6. Governance & Trust",
+      description:
+        "RLS, certified datasets, and audit lineage built into every delivery — scale without liability.",
+    },
+  ];
+
+  const useCases = [
+    {
+      industry: "Insurance",
+      subtitle: "Enterprise-wide visibility across claims, underwriting, and risk.",
+      crux: "Unified executive dashboards for claims settlement efficiency, premium leakage analysis, and agent performance to improve operational transparency.",
+      examples: "Claims TAT · Loss Ratio Monitoring · Underwriting Productivity · Renewal Trends",
+      outcome: "Improved claims efficiency · Better underwriting control",
+      icon: ShieldCheck,
+    },
+    {
+      industry: "ITSM & IT Ops",
+      subtitle: "Real-time operational intelligence for enterprise IT services.",
+      crux: "Centralized platforms monitoring SLA adherence, ticket lifecycle, and incident trends to proactively identify bottlenecks in service delivery.",
+      examples: "SLA Compliance · Incident Trends · MTTR Analysis · Change Success Rate",
+      outcome: "Higher SLA adherence · Faster issue resolution",
+      icon: Activity,
+    },
+    {
+      industry: "Oil & Gas",
+      subtitle: "Operational visibility across upstream and midstream functions.",
+      crux: "Advanced analytics for production monitoring, drilling performance, and asset utilization to optimize field operations and reduce downtime.",
+      examples: "Production KPIs · Refinery Performance · Asset Utilization · HSE Compliance",
+      outcome: "Reduced downtime · Enhanced compliance visibility",
+      icon: Droplets,
+    },
+    {
+      industry: "Manufacturing",
+      subtitle: "Plant-floor visibility and supply-chain intelligence.",
+      crux: "Operational dashboards for OEE tracking, downtime root-cause analysis, and quality metrics to improve throughput and optimize planning.",
+      examples: "OEE · Downtime Analysis · Quality KPIs · Inventory Visibility",
+      outcome: "Higher productivity · Improved delivery reliability",
+      icon: Factory,
+    },
+    {
+      industry: "Retail & E-Commerce",
+      subtitle: "Turn transaction data into merchandising and customer intelligence.",
+      crux: "Sales intelligence dashboards for revenue trends, customer cohorts, and inventory movement to optimize promotions and retention.",
+      examples: "Sales Trends · Customer Cohorts · Inventory Turn · Basket Analytics",
+      outcome: "Smarter merchandising · Better customer retention",
+      icon: ShoppingBag,
     },
   ];
 
@@ -202,42 +451,45 @@ export const BIServicesPage = () => {
     <div className="pt-[110px]">
       {/* Hero Section */}
       <section className="relative py-20 px-6 overflow-hidden bg-[#020617]">
-         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <motion.div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
-        </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        </motion.div>
+        <div className="max-w-7xl mx-auto relative z-10 text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
           >
-            Insights Reimagined
+            Business Intelligence
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-10 tracking-tight leading-[1.1] text-left"
           >
-            Business Analytics
+            Business Intelligence
           </motion.h1>
-          <div className="max-w-4xl">
+          <div className="max-w-7xl text-left">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
+              className="text-2xl md:text-3xl font-medium text-white/90 mb-8 tracking-tight leading-tight"
             >
-              Move beyond static reports. Build high-performance ecosystems.
+              Turning Data into Decisions — At Speed and Scale
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed max-w-7xl"
             >
-              We build high-performance, secure, and design-led BI ecosystems that drive real business impact.
+              Enterprise-grade BI strategy, dashboard development, and governance — engineered for
+              adoption, not just delivery. Built on certified Power BI, Tableau, and Qlik expertise,
+              with deep industry depth in insurance, IT operations, energy, manufacturing, and
+              retail.
             </motion.p>
           </div>
         </div>
@@ -245,83 +497,214 @@ export const BIServicesPage = () => {
 
       {/* Intro Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-5xl space-y-8 text-left">
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.1 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl space-y-12 text-left">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight"
             >
-              In a world flooded with data, the challenge isn't collection — it's clarity. Techknomatic helps organizations transform raw metrics into strategic assets. Our BI services combine beautiful, user-centric design with robust engineering to ensure your data isn't just seen, but understood and acted upon.
-            </motion.p>
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              We don't just build dashboards; we build decision frameworks. From corporate strategy to department-level KPIs, we ensure a "single source of truth" across your enterprise, powered by the industry's leading tools like Power BI, Tableau, and Qlik.
-            </motion.p>
+              From Reports to Real Decisions
+            </motion.h2>
+            <motion.div className="space-y-8 text-left">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+              >
+                Most enterprises don’t suffer from a lack of data — they suffer from a lack of
+                trusted, actionable insights. Dashboards exist, but adoption is low. Reports are
+                produced, but decisions still wait. Techknomatic helps organizations close that gap
+                with end-to-end Business Intelligence services that combine strategy, design-led
+                dashboard development, governance, and adoption — so the analytics you invest in
+                actually change how the business decides.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+              >
+                Built on deep, certified expertise across Power BI, Tableau, Qlik, and custom
+                analytics platforms — and backed by strong data engineering capabilities — our BI
+                practice goes beyond traditional reporting. We focus on building end-to-end
+                analytics solutions that drive measurable business outcomes: faster decisions, higher
+                adoption, defensible governance, and a single source of truth your leadership can
+                rely on.
+              </motion.p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* BI Services Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
+      {/* Capabilities Section */}
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <motion.div className="max-w-7xl mx-auto">
+          <div className="text-left mb-20">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
             >
-              WHAT WE OFFER
+              What We Offer
             </motion.h2>
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
             >
               Business Intelligence Capabilities
             </motion.h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caps.map((it, idx) => (
-              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes Us Different Section */}
-      <section className="py-[60px] px-6 bg-slate-100 dark:bg-brand-900/50 transition-colors duration-500">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
+              transition={{ delay: 0.2 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-7xl text-left"
             >
-              What Makes Us Different
+              Five core service offerings that span the full BI lifecycle — from strategy and
+              roadmap to dashboard development, governance, and sustained adoption.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {offerings.map((it, idx) => (
+              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Tools & Technology Section */}
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left border-y border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20 text-left">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              Tools & Technology
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-7xl"
             >
-              Six differentiators that consistently set our BI delivery apart.
+              Deep, certified expertise across the three platforms that dominate enterprise BI — we
+              recommend the right tool for your context, not the one we know best.
             </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10"
+            >
+              <div className="absolute inset-x-0 bottom-0 top-[20%] p-12 bg-gradient-to-t from-accent/20 flex flex-col justify-end text-left">
+                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-900 shadow-2xl flex items-center justify-center mb-8 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                  <Monitor className="w-8 h-8 text-accent" />
+                </div>
+                <h4 className="text-3xl font-bold text-brand-950 dark:text-white mb-2">
+                  Platform Agnostic
+                </h4>
+                <p className="text-lg text-slate-500 dark:text-slate-400 font-medium">
+                  Delivering the right solution on the right stack.
+                </p>
+              </div>
+              <div className="absolute top-12 left-12 right-12 bottom-1/2 grid grid-cols-4 gap-4 opacity-20 pointer-events-none">
+                {[...Array(16)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="aspect-square bg-accent rounded-lg"
+                    style={{ opacity: 0.15 + (i % 5) * 0.12 }}
+                  />
+                ))}
+              </div>
+            </motion.div>
+
+            <div className="rounded-2xl text-left">
+              {tools.map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  title={item.title}
+                  content={item.content}
+                  isOpen={openAccordion === index}
+                  onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Approach Section */}
+      <section className="py-[60px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden text-left">
+        <div className="max-w-7xl mx-auto relative z-10 text-left">
+          <div className="mb-20">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-8"
+            >
+              Our Approach
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-white/50 font-medium max-w-7xl"
+            >
+              A proven 5-step delivery framework that moves you from scattered reports to a trusted
+              analytics environment — adoption built in from day one.
+            </motion.p>
+          </div>
+
+          <motion.div className="flex flex-nowrap lg:grid lg:grid-cols-5 overflow-x-auto lg:overflow-x-visible pb-12 gap-8 lg:gap-32 scrollbar-hide text-left px-4">
+            {steps.map((step, idx) => (
+              <ApproachStep key={idx} {...step} delay={idx * 0.1} />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Techknomatic Section */}
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/50 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto text-left">
+          <div className="mb-20 text-left">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              Why Techknomatic for Business Intelligence
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-7xl"
+            >
+              We combine design thinking, data engineering, and multi-platform expertise to deliver
+              analytics that drive decision speed.
+            </motion.p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             {differentiators.map((diff, idx) => (
               <DifferentiatorCard key={idx} title={diff.title} description={diff.description} idx={idx} />
             ))}
@@ -329,100 +712,40 @@ export const BIServicesPage = () => {
         </div>
       </section>
 
-      {/* BI Tools We Master Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2 
+      {/* Use Cases Section */}
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
+        <div className="max-w-7xl mx-auto text-left">
+          <motion.div className="mb-20 text-left">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
+              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
             >
-              BI Tools We Master
+              Success Stories
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+            >
+              Use Cases
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-7xl text-left"
             >
-              A platform-agnostic approach using the best tools for your analytics needs.
+              High-impact BI deployments across our priority industries — from executive visibility
+              to operational intelligence.
             </motion.p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {tools.map((tool, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-10 rounded-[3rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-900 shadow-xl flex items-center justify-center mb-8 border border-slate-100 dark:border-white/10 group-hover:rotate-12 transition-transform">
-                  <tool.icon className="w-8 h-8 text-accent" />
-                </div>
-                <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-6 group-hover:text-accent transition-colors">
-                  {tool.title}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {tool.description.map((item, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-white dark:bg-white/10 border border-slate-100 dark:border-white/20 rounded-full text-[12px] font-bold text-slate-600 dark:text-slate-400">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Approach Section */}
-      <section className="py-[60px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
-          <div className="mb-16">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
-            >
-              Delivery Approach
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-white/60 font-medium max-w-2xl"
-            >
-              Multiple engagement models tailored to your organizational structure and project requirements.
-            </motion.p>
-          </div>
-          
-          <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
-            {deliveryModels.map((model, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative flex-1 min-w-[240px] p-8 rounded-[2.5rem] bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-12 transition-transform">
-                  <model.icon className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
-                  {model.title}
-                </h3>
-                <p className="text-[13px] font-medium text-white/40 leading-relaxed italic px-2 border-l-2 border-accent/20">
-                  {model.description}
-                </p>
-              </motion.div>
+          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 text-left">
+            {useCases.map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} />
             ))}
           </div>
         </div>
