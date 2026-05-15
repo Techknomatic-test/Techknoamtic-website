@@ -40,6 +40,7 @@ import {
   ShoppingBag,
   Plane,
   Cpu,
+  PhoneCall,
 } from "lucide-react";
 import { useRef, useState, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -47,8 +48,6 @@ import { Float } from "@react-three/drei";
 import * as THREE from "three";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
-
-const homeImg = (file: string) => `/Images/home/${file}`;
 
 const HeroVisual = () => {
   const data = [
@@ -78,7 +77,7 @@ const HeroVisual = () => {
         >
           <div className="flex items-center gap-3 mb-2">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+            <span className="text-[10px] font-black tracking-widest text-slate-400">
               Live Feedback
             </span>
           </div>
@@ -127,7 +126,7 @@ const HeroVisual = () => {
                 <BarChart3 className="w-5 h-5 text-accent" />
               </div>
               <div>
-                <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                <h4 className="text-[10px] font-black tracking-[0.2em] text-slate-400">
                   Insight Architecture
                 </h4>
                 <div className="text-lg font-bold text-brand-950 dark:text-white">
@@ -156,8 +155,8 @@ const HeroVisual = () => {
                   content={({ active, payload }) => {
                     if (active && payload && payload.length) {
                       return (
-                        <div className="bg-brand-950 text-white px-3 py-2 rounded-xl text-[10px] font-black tracking-widest uppercase shadow-2xl border border-white/10">
-                          {payload[0].value} UNITS
+                        <div className="bg-brand-950 text-white px-3 py-2 rounded-xl text-[10px] font-black tracking-widest shadow-2xl border border-white/10">
+                          {payload[0].value} Units
                         </div>
                       );
                     }
@@ -204,7 +203,7 @@ const HeroVisual = () => {
                 </div>
               ))}
             </div>
-            <div className="text-[10px] font-black uppercase tracking-[0.2em] text-accent">
+            <div className="text-[10px] font-black tracking-[0.2em] text-accent">
               Active Sync
             </div>
           </div>
@@ -215,16 +214,59 @@ const HeroVisual = () => {
 };
 
 const Hero = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    {
+      title: (
+        <>
+          Turn Your Data Into <br className="hidden sm:block" />
+          <span className="relative inline-block sm:mt-2 text-accent">
+            A Competitive Edge
+          </span>
+        </>
+      ),
+      description: "Techknomatic is a specialist analytics and AI consultancy helping enterprises across India and the Middle East design, build, and scale their data advantage — from BI dashboards and data platforms to geospatial intelligence and enterprise AI.",
+      ctaPrimary: "Explore Our Work",
+      ctaSecondary: "Talk to an Expert"
+    },
+    {
+      title: (
+        <>
+          Scale Your AI <br className="hidden sm:block" />
+          <span className="relative inline-block sm:mt-2 text-accent">
+            With Expert Precision
+          </span>
+        </>
+      ),
+      description: "From generative AI to custom machine learning models, we help you integrate agentic AI into your core operations, driving efficiency and innovation across your business vertical.",
+      ctaPrimary: "View AI Solutions",
+      ctaSecondary: "Consult our Team"
+    },
+    {
+      title: (
+        <>
+          Master Your Operations <br className="hidden sm:block" />
+          <span className="relative inline-block sm:mt-2 text-accent">
+            With Real-Time Insights
+          </span>
+        </>
+      ),
+      description: "Our geospatial and refinery analytics platforms provide the sub-second visibility needed to optimize complex supply chains and industrial processes in today's global market.",
+      ctaPrimary: "See Case Studies",
+      ctaSecondary: "Request a Demo"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
 
   return (
     <section
-      ref={ref}
-      className="relative min-h-screen flex flex-col items-center justify-center pt-[120px] pb-[65px] overflow-hidden px-6 bg-[#f0f9ff] dark:bg-brand-950"
+      className="relative min-h-[90vh] lg:min-h-screen flex flex-col items-center justify-center pt-[100px] pb-[40px] overflow-hidden px-6 bg-[#f0f9ff] dark:bg-brand-950"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-sky-100/50 via-white to-sky-50/30 dark:from-sky-950/20 dark:via-brand-950 dark:to-brand-900/40" />
@@ -239,14 +281,6 @@ const Hero = () => {
           style={{
             backgroundImage:
               "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] hidden dark:block"
-          style={{
-            backgroundImage:
-              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -273,62 +307,83 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto w-full px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="max-w-2xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-8 text-brand-950 dark:text-white"
-            >
-              Turn Your Data Into <br className="hidden sm:block" />
-              <span className="relative inline-block sm:mt-2 text-accent">
-                a Competitive Edge
-              </span>
-            </motion.h1>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          >
+            <div className="max-w-2xl">
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-8 text-brand-950 dark:text-white"
+              >
+                {slides[currentSlide].title}
+              </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[15px] text-slate-600 dark:text-slate-400 max-w-xl mb-14 leading-relaxed font-medium tracking-[0.2px]"
-            >
-              Techknomatic is a specialist analytics and AI consultancy helping
-              enterprises across India and the Middle East design, build, and
-              scale their data advantage — from BI dashboards and data platforms
-              to geospatial intelligence and enterprise AI.
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-[15px] text-slate-600 dark:text-slate-400 max-w-xl mb-14 leading-relaxed font-medium tracking-[0.2px]"
+              >
+                {slides[currentSlide].description}
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex flex-wrap gap-5"
+              >
+                <a
+                  href="#solutions"
+                  className="px-8 py-3.5 bg-accent text-white text-[11px] font-black tracking-[0.2em] rounded-2xl shadow-2xl shadow-accent/20 hover:bg-accent/90 transition-all duration-300 flex items-center gap-3 active:scale-95"
+                >
+                  {slides[currentSlide].ctaPrimary}
+                </a>
+                <Link
+                  to="/contact"
+                  className="px-8 py-3.5 bg-white/70 dark:bg-white/10 backdrop-blur-md text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-white/10 text-[11px] font-black tracking-[0.2em] rounded-2xl hover:bg-white dark:hover:bg-white/20 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex items-center gap-2 group active:scale-95"
+                >
+                  {slides[currentSlide].ctaSecondary}{" "}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+            </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-wrap gap-5"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="relative hidden lg:block"
             >
-              <a
-                href="#solutions"
-                className="px-8 py-3.5 bg-accent text-white text-[11px] font-black uppercase tracking-[0.2em] rounded-2xl shadow-2xl shadow-accent/20 hover:bg-accent/90 transition-all duration-300 flex items-center gap-3 active:scale-95"
-              >
-                Explore Our Work
-              </a>
-              <Link
-                to="/contact"
-                className="px-8 py-3.5 bg-white/70 dark:bg-white/10 backdrop-blur-md text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-white/10 text-[11px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-white dark:hover:bg-white/20 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex items-center gap-2 group active:scale-95"
-              >
-                Talk to an Expert{" "}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <HeroVisual />
             </motion.div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="relative hidden lg:block"
-          >
-            <HeroVisual />
           </motion.div>
+        </AnimatePresence>
+
+        {/* Carousel Indicators */}
+        <div className="flex gap-3 mt-16 lg:mt-24 justify-center lg:justify-start">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentSlide(i)}
+              className="group relative h-1.5 transition-all duration-500"
+              style={{ width: currentSlide === i ? "40px" : "12px" }}
+            >
+              <div 
+                className={`absolute inset-0 rounded-full transition-colors duration-500 ${
+                  currentSlide === i ? "bg-accent" : "bg-slate-300 dark:bg-white/20 group-hover:bg-slate-400 dark:group-hover:bg-white/40"
+                }`} 
+              />
+            </button>
+          ))}
         </div>
       </div>
 
@@ -338,7 +393,7 @@ const Hero = () => {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400"
       >
         <div className="w-px h-12 bg-gradient-to-b from-slate-200 to-transparent" />
-        <span className="text-[9px] font-bold uppercase tracking-widest">
+        <span className="text-[9px] font-bold tracking-widest">
           Scroll
         </span>
       </motion.div>
@@ -384,7 +439,7 @@ const StatsSection = () => {
     { value: 15, suffix: "+", label: "Domains Served" },
     { value: 200, suffix: "+", label: "Projects Completed" },
     { value: 5000, suffix: "+", label: "Dashboards Delivered" },
-    { value: 10, suffix: "K+ Hrs", label: "Consulting Hours" },
+    { value: 10000, suffix: "+", label: "Consulting Hours" },
   ];
 
   return (
@@ -406,7 +461,7 @@ const StatsSection = () => {
                   {stat.suffix}
                 </span>
               </h3>
-              <p className="text-[12px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.25em] leading-tight">
+              <p className="text-[12px] font-black text-slate-400 dark:text-slate-500 tracking-[0.25em] leading-tight">
                 {stat.label}
               </p>
             </motion.div>
@@ -455,7 +510,7 @@ const ServiceCard = ({
           <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <div className="absolute top-8 left-8">
             <span
-              className={`text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full ${service.dark ? "bg-brand-950/80 text-white" : "bg-white/90 dark:bg-brand-950/80 text-brand-950 dark:text-white"} backdrop-blur-xl shadow-lg border ${service.dark ? "border-white/10" : "border-white dark:border-white/10"} transform group-hover:-translate-y-1 transition-transform duration-500`}
+              className={`text-[10px] font-black tracking-[0.2em] px-4 py-2 rounded-full ${service.dark ? "bg-brand-950/80 text-white" : "bg-white/90 dark:bg-brand-950/80 text-brand-950 dark:text-white"} backdrop-blur-xl shadow-lg border ${service.dark ? "border-white/10" : "border-white dark:border-white/10"} transform group-hover:-translate-y-1 transition-transform duration-500`}
             >
               {service.category}
             </span>
@@ -464,7 +519,7 @@ const ServiceCard = ({
       ) : (
         <div className="p-10 flex justify-between items-start">
           <span
-            className={`text-[10px] font-black uppercase tracking-[0.3em] ${service.dark ? "text-accent" : "text-slate-400 dark:text-slate-500"}`}
+            className={`text-[10px] font-black tracking-[0.3em] ${service.dark ? "text-accent" : "text-slate-400 dark:text-slate-500"}`}
           >
             {service.category}
           </span>
@@ -516,7 +571,7 @@ const ServicesSection = () => {
         "Turning data into decisions at speed and scale. Power BI, Tableau, Qlik — 500+ dashboards across industries.",
       moreLabel: "BI Services",
       icon: BarChart3,
-      imageUrl: homeImg("3d-graph-computer-illustration.jpg"),
+      imageUrl: "Images/3d-graph-computer-illustration.jpg",
       dark: false,
       href: "/bi-services",
     },
@@ -527,9 +582,8 @@ const ServicesSection = () => {
         "Cloud-native pipelines, modern data platforms, and real-time integration. Azure, Snowflake, Talend, Salesforce and beyond.",
       moreLabel: "Data Engineering",
       icon: Database,
-      imageUrl: homeImg(
-        "colorful-abstract-image-wave-made-up-binary-code-concept-movement-energy-as-well-as-idea-technology-digital-world.jpg",
-      ),
+      imageUrl:
+        "Images/colorful-abstract-image-wave-made-up-binary-code-concept-movement-energy-as-well-as-idea-technology-digital-world.jpg",
       dark: false,
       href: "/data-engineering",
     },
@@ -540,18 +594,18 @@ const ServicesSection = () => {
         "ESRI Silver Partner. Location intelligence for insurance, energy, utilities, and field operations.",
       moreLabel: "Geospatial",
       icon: Globe,
-      imageUrl: homeImg("Geospatial Analytics.jpg"),
+      imageUrl: "Images/Geospatial Analytics.jpg",
       dark: false,
       href: "/geospatial-analytics",
     },
     {
       category: "Innovation",
-      title: "AI & GenAI",
+      title: "Data & AI Services",
       description:
         "LLM-powered assistants, agentic workflows, document AI, and conversational BI — enterprise-grade and governed.",
-      moreLabel: "AI Services",
+      moreLabel: "Data & AI Services",
       icon: Sparkles,
-      imageUrl: homeImg("AI & GenAI.jpg"),
+      imageUrl: "Images/AI & GenAI.jpg",
       dark: false,
       href: "/ai-services",
     },
@@ -595,42 +649,42 @@ const SolutionsSection = () => {
       title: "Insurance Analytics",
       desc: "360° view across claims, policy performance, agents, and fraud trends.\n\n✦ 22% reduction in claim TA",
       moreLabel: "View Solution",
-      imageUrl: homeImg("12437.jpg"),
+      imageUrl: "Images/12437.jpg",
       href: "/insurance-analytics",
     },
     {
       title: "Manufacturing Analytics",
       desc: "From plant floor to boardroom — OEE, production, quality, maintenance, and energy.\n\n✦ 15% improvement in production efficiency",
       moreLabel: "View Solution",
-      imageUrl: homeImg("2152005500.jpg"),
+      imageUrl: "Images/2152005500.jpg",
       href: "/manufacturing-analytics",
     },
     {
       title: "FMCG Analytics",
       desc: "Sales, distribution, trade promotion, and territory intelligence in one platform.\n\n✦ 28% better promotion ROI tracking",
       moreLabel: "View Solution",
-      imageUrl: homeImg("2151680571.jpg"),
+      imageUrl: "Images/2151680571.jpg",
       href: "/fmcg-analytics",
     },
     {
       title: "Oil & Gas Analytics",
       desc: "Refinery operations, asset performance, energy monitoring, and safety — SCADA-integrated.\n\n✦ 18% downtime reduction",
       moreLabel: "View Solution",
-      imageUrl: homeImg("23498.jpg"),
+      imageUrl: "Images/23498.jpg",
       href: "/refinery-operations",
     },
     {
       title: "Airlines Analytics",
       desc: "Flight ops, crew management, ground handling, and route profitability — real-time.\n\n✦ 12-min average delay reduction",
       moreLabel: "View Solution",
-      imageUrl: homeImg("291956.jpg"),
+      imageUrl: "Images/291956.jpg",
       href: "/airlines-analytics",
     },
     {
       title: "ITSM Analytics",
       desc: "Complete visibility into SLAs, assets, team performance, and vendor contracts.\n\n✦ SLA compliance lifted from 68% → 91%",
       moreLabel: "View Solution",
-      imageUrl: homeImg("33931.jpg"),
+      imageUrl: "Images/33931.jpg",
       href: "/itsm-analytics",
     },
   ];
@@ -750,18 +804,39 @@ const AcceleratorsSection = () => {
       href: "/dataguard",
     },
     {
-      title: "ITSM Plug & Play",
-      desc: "20+ ready-made ITSM dashboards. ServiceNow, ManageEngine, Freshservice — live in 1–2 weeks.",
-      cta: "See What's Included",
+      title: "InsightSM — Unified IT Operations Visibility",
+      desc: "Turn fragmented ITSM data into real-time intelligence. ServiceNow, BMC Remedy, Jira — live in days, not months.",
+      cta: "Explore InsightSM",
       icon: Layout,
-      href: "/itsm-plug-and-play",
+      href: "/insight-sm",
     },
     {
-      title: "Agentic AI for ITSM",
+      title: "TicketIQ — AI for Intelligent Ticket Handling",
       desc: "AI that reads, routes, summarizes, and resolves your IT tickets — 40–60% less manual triage.",
       cta: "Learn More",
       icon: Sparkles,
       href: "/agentic-ai-itsm",
+    },
+    {
+      title: "CallOps AI — AI Voice Agents for Calling Operations",
+      desc: "Automate outbound and inbound calls with natural, human-like voice AI that integrates with your logic.",
+      cta: "Learn More",
+      icon: PhoneCall,
+      href: "/call-ops-ai",
+    },
+    {
+      title: "AssistIQ — AI Agents for Intelligent Self-Service",
+      desc: "Deploy photorealistic avatars and smart support agents that resolve queries 24/7.",
+      cta: "Learn More",
+      icon: Sparkles,
+      href: "/assist-iq",
+    },
+    {
+      title: "CXO Nexus — Strategic Conversational AI",
+      desc: "Bridge the gap between enterprise data and executive action with conversational intelligence.",
+      cta: "Learn More",
+      icon: LayoutDashboard,
+      href: "/cxo-nexus",
     },
   ];
   return (
@@ -799,7 +874,7 @@ const AcceleratorsSection = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 lg:gap-10">
           {accelerators.map((acc, i) => (
             <motion.div
               key={i}
@@ -825,7 +900,7 @@ const AcceleratorsSection = () => {
               </div>
               <Link
                 to={acc.href}
-                className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-accent hover:text-accent transition-colors group/btn"
+                className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.2em] text-accent hover:text-accent transition-colors group/btn"
               >
                 {acc.cta}
                 <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -900,7 +975,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[10px] font-black tracking-[0.3em] text-accent uppercase bg-accent/10 rounded-full border border-accent/20"
+              className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[10px] font-black tracking-[0.3em] text-accent bg-accent/10 rounded-full border border-accent/20"
             >
               Testimonials
             </motion.div>
@@ -1004,7 +1079,7 @@ const TestimonialsSection = () => {
                       <h4 className="font-bold text-brand-950 dark:text-white tracking-tight">
                         {t.name}
                       </h4>
-                      <p className="text-[11px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-1">
+                      <p className="text-[11px] font-black text-slate-400 dark:text-slate-500 tracking-widest mt-1">
                         {t.role} •{" "}
                         <span className="text-accent">{t.company}</span>
                       </p>
@@ -1147,8 +1222,8 @@ const ClientSlider = () => {
               key={i}
               className="w-36 h-14 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 rounded-xl flex items-center justify-center px-4 shadow-sm group-hover:border-accent/30 transition-colors"
             >
-              <div className="flex items-center opacity-30 dark:opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                <span className="text-[13px] font-black tracking-tighter text-brand-950 dark:text-white uppercase">
+            <div className="flex items-center opacity-30 dark:opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                <span className="text-[13px] font-black tracking-tighter text-brand-950 dark:text-white">
                   {brand}
                 </span>
               </div>
@@ -1159,20 +1234,20 @@ const ClientSlider = () => {
     </div>
   );
   return (
-    <section className="pt-[50px] pb-[40px] bg-white dark:bg-brand-950 transition-colors duration-500 overflow-hidden relative">
+    <section className="pt-[20px] pb-[10px] bg-white dark:bg-brand-950 transition-colors duration-500 overflow-hidden relative">
       {/* Modern fade effect for the marquee edges */}
       <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-brand-950 to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-brand-950 to-transparent z-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 mb-8">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[10px] font-black tracking-[0.2em] text-accent uppercase bg-accent/5 rounded-full"
-        >
-          Global Reach
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[10px] font-black tracking-[0.2em] text-accent bg-accent/5 rounded-full"
+            >
+              Global Reach
+            </motion.div>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -1180,7 +1255,7 @@ const ClientSlider = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-3xl md:text-4xl font-bold text-brand-950 dark:text-white tracking-tight"
         >
-          Trusted by Industry Leaders.
+          Trusted By Industry Leaders.
         </motion.h2>
       </div>
       <div className="space-y-0 relative">
