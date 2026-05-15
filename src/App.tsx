@@ -39,8 +39,10 @@ export default function App() {
   const { theme, toggleTheme } = useTheme();
   useLenis();
 
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
+
   return (
-    <Router>
+    <Router basename={basename || undefined}>
       <ScrollToTop />
       <AppWrapper theme={theme} toggleTheme={toggleTheme} />
     </Router>
