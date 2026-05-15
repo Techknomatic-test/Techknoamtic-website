@@ -11,6 +11,7 @@ import {
 
 const DAIS_IMG = "Images/Services/data & AI statergy";
 const daisImg = (file: string) => `/${DAIS_IMG}/${file}`;
+const DAIS_HERO_IMG = daisImg("hero.jpg");
 const DAIS_TOOLS_IMG = daisImg("AI Strategy & Model Deployment.jpg");
 
 const AccordionItem = ({
@@ -392,12 +393,21 @@ export const AIServicesPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-20 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative min-h-[min(72vh,720px)] py-20 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
+          <img
+            src={DAIS_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        <div className="max-w-6xl mx-auto relative z-10 text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
