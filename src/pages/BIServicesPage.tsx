@@ -142,18 +142,18 @@ const ApproachStep = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="relative flex-1 min-w-[280px] p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-2xl hover:border-accent/20 transition-all duration-500 group text-left"
+    className="relative flex-1 min-w-[240px] p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-2xl hover:border-accent/20 transition-all duration-500 group text-left"
   >
-    <div className="absolute top-10 right-10 text-5xl font-black text-slate-100 dark:text-white/5 group-hover:text-accent/10 transition-colors">
+    <div className="absolute top-8 right-8 text-4xl font-black text-slate-100 dark:text-white/5 group-hover:text-accent/10 transition-colors">
       {num}
     </div>
-    <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-white/10 flex items-center justify-center mb-10 text-accent group-hover:scale-110 transition-transform">
-      <RefreshCw className="w-7 h-7" />
+    <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-white/10 flex items-center justify-center mb-8 text-accent group-hover:scale-110 transition-transform">
+      <RefreshCw className="w-5 h-5" />
     </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight">
+    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/30 pl-4">
+    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/30 pl-4">
       {description}
     </p>
   </motion.div>
@@ -690,7 +690,7 @@ export const BIServicesPage = () => {
             </motion.p>
           </div>
 
-          <motion.div className="flex flex-nowrap lg:grid lg:grid-cols-5 overflow-x-auto lg:overflow-x-visible pb-12 gap-8 lg:gap-32 scrollbar-hide text-left px-4">
+          <motion.div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
             {steps.map((step, idx) => (
               <ApproachStep key={idx} {...step} delay={idx * 0.1} />
             ))}
