@@ -388,7 +388,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-[120px] bg-white dark:bg-brand-950 px-6 transition-colors duration-500 overflow-hidden">
+    <section className="py-[40px] bg-white dark:bg-brand-950 px-6 transition-colors duration-500 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {stats.map((stat, i) => (
@@ -558,7 +558,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-[65px] bg-[#F8F9FA] dark:bg-brand-900 px-6 overflow-hidden transition-colors duration-500 text-left">
+    <section className="py-[30px] bg-[#F8F9FA] dark:bg-brand-900 px-6 overflow-hidden transition-colors duration-500 text-left">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <motion.h2
@@ -638,7 +638,7 @@ const SolutionsSection = () => {
   return (
     <section
       id="solutions"
-      className="py-[65px] px-6 bg-white dark:bg-brand-950 transition-colors duration-500 overflow-hidden"
+      className="py-[30px] px-6 bg-white dark:bg-brand-950 transition-colors duration-500 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
@@ -767,7 +767,7 @@ const AcceleratorsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-[120px] px-6 relative overflow-hidden bg-brand-950"
+      className="py-[40px] px-6 relative overflow-hidden bg-brand-950"
     >
       <div className="absolute inset-0 z-0 scale-110">
         <motion.div style={{ y }} className="w-full h-full">
@@ -891,7 +891,7 @@ const TestimonialsSection = () => {
   const totalSlides = isMobile ? testimonials.length : testimonials.length - 2;
 
   return (
-    <section className="py-[120px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden relative">
+    <section className="py-[40px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -mr-48 -mt-48" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-10">
@@ -1045,7 +1045,7 @@ const WhyUsSection = () => {
     },
   ];
   return (
-    <section className="py-[65px] px-6 bg-[#F8F9FA] dark:bg-brand-950 transition-colors duration-500">
+    <section className="py-[30px] px-6 bg-[#F8F9FA] dark:bg-brand-950 transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <motion.div

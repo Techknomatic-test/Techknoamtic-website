@@ -147,7 +147,7 @@ export const ContactPage = () => {
   return (
     <div className="pt-[110px] relative pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
       {/* 1. Hero Section - Styled as per Reference Attachment */}
-      <section className="relative min-h-[80vh] flex flex-col justify-center pt-[60px] pb-[120px] overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
+      <section className="relative min-h-[80vh] flex flex-col justify-center pt-[60px] pb-[60px] overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#050a14] opacity-100" />
           {/* Enhanced Data Particle Background Effect */}
@@ -230,7 +230,7 @@ export const ContactPage = () => {
       </section>
 
       {/* 2. Why Leading Teams Section */}
-      <section className="py-[120px] bg-slate-50 dark:bg-brand-900 px-6">
+      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-20">
             <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight mb-6">
@@ -286,7 +286,7 @@ export const ContactPage = () => {
       </section>
 
       {/* 3. Requirement Form Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6">
@@ -376,7 +376,7 @@ export const ContactPage = () => {
       </section>
 
       {/* 4. Trusted Statistics (Dark Section) */}
-      <section className="py-[120px] bg-[#050a14] dark:bg-brand-950 px-6 relative overflow-hidden">
+      <section className="py-[60px] bg-[#050a14] dark:bg-brand-950 px-6 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.08]"
           style={{
@@ -440,7 +440,7 @@ export const ContactPage = () => {
       </section>
 
       {/* 5. Presence / Locations Section */}
-      <section className="py-[100px] bg-slate-50 dark:bg-brand-900 px-6 overflow-hidden">
+      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
             {/* Contact Box */}
@@ -581,7 +581,7 @@ export const ContactPage = () => {
       </section>
 
       {/* 6. Ready to Build Section (Orange CTA) */}
-      <section className="py-[120px] bg-[#f17e21] px-6 relative overflow-hidden">
+      <section className="py-[60px] bg-[#f17e21] px-6 relative overflow-hidden">
         {/* Soft radial gradient to add depth to orange */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent opacity-60" />
 

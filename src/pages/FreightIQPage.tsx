@@ -405,7 +405,7 @@ export const FreightIQPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-brand-950">
+      <section className="relative py-[80px] px-6 overflow-hidden bg-brand-950">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
         </div>
@@ -448,7 +448,7 @@ export const FreightIQPage = () => {
       </section>
 
       {/* Challenge Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <motion.h2
@@ -531,7 +531,7 @@ export const FreightIQPage = () => {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-[120px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
+      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <motion.h2
@@ -575,7 +575,7 @@ export const FreightIQPage = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <motion.h2
@@ -606,7 +606,7 @@ export const FreightIQPage = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-[120px] px-6 bg-slate-50 dark:bg-white/5 text-left overflow-hidden">
+      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <motion.h2
@@ -662,7 +662,7 @@ export const FreightIQPage = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <motion.h2
@@ -716,7 +716,7 @@ export const FreightIQPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[120px] px-6 bg-slate-50 dark:bg-white/5 text-left">
+      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <motion.h2

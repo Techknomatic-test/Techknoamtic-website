@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 
 const PartnershipHero = () => {
   return (
-    <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-[60px] pb-[80px] overflow-hidden px-6 bg-brand-950">
+    <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-[60px] pb-[60px] overflow-hidden px-6 bg-brand-950">
       <div className="absolute inset-0 z-0">
         <img
           src="Images/7660.jpg"
@@ -117,7 +117,7 @@ const OEMSection = () => {
   ];
 
   return (
-    <section className="py-[120px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden">
+    <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16 text-left">
           <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
@@ -198,7 +198,7 @@ const MarketSection = () => {
   ];
 
   return (
-    <section className="py-[120px] bg-white dark:bg-brand-950 px-6 transition-colors duration-500 text-left">
+    <section className="py-[60px] bg-white dark:bg-brand-950 px-6 transition-colors duration-500 text-left">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <div className="max-w-4xl">

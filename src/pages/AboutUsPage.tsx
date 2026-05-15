@@ -99,7 +99,7 @@ const DifferentSection = () => {
   ];
 
   return (
-    <section className="py-[120px] bg-slate-50 dark:bg-brand-900 px-6 overflow-hidden">
+    <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-left mb-16">
           <motion.h2
@@ -185,7 +185,7 @@ export const AboutUsPage = () => {
   return (
     <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
       {/* 1. Hero Section - Styled as per Airline Hero */}
-      <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-[60px] pb-[80px] overflow-hidden px-6 bg-brand-950">
+      <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-[60px] pb-[40px] overflow-hidden px-6 bg-brand-950">
         <div className="absolute inset-0 z-0">
           <img
             src="Images/airline.jpg"
@@ -246,7 +246,7 @@ export const AboutUsPage = () => {
       <DifferentSection />
 
       {/* 3. Culture and Values (Updated Layout) */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-16">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
@@ -301,7 +301,7 @@ export const AboutUsPage = () => {
       </section>
 
       {/* 4. Life at Techknomatic (Auto-Slider + Team Gallery) */}
-      <section className="py-[100px] bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 overflow-hidden">
+      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-left">
           <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
             Life at <span className="text-accent">Techknomatic.</span>

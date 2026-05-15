@@ -392,7 +392,7 @@ export const AIServicesPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative min-h-[min(72vh,720px)] py-40 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative min-h-[min(72vh,720px)] py-20 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src={DAIS_HERO_IMG}
@@ -437,7 +437,7 @@ export const AIServicesPage = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-5xl space-y-8">
             <motion.p
@@ -470,7 +470,7 @@ export const AIServicesPage = () => {
       </section>
 
       {/* What We Offer Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <motion.h2
@@ -500,7 +500,7 @@ export const AIServicesPage = () => {
       </section>
 
       {/* Tools & Technology Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <motion.h2
@@ -565,7 +565,7 @@ export const AIServicesPage = () => {
       </section>
 
       {/* Our Approach Section */}
-      <section className="py-[120px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden text-left">
+      <section className="py-[60px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden text-left">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="mb-16">
             <motion.h2
@@ -596,7 +596,7 @@ export const AIServicesPage = () => {
       </section>
 
       {/* Why Techknomatic Section */}
-      <section className="py-[120px] px-6 bg-slate-100 dark:bg-brand-900/50 text-left">
+      <section className="py-[60px] px-6 bg-slate-100 dark:bg-brand-900/50 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <motion.h2
@@ -626,7 +626,7 @@ export const AIServicesPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left pb-20">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left pb-20">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <motion.div

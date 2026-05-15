@@ -201,7 +201,7 @@ export const BIServicesPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative py-20 px-6 overflow-hidden bg-[#020617]">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
@@ -244,7 +244,7 @@ export const BIServicesPage = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-5xl space-y-8 text-left">
             <motion.p 
@@ -270,7 +270,7 @@ export const BIServicesPage = () => {
       </section>
 
       {/* BI Services Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <motion.h2
@@ -300,7 +300,7 @@ export const BIServicesPage = () => {
       </section>
 
       {/* What Makes Us Different Section */}
-      <section className="py-[120px] px-6 bg-slate-100 dark:bg-brand-900/50 transition-colors duration-500">
+      <section className="py-[60px] px-6 bg-slate-100 dark:bg-brand-900/50 transition-colors duration-500">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <motion.h2 
@@ -330,7 +330,7 @@ export const BIServicesPage = () => {
       </section>
 
       {/* BI Tools We Master Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <motion.h2 
@@ -381,7 +381,7 @@ export const BIServicesPage = () => {
       </section>
 
       {/* Our Approach Section */}
-      <section className="py-[120px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
+      <section className="py-[60px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10 text-left">
           <div className="mb-16">
             <motion.h2 

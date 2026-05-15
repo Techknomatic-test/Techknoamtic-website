@@ -401,7 +401,7 @@ export const DataGuardPage = () => {
 
   return (
     <div className="pt-[110px]">
-      <section className="relative overflow-hidden bg-brand-950 px-6 py-40">
+      <section className="relative overflow-hidden bg-brand-950 px-6 py-[80px]">
         <div className="absolute inset-0 z-0">
           <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
         </div>
@@ -444,7 +444,7 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="border-b border-slate-100 bg-white px-6 py-[120px] text-left dark:border-white/5 dark:bg-brand-950">
+      <section className="border-b border-slate-100 bg-white px-6 py-[60px] text-left dark:border-white/5 dark:bg-brand-950">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16">
             <motion.h2
@@ -527,7 +527,7 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="border-b border-slate-100 bg-slate-50 px-6 py-[120px] text-left dark:border-white/5 dark:bg-white/5">
+      <section className="border-b border-slate-100 bg-slate-50 px-6 py-[60px] text-left dark:border-white/5 dark:bg-white/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16">
             <motion.h2
@@ -571,7 +571,7 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-[120px] text-left dark:bg-brand-950">
+      <section className="bg-white px-6 py-[60px] text-left dark:bg-brand-950">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16">
             <motion.h2
@@ -602,7 +602,7 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-slate-50 px-6 py-[120px] text-left dark:bg-white/5">
+      <section className="overflow-hidden bg-slate-50 px-6 py-[60px] text-left dark:bg-white/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16">
             <motion.h2
@@ -658,7 +658,7 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-[120px] text-left dark:bg-brand-950">
+      <section className="bg-white px-6 py-[60px] text-left dark:bg-brand-950">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16">
             <motion.h2
@@ -716,7 +716,7 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="bg-slate-50 px-6 py-[120px] text-left dark:bg-white/5">
+      <section className="bg-slate-50 px-6 py-[60px] text-left dark:bg-white/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16">
             <motion.h2

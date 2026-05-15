@@ -128,7 +128,7 @@ export const HSEAnalyticsPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative py-[80px] px-6 overflow-hidden bg-[#020617]">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src="Images/slider.jpg"
@@ -176,7 +176,7 @@ export const HSEAnalyticsPage = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-5xl space-y-8 text-left">
             <motion.p 
@@ -202,7 +202,7 @@ export const HSEAnalyticsPage = () => {
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
         <div className="max-w-6xl mx-auto text-left">
           <div className="text-left mb-16">
             <motion.h2
@@ -232,7 +232,7 @@ export const HSEAnalyticsPage = () => {
       </section>
 
       {/* HSE Analytics Dashboard Modules */}
-      <section className="py-[120px] bg-slate-50 dark:bg-brand-900 transition-colors duration-500 px-6 text-left">
+      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 transition-colors duration-500 px-6 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight">
@@ -265,7 +265,7 @@ export const HSEAnalyticsPage = () => {
       </section>
 
       {/* Integration & Scalability Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 overflow-hidden text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
@@ -327,7 +327,7 @@ export const HSEAnalyticsPage = () => {
       </section>
 
       {/* Results Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <motion.h2 
@@ -362,7 +362,7 @@ export const HSEAnalyticsPage = () => {
       </section>
 
       {/* Delivery Models Section */}
-      <section className="py-[120px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden text-left">
+      <section className="py-[60px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden text-left">
         <div className="max-w-6xl mx-auto relative z-10 text-left">
           <div className="mb-16">
             <motion.h2 

@@ -153,7 +153,7 @@ export const CareersPage = () => {
   return (
     <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
       {/* 1. Hero Section - Styled as per Reference Attachment */}
-      <section className="relative min-h-[80vh] flex flex-col justify-center pt-[60px] pb-[120px] overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
+      <section className="relative min-h-[80vh] flex flex-col justify-center pt-[60px] pb-[60px] overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#050a14] opacity-100" />
           {/* Enhanced Data Particle Background Effect */}
@@ -249,7 +249,7 @@ export const CareersPage = () => {
       </section>
 
       {/* 2. Why Techknomatic */}
-      <section className="py-[120px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500">
+      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-20 text-left">
             <h2 className="text-4xl md:text-[56px] font-bold text-brand-950 dark:text-white tracking-tight leading-tight mb-6">
@@ -310,7 +310,7 @@ export const CareersPage = () => {
       </section>
 
       {/* 3. Work Culture & How We Work */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-20">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
@@ -365,7 +365,7 @@ export const CareersPage = () => {
       </section>
 
       {/* 4. Career Tracks */}
-      <section className="py-[120px] bg-slate-50 dark:bg-brand-900 px-6">
+      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-20">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6">
@@ -445,7 +445,7 @@ export const CareersPage = () => {
       </section>
 
       {/* 5. L&D Section */}
-      <section className="py-[120px] px-6 bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 transition-colors duration-500">
+      <section className="py-[60px] px-6 bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 transition-colors duration-500">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-20">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
@@ -501,7 +501,7 @@ export const CareersPage = () => {
       </section>
 
       {/* 6. Life at Techknomatic */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="text-left">
@@ -560,7 +560,7 @@ export const CareersPage = () => {
       {/* 7. Open Roles Section */}
       <section
         id="roles"
-        className="py-[120px] bg-slate-50 dark:bg-brand-900 px-6"
+        className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-20">
@@ -599,7 +599,7 @@ export const CareersPage = () => {
       </section>
 
       {/* 9. Hiring Process */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-50 dark:border-white/5">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-50 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-20">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-4">
@@ -636,7 +636,7 @@ export const CareersPage = () => {
       </section>
 
       {/* 10. Strong Closing CTA */}
-      <section className="py-[120px] px-6 bg-accent relative overflow-hidden">
+      <section className="py-[60px] px-6 bg-accent relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.15),transparent_70%)]" />
         <div className="max-w-4xl mx-auto md:text-center text-white relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1 mb-8 text-[10px] font-black tracking-[0.3em] uppercase bg-white/10 rounded-full border border-white/20">

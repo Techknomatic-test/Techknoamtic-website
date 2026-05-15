@@ -227,7 +227,7 @@ export const RefineryOperationsPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617] text-left">
+      <section className="relative py-[80px] px-6 overflow-hidden bg-[#020617] text-left">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1600"
@@ -272,7 +272,7 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* About The Industry Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-7xl space-y-12 text-left">
             <motion.h2 
@@ -297,7 +297,7 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* What We Solve Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-20 text-left">
             <motion.h2
@@ -327,7 +327,7 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* Analytics Modules Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto text-left">
           <div className="mb-20 text-left">
             <motion.h2 
@@ -356,7 +356,7 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 text-left">
              <motion.h2 
@@ -448,7 +448,7 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-7xl mx-auto text-left">
           <div className="mb-20 text-left">
             <motion.div

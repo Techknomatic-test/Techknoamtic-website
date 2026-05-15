@@ -186,7 +186,7 @@ export const HRPortalPage = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-5xl space-y-8 text-left">
             <motion.p 
@@ -212,7 +212,7 @@ export const HRPortalPage = () => {
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <motion.h2
@@ -337,7 +337,7 @@ export const HRPortalPage = () => {
       </section>
 
       {/* Results Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <motion.h2 
@@ -372,7 +372,7 @@ export const HRPortalPage = () => {
       </section>
 
       {/* Engagement Models Section */}
-      <section className="py-[120px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
+      <section className="py-[60px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10 text-left">
           <div className="mb-16">
             <motion.h2 
