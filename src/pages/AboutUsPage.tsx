@@ -341,46 +341,55 @@ export const AboutUsPage = () => {
                 name: "Rahul Madke",
                 role: "Founder & CEO",
                 img: "Images/Leadership/people/Rahul_madake.jpeg",
+                objectPosition: "center 28%",
               },
               {
                 name: "Prakash Pawar",
                 role: "Co-Founder & COO",
                 img: "Images/Leadership/people/prakash_pawar.jpeg",
+                objectPosition: "center 25%",
               },
               {
                 name: "Sunny Tatiya",
                 role: "CFO",
                 img: "Images/Leadership/people/Sunny%20Tatia.jpeg",
+                objectPosition: "center 30%",
               },
               {
                 name: "Gopinath Sambandam",
                 role: "Service Delivery Head",
                 img: "Images/Leadership/people/gopi_s.jpeg",
+                objectPosition: "center 30%",
               },
               {
                 name: "Pranita Singh",
                 role: "AVP - HR",
                 img: "Images/Leadership/people/pranita_singh.jpeg",
+                objectPosition: "center 28%",
               },
               {
                 name: "Vasundhara Gaekwad",
                 role: "Marketing & Growth",
                 img: "Images/Leadership/people/vasundhra_m.jpeg",
+                objectPosition: "center 28%",
               },
               {
                 name: "Apoorva Gowda",
                 role: "Sr. BD Executive",
                 img: "Images/Leadership/people/Apoorva.jpeg",
+                objectPosition: "center 30%",
               },
               {
                 name: "Hemant Jadhav",
                 role: "AVP - Sales",
                 img: "Images/Leadership/people/hemant_.jpeg",
+                objectPosition: "center 32%",
               },
               {
                 name: "Anup Sangli",
                 role: "Strategic Consultant",
                 img: "Images/Leadership/people/anup_sangli.jpeg",
+                objectPosition: "center 30%",
               },
             ].map((member, i) => (
               <motion.div
@@ -391,11 +400,14 @@ export const AboutUsPage = () => {
                 transition={{ delay: (i % 3) * 0.1 }}
                 className="group border-r border-b border-slate-100 dark:border-white/5 bg-white dark:bg-brand-950 p-8"
               >
-                <div className="aspect-square overflow-hidden mb-8 border border-slate-100 dark:border-white/10 relative">
+                <div className="aspect-[4/5] overflow-hidden mb-8 border border-slate-100 dark:border-white/10 relative bg-slate-50 dark:bg-brand-900 rounded-none">
                   <img
                     src={member.img}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover rounded-none scale-105 group-hover:scale-110 transition-transform duration-700 origin-center"
+                    style={{
+                      objectPosition: member.objectPosition ?? "center 30%",
+                    }}
                     referrerPolicy="no-referrer"
                   />
                 </div>
