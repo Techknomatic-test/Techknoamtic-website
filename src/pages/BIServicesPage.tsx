@@ -18,6 +18,7 @@ import {
 
 const BI_IMG = "Images/Services/Business Intelligence";
 const biImg = (file: string) => `/${BI_IMG}/${file}`;
+const BI_HERO_IMG = biImg("hero.jpg");
 const BI_TOOLS_IMG = biImg("Multi-Platform Certified.jpg");
 
 const AccordionItem = ({
@@ -466,12 +467,21 @@ export const BIServicesPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-20 px-6 overflow-hidden bg-[#020617]">
-        <motion.div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
-        </motion.div>
-        <div className="max-w-7xl mx-auto relative z-10 text-left">
+      <section className="relative min-h-[min(72vh,720px)] py-20 px-6 overflow-hidden bg-[#020617]">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src={BI_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10 text-left drop-shadow-md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -483,16 +493,16 @@ export const BIServicesPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-10 tracking-tight leading-[1.1] text-left"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
           >
             Business Intelligence
           </motion.h1>
-          <div className="max-w-7xl text-left">
+          <div className="max-w-4xl">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white/90 mb-8 tracking-tight leading-tight"
+              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
             >
               Turning Data into Decisions — At Speed and Scale
             </motion.h2>
@@ -500,7 +510,7 @@ export const BIServicesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed max-w-7xl"
+              className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed"
             >
               Enterprise-grade BI strategy, dashboard development, and governance — engineered for
               adoption, not just delivery. Built on certified Power BI, Tableau, and Qlik expertise,
