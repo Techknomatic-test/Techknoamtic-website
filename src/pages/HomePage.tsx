@@ -6,6 +6,7 @@ import {
   AnimatePresence,
   useInView,
   useMotionValue,
+  useAnimationControls,
 } from "motion/react";
 import {
   BarChart as ReBarChart,
@@ -1127,47 +1128,89 @@ const WhyUsSection = () => {
 };
 
 const ClientSlider = () => {
-  const brands = [
-    "Nexus",
-    "Stratum",
-    "Vertex",
-    "Oasis",
-    "Lumina",
-    "Aether",
-    "Prism",
-    "Echo",
-    "Atlas",
-  ];
+  const clientLogos = [
+    "ANI-20230801113821.jpg",
+    "BDO_Unibank_(logo).svg.png",
+    "DBS_Bank_Logo_(alternative).svg.png",
+    "Honeywell_logo.svg.png",
+    "HxCentral-Color-Web 1.png",
+    "IGTlogo.png",
+    "KIA_logo3.svg.png",
+    "Logo_of_Everest_spices.png",
+    "Lux-Cozi-Logo-Vector.svg-.png",
+    "Novartis-Logo.svg.png",
+    "Persistent_Systems_Logo.svg.png",
+    "Tech_Mahindra_New_Logo.svg.png",
+    "Teradata_Logo.png",
+    "ZS_Associates 1.png",
+    "keventers.png",
+    "malpani-group-logo.jpg",
+    "marketing-strategy-of-trent-trent-limited-logo-e1721457798938-85604e26b126834de5a36d237555f96c.png",
+    "tvs-credit 1.png",
+    "images (1).png",
+    "images (2).png",
+    "images.png",
+    "logo.png",
+  ].map((file) => ({
+    src: `Images/home/Client_logo/${encodeURIComponent(file)}`,
+    alt: file.replace(/\.[^.]+$/, "").replace(/[_-]+/g, " ").trim(),
+  }));
   const MarqueeRow = ({
     items,
     reverse = false,
   }: {
-    items: string[];
+    items: { src: string; alt: string }[];
     reverse?: boolean;
-  }) => (
-    <div className="flex overflow-hidden group">
-      <motion.div
-        animate={{ x: reverse ? [0, -100 + "%"] : [-100 + "%", 0] }}
-        transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-        className="flex gap-4 py-2 whitespace-nowrap"
+  }) => {
+    const controls = useAnimationControls();
+
+    const runMarquee = () => {
+      controls.start({
+        x: reverse ? ["0%", "-50%"] : ["-50%", "0%"],
+        transition: {
+          duration: 80,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        },
+      });
+    };
+
+    useEffect(() => {
+      runMarquee();
+      return () => controls.stop();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [reverse]);
+
+    return (
+      <div
+        className="flex overflow-hidden"
+        onMouseEnter={() => controls.stop()}
+        onMouseLeave={() => runMarquee()}
       >
-        {[...items, ...items, ...items, ...items, ...items, ...items].map(
-          (brand, i) => (
-            <div
-              key={i}
-              className="w-36 h-14 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 rounded-xl flex items-center justify-center px-4 shadow-sm group-hover:border-accent/30 transition-colors"
-            >
-            <div className="flex items-center opacity-30 dark:opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                <span className="text-[13px] font-black tracking-tighter text-brand-950 dark:text-white">
-                  {brand}
-                </span>
+        <motion.div
+          animate={controls}
+          className="flex gap-4 py-2 whitespace-nowrap will-change-transform"
+        >
+          {[...items, ...items, ...items, ...items, ...items, ...items].map(
+            (logo, i) => (
+              <div
+                key={`${logo.src}-${i}`}
+                className="group/logo relative z-20 w-40 h-16 shrink-0 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 rounded-xl flex items-center justify-center px-5 shadow-sm hover:border-accent/30 transition-colors cursor-pointer"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-10 max-w-[120px] w-auto object-contain opacity-80 grayscale saturate-0 transition-[filter,opacity] duration-300 ease-out group-hover/logo:grayscale-0 group-hover/logo:saturate-100 group-hover/logo:opacity-100 hover:grayscale-0 hover:saturate-100 hover:opacity-100"
+                  referrerPolicy="no-referrer"
+                />
               </div>
-            </div>
-          ),
-        )}
-      </motion.div>
-    </div>
-  );
+            ),
+          )}
+        </motion.div>
+      </div>
+    );
+  };
   return (
     <section className="pt-[20px] pb-[10px] bg-white dark:bg-brand-950 transition-colors duration-500 overflow-hidden relative">
       {/* Modern fade effect for the marquee edges */}
@@ -1193,9 +1236,9 @@ const ClientSlider = () => {
           Trusted By Industry Leaders.
         </motion.h2>
       </div>
-      <div className="space-y-0 relative">
-        <MarqueeRow items={brands} />
-        <MarqueeRow items={brands} reverse />
+      <div className="space-y-4 relative">
+        <MarqueeRow items={clientLogos} />
+        <MarqueeRow items={clientLogos} reverse />
       </div>
     </section>
   );
