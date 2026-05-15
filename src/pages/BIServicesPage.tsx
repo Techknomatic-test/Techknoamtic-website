@@ -4,7 +4,6 @@ import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
   ShieldCheck,
   Target,
-  CheckCircle2,
   Zap,
   Monitor,
   RefreshCw,
@@ -16,6 +15,10 @@ import {
   ShoppingBag,
   LucideIcon,
 } from "lucide-react";
+
+const BI_IMG = "Images/Services/Business Intelligence";
+const biImg = (file: string) => `/${BI_IMG}/${file}`;
+const BI_TOOLS_IMG = biImg("Multi-Platform Certified.jpg");
 
 const AccordionItem = ({
   title,
@@ -225,10 +228,12 @@ const UseCaseCard = ({
 const DifferentiatorCard = ({
   title,
   description,
+  image,
   idx,
 }: {
   title: string;
   description: string;
+  image: string;
   idx: number;
 }) => (
   <motion.div
@@ -236,15 +241,20 @@ const DifferentiatorCard = ({
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true }}
     transition={{ delay: idx * 0.1 }}
-    className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] hover:shadow-2xl hover:border-accent/20 transition-all h-full text-left group"
+    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] hover:shadow-2xl hover:border-accent/20 transition-all h-full text-left group flex flex-col overflow-hidden"
   >
-    <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-      <CheckCircle2 className="w-7 h-7 text-accent" />
+    <div className="relative h-52 -mx-8 -mt-8 mb-8 overflow-hidden">
+      <img
+        src={image}
+        alt={title}
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        referrerPolicy="no-referrer"
+      />
     </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight">
+    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
-    <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4 text-left">
+    <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4 text-left flex-1">
       {description}
     </p>
   </motion.div>
@@ -376,31 +386,37 @@ export const BIServicesPage = () => {
       title: "1. Design-Led Development",
       description:
         "We design for the audience, the decision, and the moment of use. Executives, operators, and analysts each get the right density.",
+      image: biImg("Design-Led Development.jpg"),
     },
     {
       title: "2. BI + Data Engineering",
       description:
         "Backed by deep Data Engineering — the pipeline behind every dashboard is as engineered as the dashboard itself.",
+      image: biImg("BI + Data Engineering.jpg"),
     },
     {
       title: "3. Multi-Platform Certified",
       description:
         "Certified depth in Power BI, Tableau, and Qlik. We recommend the platform that fits your stack, skills, and scale.",
+      image: biImg("Multi-Platform Certified.jpg"),
     },
     {
       title: "4. Adoption-First Delivery",
       description:
         "Structured adoption plans included — user enablement and BI CoE models — because success is usage.",
+      image: biImg("Adoption-First Delivery.jpg"),
     },
     {
       title: "5. Industry-Depth Practice",
       description:
         "Deep experience in Insurance, ITSM, Energy, Manufacturing, and Retail — we bring domain context, not just tools.",
+      image: biImg("Industry-Depth Practice.jpg"),
     },
     {
       title: "6. Governance & Trust",
       description:
         "RLS, certified datasets, and audit lineage built into every delivery — scale without liability.",
+      image: biImg("Governance & Trust.jpg"),
     },
   ];
 
@@ -610,27 +626,28 @@ export const BIServicesPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10"
+              className="flex flex-col overflow-hidden rounded-[3rem] bg-slate-100 ring-1 ring-slate-200/80 dark:bg-white/5 dark:ring-white/10 shadow-2xl"
             >
-              <div className="absolute inset-x-0 bottom-0 top-[20%] p-12 bg-gradient-to-t from-accent/20 flex flex-col justify-end text-left">
-                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-900 shadow-2xl flex items-center justify-center mb-8 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
-                  <Monitor className="w-8 h-8 text-accent" />
-                </div>
-                <h4 className="text-3xl font-bold text-brand-950 dark:text-white mb-2">
-                  Platform Agnostic
-                </h4>
-                <p className="text-lg text-slate-500 dark:text-slate-400 font-medium">
-                  Delivering the right solution on the right stack.
-                </p>
+              <div className="relative aspect-[4/3] w-full shrink-0 lg:aspect-[5/4]">
+                <img
+                  src={BI_TOOLS_IMG}
+                  alt="BI tools and technology platforms"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
               </div>
-              <div className="absolute top-12 left-12 right-12 bottom-1/2 grid grid-cols-4 gap-4 opacity-20 pointer-events-none">
-                {[...Array(16)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="aspect-square bg-accent rounded-lg"
-                    style={{ opacity: 0.15 + (i % 5) * 0.12 }}
-                  />
-                ))}
+              <div className="flex flex-col gap-5 bg-white p-8 dark:bg-brand-950 text-left">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-slate-50 shadow-md ring-1 ring-slate-200/80 dark:bg-brand-900 dark:ring-white/10">
+                  <Monitor className="h-8 w-8 text-accent" />
+                </div>
+                <div>
+                  <h4 className="mb-2 text-2xl font-bold text-brand-950 dark:text-white">
+                    Platform Agnostic
+                  </h4>
+                  <p className="font-medium text-slate-600 dark:text-slate-400">
+                    Delivering the right solution on the right stack.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -706,7 +723,7 @@ export const BIServicesPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             {differentiators.map((diff, idx) => (
-              <DifferentiatorCard key={idx} title={diff.title} description={diff.description} idx={idx} />
+              <DifferentiatorCard key={idx} {...diff} idx={idx} />
             ))}
           </div>
         </div>
