@@ -16,7 +16,11 @@ import {
 } from "lucide-react";
 
 const CO_IMG = "Images/CallOpsAI";
-const coImg = (file: string) => `${CO_IMG}/${file}`;
+const coImg = (file: string) => `/${CO_IMG}/${file}`;
+
+/** Shared industry images with AssistIQ (Entrprise_Ai/AssistIQ). */
+const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
+const assistImg = (file: string) => `/${ASSIST_IMG}/${file}`;
 
 const CapabilityCard = ({
   title,
@@ -126,8 +130,8 @@ const IndustryCard = ({ title, description, image, delay = 0 }: { title: string;
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        referrerPolicy="no-referrer"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 to-transparent" />
     </div>
     <div className="p-10 flex-1 flex flex-col">
       <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
@@ -227,25 +231,25 @@ export const CallOpsAIPage = () => {
       title: "Retail",
       description:
         "Automate order confirmations, promotional outreach, and customer engagement at scale.",
-      image: coImg("industry-retail.jpg"),
+      image: assistImg("Retail & E-Commerce.jpg"),
     },
     {
       title: "BFSI",
       description:
         "Streamline collections, payment reminders, customer verification, and policy renewals.",
-      image: coImg("industry-bfsi.jpg"),
+      image: assistImg("BFSI.jpg"),
     },
     {
       title: "Healthcare",
       description:
         "Automate appointment scheduling, patient follow-ups, and reminder workflows.",
-      image: coImg("industry-healthcare.jpg"),
+      image: assistImg("Healthcare.jpg"),
     },
     {
       title: "Logistics",
       description:
         "Coordinate deliveries, shipment updates, and driver–customer communication.",
-      image: coImg("industry-logistics.jpg"),
+      image: assistImg("Logistics.jpg"),
     },
     {
       title: "Real Estate",

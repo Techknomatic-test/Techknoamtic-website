@@ -18,9 +18,13 @@ import {
   Globe,
 } from "lucide-react";
 
-/** Local assets under public/Images/TicketIQ (same pattern as Data Engineering capability images). */
+/** TicketIQ-only assets (no AssistIQ equivalent). */
 const TIQ_IMG = "Images/TicketIQ";
-const tiqImg = (file: string) => `${TIQ_IMG}/${file}`;
+const tiqImg = (file: string) => `/${TIQ_IMG}/${file}`;
+
+/** Shared industry images with AssistIQ (Entrprise_Ai/AssistIQ). */
+const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
+const assistImg = (file: string) => `/${ASSIST_IMG}/${file}`;
 
 const CapabilityCard = ({
   title,
@@ -153,8 +157,8 @@ const IndustryCard = ({
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        referrerPolicy="no-referrer"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 to-transparent" />
     </div>
     <div className="p-10 flex-1 flex flex-col">
       <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
@@ -288,19 +292,19 @@ export const AgenticAIITSMPage = () => {
       title: "BFSI & Financial Services",
       description:
         "Secure identity, access, and audit-ready IT support automation for regulated banking operations.",
-      image: tiqImg("bfsi.jpg"),
+      image: assistImg("BFSI.jpg"),
     },
     {
       title: "Healthcare",
       description:
         "Hospital and clinical IT support automation with secure workstation and application access management.",
-      image: tiqImg("healthcare.jpg"),
+      image: assistImg("Healthcare.jpg"),
     },
     {
       title: "Retail & E-Commerce",
       description:
         "Store, POS, and workforce IT support — automated onboarding, access, and connectivity resolution.",
-      image: tiqImg("retail-ecommerce.jpg"),
+      image: assistImg("Retail & E-Commerce.jpg"),
     },
     {
       title: "IT & Technology Services",
@@ -318,13 +322,13 @@ export const AgenticAIITSMPage = () => {
       title: "Logistics & Supply Chain",
       description:
         "Warehouse and distributed workforce IT support, endpoint troubleshooting, and role-based access.",
-      image: tiqImg("logistics.jpg"),
+      image: assistImg("Logistics.jpg"),
     },
     {
       title: "Telecom",
       description:
         "Internal workforce IT support, network and collaboration resolution, and high-volume ticket handling.",
-      image: tiqImg("telecom.jpg"),
+      image: assistImg("Telecom.jpg"),
     },
   ];
 
