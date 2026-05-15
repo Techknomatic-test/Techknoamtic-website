@@ -9,10 +9,9 @@ import {
   Monitor,
 } from "lucide-react";
 
-const DAIS_IMG_BASE = "Images/Data AI Strategy";
-const DAIS_HERO_IMG = `${DAIS_IMG_BASE}/Hero.jpg`;
-const DAIS_TOOLS_IMG = `${DAIS_IMG_BASE}/Tools and Technology.jpg`;
-const DAIS_CAP_IMG = `${DAIS_IMG_BASE}/Capabilities`;
+const DAIS_IMG = "Images/Services/data & AI statergy";
+const daisImg = (file: string) => `/${DAIS_IMG}/${file}`;
+const DAIS_TOOLS_IMG = daisImg("AI Strategy & Model Deployment.jpg");
 
 const AccordionItem = ({
   title,
@@ -92,11 +91,12 @@ const OfferCard = ({
     transition={{ delay }}
     className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
   >
-    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
+    <div className="relative h-52 -mx-8 -mt-8 mb-8 overflow-hidden">
       <img
         src={image}
         alt={title}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        referrerPolicy="no-referrer"
       />
     </div>
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
@@ -236,37 +236,37 @@ export const AIServicesPage = () => {
       title: "Custom Chatbots & LLM Assistants",
       description:
         "Intelligent conversational AI for customer service, HR, helpdesk, and internal knowledge management.",
-      image: `${DAIS_CAP_IMG}/Custom Chatbots and LLM Assistants.jpg`,
+      image: daisImg("Custom Chatbots & LLM Assistants.jpg"),
     },
     {
       title: "Agentic AI Workflows",
       description:
         "Multi-step automation that understands context, makes decisions, and executes complex business processes.",
-      image: `${DAIS_CAP_IMG}/Agentic AI Workflows.jpg`,
+      image: daisImg("Agentic AI Workflows.jpg"),
     },
     {
       title: "Document AI & NLP",
       description:
         "Extract insights from contracts, claims, reports, and unstructured documents with LLM-powered processing.",
-      image: `${DAIS_CAP_IMG}/Document AI and NLP.jpg`,
+      image: daisImg("Document AI & NLP.jpg"),
     },
     {
       title: "Conversational BI",
       description:
         "Natural-language analytics that lets anyone ask questions and get answers from their data — instantly.",
-      image: `${DAIS_CAP_IMG}/Conversational BI.jpg`,
+      image: daisImg("Conversational BI.jpg"),
     },
     {
       title: "GenAI for Auto-Summaries",
       description:
         "Automated generation of summaries, reports, and emails from data — saving hours of manual work.",
-      image: `${DAIS_CAP_IMG}/GenAI for Auto-Summaries.jpg`,
+      image: daisImg("GenAI for Auto-Summaries.jpg"),
     },
     {
       title: "AI Strategy & Model Deployment",
       description:
         "End-to-end AI consulting — from use-case identification to production deployment and monitoring.",
-      image: `${DAIS_CAP_IMG}/AI Strategy and Model Deployment.jpg`,
+      image: daisImg("AI Strategy & Model Deployment.jpg"),
     },
   ];
 
@@ -392,20 +392,12 @@ export const AIServicesPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative min-h-[min(72vh,720px)] py-20 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative py-20 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img
-            src={DAIS_HERO_IMG}
-            alt=""
-            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
-            aria-hidden
-          />
+          <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left drop-shadow-md">
+        <div className="max-w-6xl mx-auto relative z-10 text-left">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -527,13 +519,14 @@ export const AIServicesPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex flex-col overflow-hidden rounded-[3rem] bg-slate-100 ring-1 ring-slate-200/80 dark:bg-white/5 dark:ring-white/10"
+              className="flex flex-col overflow-hidden rounded-[3rem] bg-slate-100 ring-1 ring-slate-200/80 dark:bg-white/5 dark:ring-white/10 shadow-2xl"
             >
               <div className="relative aspect-[4/3] w-full shrink-0 lg:aspect-[5/4]">
                 <img
                   src={DAIS_TOOLS_IMG}
                   alt="Tools and technology for AI and data strategy"
                   className="absolute inset-0 h-full w-full object-cover"
+                  referrerPolicy="no-referrer"
                 />
               </div>
               <div className="flex flex-col gap-5 bg-white p-8 dark:bg-brand-950">
