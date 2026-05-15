@@ -21,7 +21,9 @@ import {
   Users,
 } from "lucide-react";
 
-const assistImg = (file: string) => `/Images/AssistIQ/${file}`;
+const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
+const assistImg = (file: string) => `/${ASSIST_IMG}/${file}`;
+const ASSIST_HERO_IMG = assistImg("hero.jpg");
 
 const CapabilityCard = ({
   title,
@@ -154,8 +156,8 @@ const IndustryCard = ({
         src={image}
         alt={title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        referrerPolicy="no-referrer"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 to-transparent" />
     </div>
     <div className="p-8">
       <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
@@ -289,43 +291,43 @@ export const AssistIQPage = () => {
       title: "Retail & E-Commerce",
       description:
         "AI agents that handle order tracking, returns, recommendations, and promotions — 24×7.",
-      image: assistImg("retail-ecommerce.jpg"),
+      image: assistImg("Retail & E-Commerce.jpg"),
     },
     {
       title: "BFSI",
       description:
         "Conversational AI for account, card, loan, and onboarding queries with secure customer assistance.",
-      image: assistImg("bfsi.jpg"),
+      image: assistImg("BFSI.jpg"),
     },
     {
       title: "Telecom",
       description:
         "AI self-service for plans, recharges, complaints, SIM activation, and service requests.",
-      image: assistImg("telecom.jpg"),
+      image: assistImg("Telecom.jpg"),
     },
     {
       title: "Healthcare",
       description:
         "Appointment booking, patient queries, and hospital service support through AI agents and avatars.",
-      image: assistImg("healthcare.jpg"),
+      image: assistImg("Healthcare.jpg"),
     },
     {
       title: "Logistics",
       description:
         "Shipment tracking, delivery issue resolution, and customer communication automation.",
-      image: assistImg("logistics.jpg"),
+      image: assistImg("Logistics.jpg"),
     },
     {
       title: "Insurance",
       description:
         "Policy, claims, renewals, and customer self-service journeys powered by conversational AI.",
-      image: assistImg("insurance.jpg"),
+      image: assistImg("BFSI.jpg"),
     },
     {
       title: "Government & Public Services",
       description:
         "AI citizen-service portals for schemes, applications, and public information — at digital scale.",
-      image: assistImg("government.jpg"),
+      image: assistImg("Government & Public Services.jpg"),
     },
   ];
 
@@ -487,11 +489,21 @@ export const AssistIQPage = () => {
 
   return (
     <div className="pt-[110px]">
-      <section className="relative py-[80px] px-6 overflow-hidden bg-brand-950">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+      <section className="relative min-h-[min(72vh,720px)] py-20 px-6 overflow-hidden bg-[#020617]">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src={ASSIST_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 text-left">
+        <div className="max-w-7xl mx-auto relative z-10 text-left drop-shadow-md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -520,7 +532,7 @@ export const AssistIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed"
             >
               AI-powered conversational agents and intelligent avatars that
               autonomously handle customer queries, execute workflows, and deliver
@@ -567,7 +579,7 @@ export const AssistIQPage = () => {
             <div className="lg:col-span-3">
               <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
                 <img
-                  src={assistImg("challenge.jpg")}
+                  src={ASSIST_HERO_IMG}
                   alt="Modern Customer Service"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
