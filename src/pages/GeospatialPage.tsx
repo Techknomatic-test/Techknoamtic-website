@@ -30,6 +30,11 @@ import {
   Code
 } from "lucide-react";
 
+const GEO_IMG = "Images/Services/Geospatial Analytics";
+const geoImg = (file: string) => `/${GEO_IMG}/${file}`;
+const GEO_HERO_IMG = geoImg("Hero.jpg");
+const GEO_TOOLS_IMG = geoImg("ArcGIS Platform Implementation.jpg");
+
 const AccordionItem = ({
   title,
   content,
@@ -97,14 +102,13 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
     transition={{ delay }}
     className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
   >
-    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
+    <div className="relative h-52 -mx-8 -mt-8 mb-8 overflow-hidden">
       <img
         src={image}
         alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         referrerPolicy="no-referrer"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-brand-950/20 to-transparent opacity-40" />
     </div>
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
@@ -204,32 +208,32 @@ export const GeospatialPage = () => {
     {
       title: "ArcGIS Platform Implementation",
       description: "Full-stack ArcGIS implementation across Enterprise, Online, and Pro for enterprise-grade GIS environments",
-      image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800"
+      image: geoImg("ArcGIS Platform Implementation.jpg"),
     },
     {
       title: "Geo-Dashboards & Visualisations",
       description: "Interactive map visualisations built in ArcGIS, Power BI Maps, Tableau, and Qlik.",
-      image: "https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=800"
+      image: geoImg("Geo Dashboards Visualisations.jpg"),
     },
     {
       title: "Field Operations & Mobile GIS",
       description: "ArcGIS Field Maps and Survey123 for real-time field data collection and asset management",
-      image: "https://images.unsplash.com/photo-1512428559087-56096ce17540?auto=format&fit=crop&w=800"
+      image: geoImg("Field Operations & Mobile GIS.jpg"),
     },
     {
       title: "Location Data Integration",
       description: "Seamless integration with SAP, Salesforce, IoT systems, and external geodata sources",
-      image: "https://images.unsplash.com/photo-1551288049-bbda4e38f71?auto=format&fit=crop&w=800"
+      image: geoImg("Location Data Integration.jpg"),
     },
     {
       title: "Route Optimisation & Territory Planning",
       description: "Data-driven territory design and route optimisation for sales, service, and logistics teams",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800"
+      image: geoImg("Route Optimisation & Territory Planning.jpg"),
     },
     {
       title: "Spatial Risk & Pattern Detection",
       description: "Heatmaps, fraud clustering, and spatial pattern analysis for risk management and underwriting",
-      image: "https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=800"
+      image: geoImg("Spatial Risk & Pattern Detection.jpg"),
     },
   ];
 
@@ -309,12 +313,21 @@ export const GeospatialPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-20 px-6 overflow-hidden bg-[#020617]">
-         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
+      <section className="relative min-h-[min(72vh,720px)] py-20 px-6 overflow-hidden bg-[#020617]">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src={GEO_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        <div className="max-w-6xl mx-auto relative z-10 text-left drop-shadow-md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -343,7 +356,7 @@ export const GeospatialPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed"
             >
               Enterprise-grade GIS strategy, ArcGIS implementation, mobile field operations, and geo-dashboards — engineered to put location at the center of business decisions.
             </motion.p>
@@ -435,22 +448,31 @@ export const GeospatialPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group"
+              className="flex flex-col overflow-hidden rounded-[3rem] bg-slate-100 ring-1 ring-slate-200/80 dark:bg-white/5 dark:ring-white/10 shadow-2xl"
             >
-               <div className="absolute inset-x-0 bottom-0 top-[20%] p-12 bg-gradient-to-t from-accent/20 flex flex-col justify-end">
-                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-900 shadow-2xl flex items-center justify-center mb-8 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500" id="monitor_icon">
-                  <Monitor className="w-8 h-8 text-accent" />
+              <div className="relative aspect-[4/3] w-full shrink-0 lg:aspect-[5/4]">
+                <img
+                  src={GEO_TOOLS_IMG}
+                  alt="Geospatial tools and technology"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="flex flex-col gap-5 bg-white p-8 dark:bg-brand-950">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-slate-50 shadow-md ring-1 ring-slate-200/80 dark:bg-brand-900 dark:ring-white/10">
+                  <Monitor className="h-8 w-8 text-accent" />
                 </div>
-                <h4 className="text-2xl font-bold text-brand-950 dark:text-white mb-2">ArcGIS Center of Excellence</h4>
-                <p className="text-slate-500 dark:text-slate-400 font-medium">Built for flexibility and performance.</p>
+                <div>
+                  <h4 className="mb-2 text-2xl font-bold text-brand-950 dark:text-white">
+                    ArcGIS Center of Excellence
+                  </h4>
+                  <p className="font-medium text-slate-600 dark:text-slate-400">
+                    Built for flexibility and performance.
+                  </p>
+                </div>
               </div>
-              <div className="absolute top-12 left-12 right-12 bottom-1/2 grid grid-cols-4 gap-4 opacity-20 pointer-events-none">
-                {[...Array(16)].map((_, i) => (
-                  <div key={i} className="aspect-square bg-accent rounded-lg" style={{ opacity: Math.random() }} />
-                ))}
-              </div>
-            </motion.div>
             
+            </motion.div>
             <div className="bg-white dark:bg-transparent rounded-2xl">
               {toolsAccordions.map((item, index) => (
                 <AccordionItem
