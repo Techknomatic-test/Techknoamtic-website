@@ -335,73 +335,69 @@ export const AboutUsPage = () => {
               Our <span className="text-accent">Leadership & Team.</span>
             </h3>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-slate-100 dark:border-white/5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-100 dark:border-white/5">
             {[
               {
-                name: "Sandeep R.",
+                name: "Rahul Madke",
                 role: "Founder & CEO",
-                img: "Images/2151680571.jpg",
+                img: "Images/Leadership/people/Rahul_madake.jpeg",
               },
               {
-                name: "Priya S.",
-                role: "Head of Data Science",
-                img: "Images/2152005500.jpg",
+                name: "Prakash Pawar",
+                role: "Co-Founder & COO",
+                img: "Images/Leadership/people/prakash_pawar.jpeg",
               },
               {
-                name: "Rahul M.",
-                role: "Lead BI Consultant",
-                img: "Images/12437.jpg",
+                name: "Sunny Tatiya",
+                role: "CFO",
+                img: "Images/Leadership/people/Sunny%20Tatia.jpeg",
               },
               {
-                name: "Ananya K.",
-                role: "Project Director",
-                img: "Images/2988.jpg",
+                name: "Gopinath Sambandam",
+                role: "Service Delivery Head",
+                img: "Images/Leadership/people/gopi_s.jpeg",
               },
               {
-                name: "Vikram A.",
-                role: "Technical Lead",
-                img: "Images/23498.jpg",
+                name: "Pranita Singh",
+                role: "AVP - HR",
+                img: "Images/Leadership/people/pranita_singh.jpeg",
               },
               {
-                name: "Sarah J.",
-                role: "Sr. Architect",
-                img: "Images/291956.jpg",
+                name: "Vasundhara Gaekwad",
+                role: "Marketing & Growth",
+                img: "Images/Leadership/people/vasundhra_m.jpeg",
               },
               {
-                name: "Amit K.",
-                role: "Analytics Lead",
-                img: "Images/33931.jpg",
-              },
-              { name: "Elena R.", role: "Consultant", img: "Images/55251.jpg" },
-              {
-                name: "Chris W.",
-                role: "Researcher",
-                img: "Images/2151680571.jpg",
+                name: "Apoorva Gowda",
+                role: "Sr. BD Executive",
+                img: "Images/Leadership/people/Apoorva.jpeg",
               },
               {
-                name: "Maya L.",
-                role: "Developer",
-                img: "Images/2152005500.jpg",
+                name: "Hemant Jadhav",
+                role: "AVP - Sales",
+                img: "Images/Leadership/people/hemant_.jpeg",
               },
-              { name: "David O.", role: "Specialist", img: "Images/12437.jpg" },
-              { name: "Sophie T.", role: "Advisor", img: "Images/2988.jpg" },
+              {
+                name: "Anup Sangli",
+                role: "Strategic Consultant",
+                img: "Images/Leadership/people/anup_sangli.jpeg",
+              },
             ].map((member, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: (i % 4) * 0.1 }}
+                transition={{ delay: (i % 3) * 0.1 }}
                 className="group border-r border-b border-slate-100 dark:border-white/5 bg-white dark:bg-brand-950 p-8"
               >
                 <div className="aspect-square overflow-hidden mb-8 border border-slate-100 dark:border-white/10 relative">
                   <img
                     src={member.img}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-brand-950/10 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
                 <div className="text-left">
                   <h4 className="text-lg font-bold text-brand-950 dark:text-white tracking-tight mb-1">
