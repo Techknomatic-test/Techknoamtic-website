@@ -511,7 +511,7 @@ export const AgenticAIITSMPage = () => {
               transition={{ delay: 0.2 }}
               className="text-2xl md:text-3xl font-medium text-white mb-6 tracking-tight leading-tight"
             >
-              Autonomous IT Support. Faster Resolutions. Zero-Touch Operations.
+              Autonomous IT Support. Faster Resolutions. Near Zero-Touch Operations.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
