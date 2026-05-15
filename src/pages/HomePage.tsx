@@ -746,44 +746,30 @@ const AcceleratorsSection = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
   const accelerators = [
     {
-      title: "DataGuard — AI-Powered Data Reliability Platform",
-      desc: "Monitor, validate, govern, and autonomously fix data issues across your enterprise stack. 30–50% faster data issue resolution.",
-      cta: "Explore DataGuard",
+      title: "DataPulse IQ — AI-Powered Data Reliability Platform",
+      desc: "Monitors, validates, governs, and auto-remediates data issues across the enterprise stack — cuts data issue resolution time by 30–50%.",
+      cta: "Explore DataPulse IQ",
       icon: ShieldCheck,
       href: "/dataguard",
     },
     {
-      title: "InsightSM — Unified IT Operations Visibility",
-      desc: "Turn fragmented ITSM data into real-time intelligence. ServiceNow, BMC Remedy, Jira — live in days, not months.",
-      cta: "Explore InsightSM",
-      icon: Layout,
-      href: "/insight-sm",
-    },
-    {
-      title: "TicketIQ — AI for Intelligent Ticket Handling",
-      desc: "AI that reads, routes, summarizes, and resolves your IT tickets — 40–60% less manual triage.",
-      cta: "Learn More",
-      icon: Sparkles,
-      href: "/agentic-ai-itsm",
-    },
-    {
       title: "CallOps AI — AI Voice Agents for Calling Operations",
-      desc: "Automate outbound and inbound calls with natural, human-like voice AI that integrates with your logic.",
-      cta: "Learn More",
+      desc: "Human-like voice AI for automated inbound/outbound calls — integrates with your business logic for end-to-end call workflow automation.",
+      cta: "Explore CallOps AI",
       icon: PhoneCall,
-      href: "/call-ops-ai",
+      href: "/callops-ai",
     },
     {
       title: "AssistIQ — AI Agents for Intelligent Self-Service",
-      desc: "Deploy photorealistic avatars and smart support agents that resolve queries 24/7.",
-      cta: "Learn More",
+      desc: "Photorealistic avatar + AI support agents for 24/7 query resolution — deflects L1 support load with conversational self-service.",
+      cta: "Explore AssistIQ",
       icon: Sparkles,
       href: "/assist-iq",
     },
     {
       title: "CXO Nexus — Strategic Conversational AI",
-      desc: "Bridge the gap between enterprise data and executive action with conversational intelligence.",
-      cta: "Learn More",
+      desc: "Conversational intelligence layer that bridges enterprise data and executive decisioning — natural-language access to KPIs and operational signals for leadership.",
+      cta: "Explore CXO Nexus",
       icon: LayoutDashboard,
       href: "/cxo-nexus",
     },
@@ -823,7 +809,7 @@ const AcceleratorsSection = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {accelerators.map((acc, i) => (
             <motion.div
               key={i}
