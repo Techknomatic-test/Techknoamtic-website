@@ -1,9 +1,8 @@
-import { motion, useInView, useMotionValue, useSpring, AnimatePresence } from "motion/react";
-import { useRef, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
-  Target,
   Factory,
   BarChart3,
   Activity,
@@ -24,63 +23,182 @@ import {
   Cpu,
   Building2,
   MapPin,
-  RefreshCw
+  RefreshCw,
+  Target,
+  Globe,
+  ChevronDown,
+  ChevronUp,
+  BrainCircuit,
+  Users,
+  LucideIcon
 } from "lucide-react";
 
-const CapabilityCard = ({ title, description, image, delay = 0 }: { title: string; description: string; image: string; delay?: number }) => (
+const AccordionItem = ({
+  title,
+  isOpen,
+  onClick,
+  children,
+}: {
+  title: string;
+  isOpen: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div className="border-b border-slate-100 dark:border-white/5 last:border-0 overflow-hidden">
+      <button
+        onClick={onClick}
+        className="w-full py-6 flex items-center justify-between text-left group transition-all"
+      >
+        <span className="text-[17px] font-bold text-brand-950 dark:text-white group-hover:text-accent transition-colors">
+          {title}
+        </span>
+        <div
+          className={`p-2 rounded-full transition-all duration-300 ${
+            isOpen
+              ? "bg-accent text-white"
+              : "bg-slate-50 dark:bg-white/5 text-slate-400 group-hover:bg-slate-100 dark:group-hover:bg-white/10"
+          }`}
+        >
+          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        </div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="pb-8">
+              {children}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+const SolveCard = ({ description, image, delay = 0 }: { description: string; image: string; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
+    className="relative group h-[400px] rounded-[3rem] overflow-hidden border border-slate-100 dark:border-white/10 shadow-xl"
   >
-    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-brand-950/20 to-transparent opacity-40" />
+    <img 
+      src={image} 
+      alt="Challenge" 
+      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+      referrerPolicy="no-referrer"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+    <div className="absolute inset-x-0 bottom-0 p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+      <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
+        <p className="text-[15px] font-medium text-white leading-relaxed italic border-l-2 border-accent/50 pl-4">
+          {description}
+        </p>
+      </div>
+    </div>
+  </motion.div>
+);
+
+const ModuleCard = ({ title, description, icon: Icon, delay = 0 }: { title: string; description: string; icon: LucideIcon; delay?: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-2xl transition-all group flex flex-col h-full text-left"
+  >
+    <div className="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-6 transition-transform">
+      <Icon className="w-7 h-7" />
     </div>
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4">
       {description}
     </p>
   </motion.div>
 );
 
+const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { title: string; description: string; impact: string; delay?: number; icon: LucideIcon }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
+  >
+    <div className="flex items-center gap-4 mb-6">
+      <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+        <Icon className="w-6 h-6" />
+      </div>
+      <div className="text-left">
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase">Use Case</h4>
+        <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">
+          {title}
+        </h3>
+      </div>
+    </div>
+    
+    <div className="space-y-6 flex-1 mb-10 text-left">
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Context</h4>
+        <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4">
+          {description}
+        </p>
+      </div>
+    </div>
+    
+    <div className="mt-auto pt-8 border-t border-slate-100 dark:border-white/5 text-left">
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+          <Target className="w-4 h-4 text-accent" />
+        </div>
+        <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
+          <span className="text-accent uppercase tracking-wider mr-2 not-italic">Outcome:</span>
+          {impact} Improvement
+        </p>
+      </div>
+    </div>
+  </motion.div>
+);
+
 export const ManufacturingAnalyticsPage = () => {
-    const caps = [
+  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
+
+  const whatWeSolve = [
     {
-      title: "OEE Tracking",
-      description: "Real-time Overall Equipment Effectiveness monitoring across all lines for maximized throughput.",
-      image: "Images/2988.jpg"
+      description: "Unplanned machine downtime eating into OEE and production targets",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: "Production Analytics",
-      description: "Comprehensive tracking of production targets, cycle times, and detailed output quality metrics.",
-      image: "Images/291956.jpg"
+      description: "Quality defects detected too late in the cycle — driving costly rework and waste",
+      image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: "Predictive Maintenance",
-      description: "AI-powered equipment health monitoring and advanced failure prediction to reduce downtime.",
-      image: "Images/33931.jpg"
+      description: "Supply chain blind spots causing procurement delays and line stoppages",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: "Quality Management",
-      description: "End-to-end defect tracking, SPC dashboards, and real-time quality assurance KPIs.",
-      image: "Images/2151680571.jpg"
+      description: "Disconnected ERP, MES, and SCADA systems making plant data invisible to leadership",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      description: "Manual production reporting that is always lagging, never live",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
     }
   ];
 
   const dashboardModules = [
     {
       title: "OEE Dashboard",
-      description: "Availability, Performance, Quality",
+      description: "Availability, performance, quality",
       icon: BarChart3,
     },
     {
@@ -108,323 +226,271 @@ export const ManufacturingAnalyticsPage = () => {
       description: "WIP, finished goods, warehousing",
       icon: Boxes,
     },
+    {
+      title: "Supply Chain",
+      description: "Inbound, outbound, lead times",
+      icon: Truck,
+    },
+    {
+      title: "Cost Analytics",
+      description: "Per unit, per plant, per shift",
+      icon: TrendingUp,
+    }
   ];
 
-  const results = [
-    { label: "Production Efficiency Gain", value: "15", suffix: "%" },
-    { label: "Dashboards per Plant", value: "45", suffix: "" },
-    { label: "Reduction in Manual Reporting", value: "90", suffix: "%" },
-    { label: "Energy Cost Reduction", value: "20", suffix: "%" },
+  const systemsIntegrationList = [
+    "SAP (PP, QM, PM modules)",
+    "Oracle ERP",
+    "Microsoft Dynamics",
+    "MES Systems",
+    "SCADA and IoT Sensors",
+    "CMMS for Maintenance"
+  ];
+
+  const industryVerticals = [
+    "Automotive",
+    "Industrial Equipment",
+    "Electronics",
+    "Food & Beverage"
   ];
 
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative py-40 px-6 overflow-hidden bg-[#020617] text-left">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
-            src="Images/slider.jpg"
+            src="https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?auto=format&fit=crop&q=80&w=1600"
             alt="Manufacturing Background"
             className="absolute inset-0 w-full h-full object-cover opacity-30 scale-105"
             referrerPolicy="no-referrer"
           />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        <div className="max-w-7xl mx-auto relative z-10 text-left">
+          <div className="flex items-center gap-3 mb-8 text-left">
+            <Link to="/" className="text-[10px] font-black tracking-widest text-white/40 hover:text-accent transition-colors uppercase">Home</Link>
+            <div className="w-1 h-1 rounded-full bg-accent/40" />
+            <span className="text-[10px] font-black tracking-widest text-accent uppercase">Industries</span>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
           >
-            Smart Manufacturing
+            Industry 4.0
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
           >
-            Industrial Analytics Suite
+            MANUFACTURING
           </motion.h1>
-          <div className="max-w-4xl">
+          <div className="max-w-4xl text-left">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
+              className="text-2xl md:text-3xl font-medium text-white/90 mb-8 tracking-tight leading-relaxed"
             >
-              Powering the Intelligent Factory Floor.
+              Smart Factories Start with Smarter Data — AI for Modern Manufacturing
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
-            >
-              Modernize your production lines with real-time OEE visibility, predictive maintenance, and closed-loop quality control.
-            </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Intro Section */}
+      {/* About The Industry Section */}
       <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-5xl space-y-8 text-left">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl space-y-12 text-left">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase"
+            >
+              About The Industry
+            </motion.h2>
             <motion.p 
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.1 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+               className="text-[17px] md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-7xl"
             >
-              The fourth industrial revolution is built on data. Techknomatic's Manufacturing Analytics Suite transforms raw machine signals into unified operational intelligence. We modernize fragmented OT data ecosystems into a unified, cloud-native foundation ready for the enterprise scale.
-            </motion.p>
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Our solution integrates directly with your existing MES and ERP systems to provide a high-fidelity view of Overall Equipment Effectiveness (OEE). By combining historical context with real-time streaming data, we enable predictive maintenance strategies that drastically reduce unplanned downtime and optimize production cycles across several plants simultaneously.
+              Manufacturing is in the midst of a fundamental transformation. Industry 4.0 has unlocked massive potential — but most manufacturers are still struggling to connect their ERP, MES, and SCADA systems, make sense of shop floor data, and translate operational metrics into strategic decisions. Whether managing discrete, process, or hybrid manufacturing — the challenges of downtime, quality failures, supply chain disruption, and energy costs demand an intelligent, data-driven response. Techknomatic brings that intelligence to your floor — and your boardroom.
             </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
-            >
-              FACTORY SOLUTIONS
-            </motion.h2>
+      {/* What We Solve Section */}
+      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-left mb-20 text-left">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
             >
-              What We Solve
+               What We Solve
             </motion.h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {caps.map((it, idx) => (
-              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whatWeSolve.map((it, idx) => (
+              <SolveCard key={idx} description={it.description} image={it.image} delay={idx * 0.1} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Analytics Modules Section */}
-      <section className="py-[120px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
+      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-7xl mx-auto text-left">
+          <div className="mb-20 text-left">
+            <motion.h3 
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
             >
-              Manufacturing Analytics Modules.
-            </motion.h2>
+              Manufacturing Dashboard Modules
+            </motion.h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {dashboardModules.map((module, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-10 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 rounded-[2.5rem] group hover:bg-accent/5 transition-all flex flex-col"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <module.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-[20px] font-bold text-brand-950 dark:text-white mb-3 tracking-tight group-hover:text-accent transition-colors">
-                  {module.title}
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
-                  {module.description}
-                </p>
-              </motion.div>
+              <ModuleCard key={i} {...module} delay={i * 0.1} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Integration Section */}
-      <section className="py-[120px] bg-white dark:bg-brand-950 px-6 overflow-hidden text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative">
-              <motion.h2
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 leading-tight"
-              >
-                Unified Ecosystem.
-                <br />
-                System Integration.
-              </motion.h2>
-              <div className="w-16 h-1 bg-accent mb-8" />
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  "SAP (PP, QM, PM modules)",
-                  "Oracle ERP Cloud",
-                  "Microsoft Dynamics 365",
-                  "MES Systems Connectivity",
-                  "SCADA & IoT Sensors",
-                  "CMMS for Maintenance",
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05 }}
-                    className="flex items-center gap-3 text-[14px] font-bold text-slate-600 dark:text-slate-400"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
-                    {item}
-                  </motion.div>
-                ))}
+      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20 text-left">
+            <motion.h3 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
+            >
+              Systems Integration
+            </motion.h3>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Left side: Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-white/10 group"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" 
+                alt="Systems Integration" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
+            </motion.div>
+            
+            {/* Right side: Content & Accordion */}
+            <div className="text-left space-y-12">
+              <div className="space-y-6">
+                <h4 className="text-3xl font-bold text-brand-950 dark:text-white tracking-tight">
+                  Multi-Plant Visibility
+                </h4>
+                <p className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed italic border-l-4 border-accent/20 pl-6">
+                  We have implemented manufacturing analytics across multiple plants with standardized KPIs and plant-specific drill-downs.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <AccordionItem
+                  title="ERP & MES We Connect"
+                  isOpen={openAccordion === 0}
+                  onClick={() => setOpenAccordion(openAccordion === 0 ? null : 0)}
+                >
+                  <ul className="space-y-4 list-none m-0">
+                    {systemsIntegrationList.map((system, i) => (
+                      <li key={i} className="flex items-start gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0 shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)]" />
+                        <span className="text-[17px] font-medium text-slate-500 dark:text-slate-400">
+                          {system}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionItem>
+                
+                <AccordionItem
+                  title="Scalable Visibility"
+                  isOpen={openAccordion === 1}
+                  onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
+                >
+                  <div className="space-y-4">
+                    <p className="text-[16px] text-slate-500 dark:text-slate-400 leading-relaxed font-bold uppercase tracking-wider text-accent italic">
+                      Automotive  |  Industrial Equipment  |  Electronics  |  Food & Beverage
+                    </p>
+                    <div className="flex items-center gap-2 text-accent">
+                      <Zap className="w-4 h-4" />
+                      <span className="text-[13px] font-bold uppercase tracking-wider">Enterprise-wide Operational Intelligence</span>
+                    </div>
+                  </div>
+                </AccordionItem>
               </div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="p-12 bg-brand-950 text-white rounded-[3rem] shadow-2xl relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 p-8 opacity-10">
-                <Settings className="w-40 h-40" />
-              </div>
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-6 tracking-tight">
-                  Multi-Plant Visibility
-                </h3>
-                <p className="text-white/60 font-medium mb-10 leading-relaxed text-lg">
-                  "We standardized KPIs across 12 global plants, providing
-                  real-time OEE comparisons that drove a 15% efficiency increase
-                  in the first year."
-                </p>
-                <div className="flex flex-wrap gap-2 text-left">
-                  {["Automotive", "Industrial", "Electronics", "F&B"].map(
-                    (tag) => (
-                      <span
-                        key={tag}
-                        className="px-5 py-2 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-black text-[10px] rounded-full uppercase tracking-widest text-left"
-                      >
-                        {tag}
-                      </span>
-                    ),
-                  )}
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Results Section */}
-      <section className="py-[120px] px-6 bg-white dark:bg-brand-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
+      {/* Use Cases Section */}
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left">
+        <div className="max-w-7xl mx-auto text-left">
+          <div className="mb-20 text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
+            >
+              Success Stories
+            </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
             >
-              Business Impact
+              Use Cases
             </motion.h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {results.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-slate-50 dark:bg-white/5 p-12 rounded-[4rem] text-center border border-slate-100 dark:border-white/5"
-              >
-                <div className="text-5xl md:text-7xl font-black text-accent mb-6 tracking-tighter">
-                  {stat.value}{stat.suffix}
-                </div>
-                <div className="text-[14px] font-bold text-slate-500 dark:text-slate-400 leading-tight">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Delivery Models Section */}
-      <section className="py-[120px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
-          <div className="mb-16">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
-            >
-              Delivery Approach
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-white/60 font-medium max-w-2xl"
-            >
-              A structured implementation path for industrial scale.
-            </motion.p>
-          </div>
-          
-          <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
-            {[
-              { step: "01", title: "Discovery", description: "Mapping data sources from PLC, SCADA and MES." },
-              { step: "02", title: "Cloud Landing", description: "Engineering the cloud foundation for storage and ELT." },
-              { step: "03", title: "Modelling", description: "Creating shop-floor specific data models for OEE." },
-              { step: "04", title: "Visualization", description: "Deploying persona-based dashboards for operators." },
-              { step: "05", title: "AI/ML Scale", description: "Integrating predictive maintenance and anomaly detection." }
-            ].map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative flex-1 min-w-[240px] p-8 rounded-[2.5rem] bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group"
-              >
-                <div className="absolute top-8 right-8 text-4xl font-black text-white/5 group-hover:text-accent/20 transition-colors">
-                  {step.step}
-                </div>
-                <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-12 transition-transform">
-                  <RefreshCw className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="text-[13px] font-medium text-white/40 leading-relaxed italic px-2 border-l-2 border-accent/20">
-                  {step.description}
-                </p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+            <UseCaseCard 
+              title="OEE Improvement Across Production Lines"
+              description="A discrete manufacturer achieved X% OEE improvement by identifying top downtime contributors per shift using the OEE Dashboard connected to MES and SCADA systems."
+              impact="X%"
+              icon={Zap}
+            />
+            <UseCaseCard 
+              title="Quality Defect Reduction with CAPA Tracking"
+              description="Integrating Quality Control analytics with SAP QM reduced rejection rates by X% and cut CAPA closure time in half across 4 production lines."
+              impact="X%"
+              delay={0.1}
+              icon={BrainCircuit}
+            />
+            <UseCaseCard 
+              title="Multi-Plant Supply Chain Visibility"
+              description="A 6-plant enterprise standardized inbound lead time tracking and reduced excess WIP inventory by X% through real-time demand-supply visibility."
+              impact="X%"
+              delay={0.2}
+              icon={Users}
+            />
           </div>
         </div>
       </section>

@@ -59,12 +59,10 @@ export const navData: SiteNavData = {
     { label: 'FreightIQ', href: '/freight-iq', icon: Truck },
   ],
   industries: [
-    { label: 'Oil & Gas', href: '/refinery-operations', icon: Activity },
-    { label: 'Manufacturing', href: '/manufacturing-analytics', icon: Target },
-    { label: 'BFSI', href: '/insurance-analytics', icon: ShieldCheck },
-    { label: 'Tech & IT Services', href: '/itsm-analytics', icon: Layout },
-    { label: 'FMCG', href: '/fmcg-analytics', icon: Truck },
-    { label: 'Healthcare', href: '/healthcare-analytics', icon: Activity },
+    { label: 'INSURANCE', href: '/insurance-analytics', icon: ShieldCheck },
+    { label: 'OIL & GAS', href: '/refinery-operations', icon: Activity },
+    { label: 'IT SERVICE MANAGEMENT (ITSM)', href: '/itsm-analytics', icon: Layout },
+    { label: 'MANUFACTURING', href: '/manufacturing-analytics', icon: Target },
   ],
   aboutUs: [
     { label: 'About the Company', href: '/about', icon: Users },

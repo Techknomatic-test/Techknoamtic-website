@@ -31,7 +31,7 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
+    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden text-left"
   >
     <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
       <img
@@ -48,6 +48,54 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
     <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
       {description}
     </p>
+  </motion.div>
+);
+
+const UseCaseCard = ({ title, subtitle, crux, industries, impact }: { 
+  title: string; 
+  subtitle: string; 
+  crux: string; 
+  industries: string;
+  impact?: string;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group text-left h-full flex flex-col"
+  >
+    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-2 leading-tight group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    <p className="text-[15px] font-bold text-brand-950/70 dark:text-white/70 mb-8 leading-snug">
+      {subtitle}
+    </p>
+    
+    <div className="space-y-6 mt-auto">
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Crux</h4>
+        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+          {crux}
+        </p>
+      </div>
+
+      <div className="pt-4 border-t border-slate-100 dark:border-white/5 grid grid-cols-2 gap-4">
+        <div>
+          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Industries</h4>
+          <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+            {industries}
+          </p>
+        </div>
+        {impact && (
+          <div>
+            <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Impact</h4>
+            <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+              {impact}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   </motion.div>
 );
 
@@ -437,6 +485,57 @@ export const AirlinesAnalyticsPage = () => {
                   {step.description}
                 </p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
+            >
+              Aviation Case Studies
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
+            >
+              USE CASES
+            </motion.h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
+            {[
+              {
+                title: "Hub Operations Optimization",
+                subtitle: "Standardizing On-Time Performance across global hubs",
+                crux: "Unified fragmented DCS and ground handling data for a major carrier. Enabled real-time turnaround monitoring and proactive delay resolution strategies at 5 international hubs.",
+                industries: "Airlines · Airport Ops",
+                impact: "25% Improved OTP"
+              },
+              {
+                title: "Crew Management Analytics",
+                subtitle: "Reducing fatigue and improving roster efficiency",
+                crux: "Built a consolidated crew analytics platform integrating AIMS and Jeppesen. Surface duty hour trends and standby utilization to optimize roster stability and reduce burnout.",
+                industries: "Airlines · Crew Rostering",
+                impact: "15% Lower Standby Costs"
+              },
+              {
+                title: "Customer Disruption Recovery",
+                subtitle: "Proactive communication during major delays",
+                crux: "Deployed a real-time disruption sense engine. Automatically identifies impacted passengers, suggests re-accommodation options, and triggers automated communication workflows.",
+                industries: "Airlines · Customer Success",
+                impact: "40% Faster Resolution"
+              }
+            ].map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} />
             ))}
           </div>
         </div>

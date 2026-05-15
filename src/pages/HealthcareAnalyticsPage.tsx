@@ -27,7 +27,7 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
+    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden text-left"
   >
     <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
       <img
@@ -44,6 +44,54 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
     <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
       {description}
     </p>
+  </motion.div>
+);
+
+const UseCaseCard = ({ title, subtitle, crux, industries, impact }: { 
+  title: string; 
+  subtitle: string; 
+  crux: string; 
+  industries: string;
+  impact?: string;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group text-left h-full flex flex-col"
+  >
+    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-2 leading-tight group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    <p className="text-[15px] font-bold text-brand-950/70 dark:text-white/70 mb-8 leading-snug">
+      {subtitle}
+    </p>
+    
+    <div className="space-y-6 mt-auto">
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Crux</h4>
+        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+          {crux}
+        </p>
+      </div>
+
+      <div className="pt-4 border-t border-slate-100 dark:border-white/5 grid grid-cols-2 gap-4">
+        <div>
+          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Industries</h4>
+          <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+            {industries}
+          </p>
+        </div>
+        {impact && (
+          <div>
+            <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Impact</h4>
+            <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+              {impact}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   </motion.div>
 );
 
@@ -234,6 +282,57 @@ export const HealthcareAnalyticsPage = () => {
                   {step === 1 ? "Inventory clinical data sources and legacy endpoints." : step === 2 ? "Design HIPAA-compliant vendor-neutral architecture." : step === 3 ? "Deploy automated ETL and data-cleansing pipelines." : step === 4 ? "Serve real-time insights to clinicians and ops." : "Continuously tune models for clinical accuracy."}
                 </p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-[120px] px-6 bg-white dark:bg-brand-950 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
+            >
+              Clinical Case Studies
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
+            >
+              USE CASES
+            </motion.h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
+            {[
+              {
+                title: "Population Health Engine",
+                subtitle: "Identifying at-risk communities with precision",
+                crux: "Unified fragmented EMR and social determinants of health data for a large provider. Enabled automated identification of patients requiring preventative care interventions.",
+                industries: "Provider · Community Health",
+                impact: "15% Lower Readmissions"
+              },
+              {
+                title: "Hospital Thruput Optimization",
+                subtitle: "Reducing wait times through predictive bed mgmt",
+                crux: "Deployed a real-time bed utilization and staffing optimizer. Analyzed historical ER patterns and current ward occupancy to predict staffing needs 24 hours in advance.",
+                industries: "Hospital Operations · Emergency",
+                impact: "25% Higher Throughput"
+              },
+              {
+                title: "Claims Reconciliation AI",
+                subtitle: "Automating claims intake and audit loops",
+                crux: "Re-engineered the revenue cycle with automated claims reconciliation. Used AI to surface audit-ready evidence and identify common payer denial patterns early.",
+                industries: "Healthcare Finance · Payer",
+                impact: "5x Faster Processing"
+              }
+            ].map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} />
             ))}
           </div>
         </div>
