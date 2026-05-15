@@ -43,7 +43,7 @@ export const PreFooterCTA = () => {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <a
-            href="/#solutions"
+            href={`${import.meta.env.BASE_URL}#solutions`}
             className="px-8 py-3.5 bg-transparent border-2 border-brand-950 dark:border-white text-brand-950 dark:text-white font-medium rounded-2xl hover:bg-brand-950/5 dark:hover:bg-white/10 transition-all flex items-center gap-3 group active:scale-95"
           >
             Our Solutions{" "}
