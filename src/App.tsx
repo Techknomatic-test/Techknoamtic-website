@@ -1,5 +1,5 @@
 import { motion, useScroll, useSpring } from 'motion/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { Footer } from './components/layout/Footer';
 import { Navbar } from './components/layout/Navbar';
 import { ScrollToTop } from './components/routing/ScrollToTop';
@@ -39,10 +39,8 @@ export default function App() {
   const { theme, toggleTheme } = useTheme();
   useLenis();
 
-  const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
-
   return (
-    <Router basename={basename || undefined}>
+    <Router>
       <ScrollToTop />
       <AppWrapper theme={theme} toggleTheme={toggleTheme} />
     </Router>
