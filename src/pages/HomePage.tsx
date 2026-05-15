@@ -637,54 +637,45 @@ const ServicesSection = () => {
 };
 
 const SolutionsSection = () => {
-  const industries: {
-    title: string;
-    desc: string;
-    moreLabel?: string;
-    imageUrl?: string;
-    icon?: any;
-    href?: string;
-  }[] = [
+  const industries = [
     {
+      category: "Insurance",
       title: "Insurance Analytics",
-      desc: "360° view across claims, policy performance, agents, and fraud trends.\n\n✦ 22% reduction in claim TA",
+      description:
+        "360° view across claims, policy performance, agents, and fraud trends. 22% reduction in claim turnaround on average.",
       moreLabel: "View Solution",
       imageUrl: "Images/12437.jpg",
+      dark: false,
       href: "/insurance-analytics",
     },
     {
+      category: "Manufacturing",
       title: "Manufacturing Analytics",
-      desc: "From plant floor to boardroom — OEE, production, quality, maintenance, and energy.\n\n✦ 15% improvement in production efficiency",
+      description:
+        "From plant floor to boardroom — OEE, production, quality, maintenance, and energy. 15% improvement in production efficiency.",
       moreLabel: "View Solution",
       imageUrl: "Images/2152005500.jpg",
+      dark: false,
       href: "/manufacturing-analytics",
     },
     {
-      title: "FMCG Analytics",
-      desc: "Sales, distribution, trade promotion, and territory intelligence in one platform.\n\n✦ 28% better promotion ROI tracking",
-      moreLabel: "View Solution",
-      imageUrl: "Images/2151680571.jpg",
-      href: "/fmcg-analytics",
-    },
-    {
+      category: "Energy",
       title: "Oil & Gas Analytics",
-      desc: "Refinery operations, asset performance, energy monitoring, and safety — SCADA-integrated.\n\n✦ 18% downtime reduction",
+      description:
+        "Refinery operations, asset performance, energy monitoring, and safety — SCADA-integrated. 18% downtime reduction.",
       moreLabel: "View Solution",
       imageUrl: "Images/23498.jpg",
+      dark: false,
       href: "/refinery-operations",
     },
     {
-      title: "Airlines Analytics",
-      desc: "Flight ops, crew management, ground handling, and route profitability — real-time.\n\n✦ 12-min average delay reduction",
-      moreLabel: "View Solution",
-      imageUrl: "Images/291956.jpg",
-      href: "/airlines-analytics",
-    },
-    {
+      category: "IT Operations",
       title: "ITSM Analytics",
-      desc: "Complete visibility into SLAs, assets, team performance, and vendor contracts.\n\n✦ SLA compliance lifted from 68% → 91%",
+      description:
+        "Complete visibility into SLAs, assets, team performance, and vendor contracts. SLA compliance lifted from 68% to 91%.",
       moreLabel: "View Solution",
       imageUrl: "Images/33931.jpg",
+      dark: false,
       href: "/itsm-analytics",
     },
   ];
@@ -692,16 +683,16 @@ const SolutionsSection = () => {
   return (
     <section
       id="solutions"
-      className="py-[30px] px-6 bg-white dark:bg-brand-950 transition-colors duration-500 overflow-hidden"
+      className="py-[30px] bg-[#F8F9FA] dark:bg-brand-900 px-6 overflow-hidden transition-colors duration-500 text-left"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl font-medium tracking-tight mb-6 text-brand-950 dark:text-white leading-tight"
+            className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight"
           >
             Built for Your Industry.
             <br />
@@ -712,57 +703,15 @@ const SolutionsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl leading-relaxed"
+            className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl leading-relaxed mt-6"
           >
-            Pre-built, production-ready analytics accelerators across 7
+            Pre-built, production-ready analytics accelerators across key
             industries — go live faster with fewer surprises.
           </motion.p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {industries.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 p-0 rounded-[2.5rem] flex flex-col h-full hover:bg-white dark:hover:bg-accent/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] dark:shadow-none transition-all duration-500 group overflow-hidden"
-            >
-              <div className="h-52 w-full bg-slate-50/50 dark:bg-white/5 flex items-center justify-center overflow-hidden relative">
-                {item.imageUrl ? (
-                  <>
-                    <img
-                      src={item.imageUrl}
-                      alt={item.title}
-                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-brand-950/20 group-hover:bg-brand-950/0 transition-colors duration-500" />
-                  </>
-                ) : (
-                  item.icon && (
-                    <item.icon className="w-10 h-10 text-slate-300 dark:text-slate-600 stroke-[1.2] group-hover:scale-110 group-hover:text-accent transition-all duration-700" />
-                  )
-                )}
-              </div>
-              <div className="flex flex-col flex-1 p-6 md:p-7">
-                <h4 className="text-[20px] font-bold mb-2 text-brand-950 dark:text-white tracking-tight group-hover:text-accent transition-colors">
-                  {item.title}
-                </h4>
-                <p className="text-slate-500 dark:text-slate-400 text-[13px] font-medium leading-relaxed mb-4 flex-1 whitespace-pre-line">
-                  {item.desc}
-                </p>
-                <div className="flex items-center gap-4 group/btn cursor-pointer mt-auto pt-4 border-t border-slate-50 dark:border-white/5">
-                  <Link 
-                    to={item.href || "#"} 
-                    className="text-[10px] font-black uppercase tracking-widest text-accent group-hover/btn:translate-x-1 transition-transform inline-flex items-center gap-2"
-                  >
-                    {item.moreLabel || "View Solution"}{" "}
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
+            <ServiceCard key={i} service={item} delay={0.1 * (i + 1)} />
           ))}
         </div>
         <motion.div
