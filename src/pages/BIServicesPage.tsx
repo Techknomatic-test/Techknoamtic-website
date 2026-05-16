@@ -597,7 +597,7 @@ export const BIServicesPage = () => {
       {/* Tools & Technology Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left border-y border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20 text-left">
+          <div className="mb-10 text-left">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
