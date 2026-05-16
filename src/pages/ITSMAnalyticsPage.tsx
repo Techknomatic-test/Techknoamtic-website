@@ -269,12 +269,12 @@ export const ITSMAnalyticsPage = () => {
           >
             IT SERVICE MANAGEMENT (ITSM)
           </motion.h1>
-          <div className="max-w-4xl text-left">
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl font-medium text-white/90 mb-4 tracking-tight leading-relaxed"
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance leading-relaxed"
             >
               Resolve Faster. Predict Smarter. Serve Better — AI for Modern ITSM
             </motion.h2>

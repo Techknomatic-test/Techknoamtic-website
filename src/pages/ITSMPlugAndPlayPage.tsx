@@ -446,7 +446,7 @@ export const ITSMPlugAndPlayPage = () => {
           >
             InsightSM
           </motion.h1>
-          <div className="max-w-4xl">
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -459,7 +459,7 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg font-medium leading-relaxed text-slate-400 md:text-xl"
+              className="text-sm font-normal leading-relaxed text-slate-400"
             >
               An AI-powered analytics wrapper that sits on top of your existing ITSM ecosystem — turning fragmented
               operational data into unified, real-time intelligence. Deploy production-grade ITSM dashboards in days,

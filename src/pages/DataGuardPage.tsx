@@ -414,7 +414,7 @@ export const DataGuardPage = () => {
           >
             DataPulseIQ
           </motion.h1>
-          <div className="max-w-4xl">
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -427,7 +427,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg font-medium leading-relaxed text-slate-400 md:text-xl"
+              className="text-sm font-normal leading-relaxed text-slate-400"
             >
               AI-powered data quality and reliability framework — continuously monitor, validate, govern, and improve data
               across every source system. Built for enterprises ready to move from reactive data firefighting to autonomous

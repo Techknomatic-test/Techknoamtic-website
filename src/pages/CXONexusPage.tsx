@@ -462,7 +462,7 @@ export const CXONexusPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl font-medium text-white mb-4 tracking-tight leading-tight"
+              className="text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight text-balance leading-tight"
             >
               Ask Questions. Get Instant Insights. Make Smarter Decisions
             </motion.h2>
@@ -470,7 +470,7 @@ export const CXONexusPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-sm text-slate-400 font-normal leading-relaxed text-pretty"
             >
               A conversational AI platform that sits on top of your enterprise data, databases, and knowledge repositories
               — so CXOs, business leaders, and operational teams can ask in plain English and get instant insights,

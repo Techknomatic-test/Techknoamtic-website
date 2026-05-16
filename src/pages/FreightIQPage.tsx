@@ -418,12 +418,12 @@ export const FreightIQPage = () => {
           >
             FreightIQ
           </motion.h1>
-          <div className="max-w-4xl">
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl font-medium text-white mb-4 tracking-tight leading-tight"
+              className="text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight text-balance leading-tight"
             >
               Intelligent Freight Pricing for Faster Quotes and Higher Profitability
             </motion.h2>
@@ -431,7 +431,7 @@ export const FreightIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-sm text-slate-400 font-normal leading-relaxed text-pretty"
             >
               AI-powered dynamic freight pricing — real-time carrier rates, multi-modal support, and instant quote
               generation. Built for logistics enterprises that compete on speed and margin.

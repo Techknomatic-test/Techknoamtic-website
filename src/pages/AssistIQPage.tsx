@@ -517,7 +517,7 @@ export const AssistIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl font-medium text-white mb-4 tracking-tight leading-tight"
+              className="text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight text-balance leading-tight"
             >
               Engage Faster. Support Smarter. Scale Seamlessly
             </motion.h2>
@@ -525,7 +525,7 @@ export const AssistIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-200 font-medium leading-relaxed"
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
               AI-powered conversational agents and intelligent avatars that
               autonomously handle customer queries, execute workflows, and deliver

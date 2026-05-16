@@ -502,7 +502,7 @@ export const AgenticAIITSMPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl font-medium text-white mb-4 tracking-tight leading-tight"
+              className="text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight text-balance leading-tight"
             >
               Autonomous IT Support. Faster Resolutions. Near Zero-Touch Operations.
             </motion.h2>
@@ -510,7 +510,7 @@ export const AgenticAIITSMPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-sm text-slate-400 font-normal leading-relaxed text-pretty"
             >
               Agentic AI that resolves L1 IT tickets autonomously — understanding
               intent, executing approved actions, and enforcing enterprise governance

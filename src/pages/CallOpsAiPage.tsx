@@ -381,7 +381,7 @@ export const CallOpsAIPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl font-medium text-white mb-4 tracking-tight leading-tight"
+              className="text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight text-balance leading-tight"
             >
               AI Voice Agents for Intelligent Calling Operations
             </motion.h2>
@@ -389,7 +389,7 @@ export const CallOpsAIPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
+              className="text-sm text-slate-400 font-normal leading-relaxed text-pretty"
             >
               AI-powered inbound and outbound calling — available 24×7. CallOps AI deploys autonomous voice agents that engage customers naturally, execute workflows in real time, and scale instantly without expanding teams.
             </motion.p>
