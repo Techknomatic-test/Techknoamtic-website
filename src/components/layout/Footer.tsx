@@ -1,4 +1,4 @@
-import { Activity, ChevronRight, Linkedin, Mail } from 'lucide-react';
+import { ChevronRight, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { navData } from '../../config/navigation';
 import type { NavItem } from '../../types/navigation';
@@ -71,19 +71,17 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-[auto_auto_auto] gap-y-6 md:gap-x-8 lg:gap-x-16 md:gap-y-6 mb-0">
           <div className="md:col-span-5 md:row-start-1 order-1">
-            <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
-              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-950 shadow-xl shadow-white/5">
-                <Activity className="w-7 h-7" />
-              </div>
-              <div>
-                <span className="text-2xl font-display font-bold tracking-tight text-white block leading-none">
-                  TECHKNOMATIC
-                </span>
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent mt-1 block">
-                  Specialist Analytics & AI Consultancy
-                </span>
-              </div>
-            </div>
+            <Link
+              to="/"
+              aria-label="Techknomatic home"
+              className="mb-6 inline-flex justify-center md:justify-start rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-950"
+            >
+              <img
+                src="/Images/home/footer-logo.png"
+                alt="Techknomatic — Technology, Knowledge, Analytics"
+                className="h-14 w-auto max-w-[min(100%,280px)] object-contain object-left sm:h-16"
+              />
+            </Link>
             <p className="text-slate-400 font-medium leading-relaxed max-w-sm mb-4 text-base mx-auto md:mx-0">
               Techknomatic empowers teams to transform raw data into clear, compelling visuals — making
               insights easier to share, understand, and act on.
