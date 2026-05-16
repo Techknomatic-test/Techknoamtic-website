@@ -401,7 +401,7 @@ export const BIServicesPage = () => {
       title: "3. Multi-Platform Certified",
       description:
         "Certified depth in Power BI, Tableau, and Qlik. We recommend the platform that fits your stack, skills, and scale.",
-      image: biImg("Multi-Platform Certified.jpg"),
+      image: biImg("multiplatform.jpg"),
     },
     {
       title: "4. Adoption-First Delivery",
