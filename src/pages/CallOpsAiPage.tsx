@@ -49,7 +49,7 @@ const CapabilityCard = ({
       <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
         {title}
       </h3>
-      <p className="text-[13px] font-bold text-brand-950/70 dark:text-white/60 mb-6 italic leading-snug">
+      <p className="text-[13px] font-bold text-brand-950/70 dark:text-white/60 mb-6 leading-snug">
         Outcome: {outcome}
       </p>
       <ul className="space-y-3 pt-6 border-t border-slate-100 dark:border-white/5 list-none">
@@ -97,7 +97,7 @@ const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: 
       </div>
       <div>
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Call Types</h4>
-        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
           {focusAreas}
         </p>
       </div>
@@ -108,8 +108,8 @@ const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: 
         <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
           <Target className="w-4 h-4 text-accent" />
         </div>
-        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
-          <span className="text-accent uppercase tracking-wider mr-2 not-italic">Outcome:</span>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
+          <span className="text-accent uppercase tracking-wider mr-2">Outcome:</span>
           {outcome}
         </p>
       </div>
@@ -402,7 +402,7 @@ export const CallOpsAIPage = () => {
       {/* Challenge Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -490,7 +490,7 @@ export const CallOpsAIPage = () => {
       {/* Solutions Section */}
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -530,26 +530,26 @@ export const CallOpsAIPage = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <motion.h2 
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <motion.div className="max-w-7xl mx-auto">
+          <div className="mb-10">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 uppercase"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
             >
               Industries We Serve
             </motion.h2>
-            <motion.p
+            <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 leading-snug"
             >
               High-impact deployments where AI voice agents are replacing — and outperforming — traditional human calling teams across sectors.
-            </motion.p>
+            </motion.h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -557,13 +557,13 @@ export const CallOpsAIPage = () => {
               <IndustryCard key={idx} {...industry} delay={idx * 0.1} />
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* How It Works Section */}
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -615,7 +615,7 @@ export const CallOpsAIPage = () => {
       {/* Integration Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -671,12 +671,12 @@ export const CallOpsAIPage = () => {
       {/* Use Cases Section */}
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 uppercase"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
             >
               Use Cases
             </motion.h2>
@@ -685,7 +685,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium italic"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
             >
               Six high-impact deployments where CallOps AI is replacing — and outperforming — traditional calling teams.
             </motion.p>
