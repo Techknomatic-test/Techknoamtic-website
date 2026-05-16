@@ -517,7 +517,7 @@ export const BIServicesPage = () => {
       {/* Intro Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-7xl space-y-12 text-left">
+          <div className="max-w-7xl space-y-8 text-left">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -563,23 +563,15 @@ export const BIServicesPage = () => {
       {/* Capabilities Section */}
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <motion.div className="max-w-7xl mx-auto">
-          <div className="text-left mb-20">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
-            >
-              What We Offer
-            </motion.h2>
+          <motion.div className="text-left mb-8">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
             >
-              Business Intelligence Capabilities
+             What We Offer
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -591,8 +583,8 @@ export const BIServicesPage = () => {
               Five core service offerings that span the full BI lifecycle — from strategy and
               roadmap to dashboard development, governance, and sustained adoption.
             </motion.p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {offerings.map((it, idx) => (
               <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
             ))}
