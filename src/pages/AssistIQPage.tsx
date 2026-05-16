@@ -24,7 +24,7 @@ import {
 const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
 const assistImg = (file: string) => `/${ASSIST_IMG}/${file}`;
 const ASSIST_HERO_IMG = assistImg("Assit_hero.jpg");
-const ASSIST_CHALLENGE_IMG = assistImg("hero.jpg");
+const ASSIST_PAIN_POINTS_IMG = assistImg("common_opertional.jpg");
 
 const CapabilityCard = ({
   title,
@@ -568,16 +568,14 @@ export const AssistIQPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-20 items-start">
+          <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-3">
-              <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
-                <img
-                  src={ASSIST_CHALLENGE_IMG}
-                  alt="Modern Customer Service"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
-              </div>
+              <img
+                src={ASSIST_PAIN_POINTS_IMG}
+                alt="Common operational pain points in customer service"
+                className="block h-auto w-full rounded-2xl"
+                referrerPolicy="no-referrer"
+              />
             </div>
 
             <div className="lg:col-span-2 space-y-6">
@@ -617,7 +615,6 @@ export const AssistIQPage = () => {
           </div>
         </div>
       </section>
-
       {/* Impact Framing Section */}
       <section className="pt-4 pb-[40px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-7xl mx-auto">
@@ -642,7 +639,7 @@ export const AssistIQPage = () => {
       {/* Solutions Section */}
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <motion.div className="mb-16">
+          <motion.div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -661,7 +658,7 @@ export const AssistIQPage = () => {
               From Manual Customer Support → Intelligent Autonomous Self-Service. Instant. Conversational.
               Scalable. Safe
             </motion.h3>
-            <div className="w-20 h-1.5 bg-accent rounded-full mb-10" />
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -686,7 +683,7 @@ export const AssistIQPage = () => {
 
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -737,7 +734,7 @@ export const AssistIQPage = () => {
               captures customer intent, understands meaning through
               enterprise-grounded knowledge, responds in human-like conversation,
               executes workflows autonomously, escalates safely, and learns
-              continuously — transforming support into a cost-effective engagement
+              continuously — transforming 0ost-effective engagement
               layer.
             </motion.p>
           </div>
@@ -831,7 +828,7 @@ export const AssistIQPage = () => {
 
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -845,7 +842,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium italic"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Seven industry-specific deployments where AssistIQ is replacing manual
               customer support with intelligent, autonomous AI self-service.
