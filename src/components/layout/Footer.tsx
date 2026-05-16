@@ -110,7 +110,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="md:col-span-12 md:row-start-3 order-3 border-t border-white/5 pt-4 pb-0 min-w-0">
+          <div className="md:col-span-12 md:row-start-3 order-3 border-t border-white/5 pt-4 pb-4 min-w-0">
             <FooterQuickLinksNav />
           </div>
 
