@@ -474,15 +474,7 @@ export const AIServicesPage = () => {
       {/* What We Offer Section */}
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
-            >
-              What We Offer
-            </motion.h2>
+          <div className="text-left mb-10">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -490,7 +482,7 @@ export const AIServicesPage = () => {
               transition={{ delay: 0.1 }}
               className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
             >
-              Artificial Intelligence Services
+              What We Offer
             </motion.h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -504,7 +496,7 @@ export const AIServicesPage = () => {
       {/* Tools & Technology Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -633,9 +625,9 @@ export const AIServicesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
             >
-              USE CASES
+              Use Cases
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
