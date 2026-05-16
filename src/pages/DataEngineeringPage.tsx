@@ -194,13 +194,13 @@ const UseCaseCard = ({ title, description, crux, industries }: { title: string; 
 
 const DE_CAP_IMG =
   "Images/Data Engineering Capabilities/Data Engineering Capabilities";
-const DE_HERO_PATH = "Images/Services/Data Engineering/hero";
-const deHeroImg = (file: string) =>
-  `${import.meta.env.BASE_URL}${[...DE_HERO_PATH.split("/"), file]
+const DE_SERVICES_IMG = "Images/Services/Data Engineering";
+const deServiceImg = (folder: string, file: string) =>
+  `${import.meta.env.BASE_URL}${[...DE_SERVICES_IMG.split("/"), folder, file]
     .map(encodeURIComponent)
     .join("/")}`;
-const DE_HERO_IMG = deHeroImg("hero2.jpg");
-const DE_TOOLS_IMG = `${DE_CAP_IMG}/Tools & Technology.jpg`;
+const DE_HERO_IMG = deServiceImg("hero", "hero2.jpg");
+const DE_TOOLS_IMG = deServiceImg("tools", "cloud.jpg");
 
 export const DataEngineeringPage = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
