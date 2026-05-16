@@ -1128,7 +1128,13 @@ const WhyUsSection = () => {
 };
 
 const ClientSlider = () => {
-  const clientLogos = [
+  const toLogoItems = (folder: string, files: string[]) =>
+    files.map((file) => ({
+      src: `Images/home/${folder}/${encodeURIComponent(file)}`,
+      alt: file.replace(/\.[^.]+$/, "").replace(/[_-]+/g, " ").trim(),
+    }));
+
+  const clientLogos = toLogoItems("Client_logo", [
     "ANI-20230801113821.jpg",
     "BDO_Unibank_(logo).svg.png",
     "DBS_Bank_Logo_(alternative).svg.png",
@@ -1151,10 +1157,27 @@ const ClientSlider = () => {
     "images (2).png",
     "images.png",
     "logo.png",
-  ].map((file) => ({
-    src: `Images/home/Client_logo/${encodeURIComponent(file)}`,
-    alt: file.replace(/\.[^.]+$/, "").replace(/[_-]+/g, " ").trim(),
-  }));
+  ]);
+
+  const dubaiClientLogos = toLogoItems("Dubai_client_logo", [
+    "Abu_Dhabi_National_Oil_Company-Logo.wine.png",
+    "AldiWorldwideLogo.svg.png",
+    "2738905a-ff6b-42ba-b952-1a42abdc5e01.png",
+    "Damac_logo.svg.png",
+    "department-of-municipalities-and-transport-logo-png_seeklogo-502976 1.png",
+    "dubai-holding-logo-png_seeklogo-325964.png",
+    "Emirates_Nuclear_Energy_Company_-_2024_logo.svg.png",
+    "Federal-Tax-Authority-DUBAI-UAE-Logo-Vector.svg-1-1.png",
+    "images 1.png",
+    "images 2.png",
+    "intertec-logo-300by300.png",
+    "logo-1603690812.png",
+    "mtn-logo-png_seeklogo-503277.png",
+    "OQ_LOGO.svg.png",
+    "roshn-logo.webp",
+    "RTA_Dubai_logo.png",
+    "Tahaluf_logo.svg.png",
+  ]);
   const MarqueeRow = ({
     items,
     reverse = false,
@@ -1238,7 +1261,7 @@ const ClientSlider = () => {
       </div>
       <div className="space-y-4 relative">
         <MarqueeRow items={clientLogos} />
-        <MarqueeRow items={clientLogos} reverse />
+        <MarqueeRow items={dubaiClientLogos} reverse />
       </div>
     </section>
   );
