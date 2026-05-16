@@ -602,7 +602,6 @@ export const CXONexusPage = () => {
               From BI Ticket Queues → Conversational Decision Intelligence. Ask. Retrieve. Ground. Visualize.
               Decide.
             </motion.h3>
-            <div className="w-20 h-1.5 bg-accent rounded-full mb-10" />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
