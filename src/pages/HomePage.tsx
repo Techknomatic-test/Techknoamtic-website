@@ -660,7 +660,7 @@ const SolutionsSection = () => {
       href: "/manufacturing-analytics",
     },
     {
-      category: "Energy",
+      category: "Oil & Gas",
       title: "Oil & Gas Analytics",
       description:
         "Refinery operations, asset performance, energy monitoring, and safety — SCADA-integrated. 18% downtime reduction.",
@@ -905,8 +905,7 @@ const TestimonialsSection = () => {
     <section className="py-[40px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -mr-48 -mt-48" />
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-10">
-          <div className="max-w-2xl text-left">
+        <div className="mb-16 max-w-2xl text-left">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -932,36 +931,6 @@ const TestimonialsSection = () => {
               We measure our success by the growth and clarity we bring to our
               partners across the globe.
             </motion.p>
-          </div>
-          <div className="flex flex-col items-center lg:items-end gap-6 w-full lg:w-auto">
-            <div className="flex gap-4">
-              <button
-                onClick={() => setActiveIndex((prev) => Math.max(0, prev - 1))}
-                className="w-14 h-14 rounded-2xl bg-white dark:bg-brand-950 border border-slate-200 dark:border-white/10 flex items-center justify-center text-brand-950 dark:text-white hover:bg-accent hover:text-white hover:border-accent transition-all active:scale-95 shadow-xl shadow-black/5 disabled:opacity-30 disabled:cursor-not-allowed group"
-                disabled={activeIndex === 0}
-              >
-                <ChevronRight className="w-6 h-6 rotate-180 transition-transform group-hover:-translate-x-1" />
-              </button>
-              <button
-                onClick={() =>
-                  setActiveIndex((prev) => Math.min(totalSlides, prev + 1))
-                }
-                className="w-14 h-14 rounded-2xl bg-white dark:bg-brand-950 border border-slate-200 dark:border-white/10 flex items-center justify-center text-brand-950 dark:text-white hover:bg-accent hover:text-white hover:border-accent transition-all active:scale-95 shadow-xl shadow-black/5 disabled:opacity-30 disabled:cursor-not-allowed group"
-                disabled={activeIndex >= totalSlides}
-              >
-                <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
-              </button>
-            </div>
-            {/* Progress line */}
-            <div className="w-full lg:w-48 h-1 bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden">
-              <motion.div
-                animate={{
-                  width: `${((activeIndex + 1) / (totalSlides + 1)) * 100}%`,
-                }}
-                className="h-full bg-accent"
-              />
-            </div>
-          </div>
         </div>
 
         <div className="relative">
@@ -1025,6 +994,35 @@ const TestimonialsSection = () => {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-6">
+          <div className="flex gap-4">
+            <button
+              onClick={() => setActiveIndex((prev) => Math.max(0, prev - 1))}
+              className="w-14 h-14 rounded-2xl bg-white dark:bg-brand-950 border border-slate-200 dark:border-white/10 flex items-center justify-center text-brand-950 dark:text-white hover:bg-accent hover:text-white hover:border-accent transition-all active:scale-95 shadow-xl shadow-black/5 disabled:opacity-30 disabled:cursor-not-allowed group"
+              disabled={activeIndex === 0}
+            >
+              <ChevronRight className="w-6 h-6 rotate-180 transition-transform group-hover:-translate-x-1" />
+            </button>
+            <button
+              onClick={() =>
+                setActiveIndex((prev) => Math.min(totalSlides, prev + 1))
+              }
+              className="w-14 h-14 rounded-2xl bg-white dark:bg-brand-950 border border-slate-200 dark:border-white/10 flex items-center justify-center text-brand-950 dark:text-white hover:bg-accent hover:text-white hover:border-accent transition-all active:scale-95 shadow-xl shadow-black/5 disabled:opacity-30 disabled:cursor-not-allowed group"
+              disabled={activeIndex >= totalSlides}
+            >
+              <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
+          <div className="w-48 h-1 bg-slate-200 dark:bg-white/10 rounded-full overflow-hidden">
+            <motion.div
+              animate={{
+                width: `${((activeIndex + 1) / (totalSlides + 1)) * 100}%`,
+              }}
+              className="h-full bg-accent"
+            />
+          </div>
         </div>
       </div>
     </section>
