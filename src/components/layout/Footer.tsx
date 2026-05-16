@@ -1,4 +1,4 @@
-import { Activity, ChevronRight, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Activity, ChevronRight, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { navData } from '../../config/navigation';
 import type { NavItem } from '../../types/navigation';
@@ -49,7 +49,7 @@ const FooterQuickLinksNav = () => (
 
 const FooterColumn = ({ title, items }: { title: string; items: NavItem[] }) => (
   <div className="w-max shrink-0">
-    <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">{title}</h5>
+    <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-6">{title}</h5>
     <ul className="grid grid-cols-[max-content_auto] gap-x-2 gap-y-5 items-center text-[14px] font-medium text-slate-400">
       {items.map((item) => (
         <li key={item.label} className="contents group">
@@ -67,11 +67,11 @@ const FooterColumn = ({ title, items }: { title: string; items: NavItem[] }) => 
 
 export const Footer = () => {
   return (
-    <footer className="py-[100px] px-6 lg:px-12 bg-brand-950 border-t border-white/5 transition-colors duration-500 overflow-hidden text-center md:text-left">
+    <footer className="py-14 md:py-16 lg:py-20 px-6 lg:px-12 bg-brand-950 border-t border-white/5 transition-colors duration-500 overflow-hidden text-center md:text-left">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-[auto_auto_auto] gap-y-10 md:gap-x-8 lg:gap-x-16 md:gap-y-8 mb-10 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-[auto_auto_auto] gap-y-6 md:gap-x-8 lg:gap-x-16 md:gap-y-6 mb-0">
           <div className="md:col-span-5 md:row-start-1 order-1">
-            <div className="flex items-center gap-4 mb-8 justify-center md:justify-start">
+            <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
               <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-950 shadow-xl shadow-white/5">
                 <Activity className="w-7 h-7" />
               </div>
@@ -84,7 +84,7 @@ export const Footer = () => {
                 </span>
               </div>
             </div>
-            <p className="text-slate-400 font-medium leading-relaxed max-w-sm mb-6 text-base mx-auto md:mx-0">
+            <p className="text-slate-400 font-medium leading-relaxed max-w-sm mb-4 text-base mx-auto md:mx-0">
               Techknomatic empowers teams to transform raw data into clear, compelling visuals — making
               insights easier to share, understand, and act on.
             </p>
@@ -96,8 +96,6 @@ export const Footer = () => {
           <div className="md:col-span-5 md:row-start-2 order-2">
             <div className="flex items-center gap-5 justify-center md:justify-start">
               {[
-                { icon: Twitter, href: '#' },
-                { icon: Instagram, href: '#' },
                 { icon: Linkedin, href: '#' },
                 { icon: Mail, href: '#' },
               ].map((social, index) => (
@@ -112,11 +110,11 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="md:col-span-12 md:row-start-3 order-3 border-t border-white/5 pt-5 min-w-0">
+          <div className="md:col-span-12 md:row-start-3 order-3 border-t border-white/5 pt-4 pb-0 min-w-0">
             <FooterQuickLinksNav />
           </div>
 
-          <div className="md:col-span-7 md:col-start-6 md:row-span-2 md:row-start-1 order-4 flex flex-col md:flex-row md:flex-wrap items-start gap-y-16 gap-x-12 lg:gap-x-16">
+          <div className="md:col-span-7 md:col-start-6 md:row-span-2 md:row-start-1 order-4 flex flex-col md:flex-row md:flex-wrap items-start gap-y-10 gap-x-12 lg:gap-x-16">
             <FooterColumn title="Services" items={navData.services} />
             <FooterColumn title="Enterprise AI" items={navData.enterpriseAI} />
             <FooterColumn title="Platforms" items={navData.platforms} />
@@ -124,7 +122,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="pt-4 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-slate-500 text-[14px] font-medium">
             © {new Date().getFullYear()} Techknomatic. All rights reserved. Precision in every byte.
           </p>
