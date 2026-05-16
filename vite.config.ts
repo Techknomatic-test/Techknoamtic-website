@@ -19,7 +19,7 @@ const devIndexPlugin = (): Plugin => ({
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: mode === 'production' ? '/Techknoamtic-website/' : '/',
+    base: mode === 'production' ? '/Techknoamtic-website/docs/' : '/',
     plugins: [react(), tailwindcss(), ...(mode === 'development' ? [devIndexPlugin()] : [])],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
