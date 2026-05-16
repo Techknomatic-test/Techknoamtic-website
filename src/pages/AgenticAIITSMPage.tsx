@@ -22,6 +22,9 @@ import {
 const TIQ_IMG = "Images/TicketIQ";
 const tiqImg = (file: string) => `/${TIQ_IMG}/${file}`;
 
+const TIQ_ENT_IMG = "Images/Entrprise_Ai/TiketIq";
+const tiqEntImg = (file: string) => `/${TIQ_ENT_IMG}/${file}`;
+
 /** Shared industry images with AssistIQ (Entrprise_Ai/AssistIQ). */
 const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
 const assistImg = (file: string) => `/${ASSIST_IMG}/${file}`;
@@ -316,7 +319,7 @@ export const AgenticAIITSMPage = () => {
       title: "Manufacturing",
       description:
         "Plant and operations IT support — industrial workstation troubleshooting and OT-friendly workflows.",
-      image: tiqImg("manufacturing.jpg"),
+      image: tiqEntImg("Manufacturing.jpg"),
     },
     {
       title: "Logistics & Supply Chain",
