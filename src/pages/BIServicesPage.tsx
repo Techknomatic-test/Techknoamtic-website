@@ -16,9 +16,12 @@ import {
 } from "lucide-react";
 
 const BI_IMG = "Images/Services/Business Intelligence";
-const biImg = (file: string) => `/${BI_IMG}/${file}`;
+const biImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...BI_IMG.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
 const BI_HERO_IMG = biImg("hero.jpg");
-const BI_TOOLS_IMG = biImg("Multi-Platform Certified.jpg");
+const BI_TOOLS_IMG = biImg("tools-and-technology.jpg");
 
 const AccordionItem = ({
   title,
@@ -625,7 +628,7 @@ export const BIServicesPage = () => {
               <div className="relative aspect-[4/3] w-full lg:aspect-[5/4]">
                 <img
                   src={BI_TOOLS_IMG}
-                  alt="BI tools and technology platforms"
+                  alt="Business intelligence tools and technology"
                   className="absolute inset-0 h-full w-full object-cover"
                   referrerPolicy="no-referrer"
                 />
