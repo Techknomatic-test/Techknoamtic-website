@@ -355,14 +355,6 @@ export const DataEngineeringPage = () => {
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
-            >
-              WHAT WE OFFER
-            </motion.h2>
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -370,7 +362,7 @@ export const DataEngineeringPage = () => {
               transition={{ delay: 0.1 }}
               className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
             >
-              Data Engineering Capabilities
+              What We Offer
             </motion.h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -384,7 +376,7 @@ export const DataEngineeringPage = () => {
       {/* Tools & Technology Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -499,22 +491,14 @@ export const DataEngineeringPage = () => {
       {/* Use Cases Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
-            >
-              Proof of Concept
-            </motion.div>
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
             >
-              USE CASES
+              Use Cases
             </motion.h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
