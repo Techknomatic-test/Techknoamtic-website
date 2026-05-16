@@ -1,5 +1,40 @@
 import { Activity, ChevronRight, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { navData } from '../../config/navigation';
+import type { NavItem } from '../../types/navigation';
+
+const footerLinkLabel = (item: NavItem): string => {
+  const labels: Record<string, string> = {
+    'AssistIQ - AI Agents/Avatar for Intelligent Self-Service': 'AssistIQ',
+    'TicketIQ - AI Agents for Intelligent Ticket Handling': 'TicketIQ',
+    'CallOps AI - AI-Powered Call Operations': 'CallOps AI',
+    'CXO Nexus - Conversational AI for CXOs': 'CXO Nexus',
+    INSURANCE: 'Insurance',
+    'OIL & GAS': 'Oil & Gas',
+    'IT SERVICE MANAGEMENT (ITSM)': 'ITSM',
+    MANUFACTURING: 'Manufacturing',
+    'GeoSpacial Analytics': 'Geospatial Analytics',
+  };
+  return labels[item.label] ?? item.label;
+};
+
+const FooterColumn = ({ title, items }: { title: string; items: NavItem[] }) => (
+  <div>
+    <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">{title}</h5>
+    <ul className="grid grid-cols-[max-content_auto] gap-x-2 gap-y-5 items-center text-[14px] font-medium text-slate-400">
+      {items.map((item) => (
+        <li key={item.label} className="contents group">
+          <Link to={item.href} className="contents">
+            <span className="whitespace-nowrap transition-colors group-hover:text-accent">
+              {footerLinkLabel(item)}
+            </span>
+            <ChevronRight className="w-3.5 h-3.5 shrink-0 transition-transform group-hover:translate-x-1 group-hover:text-accent" />
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 export const Footer = () => {
   return (
@@ -46,103 +81,10 @@ export const Footer = () => {
           </div>
 
           <div className="md:col-span-7 md:col-start-6 grid grid-cols-1 md:grid-cols-4 gap-y-16 md:gap-x-12 lg:gap-x-16">
-            <div>
-              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">Services</h5>
-              <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
-                {[
-                  { label: 'Business Intelligence', href: '/bi-services' },
-                  { label: 'Data Engineering', href: '/data-engineering' },
-                  { label: 'AI & GenAI', href: '/ai-services' },
-                  { label: 'Geospatial Analytics', href: '/geospatial-analytics' },
-                  { label: 'Custom Development', href: '/custom-development' },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      to={item.href}
-                      className="flex items-center justify-between w-full pr-2 hover:text-accent transition-colors group"
-                    >
-                      <span>{item.label}</span>
-                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">Accelerators</h5>
-              <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
-                {[
-                  { label: 'DataGuard', href: '/dataguard' },
-                  { label: 'ITSM Plug & Play', href: '/itsm-plug-and-play' },
-                  { label: 'Agentic AI', href: '/agentic-ai-itsm' },
-                  { label: 'HR Portal', href: '/hr-portal' },
-                  { label: 'ParseIQ', href: '/parse-iq' },
-                  { label: 'FreightIQ', href: '/freight-iq' },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      to={item.href}
-                      className="flex items-center justify-between w-full pr-2 hover:text-accent transition-colors group"
-                    >
-                      <span>{item.label}</span>
-                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">Solutions</h5>
-              <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
-                {[
-                  { label: 'Insurance', href: '/insurance-analytics' },
-                  { label: 'Manufacturing', href: '/manufacturing-analytics' },
-                  { label: 'FMCG', href: '/fmcg-analytics' },
-                  { label: 'Oil & Gas', href: '/refinery-operations' },
-                  { label: 'Airlines', href: '/airlines-analytics' },
-                  { label: 'ITSM', href: '/itsm-analytics' },
-                  { label: 'HSE', href: '/hse-analytics' },
-                  { label: 'Healthcare', href: '/healthcare-analytics' },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      to={item.href}
-                      className="flex items-center justify-between w-full pr-2 hover:text-accent transition-colors group"
-                    >
-                      <span>{item.label}</span>
-                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">Company</h5>
-              <ul className="space-y-5 text-[14px] font-medium text-slate-400 whitespace-nowrap">
-                {[
-                  { label: 'About Us', href: '/about' },
-                  { label: 'FAQ', href: '/faq' },
-                  { label: 'Brand Guidelines', href: '/brand' },
-                  { label: 'Careers', href: '/careers' },
-                  { label: 'Contact', href: '/contact' },
-                  { label: 'Partnerships', href: '/partnerships' },
-                  { label: 'Our Story', href: '/about' },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      to={item.href}
-                      className="flex items-center justify-between w-full pr-2 hover:text-accent transition-colors group"
-                    >
-                      <span>{item.label}</span>
-                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <FooterColumn title="Services" items={navData.services} />
+            <FooterColumn title="Enterprise AI" items={navData.enterpriseAI} />
+            <FooterColumn title="Platforms" items={navData.platforms} />
+            <FooterColumn title="Industries" items={navData.industries} />
           </div>
         </div>
 
