@@ -10,9 +10,12 @@ import {
 } from "lucide-react";
 
 const DAIS_IMG = "Images/Services/data & AI statergy";
-const daisImg = (file: string) => `/${DAIS_IMG}/${file}`;
-const DAIS_HERO_IMG = daisImg("hero.jpg");
-const DAIS_TOOLS_IMG = daisImg("AI Strategy & Model Deployment.jpg");
+const daisImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...DAIS_IMG.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+const DAIS_HERO_IMG = `${import.meta.env.BASE_URL}Images/Services/data-ai-strategy/data-hero.jpg`;
+const DAIS_TOOLS_IMG = `${import.meta.env.BASE_URL}Images/Services/data-ai-strategy/toolsandtech.jpg`;
 
 const AccordionItem = ({
   title,
