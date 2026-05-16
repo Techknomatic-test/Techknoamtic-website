@@ -18,9 +18,12 @@ import {
 const CO_IMG = "Images/CallOpsAI";
 const coImg = (file: string) => `/${CO_IMG}/${file}`;
 
-/** Shared industry images with AssistIQ (Entrprise_Ai/AssistIQ). */
-const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
-const assistImg = (file: string) => `/${ASSIST_IMG}/${file}`;
+const CO_ENT_IMG = "Images/Entrprise_Ai/callopsAI";
+const coEntImg = (file: string) => `/${CO_ENT_IMG}/${file}`;
+const CO_HERO_IMG = coEntImg("Tickethero.jpg");
+const CO_PAIN_POINTS_IMG = coEntImg("Operational Pain Points.jpg");
+const CO_INDUSTRY_IMG = (file: string) =>
+  coEntImg(`Industries We Serve/${file}`);
 
 const CapabilityCard = ({
   title,
@@ -231,31 +234,31 @@ export const CallOpsAIPage = () => {
       title: "Retail",
       description:
         "Automate order confirmations, promotional outreach, and customer engagement at scale.",
-      image: assistImg("Retail & E-Commerce.jpg"),
+      image: CO_INDUSTRY_IMG("Retail.jpg"),
     },
     {
       title: "BFSI",
       description:
         "Streamline collections, payment reminders, customer verification, and policy renewals.",
-      image: assistImg("Insurance.jpg"),
+      image: CO_INDUSTRY_IMG("BFSI.jpg"),
     },
     {
       title: "Healthcare",
       description:
         "Automate appointment scheduling, patient follow-ups, and reminder workflows.",
-      image: assistImg("Healthcare.jpg"),
+      image: CO_INDUSTRY_IMG("Healthcare.jpg"),
     },
     {
       title: "Logistics",
       description:
         "Coordinate deliveries, shipment updates, and driver–customer communication.",
-      image: assistImg("Logistics.jpg"),
+      image: CO_INDUSTRY_IMG("Logistics.jpg"),
     },
     {
       title: "Real Estate",
       description:
         "Qualify leads, schedule site visits, and run automated follow-up engagement.",
-      image: coImg("industry-real-estate.jpg"),
+      image: CO_INDUSTRY_IMG("Real Estate.jpg"),
     },
   ];
 
@@ -363,11 +366,21 @@ export const CallOpsAIPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-brand-950">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src={CO_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 w-full text-left">
+        <div className="max-w-7xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -422,17 +435,17 @@ export const CallOpsAIPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="relative aspect-video lg:aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl">
+          <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
+            <div className="lg:col-span-3">
               <img
-                src={coImg("challenge.jpg")}
-                alt="Call Center Operations"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src={CO_PAIN_POINTS_IMG}
+                alt="Common operational pain points in call center operations"
+                className="block h-auto w-full rounded-2xl"
+                referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
             </div>
 
-            <div className="space-y-6 self-start lg:pt-4">
+            <div className="lg:col-span-2 space-y-6">
               <div className="mb-12">
                 <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight">Common Operational Pain Points</h3>
                 <div className="w-12 h-1 bg-accent rounded-full" />
