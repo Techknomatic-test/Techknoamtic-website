@@ -3,7 +3,6 @@ import { useState } from "react";
 import {
   ChevronDown,
   HelpCircle,
-  Sparkles,
   ArrowUp,
   ArrowDown,
   Heart,
@@ -140,19 +139,11 @@ export const FAQPage = () => {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.03),transparent)] z-10" />
             </div>
 
-            <div className="relative z-20 text-center px-6 max-w-4xl pt-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-3 px-4 py-1.5 mb-6 text-[11px] font-bold tracking-[0.4em] text-accent uppercase bg-white dark:bg-white/5 backdrop-blur-xl rounded-full border border-slate-200 dark:border-white/10 shadow-sm"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                Help Center
-              </motion.div>
+            <motion.div className="relative z-20 w-full text-center px-6 max-w-4xl">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
+                transition={{ delay: 0 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-950 dark:text-white tracking-tight leading-[1.2] mb-6"
               >
                 Got <span className="text-accent">Questions?</span> <br />
@@ -165,13 +156,13 @@ export const FAQPage = () => {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.2 }}
                 className="text-slate-500 dark:text-slate-400 text-base md:text-xl font-medium max-w-2xl mx-auto leading-relaxed"
               >
                 Explore our detailed knowledge hub to find answers about our
                 services and technical stack.
               </motion.p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

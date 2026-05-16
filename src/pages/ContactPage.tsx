@@ -147,7 +147,7 @@ export const ContactPage = () => {
   return (
     <div className="pt-[110px] relative pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
       {/* 1. Hero Section - Styled as per Reference Attachment */}
-      <section className="relative min-h-[50vh] flex flex-col justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
+      <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#050a14] opacity-100" />
           {/* Enhanced Data Particle Background Effect */}

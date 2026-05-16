@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 
 const PartnershipHero = () => {
   return (
-    <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-brand-950">
+    <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-brand-950">
       <div className="absolute inset-0 z-0">
         <img
           src="Images/7660.jpg"

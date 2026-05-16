@@ -143,23 +143,16 @@ export const HRPortalPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
-          >
-            Digital Workplace
-          </motion.div>
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             HR Portal Accelerator
@@ -168,7 +161,7 @@ export const HRPortalPage = () => {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.1 }}
               className="text-xl md:text-2xl font-medium text-white/90 mb-4 tracking-tight"
             >
               Building a high-performance home for your most valuable asset: People.
@@ -176,7 +169,7 @@ export const HRPortalPage = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.2 }}
               className="text-lg md:text-xl text-slate-400 font-medium leading-relaxed"
             >
               A unified, high-performance portal for employee self-service, leave management, and company culture engineered for enterprise scale.
@@ -373,7 +366,7 @@ export const HRPortalPage = () => {
 
       {/* Engagement Models Section */}
       <section className="py-[60px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10 text-left">
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left">
           <div className="mb-16">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}

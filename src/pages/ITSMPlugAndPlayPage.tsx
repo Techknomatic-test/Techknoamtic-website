@@ -432,19 +432,12 @@ export const ITSMPlugAndPlayPage = () => {
 
   return (
     <div className="pt-[110px]">
-      <section className="relative min-h-[min(50vh,480px)] overflow-hidden bg-[#020617] px-6 py-12 md:py-14">
+      <section className="relative flex min-h-[min(50vh,480px)] items-center overflow-hidden bg-[#020617] px-6 py-12 md:py-14">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/5 blur-[100px]" />
         </div>
         <div className="relative z-10 mx-auto max-w-6xl text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[11px] font-black uppercase tracking-[0.3em] text-accent"
-          >
-            Universal ITSM Analytics
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

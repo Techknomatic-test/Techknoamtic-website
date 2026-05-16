@@ -185,7 +185,7 @@ export const AboutUsPage = () => {
   return (
     <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
       {/* 1. Hero Section - Styled as per Airline Hero */}
-      <section className="relative min-h-[50vh] flex flex-col items-center justify-center pt-12 pb-10 md:pt-14 md:pb-12 overflow-hidden px-6 bg-brand-950">
+      <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-10 md:pt-14 md:pb-12 overflow-hidden px-6 bg-brand-950">
         <div className="absolute inset-0 z-0">
           <img
             src="Images/airline.jpg"
