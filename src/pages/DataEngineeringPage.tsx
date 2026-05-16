@@ -194,7 +194,12 @@ const UseCaseCard = ({ title, description, crux, industries }: { title: string; 
 
 const DE_CAP_IMG =
   "Images/Data Engineering Capabilities/Data Engineering Capabilities";
-const DE_HERO_IMG = "Images/Data Engineering Capabilities/Hero.jpg";
+const DE_HERO_PATH = "Images/Services/Data Engineering/hero";
+const deHeroImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...DE_HERO_PATH.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+const DE_HERO_IMG = deHeroImg("hero2.jpg");
 const DE_TOOLS_IMG = `${DE_CAP_IMG}/Tools & Technology.jpg`;
 
 export const DataEngineeringPage = () => {
