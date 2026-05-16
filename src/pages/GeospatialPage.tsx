@@ -32,7 +32,7 @@ import {
 
 const GEO_IMG = "Images/Services/Geospatial Analytics";
 const geoImg = (file: string) => `/${GEO_IMG}/${file}`;
-const GEO_HERO_IMG = geoImg("Hero.jpg");
+const GEO_HERO_IMG = geoImg("GISHero.jpg");
 const GEO_TOOLS_IMG = geoImg("tolsandtech.jpg");
 
 const AccordionItem = ({
