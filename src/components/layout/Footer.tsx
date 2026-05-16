@@ -19,7 +19,7 @@ const footerLinkLabel = (item: NavItem): string => {
 };
 
 const FooterColumn = ({ title, items }: { title: string; items: NavItem[] }) => (
-  <div>
+  <div className="w-max shrink-0">
     <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">{title}</h5>
     <ul className="grid grid-cols-[max-content_auto] gap-x-2 gap-y-5 items-center text-[14px] font-medium text-slate-400">
       {items.map((item) => (
@@ -80,7 +80,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="md:col-span-7 md:col-start-6 grid grid-cols-1 md:grid-cols-4 gap-y-16 md:gap-x-12 lg:gap-x-16">
+          <div className="md:col-span-7 md:col-start-6 flex flex-col md:flex-row md:flex-wrap items-start gap-y-16 gap-x-12 lg:gap-x-16">
             <FooterColumn title="Services" items={navData.services} />
             <FooterColumn title="Enterprise AI" items={navData.enterpriseAI} />
             <FooterColumn title="Platforms" items={navData.platforms} />
