@@ -18,6 +18,35 @@ const footerLinkLabel = (item: NavItem): string => {
   return labels[item.label] ?? item.label;
 };
 
+const footerQuickLinks = [
+  { label: 'About the Company', href: '/about' },
+  { label: 'Careers', href: '/careers' },
+  { label: 'Partnerships', href: '/partnerships' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Customer Stories', href: '#' },
+  { label: 'Contact Us', href: '/contact' },
+];
+
+const FooterQuickLinksNav = () => (
+  <nav
+    aria-label="Footer quick links"
+    className="flex flex-nowrap items-center justify-start gap-0 overflow-x-auto text-[13px] sm:text-[14px] font-medium text-slate-400 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+  >
+    {footerQuickLinks.map((link, index) => (
+      <span key={link.label} className="inline-flex shrink-0 items-center">
+        {index > 0 && (
+          <span className="mx-2 sm:mx-3 text-white/25 select-none" aria-hidden>
+            |
+          </span>
+        )}
+        <Link to={link.href} className="whitespace-nowrap hover:text-accent transition-colors">
+          {link.label}
+        </Link>
+      </span>
+    ))}
+  </nav>
+);
+
 const FooterColumn = ({ title, items }: { title: string; items: NavItem[] }) => (
   <div className="w-max shrink-0">
     <h5 className="font-bold text-[14px] text-white uppercase tracking-widest mb-10">{title}</h5>
@@ -40,8 +69,8 @@ export const Footer = () => {
   return (
     <footer className="py-[100px] px-6 lg:px-12 bg-brand-950 border-t border-white/5 transition-colors duration-500 overflow-hidden text-center md:text-left">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-x-8 lg:gap-x-16 mb-24">
-          <div className="md:col-span-5">
+        <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-[auto_auto_auto] gap-y-10 md:gap-x-8 lg:gap-x-16 md:gap-y-8 mb-10 md:mb-16">
+          <div className="md:col-span-5 md:row-start-1 order-1">
             <div className="flex items-center gap-4 mb-8 justify-center md:justify-start">
               <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-950 shadow-xl shadow-white/5">
                 <Activity className="w-7 h-7" />
@@ -59,9 +88,12 @@ export const Footer = () => {
               Techknomatic empowers teams to transform raw data into clear, compelling visuals — making
               insights easier to share, understand, and act on.
             </p>
-            <div className="text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-10">
+            <div className="text-[11px] font-black uppercase tracking-[0.3em] text-white/40">
               India · UAE · Oman
             </div>
+          </div>
+
+          <div className="md:col-span-5 md:row-start-2 order-2">
             <div className="flex items-center gap-5 justify-center md:justify-start">
               {[
                 { icon: Twitter, href: '#' },
@@ -80,7 +112,11 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="md:col-span-7 md:col-start-6 flex flex-col md:flex-row md:flex-wrap items-start gap-y-16 gap-x-12 lg:gap-x-16">
+          <div className="md:col-span-12 md:row-start-3 order-3 border-t border-white/5 pt-5 min-w-0">
+            <FooterQuickLinksNav />
+          </div>
+
+          <div className="md:col-span-7 md:col-start-6 md:row-span-2 md:row-start-1 order-4 flex flex-col md:flex-row md:flex-wrap items-start gap-y-16 gap-x-12 lg:gap-x-16">
             <FooterColumn title="Services" items={navData.services} />
             <FooterColumn title="Enterprise AI" items={navData.enterpriseAI} />
             <FooterColumn title="Platforms" items={navData.platforms} />
@@ -88,7 +124,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="text-slate-500 text-[14px] font-medium">
             © {new Date().getFullYear()} Techknomatic. All rights reserved. Precision in every byte.
           </p>
