@@ -416,7 +416,7 @@ export const GeospatialPage = () => {
       {/* Tools & Technology Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -502,7 +502,7 @@ export const GeospatialPage = () => {
       {/* Why Techknomatic Section */}
       <section className="py-[60px] px-6 bg-slate-100 dark:bg-brand-900/50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
+          <div className="text-left mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -532,7 +532,7 @@ export const GeospatialPage = () => {
       {/* Use Cases Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto text-left">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
