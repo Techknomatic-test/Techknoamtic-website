@@ -523,7 +523,7 @@ export const AgenticAIITSMPage = () => {
 
       <section className="py-[80px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
+          <div className="mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -628,7 +628,7 @@ export const AgenticAIITSMPage = () => {
       {/* Solutions Section */}
       <section className="py-[80px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -647,7 +647,6 @@ export const AgenticAIITSMPage = () => {
               From Reactive IT Support → Autonomous IT Operations. Intake. Classify. Verify. Resolve.
               Audit.
             </motion.h3>
-            <div className="w-20 h-1.5 bg-accent rounded-full mb-10" />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -673,7 +672,7 @@ export const AgenticAIITSMPage = () => {
 
       <section className="py-[80px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -705,7 +704,7 @@ export const AgenticAIITSMPage = () => {
 
       <section className="py-[80px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -764,7 +763,7 @@ export const AgenticAIITSMPage = () => {
 
       <section className="py-[80px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -818,7 +817,7 @@ export const AgenticAIITSMPage = () => {
 
       <section className="py-[80px] px-6 bg-slate-50 dark:bg-white/5 text-left">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
