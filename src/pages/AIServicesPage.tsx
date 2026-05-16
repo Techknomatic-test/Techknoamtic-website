@@ -9,13 +9,10 @@ import {
   Monitor,
 } from "lucide-react";
 
-const DAIS_IMG = "Images/Services/data & AI statergy";
-const daisImg = (file: string) =>
-  `${import.meta.env.BASE_URL}${[...DAIS_IMG.split("/"), file]
-    .map(encodeURIComponent)
-    .join("/")}`;
-const DAIS_HERO_IMG = `${import.meta.env.BASE_URL}Images/Services/data-ai-strategy/data-hero.jpg`;
-const DAIS_TOOLS_IMG = `${import.meta.env.BASE_URL}Images/Services/data-ai-strategy/toolsandtech.jpg`;
+const DAIS_IMG = "Images/Services/data-ai-strategy";
+const daisImg = (file: string) => `${import.meta.env.BASE_URL}${DAIS_IMG}/${file}`;
+const DAIS_HERO_IMG = daisImg("data-hero.jpg");
+const DAIS_TOOLS_IMG = daisImg("toolsandtech.jpg");
 
 const AccordionItem = ({
   title,
@@ -240,37 +237,37 @@ export const AIServicesPage = () => {
       title: "Custom Chatbots & LLM Assistants",
       description:
         "Intelligent conversational AI for customer service, HR, helpdesk, and internal knowledge management.",
-      image: daisImg("Custom Chatbots & LLM Assistants.jpg"),
+      image: daisImg("custom-chatbots-llm-assistants.jpg"),
     },
     {
       title: "Agentic AI Workflows",
       description:
         "Multi-step automation that understands context, makes decisions, and executes complex business processes.",
-      image: daisImg("Agentic AI Workflows.jpg"),
+      image: daisImg("agentic-ai-workflows.jpg"),
     },
     {
       title: "Document AI & NLP",
       description:
         "Extract insights from contracts, claims, reports, and unstructured documents with LLM-powered processing.",
-      image: daisImg("Document AI & NLP.jpg"),
+      image: daisImg("document-ai-nlp.jpg"),
     },
     {
       title: "Conversational BI",
       description:
         "Natural-language analytics that lets anyone ask questions and get answers from their data — instantly.",
-      image: daisImg("Conversational BI.jpg"),
+      image: daisImg("conversational-bi.jpg"),
     },
     {
       title: "GenAI for Auto-Summaries",
       description:
         "Automated generation of summaries, reports, and emails from data — saving hours of manual work.",
-      image: daisImg("GenAI for Auto-Summaries.jpg"),
+      image: daisImg("genai-auto-summaries.jpg"),
     },
     {
       title: "AI Strategy & Model Deployment",
       description:
         "End-to-end AI consulting — from use-case identification to production deployment and monitoring.",
-      image: daisImg("AI Strategy & Model Deployment.jpg"),
+      image: daisImg("ai-strategy-model-deployment.jpg"),
     },
   ];
 
