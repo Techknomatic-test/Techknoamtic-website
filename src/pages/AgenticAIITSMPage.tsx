@@ -497,12 +497,12 @@ export const AgenticAIITSMPage = () => {
           >
             TicketIQ
           </motion.h1>
-          <div>
+          <motion.div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight text-balance leading-tight"
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
               Autonomous IT Support. Faster Resolutions. Near Zero-Touch Operations.
             </motion.h2>
@@ -510,15 +510,14 @@ export const AgenticAIITSMPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-sm text-slate-400 font-normal leading-relaxed text-pretty"
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              Agentic AI that resolves L1 IT tickets autonomously — understanding
-              intent, executing approved actions, and enforcing enterprise governance
-              from intake to audit. Built for IT teams ready to move from reactive
-              service desks to zero-touch IT operations, without compromising security
-              or control.
+              Agentic AI that resolves L1 IT tickets autonomously — understanding intent,
+              executing approved actions, and enforcing enterprise governance from intake to
+              audit. Built for IT teams ready to move from reactive service desks to zero-touch
+              IT operations, without compromising security or control.
             </motion.p>
-          </div>
+          </motion.div>
         </div>
       </section>
 

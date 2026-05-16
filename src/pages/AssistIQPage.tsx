@@ -512,12 +512,12 @@ export const AssistIQPage = () => {
           >
             AssistIQ
           </motion.h1>
-          <div>
+          <motion.div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight text-balance leading-tight"
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
               Engage Faster. Support Smarter. Scale Seamlessly
             </motion.h2>
@@ -527,13 +527,12 @@ export const AssistIQPage = () => {
               transition={{ delay: 0.3 }}
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              AI-powered conversational agents and intelligent avatars that
-              autonomously handle customer queries, execute workflows, and deliver
-              human-like self-service — 24×7, across every digital channel. Built
-              for enterprises ready to move from manual customer support to
-              intelligent autonomous engagement.
+              AI-powered conversational agents and intelligent avatars that autonomously handle
+              customer queries, execute workflows, and deliver human-like self-service — 24×7,
+              across every digital channel. Built for enterprises ready to move from manual
+              customer support to intelligent autonomous engagement.
             </motion.p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
