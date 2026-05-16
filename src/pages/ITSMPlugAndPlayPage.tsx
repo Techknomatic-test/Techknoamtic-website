@@ -510,7 +510,7 @@ export const ITSMPlugAndPlayPage = () => {
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 flex items-end bg-gradient-to-t from-brand-950/80 via-transparent to-transparent p-8">
-                <p className="border-l-4 border-accent pl-4 text-sm font-bold italic leading-relaxed text-white">
+                <p className="border-l-4 border-accent pl-4 text-sm font-bold leading-relaxed text-white">
                   The result: delayed operational decisions, inconsistent SLA tracking, and a constant drain on BI teams.
                 </p>
               </div>
@@ -664,7 +664,7 @@ export const ITSMPlugAndPlayPage = () => {
                   <h3 className="mb-4 text-left text-xl font-bold capitalize text-brand-950 transition-colors group-hover:text-accent dark:text-white">
                     {step.title}
                   </h3>
-                  <p className="text-left text-[14px] font-medium italic leading-relaxed text-slate-500 dark:text-slate-400">
+                  <p className="text-left text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
                     {step.content}
                   </p>
                 </motion.div>

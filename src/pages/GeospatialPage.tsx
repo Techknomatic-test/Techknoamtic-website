@@ -136,7 +136,7 @@ const ApproachStep = ({ num, title, description, delay = 0 }: { num: string; tit
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
       {title}
     </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic px-2 border-l-2 border-accent/20 text-left">
+    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed px-2 border-l-2 border-accent/20 text-left">
       {description}
     </p>
   </motion.div>

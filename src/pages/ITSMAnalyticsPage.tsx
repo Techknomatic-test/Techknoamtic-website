@@ -94,7 +94,7 @@ const SolveCard = ({ description, image, delay = 0 }: { description: string; ima
     <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
     <div className="absolute inset-x-0 bottom-0 p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
       <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
-        <p className="text-[15px] font-medium text-white leading-relaxed italic border-l-2 border-accent/50 pl-4">
+        <p className="text-[15px] font-medium text-white leading-relaxed border-l-2 border-accent/50 pl-4">
           {description}
         </p>
       </div>
@@ -116,7 +116,7 @@ const ModuleCard = ({ title, description, icon: Icon, delay = 0 }: { title: stri
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4">
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
       {description}
     </p>
   </motion.div>
@@ -145,7 +145,7 @@ const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { ti
     <div className="space-y-6 flex-1 mb-10 text-left">
       <div>
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Context</h4>
-        <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4">
+        <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
           {description}
         </p>
       </div>
@@ -439,7 +439,7 @@ export const ITSMAnalyticsPage = () => {
                 >
                   <div className="space-y-6">
                     <div className="p-8 rounded-[2rem] bg-accent text-white shadow-xl shadow-accent/10">
-                      <p className="text-[16px] font-medium leading-relaxed italic border-l-2 border-white/30 pl-4 mb-6">
+                      <p className="text-[16px] font-medium leading-relaxed border-l-2 border-white/30 pl-4 mb-6">
                         "Power BI reports ready to publish to your Power BI Service with role-based views for CIO, IT Manager, and teams. Plus, ITSM Plug & Play — 20+ pre-built dashboards, live in 2 weeks."
                       </p>
                       <div className="flex items-center gap-4">

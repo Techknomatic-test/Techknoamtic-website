@@ -113,7 +113,7 @@ const CapabilityCard = ({
     <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
-    <p className="text-[15px] font-medium text-brand-950/70 dark:text-white/60 mb-8 leading-relaxed italic border-l-4 border-accent/20 pl-4 py-2 text-left">
+    <p className="text-[15px] font-medium text-brand-950/70 dark:text-white/60 mb-8 leading-relaxed border-l-4 border-accent/20 pl-4 py-2 text-left">
       {description}
     </p>
     <ul className="space-y-3 pt-6 border-t border-slate-100 dark:border-white/5 list-none m-0">
@@ -156,7 +156,7 @@ const ApproachStep = ({
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
       {title}
     </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/30 pl-4">
+    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/30 pl-4">
       {description}
     </p>
   </motion.div>
@@ -202,7 +202,7 @@ const UseCaseCard = ({
     <div className="space-y-6 flex-1 mb-10 text-left">
       <div>
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Crux</h4>
-        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
       </div>
@@ -257,7 +257,7 @@ const DifferentiatorCard = ({
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
-    <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4 text-left flex-1">
+    <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4 text-left flex-1">
       {description}
     </p>
   </motion.div>

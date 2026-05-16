@@ -91,7 +91,7 @@ const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: 
     <div className="space-y-6 mb-10 flex-1">
       <div>
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Crux</h4>
-        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
       </div>
@@ -432,7 +432,7 @@ export const CallOpsAIPage = () => {
                 <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[11px] font-black tracking-widest text-white uppercase bg-accent rounded-full">
                   Impact Framing
                 </div>
-                <p className="text-[15px] font-bold text-white leading-relaxed italic">
+                <p className="text-[15px] font-bold text-white leading-relaxed">
                   The result: rising cost-per-conversation, lower lead conversion, missed customer touchpoints, weaker collections performance, and a customer experience that hasn't kept pace with digital-first expectations.
                 </p>
               </div>
@@ -585,7 +585,7 @@ export const CallOpsAIPage = () => {
                   <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left capitalize">
                     {step.title}
                   </h3>
-                  <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+                  <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     {step.content}
                   </p>
                 </motion.div>

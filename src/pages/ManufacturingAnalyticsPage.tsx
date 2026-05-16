@@ -98,7 +98,7 @@ const SolveCard = ({ description, image, delay = 0 }: { description: string; ima
     <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
     <div className="absolute inset-x-0 bottom-0 p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
       <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
-        <p className="text-[15px] font-medium text-white leading-relaxed italic border-l-2 border-accent/50 pl-4">
+        <p className="text-[15px] font-medium text-white leading-relaxed border-l-2 border-accent/50 pl-4">
           {description}
         </p>
       </div>
@@ -120,7 +120,7 @@ const ModuleCard = ({ title, description, icon: Icon, delay = 0 }: { title: stri
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4">
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
       {description}
     </p>
   </motion.div>
@@ -149,7 +149,7 @@ const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { ti
     <div className="space-y-6 flex-1 mb-10 text-left">
       <div>
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Context</h4>
-        <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4">
+        <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
           {description}
         </p>
       </div>
@@ -398,7 +398,7 @@ export const ManufacturingAnalyticsPage = () => {
                 <h4 className="text-3xl font-bold text-brand-950 dark:text-white tracking-tight">
                   Multi-Plant Visibility
                 </h4>
-                <p className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed italic border-l-4 border-accent/20 pl-6">
+                <p className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed border-l-4 border-accent/20 pl-6">
                   We have implemented manufacturing analytics across multiple plants with standardized KPIs and plant-specific drill-downs.
                 </p>
               </div>

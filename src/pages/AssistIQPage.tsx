@@ -103,7 +103,7 @@ const UseCaseCard = ({
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
           Crux
         </h4>
-        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
       </div>
@@ -581,7 +581,7 @@ export const AssistIQPage = () => {
                   <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[11px] font-black tracking-widest text-white uppercase bg-accent rounded-full">
                     Impact Framing
                   </div>
-                  <p className="text-lg font-bold text-white leading-relaxed italic">
+                  <p className="text-lg font-bold text-white leading-relaxed">
                     The result: poor customer satisfaction, reduced operational
                     efficiency, higher support overheads, lost engagement and
                     conversion opportunities — and a widening gap between the
@@ -755,7 +755,7 @@ export const AssistIQPage = () => {
                   <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic">
+                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     {step.content}
                   </p>
                 </motion.div>

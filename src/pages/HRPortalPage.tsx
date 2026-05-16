@@ -412,7 +412,7 @@ export const HRPortalPage = () => {
                 <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
                   {step.title}
                 </h3>
-                <p className="text-[13px] font-medium text-white/40 leading-relaxed italic px-2 border-l-2 border-accent/20">
+                <p className="text-[13px] font-medium text-white/40 leading-relaxed px-2 border-l-2 border-accent/20">
                   {step.description}
                 </p>
               </motion.div>

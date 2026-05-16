@@ -271,7 +271,7 @@ export const HealthcareAnalyticsPage = () => {
                 <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
                   {step === 1 ? "Assess" : step === 2 ? "Architect" : step === 3 ? "Automate" : step === 4 ? "Action" : "Accelerate"}
                 </h3>
-                <p className="text-[13px] font-medium text-white/40 leading-relaxed italic px-2 border-l-2 border-accent/20">
+                <p className="text-[13px] font-medium text-white/40 leading-relaxed px-2 border-l-2 border-accent/20">
                   {step === 1 ? "Inventory clinical data sources and legacy endpoints." : step === 2 ? "Design HIPAA-compliant vendor-neutral architecture." : step === 3 ? "Deploy automated ETL and data-cleansing pipelines." : step === 4 ? "Serve real-time insights to clinicians and ops." : "Continuously tune models for clinical accuracy."}
                 </p>
               </motion.div>

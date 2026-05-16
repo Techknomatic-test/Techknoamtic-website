@@ -134,7 +134,7 @@ const IntegrationCard = ({ num, title, description, image, delay = 0 }: { num: s
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic px-2 border-l-2 border-accent/20">
+    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed px-2 border-l-2 border-accent/20">
       {description}
     </p>
   </motion.div>

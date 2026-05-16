@@ -91,7 +91,7 @@ const UseCaseCard = ({
     <div className="mb-10 flex-1 space-y-6">
       <div>
         <h4 className="mb-3 text-[11px] font-black uppercase tracking-widest text-accent">Crux</h4>
-        <p className="text-[14px] font-medium italic leading-relaxed text-slate-500 dark:text-slate-400">{crux}</p>
+        <p className="text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">{crux}</p>
       </div>
       <div>
         <h4 className="mb-3 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
@@ -477,7 +477,7 @@ export const DataGuardPage = () => {
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-[11px] font-black uppercase tracking-widest text-white">
                   Impact Framing
                 </div>
-                <p className="text-[15px] font-bold italic leading-relaxed text-white">
+                <p className="text-[15px] font-bold leading-relaxed text-white">
                   The result: low trust in dashboards and analytics, delayed business decisions, increased operational
                   overhead, compliance and governance risk, and slower AI and digital transformation initiatives — exactly
                   when the business needs faster, sharper, more trusted data to compete.
@@ -641,7 +641,7 @@ export const DataGuardPage = () => {
                   <h3 className="mb-4 text-left text-xl font-bold capitalize text-brand-950 transition-colors group-hover:text-accent dark:text-white">
                     {step.title}
                   </h3>
-                  <p className="text-left text-[14px] font-medium italic leading-relaxed text-slate-500 dark:text-slate-400">
+                  <p className="text-left text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
                     {step.content}
                   </p>
                 </motion.div>
