@@ -237,7 +237,7 @@ export const CallOpsAIPage = () => {
       title: "BFSI",
       description:
         "Streamline collections, payment reminders, customer verification, and policy renewals.",
-      image: assistImg("BFSI.jpg"),
+      image: assistImg("Insurance.jpg"),
     },
     {
       title: "Healthcare",

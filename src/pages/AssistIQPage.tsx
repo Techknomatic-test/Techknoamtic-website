@@ -322,7 +322,7 @@ export const AssistIQPage = () => {
       title: "Insurance",
       description:
         "Policy, claims, renewals, and customer self-service journeys powered by conversational AI.",
-      image: assistImg("BFSI.jpg"),
+      image: assistImg("Insurance.jpg"),
     },
     {
       title: "Government & Public Services",
@@ -714,7 +714,7 @@ export const AssistIQPage = () => {
 
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

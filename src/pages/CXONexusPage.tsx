@@ -261,7 +261,7 @@ export const CXONexusPage = () => {
       title: "BFSI & Insurance",
       description:
         "Risk, claims, policy performance, and fraud analytics through conversational executive insights.",
-      image: cxoImg("industry-bfsi.jpg"),
+      image: cxoImg("Insurance.jpg"),
     },
     {
       title: "Retail & E-Commerce",
