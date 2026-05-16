@@ -292,7 +292,7 @@ export const AgenticAIITSMPage = () => {
       title: "BFSI & Financial Services",
       description:
         "Secure identity, access, and audit-ready IT support automation for regulated banking operations.",
-      image: assistImg("Insurance.jpg"),
+      image: assistImg("BFSI.jpg"),
     },
     {
       title: "Healthcare",
