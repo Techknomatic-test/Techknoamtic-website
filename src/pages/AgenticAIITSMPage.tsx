@@ -562,18 +562,7 @@ export const AgenticAIITSMPage = () => {
                   alt="IT Operations Center"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent" />
-                <div className="absolute bottom-10 left-10 right-10 text-left">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[11px] font-black tracking-widest text-white uppercase bg-accent rounded-full">
-                    Impact Framing
-                  </div>
-                  <p className="text-lg font-bold text-white leading-relaxed">
-                    The result: ticket backlogs, slower response and resolution times,
-                    rising operational cost, overloaded support teams, and degraded
-                    employee experience — while capacity that should fund
-                    modernization gets spent on repetitive work.
-                  </p>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
               </div>
             </div>
 
@@ -615,6 +604,28 @@ export const AgenticAIITSMPage = () => {
         </div>
       </section>
 
+      {/* Impact Framing Section */}
+      <section className="pt-4 pb-[40px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="p-10 rounded-3xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20"
+          >
+            <h3 className="text-[12px] font-black tracking-[0.3em] text-orange-600 dark:text-orange-400 uppercase mb-4">
+              Impact Framing
+            </h3>
+            <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
+              The result: ticket backlogs, slower response and resolution times, rising operational cost,
+              overloaded support teams, and degraded employee experience — while capacity that should fund
+              modernization gets spent on repetitive work.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Solutions Section */}
       <section className="py-[80px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
@@ -631,10 +642,10 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl font-bold text-brand-950 dark:text-white mb-6 leading-tight uppercase tracking-tight"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
-              From reactive support → autonomous IT operations. Intake. Classify.
-              Verify. Resolve. Audit.
+              From Reactive IT Support → Autonomous IT Operations. Intake. Classify. Verify. Resolve.
+              Audit.
             </motion.h3>
             <div className="w-20 h-1.5 bg-accent rounded-full mb-10" />
             <motion.p
