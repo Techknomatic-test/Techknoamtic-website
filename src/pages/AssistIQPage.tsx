@@ -537,7 +537,7 @@ export const AssistIQPage = () => {
         </div>
       </section>
 
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <motion.h2
