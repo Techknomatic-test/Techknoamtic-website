@@ -437,7 +437,7 @@ export const ITSMPlugAndPlayPage = () => {
           <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/5 blur-[100px]" />
         </div>
-        <div className="relative z-10 mx-auto max-w-6xl text-left">
+        <div className="relative z-10 mx-auto w-full max-w-7xl text-left">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
