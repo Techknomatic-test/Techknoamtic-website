@@ -24,6 +24,8 @@ const tiqImg = (file: string) => `/${TIQ_IMG}/${file}`;
 
 const TIQ_ENT_IMG = "Images/Entrprise_Ai/TiketIq";
 const tiqEntImg = (file: string) => `/${TIQ_ENT_IMG}/${file}`;
+const TIQ_HERO_IMG = tiqEntImg("Tickethero.jpg");
+const TIQ_PAIN_POINTS_IMG = tiqEntImg("Pain Points.jpg");
 
 /** Shared industry images with AssistIQ (Entrprise_Ai/AssistIQ). */
 const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
@@ -487,11 +489,21 @@ export const AgenticAIITSMPage = () => {
 
   return (
     <div className="pt-[110px]">
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-brand-950">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src={TIQ_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 w-full text-left">
+        <div className="max-w-7xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -557,16 +569,14 @@ export const AgenticAIITSMPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-20 items-start">
+          <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-3">
-              <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
-                <img
-                  src={tiqImg("challenge.jpg")}
-                  alt="IT Operations Center"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
-              </div>
+              <img
+                src={TIQ_PAIN_POINTS_IMG}
+                alt="Common operational pain points in enterprise IT support"
+                className="block h-auto w-full rounded-2xl"
+                referrerPolicy="no-referrer"
+              />
             </div>
 
             <div className="lg:col-span-2 space-y-6">
