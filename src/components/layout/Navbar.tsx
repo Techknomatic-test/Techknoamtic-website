@@ -2,6 +2,7 @@ import { ArrowUpRight, Mail, Menu, Minus, Moon, Plus, Sun, X } from 'lucide-reac
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { contactFormLinkTo } from '../../config/contactNavigation';
 import { navData } from '../../config/navigation';
 import { NavDropdown } from './NavDropdown';
 
@@ -120,7 +121,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
           </button>
 
           <Link
-            to="/contact"
+            to={contactFormLinkTo}
             className="hidden sm:flex px-4 xl:px-6 py-2.5 text-[13px] xl:text-[14px] font-medium bg-accent text-white rounded-xl hover:bg-accent/90 transition-all group items-center gap-2 shadow-lg shadow-accent/20 whitespace-nowrap"
           >
             Start a Conversation
@@ -176,7 +177,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
                 </button>
 
                 <Link
-                  to="/contact"
+                  to={contactFormLinkTo}
                   className="w-full py-5 bg-accent text-white rounded-2xl font-black tracking-widest uppercase text-[12px] flex items-center justify-center gap-3 shadow-lg shadow-accent/20"
                 >
                   Start a Conversation <ArrowUpRight className="w-4 h-4" />

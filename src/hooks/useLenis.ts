@@ -4,6 +4,7 @@ import Lenis from 'lenis';
 export const useLenis = () => {
   useEffect(() => {
     const lenis = new Lenis();
+    window.__lenis = lenis;
 
     function raf(time: number) {
       lenis.raf(time);
@@ -13,6 +14,7 @@ export const useLenis = () => {
     requestAnimationFrame(raf);
 
     return () => {
+      delete window.__lenis;
       lenis.destroy();
     };
   }, []);

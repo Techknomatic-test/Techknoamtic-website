@@ -27,6 +27,12 @@ import {
   Calendar,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
+import {
+  CONTACT_FORM_SECTION_ID,
+  shouldOpenContactForm,
+} from "../config/contactNavigation";
+import { scrollToElement } from "../utils/scrollToElement";
 
 const Counter = ({
   value,
@@ -130,6 +136,17 @@ const ContactVisual = () => {
 };
 
 export const ContactPage = () => {
+  const location = useLocation();
+  const openFormDirectly = shouldOpenContactForm(
+    location.state,
+    location.search,
+  );
+
+  useEffect(() => {
+    if (!openFormDirectly) return;
+    scrollToElement(CONTACT_FORM_SECTION_ID, true);
+  }, [location.pathname, location.search, location.state, openFormDirectly]);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -286,7 +303,10 @@ export const ContactPage = () => {
       </section>
 
       {/* 3. Requirement Form Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
+      <section
+        id={CONTACT_FORM_SECTION_ID}
+        className="scroll-mt-[140px] py-[60px] bg-white dark:bg-brand-950 px-6"
+      >
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6">

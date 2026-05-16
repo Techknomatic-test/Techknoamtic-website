@@ -49,6 +49,7 @@ import { Float } from "@react-three/drei";
 import * as THREE from "three";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { contactFormLinkTo } from "../config/contactNavigation";
 
 /** Public asset: public/Images/home/oil-gas-card.png (copy of Oil&gas1 (1).png) */
 const OIL_GAS_CARD_IMG = `${import.meta.env.BASE_URL}Images/home/oil-gas-card.png`;
@@ -730,10 +731,13 @@ const SolutionsSection = () => {
               Don't see your industry? <br />
               We've built intelligence for it.
             </h3>
-            <button className="inline-flex items-center gap-3 px-8 py-3.5 bg-accent text-white font-black uppercase tracking-widest text-[11px] rounded-2xl hover:bg-accent/90 transition-all shadow-2xl shadow-accent/20 group whitespace-nowrap">
+            <Link
+              to={contactFormLinkTo}
+              className="inline-flex items-center gap-3 px-8 py-3.5 bg-accent text-white font-black uppercase tracking-widest text-[11px] rounded-2xl hover:bg-accent/90 transition-all shadow-2xl shadow-accent/20 group whitespace-nowrap"
+            >
               Talk to us
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>
