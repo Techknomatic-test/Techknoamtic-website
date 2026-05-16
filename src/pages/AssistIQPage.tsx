@@ -23,7 +23,8 @@ import {
 
 const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
 const assistImg = (file: string) => `/${ASSIST_IMG}/${file}`;
-const ASSIST_HERO_IMG = assistImg("hero.jpg");
+const ASSIST_HERO_IMG = assistImg("Assit_hero.jpg");
+const ASSIST_CHALLENGE_IMG = assistImg("hero.jpg");
 
 const CapabilityCard = ({
   title,
@@ -571,7 +572,7 @@ export const AssistIQPage = () => {
             <div className="lg:col-span-3">
               <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
                 <img
-                  src={ASSIST_HERO_IMG}
+                  src={ASSIST_CHALLENGE_IMG}
                   alt="Modern Customer Service"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
