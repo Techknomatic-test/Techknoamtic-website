@@ -716,15 +716,7 @@ export const BIServicesPage = () => {
       {/* Use Cases Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-7xl mx-auto text-left">
-          <motion.div className="mb-20 text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
-            >
-              Success Stories
-            </motion.div>
+          <motion.div className="mb-10 text-left">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
