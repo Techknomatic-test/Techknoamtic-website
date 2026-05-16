@@ -441,28 +441,15 @@ export const GeospatialPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex flex-col overflow-hidden rounded-[3rem] bg-slate-100 ring-1 ring-slate-200/80 dark:bg-white/5 dark:ring-white/10 shadow-2xl"
+              className="overflow-hidden rounded-[3rem] bg-slate-100 ring-1 ring-slate-200/80 dark:bg-white/5 dark:ring-white/10 shadow-2xl"
             >
-              <div className="relative aspect-[4/3] w-full shrink-0 lg:aspect-[5/4]">
+              <div className="relative aspect-[4/3] w-full lg:aspect-[5/4]">
                 <img
                   src={GEO_TOOLS_IMG}
                   alt="Geospatial tools and technology"
                   className="absolute inset-0 h-full w-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-              </div>
-              <div className="flex flex-col gap-5 bg-white p-8 dark:bg-brand-950">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-slate-50 shadow-md ring-1 ring-slate-200/80 dark:bg-brand-900 dark:ring-white/10">
-                  <Monitor className="h-8 w-8 text-accent" />
-                </div>
-                <div>
-                  <h4 className="mb-2 text-2xl font-bold text-brand-950 dark:text-white">
-                    ArcGIS Center of Excellence
-                  </h4>
-                  <p className="font-medium text-slate-600 dark:text-slate-400">
-                    Built for flexibility and performance.
-                  </p>
-                </div>
               </div>
             
             </motion.div>
