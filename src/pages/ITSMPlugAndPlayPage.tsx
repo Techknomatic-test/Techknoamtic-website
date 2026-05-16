@@ -432,7 +432,7 @@ export const ITSMPlugAndPlayPage = () => {
 
   return (
     <div className="pt-[110px]">
-      <section className="relative overflow-hidden bg-[#020617] px-6 py-[60px]">
+      <section className="relative min-h-[min(50vh,480px)] overflow-hidden bg-[#020617] px-6 py-12 md:py-14">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/5 blur-[100px]" />

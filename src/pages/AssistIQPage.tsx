@@ -489,7 +489,7 @@ export const AssistIQPage = () => {
 
   return (
     <div className="pt-[110px]">
-      <section className="relative min-h-[min(72vh,720px)] py-20 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative min-h-[min(50vh,480px)] py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src={ASSIST_HERO_IMG}
@@ -515,7 +515,7 @@ export const AssistIQPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-8 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             AssistIQ
           </motion.h1>
@@ -524,7 +524,7 @@ export const AssistIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white mb-6 tracking-tight leading-tight"
+              className="text-xl md:text-2xl font-medium text-white mb-4 tracking-tight leading-tight"
             >
               Engage Faster. Support Smarter. Scale Seamlessly
             </motion.h2>

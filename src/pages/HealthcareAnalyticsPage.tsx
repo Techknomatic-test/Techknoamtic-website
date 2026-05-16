@@ -138,7 +138,7 @@ export const HealthcareAnalyticsPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-[80px] px-6 overflow-hidden bg-[#020617]">
+      <section className="relative min-h-[min(50vh,480px)] py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
@@ -155,7 +155,7 @@ export const HealthcareAnalyticsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             Healthcare Analytics
           </motion.h1>
@@ -164,7 +164,7 @@ export const HealthcareAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
+              className="text-xl md:text-2xl font-medium text-white/90 mb-4 tracking-tight"
             >
               Intelligent Healthcare Operations — Data-Driven Outcomes for a Healthier World.
             </motion.h2>

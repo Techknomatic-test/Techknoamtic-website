@@ -484,7 +484,7 @@ export const AgenticAIITSMPage = () => {
 
   return (
     <div className="pt-[110px]">
-      <section className="relative py-32 px-6 overflow-hidden bg-brand-950">
+      <section className="relative min-h-[min(50vh,480px)] py-12 md:py-14 px-6 overflow-hidden bg-brand-950">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
         </div>
@@ -492,7 +492,7 @@ export const AgenticAIITSMPage = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
+            className="inline-flex items-center gap-2 px-3 py-1 mb-5 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
           >
             TICKETIQ
           </motion.div>
@@ -500,7 +500,7 @@ export const AgenticAIITSMPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-8 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             TicketIQ
           </motion.h1>
@@ -509,7 +509,7 @@ export const AgenticAIITSMPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white mb-6 tracking-tight leading-tight"
+              className="text-xl md:text-2xl font-medium text-white mb-4 tracking-tight leading-tight"
             >
               Autonomous IT Support. Faster Resolutions. Near Zero-Touch Operations.
             </motion.h2>

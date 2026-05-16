@@ -236,7 +236,7 @@ export const InsuranceAnalyticsPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-[60px] px-6 overflow-hidden bg-[#020617]">
+      <section className="relative min-h-[min(50vh,480px)] py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none text-left">
           <img
             src="Images/3170.jpg"
@@ -263,7 +263,7 @@ export const InsuranceAnalyticsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             Turning Claims Complexity into Clarity
           </motion.h1>

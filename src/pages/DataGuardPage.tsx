@@ -401,7 +401,7 @@ export const DataGuardPage = () => {
 
   return (
     <div className="pt-[110px]">
-      <section className="relative overflow-hidden bg-brand-950 px-6 py-[80px]">
+      <section className="relative min-h-[min(50vh,480px)] overflow-hidden bg-brand-950 px-6 py-12 md:py-14">
         <div className="absolute inset-0 z-0">
           <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
         </div>
@@ -417,7 +417,7 @@ export const DataGuardPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mb-8 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[72px]"
+            className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[52px]"
           >
             DataPulseIQ
           </motion.h1>

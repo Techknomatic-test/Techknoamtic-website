@@ -163,7 +163,7 @@ export const FMCGAnalyticsPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-32 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative min-h-[min(50vh,480px)] py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src="Images/slider.jpg"
@@ -185,7 +185,7 @@ export const FMCGAnalyticsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-white mb-10 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             FMCG Analytics Suite
           </motion.h1>
@@ -194,7 +194,7 @@ export const FMCGAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white/90 mb-6 tracking-tight"
+              className="text-xl md:text-2xl font-medium text-white/90 mb-4 tracking-tight"
             >
               Intelligence for Consumer Goods.
             </motion.h2>

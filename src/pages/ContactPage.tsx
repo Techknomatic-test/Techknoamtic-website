@@ -147,7 +147,7 @@ export const ContactPage = () => {
   return (
     <div className="pt-[110px] relative pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
       {/* 1. Hero Section - Styled as per Reference Attachment */}
-      <section className="relative min-h-[80vh] flex flex-col justify-center pt-[60px] pb-[60px] overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
+      <section className="relative min-h-[50vh] flex flex-col justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#050a14] opacity-100" />
           {/* Enhanced Data Particle Background Effect */}
@@ -191,7 +191,7 @@ export const ContactPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-10 text-white"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold leading-[1.1] tracking-tight mb-6 text-white"
             >
               Let’s Turn Your Data Into <br />
               <span className="text-accent">Decisions</span> That Drive Growth.

@@ -444,7 +444,7 @@ export const CXONexusPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative py-[80px] px-6 overflow-hidden bg-brand-950">
+      <section className="relative min-h-[min(50vh,480px)] py-12 md:py-14 px-6 overflow-hidden bg-brand-950">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
         </div>
@@ -460,7 +460,7 @@ export const CXONexusPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-8 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             CXO Nexus
           </motion.h1>
@@ -469,7 +469,7 @@ export const CXONexusPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-medium text-white mb-6 tracking-tight leading-tight"
+              className="text-xl md:text-2xl font-medium text-white mb-4 tracking-tight leading-tight"
             >
               Ask Questions. Get Instant Insights. Make Smarter Decisions
             </motion.h2>

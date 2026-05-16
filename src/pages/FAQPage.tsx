@@ -133,7 +133,7 @@ export const FAQPage = () => {
       {/* Hero Banner - Full Width */}
       <section className="relative mb-24 overflow-hidden border-b border-slate-100 dark:border-white/5">
         <div className="w-full">
-          <div className="relative h-[55vh] md:h-[65vh] flex items-center justify-center group">
+          <div className="relative min-h-[min(50vh,480px)] flex items-center justify-center py-12 md:py-14 group">
             <div className="absolute inset-0 z-0">
               <div className="absolute inset-0 bg-gradient-to-b from-slate-100/50 via-white to-slate-50 dark:from-brand-950 dark:via-brand-900/40 dark:to-brand-950 z-10" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(241,126,33,0.05),transparent)] z-10" />
