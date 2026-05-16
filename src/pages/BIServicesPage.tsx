@@ -395,7 +395,7 @@ export const BIServicesPage = () => {
       title: "2. BI + Data Engineering",
       description:
         "Backed by deep Data Engineering — the pipeline behind every dashboard is as engineered as the dashboard itself.",
-      image: biImg("BI + Data Engineering.jpg"),
+      image: biImg("bi-data-engineering.jpg"),
     },
     {
       title: "3. Multi-Platform Certified",
@@ -419,7 +419,7 @@ export const BIServicesPage = () => {
       title: "6. Governance & Trust",
       description:
         "RLS, certified datasets, and audit lineage built into every delivery — scale without liability.",
-      image: biImg("Governance & Trust.jpg"),
+      image: biImg("governance-and-trust.jpg"),
     },
   ];
 
