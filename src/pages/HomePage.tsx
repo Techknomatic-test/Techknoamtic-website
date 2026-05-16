@@ -675,7 +675,7 @@ const SolutionsSection = () => {
       description:
         "Complete visibility into SLAs, assets, team performance, and vendor contracts. SLA compliance lifted from 68% to 91%.",
       moreLabel: "View Solution",
-      imageUrl: "Images/33931.jpg",
+      imageUrl: "Images/home/33931.jpg",
       dark: false,
       href: "/itsm-analytics",
     },
