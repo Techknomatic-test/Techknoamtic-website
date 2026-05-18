@@ -20,8 +20,12 @@ import {
 } from "lucide-react";
 
 const FIQ_BASE = "Images/FreightIQ";
-const FIQ_CHALLENGE = `${FIQ_BASE}/Challenge.jpg`;
-const FIQ_IND = `${FIQ_BASE}/Industries`;
+
+const fiqImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...FIQ_BASE.split("/"), file].map(encodeURIComponent).join("/")}`;
+
+const FIQ_HERO = fiqImg("herobanner.jpg");
+const FIQ_CHALLENGE = fiqImg("GlobalShippingTransport.jpg");
 
 const CapabilityCard = ({
   title,
@@ -250,33 +254,33 @@ export const FreightIQPage = () => {
       title: "Freight Forwarding & 3PL",
       description:
         "Instant multi-carrier quoting and margin optimization for forwarders and 3PL providers.",
-      image: `${FIQ_IND}/freight-forwarding-3pl.jpg`,
+      image: fiqImg("3PL.jpg"),
     },
     {
       title: "Import & Export",
       description: "Dynamic landed-cost visibility and shipment cost estimation for global trade operations.",
-      image: `${FIQ_IND}/import-export.jpg`,
+      image: fiqImg("ImportExport.jpg"),
     },
     {
       title: "E-Commerce & Retail Logistics",
       description:
         "Real-time shipping cost optimization and multi-modal pricing for retail supply chains.",
-      image: `${FIQ_IND}/ecommerce-retail-logistics.jpg`,
+      image: fiqImg("Retail.jpg"),
     },
     {
       title: "Manufacturing & Industrial",
       description: "Inbound and outbound shipment pricing automation for industrial supply chains.",
-      image: `${FIQ_IND}/manufacturing-industrial.jpg`,
+      image: fiqImg("Manufacturing.jpg"),
     },
     {
       title: "Air Cargo & Express",
       description: "Dynamic, urgency-based pricing for time-critical air and express logistics.",
-      image: `${FIQ_IND}/air-cargo-express.jpg`,
+      image: fiqImg("AirCargoExpress.jpg"),
     },
     {
       title: "Global Shipping & Transport",
       description: "Enterprise-wide freight pricing standardization across regions and routes.",
-      image: `${FIQ_IND}/global-shipping-transport.jpg`,
+      image: fiqImg("GlobalShippingTransport.jpg"),
     },
   ];
 
@@ -405,11 +409,21 @@ export const FreightIQPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-brand-950">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+      <section className="relative flex min-h-[min(50vh,480px)] items-center overflow-hidden bg-brand-950 px-6 py-12 md:py-14">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <img
+            src={FIQ_HERO}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 w-full text-left">
+        <div className="relative z-10 mx-auto w-full max-w-7xl text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -467,26 +481,27 @@ export const FreightIQPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="relative aspect-video lg:aspect-square rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl">
+          <div className="grid items-center gap-20 lg:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl lg:aspect-square"
+            >
               <img
                 src={FIQ_CHALLENGE}
-                alt="Freight logistics"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                alt="Freight pricing challenge"
+                className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/60 via-transparent to-transparent" />
-              <div className="absolute bottom-10 left-10 right-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[11px] font-black tracking-widest text-white uppercase bg-accent rounded-full">
-                  Impact Framing
-                </div>
-                <p className="text-[15px] font-bold text-white leading-relaxed">
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-brand-950/80 via-transparent to-transparent p-8">
+                <p className="border-l-4 border-accent pl-4 text-[15px] font-bold leading-relaxed text-white">
                   The result: slower quote turnaround, reduced competitiveness, revenue leakage through under-priced
                   shipments, higher operational overhead, and weaker customer experience — exactly when logistics buyers
                   expect faster, sharper, more transparent pricing.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             <div className="space-y-6 self-start lg:pt-4">
               <div className="mb-12">
