@@ -148,7 +148,7 @@ const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { ti
       </div>
     </div>
     
-    <div className="space-y-6 flex-1 mb-10 text-left">
+    <div className="space-y-6 flex-1 text-left">
       <div>
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Context</h4>
         <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
@@ -325,9 +325,9 @@ export const ManufacturingAnalyticsPage = () => {
       </section>
 
       {/* What We Solve Section */}
-      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left overflow-hidden">
+      <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left overflow-hidden">
         <motion.div className="max-w-7xl mx-auto">
-          <motion.div className="text-left mb-20">
+          <motion.div className="text-left mb-10">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -349,7 +349,7 @@ export const ManufacturingAnalyticsPage = () => {
       {/* Analytics Modules Section */}
       <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto text-left">
-          <div className="mb-20 text-left">
+          <div className="mb-10 text-left">
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -370,7 +370,7 @@ export const ManufacturingAnalyticsPage = () => {
       {/* Integration Section */}
       <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20 text-left">
+          <div className="mb-10 text-left">
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -446,7 +446,7 @@ export const ManufacturingAnalyticsPage = () => {
       {/* Use Cases Section */}
       <section className="py-[40px] px-6 bg-white dark:bg-brand-950 text-left">
         <motion.div className="max-w-7xl mx-auto text-left">
-          <motion.div className="mb-20 text-left">
+          <motion.div className="mb-10 text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

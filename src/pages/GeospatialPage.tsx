@@ -361,7 +361,7 @@ export const GeospatialPage = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-5xl space-y-8 text-left">
             <motion.p 
@@ -387,9 +387,9 @@ export const GeospatialPage = () => {
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
+      <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
         <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
+          <div className="text-left mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -417,7 +417,7 @@ export const GeospatialPage = () => {
       </section>
 
       {/* Tools & Technology Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
+      <section className="py-[40px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <motion.h2 
@@ -472,9 +472,9 @@ export const GeospatialPage = () => {
       </section>
 
       {/* Our Approach Section */}
-      <section className="py-[60px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
+      <section className="py-[40px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="mb-16 text-left">
+          <div className="mb-10 text-left">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -503,7 +503,7 @@ export const GeospatialPage = () => {
       </section>
 
       {/* Why Techknomatic Section */}
-      <section className="py-[60px] px-6 bg-slate-100 dark:bg-brand-900/50">
+      <section className="py-[40px] px-6 bg-slate-100 dark:bg-brand-900/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-10">
             <motion.h2 
@@ -533,7 +533,7 @@ export const GeospatialPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950">
+      <section className="py-[40px] px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto text-left">
           <div className="mb-10">
             <motion.h2 

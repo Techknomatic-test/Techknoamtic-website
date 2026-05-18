@@ -204,7 +204,7 @@ export const FMCGAnalyticsPage = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-[80px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-5xl space-y-8 text-left">
             <motion.p 
@@ -230,9 +230,9 @@ export const FMCGAnalyticsPage = () => {
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-[80px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
+      <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
         <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
+          <div className="text-left mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -260,9 +260,9 @@ export const FMCGAnalyticsPage = () => {
       </section>
 
       {/* Analytics Modules Section */}
-      <section className="py-[80px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden text-left">
+      <section className="py-[40px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -298,9 +298,9 @@ export const FMCGAnalyticsPage = () => {
       </section>
 
       {/* Results Section */}
-      <section className="py-[80px] px-6 bg-white dark:bg-brand-950">
+      <section className="py-[40px] px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto text-left">
-          <div className="text-left mb-16">
+          <div className="text-left mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -333,9 +333,9 @@ export const FMCGAnalyticsPage = () => {
       </section>
 
       {/* Delivery Models Section */}
-      <section className="py-[80px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
+      <section className="py-[40px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10 w-full text-left">
-          <div className="mb-16">
+          <div className="mb-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -390,9 +390,9 @@ export const FMCGAnalyticsPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[80px] px-6 bg-white dark:bg-brand-950 text-left">
+      <section className="py-[40px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
+          <div className="text-left mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
