@@ -71,24 +71,37 @@ const AccordionItem = ({
   );
 };
 
-const SolveCard = ({ description, image, delay = 0 }: { description: string; image: string; delay?: number }) => (
+const SolveCard = ({
+  title,
+  description,
+  image,
+  delay = 0,
+}: {
+  title: string;
+  description: string;
+  image: string;
+  delay?: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="bg-white dark:bg-white/5 rounded-[2.5rem] overflow-hidden border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all duration-500 group flex flex-col h-full"
+    className="flex flex-col rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 overflow-hidden group h-full"
   >
-    <div className="relative aspect-[16/10] overflow-hidden m-4 rounded-[1.5rem]">
+    <div className="h-60 overflow-hidden relative">
       <img
         src={image}
-        alt=""
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        alt={title}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         referrerPolicy="no-referrer"
       />
     </div>
-    <div className="px-8 pb-8 flex flex-col flex-grow">
-      <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+    <div className="p-10 flex flex-col flex-grow text-left">
+      <h4 className="text-2xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight group-hover:text-accent transition-colors">
+        {title}
+      </h4>
+      <p className="text-[17px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
         {description}
       </p>
     </div>
@@ -163,22 +176,27 @@ export const ManufacturingAnalyticsPage = () => {
 
   const whatWeSolve = [
     {
+      title: "Machine Downtime",
       description: "Unplanned machine downtime eating into OEE and production targets",
       image: `${MFG_IMG}/1Unplannedmachinedowntime.jpg`,
     },
     {
+      title: "Late Quality Detection",
       description: "Quality defects detected too late in the cycle — driving costly rework and waste",
       image: `${MFG_IMG}/2Quality defects detected.jpg`,
     },
     {
+      title: "Supply Chain Blind Spots",
       description: "Supply chain blind spots causing procurement delays and line stoppages",
       image: `${MFG_IMG}/3Supply chain blind spots.jpg`,
     },
     {
+      title: "Disconnected Systems",
       description: "Disconnected ERP, MES, and SCADA systems making plant data invisible to leadership",
       image: `${MFG_IMG}/5Disconnected ERP.jpg`,
     },
     {
+      title: "Manual Reporting Lag",
       description: "Manual production reporting that is always lagging, never live",
       image: `${MFG_IMG}/6Manualproductionreporting.jpg`,
     },
@@ -322,7 +340,7 @@ export const ManufacturingAnalyticsPage = () => {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whatWeSolve.map((it, idx) => (
-              <SolveCard key={idx} description={it.description} image={it.image} delay={idx * 0.1} />
+              <SolveCard key={idx} title={it.title} description={it.description} image={it.image} delay={idx * 0.1} />
             ))}
           </div>
         </motion.div>
