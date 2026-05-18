@@ -1,37 +1,27 @@
-import { motion, AnimatePresence } from "motion/react";
+﻿import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
   Factory,
   BarChart3,
-  Activity,
   Zap,
-  ShieldCheck,
-  ArrowRight,
-  CheckCircle2,
   Settings,
   Truck,
-  Layers,
-  Container,
   TrendingUp,
-  LineChart,
   Boxes,
   ClipboardCheck,
-  FileBarChart,
-  Database,
-  Cpu,
-  Building2,
-  MapPin,
-  RefreshCw,
-  Target,
-  Globe,
   ChevronDown,
   ChevronUp,
   BrainCircuit,
   Users,
-  LucideIcon
+  LucideIcon,
 } from "lucide-react";
+
+const MFG_IMG = "Images/manufacturing";
+const mfgHeroImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${MFG_IMG}/${encodeURIComponent(file)}`;
+const MFG_HERO_IMG = mfgHeroImg("herobanner.jpg");
+const MFG_SYSTEMS_IMG = `${MFG_IMG}/Systems Integration.jpg`;
 
 const AccordionItem = ({
   title,
@@ -87,21 +77,20 @@ const SolveCard = ({ description, image, delay = 0 }: { description: string; ima
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="relative group h-[400px] rounded-[3rem] overflow-hidden border border-slate-100 dark:border-white/10 shadow-xl"
+    className="bg-white dark:bg-white/5 rounded-[2.5rem] overflow-hidden border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all duration-500 group flex flex-col h-full"
   >
-    <img 
-      src={image} 
-      alt="Challenge" 
-      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-      referrerPolicy="no-referrer"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-    <div className="absolute inset-x-0 bottom-0 p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-      <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
-        <p className="text-[15px] font-medium text-white leading-relaxed border-l-2 border-accent/50 pl-4">
-          {description}
-        </p>
-      </div>
+    <div className="relative aspect-[16/10] overflow-hidden m-4 rounded-[1.5rem]">
+      <img
+        src={image}
+        alt=""
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        referrerPolicy="no-referrer"
+      />
+    </div>
+    <div className="px-8 pb-8 flex flex-col flex-grow">
+      <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+        {description}
+      </p>
     </div>
   </motion.div>
 );
@@ -120,7 +109,7 @@ const ModuleCard = ({ title, description, icon: Icon, delay = 0 }: { title: stri
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4">
       {description}
     </p>
   </motion.div>
@@ -158,11 +147,11 @@ const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { ti
     <div className="mt-auto pt-8 border-t border-slate-100 dark:border-white/5 text-left">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-          <Target className="w-4 h-4 text-accent" />
+          <Icon className="w-4 h-4 text-accent" />
         </div>
         <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
           <span className="text-accent uppercase tracking-wider mr-2 not-italic">Outcome:</span>
-          {impact} Improvement
+          {impact}
         </p>
       </div>
     </div>
@@ -175,24 +164,24 @@ export const ManufacturingAnalyticsPage = () => {
   const whatWeSolve = [
     {
       description: "Unplanned machine downtime eating into OEE and production targets",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
+      image: `${MFG_IMG}/1Unplannedmachinedowntime.jpg`,
     },
     {
       description: "Quality defects detected too late in the cycle — driving costly rework and waste",
-      image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800"
+      image: `${MFG_IMG}/2Quality defects detected.jpg`,
     },
     {
       description: "Supply chain blind spots causing procurement delays and line stoppages",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+      image: `${MFG_IMG}/3Supply chain blind spots.jpg`,
     },
     {
       description: "Disconnected ERP, MES, and SCADA systems making plant data invisible to leadership",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+      image: `${MFG_IMG}/5Disconnected ERP.jpg`,
     },
     {
       description: "Manual production reporting that is always lagging, never live",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
-    }
+      image: `${MFG_IMG}/6Manualproductionreporting.jpg`,
+    },
   ];
 
   const dashboardModules = [
@@ -260,26 +249,24 @@ export const ManufacturingAnalyticsPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?auto=format&fit=crop&q=80&w=1600"
-            alt="Manufacturing Background"
-            className="absolute inset-0 w-full h-full object-cover opacity-30 scale-105"
-            referrerPolicy="no-referrer"
+            src={MFG_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            aria-hidden
           />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 w-full text-left">
-          <div className="flex items-center gap-3 mb-8 text-left">
-            <Link to="/" className="text-[10px] font-black tracking-widest text-white/40 hover:text-accent transition-colors uppercase">Home</Link>
-            <div className="w-1 h-1 rounded-full bg-accent/40" />
-            <span className="text-[10px] font-black tracking-widest text-accent uppercase">Industries</span>
-          </div>
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
-            MANUFACTURING
+            Manufacturing
           </motion.h1>
           <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
@@ -295,14 +282,14 @@ export const ManufacturingAnalyticsPage = () => {
       </section>
 
       {/* About The Industry Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-7xl space-y-12 text-left">
+      <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+        <motion.div className="max-w-7xl mx-auto">
+          <motion.div className="max-w-7xl space-y-12 text-left">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase"
+              className="text-[12px] font-black tracking-[0.3em] text-accent"
             >
               About The Industry
             </motion.h2>
@@ -315,33 +302,34 @@ export const ManufacturingAnalyticsPage = () => {
             >
               Manufacturing is in the midst of a fundamental transformation. Industry 4.0 has unlocked massive potential — but most manufacturers are still struggling to connect their ERP, MES, and SCADA systems, make sense of shop floor data, and translate operational metrics into strategic decisions. Whether managing discrete, process, or hybrid manufacturing — the challenges of downtime, quality failures, supply chain disruption, and energy costs demand an intelligent, data-driven response. Techknomatic brings that intelligence to your floor — and your boardroom.
             </motion.p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* What We Solve Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-20 text-left">
+      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left overflow-hidden">
+        <motion.div className="max-w-7xl mx-auto">
+          <motion.div className="text-left mb-20">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
             >
-               What We Solve
+              What We Solve
             </motion.h3>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whatWeSolve.map((it, idx) => (
               <SolveCard key={idx} description={it.description} image={it.image} delay={idx * 0.1} />
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Analytics Modules Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
+      <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto text-left">
           <div className="mb-20 text-left">
             <motion.h3 
@@ -362,14 +350,14 @@ export const ManufacturingAnalyticsPage = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
+      <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 text-left">
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
             >
               Systems Integration
             </motion.h3>
@@ -381,38 +369,27 @@ export const ManufacturingAnalyticsPage = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-white/10 group"
+              className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-white/10 group"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" 
-                alt="Systems Integration" 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+              <img
+                src={MFG_SYSTEMS_IMG}
+                alt="Systems integration"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
             </motion.div>
-            
-            {/* Right side: Content & Accordion */}
-            <div className="text-left space-y-12">
-              <div className="space-y-6">
-                <h4 className="text-3xl font-bold text-brand-950 dark:text-white tracking-tight">
-                  Multi-Plant Visibility
-                </h4>
-                <p className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed border-l-4 border-accent/20 pl-6">
-                  We have implemented manufacturing analytics across multiple plants with standardized KPIs and plant-specific drill-downs.
-                </p>
-              </div>
 
+            <div className="text-left space-y-12">
               <div className="space-y-4">
                 <AccordionItem
-                  title="ERP & MES We Connect"
+                  title="Supported Platforms"
                   isOpen={openAccordion === 0}
                   onClick={() => setOpenAccordion(openAccordion === 0 ? null : 0)}
                 >
-                  <ul className="space-y-4 list-none m-0">
+                  <ul className="flex flex-col gap-4 m-0 p-0">
                     {systemsIntegrationList.map((system, i) => (
-                      <li key={i} className="flex items-start gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0 shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)]" />
+                      <li key={i} className="flex items-center gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
                         <span className="text-[17px] font-medium text-slate-500 dark:text-slate-400">
                           {system}
                         </span>
@@ -422,17 +399,23 @@ export const ManufacturingAnalyticsPage = () => {
                 </AccordionItem>
                 
                 <AccordionItem
-                  title="Scalable Visibility"
+                  title="Multi-Plant Visibility"
                   isOpen={openAccordion === 1}
                   onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
                 >
-                  <div className="space-y-4">
-                    <p className="text-[16px] text-slate-500 dark:text-slate-400 leading-relaxed font-bold uppercase tracking-wider text-accent italic">
-                      Automotive  |  Industrial Equipment  |  Electronics  |  Food & Beverage
+                  <div className="space-y-6">
+                    <p className="text-[16px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                      We have implemented manufacturing analytics across multiple plants with standardized KPIs and plant-specific drill-downs.
                     </p>
-                    <div className="flex items-center gap-2 text-accent">
-                      <Zap className="w-4 h-4" />
-                      <span className="text-[13px] font-bold uppercase tracking-wider">Enterprise-wide Operational Intelligence</span>
+                    <div className="pt-6 border-t border-slate-100 dark:border-white/5 flex flex-wrap gap-3">
+                      {industryVerticals.map((industry) => (
+                        <span
+                          key={industry}
+                          className="px-4 py-1.5 bg-slate-100 dark:bg-white/5 rounded-full text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest border border-slate-200 dark:border-white/10 whitespace-nowrap transition-colors hover:bg-slate-200 dark:hover:bg-white/10"
+                        >
+                          {industry}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </AccordionItem>
@@ -443,14 +426,14 @@ export const ManufacturingAnalyticsPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
-        <div className="max-w-7xl mx-auto text-left">
-          <div className="mb-20 text-left">
+      <section className="py-[40px] px-6 bg-white dark:bg-brand-950 text-left">
+        <motion.div className="max-w-7xl mx-auto text-left">
+          <motion.div className="mb-20 text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
+              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent bg-accent/5 rounded-full border border-accent/20"
             >
               Success Stories
             </motion.div>
@@ -462,7 +445,7 @@ export const ManufacturingAnalyticsPage = () => {
             >
               Use Cases
             </motion.h2>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             <UseCaseCard 
               title="OEE Improvement Across Production Lines"
@@ -485,7 +468,7 @@ export const ManufacturingAnalyticsPage = () => {
               icon={Users}
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <PreFooterCTA />
