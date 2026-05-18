@@ -29,7 +29,6 @@ const TIQ_PAIN_POINTS_IMG = tiqEntImg("Pain Points.jpg");
 
 /** Shared industry images with AssistIQ (Entrprise_Ai/AssistIQ). */
 const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
-const assistImg = (file: string) => `/${ASSIST_IMG}/${file}`;
 
 const CapabilityCard = ({
   title,
@@ -297,19 +296,19 @@ export const AgenticAIITSMPage = () => {
       title: "BFSI & Financial Services",
       description:
         "Secure identity, access, and audit-ready IT support automation for regulated banking operations.",
-      image: assistImg("BFSI.jpg"),
+      image: `${ASSIST_IMG}/BFSI.jpg`,
     },
     {
       title: "Healthcare",
       description:
         "Hospital and clinical IT support automation with secure workstation and application access management.",
-      image: assistImg("Healthcare.jpg"),
+      image: `${ASSIST_IMG}/Healthcare.jpg`,
     },
     {
       title: "Retail & E-Commerce",
       description:
         "Store, POS, and workforce IT support — automated onboarding, access, and connectivity resolution.",
-      image: assistImg("Retail & E-Commerce.jpg"),
+      image: `${ASSIST_IMG}/Retail & E-Commerce.jpg`,
     },
     {
       title: "IT & Technology Services",
@@ -327,13 +326,13 @@ export const AgenticAIITSMPage = () => {
       title: "Logistics & Supply Chain",
       description:
         "Warehouse and distributed workforce IT support, endpoint troubleshooting, and role-based access.",
-      image: assistImg("Logistics.jpg"),
+      image: `${ASSIST_IMG}/Logistics.jpg`,
     },
     {
       title: "Telecom",
       description:
         "Internal workforce IT support, network and collaboration resolution, and high-volume ticket handling.",
-      image: assistImg("Telecom.jpg"),
+      image: `${ASSIST_IMG}/Telecom.jpg`,
     },
   ];
 

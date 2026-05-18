@@ -22,9 +22,12 @@ import {
 } from "lucide-react";
 
 const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
-const assistImg = (file: string) => `/${ASSIST_IMG}/${file}`;
-const ASSIST_HERO_IMG = assistImg("Assit_hero.jpg");
-const ASSIST_PAIN_POINTS_IMG = assistImg("common_opertional.jpg");
+const assistHeroImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...ASSIST_IMG.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+const ASSIST_HERO_IMG = assistHeroImg("Assit_hero.jpg");
+const ASSIST_PAIN_POINTS_IMG = assistHeroImg("common_opertional.jpg");
 
 const CapabilityCard = ({
   title,
@@ -292,43 +295,43 @@ export const AssistIQPage = () => {
       title: "Retail & E-Commerce",
       description:
         "AI agents that handle order tracking, returns, recommendations, and promotions — 24×7.",
-      image: assistImg("Retail & E-Commerce.jpg"),
+      image: `${ASSIST_IMG}/Retail & E-Commerce.jpg`,
     },
     {
       title: "BFSI",
       description:
         "Conversational AI for account, card, loan, and onboarding queries with secure customer assistance.",
-      image: assistImg("BFSI.jpg"),
+      image: `${ASSIST_IMG}/BFSI.jpg`,
     },
     {
       title: "Telecom",
       description:
         "AI self-service for plans, recharges, complaints, SIM activation, and service requests.",
-      image: assistImg("Telecom.jpg"),
+      image: `${ASSIST_IMG}/Telecom.jpg`,
     },
     {
       title: "Healthcare",
       description:
         "Appointment booking, patient queries, and hospital service support through AI agents and avatars.",
-      image: assistImg("Healthcare.jpg"),
+      image: `${ASSIST_IMG}/Healthcare.jpg`,
     },
     {
       title: "Logistics",
       description:
         "Shipment tracking, delivery issue resolution, and customer communication automation.",
-      image: assistImg("Logistics.jpg"),
+      image: `${ASSIST_IMG}/Logistics.jpg`,
     },
     {
       title: "Insurance",
       description:
         "Policy, claims, renewals, and customer self-service journeys powered by conversational AI.",
-      image: assistImg("Insurance.jpg"),
+      image: `${ASSIST_IMG}/Insurance.jpg`,
     },
     {
       title: "Government & Public Services",
       description:
         "AI citizen-service portals for schemes, applications, and public information — at digital scale.",
-      image: assistImg("Government & Public Services.jpg"),
+      image: `${ASSIST_IMG}/Government & Public Services.jpg`,
     },
   ];
 
