@@ -141,7 +141,6 @@ const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { ti
         <Icon className="w-6 h-6" />
       </div>
       <div className="text-left">
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase">Use Case</h4>
         <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">
           {title}
         </h3>

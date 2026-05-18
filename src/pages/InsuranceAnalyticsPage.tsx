@@ -162,12 +162,11 @@ const UseCaseCard = ({
         <Icon className="w-6 h-6" />
       </motion.div>
       <div className="text-left">
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase">Use Case</h4>
         <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">{title}</h3>
       </div>
     </div>
 
-    <div className="space-y-6 flex-1 text-left">
+    <div className="space-y-6 flex-1 mb-10 text-left">
       <div>
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Context</h4>
         <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
