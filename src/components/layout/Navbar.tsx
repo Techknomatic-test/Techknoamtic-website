@@ -6,6 +6,8 @@ import { contactFormLinkTo } from '../../config/contactNavigation';
 import { navData } from '../../config/navigation';
 import { NavDropdown } from './NavDropdown';
 
+const NAV_LOGO_URL = `${import.meta.env.BASE_URL}Images/TKS-logo.png`;
+
 type NavbarProps = {
   theme: string;
   toggleTheme: () => void;
@@ -91,7 +93,8 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
         <Link
           to="/"
           aria-label="Techknomatic home"
-          className="relative block h-12 w-[min(180px,42vw)] shrink-0 overflow-hidden rounded-lg bg-[url('/Images/TKS-logo.png')] bg-contain bg-left bg-no-repeat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 sm:h-16 sm:w-[200px] lg:w-[220px]"
+          className="relative block h-12 w-[min(180px,42vw)] shrink-0 overflow-hidden rounded-lg bg-contain bg-left bg-no-repeat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 sm:h-16 sm:w-[200px] lg:w-[220px]"
+          style={{ backgroundImage: `url(${NAV_LOGO_URL})` }}
         >
           <span className="sr-only">Techknomatic</span>
         </Link>
