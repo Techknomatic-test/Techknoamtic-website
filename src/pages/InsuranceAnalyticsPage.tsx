@@ -358,7 +358,7 @@ export const InsuranceAnalyticsPage = () => {
       {/* Analytics Modules Section */}
       <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto text-left">
-          <div className="mb-20 text-left">
+          <div className="mb-10 text-left">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -489,15 +489,7 @@ export const InsuranceAnalyticsPage = () => {
       {/* Use Cases Section */}
       <section className="py-[40px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-7xl mx-auto text-left">
-          <div className="mb-20 text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
-            >
-              Success Stories
-            </motion.div>
+          <div className="mb-10 text-left">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
