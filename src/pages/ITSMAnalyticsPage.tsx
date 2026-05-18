@@ -1,33 +1,27 @@
-import { motion, AnimatePresence } from "motion/react";
+﻿import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import {
   ShieldCheck,
   FileText,
-  AlertTriangle,
-  ArrowRight,
-  CheckCircle2,
   Zap,
   Activity,
-  Layers,
   Users,
-  BarChart3,
-  ClipboardCheck,
-  History,
   LayoutDashboard,
   Clock,
   TrendingUp,
-  Settings,
-  Database,
   Monitor,
   ChevronDown,
   ChevronUp,
   LucideIcon,
-  Cpu,
-  BarChart4,
-  RefreshCw
+  RefreshCw,
 } from "lucide-react";
+
+const ITSM_IMG = "Images/ITSM";
+const itsmHeroImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${ITSM_IMG}/${encodeURIComponent(file)}`;
+const ITSM_HERO_IMG = itsmHeroImg("ITSM.jpg");
+const ITSM_PLATFORM_IMG = `${ITSM_IMG}/itsm_platform.jpg`;
 
 const AccordionItem = ({
   title,
@@ -83,21 +77,20 @@ const SolveCard = ({ description, image, delay = 0 }: { description: string; ima
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="relative group h-[400px] rounded-[3rem] overflow-hidden border border-slate-100 dark:border-white/10 shadow-xl"
+    className="bg-white dark:bg-white/5 rounded-[2.5rem] overflow-hidden border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all duration-500 group flex flex-col h-full"
   >
-    <img 
-      src={image} 
-      alt="ITSM Challenge" 
-      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-      referrerPolicy="no-referrer"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-    <div className="absolute inset-x-0 bottom-0 p-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-      <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
-        <p className="text-[15px] font-medium text-white leading-relaxed border-l-2 border-accent/50 pl-4">
-          {description}
-        </p>
-      </div>
+    <div className="relative aspect-[16/10] overflow-hidden m-4 rounded-[1.5rem]">
+      <img
+        src={image}
+        alt=""
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        referrerPolicy="no-referrer"
+      />
+    </div>
+    <div className="px-8 pb-8 flex flex-col flex-grow">
+      <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+        {description}
+      </p>
     </div>
   </motion.div>
 );
@@ -116,7 +109,7 @@ const ModuleCard = ({ title, description, icon: Icon, delay = 0 }: { title: stri
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4">
       {description}
     </p>
   </motion.div>
@@ -154,7 +147,7 @@ const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { ti
     <div className="mt-auto pt-8 border-t border-slate-100 dark:border-white/5 text-left">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent">
-          <Settings className="w-4 h-4" />
+          <Icon className="w-4 h-4 text-accent" />
         </div>
         <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
           <span className="text-accent uppercase tracking-wider mr-2 not-italic">Outcome:</span>
@@ -171,24 +164,24 @@ export const ITSMAnalyticsPage = () => {
   const whatWeSolve = [
     {
       description: "High ticket volumes overwhelming L1 and L2 support teams",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800"
+      image: `${ITSM_IMG}/1supportteams.jpg`,
     },
     {
       description: "SLA breaches caused by poor ticket routing and prioritization",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800"
+      image: `${ITSM_IMG}/SLA breache.jpg`,
     },
     {
       description: "No self-service options forcing users to log every minor request",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+      image: `${ITSM_IMG}/3users to log.jpg`,
     },
     {
       description: "Reactive incident management with no early warning signals",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800"
+      image: `${ITSM_IMG}/4warningsignals.jpg`,
     },
     {
       description: "Siloed ITSM data that never gets turned into actionable intelligence",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
-    }
+      image: `${ITSM_IMG}/5SiloedITSMdata.jpg`,
+    },
   ];
 
   const modules = [
@@ -248,26 +241,24 @@ export const ITSMAnalyticsPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600"
-            alt="ITSM Background"
-            className="absolute inset-0 w-full h-full object-cover opacity-20 scale-105"
-            referrerPolicy="no-referrer"
+            src={ITSM_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            aria-hidden
           />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 w-full text-left">
-          <div className="flex items-center gap-3 mb-8">
-            <Link to="/" className="text-[10px] font-black tracking-widest text-white/40 hover:text-accent transition-colors uppercase">Home</Link>
-            <div className="w-1 h-1 rounded-full bg-accent/40" />
-            <span className="text-[10px] font-black tracking-widest text-accent uppercase">Industries</span>
-          </div>
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
-            IT SERVICE MANAGEMENT (ITSM)
+            IT Service Management (ITSM)
           </motion.h1>
           <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
@@ -276,7 +267,7 @@ export const ITSMAnalyticsPage = () => {
               transition={{ delay: 0.2 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance leading-relaxed"
             >
-              Resolve Faster. Predict Smarter. Serve Better — AI for Modern ITSM
+              Resolve Faster. Predict Smarter. Serve Better â€” AI for Modern ITSM
             </motion.h2>
           </div>
         </div>
@@ -301,24 +292,16 @@ export const ITSMAnalyticsPage = () => {
                transition={{ delay: 0.1 }}
                className="text-[17px] md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-7xl"
             >
-              IT Service Management teams are the backbone of enterprise operations — and under immense pressure. Ticket volumes are exploding, SLAs are tightening, and end-user expectations have never been higher. Yet most ITSM operations still rely on manual triaging, keyword-based routing, and reactive problem-solving. Techknomatic brings AI and analytics to ITSM — automating the repetitive, surfacing the critical, and helping IT leaders make proactive decisions before incidents become outages.
+              IT Service Management teams are the backbone of enterprise operations â€” and under immense pressure. Ticket volumes are exploding, SLAs are tightening, and end-user expectations have never been higher. Yet most ITSM operations still rely on manual triaging, keyword-based routing, and reactive problem-solving. Techknomatic brings AI and analytics to ITSM â€” automating the repetitive, surfacing the critical, and helping IT leaders make proactive decisions before incidents become outages.
             </motion.p>
           </div>
         </div>
       </section>
 
       {/* What We Solve Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+      <section className="py-[120px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-20">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
-            >
-               What We Solve
-            </motion.h2>
+          <motion.div className="text-left mb-20">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -326,9 +309,9 @@ export const ITSMAnalyticsPage = () => {
               transition={{ delay: 0.1 }}
               className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
             >
-              Addressing Core ITSM Challenges
+              What We Solve
             </motion.h3>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whatWeSolve.map((item, idx) => (
               <SolveCard key={idx} description={item.description} image={item.image} delay={idx * 0.1} />
@@ -367,7 +350,7 @@ export const ITSMAnalyticsPage = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
+      <section className="py-[40px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 text-left">
              <motion.h2 
@@ -396,13 +379,12 @@ export const ITSMAnalyticsPage = () => {
               viewport={{ once: true }}
               className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-white/10 group"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-0ed915e76222?auto=format&fit=crop&q=80&w=1200" 
-                alt="ITSM Integration" 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+              <img
+                src={ITSM_PLATFORM_IMG}
+                alt="ITSM platform integration"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
             </motion.div>
             
             {/* Right side: Accordion */}
@@ -415,36 +397,34 @@ export const ITSMAnalyticsPage = () => {
                 >
                   <ul className="space-y-4 list-none m-0">
                     {systems.map((system, i) => (
-                      <motion.li 
-                        key={i}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.05 }}
-                        className="flex items-center gap-3"
-                      >
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)]" />
-                        <span className="text-[16px] font-bold text-brand-950 dark:text-white uppercase tracking-tight">
+                      <li key={i} className="flex items-center gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                        <span className="text-[16px] font-medium text-brand-950 dark:text-white tracking-tight">
                           {system}
                         </span>
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
                 </AccordionItem>
                 
                 <AccordionItem
-                  title="BI Output & Plug-and-Play"
+                  title="BI Output"
                   isOpen={openAccordion === 1}
                   onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
                 >
                   <div className="space-y-6">
-                    <div className="p-8 rounded-[2rem] bg-accent text-white shadow-xl shadow-accent/10">
-                      <p className="text-[16px] font-medium leading-relaxed border-l-2 border-white/30 pl-4 mb-6">
-                        "Power BI reports ready to publish to your Power BI Service with role-based views for CIO, IT Manager, and teams. Plus, ITSM Plug & Play — 20+ pre-built dashboards, live in 2 weeks."
+                    <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-xl shadow-black/5">
+                      <p className="text-[16px] font-medium leading-relaxed text-slate-500 dark:text-slate-400 border-l-2 border-accent/20 pl-4 mb-6">
+                        Power BI reports ready to publish to your Power BI Service with role-based views for CIO, IT Manager, and L1/L2 teams.
+                        <br />
+                        <br />
+                        Also available: ITSM Plug & Play â€” 20+ pre-built dashboards, live in 2 weeks
                       </p>
                       <div className="flex items-center gap-4">
-                        <div className="text-4xl font-black">2W</div>
-                        <div className="text-[11px] font-bold uppercase tracking-wider opacity-70 leading-tight">Live in<br/>Two Weeks</div>
+                        <div className="flex items-center gap-2 text-accent">
+                          <Zap className="w-4 h-4" />
+                          <span className="text-[13px] font-bold uppercase tracking-wider">Live in 2 Weeks</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -479,7 +459,7 @@ export const ITSMAnalyticsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             <UseCaseCard 
               title="Intelligent Ticket Auto-Resolution"
-              description="An enterprise IT team achieved significant auto-resolution of L1 tickets using TicketIQ on ServiceNow — freeing staff to focus on complex incidents."
+              description="An enterprise IT team achieved significant auto-resolution of L1 tickets using TicketIQ on ServiceNow â€” freeing staff to focus on complex incidents."
               impact="X% Auto-Resolution"
               icon={Zap}
             />
@@ -491,7 +471,7 @@ export const ITSMAnalyticsPage = () => {
             />
             <UseCaseCard 
               title="CIO-Level ITSM Visibility"
-              description="A global enterprise replaced 6 weekly manual reports with a single Executive Dashboard — consolidating ticket trends, vendor SLAs, and change success rates live."
+              description="A global enterprise replaced 6 weekly manual reports with a single Executive Dashboard â€” consolidating ticket trends, vendor SLAs, and change success rates live."
               impact="Real-time Visibility"
               icon={LayoutDashboard}
             />
