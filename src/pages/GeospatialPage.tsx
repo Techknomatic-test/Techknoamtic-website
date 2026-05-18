@@ -31,7 +31,10 @@ import {
 } from "lucide-react";
 
 const GEO_IMG = "Images/Services/Geospatial Analytics";
-const geoImg = (file: string) => `/${GEO_IMG}/${file}`;
+const geoImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...GEO_IMG.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
 const GEO_HERO_IMG = geoImg("GISHero.jpg");
 const GEO_TOOLS_IMG = geoImg("tolsandtech.jpg");
 
@@ -208,32 +211,32 @@ export const GeospatialPage = () => {
     {
       title: "ArcGIS Platform Implementation",
       description: "Full-stack ArcGIS implementation across Enterprise, Online, and Pro for enterprise-grade GIS environments",
-      image: geoImg("ArcGIS Platform Implementation.jpg"),
+      image: `${GEO_IMG}/ArcGIS Platform Implementation.jpg`,
     },
     {
       title: "Geo-Dashboards & Visualisations",
       description: "Interactive map visualisations built in ArcGIS, Power BI Maps, Tableau, and Qlik.",
-      image: geoImg("Geo Dashboards Visualisations.jpg"),
+      image: `${GEO_IMG}/Geo Dashboards Visualisations.jpg`,
     },
     {
       title: "Field Operations & Mobile GIS",
       description: "ArcGIS Field Maps and Survey123 for real-time field data collection and asset management",
-      image: geoImg("Field Operations & Mobile GIS.jpg"),
+      image: `${GEO_IMG}/Field Operations & Mobile GIS.jpg`,
     },
     {
       title: "Location Data Integration",
       description: "Seamless integration with SAP, Salesforce, IoT systems, and external geodata sources",
-      image: geoImg("Location Data Integration.jpg"),
+      image: `${GEO_IMG}/Location Data Integration.jpg`,
     },
     {
       title: "Route Optimisation & Territory Planning",
       description: "Data-driven territory design and route optimisation for sales, service, and logistics teams",
-      image: geoImg("Route Optimisation & Territory Planning.jpg"),
+      image: `${GEO_IMG}/Route Optimisation & Territory Planning.jpg`,
     },
     {
       title: "Spatial Risk & Pattern Detection",
       description: "Heatmaps, fraud clustering, and spatial pattern analysis for risk management and underwriting",
-      image: geoImg("Spatial Risk & Pattern Detection.jpg"),
+      image: `${GEO_IMG}/Spatial Risk & Pattern Detection.jpg`,
     },
   ];
 
