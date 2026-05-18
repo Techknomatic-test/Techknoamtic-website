@@ -21,7 +21,7 @@ const coHeroImg = (file: string) =>
   `${import.meta.env.BASE_URL}${[...CO_ENT_IMG.split("/"), file]
     .map(encodeURIComponent)
     .join("/")}`;
-const CO_HERO_IMG = coHeroImg("Tickethero.jpg");
+const CO_HERO_IMG = coHeroImg("Herocallops.jpg");
 const CO_PAIN_POINTS_IMG = coHeroImg("Operational Pain Points.jpg");
 
 const CapabilityCard = ({
