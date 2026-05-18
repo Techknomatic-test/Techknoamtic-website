@@ -19,7 +19,10 @@ import {
 } from "lucide-react";
 
 const CXO_IMG = "Images/CXONexus";
-const cxoImg = (file: string) => `${CXO_IMG}/${file}`;
+const cxoHeroImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...CXO_IMG.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
 
 const CapabilityCard = ({
   title,
@@ -261,42 +264,42 @@ export const CXONexusPage = () => {
       title: "BFSI & Insurance",
       description:
         "Risk, claims, policy performance, and fraud analytics through conversational executive insights.",
-      image: cxoImg("Insurance.jpg"),
+      image: `${CXO_IMG}/Insurance.jpg`,
     },
     {
       title: "Retail & E-Commerce",
       description: "Sales, customer behavior, inventory, and campaign performance — ask in plain English.",
-      image: cxoImg("industry-retail.jpg"),
+      image: `${CXO_IMG}/industry-retail.jpg`,
     },
     {
       title: "Healthcare",
       description:
         "Operational and patient service analytics, hospital performance, and executive healthcare dashboards.",
-      image: cxoImg("industry-healthcare.jpg"),
+      image: `${CXO_IMG}/industry-healthcare.jpg`,
     },
     {
       title: "IT & ITSM",
       description:
         "SLA, incident, infrastructure, and service intelligence through conversational IT operations analytics.",
-      image: cxoImg("industry-it-itsm.jpg"),
+      image: `${CXO_IMG}/industry-it-itsm.jpg`,
     },
     {
       title: "Manufacturing",
       description:
         "Production KPIs, supply chain, plant performance, and predictive operational insights on demand.",
-      image: cxoImg("industry-manufacturing.jpg"),
+      image: `${CXO_IMG}/industry-manufacturing.jpg`,
     },
     {
       title: "Logistics & Supply Chain",
       description:
         "Shipment, delivery, fleet, and bottleneck analytics through real-time conversational visibility.",
-      image: cxoImg("industry-logistics.jpg"),
+      image: `${CXO_IMG}/industry-logistics.jpg`,
     },
     {
       title: "Telecom",
       description:
         "Subscriber, network, revenue, and churn intelligence — accessible to every business leader.",
-      image: cxoImg("industry-telecom.jpg"),
+      image: `${CXO_IMG}/industry-telecom.jpg`,
     },
   ];
 
@@ -515,7 +518,7 @@ export const CXONexusPage = () => {
             <div className="lg:col-span-3 text-left">
               <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
                 <img
-                  src={cxoImg("challenge.jpg")}
+                  src={cxoHeroImg("challenge.jpg")}
                   alt="Decision Intelligence"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
