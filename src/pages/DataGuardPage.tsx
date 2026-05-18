@@ -15,9 +15,19 @@ import {
 } from "lucide-react";
 
 const DPIQ_BASE = "Images/DataPulseIQ";
-const DPIQ_CHALLENGE = `${DPIQ_BASE}/Challenge.jpg`;
-const DPIQ_IND = `${DPIQ_BASE}/Industries`;
-const DPIQ_STACK = `${DPIQ_BASE}/Stack`;
+const DPIQ_INDUSTRIES_FOLDER = "Industries We Serv";
+const DPIQ_STACK_FOLDER = "Enterprise Data Stack";
+
+const dpiqRootImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...DPIQ_BASE.split("/"), file].map(encodeURIComponent).join("/")}`;
+
+const dpiqAsset = (folder: string, file: string) =>
+  `${import.meta.env.BASE_URL}${[...DPIQ_BASE.split("/"), folder, file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+
+const DPIQ_HERO_IMG = dpiqRootImg("Hero.jpg");
+const DPIQ_CHALLENGE = dpiqRootImg("Challenge.jpg");
 
 const CapabilityCard = ({
   title,
@@ -249,32 +259,32 @@ export const DataGuardPage = () => {
       title: "Banking & Financial Services",
       description:
         "Trusted data for regulatory reporting, risk analytics, and customer intelligence across banking systems.",
-      image: `${DPIQ_IND}/banking.jpg`,
+      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "BFSI.jpg"),
     },
     {
       title: "Healthcare & Life Sciences",
       description: "Patient data integrity, clinical reliability, and compliance-grade governance for healthcare analytics.",
-      image: `${DPIQ_IND}/healthcare.jpg`,
+      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "HealthcareLife Sciences.jpg"),
     },
     {
       title: "Retail & E-Commerce",
       description: "Customer, product, and order data reliability for personalization and omnichannel operations.",
-      image: `${DPIQ_IND}/retail.jpg`,
+      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "RetailE-Commerce.jpg"),
     },
     {
       title: "Manufacturing & Supply Chain",
       description: "Master data harmonization and supply chain data reliability across ERP and operational systems.",
-      image: `${DPIQ_IND}/manufacturing.jpg`,
+      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "ManufacturingSupply Chain.jpg"),
     },
     {
       title: "Telecom & Technology",
       description: "Subscriber, network, and operational KPI data quality at AI-ready scale.",
-      image: `${DPIQ_IND}/telecom.jpg`,
+      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "Telecom Technology.jpg"),
     },
     {
       title: "Government & Public Sector",
       description: "Citizen-data governance, compliance monitoring, and cross-department data reliability.",
-      image: `${DPIQ_IND}/government.jpg`,
+      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "GovernmentPublic Sector.jpg"),
     },
   ];
 
@@ -315,37 +325,37 @@ export const DataGuardPage = () => {
     {
       title: "Cloud Platforms",
       content: "AWS · Azure · GCP · Multi-cloud and hybrid deployments",
-      image: `${DPIQ_STACK}/cloud-platforms.jpg`,
+      image: dpiqAsset(DPIQ_STACK_FOLDER, "CloudPlatforms.jpg"),
     },
     {
       title: "Data Warehouses & Lakehouses",
       content: "Snowflake · Databricks · BigQuery · Redshift · Synapse · Open lakehouse formats",
-      image: `${DPIQ_STACK}/warehouses-lakehouses.jpg`,
+      image: dpiqAsset(DPIQ_STACK_FOLDER, "DataWarehouses.jpg"),
     },
     {
       title: "Databases",
       content: "PostgreSQL · Oracle · SQL Server · MySQL · Extensible connector framework",
-      image: `${DPIQ_STACK}/databases.jpg`,
+      image: dpiqAsset(DPIQ_STACK_FOLDER, "Databases.jpg"),
     },
     {
       title: "ERP & Operational Systems",
       content: "SAP · Oracle EBS · Microsoft Dynamics · NetSuite · Custom operational systems",
-      image: `${DPIQ_STACK}/erp-operational.jpg`,
+      image: dpiqAsset(DPIQ_STACK_FOLDER, "ERP.jpg"),
     },
     {
       title: "BI & Visualization Layer",
       content: "Power BI · Tableau · Qlik · Looker · Export of quality scores and governance signals",
-      image: `${DPIQ_STACK}/bi-visualization.jpg`,
+      image: dpiqAsset(DPIQ_STACK_FOLDER, "BIVisualization.jpg"),
     },
     {
       title: "Security & Access",
       content: "Role-based access control (RBAC) · Encrypted credential vault · Audit logging · Governance controls",
-      image: `${DPIQ_STACK}/security-access.jpg`,
+      image: dpiqAsset(DPIQ_STACK_FOLDER, "SecurityAccess.jpg"),
     },
     {
       title: "Deployment Modes",
       content: "Cloud SaaS · Private VPC · Hybrid · On-premise (regulated industries)",
-      image: `${DPIQ_STACK}/deployment-modes.jpg`,
+      image: dpiqAsset(DPIQ_STACK_FOLDER, "DeploymentModes.jpg"),
     },
   ];
 
@@ -402,10 +412,20 @@ export const DataGuardPage = () => {
   return (
     <div className="pt-[110px]">
       <section className="relative flex min-h-[min(50vh,480px)] items-center overflow-hidden bg-brand-950 px-6 py-12 md:py-14">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <img
+            src={DPIQ_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-7xl text-left">
+        <div className="relative z-10 mx-auto w-full max-w-7xl text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
