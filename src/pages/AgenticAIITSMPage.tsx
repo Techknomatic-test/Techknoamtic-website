@@ -20,12 +20,13 @@ import {
 
 /** TicketIQ-only assets (no AssistIQ equivalent). */
 const TIQ_IMG = "Images/TicketIQ";
-const tiqImg = (file: string) => `/${TIQ_IMG}/${file}`;
-
 const TIQ_ENT_IMG = "Images/Entrprise_Ai/TiketIq";
-const tiqEntImg = (file: string) => `/${TIQ_ENT_IMG}/${file}`;
-const TIQ_HERO_IMG = tiqEntImg("Tickethero.jpg");
-const TIQ_PAIN_POINTS_IMG = tiqEntImg("Pain Points.jpg");
+const tiqHeroImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...TIQ_ENT_IMG.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+const TIQ_HERO_IMG = tiqHeroImg("Tickethero.jpg");
+const TIQ_PAIN_POINTS_IMG = tiqHeroImg("Pain Points.jpg");
 
 /** Shared industry images with AssistIQ (Entrprise_Ai/AssistIQ). */
 const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
@@ -314,13 +315,13 @@ export const AgenticAIITSMPage = () => {
       title: "IT & Technology Services",
       description:
         "Developer environment provisioning and enterprise shared service desk automation at scale.",
-      image: tiqImg("it-technology.jpg"),
+      image: `${TIQ_IMG}/it-technology.jpg`,
     },
     {
       title: "Manufacturing",
       description:
         "Plant and operations IT support — industrial workstation troubleshooting and OT-friendly workflows.",
-      image: tiqEntImg("Manufacturing.jpg"),
+      image: `${TIQ_ENT_IMG}/Manufacturing.jpg`,
     },
     {
       title: "Logistics & Supply Chain",

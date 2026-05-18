@@ -16,14 +16,13 @@ import {
 } from "lucide-react";
 
 const CO_IMG = "Images/CallOpsAI";
-const coImg = (file: string) => `/${CO_IMG}/${file}`;
-
 const CO_ENT_IMG = "Images/Entrprise_Ai/callopsAI";
-const coEntImg = (file: string) => `/${CO_ENT_IMG}/${file}`;
-const CO_HERO_IMG = coEntImg("Tickethero.jpg");
-const CO_PAIN_POINTS_IMG = coEntImg("Operational Pain Points.jpg");
-const CO_INDUSTRY_IMG = (file: string) =>
-  coEntImg(`Industries We Serve/${file}`);
+const coHeroImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...CO_ENT_IMG.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+const CO_HERO_IMG = coHeroImg("Tickethero.jpg");
+const CO_PAIN_POINTS_IMG = coHeroImg("Operational Pain Points.jpg");
 
 const CapabilityCard = ({
   title,
@@ -234,31 +233,31 @@ export const CallOpsAIPage = () => {
       title: "Retail",
       description:
         "Automate order confirmations, promotional outreach, and customer engagement at scale.",
-      image: CO_INDUSTRY_IMG("Retail.jpg"),
+      image: `${CO_ENT_IMG}/Industries We Serve/Retail.jpg`,
     },
     {
       title: "BFSI",
       description:
         "Streamline collections, payment reminders, customer verification, and policy renewals.",
-      image: CO_INDUSTRY_IMG("BFSI.jpg"),
+      image: `${CO_ENT_IMG}/Industries We Serve/BFSI.jpg`,
     },
     {
       title: "Healthcare",
       description:
         "Automate appointment scheduling, patient follow-ups, and reminder workflows.",
-      image: CO_INDUSTRY_IMG("Healthcare.jpg"),
+      image: `${CO_ENT_IMG}/Industries We Serve/Healthcare.jpg`,
     },
     {
       title: "Logistics",
       description:
         "Coordinate deliveries, shipment updates, and driver–customer communication.",
-      image: CO_INDUSTRY_IMG("Logistics.jpg"),
+      image: `${CO_ENT_IMG}/Industries We Serve/Logistics.jpg`,
     },
     {
       title: "Real Estate",
       description:
         "Qualify leads, schedule site visits, and run automated follow-up engagement.",
-      image: CO_INDUSTRY_IMG("Real Estate.jpg"),
+      image: `${CO_ENT_IMG}/Industries We Serve/Real Estate.jpg`,
     },
   ];
 
@@ -275,46 +274,46 @@ export const CallOpsAIPage = () => {
       title: "Telephony & CCaaS",
       content:
         "Twilio · Ecotel · Plivo · SIP trunks · Genesys · Amazon Connect",
-      image: coImg("stack-telephony.jpg"),
+      image: `${CO_IMG}/stack-telephony.jpg`,
     },
     {
       title: "CRM Platforms",
       content:
         "Salesforce · HubSpot · Zoho · MS Dynamics · Custom CRMs via REST",
-      image: coImg("stack-crm.jpg"),
+      image: `${CO_IMG}/stack-crm.jpg`,
     },
     {
       title: "Ticketing & Support",
       content: "Zendesk · Freshdesk · ServiceNow · Intercom",
-      image: coImg("stack-ticketing.jpg"),
+      image: `${CO_IMG}/stack-ticketing.jpg`,
     },
     {
       title: "Campaign & Marketing",
       content:
         "Marketing automation tools · Lead management systems · Dialer platforms",
-      image: coImg("stack-campaign.jpg"),
+      image: `${CO_IMG}/stack-campaign.jpg`,
     },
     {
       title: "Calendar & Scheduling",
       content: "Google Calendar · Outlook · Calendly · Custom booking systems",
-      image: coImg("stack-calendar.jpg"),
+      image: `${CO_IMG}/stack-calendar.jpg`,
     },
     {
       title: "Compliance & Security",
       content:
         "DNC list integration · Call recording archives · Audit log export · Encryption",
-      image: coImg("stack-compliance.jpg"),
+      image: `${CO_IMG}/stack-compliance.jpg`,
     },
     {
       title: "APIs & Webhooks",
       content: "REST APIs · Webhooks · Real-time event streams · SDK access",
-      image: coImg("stack-apis.jpg"),
+      image: `${CO_IMG}/stack-apis.jpg`,
     },
     {
       title: "Deployment Modes",
       content:
         "Cloud SaaS · Private VPC · Hybrid · On-premise (regulated industries)",
-      image: coImg("stack-deployment.jpg"),
+      image: `${CO_IMG}/stack-deployment.jpg`,
     },
   ];
 
