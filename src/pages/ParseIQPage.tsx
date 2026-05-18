@@ -37,6 +37,17 @@ import {
   Share2
 } from "lucide-react";
 
+const PARSE_IQ_BASE = "Images/ParseIQ";
+
+const parseIqImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...PARSE_IQ_BASE.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+
+const PARSE_IQ_HERO = parseIqImg("herobanner.jpg");
+const PARSE_IQ_CHALLENGE = parseIqImg("The Enterprise Document Challenge.jpg");
+const PARSE_IQ_WORKS = parseIqImg("How ParseIQ Works.jpg");
+
 const CapabilityCard = ({ title, items, delay = 0 }: { title: string; items: string[]; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -128,7 +139,6 @@ const IntegrationCard = ({ num, title, description, image, delay = 0 }: { num: s
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         referrerPolicy="no-referrer"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-brand-950 to-transparent opacity-40" />
     </div>
     <div className="text-[12px] font-black text-accent mb-4 opacity-50">{num}</div>
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight group-hover:text-accent transition-colors">
@@ -199,42 +209,42 @@ export const ParseIQPage = () => {
   ];
 
   const integrations = [
-    { 
-      num: "01", 
-      title: "APIs & Developer Access", 
+    {
+      num: "01",
+      title: "APIs & Developer Access",
       description: "REST APIs · Webhooks · Batch endpoints · SDK access",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
+      image: parseIqImg("APIsDeveloper Access.jpg"),
     },
-    { 
-      num: "02", 
-      title: "ERP Systems", 
+    {
+      num: "02",
+      title: "ERP Systems",
       description: "SAP · Oracle · Microsoft Dynamics · NetSuite",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+      image: parseIqImg("ERP Systems.jpg"),
     },
-    { 
-      num: "03", 
-      title: "CRM Platforms", 
+    {
+      num: "03",
+      title: "CRM Platforms",
       description: "Salesforce · HubSpot · Zoho",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+      image: parseIqImg("CRM Platforms.jpg"),
     },
-    { 
-      num: "04", 
-      title: "Workflow & Automation Engines", 
+    {
+      num: "04",
+      title: "Workflow & Automation Engines",
       description: "Camunda · Power Automate · Custom BPM tools",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+      image: parseIqImg("Workflow Automation Engines.jpg"),
     },
-    { 
-      num: "05", 
-      title: "Document Management Systems", 
+    {
+      num: "05",
+      title: "Document Management Systems",
       description: "SharePoint · Box · OpenText · Custom DMS",
-      image: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&q=80&w=800"
+      image: parseIqImg("Document Management Systems.jpg"),
     },
-    { 
-      num: "06", 
-      title: "Deployment Modes", 
+    {
+      num: "06",
+      title: "Deployment Modes",
       description: "Cloud · On-premise · Hybrid · Private VPC",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
-    }
+      image: parseIqImg("Deployment Modes.jpg"),
+    },
   ];
 
   const useCases = [
@@ -250,9 +260,19 @@ export const ParseIQPage = () => {
       {/* Hero Section */}
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+          <img
+            src={PARSE_IQ_HERO}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left">
+        <div className="relative z-10 mx-auto w-full max-w-6xl text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -311,10 +331,10 @@ export const ParseIQPage = () => {
               viewport={{ once: true }}
               className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1586282391129-56a992ad338c?auto=format&fit=crop&q=80&w=1200" 
-                alt="Document Challenge" 
-                className="w-full h-full object-cover"
+              <img
+                src={PARSE_IQ_CHALLENGE}
+                alt="The enterprise document challenge"
+                className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent flex items-end p-8">
@@ -402,13 +422,13 @@ export const ParseIQPage = () => {
               viewport={{ once: true }}
               className="relative aspect-[4/3] rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden shadow-2xl"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1544391682-17ef1f356b44?auto=format&fit=crop&q=80&w=1200" 
-                alt="Architecture" 
-                className="w-full h-full object-cover p-12 opacity-50"
+              <img
+                src={PARSE_IQ_WORKS}
+                alt="How ParseIQ works"
+                className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-brand-950/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
             </motion.div>
 
             <div className="max-w-xl">
