@@ -387,7 +387,7 @@ export const InsuranceAnalyticsPage = () => {
       {/* Location Intelligence Section */}
       <section className="py-[40px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20 text-left">
+          <div className="mb-20 text-center max-w-4xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -411,47 +411,47 @@ export const InsuranceAnalyticsPage = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-10"
+              className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-white/10 group"
             >
-              <div className="rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-white/10 group">
-                <img
-                  src={INSURANCE_LOCATION_IMG}
-                  alt="Spatial Analytics"
-                  className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-1000"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
-              <div className="space-y-8">
-                <div className="space-y-2">
-                  <h4 className="text-[12px] font-black tracking-[0.2em] text-accent uppercase">Real-World Impact</h4>
-                  <p className="text-[17px] md:text-xl font-medium text-slate-600 dark:text-slate-400 leading-relaxed border-l-4 border-accent pl-8">
-                    "Our Insurance GIS analytics have helped carriers reduce claim TAT by 22% and improve renewal
-                    targeting through location-based customer insights."
-                  </p>
-                </div>
-
-                <motion.div className="flex items-center gap-6 p-6 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 w-fit">
-                  <img
-                    src={ESRI_LOGO_IMG}
-                    alt="ESRI"
-                    className="h-6 w-auto object-contain"
-                    referrerPolicy="no-referrer"
-                  />
-                  <motion.div className="w-px h-6 bg-slate-200 dark:bg-white/10 mx-2" />
-                  <span className="text-[11px] font-black tracking-widest uppercase text-slate-500">
-                    ESRI Silver Partner Implementation
-                  </span>
-                </motion.div>
-              </div>
+              <img
+                src={INSURANCE_LOCATION_IMG}
+                alt="Spatial analytics for insurance"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                referrerPolicy="no-referrer"
+              />
             </motion.div>
 
             <div className="text-left">
               <div className="space-y-4">
                 <AccordionItem
-                  title="ESRI-Powered Geo-Analytics"
+                  title="Real-World Impact"
                   isOpen={openAccordion === 0}
                   onClick={() => setOpenAccordion(openAccordion === 0 ? null : 0)}
+                >
+                  <div className="space-y-8">
+                    <p className="text-[17px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                      Our Insurance GIS analytics have helped carriers reduce claim TAT by 22% and improve renewal
+                      targeting through location-based customer insights.
+                    </p>
+                    <div className="flex items-center gap-6 p-6 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 w-fit">
+                      <img
+                        src={ESRI_LOGO_IMG}
+                        alt="ESRI"
+                        className="h-6 w-auto object-contain"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="w-px h-6 bg-slate-200 dark:bg-white/10" />
+                      <span className="text-[11px] font-black tracking-widest uppercase text-slate-500">
+                        ESRI Silver Partner Implementation
+                      </span>
+                    </div>
+                  </div>
+                </AccordionItem>
+
+                <AccordionItem
+                  title="ESRI-Powered Geo-Analytics"
+                  isOpen={openAccordion === 1}
+                  onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
                 >
                   <ul className="space-y-4 list-none m-0">
                     {geospatialPoints.map((point, i) => (
@@ -465,8 +465,8 @@ export const InsuranceAnalyticsPage = () => {
 
                 <AccordionItem
                   title="Geospatial Underwriting & Risk Exposure"
-                  isOpen={openAccordion === 1}
-                  onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
+                  isOpen={openAccordion === 2}
+                  onClick={() => setOpenAccordion(openAccordion === 2 ? null : 2)}
                 >
                   <div className="space-y-4">
                     <p className="text-[16px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
