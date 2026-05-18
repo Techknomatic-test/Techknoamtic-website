@@ -14,17 +14,19 @@ import {
 } from "lucide-react";
 
 const ISM_BASE = "Images/InsightSM";
-const ISM_CHALLENGE = `${ISM_BASE}/Challenge.jpg`;
-const ISM_IND = `${ISM_BASE}/Industries`;
+const ISM_INDUSTRIES_FOLDER = "Industries We Serve";
+const ISM_STACK_FOLDER = "Enterprise IT Stack";
 
-const CONNECTOR_IMAGES = [
-  `${ISM_BASE}/Connectors/connector-01.jpg`,
-  `${ISM_BASE}/Connectors/connector-02.jpg`,
-  `${ISM_BASE}/Connectors/connector-03.jpg`,
-  `${ISM_BASE}/Connectors/connector-04.jpg`,
-  `${ISM_BASE}/Connectors/connector-05.jpg`,
-  `${ISM_BASE}/Connectors/connector-06.jpg`,
-];
+const ismRootImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...ISM_BASE.split("/"), file].map(encodeURIComponent).join("/")}`;
+
+const ismAsset = (folder: string, file: string) =>
+  `${import.meta.env.BASE_URL}${[...ISM_BASE.split("/"), folder, file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+
+const ISM_HERO_IMG = ismRootImg("Herobanner.jpg");
+const ISM_CHALLENGE_IMG = ismRootImg("Challenge.jpg");
 
 const CapabilityCard = ({
   title,
@@ -103,11 +105,13 @@ const IndustryCard = ({
 const ConnectorCard = ({
   title,
   items,
+  image,
   index,
   delay = 0,
 }: {
   title: string;
   items: string[];
+  image: string;
   index: number;
   delay?: number;
 }) => (
@@ -120,10 +124,9 @@ const ConnectorCard = ({
   >
     <div className="relative h-48 overflow-hidden">
       <img
-        src={CONNECTOR_IMAGES[index % CONNECTOR_IMAGES.length]}
-        alt=""
+        src={image}
+        alt={title}
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-        aria-hidden
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
     </div>
@@ -300,33 +303,33 @@ export const ITSMPlugAndPlayPage = () => {
       title: "Banking & Financial Services",
       description:
         "Centralized SLA and incident analytics across banking operations and compliance reporting.",
-      image: `${ISM_IND}/banking.jpg`,
+      image: ismAsset(ISM_INDUSTRIES_FOLDER, "banking-finace.jpg"),
     },
     {
       title: "Healthcare",
       description: "Hospital IT monitoring, application incident tracking, and uptime analytics for critical systems.",
-      image: `${ISM_IND}/healthcare.jpg`,
+      image: ismAsset(ISM_INDUSTRIES_FOLDER, "Healthcare.jpg"),
     },
     {
       title: "Telecom",
       description: "Network operations SLA monitoring, outage analytics, and multi-vendor operational visibility.",
-      image: `${ISM_IND}/telecom.jpg`,
+      image: ismAsset(ISM_INDUSTRIES_FOLDER, "Telecom.jpg"),
     },
     {
       title: "Retail & E-Commerce",
       description:
         "Store operations support, POS incident monitoring, and peak-season SLA performance tracking.",
-      image: `${ISM_IND}/retail-ecommerce.jpg`,
+      image: ismAsset(ISM_INDUSTRIES_FOLDER, "retailecommerce.jpg"),
     },
     {
       title: "Manufacturing",
       description: "Plant IT operations, production support incident analytics, and operational downtime tracking.",
-      image: `${ISM_IND}/manufacturing.jpg`,
+      image: ismAsset(ISM_INDUSTRIES_FOLDER, "Manufacturing.jpg"),
     },
     {
       title: "Government & Public Sector",
       description: "Citizen service analytics, cross-department ITSM visibility, and shared services reporting.",
-      image: `${ISM_IND}/government.jpg`,
+      image: ismAsset(ISM_INDUSTRIES_FOLDER, "goverment-publicsector.jpg"),
     },
   ];
 
@@ -360,26 +363,32 @@ export const ITSMPlugAndPlayPage = () => {
   const stack = [
     {
       title: "ITSM Platforms",
+      image: ismAsset(ISM_STACK_FOLDER, "ITSM Platforms.jpg"),
       items: ["ServiceNow", "BMC Remedy", "Jira Service Management", "SolarWinds", "Extensible to any ITSM platform"],
     },
     {
       title: "Connectivity Methods",
+      image: ismAsset(ISM_STACK_FOLDER, "ConnectivityMethods.jpg"),
       items: ["REST APIs", "Native database connectivity", "Webhooks", "Automated schema discovery"],
     },
     {
       title: "Data Refresh Modes",
+      image: ismAsset(ISM_STACK_FOLDER, "Data Refresh Modes.jpg"),
       items: ["Sampled (validation phase)", "Batch (production)", "Near real-time", "Change-based synchronization"],
     },
     {
       title: "BI & Visualization Layer",
+      image: ismAsset(ISM_STACK_FOLDER, "bivisulization.jpg"),
       items: ["Pre-built InsightSM dashboards", "Export to Power BI", "Tableau", "Qlik (optional)"],
     },
     {
       title: "Security & Access",
+      image: ismAsset(ISM_STACK_FOLDER, "securityaccess.jpg"),
       items: ["Role-based access control (RBAC)", "Multi-tenant data isolation", "Audit logging", "Governance controls"],
     },
     {
       title: "Deployment Modes",
+      image: ismAsset(ISM_STACK_FOLDER, "Deployment Modes.jpg"),
       items: ["AWS", "Azure", "GCP", "On-premise", "Hybrid"],
     },
   ];
@@ -434,10 +443,20 @@ export const ITSMPlugAndPlayPage = () => {
     <div className="pt-[110px]">
       <section className="relative flex min-h-[min(50vh,480px)] items-center overflow-hidden bg-[#020617] px-6 py-12 md:py-14">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <img
+            src={ISM_HERO_IMG}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/60"
+            aria-hidden
+          />
           <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/5 blur-[100px]" />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-7xl text-left">
+        <div className="relative z-10 mx-auto w-full max-w-7xl text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -504,7 +523,7 @@ export const ITSMPlugAndPlayPage = () => {
               className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
             >
               <img
-                src={ISM_CHALLENGE}
+                src={ISM_CHALLENGE_IMG}
                 alt="ITSM challenge"
                 className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
@@ -701,7 +720,14 @@ export const ITSMPlugAndPlayPage = () => {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {stack.map((group, idx) => (
-              <ConnectorCard key={idx} index={idx} title={group.title} items={group.items} delay={idx * 0.1} />
+              <ConnectorCard
+                key={idx}
+                index={idx}
+                title={group.title}
+                items={group.items}
+                image={group.image}
+                delay={idx * 0.1}
+              />
             ))}
           </div>
         </div>
