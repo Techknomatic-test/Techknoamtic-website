@@ -27,7 +27,7 @@ const dpiqAsset = (folder: string, file: string) =>
     .join("/")}`;
 
 const DPIQ_HERO_IMG = dpiqRootImg("Hero.jpg");
-const DPIQ_CHALLENGE = dpiqRootImg("Challenge.jpg");
+const DPIQ_PAIN_POINTS_IMG = dpiqRootImg("painpoints.jpg");
 
 const CapabilityCard = ({
   title,
@@ -485,32 +485,32 @@ export const DataGuardPage = () => {
           </div>
 
           <div className="grid items-center gap-20 lg:grid-cols-2">
-            <div className="group relative aspect-video overflow-hidden rounded-[3rem] bg-slate-50 shadow-2xl dark:bg-white/5 lg:aspect-square">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
+            >
               <img
-                src={DPIQ_CHALLENGE}
-                alt="Data reliability"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src={DPIQ_PAIN_POINTS_IMG}
+                alt="Common operational pain points in enterprise data reliability"
+                className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/60 via-transparent to-transparent" />
-              <div className="absolute bottom-10 left-10 right-10">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-[11px] font-black uppercase tracking-widest text-white">
-                  Impact Framing
-                </div>
-                <p className="text-[15px] font-bold leading-relaxed text-white">
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-brand-950/80 via-transparent to-transparent p-8">
+                <p className="border-l-4 border-accent pl-4 text-[15px] font-bold leading-relaxed text-white">
                   The result: low trust in dashboards and analytics, delayed business decisions, increased operational
                   overhead, compliance and governance risk, and slower AI and digital transformation initiatives — exactly
                   when the business needs faster, sharper, more trusted data to compete.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             <div className="space-y-6 self-start lg:pt-4">
               <div className="mb-12">
                 <h3 className="mb-2 text-xl font-bold leading-tight text-brand-950 dark:text-white">
                   Common Operational Pain Points
                 </h3>
-                <div className="h-1 w-12 rounded-full bg-accent" />
               </div>
               <ul className="list-none space-y-5">
                 {[
