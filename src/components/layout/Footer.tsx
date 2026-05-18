@@ -77,7 +77,7 @@ export const Footer = () => {
               className="mb-6 inline-flex justify-center md:justify-start rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-950"
             >
               <img
-                src="/Images/home/footer-logo.png"
+                src={`${import.meta.env.BASE_URL}Images/home/footer-logo.png`}
                 alt="Techknomatic — Technology, Knowledge, Analytics"
                 className="h-14 w-auto max-w-[min(100%,280px)] object-contain object-left sm:h-16"
               />
