@@ -94,12 +94,21 @@ export const Footer = () => {
           <div className="md:col-span-5 md:row-start-2 order-2">
             <div className="flex items-center gap-5 justify-center md:justify-start">
               {[
-                { icon: Linkedin, href: '#' },
-                { icon: Mail, href: '#' },
-              ].map((social, index) => (
+                {
+                  icon: Linkedin,
+                  href: 'https://in.linkedin.com/company/techknomatic-services-private-limited',
+                  label: 'Techknomatic on LinkedIn',
+                  external: true,
+                },
+                { icon: Mail, href: '#', label: 'Email Techknomatic', external: false },
+              ].map((social) => (
                 <a
-                  key={index}
+                  key={social.label}
                   href={social.href}
+                  aria-label={social.label}
+                  {...(social.external
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                   className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-accent hover:border-accent/50 transition-all"
                 >
                   <social.icon className="w-5 h-5" />
