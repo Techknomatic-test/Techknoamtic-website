@@ -22,6 +22,10 @@ import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { useState, useEffect, useRef } from "react";
 
+const LIFE_AT_TKS_IMG = "Images/LifeatTKS";
+const lifeAtTksImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${LIFE_AT_TKS_IMG}/${encodeURIComponent(file)}`;
+
 const AccordionItem = ({
   id,
   title,
@@ -172,14 +176,14 @@ export const AboutUsPage = () => {
   }, []);
 
   const lifeImages = [
-    "Images/12437.jpg",
-    "Images/2151680571.jpg",
-    "Images/2152005500.jpg",
-    "Images/23498.jpg",
-    "Images/291956.jpg",
-    "Images/2988.jpg",
-    "Images/33931.jpg",
-    "Images/55251.jpg",
+    lifeAtTksImg("DSC_0016.JPG"),
+    lifeAtTksImg("DSC_0056.JPG"),
+    lifeAtTksImg("DSC_0069.JPG"),
+    lifeAtTksImg("DSC_0100.JPG"),
+    lifeAtTksImg("DSC_0110.JPG"),
+    lifeAtTksImg("DSC_0234.JPG"),
+    lifeAtTksImg("DSC_0256.JPG"),
+    lifeAtTksImg("DSC_0294.JPG"),
   ];
 
   return (
