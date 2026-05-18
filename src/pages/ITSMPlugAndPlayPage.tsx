@@ -735,15 +735,7 @@ export const ITSMPlugAndPlayPage = () => {
 
       <section className="bg-slate-50 px-6 py-[60px] text-left dark:bg-white/5">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[11px] font-black uppercase tracking-[0.3em] text-accent"
-            >
-              Production Ready
-            </motion.div>
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
