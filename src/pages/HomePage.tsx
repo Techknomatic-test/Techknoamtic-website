@@ -11,6 +11,8 @@ import {
 import {
   BarChart as ReBarChart,
   Bar,
+  LineChart as ReLineChart,
+  Line,
   ResponsiveContainer,
   XAxis,
   YAxis,
@@ -60,7 +62,256 @@ import { scrollToElement } from "../utils/scrollToElement";
 /** Public asset: public/Images/home/oil-gas-card.png (copy of Oil&gas1 (1).png) */
 const OIL_GAS_CARD_IMG = `${import.meta.env.BASE_URL}Images/home/oil-gas-card.png`;
 
-const HeroVisual = () => {
+const NetworkMap = () => {
+  const chartData = [
+    { name: "1", value: 40 },
+    { name: "2", value: 30 },
+    { name: "3", value: 60 },
+    { name: "4", value: 45 },
+    { name: "5", value: 80 },
+    { name: "6", value: 55 },
+    { name: "7", value: 90 },
+  ];
+
+  return (
+    <motion.div className="relative w-full aspect-square max-w-lg mx-auto flex items-center justify-center">
+      <motion.div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 10, repeat: Infinity }}
+          className="absolute w-2/3 h-2/3 bg-indigo-500/20 rounded-full blur-[100px]"
+        />
+      </motion.div>
+
+      <motion.div className="relative w-full h-full flex flex-col items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative z-10 w-[90%] h-[75%] bg-white/80 dark:bg-brand-900/90 backdrop-blur-2xl rounded-[3rem] p-10 border border-white/50 dark:border-white/10 shadow-2xl flex flex-col transition-colors duration-500"
+        >
+          <motion.div className="absolute -top-5 left-1/2 -translate-x-1/2 w-max">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="px-6 py-2.5 bg-brand-950 text-white rounded-full text-[10px] font-black tracking-widest flex items-center gap-2 border border-white/10 shadow-2xl"
+            >
+              <motion.div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
+              1,247 ASSETS TRACKED GLOBALLY
+            </motion.div>
+          </motion.div>
+
+          <motion.div className="flex-1 relative overflow-hidden rounded-[2rem] bg-slate-50/50 dark:bg-white/5 border border-slate-100 dark:border-white/5 p-6 flex flex-col">
+            <motion.div className="w-full flex-1 min-h-[180px] -mt-2">
+              <ResponsiveContainer width="100%" height="100%">
+                <ReLineChart data={chartData}>
+                  <defs>
+                    <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#F17E21" stopOpacity={0.2} />
+                      <stop offset="50%" stopColor="#F17E21" stopOpacity={1} />
+                      <stop offset="100%" stopColor="#F17E21" stopOpacity={0.2} />
+                    </linearGradient>
+                  </defs>
+                  <ReTooltip
+                    contentStyle={{
+                      backgroundColor: "rgba(255, 255, 255, 0.9)",
+                      borderRadius: "12px",
+                      border: "none",
+                      boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+                      fontSize: "10px",
+                    }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="value"
+                    stroke="#F17E21"
+                    strokeWidth={5}
+                    dot={{ r: 5, fill: "#F17E21", strokeWidth: 2, stroke: "#fff" }}
+                    activeDot={{ r: 8, strokeWidth: 0 }}
+                    isAnimationActive={true}
+                    animationDuration={2000}
+                  />
+                </ReLineChart>
+              </ResponsiveContainer>
+            </motion.div>
+            <motion.div className="flex items-center justify-between mt-4">
+              <motion.div>
+                <h4 className="text-[10px] font-black text-slate-400 tracking-[0.2em] uppercase mb-1">
+                  Asset Monitoring
+                </h4>
+                <motion.div className="text-sm font-bold text-brand-950 dark:text-white">
+                  Active Asset Flux
+                </motion.div>
+              </motion.div>
+              <motion.div className="text-[10px] font-bold text-accent">+24% Today</motion.div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div className="grid grid-cols-3 gap-4 mt-8">
+            {[
+              { label: "AVG ETA", value: "14.2 min", icon: <Activity className="w-3.5 h-3.5" /> },
+              {
+                label: "COST SAVE",
+                value: "-18%",
+                icon: <Target className="w-3.5 h-3.5" />,
+                trend: "down",
+              },
+              {
+                label: "ACTIVE ALERTS",
+                value: "03",
+                icon: <Activity className="w-3.5 h-3.5" />,
+                alert: true,
+              },
+            ].map((chip, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.1 }}
+                className="bg-slate-50/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-slate-100 dark:border-white/5 shadow-sm"
+              >
+                <motion.div className="flex items-center gap-2 mb-1.5">
+                  <motion.div className="text-accent">{chip.icon}</motion.div>
+                  <span className="text-[7.5px] font-black tracking-widest text-slate-400 uppercase">
+                    {chip.label}
+                  </span>
+                </motion.div>
+                <motion.div
+                  className={`text-xs sm:text-sm font-bold tracking-tight ${chip.alert ? "text-red-500" : "text-brand-950 dark:text-white"}`}
+                >
+                  {chip.value}
+                </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+const RefineryVisual = () => {
+  return (
+    <motion.div className="relative w-full aspect-square max-w-lg mx-auto flex items-center justify-center">
+      <motion.div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
+          transition={{ duration: 10, repeat: Infinity }}
+          className="absolute w-2/3 h-2/3 bg-accent/10 rounded-full blur-[100px]"
+        />
+      </motion.div>
+
+      <motion.div className="relative w-full h-full flex flex-col items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="relative z-10 w-[90%] h-[75%] bg-white/80 dark:bg-brand-900/90 backdrop-blur-2xl rounded-[3rem] p-10 border border-white/50 dark:border-white/10 shadow-2xl flex flex-col transition-colors duration-500"
+        >
+          <motion.div className="flex items-center justify-between mb-8">
+            <motion.div className="flex items-center gap-4">
+              <motion.div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                <Factory className="w-5 h-5 text-accent" />
+              </motion.div>
+              <motion.div>
+                <h4 className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">
+                  Process Intelligence
+                </h4>
+                <motion.div className="text-lg font-bold text-brand-950 dark:text-white">
+                  Refinery AI
+                </motion.div>
+              </motion.div>
+            </motion.div>
+            <motion.div className="px-3 py-1 bg-accent/10 rounded-full text-[9px] font-black tracking-widest text-[#f17e21] border border-accent/20">
+              STABLE
+            </motion.div>
+          </motion.div>
+
+          <motion.div className="flex-1 grid grid-cols-2 gap-4">
+            <motion.div className="bg-slate-50/50 dark:bg-white/5 rounded-[1.5rem] p-6 border border-slate-100 dark:border-white/5 relative overflow-hidden">
+              <motion.div className="relative z-10">
+                <motion.div className="text-[9px] font-black text-slate-400 tracking-widest mb-1 uppercase">
+                  Machine Health
+                </motion.div>
+                <motion.div className="text-2xl font-bold text-[#f17e21]">94%</motion.div>
+              </motion.div>
+              <motion.div className="absolute bottom-0 left-0 w-full h-1/2 opacity-20">
+                <motion.svg viewBox="0 0 100 40" className="w-full h-full">
+                  <motion.path
+                    d="M0 20 Q 25 10, 50 20 T 100 20"
+                    fill="none"
+                    stroke="#F17E21"
+                    strokeWidth="2"
+                    animate={{
+                      d: [
+                        "M0 20 Q 25 10, 50 20 T 100 20",
+                        "M0 20 Q 25 30, 50 20 T 100 20",
+                        "M0 20 Q 25 10, 50 20 T 100 20",
+                      ],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  />
+                </motion.svg>
+              </motion.div>
+            </motion.div>
+            <motion.div className="bg-slate-50/50 dark:bg-white/5 rounded-[1.5rem] p-6 border border-slate-100 dark:border-white/5">
+              <motion.div className="text-[9px] font-black text-slate-400 tracking-widest mb-1 uppercase">
+                Stress Level
+              </motion.div>
+              <motion.div className="text-2xl font-bold text-brand-950 dark:text-white shrink-0">
+                LOW
+              </motion.div>
+              <motion.div className="mt-4 flex gap-1">
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{ height: [12, 24, 12] }}
+                    transition={{ duration: 1, repeat: Infinity, delay: i * 0.1 }}
+                    className="flex-1 bg-accent/40 rounded-full"
+                  />
+                ))}
+              </motion.div>
+            </motion.div>
+            <motion.div className="col-span-2 bg-slate-50/50 dark:bg-white/5 rounded-[1.5rem] p-6 border border-slate-100 dark:border-white/5">
+              <motion.div className="flex justify-between items-center mb-4">
+                <motion.div className="text-[9px] font-black text-slate-400 tracking-widest uppercase">
+                  Predictive Downtime
+                </motion.div>
+                <motion.div className="text-[9px] font-bold text-[#f17e21]">OPTIMIZED</motion.div>
+              </motion.div>
+              <motion.div className="h-2 bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 1.5 }}
+                  className="h-full bg-accent"
+                />
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div className="mt-8 flex items-center justify-between pt-8 border-t border-slate-100 dark:border-white/10">
+            <motion.div className="flex items-center gap-3">
+              <motion.div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
+                <Activity className="w-4 h-4 text-accent" />
+              </motion.div>
+              <motion.div className="text-[10px] font-black tracking-widest text-slate-400 uppercase">
+                Live Anomalies: 0
+              </motion.div>
+            </motion.div>
+            <motion.div className="text-[10px] font-black tracking-widest text-[#f17e21] uppercase flex items-center gap-2">
+              <motion.div className="w-1.5 h-1.5 bg-[#f17e21] rounded-full animate-ping" />
+              Monitoring Active
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+const HeroVisual = ({ index }: { index: number }) => {
+  if (index === 1) return <NetworkMap />;
+  if (index === 2) return <RefineryVisual />;
+
   const data = [
     { name: "A", v1: 400, v2: 240, v3: 700 },
     { name: "B", v1: 300, v2: 139, v3: 500 },
@@ -236,36 +487,42 @@ const Hero = () => {
           </span>
         </>
       ),
-      description: "Techknomatic is a specialist analytics and AI consultancy helping enterprises across India and the Middle East design, build, and scale their data advantage, from BI dashboards and data platforms to geospatial intelligence and enterprise AI.",
-      ctaPrimary: "Explore Our Work",
-      ctaSecondary: "Talk to an Expert"
+      description:
+        "Techknomatic is a specialist analytics and AI consultancy helping enterprises across India and the Middle East design, build, and scale their data advantage — from BI dashboards and data platforms to geospatial intelligence and enterprise AI.",
+      ctaPrimary: "Request a Demo",
+      ctaSecondary: "",
+      theme: "sky",
     },
     {
       title: (
         <>
-          Scale Your AI <br className="hidden sm:block" />
+          Map Every Asset, <br className="hidden sm:block" />
           <span className="relative inline-block sm:mt-2 text-accent">
-            With Expert Precision
+            Across Every Mile
           </span>
         </>
       ),
-      description: "From generative AI to custom machine learning models, we help you integrate agentic AI into your core operations, driving efficiency and innovation across your business vertical.",
-      ctaPrimary: "View AI Solutions",
-      ctaSecondary: "Consult our Team"
+      description:
+        "Our geospatial intelligence layer tracks shipments, refineries, and field assets in real time — turning raw location data into competitive advantage at global scale",
+      ctaPrimary: "Request a Demo",
+      ctaSecondary: "",
+      theme: "indigo",
     },
     {
       title: (
         <>
-          Master Your Operations <br className="hidden sm:block" />
+          Predict Failures <br className="hidden sm:block" />
           <span className="relative inline-block sm:mt-2 text-accent">
-            With Real-Time Insights
+            Before They Happen
           </span>
         </>
       ),
-      description: "Our geospatial and refinery analytics platforms provide the sub-second visibility needed to optimize complex supply chains and industrial processes in today's global market.",
-      ctaPrimary: "See Case Studies",
-      ctaSecondary: "Request a Demo"
-    }
+      description:
+        "Our industrial process intelligence platform detects anomalies, forecasts equipment stress, and eliminates unplanned downtime across your entire refinery operation",
+      ctaPrimary: "Request a Demo",
+      ctaSecondary: "",
+      theme: "emerald",
+    },
   ];
 
   useEffect(() => {
@@ -275,12 +532,38 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
+  const bgConfigs = [
+    {
+      bg: "bg-[#f0f9ff]",
+      gradient:
+        "from-sky-100/50 via-white to-sky-50/30 dark:from-sky-950/20 dark:via-brand-950 dark:to-brand-900/40",
+      accent: "bg-sky-400/20",
+    },
+    {
+      bg: "bg-[#f5f7ff]",
+      gradient:
+        "from-indigo-50 via-white to-blue-50/50 dark:from-indigo-950/20 dark:via-brand-950 dark:to-brand-900/40",
+      accent: "bg-indigo-400/20",
+    },
+    {
+      bg: "bg-[#f0fff4]",
+      gradient:
+        "from-emerald-50 via-white to-green-50/50 dark:from-emerald-950/20 dark:via-brand-950 dark:to-brand-900/40",
+      accent: "bg-emerald-400/20",
+    },
+  ];
+
   return (
     <section
-      className="relative min-h-[90vh] lg:min-h-screen flex flex-col items-center justify-center pt-[100px] pb-[40px] overflow-hidden px-6 bg-[#f0f9ff] dark:bg-brand-950"
+      className={`relative min-h-[90vh] lg:min-h-screen flex flex-col items-center justify-center pt-[100px] pb-[40px] overflow-hidden px-6 transition-colors duration-1000 ${bgConfigs[currentSlide].bg} dark:!bg-brand-950`}
     >
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-100/50 via-white to-sky-50/30 dark:from-sky-950/20 dark:via-brand-950 dark:to-brand-900/40" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          key={currentSlide}
+          className={`absolute inset-0 bg-gradient-to-br ${bgConfigs[currentSlide].gradient} transition-all duration-1000`}
+        />
         <div
           className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none mix-blend-overlay"
           style={{
@@ -303,7 +586,7 @@ const Hero = () => {
             y: [0, 30, 0],
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[10%] left-[10%] w-[600px] h-[600px] bg-sky-400/20 dark:bg-accent/10 rounded-full blur-[150px]"
+          className={`absolute top-[10%] left-[10%] w-[600px] h-[600px] ${bgConfigs[currentSlide].accent} dark:bg-accent/10 rounded-full blur-[150px] transition-colors duration-1000`}
         />
         <motion.div
           animate={{
@@ -317,22 +600,20 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto w-full px-4">
+      <motion.div className="relative z-10 max-w-6xl mx-auto w-full px-4">
         <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-          >
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+            >
             <div className="max-w-2xl">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-8 text-brand-950 dark:text-white"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-8 text-brand-950 dark:text-white transition-colors duration-500"
               >
                 {slides[currentSlide].title}
               </motion.h1>
@@ -341,7 +622,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-[15px] text-slate-600 dark:text-slate-400 max-w-xl mb-14 leading-relaxed font-medium tracking-[0.2px]"
+                className="text-[15px] text-slate-600 dark:text-slate-400 max-w-xl mb-14 leading-relaxed font-medium tracking-[0.2px] transition-colors duration-500"
               >
                 {slides[currentSlide].description}
               </motion.p>
@@ -357,14 +638,17 @@ const Hero = () => {
                   className="px-8 py-3.5 bg-accent text-white text-[11px] font-black tracking-[0.2em] rounded-2xl shadow-2xl shadow-accent/20 hover:bg-accent/90 transition-all duration-300 flex items-center gap-3 active:scale-95"
                 >
                   {slides[currentSlide].ctaPrimary}
+                  <ArrowUpRight className="w-4 h-4" />
                 </a>
-                <Link
-                  to="/contact"
-                  className="px-8 py-3.5 bg-white/70 dark:bg-white/10 backdrop-blur-md text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-white/10 text-[11px] font-black tracking-[0.2em] rounded-2xl hover:bg-white dark:hover:bg-white/20 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex items-center gap-2 group active:scale-95"
-                >
-                  {slides[currentSlide].ctaSecondary}{" "}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                {slides[currentSlide].ctaSecondary && (
+                  <Link
+                    to="/contact"
+                    className="px-8 py-3.5 bg-white/70 dark:bg-white/10 backdrop-blur-md text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-white/10 text-[11px] font-black tracking-[0.2em] rounded-2xl hover:bg-white dark:hover:bg-white/20 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex items-center gap-2 group active:scale-95"
+                  >
+                    {slides[currentSlide].ctaSecondary}{" "}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                )}
               </motion.div>
             </div>
 
@@ -374,9 +658,9 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.3 }}
               className="relative hidden lg:block"
             >
-              <HeroVisual />
+              <HeroVisual index={currentSlide} />
             </motion.div>
-          </motion.div>
+            </motion.div>
         </AnimatePresence>
 
         {/* Carousel Indicators */}
@@ -396,7 +680,7 @@ const Hero = () => {
             </button>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       <motion.div
         animate={{ y: [0, 10, 0] }}
