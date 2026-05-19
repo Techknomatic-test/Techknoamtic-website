@@ -87,7 +87,7 @@ export const Footer = () => {
               insights easier to share, understand, and act on.
             </p>
             <div className="text-[11px] font-black uppercase tracking-[0.3em] text-white/40">
-              India · UAE · Oman
+              India · UAE · Oman · USA
             </div>
           </div>
 

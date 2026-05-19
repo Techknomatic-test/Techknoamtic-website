@@ -361,13 +361,13 @@ export const AboutUsPage = () => {
               },
               {
                 name: "Gopinath Sambandam",
-                role: "Service Delivery Head",
+                role: "Service Delivery Head (Global)",
                 img: "Images/Leadership/people/gopi_s.jpeg",
                 objectPosition: "center 30%",
               },
               {
                 name: "Pranita Singh",
-                role: "AVP - HR",
+                role: "AVP - HR (India)",
                 img: "Images/Leadership/people/pranita_singh.jpeg",
                 objectPosition: "center 28%",
               },
@@ -379,19 +379,19 @@ export const AboutUsPage = () => {
               },
               {
                 name: "Apoorva Gowda",
-                role: "Sr. BD Executive",
+                role: "Sales Manager (UAE)",
                 img: "Images/Leadership/people/Apoorva.jpeg",
                 objectPosition: "center 30%",
               },
               {
                 name: "Hemant Jadhav",
-                role: "AVP - Sales",
+                role: "AVP - Sales (India)",
                 img: "Images/Leadership/people/hemant_.jpeg",
                 objectPosition: "center 32%",
               },
               {
                 name: "Anup Sangli",
-                role: "Strategic Consultant",
+                role: "Strategic Consultant (UAE)",
                 img: "Images/Leadership/people/anup_sangli.jpeg",
                 objectPosition: "center 30%",
               },
