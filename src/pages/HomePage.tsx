@@ -867,40 +867,44 @@ const AcceleratorsSection = () => {
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      headline: "Fast & Efficient",
-      name: "Marcus Chen",
-      role: "CTO",
-      company: "Stratum Logistics",
-      text: "Techknomatic didn't just build us a dashboard; they built us a decision architecture. Knew how to respect our several constraints and collaborate with all our departments.",
-      image: "https://i.pravatar.cc/150?u=marcus",
-      logo: "STRATUM",
+      headline: "On time. Every time.",
+      name: "Devesh K",
+      role: "Delivery Manager, ITSM Sector",
+      company: "Tech Mahindra Arabia (ITSM Sector, KSA)",
+      location: "Saudi Arabia",
+      text: "Across a 15-month engagement covering data modelling, ETL, and full BI rollout, Techknomatic never missed a milestone. Their technical depth matched their professionalism — a rare combination at enterprise scale.",
     },
     {
-      headline: "Wow effect",
-      name: "Sarah Williams",
-      role: "Head of Data",
-      company: "Oasis Energy",
-      text: "We had the chance to work with them four times on various projects. What we liked was their swiftness and the great quality of their design that will always get you that 'wow' effect.",
-      image: "https://i.pravatar.cc/150?u=sarah",
-      logo: "OASIS",
+      headline: "Risk visible, decisions faster",
+      name: "Rohit K",
+      role: "Operations Head, Insurance Sector",
+      company: "Dhofar Insurance",
+      location: "Oman",
+      text: "Techknomatic transformed how we see our portfolio. What used to take days of manual reporting now surfaces in real time. Their dashboards gave our underwriting and claims teams a shared language — and the confidence to act on it.",
     },
     {
-      headline: "Creative Solutions",
-      name: "Arjun Mehta",
-      role: "VP of Analytics",
-      company: "Nexus Bank",
-      text: "Creativity, Reactivity and always a very pleasant and attentive team. Enterprise-grade governance was delivered secure and scalable exactly as we wanted.",
-      image: "https://i.pravatar.cc/150?u=arjun",
-      logo: "NEXUS",
+      headline: "Built to scale with us",
+      name: "Sanjay Taskar",
+      role: "Technology Leadership",
+      company: "Assimilate Technologies",
+      location: "India",
+      text: "Techknomatic understood that we weren't just solving for today — we needed infrastructure that grows. Their data architecture and BI layer were designed with extensibility in mind, and the results have held up as our product complexity increased.",
     },
     {
-      headline: "Enterprise Grade",
-      name: "Elena Rodriguez",
-      role: "Director of IT",
-      company: "Global Retail",
-      text: "Their ability to translate complex business requirements into sleek, actionable visualizations is unparalleled. They are truly partners in our digital journey.",
-      image: "https://i.pravatar.cc/150?u=elena",
-      logo: "GLOBAL",
+      headline: "Downtime we can see coming",
+      name: "Kunal J",
+      role: "VP Delivery, Oil & Gas Sector",
+      company: "Oil & Gas Sector",
+      location: "Oman",
+      text: "In oil & gas, unplanned downtime isn't a metric — it's a crisis. Techknomatic built us a live operational dashboard that consolidates field data across our assets and flags efficiency dips before they escalate. We've moved from reactive firefighting to proactive control, and the difference is measurable.",
+    },
+    {
+      headline: "From reactive to data-driven",
+      name: "Anup Sangli",
+      role: "Founder",
+      company: "Aintisar Technology L.L.C.",
+      location: "UAE",
+      text: "Before CXO Nexus, our data was scattered across systems. Since adopting it, we have a unified platform where critical business metrics are available in real time — sales trends, operational performance, and overall business health. It has simplified our reporting and enabled faster, more confident decisions. I would highly recommend Techknomatic to any organization looking for a single source of truth.",
     },
   ];
 
@@ -986,22 +990,18 @@ const TestimonialsSection = () => {
                     {t.text}
                   </p>
 
-                  <div className="flex items-center gap-5 mt-auto pt-8 border-t border-slate-50 dark:border-white/5">
-                    <div className="w-14 h-14 rounded-2xl overflow-hidden bg-slate-100 dark:bg-brand-900 border border-slate-200 dark:border-white/10 shrink-0 shadow-inner">
-                      <img
-                        src={t.image}
-                        alt={t.name}
-                        className="w-full h-full object-cover"
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
+                  <div className="mt-auto pt-8 border-t border-slate-50 dark:border-white/5">
                     <div>
                       <h4 className="font-bold text-brand-950 dark:text-white tracking-tight">
                         {t.name}
                       </h4>
-                      <p className="text-[11px] font-black text-slate-400 dark:text-slate-500 tracking-widest mt-1">
-                        {t.role} •{" "}
+                      <p className="text-[12px] font-semibold text-slate-500 dark:text-slate-400 mt-1 leading-snug">
+                        {t.role}
+                      </p>
+                      <p className="text-[11px] font-black text-slate-400 dark:text-slate-500 tracking-widest mt-2">
                         <span className="text-accent">{t.company}</span>
+                        {" · "}
+                        {t.location}
                       </p>
                     </div>
                   </div>
