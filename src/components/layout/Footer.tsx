@@ -13,7 +13,7 @@ const footerLinkLabel = (item: NavItem): string => {
     'OIL & GAS': 'Oil & Gas',
     'IT SERVICE MANAGEMENT (ITSM)': 'ITSM',
     MANUFACTURING: 'Manufacturing',
-    'GeoSpacial Analytics': 'Geospatial Analytics',
+    'Geospatial Analytics': 'Geospatial Analytics',
   };
   return labels[item.label] ?? item.label;
 };

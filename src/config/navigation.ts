@@ -28,7 +28,7 @@ export const navData: SiteNavData = {
     { label: 'Business Intelligence', href: '/bi-services', icon: BarChart3 },
     { label: 'Data Engineering', href: '/data-engineering', icon: Database },
     { label: 'Data & AI Strategy', href: '/ai-services', icon: Sparkles },
-    { label: 'GeoSpacial Analytics', href: '/geospatial-analytics', icon: Globe },
+    { label: 'Geospatial Analytics', href: '/geospatial-analytics', icon: Globe },
   ],
   enterpriseAI: [
     {
