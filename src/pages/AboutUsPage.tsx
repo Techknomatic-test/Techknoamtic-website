@@ -23,9 +23,83 @@ import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { useState, useEffect, useRef } from "react";
 
-const LIFE_AT_TKS_IMG = "Images/LifeatTKS";
-const lifeAtTksImg = (file: string) =>
-  `${import.meta.env.BASE_URL}${LIFE_AT_TKS_IMG}/${encodeURIComponent(file)}`;
+const ABOUTUS_BASE = "Images/Aboutus";
+
+const aboutusImg = (...segments: string[]) =>
+  `${import.meta.env.BASE_URL}${[...ABOUTUS_BASE.split("/"), ...segments]
+    .map(encodeURIComponent)
+    .join("/")}`;
+
+const LIFE_AT_OLD_IMAGES = [
+  "life-at-2.jpg",
+  "life-at-4.jpg",
+  "life-at-5.jpg",
+  "life-at-6.jpg",
+  "life-at-7.jpg",
+  "life-at-9.jpg",
+  "life-at-10.jpg",
+  "DSC_0006.JPG",
+].map((file) =>
+  aboutusImg("Life at Techknomatic", "Old", "Old", file),
+);
+
+const LIFE_AT_NEW_IMAGES = [
+  "DSC_0006.jpg",
+  "DSC_0013.jpg",
+  "DSC_0018.jpg",
+  "DSC_0025.jpg",
+  "DSC_0026.jpg",
+  "DSC_0047.jpg",
+  "DSC_0064.jpg",
+  "DSC_0068.jpg",
+  "DSC_0069.jpg",
+  "DSC_0073.jpg",
+  "DSC_0085.jpg",
+  "DSC_0086.jpg",
+  "DSC_0095.jpg",
+  "DSC_0097.jpg",
+  "DSC_0101.jpg",
+  "DSC_0102.jpg",
+  "DSC_0105.jpg",
+  "DSC_0106.jpg",
+  "DSC_0107.jpg",
+  "DSC_0116.jpg",
+  "DSC_0118.jpg",
+  "DSC_0119.jpg",
+  "DSC_0122.jpg",
+  "DSC_0123.jpg",
+  "DSC_0124.jpg",
+  "DSC_0128.jpg",
+  "DSC_0130.jpg",
+  "DSC_0132.jpg",
+  "DSC_0133.jpg",
+  "DSC_0194.jpg",
+  "DSC_0195.jpg",
+  "DSC_0199.jpg",
+  "DSC_0202.jpg",
+  "DSC_0203.jpg",
+  "DSC_0214.jpg",
+  "DSC_0217.jpg",
+  "DSC_0220.jpg",
+  "DSC_0236.jpg",
+  "DSC_0238.jpg",
+  "DSC_0244.jpg",
+  "DSC_0245.jpg",
+  "DSC_0246.jpg",
+  "DSC_0250.jpg",
+  "DSC_0254.jpg",
+  "DSC_0255.jpg",
+  "DSC_0288.jpg",
+  "DSC_0293.jpg",
+  "DSC_0294.jpg",
+  "DSC_0297.jpg",
+  "DSC_0314.jpg",
+  "DSC_0317.jpg",
+  "DSC_0427.jpg",
+  "DSC_0431.jpg",
+].map((file) =>
+  aboutusImg("Life at Techknomatic", "New Images", file),
+);
 
 const AccordionItem = ({
   id,
@@ -85,21 +159,30 @@ const DifferentSection = () => {
       title: "Experienced Team",
       description:
         "We have experienced professionals with hands-on experience in delivering end-to-end data solutions. We can leverage BI tools to help clients convert their data into insights within less time.",
-      imageUrl: "Images/2152005500.jpg",
+      imageUrl: aboutusImg(
+        "What Makes Us Different",
+        "Experienced Team.jpg",
+      ),
     },
     {
       id: 2,
       title: "Proven Methodology",
       description:
         "By following a systematic approach, we construct BI solutions with well-defined processes that make it easy for you to manage all of the dashboards and changes.",
-      imageUrl: "Images/2151680571.jpg",
+      imageUrl: aboutusImg(
+        "What Makes Us Different",
+        "Proven Methodology.jpg",
+      ),
     },
     {
       id: 3,
       title: "Less Turnaround Time",
       description:
         "In this dynamically changing analytics world, we give a minimum turnaround time for all our BI deliverables so you can make informed decisions anytime, anywhere.",
-      imageUrl: "Images/33931.jpg",
+      imageUrl: aboutusImg(
+        "What Makes Us Different",
+        "Less Turnaround Time.jpg",
+      ),
     },
   ];
 
@@ -176,16 +259,7 @@ export const AboutUsPage = () => {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  const lifeImages = [
-    lifeAtTksImg("DSC_0016.JPG"),
-    lifeAtTksImg("DSC_0056.JPG"),
-    lifeAtTksImg("DSC_0069.JPG"),
-    lifeAtTksImg("DSC_0100.JPG"),
-    lifeAtTksImg("DSC_0110.JPG"),
-    lifeAtTksImg("DSC_0234.JPG"),
-    lifeAtTksImg("DSC_0256.JPG"),
-    lifeAtTksImg("DSC_0294.JPG"),
-  ];
+  const lifeImages = [...LIFE_AT_OLD_IMAGES, ...LIFE_AT_NEW_IMAGES];
 
   return (
     <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
@@ -193,15 +267,14 @@ export const AboutUsPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-10 md:pt-14 md:pb-12 overflow-hidden px-6 bg-brand-950">
         <div className="absolute inset-0 z-0">
           <img
-            src="Images/airline.jpg"
+            src={aboutusImg("Herobanner.jpg")}
             alt="About Us Background"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-brand-950/40" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <motion.div className="relative z-10 max-w-7xl mx-auto w-full">
           <div className="max-w-4xl">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -244,7 +317,7 @@ export const AboutUsPage = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* 2. Different Section (Accordion Redesign) */}
