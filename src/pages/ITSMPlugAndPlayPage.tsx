@@ -131,7 +131,6 @@ const ConnectorCard = ({
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
     </div>
     <div className="flex flex-grow flex-col p-8">
-      <div className="mb-4 text-[12px] font-black uppercase tracking-widest text-accent">0{index + 1}</div>
       <h3 className="mb-4 text-lg font-bold text-brand-950 transition-colors group-hover:text-accent dark:text-white">
         {title}
       </h3>
@@ -172,7 +171,6 @@ const UseCaseCard = ({
 
     <div className="mt-auto space-y-6">
       <div>
-        <h4 className="mb-3 text-[11px] font-black uppercase tracking-widest text-accent">Crux</h4>
         <p className="text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">{crux}</p>
       </div>
 
@@ -192,7 +190,7 @@ const UseCaseCard = ({
 export const ITSMPlugAndPlayPage = () => {
   const capabilities = [
     {
-      title: "Capability 1, Unified ITSM Connectivity Layer",
+      title: "Unified ITSM Connectivity Layer",
       outcome: "Outcome: Connect every ITSM tool in your stack, without custom integration projects.",
       items: [
         "Plug-and-play connectors for ServiceNow, BMC Remedy, Jira SM, SolarWinds",
@@ -205,7 +203,7 @@ export const ITSMPlugAndPlayPage = () => {
       icon: Network,
     },
     {
-      title: "Capability 2, Intelligent Data Sampling Engine",
+      title: "Intelligent Data Sampling Engine",
       outcome: "Outcome: Validate dashboards and KPIs on sampled data, before committing to full-scale ingestion.",
       items: [
         "UI-driven dataset selection",
@@ -218,7 +216,7 @@ export const ITSMPlugAndPlayPage = () => {
       icon: Zap,
     },
     {
-      title: "Capability 3, Pre-Built ITSM Data Models",
+      title: "Pre-Built ITSM Data Models",
       outcome: "Outcome: Standardized data models eliminate manual schema harmonization across tools.",
       items: [
         "Incident lifecycle tracking",
@@ -231,7 +229,7 @@ export const ITSMPlugAndPlayPage = () => {
       icon: Database,
     },
     {
-      title: "Capability 4, Enterprise KPI & Metrics Engine",
+      title: "Enterprise KPI & Metrics Engine",
       outcome: "Outcome: A standardized KPI framework, consistent across every team, tool, and report.",
       items: [
         "MTTR (Mean Time to Resolution)",
@@ -244,7 +242,7 @@ export const ITSMPlugAndPlayPage = () => {
       icon: BarChart,
     },
     {
-      title: "Capability 5, Pre-Built Operational Dashboards",
+      title: "Pre-Built Operational Dashboards",
       outcome: "Outcome: Production-ready dashboards for every stakeholder, without long BI cycles.",
       items: [
         "CXO-level operational views",
@@ -257,7 +255,7 @@ export const ITSMPlugAndPlayPage = () => {
       icon: LayoutDashboard,
     },
     {
-      title: "Capability 6, Validation & Feedback Framework",
+      title: "Validation & Feedback Framework",
       outcome:
         "Outcome: Stakeholders validate dashboards before enterprise rollout, reducing rework and accelerating adoption.",
       items: [
@@ -271,7 +269,7 @@ export const ITSMPlugAndPlayPage = () => {
       icon: MessageSquare,
     },
     {
-      title: "Capability 7, Production Data Pipeline Framework",
+      title: "Production Data Pipeline Framework",
       outcome: "Outcome: Move from validated prototype to enterprise production, without rebuilding.",
       items: [
         "Full historical data ingestion",
@@ -284,7 +282,7 @@ export const ITSMPlugAndPlayPage = () => {
       icon: Workflow,
     },
     {
-      title: "Capability 8, Secure Multi-Tenant Deployment",
+      title: "Secure Multi-Tenant Deployment",
       outcome: "Outcome: Enterprise-grade security, governance, and deployment flexibility.",
       items: [
         "Cloud (AWS, Azure, GCP) and on-premise deployment options",
@@ -491,14 +489,7 @@ export const ITSMPlugAndPlayPage = () => {
       <section className="overflow-hidden border-b border-slate-100 bg-white px-6 py-[60px] text-left dark:border-white/5 dark:bg-brand-950">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-6 text-3xl font-medium leading-tight tracking-tight text-brand-950 dark:text-white md:text-5xl"
-            >
-              The Enterprise ITSM Challenge
-            </motion.h2>
+           
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -557,7 +548,7 @@ export const ITSMPlugAndPlayPage = () => {
                   className="group flex items-start gap-4"
                 >
                   <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                  <p className="text-[16px] font-bold leading-tight text-brand-950 dark:text-white">{item}</p>
+                  <p className="text-[16px] leading-tight text-brand-950 dark:text-white">{item}</p>
                 </motion.div>
               ))}
             </div>
@@ -582,7 +573,7 @@ export const ITSMPlugAndPlayPage = () => {
               viewport={{ once: true }}
               className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/50 px-4 py-2 text-[12px] font-bold text-brand-950/70 dark:border-white/10 dark:bg-white/5 dark:text-white/60"
             >
-              From fragmented ITSM data → unified operational intelligence
+              From fragmented ITSM data to unified operational intelligence
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -740,9 +731,9 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl font-medium uppercase tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
             >
-              USE CASES
+              Use Cases
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
