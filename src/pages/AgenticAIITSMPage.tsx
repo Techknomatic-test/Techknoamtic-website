@@ -574,7 +574,7 @@ export const AgenticAIITSMPage = () => {
 
             <div className="lg:col-span-2 space-y-6">
               <div className="mb-10 text-left">
-                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight uppercase tracking-tight">
+                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight tracking-tight">
                   Common Operational Pain Points
                 </h3>
                 <div className="w-12 h-1 bg-accent rounded-full" />
@@ -599,7 +599,7 @@ export const AgenticAIITSMPage = () => {
                     className="flex items-start gap-3 group list-none text-left"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                    <p className="text-[17px] font-bold text-brand-950 dark:text-white leading-tight">
+                    <p className="text-[17px] text-brand-950 dark:text-white leading-tight">
                       {item}
                     </p>
                   </motion.li>

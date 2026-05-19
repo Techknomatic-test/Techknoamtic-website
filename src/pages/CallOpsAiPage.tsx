@@ -461,7 +461,7 @@ export const CallOpsAIPage = () => {
                     className="flex items-start gap-3 group list-none"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                    <p className="text-[17px] font-bold text-brand-950 dark:text-white leading-tight">{item}</p>
+                    <p className="text-[17px] text-brand-950 dark:text-white leading-tight">{item}</p>
                   </motion.li>
                 ))}
               </ul>
