@@ -176,13 +176,16 @@ export const CareersPage = () => {
           <img
             src={CAREERS_HERO}
             alt="Careers at Techknomatic"
-            className="w-full h-full object-cover"
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-[#050a14]/85" />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-r from-[#050a14]/90 via-[#050a14]/55 to-[#050a14]/25"
+            aria-hidden
+          />
           {/* Enhanced Data Particle Background Effect */}
           <div
-            className="absolute inset-0 opacity-[0.12]"
+            className="absolute inset-0 z-[2] opacity-[0.12] pointer-events-none"
             style={{
               backgroundImage:
                 "radial-gradient(circle at 2px 2px, #f17e21 1px, transparent 0)",
@@ -196,7 +199,7 @@ export const CareersPage = () => {
               opacity: [0.15, 0.25, 0.15],
             }}
             transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/20 rounded-full blur-[160px] translate-x-1/4 -translate-y-1/4"
+            className="absolute top-0 right-0 z-[2] w-[800px] h-[800px] bg-accent/20 rounded-full blur-[160px] translate-x-1/4 -translate-y-1/4 pointer-events-none"
           />
           <motion.div
             animate={{
@@ -204,7 +207,7 @@ export const CareersPage = () => {
               opacity: [0.1, 0.15, 0.1],
             }}
             transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[140px] -translate-x-1/4 translate-y-1/4"
+            className="absolute bottom-0 left-0 z-[2] w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[140px] -translate-x-1/4 translate-y-1/4 pointer-events-none"
           />
         </div>
 
