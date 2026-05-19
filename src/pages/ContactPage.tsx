@@ -27,12 +27,9 @@ import {
   Calendar,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
-import {
-  CONTACT_FORM_SECTION_ID,
-  shouldOpenContactForm,
-} from "../config/contactNavigation";
-import { scrollToElement } from "../utils/scrollToElement";
+import { PreFooterCTA } from "../components/PreFooterCTA";
+
+const CONTACT_HERO_IMG = `${import.meta.env.BASE_URL}Images/contactusHero.jpg`;
 
 const Counter = ({
   value,
@@ -136,17 +133,6 @@ const ContactVisual = () => {
 };
 
 export const ContactPage = () => {
-  const location = useLocation();
-  const openFormDirectly = shouldOpenContactForm(
-    location.state,
-    location.search,
-  );
-
-  useEffect(() => {
-    if (!openFormDirectly) return;
-    scrollToElement(CONTACT_FORM_SECTION_ID, true);
-  }, [location.pathname, location.search, location.state, openFormDirectly]);
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -164,9 +150,18 @@ export const ContactPage = () => {
   return (
     <div className="pt-[110px] relative pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
       {/* 1. Hero Section - Styled as per Reference Attachment */}
-      <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
+      <section className="relative min-h-[80vh] flex flex-col justify-center pt-[60px] pb-[60px] overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#050a14] opacity-100" />
+          <img
+            src={CONTACT_HERO_IMG}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-[#050a14]/95 via-[#050a14]/80 to-[#050a14]/50"
+            aria-hidden
+          />
           {/* Enhanced Data Particle Background Effect */}
           <div
             className="absolute inset-0 opacity-[0.15]"
@@ -202,13 +197,13 @@ export const ContactPage = () => {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="relative z-10 mx-auto w-full max-w-7xl drop-shadow-md">
           <div className="max-w-5xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold leading-[1.1] tracking-tight mb-6 text-white"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-10 text-white"
             >
               Let’s Turn Your Data Into <br />
               <span className="text-accent">Decisions</span> That Drive Growth.
@@ -303,10 +298,7 @@ export const ContactPage = () => {
       </section>
 
       {/* 3. Requirement Form Section */}
-      <section
-        id={CONTACT_FORM_SECTION_ID}
-        className="scroll-mt-[140px] py-[60px] bg-white dark:bg-brand-950 px-6"
-      >
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6">
@@ -530,67 +522,46 @@ export const ContactPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   {
-                    prefix: "IN",
-                    title: "India (HQ – Pune)",
-                    address: "3rd Floor, Signet Corner, Baner",
+                    title: "India",
+                    address: "3rd Floor, Signet Corner, Baner, Pune - 411045",
                     country: "IN",
+                    flag: "🇮🇳"
                   },
                   {
-                    prefix: "IN",
-                    title: "Mumbai",
-                    address: "Lodha Supremus 2, Thane",
-                    country: "IN",
+                    title: "US (US)",
+                    address: "US",
+                    country: "US",
+                    flag: "🇺🇸"
                   },
                   {
-                    prefix: "🌍",
-                    title: "Singapore",
-                    address: "Pekin Street",
-                    country: "SG",
-                    iconOnly: true,
+                    title: "Oman",
+                    address: "Alkhuwair, Muscat, Muscat, Sultanate of Oman",
+                    country: "OM",
+                    flag: "🇴🇲"
+                  },
+                  {
+                    title: "Dubai",
+                    address: "Office # E-84 AL Aber Real Estate Building 01, ABU Hail, Dubai P.O. Box: 85031",
+                    country: "AE",
+                    flag: "🇦🇪"
                   },
                 ].map((office, idx) => (
                   <div
                     key={idx}
-                    className="bg-white dark:bg-brand-950 px-[32px] pt-[32px] pb-[28px] rounded-[2rem] border border-slate-100 dark:border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.03)] group hover:border-[#f17e21]/40 transition-all flex flex-col h-full"
+                    className="bg-white dark:bg-brand-950 px-[32px] pt-[32px] pb-[32px] rounded-[2rem] border border-slate-100 dark:border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.03)] group hover:border-[#f17e21]/40 transition-all flex flex-col h-full"
                   >
-                    <div className="mb-8">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-[14px] bg-[#fff6ef] dark:bg-[#f17e21]/10 flex items-center justify-center text-[#f17e21] shrink-0">
-                          <Building2
-                            className="w-[22px] h-[22px]"
-                            strokeWidth={1.5}
-                          />
-                        </div>
-                        <div className="pt-1">
-                          <h4 className="text-[20px] font-bold text-brand-950 dark:text-white tracking-tight flex items-center gap-1.5">
-                            {!office.iconOnly && (
-                              <span className="text-[14px] font-bold">
-                                {office.prefix}
-                              </span>
-                            )}
-                            {office.iconOnly && (
-                              <span className="text-[17px]">
-                                {office.prefix}
-                              </span>
-                            )}
-                            {office.title}
-                          </h4>
-                          <p className="text-slate-500 dark:text-slate-400 font-medium text-[15px] mt-1">
-                            {office.address}
-                          </p>
-                        </div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-[14px] bg-[#fff6ef] dark:bg-[#f17e21]/10 flex items-center justify-center text-[#f17e21] shrink-0 text-xl">
+                        {office.flag}
                       </div>
-                    </div>
-
-                    <div className="mt-auto">
-                      <div className="h-px w-full bg-slate-100 dark:bg-white/5 mb-6" />
-                      <a
-                        href="#"
-                        className="inline-flex items-center gap-2 text-[14px] font-bold text-[#f17e21] group-hover:text-[#d96a17] transition-colors"
-                      >
-                        <Calendar className="w-4 h-4" strokeWidth={2} /> Book
-                        meeting at nearest office
-                      </a>
+                      <div className="pt-1">
+                        <h4 className="text-[20px] font-bold text-brand-950 dark:text-white tracking-tight">
+                          {office.title}
+                        </h4>
+                        <p className="text-slate-500 dark:text-slate-400 font-medium text-[15px] mt-2 leading-relaxed">
+                          {office.address}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -600,59 +571,8 @@ export const ContactPage = () => {
         </div>
       </section>
 
-      {/* 6. Ready to Build Section (Orange CTA) */}
-      <section className="py-[60px] bg-[#f17e21] px-6 relative overflow-hidden">
-        {/* Soft radial gradient to add depth to orange */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent opacity-60" />
-
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-[11px] font-bold tracking-[0.2em] text-white uppercase bg-white/10 rounded-full border border-white/30 whitespace-nowrap"
-          >
-            Let's Scale Intelligence
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold text-brand-950 tracking-tight leading-[1.1] mb-6"
-          >
-            Ready to Build a Data-Driven <br />
-            Organization?
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-white font-medium mb-12"
-          >
-            Don't let data sit idle. Turn it into your biggest competitive
-            advantage.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <button className="px-8 py-4 bg-white text-[#f17e21] font-bold rounded-xl hover:bg-white/90 transition-all flex items-center justify-center gap-2 active:scale-95 group">
-              Book a Free 30-Min Strategy Call{" "}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-4 bg-transparent border border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2 active:scale-95">
-              Request a Demo of Capabilities{" "}
-              <LayoutDashboard className="w-5 h-5" />
-            </button>
-          </motion.div>
-        </div>
-      </section>
+      <PreFooterCTA />
+     
     </div>
   );
 };

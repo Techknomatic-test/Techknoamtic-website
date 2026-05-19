@@ -699,7 +699,7 @@ const SolutionsSection = () => {
             transition={{ duration: 0.8 }}
             className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight"
           >
-            Built for Your Industry.
+            Built For Your Industry.
             <br />
             Not Just Your Technology Stack.
           </motion.h2>
