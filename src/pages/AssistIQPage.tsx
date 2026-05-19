@@ -177,7 +177,7 @@ const IndustryCard = ({
 export const AssistIQPage = () => {
   const capabilities = [
     {
-      title: "Capability 1, AI-Powered Customer Query Handling",
+      title: "AI-Powered Customer Query Handling",
       outcome:
         "Autonomous handling of routine and high-volume customer interactions, instantly, 24×7.",
       items: [
@@ -191,7 +191,7 @@ export const AssistIQPage = () => {
       icon: Sparkles,
     },
     {
-      title: "Capability 2, Intelligent FAQ Automation",
+      title: "Intelligent FAQ Automation",
       outcome:
         "From static FAQ pages to dynamic conversational self-service.",
       items: [
@@ -205,7 +205,7 @@ export const AssistIQPage = () => {
       icon: MessageSquare,
     },
     {
-      title: "Capability 3, AI Avatars & Human-Like Interactions",
+      title: "AI Avatars & Human-Like Interactions",
       outcome:
         "Engaging, brand-aligned digital assistants for customer-facing experiences.",
       items: [
@@ -219,7 +219,7 @@ export const AssistIQPage = () => {
       icon: Video,
     },
     {
-      title: "Capability 4, Workflow Automation Through Conversations",
+      title: "Workflow Automation Through Conversations",
       outcome:
         "Beyond answers, the AI agent executes real business workflows.",
       items: [
@@ -233,7 +233,7 @@ export const AssistIQPage = () => {
       icon: Workflow,
     },
     {
-      title: "Capability 5, Multi-Channel Customer Engagement",
+      title: "Multi-Channel Customer Engagement",
       outcome:
         "One AI agent. Every customer channel. Consistent experience.",
       items: [
@@ -247,7 +247,7 @@ export const AssistIQPage = () => {
       icon: Globe,
     },
     {
-      title: "Capability 6, AI Knowledge Intelligence",
+      title: "AI Knowledge Intelligence",
       outcome:
         "Accurate answers grounded in enterprise knowledge, not generic AI.",
       items: [
@@ -261,7 +261,7 @@ export const AssistIQPage = () => {
       icon: Brain,
     },
     {
-      title: "Capability 7, Intelligent Escalation Framework",
+      title: "Intelligent Escalation Framework",
       outcome:
         "AI knows what it can answer, and exactly when to hand off to a human.",
       items: [
@@ -275,7 +275,7 @@ export const AssistIQPage = () => {
       icon: ArrowRightLeft,
     },
     {
-      title: "Capability 8, Analytics & Conversation Insights",
+      title: "Analytics & Conversation Insights",
       outcome:
         "Every conversation becomes operational and customer intelligence.",
       items: [
@@ -543,14 +543,7 @@ export const AssistIQPage = () => {
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
-            >
-              The Modern Customer Service Challenge
-            </motion.h2>
+           
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -631,7 +624,7 @@ export const AssistIQPage = () => {
               Impact Framing
             </h3>
             <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
-              The result: poor customer satisfaction, reduced operational efficiency, higher support
+              The result- poor customer satisfaction, reduced operational efficiency, higher support
               overheads, lost engagement and conversion opportunities, and a widening gap between the
               experience customers expect and the support model built to deliver it.
             </p>
@@ -658,7 +651,7 @@ export const AssistIQPage = () => {
               transition={{ delay: 0.1 }}
               className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
-              From Manual Customer Support → Intelligent Autonomous Self-Service. Instant. Conversational.
+              From Manual Customer Support to Intelligent Autonomous Self-Service. Instant. Conversational.
               Scalable. Safe
             </motion.h3>
 
