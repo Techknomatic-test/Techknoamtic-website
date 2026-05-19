@@ -100,7 +100,6 @@ const UseCaseCard = ({
 
     <div className="mb-10 flex-1 space-y-6">
       <div>
-        <h4 className="mb-3 text-[11px] font-black uppercase tracking-widest text-accent">Crux</h4>
         <p className="text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">{crux}</p>
       </div>
       <div>
@@ -162,7 +161,7 @@ const IndustryCard = ({
 export const DataGuardPage = () => {
   const capabilities = [
     {
-      title: "Capability 1, Universal Data Source Connectivity",
+      title: "Universal Data Source Connectivity",
       outcome: "Outcome: Connect every enterprise data source, without heavy ingestion projects.",
       items: [
         "Plug-and-play connectivity to cloud, on-premise, and hybrid systems",
@@ -175,7 +174,7 @@ export const DataGuardPage = () => {
       icon: Network,
     },
     {
-      title: "Capability 2, Real-Time Data Quality Observability",
+      title: "Real-Time Data Quality Observability",
       outcome: "Outcome: Complete visibility into data quality across tables, columns, and business rules.",
       items: [
         "Null value analysis and completeness validation",
@@ -188,7 +187,7 @@ export const DataGuardPage = () => {
       icon: Eye,
     },
     {
-      title: "Capability 3, AI-Powered Recommendations Engine",
+      title: "AI-Powered Recommendations Engine",
       outcome: "Outcome: Beyond alerts, intelligent recommendations and guided remediation actions.",
       items: [
         "AI detection of anomalies, null spikes, and duplicate keys",
@@ -201,7 +200,7 @@ export const DataGuardPage = () => {
       icon: Cpu,
     },
     {
-      title: "Capability 4, Autonomous Data Agent",
+      title: "Autonomous Data Agent",
       outcome: "Outcome: Natural-language data operations, from manual SQL to AI-assisted diagnostics.",
       items: [
         "Conversational interface for data quality and governance",
@@ -214,7 +213,7 @@ export const DataGuardPage = () => {
       icon: Sparkles,
     },
     {
-      title: "Capability 5, Business Rules Validation Framework",
+      title: "Business Rules Validation Framework",
       outcome: "Outcome: Embed business logic directly into data validation workflows.",
       items: [
         "SQL-based and business-logic validation expressions",
@@ -227,7 +226,7 @@ export const DataGuardPage = () => {
       icon: ClipboardCheck,
     },
     {
-      title: "Capability 6, Integrated Data Governance Layer",
+      title: "Integrated Data Governance Layer",
       outcome: "Outcome: Operational governance, not static documentation.",
       items: [
         "PII detection and automatic classification",
@@ -240,7 +239,7 @@ export const DataGuardPage = () => {
       icon: ShieldCheck,
     },
     {
-      title: "Capability 7, Built-In Query & Exploration Workspace",
+      title: "Built-In Query & Exploration Workspace",
       outcome: "Outcome: Debug, validate, and explore, without leaving the platform.",
       items: [
         "Read-only SQL interface for safe exploration",
@@ -460,14 +459,7 @@ export const DataGuardPage = () => {
       <section className="border-b border-slate-100 bg-white px-6 py-[60px] text-left dark:border-white/5 dark:bg-brand-950">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
-            >
-              The Enterprise Data Reliability Challenge
-            </motion.h2>
+           
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -531,7 +523,7 @@ export const DataGuardPage = () => {
                     className="flex items-start gap-3"
                   >
                     <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                    <p className="text-[17px] font-bold leading-tight text-brand-950 dark:text-white">{item}</p>
+                    <p className="text-[17px] leading-tight text-brand-950 dark:text-white">{item}</p>
                   </motion.li>
                 ))}
               </ul>
@@ -591,7 +583,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8 text-3xl font-medium uppercase tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
             >
               Industries We Serve
             </motion.h2>
@@ -736,7 +728,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8 text-3xl font-medium uppercase tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
             >
               Use Cases
             </motion.h2>
