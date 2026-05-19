@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+﻿import { motion } from "motion/react";
 import {
   Users,
   TrendingUp,
@@ -14,6 +14,10 @@ import {
   Star,
   CheckCircle2,
   Mail,
+  Search,
+  MessageSquare,
+  Terminal,
+  Heart,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -101,22 +105,27 @@ export const CareersPage = () => {
     {
       title: "Application Review",
       desc: "Our talent team reviews your profile for alignment with our mission.",
+      icon: Search,
     },
     {
       title: "Initial Discussion",
       desc: "A brief conversation to understand your goals and career trajectory.",
+      icon: MessageSquare,
     },
     {
       title: "Technical / Case Round",
       desc: "Showcase your problem-solving abilities and domain expertise.",
+      icon: Terminal,
     },
     {
       title: "Final Fitment Discussion",
       desc: "Meet the leadership team to discuss values and long-term vision.",
+      icon: Users,
     },
     {
       title: "Offer",
       desc: "Welcome to the team where your exponential growth begins.",
+      icon: Heart,
     },
   ];
 
@@ -212,7 +221,7 @@ export const CareersPage = () => {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="text-xl md:text-2xl text-white/90 font-medium max-w-3xl leading-relaxed"
               >
-                At Techknomatic, you won’t just build dashboards, you’ll solve
+                At Techknomatic, you wonâ€™t just build dashboards, youâ€™ll solve
                 real business problems for enterprises across industries.
               </motion.p>
 
@@ -235,12 +244,12 @@ export const CareersPage = () => {
             >
               <a href="#roles">
                 <button className="px-10 py-5 bg-accent text-white font-black tracking-widest rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 uppercase text-[12px] shadow-2xl shadow-accent/20 active:scale-95 group">
-                  🚀 Explore Open Roles
+                  ðŸš€ Explore Open Roles
                 </button>
               </a>
               <Link to="/contact">
                 <button className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black tracking-widest rounded-2xl hover:bg-white/10 transition-all flex items-center gap-3 uppercase text-[12px] active:scale-95 group">
-                  📩 Apply Now
+                  ðŸ“© Apply Now
                 </button>
               </Link>
             </motion.div>
@@ -372,7 +381,7 @@ export const CareersPage = () => {
               Choose Your <span className="text-accent">Growth Path.</span>
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
-              We don’t just hire roles, we build careers with structured
+              We donâ€™t just hire roles, we build careers with structured
               progression.
             </p>
           </div>
@@ -380,14 +389,14 @@ export const CareersPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                level: "Freshers (0–2 Years)",
+                level: "Freshers (0â€“2 Years)",
                 roles: ["BI Developer", "Data Analyst", "Dashboard Engineer"],
                 icon: Zap,
                 image:
                   "https://images.unsplash.com/photo-1541872703-74c5e44368f1?auto=format&fit=crop&w=600&q=80",
               },
               {
-                level: "Mid-Level (2–5 Years)",
+                level: "Mid-Level (2â€“5 Years)",
                 roles: ["Senior Analyst", "BI Consultant", "Data Engineer"],
                 icon: Briefcase,
                 image:
@@ -583,7 +592,7 @@ export const CareersPage = () => {
               <Mail className="w-8 h-8" />
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight">
-              Great Talent Doesn’t Wait.
+              Great Talent Doesnâ€™t Wait.
             </h3>
             <p className="text-lg text-slate-500 dark:text-slate-400 font-medium mb-10 leading-relaxed">
               If you believe you can create impact at Techknomatic, send your
@@ -612,10 +621,12 @@ export const CareersPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {hiringSteps.map((step, i) => (
-              <div key={i} className="relative flex-col h-full">
+              <div key={i} className="relative flex flex-col h-full">
                 <div className="bg-slate-50 dark:bg-brand-900 border border-slate-100 dark:border-white/5 p-8 rounded-[2rem] flex flex-col h-full hover:shadow-xl transition-shadow relative z-10">
-                  <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center font-bold text-xl mb-6">
-                    {i + 1}
+                  <div className="mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg shadow-accent/20">
+                      <step.icon className="w-7 h-7" />
+                    </div>
                   </div>
                   <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-4">
                     {step.title}
@@ -649,7 +660,7 @@ export const CareersPage = () => {
           </h2>
           <Link to="/contact">
             <button className="px-10 py-5 bg-white text-accent rounded-full font-black tracking-widest uppercase text-[12px] shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2 md:mx-auto">
-              🚀 Apply Now{" "}
+              ðŸš€ Apply Now{" "}
               <ArrowRight className="w-4 h-4 border border-accent rounded-full p-[2px]" />
             </button>
           </Link>
@@ -659,7 +670,7 @@ export const CareersPage = () => {
       {/* Footer info */}
       <footer className="py-12 bg-white dark:bg-brand-950 border-t border-slate-50 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center text-[11px] font-black uppercase tracking-widest text-slate-400">
-          <p>© 2024 Techknomatic Talent. All rights reserved.</p>
+          <p>Â© 2024 Techknomatic Talent. All rights reserved.</p>
           <div className="flex gap-8">
             <Link to="/about" className="hover:text-accent">
               Company
