@@ -244,7 +244,7 @@ export const AboutUsPage = () => {
 
     let animationId: number;
     let scrollAmount = 0;
-    const speed = 0.5;
+    const speed = 3;
 
     const scroll = () => {
       scrollAmount += speed;
