@@ -268,7 +268,7 @@ export const BIServicesPage = () => {
 
   const offerings = [
     {
-      title: "Offering 1, BI Strategy & Roadmap",
+      title: "BI Strategy & Roadmap",
       description:
         "Define the analytics future state, platform, data, governance, and adoption, before writing the first dashboard.",
       items: [
@@ -280,7 +280,7 @@ export const BIServicesPage = () => {
       ],
     },
     {
-      title: "Offering 2, Dashboard Design & Development",
+      title: " Dashboard Design & Development",
       description:
         "Design-led dashboards engineered for executive clarity, operational decision speed, and analyst depth.",
       items: [
@@ -293,7 +293,7 @@ export const BIServicesPage = () => {
       ],
     },
     {
-      title: "Offering 3, BI Governance & Centre of Excellence",
+      title: "BI Governance & Centre of Excellence",
       description:
         "Defensible governance that scales analytics without creating bottlenecks, trust as a delivery outcome.",
       items: [
@@ -306,7 +306,7 @@ export const BIServicesPage = () => {
       ],
     },
     {
-      title: "Offering 4, Self-Service & Embedded Analytics",
+      title: "Self-Service & Embedded Analytics",
       description:
         "Extend BI beyond the BI team, with self-service for business users and embedded analytics.",
       items: [
@@ -319,7 +319,7 @@ export const BIServicesPage = () => {
       ],
     },
     {
-      title: "Offering 5, BI Modernization & Migration",
+      title: "BI Modernization & Migration",
       description:
         "Move from legacy BI estates to modern cloud analytics, without losing adoption or metadata.",
       items: [
@@ -386,37 +386,37 @@ export const BIServicesPage = () => {
 
   const differentiators = [
     {
-      title: "1. Design-Led Development",
+      title: "Design-Led Development",
       description:
         "We design for the audience, the decision, and the moment of use. Executives, operators, and analysts each get the right density.",
       image: biImg("Design-Led Development.jpg"),
     },
     {
-      title: "2. BI + Data Engineering",
+      title: "BI + Data Engineering",
       description:
         "Backed by deep Data Engineering, the pipeline behind every dashboard is as engineered as the dashboard itself.",
       image: biImg("bi-data-engineering.jpg"),
     },
     {
-      title: "3. Multi-Platform Certified",
+      title: "Multi-Platform Certified",
       description:
         "Certified depth in Power BI, Tableau, and Qlik. We recommend the platform that fits your stack, skills, and scale.",
       image: biImg("multiplatform.jpg"),
     },
     {
-      title: "4. Adoption-First Delivery",
+      title: "Adoption-First Delivery",
       description:
         "Structured adoption plans included, user enablement and BI CoE models, because success is usage.",
       image: biImg("Adoption-First Delivery.jpg"),
     },
     {
-      title: "5. Industry-Depth Practice",
+      title: "Industry-Depth Practice",
       description:
         "Deep experience in Insurance, ITSM, Energy, Manufacturing, and Retail, we bring domain context, not just tools.",
       image: biImg("Industry-Depth Practice.jpg"),
     },
     {
-      title: "6. Governance & Trust",
+      title: "Governance & Trust",
       description:
         "RLS, certified datasets, and audit lineage built into every delivery, scale without liability.",
       image: biImg("governance-and-trust.jpg"),
@@ -520,14 +520,7 @@ export const BIServicesPage = () => {
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-7xl space-y-8 text-left">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight"
-            >
-              From Reports to Real Decisions
-            </motion.h2>
+           
             <motion.div className="space-y-8 text-left">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -748,4 +741,5 @@ export const BIServicesPage = () => {
     </div>
   );
 };
+
 
