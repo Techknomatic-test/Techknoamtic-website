@@ -102,7 +102,6 @@ const UseCaseCard = ({
 
     <div className="space-y-6 mb-10 flex-1">
       <div>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Crux</h4>
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
@@ -170,7 +169,7 @@ const IndustryCard = ({
 export const FreightIQPage = () => {
   const capabilities = [
     {
-      title: "Capability 1, Real-Time Carrier API Integration",
+      title: "Real-Time Carrier API Integration",
       outcome: "Outcome: Live carrier rates and capacity, directly in your quoting workflow.",
       items: [
         "Real-time carrier rate retrieval via API",
@@ -183,7 +182,7 @@ export const FreightIQPage = () => {
       icon: Network,
     },
     {
-      title: "Capability 2, AI-Powered Dynamic Pricing Engine",
+      title: "AI-Powered Dynamic Pricing Engine",
       outcome: "Outcome: Market-aware pricing that protects margin and stays competitive.",
       items: [
         "Demand fluctuation modeling",
@@ -196,7 +195,7 @@ export const FreightIQPage = () => {
       icon: Cpu,
     },
     {
-      title: "Capability 3, Multi-Modal Freight Support",
+      title: "Multi-Modal Freight Support",
       outcome: "Outcome: Unified freight pricing across every shipment type and transport mode.",
       items: [
         "LCL (Less than Container Load) pricing",
@@ -209,7 +208,7 @@ export const FreightIQPage = () => {
       icon: Layers,
     },
     {
-      title: "Capability 4, Instant Quote Generation",
+      title: "Instant Quote Generation",
       outcome: "Outcome: Customer-ready freight quotations in seconds, not hours.",
       items: [
         "Automated rate calculation across carriers",
@@ -222,7 +221,7 @@ export const FreightIQPage = () => {
       icon: Zap,
     },
     {
-      title: "Capability 5, Historical Freight Analytics",
+      title: "Historical Freight Analytics",
       outcome: "Outcome: Turn historical pricing into forward-looking decisions.",
       items: [
         "Historical rate trend analysis",
@@ -235,7 +234,7 @@ export const FreightIQPage = () => {
       icon: BarChart3,
     },
     {
-      title: "Capability 6, Intelligent Rate Comparison",
+      title: "Intelligent Rate Comparison",
       outcome: "Outcome: The right rate, every time, across cost, speed, and margin.",
       items: [
         "Best-cost option identification",
@@ -458,14 +457,7 @@ export const FreightIQPage = () => {
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
-            >
-              The Freight Pricing Challenge
-            </motion.h2>
+           
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -529,7 +521,7 @@ export const FreightIQPage = () => {
                     className="flex items-start gap-3 group"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                    <p className="text-[17px] font-bold text-brand-950 dark:text-white leading-tight">{item}</p>
+                    <p className="text-[17px] text-brand-950 dark:text-white leading-tight">{item}</p>
                   </motion.li>
                 ))}
               </ul>
@@ -557,7 +549,7 @@ export const FreightIQPage = () => {
               transition={{ delay: 0.1 }}
               className="text-xl md:text-2xl font-bold text-brand-950 dark:text-white mb-6 leading-tight"
             >
-              From manual freight pricing → intelligent real-time rate optimization. Quote faster. Optimize better.
+              From manual freight pricing to intelligent real-time rate optimization. Quote faster. Optimize better.
               Scale smarter.
             </motion.h3>
             <motion.p
@@ -590,7 +582,7 @@ export const FreightIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 uppercase"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 "
             >
               Industries We Serve
             </motion.h2>
@@ -731,7 +723,7 @@ export const FreightIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 uppercase"
+              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 "
             >
               Use Cases
             </motion.h2>
