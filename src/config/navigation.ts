@@ -70,9 +70,7 @@ export const navData: SiteNavData = {
     { label: 'Careers', href: '/careers', icon: Activity },
   ],
   resources: [
-    { label: 'Blogs', href: '#', icon: Layout },
     { label: 'FAQs', href: '/faq', icon: Sparkles },
     { label: 'Customer Stories', href: '#', icon: Users },
-    { label: 'Brand Guidelines', href: '/brand', icon: Palette },
   ],
 };
