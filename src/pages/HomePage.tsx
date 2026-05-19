@@ -24,6 +24,7 @@ import {
   ShieldCheck,
   Zap,
   ArrowRight,
+  ArrowLeft,
   LineChart,
   Target,
   LayoutDashboard,
@@ -759,7 +760,14 @@ const AcceleratorsSection = () => {
     offset: ["start end", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
-  const accelerators = [
+  const row1 = [
+    {
+      title: "InsightSM, AI-Powered ITSM Analytics & Operations Intelligence Platform",
+      desc: "Unifies operational visibility across enterprise ITSM tools through standardized KPIs, pre-built dashboards, and real-time analytics — accelerating IT operations intelligence and SLA governance",
+      cta: "Explore InsightSM",
+      icon: Layout,
+      href: "/insight-sm",
+    },
     {
       title: "DataPulse IQ, AI-Powered Data Reliability Platform",
       desc: "Monitors, validates, governs, and auto-remediates data issues across the enterprise stack, cuts data issue resolution time by 30–50%.",
@@ -768,32 +776,110 @@ const AcceleratorsSection = () => {
       href: "/dataguard",
     },
     {
-      title: "CallOps AI, AI Voice Agents for Calling Operations",
-      desc: "Human-like voice AI for automated inbound/outbound calls, integrates with your business logic for end-to-end call workflow automation.",
-      cta: "Explore CallOps AI",
-      icon: PhoneCall,
-      href: "/callops-ai",
+      title: "ParseIQ, AI-Powered Document Intelligence Platform",
+      desc: "Automates OCR, document understanding, and structured data extraction using AI and LLMs — transforming complex enterprise documents into actionable, system-ready intelligence",
+      cta: "Explore ParseIQ",
+      icon: Search,
+      href: "/parse-iq",
     },
     {
+      title: "FreightIQ, AI-Powered Dynamic Freight Pricing Platform",
+      desc: "Optimizes freight quotations using AI-driven dynamic pricing, real-time carrier integrations, and multi-modal rate intelligence —enabling faster quotes and improved logistics profitability",
+      cta: "Explore FreightIQ",
+      icon: Plane,
+      href: "/freight-iq",
+    },
+  ];
+
+  const row2 = [
+    {
       title: "AssistIQ, AI Agents for Intelligent Self-Service",
-      desc: "Photorealistic avatar + AI support agents for 24/7 query resolution, deflects L1 support load with conversational self-service.",
+      desc: "Photorealistic avatar + AI support agents for 24/7 query resolution, deflects L1 support load with conversational self-service",
       cta: "Explore AssistIQ",
       icon: Sparkles,
       href: "/assist-iq",
     },
     {
+      title: "TicketIQ, AI-Powered Autonomous IT Support Platform",
+      desc: "Automates ticket triaging, resolutions, and IT service workflows using Agentic AI, enabling near zero-touch L1 support operations while reducing resolution time and operational overhead",
+      cta: "Explore TicketIQ",
+      icon: Sparkles,
+      href: "/agentic-ai-itsm",
+    },
+    {
+      title: "CallOps AI, AI Voice Agents for Calling Operations",
+      desc: "Human-like voice AI for automated inbound/outbound calls, integrates with your business logic for end-to-end call workflow automation",
+      cta: "Explore CallOps",
+      icon: PhoneCall,
+      href: "/call-ops-ai",
+    },
+    {
       title: "CXO Nexus, Strategic Conversational AI",
-      desc: "Conversational intelligence layer that bridges enterprise data and executive decisioning, natural-language access to KPIs and operational signals for leadership.",
-      cta: "Explore CXO Nexus",
+      desc: "Conversational intelligence layer that bridges enterprise data and executive decisioning, natural-language access to KPIs and operational signals for leadership",
+      cta: "Explore CXONexus",
       icon: LayoutDashboard,
       href: "/cxo-nexus",
     },
   ];
+
+  const allAccelerators = [...row1, ...row2];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const totalSlides = allAccelerators.length - (isMobile ? 1 : 3);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev >= totalSlides ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isPaused, totalSlides]);
+
+  const AcceleratorCard = ({
+    acc,
+  }: {
+    acc: (typeof allAccelerators)[number];
+  }) => (
+    <div className="w-full bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 rounded-[1.5rem] p-6 h-full flex flex-col relative overflow-hidden group hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500">
+      <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none">
+        <acc.icon className="w-32 h-32 text-brand-950 dark:text-white" />
+      </div>
+      <div className="relative z-10 flex-1">
+        <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white mb-6 shadow-lg">
+          <acc.icon className="w-5 h-5" />
+        </div>
+        <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
+          {acc.title}
+        </h3>
+        <p className="text-slate-500 dark:text-slate-400 text-[13px] font-medium leading-relaxed mb-6 flex-1">
+          {acc.desc}
+        </p>
+      </div>
+      <Link
+        to={acc.href}
+        className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.2em] text-accent hover:text-accent transition-colors group/btn"
+      >
+        {acc.cta}
+        <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+      </Link>
+    </div>
+  );
+
   return (
     <section
       id={ACCELERATORS_SECTION_ID}
       ref={sectionRef}
-      className="py-[40px] px-6 relative overflow-hidden bg-brand-950"
+      className="py-[80px] relative overflow-hidden bg-brand-950"
     >
       <div className="absolute inset-0 z-0 scale-110">
         <motion.div style={{ y }} className="w-full h-full">
@@ -805,59 +891,84 @@ const AcceleratorsSection = () => {
           />
         </motion.div>
       </div>
-      <div className="absolute inset-0 z-[1] bg-black/40 pointer-events-none" />
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="mb-12">
+      <div className="absolute inset-0 z-[1] bg-black/60 pointer-events-none" />
+      <div className="max-w-7xl mx-auto relative z-10 px-6">
+        <div className="mb-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6 leading-tight">
+            <h2 className="text-3xl md:text-6xl font-medium text-white tracking-tight mb-6 leading-tight">
               Go Faster With Our Accelerators.
             </h2>
             <div className="w-12 h-1 bg-accent mb-6" />
-            <p className="text-base text-slate-300 font-medium leading-relaxed max-w-2xl">
-              Accelerators are a strong differentiator, own product thinking
-              from a services company.
+            <p className="text-lg text-slate-300 font-medium leading-relaxed max-w-2xl">
+              Accelerate your engineering journey with hyper-specialized IP and
+              pre-built intelligence components.
             </p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {accelerators.map((acc, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 rounded-[1.5rem] p-6 h-full flex flex-col relative overflow-hidden group hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500"
-            >
-              <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none">
-                <acc.icon className="w-32 h-32 text-brand-950 dark:text-white" />
+      </div>
+
+      <div
+        className="relative z-10 max-w-7xl mx-auto px-6"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="overflow-hidden">
+          <motion.div
+            animate={{
+              x: isMobile
+                ? `-${activeIndex * 100}%`
+                : `-${activeIndex * 33.333}%`,
+            }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            className="flex items-stretch"
+          >
+            {allAccelerators.map((acc, i) => (
+              <div key={i} className="w-full md:w-1/3 shrink-0 px-3">
+                <AcceleratorCard acc={acc} />
               </div>
-              <div className="relative z-10 flex-1">
-                <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white mb-6 shadow-lg">
-                  <acc.icon className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
-                  {acc.title}
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 text-[13px] font-medium leading-relaxed mb-6 flex-1">
-                  {acc.desc}
-                </p>
-              </div>
-              <Link
-                to={acc.href}
-                className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.2em] text-accent hover:text-accent transition-colors group/btn"
-              >
-                {acc.cta}
-                <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-          ))}
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="mt-16 flex items-center justify-center gap-6">
+          <button
+            type="button"
+            onClick={() => setActiveIndex((prev) => Math.max(0, prev - 1))}
+            disabled={activeIndex === 0}
+            className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-accent disabled:opacity-20 disabled:cursor-not-allowed transition-all active:scale-95 group"
+          >
+            <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+          </button>
+
+          <div className="flex gap-2">
+            {[...Array(totalSlides + 1)].map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveIndex(i)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activeIndex === i ? "w-8 bg-accent" : "w-1.5 bg-white/30"
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() =>
+              setActiveIndex((prev) => Math.min(totalSlides, prev + 1))
+            }
+            disabled={activeIndex >= totalSlides}
+            className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-accent disabled:opacity-20 disabled:cursor-not-allowed transition-all active:scale-95 group"
+          >
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </div>
     </section>
