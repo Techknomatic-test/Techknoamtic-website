@@ -1,15 +1,12 @@
 import { motion, AnimatePresence } from "motion/react";
 import {
-  Users,
   Lightbulb,
   MousePointer2,
   Share2,
   CheckCircle2,
   ArrowRight,
   Sparkles,
-  Heart,
   ShieldCheck,
-  Zap,
   LayoutDashboard,
   ChevronDown,
   ChevronUp,
@@ -17,6 +14,10 @@ import {
   Database,
   BarChart3,
   Globe,
+  BookOpen,
+  UserCheck,
+  Target,
+  Scale,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
@@ -263,16 +264,13 @@ export const AboutUsPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 w-full">
             {[
-              {
-                label: "Integrity",
-                icon: ShieldCheck,
-                img: "Images/23498.jpg",
-              },
-              { label: "Ethics", icon: Heart, img: "Images/291956.jpg" },
-              { label: "Inclusion", icon: Users, img: "Images/2988.jpg" },
-              { label: "Innovation", icon: Zap, img: "Images/33931.jpg" },
+              { label: "Knowledge Sharing", icon: BookOpen },
+              { label: "Accountability", icon: UserCheck },
+              { label: "Responsibility", icon: Target },
+              { label: "Integrity", icon: ShieldCheck },
+              { label: "Ethics", icon: Scale },
             ].map((v, i) => (
               <motion.div
                 key={i}
@@ -280,24 +278,14 @@ export const AboutUsPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative overflow-hidden rounded-3xl aspect-[4/5] border border-slate-100 dark:border-white/5"
+                className="bg-slate-50 dark:bg-white/5 p-8 rounded-[2rem] border border-slate-100 dark:border-white/5 flex flex-col items-center text-center group hover:bg-accent transition-all duration-500"
               >
-                <img
-                  src={v.img}
-                  alt={v.label}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/20 to-transparent flex flex-col justify-end p-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white">
-                      <v.icon className="w-5 h-5" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white uppercase tracking-widest">
-                      {v.label}
-                    </h4>
-                  </div>
+                <div className="w-14 h-14 rounded-2xl bg-accent/10 dark:bg-accent/20 flex items-center justify-center text-accent mb-6 group-hover:bg-white group-hover:text-accent transition-colors">
+                  <v.icon className="w-7 h-7" />
                 </div>
+                <h4 className="text-lg font-bold text-brand-950 dark:text-white tracking-tight group-hover:text-white transition-colors">
+                  {v.label}
+                </h4>
               </motion.div>
             ))}
           </div>
