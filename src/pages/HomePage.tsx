@@ -729,7 +729,7 @@ const SolutionsSection = () => {
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
             <h3 className="text-4xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight max-w-xl leading-tight">
               Don't see your industry? <br />
-              We may know your world better than this page lets on. Reach out.
+              There's a good chance we've been there — just ask.
             </h3>
             <Link
               to={contactFormLinkTo}
