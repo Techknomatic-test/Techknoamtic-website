@@ -21,6 +21,15 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const CAREERS_BASE = "Images/Careers";
+
+const careersImg = (...segments: string[]) =>
+  `${import.meta.env.BASE_URL}${[...CAREERS_BASE.split("/"), ...segments]
+    .map(encodeURIComponent)
+    .join("/")}`;
+
+const CAREERS_HERO = careersImg("herobanner.jpg");
+
 const JobCard = ({ id, title, exp, location, skills, description }: any) => (
   <motion.div
     whileHover={{ y: -5 }}
@@ -164,7 +173,13 @@ export const CareersPage = () => {
       {/* 1. Hero Section - Styled as per Reference Attachment */}
       <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#050a14] opacity-100" />
+          <img
+            src={CAREERS_HERO}
+            alt="Careers at Techknomatic"
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-[#050a14]/85" />
           {/* Enhanced Data Particle Background Effect */}
           <div
             className="absolute inset-0 opacity-[0.12]"
@@ -221,7 +236,7 @@ export const CareersPage = () => {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="text-xl md:text-2xl text-white/90 font-medium max-w-3xl leading-relaxed"
               >
-                At Techknomatic, you wonâ€™t just build dashboards, youâ€™ll solve
+                At Techknomatic, you won't just build dashboards, you'll solve
                 real business problems for enterprises across industries.
               </motion.p>
 
@@ -244,12 +259,12 @@ export const CareersPage = () => {
             >
               <a href="#roles">
                 <button className="px-10 py-5 bg-accent text-white font-black tracking-widest rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 uppercase text-[12px] shadow-2xl shadow-accent/20 active:scale-95 group">
-                  ðŸš€ Explore Open Roles
+                   Explore Open Roles
                 </button>
               </a>
               <Link to="/contact">
                 <button className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black tracking-widest rounded-2xl hover:bg-white/10 transition-all flex items-center gap-3 uppercase text-[12px] active:scale-95 group">
-                  ðŸ“© Apply Now
+                   Apply Now
                 </button>
               </Link>
             </motion.div>
@@ -277,42 +292,60 @@ export const CareersPage = () => {
               title="Real Consulting Exposure"
               desc="Work directly with business stakeholders, driving strategy rather than just backend execution."
               delay={0.1}
-              image="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80"
+              image={careersImg(
+                "Choose Techknomatic",
+                "Real Consulting Exposure.jpg",
+              )}
             />
             <WhyTechkoCard
               icon={TrendingUp}
               title="Fast Career Growth"
               desc="Accelerated learning paths across BI, Data Engineering & AI foundations for rapid progression."
               delay={0.2}
-              image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+              image={careersImg(
+                "Choose Techknomatic",
+                "Fast Career Growth.jpg",
+              )}
             />
             <WhyTechkoCard
               icon={Globe}
               title="Global Client Exposure"
               desc="Deliver high-impact projects across India, Middle East, USA, and other global markets."
               delay={0.3}
-              image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
+              image={careersImg(
+                "Choose Techknomatic",
+                "Global Client Exposure.jpg",
+              )}
             />
             <WhyTechkoCard
               icon={Zap}
               title="Ownership from Day One"
               desc="Solve real business problems with full accountability, not just closing development tickets."
               delay={0.4}
-              image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
+              image={careersImg(
+                "Choose Techknomatic",
+                "Ownership from Day One.jpg",
+              )}
             />
             <WhyTechkoCard
               icon={Brain}
               title="Skill Compounding"
               desc="Learn the intersection of technical tools, business context, and visual storytelling."
               delay={0.5}
-              image="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80"
+              image={careersImg(
+                "Choose Techknomatic",
+                "Skill Compounding.jpg",
+              )}
             />
             <WhyTechkoCard
               icon={Star}
               title="Elite Peer Group"
               desc="Collaborate with some of the sharpest minds in the data and analytics ecosystem."
               delay={0.6}
-              image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+              image={careersImg(
+                "Choose Techknomatic",
+                "Elite Peer Group.jpg",
+              )}
             />
           </div>
         </div>
@@ -389,18 +422,16 @@ export const CareersPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                level: "Freshers (0â€“2 Years)",
+                level: "Freshers (0-2 Years)",
                 roles: ["BI Developer", "Data Analyst", "Dashboard Engineer"],
                 icon: Zap,
-                image:
-                  "https://images.unsplash.com/photo-1541872703-74c5e44368f1?auto=format&fit=crop&w=600&q=80",
+                image: careersImg("Choose Your Growth Path", "Freshers.jpg"),
               },
               {
-                level: "Mid-Level (2â€“5 Years)",
+                level: "Mid-Level (2-5 Years)",
                 roles: ["Senior Analyst", "BI Consultant", "Data Engineer"],
                 icon: Briefcase,
-                image:
-                  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
+                image: careersImg("Choose Your Growth Path", "Mid-Level.jpg"),
               },
               {
                 level: "Experienced (5+ Years)",
@@ -410,8 +441,7 @@ export const CareersPage = () => {
                   "Consulting Manager",
                 ],
                 icon: Users,
-                image:
-                  "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80",
+                image: careersImg("Choose Techknomatic", "Experienced.jpg"),
               },
             ].map((track, i) => (
               <motion.div
@@ -469,21 +499,25 @@ export const CareersPage = () => {
                 title: "Structured Learning",
                 desc: "Defined paths in BI, Engineering & AI.",
                 icon: Brain,
+                image: careersImg("Your Growth", "Structured Learning.jpg"),
               },
               {
                 title: "Hands-on Mastery",
                 desc: "Project exposure from Day 1.",
                 icon: Target,
+                image: careersImg("Your Growth", "Hands-on Mastery.jpg"),
               },
               {
                 title: "Mentorship",
                 desc: "Learn from senior consultants.",
                 icon: Users,
+                image: careersImg("Your Growth", "Mentorship.jpg"),
               },
               {
                 title: "Certification",
                 desc: "Full support & learning reimbursements.",
                 icon: Star,
+                image: careersImg("Your Growth", "Certification.jpg"),
               },
             ].map((item, i) => (
               <motion.div
@@ -492,17 +526,27 @@ export const CareersPage = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white dark:bg-brand-950 rounded-[2.5rem] p-10 flex flex-col items-start border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-xl transition-all group"
+                className="bg-white dark:bg-brand-950 rounded-[2.5rem] overflow-hidden border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-xl transition-all group flex flex-col"
               >
-                <div className="w-12 h-12 rounded-full border border-accent/20 bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
-                  <item.icon className="w-5 h-5" />
+                <div className="relative h-40 w-full bg-slate-100 dark:bg-white/5 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <motion.div className="absolute bottom-4 left-4 w-10 h-10 rounded-full border border-accent/20 bg-white/90 dark:bg-brand-900/90 flex items-center justify-center text-accent shadow-sm">
+                    <item.icon className="w-5 h-5" />
+                  </motion.div>
                 </div>
-                <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-3">
-                  {item.title}
-                </h4>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                  {item.desc}
-                </p>
+                <div className="p-8 flex flex-col items-start flex-1">
+                  <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-3">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -592,7 +636,7 @@ export const CareersPage = () => {
               <Mail className="w-8 h-8" />
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight">
-              Great Talent Doesnâ€™t Wait.
+              Great Talent Doesn't Wait.
             </h3>
             <p className="text-lg text-slate-500 dark:text-slate-400 font-medium mb-10 leading-relaxed">
               If you believe you can create impact at Techknomatic, send your
@@ -668,22 +712,7 @@ export const CareersPage = () => {
       </section>
 
       {/* Footer info */}
-      <footer className="py-12 bg-white dark:bg-brand-950 border-t border-slate-50 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center text-[11px] font-black uppercase tracking-widest text-slate-400">
-          <p>Â© 2024 Techknomatic Talent. All rights reserved.</p>
-          <div className="flex gap-8">
-            <Link to="/about" className="hover:text-accent">
-              Company
-            </Link>
-            <Link to="/contact" className="hover:text-accent">
-              Support
-            </Link>
-            <Link to="/about" className="hover:text-accent">
-              Values
-            </Link>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 };
