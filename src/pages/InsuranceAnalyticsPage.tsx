@@ -131,7 +131,7 @@ const ModuleCard = ({
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-accent/20 pl-4">
+    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
       {description}
     </p>
   </motion.div>
@@ -168,7 +168,6 @@ const UseCaseCard = ({
 
     <div className="space-y-6 flex-1 mb-10 text-left">
       <div>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Context</h4>
         <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
           {description}
         </p>
@@ -307,14 +306,7 @@ export const InsuranceAnalyticsPage = () => {
       <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-7xl space-y-12 text-left">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent"
-            >
-              About The Industry
-            </motion.h2>
+           
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -358,14 +350,7 @@ export const InsuranceAnalyticsPage = () => {
       <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto text-left">
           <div className="mb-10 text-left">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
-            >
-              Solutions Suite
-            </motion.h2>
+           
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -387,14 +372,7 @@ export const InsuranceAnalyticsPage = () => {
       <section className="py-[40px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 text-center max-w-4xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
-            >
-              Spatial Intelligence
-            </motion.h2>
+            
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
