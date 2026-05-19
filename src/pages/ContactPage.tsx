@@ -27,7 +27,9 @@ import {
   Calendar,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { acceleratorsSectionLinkTo } from "../config/homeNavigation";
 
 const CONTACT_HERO_IMG = `${import.meta.env.BASE_URL}Images/contactusHero.jpg`;
 
@@ -237,10 +239,13 @@ export const ContactPage = () => {
               transition={{ delay: 0.4 }}
               className="flex flex-wrap gap-6"
             >
-              <button className="px-10 py-5 bg-accent text-white font-black tracking-widest rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 uppercase text-[12px] shadow-2xl shadow-accent/20 active:scale-95 group">
+              <Link
+                to={acceleratorsSectionLinkTo}
+                className="px-10 py-5 bg-accent text-white font-black tracking-widest rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 uppercase text-[12px] shadow-2xl shadow-accent/20 active:scale-95 group"
+              >
                 <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform" />{" "}
                 Explore Solutions
-              </button>
+              </Link>
               <button className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black tracking-widest rounded-2xl hover:bg-white/10 transition-all flex items-center gap-3 uppercase text-[12px] active:scale-95 group">
                 <Mail className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />{" "}
                 Talk to an Expert
@@ -544,7 +549,7 @@ export const ContactPage = () => {
             {/* Offices List */}
             <div className="lg:w-[65%]">
               <div className="mb-14 pt-4">
-                <h2 className="text-[56px] font-medium text-brand-950 dark:text-white tracking-tight mb-4 leading-none">
+                <h2 className="text-[48px] font-medium text-brand-950 dark:text-white tracking-tight mb-4 leading-none">
                   Our Presence.
                 </h2>
                 <p className="text-[20px] text-slate-500 dark:text-slate-400 font-medium">

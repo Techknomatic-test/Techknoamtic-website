@@ -47,9 +47,14 @@ import { useRef, useState, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import * as THREE from "three";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { contactFormLinkTo } from "../config/contactNavigation";
+import {
+  ACCELERATORS_SECTION_ID,
+  shouldScrollToAccelerators,
+} from "../config/homeNavigation";
+import { scrollToElement } from "../utils/scrollToElement";
 
 /** Public asset: public/Images/home/oil-gas-card.png (copy of Oil&gas1 (1).png) */
 const OIL_GAS_CARD_IMG = `${import.meta.env.BASE_URL}Images/home/oil-gas-card.png`;
@@ -786,6 +791,7 @@ const AcceleratorsSection = () => {
   ];
   return (
     <section
+      id={ACCELERATORS_SECTION_ID}
       ref={sectionRef}
       className="py-[40px] px-6 relative overflow-hidden bg-brand-950"
     >
@@ -1274,9 +1280,21 @@ const ClientSlider = () => {
 };
 
 
+const AcceleratorsScrollEffect = () => {
+  const { state, search } = useLocation();
+
+  useEffect(() => {
+    if (!shouldScrollToAccelerators(state, search)) return;
+    scrollToElement(ACCELERATORS_SECTION_ID);
+  }, [state, search]);
+
+  return null;
+};
+
 export const HomePage = () => {
   return (
     <>
+      <AcceleratorsScrollEffect />
       <Hero />
       <StatsSection />
       <ServicesSection />
