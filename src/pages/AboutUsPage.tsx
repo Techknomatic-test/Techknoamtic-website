@@ -290,7 +290,7 @@ export const AboutUsPage = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-8 text-white"
             >
               We are a team with <br />
-              <span className="text-accent underline decoration-white/20 underline-offset-8">
+              <span className="text-accent decoration-white/20 underline-offset-8">
                 knowledge and experience.
               </span>
             </motion.h1>
