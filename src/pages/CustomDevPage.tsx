@@ -140,11 +140,11 @@ export const CustomDevPage = () => {
     {
       title: "Analytics-First Thinking",
       description:
-        "Every custom tool is built around your data — not just the UI.",
+        "Every custom tool is built around your data, not just the UI.",
     },
     {
       title: "Full Stack in One Team",
-      description: "UI, API, data pipeline, and AI — no handoffs, no gaps.",
+      description: "UI, API, data pipeline, and AI, no handoffs, no gaps.",
     },
     {
       title: "Agile with Business Involvement",
@@ -152,7 +152,7 @@ export const CustomDevPage = () => {
     },
     {
       title: "Regulated Industry Experience",
-      description: "Insurance, pharma, energy — we understand compliance.",
+      description: "Insurance, pharma, energy, we understand compliance.",
     },
   ];
 

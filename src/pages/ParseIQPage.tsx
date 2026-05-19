@@ -175,27 +175,27 @@ export const ParseIQPage = () => {
 
   const capabilities = [
     {
-      title: "Capability 1 — Smart OCR System",
+      title: "Capability 1, Smart OCR System",
       items: ["Handwritten text recognition", "Printed document extraction", "Multi-format document support", "Automated field detection", "Structured data conversion", "API-driven integrations"]
     },
     {
-      title: "Capability 2 — AI-Powered Document Understanding",
+      title: "Capability 2, AI-Powered Document Understanding",
       items: ["Context-aware extraction", "Intelligent field mapping", "Document classification", "Semantic understanding", "Multi-layout interpretation", "Adaptive learning models"]
     },
     {
-      title: "Capability 3 — LLM-Powered PDF Extraction",
+      title: "Capability 3, LLM-Powered PDF Extraction",
       items: ["Complex table extraction", "Contextual data interpretation", "Multi-page document understanding", "Structured output generation", "Custom extraction workflows", "AI-assisted compliance processing"]
     },
     {
-      title: "Capability 4 — Passport & Identity Data Extraction",
+      title: "Capability 4, Passport & Identity Data Extraction",
       items: ["MRZ extraction", "Passport and ID data parsing", "Identity verification support", "Authenticity validation", "KYC-ready integrations"]
     },
     {
-      title: "Capability 5 — Automated Data Structuring",
+      title: "Capability 5, Automated Data Structuring",
       items: ["JSON, CSV, and API payload outputs", "Database-ready records", "ERP and CRM integration formats", "Schema-validated outputs", "Custom output templates"]
     },
     {
-      title: "Capability 6 — Custom AI Model Training",
+      title: "Capability 6, Custom AI Model Training",
       items: ["Industry-specific templates", "Custom field extraction", "Domain-specific validation logic", "Enterprise compliance requirements", "Continuous model refinement"]
     }
   ];
@@ -320,7 +320,7 @@ export const ParseIQPage = () => {
               transition={{ delay: 0.1 }}
               className="text-xl font-bold text-brand-950/70 dark:text-white/70 leading-snug"
             >
-              Every enterprise runs on documents — but most still process them manually.
+              Every enterprise runs on documents, but most still process them manually.
             </motion.h3>
           </div>
 

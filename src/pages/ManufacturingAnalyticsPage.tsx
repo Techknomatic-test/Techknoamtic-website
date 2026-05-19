@@ -181,7 +181,7 @@ export const ManufacturingAnalyticsPage = () => {
     },
     {
       title: "Late Quality Detection",
-      description: "Quality defects detected too late in the cycle — driving costly rework and waste",
+      description: "Quality defects detected too late in the cycle, driving costly rework and waste",
       image: `${MFG_IMG}/2Quality defects detected.jpg`,
     },
     {
@@ -292,7 +292,7 @@ export const ManufacturingAnalyticsPage = () => {
               transition={{ delay: 0.2 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance leading-relaxed"
             >
-              Smart Factories Start with Smarter Data — AI for Modern Manufacturing
+              Smart Factories Start with Smarter Data, AI for Modern Manufacturing
             </motion.h2>
           </div>
         </div>
@@ -317,7 +317,7 @@ export const ManufacturingAnalyticsPage = () => {
                transition={{ delay: 0.1 }}
                className="text-[17px] md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-7xl"
             >
-              Manufacturing is in the midst of a fundamental transformation. Industry 4.0 has unlocked massive potential — but most manufacturers are still struggling to connect their ERP, MES, and SCADA systems, make sense of shop floor data, and translate operational metrics into strategic decisions. Whether managing discrete, process, or hybrid manufacturing — the challenges of downtime, quality failures, supply chain disruption, and energy costs demand an intelligent, data-driven response. Techknomatic brings that intelligence to your floor — and your boardroom.
+              Manufacturing is in the midst of a fundamental transformation. Industry 4.0 has unlocked massive potential, but most manufacturers are still struggling to connect their ERP, MES, and SCADA systems, make sense of shop floor data, and translate operational metrics into strategic decisions. Whether managing discrete, process, or hybrid manufacturing, the challenges of downtime, quality failures, supply chain disruption, and energy costs demand an intelligent, data-driven response. Techknomatic brings that intelligence to your floor, and your boardroom.
             </motion.p>
           </motion.div>
         </motion.div>

@@ -78,12 +78,12 @@ export const Footer = () => {
             >
               <img
                 src={`${import.meta.env.BASE_URL}Images/home/footer-logo.png`}
-                alt="Techknomatic — Technology, Knowledge, Analytics"
+                alt="Techknomatic, Technology, Knowledge, Analytics"
                 className="h-14 w-auto max-w-[min(100%,280px)] object-contain object-left sm:h-16"
               />
             </Link>
             <p className="text-slate-400 font-medium leading-relaxed max-w-sm mb-4 text-base mx-auto md:mx-0">
-              Techknomatic empowers teams to transform raw data into clear, compelling visuals — making
+              Techknomatic empowers teams to transform raw data into clear, compelling visuals, making
               insights easier to share, understand, and act on.
             </p>
             <div className="text-[11px] font-black uppercase tracking-[0.3em] text-white/40">

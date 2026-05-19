@@ -162,8 +162,8 @@ const IndustryCard = ({
 export const DataGuardPage = () => {
   const capabilities = [
     {
-      title: "Capability 1 — Universal Data Source Connectivity",
-      outcome: "Outcome: Connect every enterprise data source — without heavy ingestion projects.",
+      title: "Capability 1, Universal Data Source Connectivity",
+      outcome: "Outcome: Connect every enterprise data source, without heavy ingestion projects.",
       items: [
         "Plug-and-play connectivity to cloud, on-premise, and hybrid systems",
         "Native support for AWS, Azure, GCP, lakehouses, and warehouses",
@@ -175,7 +175,7 @@ export const DataGuardPage = () => {
       icon: Network,
     },
     {
-      title: "Capability 2 — Real-Time Data Quality Observability",
+      title: "Capability 2, Real-Time Data Quality Observability",
       outcome: "Outcome: Complete visibility into data quality across tables, columns, and business rules.",
       items: [
         "Null value analysis and completeness validation",
@@ -188,8 +188,8 @@ export const DataGuardPage = () => {
       icon: Eye,
     },
     {
-      title: "Capability 3 — AI-Powered Recommendations Engine",
-      outcome: "Outcome: Beyond alerts — intelligent recommendations and guided remediation actions.",
+      title: "Capability 3, AI-Powered Recommendations Engine",
+      outcome: "Outcome: Beyond alerts, intelligent recommendations and guided remediation actions.",
       items: [
         "AI detection of anomalies, null spikes, and duplicate keys",
         "Cross-column inconsistency and schema mismatch identification",
@@ -201,8 +201,8 @@ export const DataGuardPage = () => {
       icon: Cpu,
     },
     {
-      title: "Capability 4 — Autonomous Data Agent",
-      outcome: "Outcome: Natural-language data operations — from manual SQL to AI-assisted diagnostics.",
+      title: "Capability 4, Autonomous Data Agent",
+      outcome: "Outcome: Natural-language data operations, from manual SQL to AI-assisted diagnostics.",
       items: [
         "Conversational interface for data quality and governance",
         "Natural-language detection of missing primary keys",
@@ -214,7 +214,7 @@ export const DataGuardPage = () => {
       icon: Sparkles,
     },
     {
-      title: "Capability 5 — Business Rules Validation Framework",
+      title: "Capability 5, Business Rules Validation Framework",
       outcome: "Outcome: Embed business logic directly into data validation workflows.",
       items: [
         "SQL-based and business-logic validation expressions",
@@ -227,8 +227,8 @@ export const DataGuardPage = () => {
       icon: ClipboardCheck,
     },
     {
-      title: "Capability 6 — Integrated Data Governance Layer",
-      outcome: "Outcome: Operational governance — not static documentation.",
+      title: "Capability 6, Integrated Data Governance Layer",
+      outcome: "Outcome: Operational governance, not static documentation.",
       items: [
         "PII detection and automatic classification",
         "Sensitivity tagging across tables and columns",
@@ -240,8 +240,8 @@ export const DataGuardPage = () => {
       icon: ShieldCheck,
     },
     {
-      title: "Capability 7 — Built-In Query & Exploration Workspace",
-      outcome: "Outcome: Debug, validate, and explore — without leaving the platform.",
+      title: "Capability 7, Built-In Query & Exploration Workspace",
+      outcome: "Outcome: Debug, validate, and explore, without leaving the platform.",
       items: [
         "Read-only SQL interface for safe exploration",
         "Built-in data exploration and profiling tools",
@@ -292,31 +292,31 @@ export const DataGuardPage = () => {
     {
       title: "Connect",
       content:
-        "Universal connectors link to cloud platforms (AWS, Azure, GCP), lakehouses, warehouses, ERP systems, and on-premise databases — with secure credential handling and minimal ingestion setup.",
+        "Universal connectors link to cloud platforms (AWS, Azure, GCP), lakehouses, warehouses, ERP systems, and on-premise databases, with secure credential handling and minimal ingestion setup.",
       icon: Network,
     },
     {
       title: "Observe",
       content:
-        "Continuous monitoring across tables and columns surfaces nulls, duplicates, schema drift, referential integrity gaps, and anomaly trends — classified by severity (Critical, Error, Warning, Informational).",
+        "Continuous monitoring across tables and columns surfaces nulls, duplicates, schema drift, referential integrity gaps, and anomaly trends, classified by severity (Critical, Error, Warning, Informational).",
       icon: Activity,
     },
     {
       title: "Validate",
       content:
-        "Business-rule validation framework applies SQL-based and business-logic expressions — ensuring data is not only technically correct but aligned to real business KPIs and operational thresholds.",
+        "Business-rule validation framework applies SQL-based and business-logic expressions, ensuring data is not only technically correct but aligned to real business KPIs and operational thresholds.",
       icon: ClipboardCheck,
     },
     {
       title: "Govern",
       content:
-        "Integrated governance layer auto-detects PII, applies sensitivity tagging, builds data-catalog visibility, and tracks governance maturity — turning compliance from documentation into operational workflow.",
+        "Integrated governance layer auto-detects PII, applies sensitivity tagging, builds data-catalog visibility, and tracks governance maturity, turning compliance from documentation into operational workflow.",
       icon: ShieldCheck,
     },
     {
       title: "Act",
       content:
-        "AI recommendations engine and autonomous data agent translate observability into action — guided remediation, conversational diagnostics, and intelligent optimization across the data ecosystem.",
+        "AI recommendations engine and autonomous data agent translate observability into action, guided remediation, conversational diagnostics, and intelligent optimization across the data ecosystem.",
       icon: Zap,
     },
   ];
@@ -363,7 +363,7 @@ export const DataGuardPage = () => {
     {
       title: "Banking & Financial Services",
       subtitle: "Trusted data for regulatory reporting, risk analytics, and customer intelligence.",
-      crux: "DataPulseIQ continuously monitors customer and transaction data quality, validates regulatory reporting datasets, enforces PII governance, and reconciles financial data across systems — so banks can run risk, fraud, and compliance analytics on data they fully trust.",
+      crux: "DataPulseIQ continuously monitors customer and transaction data quality, validates regulatory reporting datasets, enforces PII governance, and reconciles financial data across systems, so banks can run risk, fraud, and compliance analytics on data they fully trust.",
       focusAreas:
         "Transaction Data Quality · Regulatory Reporting · PII Governance · Risk Analytics Reliability · Cross-System Reconciliation",
       outcome: "Audit-ready compliance · Trusted risk analytics · Reduced reconciliation effort",
@@ -379,7 +379,7 @@ export const DataGuardPage = () => {
     {
       title: "Retail & E-Commerce",
       subtitle: "Reliable customer, product, and order data for personalization and analytics.",
-      crux: "Monitor customer master data quality, validate inventory and order datasets, detect duplicate customer and product records, and enforce pricing and sales consistency — so retail and D2C operations run personalization and customer analytics on reliable data.",
+      crux: "Monitor customer master data quality, validate inventory and order datasets, detect duplicate customer and product records, and enforce pricing and sales consistency, so retail and D2C operations run personalization and customer analytics on reliable data.",
       focusAreas:
         "Customer MDM · Inventory & Order Validation · Duplicate Detection · Pricing Consistency · Personalization Reliability",
       outcome: "Cleaner customer data · Sharper personalization · Trusted retail analytics",
@@ -387,7 +387,7 @@ export const DataGuardPage = () => {
     {
       title: "Manufacturing & Supply Chain",
       subtitle: "Master data harmonization and supply chain data reliability across ERP systems.",
-      crux: "DataPulseIQ validates supply chain data consistency, monitors ERP and operational data quality, governs vendor and shipment datasets, and harmonizes master data across plants and systems — strengthening reliability for production analytics and supply-chain decisions.",
+      crux: "DataPulseIQ validates supply chain data consistency, monitors ERP and operational data quality, governs vendor and shipment datasets, and harmonizes master data across plants and systems, strengthening reliability for production analytics and supply-chain decisions.",
       focusAreas:
         "Supply Chain Validation · ERP Data Quality · Vendor & Shipment Governance · Production Analytics · Master Data Harmonization",
       outcome: "Reliable supply-chain analytics · Stronger vendor data · Consolidated master data",
@@ -402,7 +402,7 @@ export const DataGuardPage = () => {
     {
       title: "Government & Public Sector",
       subtitle: "Citizen-data governance and trusted reporting for public-sector analytics.",
-      crux: "Govern and validate citizen data across departments, run compliance-focused data quality monitoring, detect and mask sensitive information, and deliver cross-department reliability for shared services — enabling trusted reporting across public-sector analytics initiatives.",
+      crux: "Govern and validate citizen data across departments, run compliance-focused data quality monitoring, detect and mask sensitive information, and deliver cross-department reliability for shared services, enabling trusted reporting across public-sector analytics initiatives.",
       focusAreas:
         "Citizen Data Governance · Compliance Monitoring · Cross-Department Reliability · Sensitive Data Detection · Public-Sector Reporting",
       outcome: "Trusted citizen analytics · Stronger compliance · Cross-department visibility",
@@ -449,7 +449,7 @@ export const DataGuardPage = () => {
               transition={{ delay: 0.3 }}
               className="text-sm font-normal leading-relaxed text-slate-400"
             >
-              AI-powered data quality and reliability framework — continuously monitor, validate, govern, and improve data
+              AI-powered data quality and reliability framework, continuously monitor, validate, govern, and improve data
               across every source system. Built for enterprises ready to move from reactive data firefighting to autonomous
               data operations.
             </motion.p>
@@ -500,7 +500,7 @@ export const DataGuardPage = () => {
               <div className="absolute inset-0 flex items-end bg-gradient-to-t from-brand-950/80 via-transparent to-transparent p-8">
                 <p className="border-l-4 border-accent pl-4 text-[15px] font-bold leading-relaxed text-white">
                   The result: low trust in dashboards and analytics, delayed business decisions, increased operational
-                  overhead, compliance and governance risk, and slower AI and digital transformation initiatives — exactly
+                  overhead, compliance and governance risk, and slower AI and digital transformation initiatives, exactly
                   when the business needs faster, sharper, more trusted data to compete.
                 </p>
               </div>
@@ -515,7 +515,7 @@ export const DataGuardPage = () => {
               <ul className="list-none space-y-5">
                 {[
                   "Inconsistent data quality across cloud, on-prem, and hybrid source systems",
-                  "Reactive issue detection — data problems surface in dashboards, not in pipelines",
+                  "Reactive issue detection, data problems surface in dashboards, not in pipelines",
                   "Lack of business-aware validation rules tied to real KPIs and operational logic",
                   "Fragmented governance and compliance processes spread across teams and tools",
                   "Manual debugging and SQL-heavy troubleshooting draining engineering capacity",
@@ -571,7 +571,7 @@ export const DataGuardPage = () => {
               validation, governance, and autonomous data intelligence into a single operational platform. It connects to
               enterprise data sources with minimal setup, continuously monitors quality across tables and columns, applies
               business-aware validation logic, surfaces AI-driven recommendations, and enables conversational data operations
-              through an autonomous AI agent — so data teams move from manual firefighting to intelligent, business-ready
+              through an autonomous AI agent, so data teams move from manual firefighting to intelligent, business-ready
               data ecosystems.
             </motion.p>
           </div>
@@ -602,7 +602,7 @@ export const DataGuardPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
             >
-              Purpose-built for any data-heavy enterprise — wherever data fragmentation, governance gaps, or reliability
+              Purpose-built for any data-heavy enterprise, wherever data fragmentation, governance gaps, or reliability
               issues slow down decisions.
             </motion.p>
           </div>
@@ -635,7 +635,7 @@ export const DataGuardPage = () => {
             >
               DataPulseIQ is built as a layered data reliability platform that connects to enterprise data sources,
               continuously observes quality across tables and columns, applies business-aware validation logic, embeds
-              governance into operational workflows, and surfaces AI-driven recommendations and conversational diagnostics —
+              governance into operational workflows, and surfaces AI-driven recommendations and conversational diagnostics , 
               transforming raw data ecosystems into trusted, AI-ready data operations.
             </motion.p>
           </div>
@@ -690,7 +690,7 @@ export const DataGuardPage = () => {
               className="text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
             >
               DataPulseIQ is designed as a connector-first, deployment-flexible platform. Whether your enterprise data lives
-              in Snowflake, Databricks, BigQuery, Redshift, an on-prem warehouse, an ERP, or a combination of all of them —
+              in Snowflake, Databricks, BigQuery, Redshift, an on-prem warehouse, an ERP, or a combination of all of them , 
               DataPulseIQ connects through reusable connectors and ingests metadata without disrupting your existing pipelines.
               Deploy it in our cloud, your cloud, or on-premise. Push governance signals and reliability scores to the BI
               tools your teams already use.

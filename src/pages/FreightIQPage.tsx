@@ -170,8 +170,8 @@ const IndustryCard = ({
 export const FreightIQPage = () => {
   const capabilities = [
     {
-      title: "Capability 1 — Real-Time Carrier API Integration",
-      outcome: "Outcome: Live carrier rates and capacity — directly in your quoting workflow.",
+      title: "Capability 1, Real-Time Carrier API Integration",
+      outcome: "Outcome: Live carrier rates and capacity, directly in your quoting workflow.",
       items: [
         "Real-time carrier rate retrieval via API",
         "Automated pricing synchronization across carriers",
@@ -183,7 +183,7 @@ export const FreightIQPage = () => {
       icon: Network,
     },
     {
-      title: "Capability 2 — AI-Powered Dynamic Pricing Engine",
+      title: "Capability 2, AI-Powered Dynamic Pricing Engine",
       outcome: "Outcome: Market-aware pricing that protects margin and stays competitive.",
       items: [
         "Demand fluctuation modeling",
@@ -196,7 +196,7 @@ export const FreightIQPage = () => {
       icon: Cpu,
     },
     {
-      title: "Capability 3 — Multi-Modal Freight Support",
+      title: "Capability 3, Multi-Modal Freight Support",
       outcome: "Outcome: Unified freight pricing across every shipment type and transport mode.",
       items: [
         "LCL (Less than Container Load) pricing",
@@ -209,8 +209,8 @@ export const FreightIQPage = () => {
       icon: Layers,
     },
     {
-      title: "Capability 4 — Instant Quote Generation",
-      outcome: "Outcome: Customer-ready freight quotations in seconds — not hours.",
+      title: "Capability 4, Instant Quote Generation",
+      outcome: "Outcome: Customer-ready freight quotations in seconds, not hours.",
       items: [
         "Automated rate calculation across carriers",
         "Intelligent rate comparison and ranking",
@@ -222,7 +222,7 @@ export const FreightIQPage = () => {
       icon: Zap,
     },
     {
-      title: "Capability 5 — Historical Freight Analytics",
+      title: "Capability 5, Historical Freight Analytics",
       outcome: "Outcome: Turn historical pricing into forward-looking decisions.",
       items: [
         "Historical rate trend analysis",
@@ -235,8 +235,8 @@ export const FreightIQPage = () => {
       icon: BarChart3,
     },
     {
-      title: "Capability 6 — Intelligent Rate Comparison",
-      outcome: "Outcome: The right rate, every time — across cost, speed, and margin.",
+      title: "Capability 6, Intelligent Rate Comparison",
+      outcome: "Outcome: The right rate, every time, across cost, speed, and margin.",
       items: [
         "Best-cost option identification",
         "Fastest-delivery option ranking",
@@ -300,7 +300,7 @@ export const FreightIQPage = () => {
     {
       title: "Margin & Optimization Engine",
       content:
-        "Pricing options are evaluated for cost, delivery speed, carrier competitiveness, and margin impact — surfacing the best-fit options.",
+        "Pricing options are evaluated for cost, delivery speed, carrier competitiveness, and margin impact, surfacing the best-fit options.",
       icon: Zap,
     },
     {
@@ -447,7 +447,7 @@ export const FreightIQPage = () => {
               transition={{ delay: 0.3 }}
               className="text-sm text-slate-400 font-normal leading-relaxed text-pretty"
             >
-              AI-powered dynamic freight pricing — real-time carrier rates, multi-modal support, and instant quote
+              AI-powered dynamic freight pricing, real-time carrier rates, multi-modal support, and instant quote
               generation. Built for logistics enterprises that compete on speed and margin.
             </motion.p>
           </div>
@@ -475,7 +475,7 @@ export const FreightIQPage = () => {
             >
               Every freight quote is a race against the clock. Customers expect rates in minutes. Carriers update
               pricing daily. Routes shift with seasonality, capacity, and fuel. Yet most logistics providers still build
-              quotations through spreadsheets, email chains, and disconnected carrier portals — losing deals to faster
+              quotations through spreadsheets, email chains, and disconnected carrier portals, losing deals to faster
               competitors and leaving margin on the table with every shipment. The pricing operations that should drive
               profitability instead drain it.
             </motion.p>
@@ -497,7 +497,7 @@ export const FreightIQPage = () => {
               <div className="absolute inset-0 flex items-end bg-gradient-to-t from-brand-950/80 via-transparent to-transparent p-8">
                 <p className="border-l-4 border-accent pl-4 text-[15px] font-bold leading-relaxed text-white">
                   The result: slower quote turnaround, reduced competitiveness, revenue leakage through under-priced
-                  shipments, higher operational overhead, and weaker customer experience — exactly when logistics buyers
+                  shipments, higher operational overhead, and weaker customer experience, exactly when logistics buyers
                   expect faster, sharper, more transparent pricing.
                 </p>
               </div>
@@ -513,7 +513,7 @@ export const FreightIQPage = () => {
               <ul className="space-y-5 list-none">
                 {[
                   "Manual freight rate calculations across multiple carriers and modes",
-                  "Delayed customer quote responses — hours or days, not minutes",
+                  "Delayed customer quote responses, hours or days, not minutes",
                   "Inconsistent pricing across carriers, regions, and sales teams",
                   "Rapidly changing market rates that spreadsheets can't keep up with",
                   "Lack of centralized pricing intelligence across the business",
@@ -570,7 +570,7 @@ export const FreightIQPage = () => {
               FreightIQ is an AI-powered freight pricing and rate automation platform that intelligently calculates,
               optimizes, and automates freight quotations across logistics operations. The platform combines real-time
               carrier connectivity, AI-driven dynamic pricing, multi-modal support, and historical analytics to deliver
-              freight quotes in seconds — with the margin discipline of a centralized pricing function.
+              freight quotes in seconds, with the margin discipline of a centralized pricing function.
             </motion.p>
           </div>
 
@@ -634,7 +634,7 @@ export const FreightIQPage = () => {
             >
               FreightIQ is built as a layered pricing intelligence platform that connects to carrier systems in real
               time, applies AI-driven dynamic pricing logic, optimizes across cost / speed / margin, and generates
-              customer-ready quotations — all within a single automated flow.
+              customer-ready quotations, all within a single automated flow.
             </motion.p>
           </div>
 
@@ -690,7 +690,7 @@ export const FreightIQPage = () => {
             >
               FreightIQ is designed as an API-first platform that plugs into the operational systems freight businesses
               already run on. Whether you're issuing quotations from a CRM, executing shipments through a TMS, posting
-              costs into an ERP, or coordinating carriers directly — FreightIQ connects without disrupting your existing
+              costs into an ERP, or coordinating carriers directly, FreightIQ connects without disrupting your existing
               workflows, and pushes intelligent, optimized pricing into every quote your team generates.
             </motion.p>
           </div>

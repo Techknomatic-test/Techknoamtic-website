@@ -192,8 +192,8 @@ const UseCaseCard = ({
 export const ITSMPlugAndPlayPage = () => {
   const capabilities = [
     {
-      title: "Capability 1 — Unified ITSM Connectivity Layer",
-      outcome: "Outcome: Connect every ITSM tool in your stack — without custom integration projects.",
+      title: "Capability 1, Unified ITSM Connectivity Layer",
+      outcome: "Outcome: Connect every ITSM tool in your stack, without custom integration projects.",
       items: [
         "Plug-and-play connectors for ServiceNow, BMC Remedy, Jira SM, SolarWinds",
         "Extensible to any third-party ITSM system",
@@ -205,8 +205,8 @@ export const ITSMPlugAndPlayPage = () => {
       icon: Network,
     },
     {
-      title: "Capability 2 — Intelligent Data Sampling Engine",
-      outcome: "Outcome: Validate dashboards and KPIs on sampled data — before committing to full-scale ingestion.",
+      title: "Capability 2, Intelligent Data Sampling Engine",
+      outcome: "Outcome: Validate dashboards and KPIs on sampled data, before committing to full-scale ingestion.",
       items: [
         "UI-driven dataset selection",
         "Controlled sampling of operational datasets",
@@ -218,7 +218,7 @@ export const ITSMPlugAndPlayPage = () => {
       icon: Zap,
     },
     {
-      title: "Capability 3 — Pre-Built ITSM Data Models",
+      title: "Capability 3, Pre-Built ITSM Data Models",
       outcome: "Outcome: Standardized data models eliminate manual schema harmonization across tools.",
       items: [
         "Incident lifecycle tracking",
@@ -231,8 +231,8 @@ export const ITSMPlugAndPlayPage = () => {
       icon: Database,
     },
     {
-      title: "Capability 4 — Enterprise KPI & Metrics Engine",
-      outcome: "Outcome: A standardized KPI framework — consistent across every team, tool, and report.",
+      title: "Capability 4, Enterprise KPI & Metrics Engine",
+      outcome: "Outcome: A standardized KPI framework, consistent across every team, tool, and report.",
       items: [
         "MTTR (Mean Time to Resolution)",
         "MTBF (Mean Time Between Failures)",
@@ -244,8 +244,8 @@ export const ITSMPlugAndPlayPage = () => {
       icon: BarChart,
     },
     {
-      title: "Capability 5 — Pre-Built Operational Dashboards",
-      outcome: "Outcome: Production-ready dashboards for every stakeholder — without long BI cycles.",
+      title: "Capability 5, Pre-Built Operational Dashboards",
+      outcome: "Outcome: Production-ready dashboards for every stakeholder, without long BI cycles.",
       items: [
         "CXO-level operational views",
         "Service desk performance dashboards",
@@ -257,9 +257,9 @@ export const ITSMPlugAndPlayPage = () => {
       icon: LayoutDashboard,
     },
     {
-      title: "Capability 6 — Validation & Feedback Framework",
+      title: "Capability 6, Validation & Feedback Framework",
       outcome:
-        "Outcome: Stakeholders validate dashboards before enterprise rollout — reducing rework and accelerating adoption.",
+        "Outcome: Stakeholders validate dashboards before enterprise rollout, reducing rework and accelerating adoption.",
       items: [
         "Validate KPI definitions collaboratively",
         "Test dashboard usability before production",
@@ -271,8 +271,8 @@ export const ITSMPlugAndPlayPage = () => {
       icon: MessageSquare,
     },
     {
-      title: "Capability 7 — Production Data Pipeline Framework",
-      outcome: "Outcome: Move from validated prototype to enterprise production — without rebuilding.",
+      title: "Capability 7, Production Data Pipeline Framework",
+      outcome: "Outcome: Move from validated prototype to enterprise production, without rebuilding.",
       items: [
         "Full historical data ingestion",
         "Incremental data pipelines",
@@ -284,7 +284,7 @@ export const ITSMPlugAndPlayPage = () => {
       icon: Workflow,
     },
     {
-      title: "Capability 8 — Secure Multi-Tenant Deployment",
+      title: "Capability 8, Secure Multi-Tenant Deployment",
       outcome: "Outcome: Enterprise-grade security, governance, and deployment flexibility.",
       items: [
         "Cloud (AWS, Azure, GCP) and on-premise deployment options",
@@ -355,7 +355,7 @@ export const ITSMPlugAndPlayPage = () => {
     {
       title: "Scale",
       content:
-        "Once validated, InsightSM transitions to enterprise production mode — full historical ingestion, incremental pipelines, and near real-time refresh, without rebuilding the analytics layer.",
+        "Once validated, InsightSM transitions to enterprise production mode, full historical ingestion, incremental pipelines, and near real-time refresh, without rebuilding the analytics layer.",
       icon: Zap,
     },
   ];
@@ -397,7 +397,7 @@ export const ITSMPlugAndPlayPage = () => {
     {
       title: "Banking & Financial Services",
       subtitle: "Centralized SLA, incident, and compliance visibility across banking IT operations.",
-      crux: "InsightSM consolidates ITSM data from core banking, digital channels, and shared services into unified SLA, incident, and compliance dashboards. Branch performance, channel uptime, and audit-ready visibility — all from one analytics layer.",
+      crux: "InsightSM consolidates ITSM data from core banking, digital channels, and shared services into unified SLA, incident, and compliance dashboards. Branch performance, channel uptime, and audit-ready visibility, all from one analytics layer.",
       focusAreas: "SLA Monitoring · Digital Banking Incidents · Shared Services · IT Compliance · Branch Support",
       outcome: "Faster compliance reporting · Unified ops visibility · Audit-ready dashboards",
     },
@@ -411,13 +411,13 @@ export const ITSMPlugAndPlayPage = () => {
     {
       title: "Telecom",
       subtitle: "Network operations SLA and customer-impact incident analytics at scale.",
-      crux: "InsightSM unifies ITSM data across network operations, customer-impact incidents, and multi-vendor support. Real-time outage visibility, ticket escalation analytics, and SLA monitoring across the entire telecom support ecosystem — in one operational view.",
+      crux: "InsightSM unifies ITSM data across network operations, customer-impact incidents, and multi-vendor support. Real-time outage visibility, ticket escalation analytics, and SLA monitoring across the entire telecom support ecosystem, in one operational view.",
       focusAreas: "Network Ops SLA · Outage Analytics · Customer-Impact Incidents · Multi-Vendor Ops · Support Center",
       outcome: "Faster outage resolution · Better vendor accountability · Real-time ops visibility",
     },
     {
       title: "Retail & E-Commerce",
-      subtitle: "Store, POS, and warehouse operations support — visible from one dashboard.",
+      subtitle: "Store, POS, and warehouse operations support, visible from one dashboard.",
       crux: "Monitor store IT operations, POS and application incidents, warehouse and logistics support, and peak-season SLA performance. InsightSM gives retail IT and operations leaders the visibility to keep stores running and customers transacting through every season.",
       focusAreas: "Store Ops · POS Incidents · Warehouse Support · Peak-Season SLA · Customer Support",
       outcome: "Higher store uptime · Better peak-season readiness · Faster issue resolution",
@@ -425,14 +425,14 @@ export const ITSMPlugAndPlayPage = () => {
     {
       title: "Manufacturing",
       subtitle: "Plant IT operations and production support intelligence.",
-      crux: "Track plant IT operations, production support incidents, and operational downtime through unified ITSM analytics. Vendor support performance, enterprise service requests, and downtime root-cause visibility — all consolidated for plant and corporate IT leaders.",
+      crux: "Track plant IT operations, production support incidents, and operational downtime through unified ITSM analytics. Vendor support performance, enterprise service requests, and downtime root-cause visibility, all consolidated for plant and corporate IT leaders.",
       focusAreas: "Plant IT Ops · Production Support · Downtime Tracking · Vendor Performance · Service Requests",
       outcome: "Reduced production downtime · Better vendor SLAs · Consolidated plant visibility",
     },
     {
       title: "Government & Public Sector",
       subtitle: "Cross-department ITSM visibility for citizen service operations.",
-      crux: "InsightSM consolidates ITSM data across government departments — enabling unified citizen service analytics, operational KPI tracking, and SLA monitoring for public services. Shared services reporting and cross-department visibility delivered through a single analytics platform.",
+      crux: "InsightSM consolidates ITSM data across government departments, enabling unified citizen service analytics, operational KPI tracking, and SLA monitoring for public services. Shared services reporting and cross-department visibility delivered through a single analytics platform.",
       focusAreas:
         "Citizen Service Analytics · Public Service KPIs · Cross-Department ITSM · Government SLAs · Shared Services",
       outcome: "Faster citizen response · Cross-dept accountability · Standardized public-service reporting",
@@ -480,7 +480,7 @@ export const ITSMPlugAndPlayPage = () => {
               transition={{ delay: 0.3 }}
               className="text-sm font-normal leading-relaxed text-slate-400"
             >
-              An AI-powered analytics wrapper that sits on top of your existing ITSM ecosystem — turning fragmented
+              An AI-powered analytics wrapper that sits on top of your existing ITSM ecosystem, turning fragmented
               operational data into unified, real-time intelligence. Deploy production-grade ITSM dashboards in days,
               not months.
             </motion.p>
@@ -506,7 +506,7 @@ export const ITSMPlugAndPlayPage = () => {
               transition={{ delay: 0.1 }}
               className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
             >
-              Most large enterprises run their IT operations on multiple ITSM platforms simultaneously — ServiceNow in
+              Most large enterprises run their IT operations on multiple ITSM platforms simultaneously, ServiceNow in
               one business unit, BMC Remedy in another, Jira Service Management for engineering, SolarWinds for
               infrastructure monitoring. Each tool serves its purpose, but together they create a fragmented operational
               landscape where leadership lacks a unified view of IT performance. SLA reporting is inconsistent. KPI
@@ -544,7 +544,7 @@ export const ITSMPlugAndPlayPage = () => {
                 "Inconsistent KPI definitions and SLA reporting across teams",
                 "Delayed reporting cycles and manual dashboarding effort",
                 "High dependency on BI and data engineering teams for every report",
-                "Slow rollout of analytics initiatives — months to first dashboard",
+                "Slow rollout of analytics initiatives, months to first dashboard",
                 "Limited operational intelligence for CIOs, CTOs, and service leaders",
                 "Lack of accountability and traceability across support functions",
               ].map((item, i) => (
@@ -591,7 +591,7 @@ export const ITSMPlugAndPlayPage = () => {
               transition={{ delay: 0.1 }}
               className="w-full text-lg font-medium text-slate-500 dark:text-slate-400"
             >
-              InsightSM is a rapid ITSM analytics accelerator that sits on top of your existing ITSM ecosystem —
+              InsightSM is a rapid ITSM analytics accelerator that sits on top of your existing ITSM ecosystem , 
               delivering enterprise-grade operational intelligence in days. The platform connects multiple ITSM tools,
               harmonizes operational data, standardizes KPIs, and deploys validated dashboards before committing to
               full-scale enterprise rollout. No rip-and-replace. No multi-month BI projects. Just immediate, unified
@@ -624,7 +624,7 @@ export const ITSMPlugAndPlayPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg font-medium text-slate-500 dark:text-slate-400"
             >
-              Purpose-built for any IT-heavy enterprise — wherever ITSM data fragmentation slows operational
+              Purpose-built for any IT-heavy enterprise, wherever ITSM data fragmentation slows operational
               decision-making.
             </motion.p>
           </div>
@@ -656,7 +656,7 @@ export const ITSMPlugAndPlayPage = () => {
             >
               InsightSM follows a systematic, four-stage deployment architecture designed for speed, accuracy, and
               enterprise scale. By separating the validation phase from the production rollout, we allow stakeholders to
-              align on KPIs and dashboard usability with zero data risk—ensuring the final production environment is built
+              align on KPIs and dashboard usability with zero data risk, ensuring the final production environment is built
               on trust, efficiency, and proven operational value. Our unique sample-first deployment flow transforms the
               complexity of fragmented ITSM ecosystems into immediate, unified operational intelligence.
             </motion.p>
@@ -712,7 +712,7 @@ export const ITSMPlugAndPlayPage = () => {
               className="w-full text-lg font-medium text-slate-500 dark:text-slate-400"
             >
               InsightSM is designed as a connector-first, deployment-flexible platform. Whether your operations live in
-              ServiceNow, BMC Remedy, Jira Service Management, SolarWinds — or a combination of all four — InsightSM
+              ServiceNow, BMC Remedy, Jira Service Management, SolarWinds, or a combination of all four, InsightSM
               connects through reusable plug-and-play connectors and ingests data without disrupting your existing ITSM
               workflows.
             </motion.p>

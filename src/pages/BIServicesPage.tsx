@@ -268,9 +268,9 @@ export const BIServicesPage = () => {
 
   const offerings = [
     {
-      title: "Offering 1 — BI Strategy & Roadmap",
+      title: "Offering 1, BI Strategy & Roadmap",
       description:
-        "Define the analytics future state — platform, data, governance, and adoption — before writing the first dashboard.",
+        "Define the analytics future state, platform, data, governance, and adoption, before writing the first dashboard.",
       items: [
         "Current-state BI maturity assessment across people, process, platform, and data",
         "Target-state architecture and tool selection (Power BI / Tableau / Qlik / hybrid)",
@@ -280,7 +280,7 @@ export const BIServicesPage = () => {
       ],
     },
     {
-      title: "Offering 2 — Dashboard Design & Development",
+      title: "Offering 2, Dashboard Design & Development",
       description:
         "Design-led dashboards engineered for executive clarity, operational decision speed, and analyst depth.",
       items: [
@@ -293,9 +293,9 @@ export const BIServicesPage = () => {
       ],
     },
     {
-      title: "Offering 3 — BI Governance & Centre of Excellence",
+      title: "Offering 3, BI Governance & Centre of Excellence",
       description:
-        "Defensible governance that scales analytics without creating bottlenecks — trust as a delivery outcome.",
+        "Defensible governance that scales analytics without creating bottlenecks, trust as a delivery outcome.",
       items: [
         "BI governance framework definition and rollout",
         "Row-level and object-level security implementation",
@@ -306,9 +306,9 @@ export const BIServicesPage = () => {
       ],
     },
     {
-      title: "Offering 4 — Self-Service & Embedded Analytics",
+      title: "Offering 4, Self-Service & Embedded Analytics",
       description:
-        "Extend BI beyond the BI team — with self-service for business users and embedded analytics.",
+        "Extend BI beyond the BI team, with self-service for business users and embedded analytics.",
       items: [
         "Self-service BI enablement for business and operational users",
         "Semantic model design for safe, governed self-service",
@@ -319,13 +319,13 @@ export const BIServicesPage = () => {
       ],
     },
     {
-      title: "Offering 5 — BI Modernization & Migration",
+      title: "Offering 5, BI Modernization & Migration",
       description:
-        "Move from legacy BI estates to modern cloud analytics — without losing adoption or metadata.",
+        "Move from legacy BI estates to modern cloud analytics, without losing adoption or metadata.",
       items: [
         "Migration from legacy BI tools (SAP BO, Cognos, MicroStrategy) to modern platforms",
         "Cloud BI modernization on Azure, AWS, and GCP",
-        "Report and dashboard rationalization — retire, replace, rebuild",
+        "Report and dashboard rationalization, retire, replace, rebuild",
         "Data model and semantic layer modernization",
         "Coexistence strategy during phased migration",
         "User onboarding and adoption acceleration",
@@ -362,7 +362,7 @@ export const BIServicesPage = () => {
       num: "02",
       title: "Design",
       description:
-        "Architect solution — data model, semantic layer, dashboard structure, and governance model.",
+        "Architect solution, data model, semantic layer, dashboard structure, and governance model.",
     },
     {
       num: "03",
@@ -394,7 +394,7 @@ export const BIServicesPage = () => {
     {
       title: "2. BI + Data Engineering",
       description:
-        "Backed by deep Data Engineering — the pipeline behind every dashboard is as engineered as the dashboard itself.",
+        "Backed by deep Data Engineering, the pipeline behind every dashboard is as engineered as the dashboard itself.",
       image: biImg("bi-data-engineering.jpg"),
     },
     {
@@ -406,19 +406,19 @@ export const BIServicesPage = () => {
     {
       title: "4. Adoption-First Delivery",
       description:
-        "Structured adoption plans included — user enablement and BI CoE models — because success is usage.",
+        "Structured adoption plans included, user enablement and BI CoE models, because success is usage.",
       image: biImg("Adoption-First Delivery.jpg"),
     },
     {
       title: "5. Industry-Depth Practice",
       description:
-        "Deep experience in Insurance, ITSM, Energy, Manufacturing, and Retail — we bring domain context, not just tools.",
+        "Deep experience in Insurance, ITSM, Energy, Manufacturing, and Retail, we bring domain context, not just tools.",
       image: biImg("Industry-Depth Practice.jpg"),
     },
     {
       title: "6. Governance & Trust",
       description:
-        "RLS, certified datasets, and audit lineage built into every delivery — scale without liability.",
+        "RLS, certified datasets, and audit lineage built into every delivery, scale without liability.",
       image: biImg("governance-and-trust.jpg"),
     },
   ];
@@ -499,7 +499,7 @@ export const BIServicesPage = () => {
               transition={{ delay: 0.1 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
-              Turning Data into Decisions — At Speed and Scale
+              Turning Data into Decisions, At Speed and Scale
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -507,7 +507,7 @@ export const BIServicesPage = () => {
               transition={{ delay: 0.2 }}
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              Enterprise-grade BI strategy, dashboard development, and governance — engineered for
+              Enterprise-grade BI strategy, dashboard development, and governance, engineered for
               adoption, not just delivery. Built on certified Power BI, Tableau, and Qlik expertise,
               with deep industry depth in insurance, IT operations, energy, manufacturing, and
               retail.
@@ -536,11 +536,11 @@ export const BIServicesPage = () => {
                 transition={{ delay: 0.1 }}
                 className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
               >
-                Most enterprises don’t suffer from a lack of data — they suffer from a lack of
+                Most enterprises don’t suffer from a lack of data, they suffer from a lack of
                 trusted, actionable insights. Dashboards exist, but adoption is low. Reports are
                 produced, but decisions still wait. Techknomatic helps organizations close that gap
                 with end-to-end Business Intelligence services that combine strategy, design-led
-                dashboard development, governance, and adoption — so the analytics you invest in
+                dashboard development, governance, and adoption, so the analytics you invest in
                 actually change how the business decides.
               </motion.p>
               <motion.p
@@ -551,7 +551,7 @@ export const BIServicesPage = () => {
                 className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
               >
                 Built on deep, certified expertise across Power BI, Tableau, Qlik, and custom
-                analytics platforms — and backed by strong data engineering capabilities — our BI
+                analytics platforms, and backed by strong data engineering capabilities, our BI
                 practice goes beyond traditional reporting. We focus on building end-to-end
                 analytics solutions that drive measurable business outcomes: faster decisions, higher
                 adoption, defensible governance, and a single source of truth your leadership can
@@ -582,7 +582,7 @@ export const BIServicesPage = () => {
               transition={{ delay: 0.2 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-7xl text-left"
             >
-              Five core service offerings that span the full BI lifecycle — from strategy and
+              Five core service offerings that span the full BI lifecycle, from strategy and
               roadmap to dashboard development, governance, and sustained adoption.
             </motion.p>
           </motion.div>
@@ -613,7 +613,7 @@ export const BIServicesPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-7xl"
             >
-              Deep, certified expertise across the three platforms that dominate enterprise BI — we
+              Deep, certified expertise across the three platforms that dominate enterprise BI, we
               recommend the right tool for your context, not the one we know best.
             </motion.p>
           </div>
@@ -670,7 +670,7 @@ export const BIServicesPage = () => {
               className="text-xl text-white/50 font-medium max-w-7xl"
             >
               A proven 5-step delivery framework that moves you from scattered reports to a trusted
-              analytics environment — adoption built in from day one.
+              analytics environment, adoption built in from day one.
             </motion.p>
           </div>
 
@@ -732,7 +732,7 @@ export const BIServicesPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-7xl text-left"
             >
-              High-impact BI deployments across our priority industries — from executive visibility
+              High-impact BI deployments across our priority industries, from executive visibility
               to operational intelligence.
             </motion.p>
           </motion.div>

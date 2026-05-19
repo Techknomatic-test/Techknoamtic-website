@@ -213,7 +213,7 @@ export const DataEngineeringPage = () => {
     },
     {
       title: "Cloud & Platform Setup",
-      description: "Modern data platforms on Azure Synapse, Snowflake, Databricks, and Redshift — engineered to scale",
+      description: "Modern data platforms on Azure Synapse, Snowflake, Databricks, and Redshift, engineered to scale",
       image: `${DE_CAP_IMG}/Cloud & Platform Setup.jpg`,
     },
     {
@@ -248,7 +248,7 @@ export const DataEngineeringPage = () => {
 
   const steps = [
     { num: "01.", title: "Assess", description: "Inventory data sources, integration points, and pipeline bottlenecks. Define the target architecture." },
-    { num: "02.", title: "Architect", description: "Design end-to-end data flow — ingestion, transformation, storage, and serving layers. Agree SLAs upfront" },
+    { num: "02.", title: "Architect", description: "Design end-to-end data flow, ingestion, transformation, storage, and serving layers. Agree SLAs upfront" },
     { num: "03.", title: "Build & Automate", description: "Develop pipelines with CI/CD, parameterized configurations, and automated quality checks at every stage." },
     { num: "04.", title: "Test & Monitor", description: "Run data-quality assertions, lineage validation, and load tests. Stand up alerting and SLA dashboards." },
     { num: "05.", title: "Operate & Optimize", description: "Hand off to managed operations or upskill your team. Continuously tune cost and performance." },
@@ -260,7 +260,7 @@ export const DataEngineeringPage = () => {
     { title: "Strong Certified Talent", description: "Azure and Snowflake implementation teams led by certified architects." },
     { title: "Pre-Built Accelerators", description: "Reusable connectors, templates, and frameworks for faster, lower-risk delivery." },
     { title: "100+ Pipelines Delivered", description: "Production-grade pipelines across BFSI, Manufacturing, Pharma, and Energy." },
-    { title: "SLA-Governed Delivery", description: "Monitored, governed pipelines with SLA guarantees — no black-box solutions." },
+    { title: "SLA-Governed Delivery", description: "Monitored, governed pipelines with SLA guarantees, no black-box solutions." },
   ];
 
   const useCases = [
@@ -273,13 +273,13 @@ export const DataEngineeringPage = () => {
     {
       title: "Real-Time Operational Intelligence Platforms",
       description: "Transform enterprise operational data into actionable, real-time business intelligence",
-      crux: "Build event-driven analytics platforms on AWS — Redshift, Glue, Kinesis, Lambda, MSK, and S3 — using Kafka streaming, CDC pipelines, and dimensional modeling. Consolidate ERP, CRM, IoT, ITSM, and transactional data into low-latency operational views for faster decisions.",
+      crux: "Build event-driven analytics platforms on AWS, Redshift, Glue, Kinesis, Lambda, MSK, and S3, using Kafka streaming, CDC pipelines, and dimensional modeling. Consolidate ERP, CRM, IoT, ITSM, and transactional data into low-latency operational views for faster decisions.",
       industries: "Oil & Gas · Logistics · ITSM · Telecom · Supply Chain"
     },
     {
       title: "Data Quality, Reconciliation & Observability",
       description: "Engineer trust into every stage of the data lifecycle",
-      crux: "Embed automated validation, reconciliation, schema-drift detection, lineage tracking, and SLA monitoring directly into transformation layers. Built on Snowflake and GCP — BigQuery, Dataflow, Pub/Sub — to surface data issues before they impact reporting or compliance.",
+      crux: "Embed automated validation, reconciliation, schema-drift detection, lineage tracking, and SLA monitoring directly into transformation layers. Built on Snowflake and GCP, BigQuery, Dataflow, Pub/Sub, to surface data issues before they impact reporting or compliance.",
       industries: "BFSI · Insurance · Healthcare · Government · Regulated Enterprises"
     }
   ];
@@ -324,7 +324,7 @@ export const DataEngineeringPage = () => {
               transition={{ delay: 0.3 }}
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              Modern cloud-native data platforms — engineered for analytics, AI, and enterprise scale
+              Modern cloud-native data platforms, engineered for analytics, AI, and enterprise scale
             </motion.p>
           </div>
         </div>
@@ -350,7 +350,7 @@ export const DataEngineeringPage = () => {
                transition={{ delay: 0.2 }}
                className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
-              Our solutions combine deep platform expertise with reusable accelerators — connectors, transformation frameworks, and quality libraries — that compress delivery timelines and reduce risk. The result is a scalable data foundation that powers BI, advanced analytics, and AI/ML initiatives across the enterprise.
+              Our solutions combine deep platform expertise with reusable accelerators, connectors, transformation frameworks, and quality libraries, that compress delivery timelines and reduce risk. The result is a scalable data foundation that powers BI, advanced analytics, and AI/ML initiatives across the enterprise.
             </motion.p>
           </div>
         </div>
@@ -397,7 +397,7 @@ export const DataEngineeringPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
-              A platform-agnostic stack — we choose the right tool for your architecture, not the other way around.
+              A platform-agnostic stack, we choose the right tool for your architecture, not the other way around.
             </motion.p>
           </div>
 

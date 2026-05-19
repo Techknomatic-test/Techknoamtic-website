@@ -217,7 +217,7 @@ export const ContactPage = () => {
                 className="text-xl md:text-2xl text-white/90 font-medium max-w-3xl leading-relaxed"
               >
                 Whether you're exploring analytics, dashboards, or enterprise BI
-                transformation — our experts are ready to help you unlock real
+                transformation, our experts are ready to help you unlock real
                 business impact.
               </motion.p>
             </div>
@@ -250,7 +250,7 @@ export const ContactPage = () => {
               <span className="text-accent">Techknomatic</span>
             </h2>
             <p className="text-slate-500 dark:text-slate-400 font-medium">
-              From PoC to enterprise-scale deployments — we partner across the
+              From PoC to enterprise-scale deployments, we partner across the
               journey.
             </p>
           </div>

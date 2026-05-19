@@ -167,21 +167,21 @@ const IndustryCard = ({
 export const CXONexusPage = () => {
   const capabilities = [
     {
-      title: "Capability 1 — Natural Language Querying",
-      outcome: "Ask business questions in plain English — no SQL, no BI tickets, no waiting.",
+      title: "Capability 1, Natural Language Querying",
+      outcome: "Ask business questions in plain English, no SQL, no BI tickets, no waiting.",
       items: [
-        "“Show monthly sales trends by region” — answered instantly",
-        "“Which branches have the highest claim ratios?” — answered with chart",
-        "“Compare revenue growth quarter-over-quarter” — cross-period analytics",
-        "“Which customers are likely to churn?” — predictive intelligence",
-        "“Show SLA breach trends for the last 30 days” — operational visibility",
+        "“Show monthly sales trends by region”, answered instantly",
+        "“Which branches have the highest claim ratios?”, answered with chart",
+        "“Compare revenue growth quarter-over-quarter”, cross-period analytics",
+        "“Which customers are likely to churn?”, predictive intelligence",
+        "“Show SLA breach trends for the last 30 days”, operational visibility",
         "Conversational follow-ups and drill-downs without restarting the query",
       ],
       icon: MessageSquare,
     },
     {
-      title: "Capability 2 — Direct Database & System Connectivity",
-      outcome: "Unified access across structured enterprise data ecosystems — wherever it lives.",
+      title: "Capability 2, Direct Database & System Connectivity",
+      outcome: "Unified access across structured enterprise data ecosystems, wherever it lives.",
       items: [
         "SQL databases (PostgreSQL, MySQL, SQL Server, Oracle)",
         "NoSQL databases and document stores",
@@ -193,8 +193,8 @@ export const CXONexusPage = () => {
       icon: Database,
     },
     {
-      title: "Capability 3 — AI-Powered Insights Engine",
-      outcome: "Beyond data retrieval — contextual intelligence that explains what numbers mean.",
+      title: "Capability 3, AI-Powered Insights Engine",
+      outcome: "Beyond data retrieval, contextual intelligence that explains what numbers mean.",
       items: [
         "Trend identification across time series and KPIs",
         "Comparative analysis (region, period, segment, cohort)",
@@ -206,8 +206,8 @@ export const CXONexusPage = () => {
       icon: Zap,
     },
     {
-      title: "Capability 4 — RAG-Powered Knowledge Intelligence",
-      outcome: "Answers grounded in YOUR enterprise data and documents — not a generic model.",
+      title: "Capability 4, RAG-Powered Knowledge Intelligence",
+      outcome: "Answers grounded in YOUR enterprise data and documents, not a generic model.",
       items: [
         "Retrieval-Augmented Generation across enterprise sources",
         "SOPs, operational documents, and process knowledge",
@@ -219,8 +219,8 @@ export const CXONexusPage = () => {
       icon: Brain,
     },
     {
-      title: "Capability 5 — Smart Dashboard Generation",
-      outcome: "From plain-English question to a live dashboard — in seconds.",
+      title: "Capability 5, Smart Dashboard Generation",
+      outcome: "From plain-English question to a live dashboard, in seconds.",
       items: [
         "Real-time visualizations rendered from conversational prompts",
         "KPI scorecards generated dynamically",
@@ -232,7 +232,7 @@ export const CXONexusPage = () => {
       icon: LayoutDashboard,
     },
     {
-      title: "Capability 6 — Multi-Source Data Intelligence",
+      title: "Capability 6, Multi-Source Data Intelligence",
       outcome: "One conversational layer across every domain of enterprise data.",
       items: [
         "Finance and revenue analytics",
@@ -245,8 +245,8 @@ export const CXONexusPage = () => {
       icon: PieChart,
     },
     {
-      title: "Capability 7 — Executive Decision Intelligence",
-      outcome: "Purpose-built for CXOs and leadership teams — strategic intelligence on demand.",
+      title: "Capability 7, Executive Decision Intelligence",
+      outcome: "Purpose-built for CXOs and leadership teams, strategic intelligence on demand.",
       items: [
         "Business performance monitoring at executive depth",
         "Operational trend analysis across functions",
@@ -268,7 +268,7 @@ export const CXONexusPage = () => {
     },
     {
       title: "Retail & E-Commerce",
-      description: "Sales, customer behavior, inventory, and campaign performance — ask in plain English.",
+      description: "Sales, customer behavior, inventory, and campaign performance, ask in plain English.",
       image: `${CXO_IMG}/industry-retail.jpg`,
     },
     {
@@ -298,7 +298,7 @@ export const CXONexusPage = () => {
     {
       title: "Telecom",
       description:
-        "Subscriber, network, revenue, and churn intelligence — accessible to every business leader.",
+        "Subscriber, network, revenue, and churn intelligence, accessible to every business leader.",
       image: `${CXO_IMG}/industry-telecom.jpg`,
     },
   ];
@@ -307,7 +307,7 @@ export const CXONexusPage = () => {
     {
       title: "Ask",
       content:
-        "An executive or business user asks a question in plain English — inside the interface, embedded in BI, or messaging platforms.",
+        "An executive or business user asks a question in plain English, inside the interface, embedded in BI, or messaging platforms.",
       icon: MessageSquare,
     },
     {
@@ -319,25 +319,25 @@ export const CXONexusPage = () => {
     {
       title: "Retrieve",
       content:
-        "CXO Nexus queries connected enterprise systems — SQL/NoSQL, warehouses, ERP, and CRM — retrieving only relevant data.",
+        "CXO Nexus queries connected enterprise systems, SQL/NoSQL, warehouses, ERP, and CRM, retrieving only relevant data.",
       icon: Database,
     },
     {
       title: "Ground",
       content:
-        "RAG blends structured query results with enterprise knowledge — SOPs, policies, and documents — for organizational context.",
+        "RAG blends structured query results with enterprise knowledge, SOPs, policies, and documents, for organizational context.",
       icon: ShieldCheck,
     },
     {
       title: "Visualize",
       content:
-        "The platform generates the right visualization on the fly — trend charts, KPI scorecards, or drill-down dashboards.",
+        "The platform generates the right visualization on the fly, trend charts, KPI scorecards, or drill-down dashboards.",
       icon: BarChart3,
     },
     {
       title: "Explain",
       content:
-        "An AI-written insight summary accompanies every response — interpreting data in business language and surfacing anomalies.",
+        "An AI-written insight summary accompanies every response, interpreting data in business language and surfacing anomalies.",
       icon: FileText,
     },
   ];
@@ -395,21 +395,21 @@ export const CXONexusPage = () => {
     {
       title: "BFSI & Insurance",
       subtitle: "Conversational executive intelligence for risk, claims, and policy operations.",
-      crux: "CXO Nexus delivers conversational access to risk and claims analytics, policy performance monitoring, and fraud detection insights — grounded in real data.",
+      crux: "CXO Nexus delivers conversational access to risk and claims analytics, policy performance monitoring, and fraud detection insights, grounded in real data.",
       focusAreas: "Risk Analytics · Claims Insights · Policy Performance · Fraud Detection · Executive KPIs",
       outcome: "Faster risk decisions · Audit-traceable insights · Leadership-grade visibility",
     },
     {
       title: "Retail & E-Commerce",
-      subtitle: "Sales, customer, and campaign intelligence — on demand, in plain English.",
-      crux: "Ask sales questions, surface customer behavior intelligence, and monitor inventory/supply chain — all without waiting for a BI report.",
+      subtitle: "Sales, customer, and campaign intelligence, on demand, in plain English.",
+      crux: "Ask sales questions, surface customer behavior intelligence, and monitor inventory/supply chain, all without waiting for a BI report.",
       focusAreas: "Sales Analytics · Customer Behavior · Inventory Visibility · Campaign Performance · Self-Service BI",
       outcome: "Faster commercial decisions · Higher analytics adoption · Reduced BI dependency",
     },
     {
       title: "Healthcare",
       subtitle: "Hospital, operational, and patient service intelligence for leadership.",
-      crux: "CXO Nexus enables hospital performance monitoring, patient service analytics, and resource utilization insights — decision intelligence for clinical teams.",
+      crux: "CXO Nexus enables hospital performance monitoring, patient service analytics, and resource utilization insights, decision intelligence for clinical teams.",
       focusAreas:
         "Hospital Performance · Patient Service Analytics · Resource Utilization · Executive Dashboards · Operational KPIs",
       outcome: "Faster operational decisions · Better resource visibility · Empowered healthcare leaders",
@@ -424,21 +424,21 @@ export const CXONexusPage = () => {
     {
       title: "Manufacturing",
       subtitle: "Plant, production, and supply chain intelligence for industrial leadership.",
-      crux: "Monitor production KPIs, surface supply chain intelligence, and analyze plant performance through conversational analytics — enabling manufacturing leaders to act.",
+      crux: "Monitor production KPIs, surface supply chain intelligence, and analyze plant performance through conversational analytics, enabling manufacturing leaders to act.",
       focusAreas: "Production KPIs · Supply Chain Intelligence · Plant Performance · Predictive Insights · Operational Visibility",
       outcome: "Faster plant decisions · Better supply visibility · Predictive operational intelligence",
     },
     {
       title: "Logistics & Supply Chain",
-      subtitle: "Shipment, fleet, and operational intelligence — conversational and real-time.",
-      crux: "Ask shipment and delivery analytics questions, detect bottlenecks, and monitor route intelligence — turning logistics data into a decision layer.",
+      subtitle: "Shipment, fleet, and operational intelligence, conversational and real-time.",
+      crux: "Ask shipment and delivery analytics questions, detect bottlenecks, and monitor route intelligence, turning logistics data into a decision layer.",
       focusAreas: "Shipment Analytics · Bottleneck Detection · Fleet Intelligence · Route Optimization · Real-Time Dashboards",
       outcome: "Faster ops decisions · Real-time supply visibility · Better fleet performance",
     },
     {
       title: "Telecom",
       subtitle: "Subscriber, network, and revenue intelligence for telecom CXOs.",
-      crux: "CXO Nexus delivers subscriber and usage analytics, network performance monitoring, and churn intelligence — purpose-built for telecom leadership.",
+      crux: "CXO Nexus delivers subscriber and usage analytics, network performance monitoring, and churn intelligence, purpose-built for telecom leadership.",
       focusAreas: "Subscriber Analytics · Network Performance · Revenue Intelligence · Churn Insights · Operational Trends",
       outcome: "Faster commercial decisions · Sharper churn intelligence · Empowered CXOs",
     },
@@ -476,7 +476,7 @@ export const CXONexusPage = () => {
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
               A conversational AI platform that sits on top of your enterprise data, databases, and
-              knowledge repositories — so CXOs, business leaders, and operational teams can ask in
+              knowledge repositories, so CXOs, business leaders, and operational teams can ask in
               plain English and get instant insights, dashboards, and grounded executive intelligence.
               Built for enterprises ready to move from BI ticket queues to conversational decision
               intelligence.
@@ -504,11 +504,11 @@ export const CXONexusPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
             >
-              Enterprises sit on extraordinary volumes of operational and business data — yet the leaders who most need
+              Enterprises sit on extraordinary volumes of operational and business data, yet the leaders who most need
               that data to decide are the furthest from it. Every executive question becomes a BI ticket. Every
               dashboard takes weeks. Every cross-system question requires someone who can write SQL, navigate three
               platforms, and translate the answer back into business language. The bottleneck isn’t the data, and it
-              isn’t the BI team — it’s the gap between a business question and a trustworthy answer. Meanwhile, generic
+              isn’t the BI team, it’s the gap between a business question and a trustworthy answer. Meanwhile, generic
               AI chat tools tempt leaders with instant answers but can’t see the actual enterprise data, which is exactly
               the trust problem CXOs can’t afford.
             </motion.p>
@@ -537,7 +537,7 @@ export const CXONexusPage = () => {
               <ul className="space-y-4">
                 {[
                   "Heavy dependency on BI teams for every question",
-                  "Delayed access to critical insights — weeks for dashboards",
+                  "Delayed access to critical insights, weeks for dashboards",
                   "SQL and technical requirements blocking non-technical leaders",
                   "Fragmented data across ERP, CRM, and operational systems",
                   "Limited analytics accessibility for business teams",
@@ -614,7 +614,7 @@ export const CXONexusPage = () => {
             >
               CXO Nexus is an enterprise conversational AI platform that turns natural-language questions into grounded
               business insights. It connects directly to enterprise databases, warehouses, ERP, CRM, and knowledge
-              repositories — then uses RAG and an intelligent insights engine to interpret questions and explain answers
+              repositories, then uses RAG and an intelligent insights engine to interpret questions and explain answers
               in business language.
             </motion.p>
           </div>
@@ -646,7 +646,7 @@ export const CXONexusPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 italic"
             >
-              Purpose-built for any data-rich enterprise — wherever leadership decision speed depends on access to
+              Purpose-built for any data-rich enterprise, wherever leadership decision speed depends on access to
               operational and business intelligence.
             </motion.h3>
           </div>

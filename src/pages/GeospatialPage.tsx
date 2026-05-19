@@ -249,7 +249,7 @@ export const GeospatialPage = () => {
 
   const approachSteps = [
     { num: "01", title: "Discover", description: "Understand spatial business questions, assess available location data, and map integration points" },
-    { num: "02", title: "Design", description: "Define GIS architecture — data layers, coordinate systems, integration topology, and visualization strategy" },
+    { num: "02", title: "Design", description: "Define GIS architecture, data layers, coordinate systems, integration topology, and visualization strategy" },
     { num: "03", title: "Build", description: "Configure the ArcGIS environment, build geo-dashboards, and integrate with source systems and BI tools" },
     { num: "04", title: "Field-Enable", description: "Deploy mobile tools for field force, configure data collection forms, and establish real-time sync." },
     { num: "05", title: "Scale & Govern", description: "Establish geodata governance, automate refresh pipelines, and expand to new use cases and regions" },
@@ -258,7 +258,7 @@ export const GeospatialPage = () => {
   const differentiators = [
     {
       title: "ESRI Silver Partner",
-      description: "Authorised reseller and implementation partner for the ArcGIS platform — direct vendor support and licensing.",
+      description: "Authorised reseller and implementation partner for the ArcGIS platform, direct vendor support and licensing.",
     },
     {
       title: "GIS + BI Integration Experts",
@@ -274,11 +274,11 @@ export const GeospatialPage = () => {
     },
     {
       title: "Proven ROI",
-      description: "GIS projects delivered across India, UAE, and Oman — with measurable, documented business outcomes",
+      description: "GIS projects delivered across India, UAE, and Oman, with measurable, documented business outcomes",
     },
     {
       title: "Field-to-Enterprise Coverage",
-      description: "From mobile field data collection to executive geo-dashboards — we cover the full spectrum",
+      description: "From mobile field data collection to executive geo-dashboards, we cover the full spectrum",
     },
   ];
 
@@ -354,7 +354,7 @@ export const GeospatialPage = () => {
               transition={{ delay: 0.3 }}
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              Enterprise-grade GIS strategy, ArcGIS implementation, mobile field operations, and geo-dashboards — engineered to put location at the center of business decisions.
+              Enterprise-grade GIS strategy, ArcGIS implementation, mobile field operations, and geo-dashboards, engineered to put location at the center of business decisions.
             </motion.p>
           </div>
         </div>
@@ -371,7 +371,7 @@ export const GeospatialPage = () => {
                transition={{ delay: 0.1 }}
                className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
-              Most enterprise decisions have a "where" attached to them — where customers live, where assets move, where risks concentrate, where territories overlap. Yet location data often sits trapped in source systems, disconnected from analytics layers and invisible to decision-makers. Techknomatic helps organizations unlock that intelligence with end-to-end geospatial analytics services built on the ESRI ArcGIS platform.
+              Most enterprise decisions have a "where" attached to them, where customers live, where assets move, where risks concentrate, where territories overlap. Yet location data often sits trapped in source systems, disconnected from analytics layers and invisible to decision-makers. Techknomatic helps organizations unlock that intelligence with end-to-end geospatial analytics services built on the ESRI ArcGIS platform.
             </motion.p>
             <motion.p 
                initial={{ opacity: 0, y: 20 }}
@@ -380,7 +380,7 @@ export const GeospatialPage = () => {
                transition={{ delay: 0.2 }}
                className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
-              As an ESRI Silver Partner, we deliver full-stack GIS implementations — from ArcGIS Enterprise and Online setup to mobile field operations, geo-dashboards, route optimisation, and spatial risk analytics. Our work spans BFSI, Mining & Energy, Pharma, Utilities, Retail, and Agriculture, with proven delivery across India, UAE, and Oman — giving enterprises the location intelligence layer that traditional BI alone can't provide.
+              As an ESRI Silver Partner, we deliver full-stack GIS implementations, from ArcGIS Enterprise and Online setup to mobile field operations, geo-dashboards, route optimisation, and spatial risk analytics. Our work spans BFSI, Mining & Energy, Pharma, Utilities, Retail, and Agriculture, with proven delivery across India, UAE, and Oman, giving enterprises the location intelligence layer that traditional BI alone can't provide.
             </motion.p>
           </div>
         </div>
@@ -405,7 +405,7 @@ export const GeospatialPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
-              Six core capabilities that span the full geospatial analytics lifecycle — from platform to field to dashboard.
+              Six core capabilities that span the full geospatial analytics lifecycle, from platform to field to dashboard.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -435,7 +435,7 @@ export const GeospatialPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
-              A platform-agnostic stack — we choose the right tool for your architecture, not the other way around.
+              A platform-agnostic stack, we choose the right tool for your architecture, not the other way around.
             </motion.p>
           </div>
 
@@ -521,7 +521,7 @@ export const GeospatialPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
-              Six differentiators that set our GIS practice apart — from platform credentials to delivery depth.
+              Six differentiators that set our GIS practice apart, from platform credentials to delivery depth.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -254,19 +254,19 @@ export const AIServicesPage = () => {
     {
       title: "Conversational BI",
       description:
-        "Natural-language analytics that lets anyone ask questions and get answers from their data — instantly.",
+        "Natural-language analytics that lets anyone ask questions and get answers from their data, instantly.",
       image: daisImg("conversational-bi.jpg"),
     },
     {
       title: "GenAI for Auto-Summaries",
       description:
-        "Automated generation of summaries, reports, and emails from data — saving hours of manual work.",
+        "Automated generation of summaries, reports, and emails from data, saving hours of manual work.",
       image: daisImg("genai-auto-summaries.jpg"),
     },
     {
       title: "AI Strategy & Model Deployment",
       description:
-        "End-to-end AI consulting — from use-case identification to production deployment and monitoring.",
+        "End-to-end AI consulting, from use-case identification to production deployment and monitoring.",
       image: daisImg("ai-strategy-model-deployment.jpg"),
     },
   ];
@@ -307,7 +307,7 @@ export const AIServicesPage = () => {
       num: "02",
       title: "Design",
       description:
-        "Prompt engineering, model selection, and responsible-AI architecture design — including fallback logic.",
+        "Prompt engineering, model selection, and responsible-AI architecture design, including fallback logic.",
     },
     {
       num: "03",
@@ -331,12 +331,12 @@ export const AIServicesPage = () => {
     {
       title: "AI + Data Engineering Under One Roof",
       description:
-        "We build your AI and your data infrastructure — so they work together by design, not by accident.",
+        "We build your AI and your data infrastructure, so they work together by design, not by accident.",
     },
     {
       title: "Multi-Model Expertise",
       description:
-        "Claude, OpenAI, Azure OpenAI, Mistral, open-source — we select the right model for your needs and budget.",
+        "Claude, OpenAI, Azure OpenAI, Mistral, open-source, we select the right model for your needs and budget.",
     },
     {
       title: "Cross-Industry Experience",
@@ -344,16 +344,16 @@ export const AIServicesPage = () => {
     },
     {
       title: "Enterprise-Grade by Default",
-      description: "Secure, governed, observable, and scalable — built for enterprise requirements from day one.",
+      description: "Secure, governed, observable, and scalable, built for enterprise requirements from day one.",
     },
     {
       title: "No Black Boxes",
       description:
-        "Full transparency on model behaviour, biases, and decision rationale — with auditable evaluation harnesses.",
+        "Full transparency on model behaviour, biases, and decision rationale, with auditable evaluation harnesses.",
     },
     {
       title: "Rapid Prototyping",
-      description: "Working AI prototypes in days — validate the concept before full commitment.",
+      description: "Working AI prototypes in days, validate the concept before full commitment.",
     },
   ];
 
@@ -361,28 +361,28 @@ export const AIServicesPage = () => {
     {
       title: "Intelligent Document Processing & Contract Intelligence",
       subtitle: "Automate extraction, review, and analysis of high-volume enterprise documents.",
-      crux: "Deploy AI-powered document processing pipelines that extract, classify, validate, and summarize structured and unstructured documents — contracts, invoices, clinical records, regulatory filings. Use LLMs with domain-specific fine-tuning to flag risks, compare clause variations, and generate review summaries, reducing manual review effort by up to 70%.",
+      crux: "Deploy AI-powered document processing pipelines that extract, classify, validate, and summarize structured and unstructured documents, contracts, invoices, clinical records, regulatory filings. Use LLMs with domain-specific fine-tuning to flag risks, compare clause variations, and generate review summaries, reducing manual review effort by up to 70%.",
       industries: "Legal · BFSI · Insurance · Healthcare · Procurement",
       impact: "70% reduction in manual review · Faster contract turnaround · Improved risk flagging",
     },
     {
       title: "Intelligent Data Migration & AI-Assisted Schema Transformation",
       subtitle: "Accelerate complex data migrations with AI that maps, transforms, and validates at scale.",
-      crux: "Deploy AI-assisted migration pipelines that automate schema mapping, data type reconciliation, transformation rule generation, and post-migration validation between heterogeneous sources — legacy warehouses, ERPs, SaaS platforms, and cloud databases. LLM-powered mapping assistants reduce manual effort, flag conflicts, and auto-generate reconciliation reports to ensure zero data loss.",
+      crux: "Deploy AI-assisted migration pipelines that automate schema mapping, data type reconciliation, transformation rule generation, and post-migration validation between heterogeneous sources, legacy warehouses, ERPs, SaaS platforms, and cloud databases. LLM-powered mapping assistants reduce manual effort, flag conflicts, and auto-generate reconciliation reports to ensure zero data loss.",
       industries: "BFSI · Retail · Manufacturing · Healthcare · Any Enterprise Migration Program",
       impact: "Faster migration timelines · Reduced manual mapping effort",
     },
     {
       title: "Agentic AI for IT Operations & Incident Resolution (AIOps)",
       subtitle:
-        "Autonomous agents that detect, triage, investigate, and resolve IT incidents — end to end, without human bottlenecks.",
-      crux: "Deploy multi-agent AIOps systems that continuously monitor infrastructure telemetry, application logs, and ITSM queues — automatically classifying incidents by severity, correlating root causes across distributed systems, executing predefined runbooks, and generating plain-language resolution summaries for on-call engineers.",
+        "Autonomous agents that detect, triage, investigate, and resolve IT incidents, end to end, without human bottlenecks.",
+      crux: "Deploy multi-agent AIOps systems that continuously monitor infrastructure telemetry, application logs, and ITSM queues, automatically classifying incidents by severity, correlating root causes across distributed systems, executing predefined runbooks, and generating plain-language resolution summaries for on-call engineers.",
       techStack: "LangChain Agents · AutoGen · ServiceNow · Datadog · Splunk · Azure Monitor · PagerDuty",
       industries: "FinTech · Telecom · SaaS Platforms · E-Commerce · Retail · Banking",
       impact: "40–60% reduction in MTTR · Autonomous runbook execution",
     },
     {
-      title: "Retail & E-Commerce AI — Recommendations & Sentiment Intelligence",
+      title: "Retail & E-Commerce AI, Recommendations & Sentiment Intelligence",
       subtitle: "Personalize customer experiences and optimize retail operations with AI.",
       crux: "Deploy AI-powered product recommendation engines, returns-reason classifiers, and review sentiment analysis pipelines that integrate with e-commerce and CRM platforms. Use LLM-driven customer intent modeling and behavioral signal processing to improve conversion rates and surface actionable insights.",
       industries: "Retail · E-Commerce · D2C · FMCG · Marketplace Platforms",
@@ -431,7 +431,7 @@ export const AIServicesPage = () => {
               transition={{ delay: 0.3 }}
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              Strategy, GenAI applications, agentic workflows, and production-grade model deployment — engineered to
+              Strategy, GenAI applications, agentic workflows, and production-grade model deployment, engineered to
               move enterprises from AI experimentation to measurable business outcomes.
             </motion.p>
           </div>
@@ -449,7 +449,7 @@ export const AIServicesPage = () => {
               transition={{ delay: 0.1 }}
               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
-              Most enterprises are no longer asking whether to invest in AI — they're asking how to operationalize
+              Most enterprises are no longer asking whether to invest in AI, they're asking how to operationalize
               it. Pilots stall in proof-of-concept purgatory. Models work in notebooks but fail in production. GenAI
               prototypes excite leadership but never make it past compliance. Techknomatic helps enterprises bridge that
               gap with end-to-end AI and data strategy services that take ideas from discovery to deployment.
@@ -463,7 +463,7 @@ export const AIServicesPage = () => {
             >
               Our practice spans AI strategy and use-case identification, custom LLM applications and chatbots,
               agentic AI workflows, document AI, conversational BI, and production model deployment with full MLOps.
-              Built on a multi-model foundation — Claude, OpenAI, Mistral, Gemini, and open-source — and tightly coupled
+              Built on a multi-model foundation, Claude, OpenAI, Mistral, Gemini, and open-source, and tightly coupled
               with our data engineering capability, we deliver enterprise-grade AI that is secure, governed, and
               measurably impactful from day one.
             </motion.p>
@@ -512,7 +512,7 @@ export const AIServicesPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
-              A cutting-edge tech stack for the AI era — optimized for performance, scalability, and trust.
+              A cutting-edge tech stack for the AI era, optimized for performance, scalability, and trust.
             </motion.p>
           </div>
 
@@ -567,7 +567,7 @@ export const AIServicesPage = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-white/60 font-medium max-w-2xl"
             >
-              A proven 5-step delivery framework — from use case to production-grade, continuously improving AI.
+              A proven 5-step delivery framework, from use case to production-grade, continuously improving AI.
             </motion.p>
           </div>
 
@@ -628,7 +628,7 @@ export const AIServicesPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium mt-4 max-w-3xl"
             >
-              Four high-impact AI programs we deliver for enterprises — across document intelligence, data migration,
+              Four high-impact AI programs we deliver for enterprises, across document intelligence, data migration,
               autonomous operations, and customer experience.
             </motion.p>
           </div>

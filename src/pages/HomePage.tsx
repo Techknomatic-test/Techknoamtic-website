@@ -230,7 +230,7 @@ const Hero = () => {
           </span>
         </>
       ),
-      description: "Techknomatic is a specialist analytics and AI consultancy helping enterprises across India and the Middle East design, build, and scale their data advantage — from BI dashboards and data platforms to geospatial intelligence and enterprise AI.",
+      description: "Techknomatic is a specialist analytics and AI consultancy helping enterprises across India and the Middle East design, build, and scale their data advantage, from BI dashboards and data platforms to geospatial intelligence and enterprise AI.",
       ctaPrimary: "Explore Our Work",
       ctaSecondary: "Talk to an Expert"
     },
@@ -573,7 +573,7 @@ const ServicesSection = () => {
       category: "Visualization",
       title: "Business Intelligence",
       description:
-        "Turning data into decisions at speed and scale. Power BI, Tableau, Qlik — 500+ dashboards across industries.",
+        "Turning data into decisions at speed and scale. Power BI, Tableau, Qlik, 500+ dashboards across industries.",
       moreLabel: "BI Services",
       icon: BarChart3,
       imageUrl: "Images/3d-graph-computer-illustration.jpg",
@@ -607,7 +607,7 @@ const ServicesSection = () => {
       category: "Innovation",
       title: "Data & AI Services",
       description:
-        "LLM-powered assistants, agentic workflows, document AI, and conversational BI — enterprise-grade and governed.",
+        "LLM-powered assistants, agentic workflows, document AI, and conversational BI, enterprise-grade and governed.",
       moreLabel: "Data & AI Services",
       icon: Sparkles,
       imageUrl: "Images/AI & GenAI.jpg",
@@ -657,7 +657,7 @@ const SolutionsSection = () => {
       category: "Manufacturing",
       title: "Manufacturing Analytics",
       description:
-        "From plant floor to boardroom — OEE, production, quality, maintenance, and energy. 15% improvement in production efficiency.",
+        "From plant floor to boardroom, OEE, production, quality, maintenance, and energy. 15% improvement in production efficiency.",
       moreLabel: "View Solution",
       imageUrl: "Images/2152005500.jpg",
       dark: false,
@@ -667,7 +667,7 @@ const SolutionsSection = () => {
       category: "Oil & Gas",
       title: "Oil & Gas Analytics",
       description:
-        "Refinery operations, asset performance, energy monitoring, and safety — SCADA-integrated. 18% downtime reduction.",
+        "Refinery operations, asset performance, energy monitoring, and safety, SCADA-integrated. 18% downtime reduction.",
       moreLabel: "View Solution",
       imageUrl: OIL_GAS_CARD_IMG,
       dark: false,
@@ -711,7 +711,7 @@ const SolutionsSection = () => {
             className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl leading-relaxed mt-6"
           >
             Pre-built, production-ready analytics accelerators across key
-            industries — go live faster with fewer surprises.
+            industries, go live faster with fewer surprises.
           </motion.p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -729,7 +729,7 @@ const SolutionsSection = () => {
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
             <h3 className="text-4xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight max-w-xl leading-tight">
               Don't see your industry? <br />
-              We've built intelligence for it.
+              We may know your world better than this page lets on. Reach out.
             </h3>
             <Link
               to={contactFormLinkTo}
@@ -754,29 +754,29 @@ const AcceleratorsSection = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
   const accelerators = [
     {
-      title: "DataPulse IQ — AI-Powered Data Reliability Platform",
-      desc: "Monitors, validates, governs, and auto-remediates data issues across the enterprise stack — cuts data issue resolution time by 30–50%.",
+      title: "DataPulse IQ, AI-Powered Data Reliability Platform",
+      desc: "Monitors, validates, governs, and auto-remediates data issues across the enterprise stack, cuts data issue resolution time by 30–50%.",
       cta: "Explore DataPulse IQ",
       icon: ShieldCheck,
       href: "/dataguard",
     },
     {
-      title: "CallOps AI — AI Voice Agents for Calling Operations",
-      desc: "Human-like voice AI for automated inbound/outbound calls — integrates with your business logic for end-to-end call workflow automation.",
+      title: "CallOps AI, AI Voice Agents for Calling Operations",
+      desc: "Human-like voice AI for automated inbound/outbound calls, integrates with your business logic for end-to-end call workflow automation.",
       cta: "Explore CallOps AI",
       icon: PhoneCall,
       href: "/callops-ai",
     },
     {
-      title: "AssistIQ — AI Agents for Intelligent Self-Service",
-      desc: "Photorealistic avatar + AI support agents for 24/7 query resolution — deflects L1 support load with conversational self-service.",
+      title: "AssistIQ, AI Agents for Intelligent Self-Service",
+      desc: "Photorealistic avatar + AI support agents for 24/7 query resolution, deflects L1 support load with conversational self-service.",
       cta: "Explore AssistIQ",
       icon: Sparkles,
       href: "/assist-iq",
     },
     {
-      title: "CXO Nexus — Strategic Conversational AI",
-      desc: "Conversational intelligence layer that bridges enterprise data and executive decisioning — natural-language access to KPIs and operational signals for leadership.",
+      title: "CXO Nexus, Strategic Conversational AI",
+      desc: "Conversational intelligence layer that bridges enterprise data and executive decisioning, natural-language access to KPIs and operational signals for leadership.",
       cta: "Explore CXO Nexus",
       icon: LayoutDashboard,
       href: "/cxo-nexus",
@@ -811,7 +811,7 @@ const AcceleratorsSection = () => {
             </h2>
             <div className="w-12 h-1 bg-accent mb-6" />
             <p className="text-base text-slate-300 font-medium leading-relaxed max-w-2xl">
-              Accelerators are a strong differentiator — own product thinking
+              Accelerators are a strong differentiator, own product thinking
               from a services company.
             </p>
           </motion.div>
@@ -1052,7 +1052,7 @@ const WhyUsSection = () => {
     {
       title: "Outcomes, Not Outputs",
       description:
-        "We don't ship dashboards — we deliver decisions. Every engagement is tied to business impact.",
+        "We don't ship dashboards, we deliver decisions. Every engagement is tied to business impact.",
     },
     {
       title: "Enterprise-Grade by Default",

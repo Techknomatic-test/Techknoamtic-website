@@ -179,9 +179,9 @@ const IndustryCard = ({
 export const AgenticAIITSMPage = () => {
   const capabilities = [
     {
-      title: "Capability 1 — Multi-Channel Request Intake",
+      title: "Capability 1, Multi-Channel Request Intake",
       outcome:
-        "Every employee channel, captured — unstructured conversation turned into structured action.",
+        "Every employee channel, captured, unstructured conversation turned into structured action.",
       items: [
         "Email systems and shared service-desk inboxes",
         "Microsoft Teams and Slack integrations",
@@ -193,9 +193,9 @@ export const AgenticAIITSMPage = () => {
       icon: Search,
     },
     {
-      title: "Capability 2 — AI Intent Classification Engine",
+      title: "Capability 2, AI Intent Classification Engine",
       outcome:
-        "Advanced AI that understands what the employee actually needs — even when they don’t say it clearly.",
+        "Advanced AI that understands what the employee actually needs, even when they don’t say it clearly.",
       items: [
         "Identity & Access Management, Software, Network, Device, Email categorization",
         "IT knowledge queries and routine service requests",
@@ -207,9 +207,9 @@ export const AgenticAIITSMPage = () => {
       icon: Brain,
     },
     {
-      title: "Capability 3 — Autonomous Resolution Engine",
+      title: "Capability 3, Autonomous Resolution Engine",
       outcome:
-        "Agentic AI that doesn’t just respond — it executes real IT actions inside enterprise systems.",
+        "Agentic AI that doesn’t just respond, it executes real IT actions inside enterprise systems.",
       items: [
         "Password reset, account unlock, MFA reconfiguration",
         "VPN enablement and connectivity troubleshooting",
@@ -221,23 +221,23 @@ export const AgenticAIITSMPage = () => {
       icon: Zap,
     },
     {
-      title: "Capability 4 — Security-First Governance Layer",
+      title: "Capability 4, Security-First Governance Layer",
       outcome:
         "Enterprise security and policy enforcement built into every autonomous action.",
       items: [
         "Role-based access control (RBAC) on every workflow",
         "Approval-driven execution for sensitive request types",
         "Secure identity verification (OTP / MFA) before high-risk actions",
-        "Risk-tiered automation — autonomous for low-risk, gated for high-risk",
+        "Risk-tiered automation, autonomous for low-risk, gated for high-risk",
         "Complete audit visibility on every AI-executed action",
         "Compliance-ready operations for regulated industries",
       ],
       icon: ShieldCheck,
     },
     {
-      title: "Capability 5 — Intelligent Escalation Framework",
+      title: "Capability 5, Intelligent Escalation Framework",
       outcome:
-        "The AI knows what it can resolve — and exactly when to hand off to a human engineer.",
+        "The AI knows what it can resolve, and exactly when to hand off to a human engineer.",
       items: [
         "Automatic escalation when AI confidence is low",
         "Policy-violation detection routes ticket to L2 with context",
@@ -249,9 +249,9 @@ export const AgenticAIITSMPage = () => {
       icon: ArrowRightLeft,
     },
     {
-      title: "Capability 6 — Conversational Clarification AI",
+      title: "Capability 6, Conversational Clarification AI",
       outcome:
-        "When information is missing, the agent asks — instead of acting on incomplete requests.",
+        "When information is missing, the agent asks, instead of acting on incomplete requests.",
       items: [
         "Natural-language clarification dialogs with employees",
         "Targeted follow-up questions when intent or detail is unclear",
@@ -263,13 +263,13 @@ export const AgenticAIITSMPage = () => {
       icon: MessageSquare,
     },
     {
-      title: "Capability 7 — Enterprise Knowledge & Self-Service AI",
+      title: "Capability 7, Enterprise Knowledge & Self-Service AI",
       outcome:
-        "Instant answers to IT knowledge queries — grounded in your enterprise knowledge base.",
+        "Instant answers to IT knowledge queries, grounded in your enterprise knowledge base.",
       items: [
-        "“How do I connect to VPN?” — answered instantly",
-        "“How do I install approved software?” — returns catalog steps",
-        "“What is the escalation process?” — returns your IT policy",
+        "“How do I connect to VPN?”, answered instantly",
+        "“How do I install approved software?”, returns catalog steps",
+        "“What is the escalation process?”, returns your IT policy",
         "AI-powered retrieval from internal knowledge bases and SOPs",
         "Reduces L1 ticket creation by deflecting knowledge queries",
         "Grounded responses with source traceability",
@@ -277,9 +277,9 @@ export const AgenticAIITSMPage = () => {
       icon: Database,
     },
     {
-      title: "Capability 8 — Automated Ticketing & Audit Trails",
+      title: "Capability 8, Automated Ticketing & Audit Trails",
       outcome:
-        "Every interaction logged with full decision history — enterprise-grade governance.",
+        "Every interaction logged with full decision history, enterprise-grade governance.",
       items: [
         "Native integration with Jira, ServiceNow, and logging systems",
         "Decision history captured for every AI action",
@@ -308,7 +308,7 @@ export const AgenticAIITSMPage = () => {
     {
       title: "Retail & E-Commerce",
       description:
-        "Store, POS, and workforce IT support — automated onboarding, access, and connectivity resolution.",
+        "Store, POS, and workforce IT support, automated onboarding, access, and connectivity resolution.",
       image: `${ASSIST_IMG}/Retail & E-Commerce.jpg`,
     },
     {
@@ -320,7 +320,7 @@ export const AgenticAIITSMPage = () => {
     {
       title: "Manufacturing",
       description:
-        "Plant and operations IT support — industrial workstation troubleshooting and OT-friendly workflows.",
+        "Plant and operations IT support, industrial workstation troubleshooting and OT-friendly workflows.",
       image: `${TIQ_ENT_IMG}/Manufacturing.jpg`,
     },
     {
@@ -341,7 +341,7 @@ export const AgenticAIITSMPage = () => {
     {
       title: "Intake",
       content:
-        "Employee requests are captured across email, Microsoft Teams, Slack, and portals — with channel-native context carried into the workflow.",
+        "Employee requests are captured across email, Microsoft Teams, Slack, and portals, with channel-native context carried into the workflow.",
       icon: Search,
     },
     {
@@ -359,7 +359,7 @@ export const AgenticAIITSMPage = () => {
     {
       title: "Resolve",
       content:
-        "Engine executes approved IT actions inside connected systems — password resets, VPN, etc. — through APIs.",
+        "Engine executes approved IT actions inside connected systems, password resets, VPN, etc., through APIs.",
       icon: Zap,
     },
     {
@@ -371,7 +371,7 @@ export const AgenticAIITSMPage = () => {
     {
       title: "Audit",
       content:
-        "Every interaction is logged into ITSM and audit systems — decision history, approvals, and SLA tracking captured.",
+        "Every interaction is logged into ITSM and audit systems, decision history, approvals, and SLA tracking captured.",
       icon: BarChart3,
     },
   ];
@@ -426,7 +426,7 @@ export const AgenticAIITSMPage = () => {
       title: "BFSI & Financial Services",
       subtitle:
         "Secure, governance-driven IT support automation for regulated banking operations.",
-      crux: "TicketIQ automates secure identity/access management, employee support, and access provisioning — keeping every action policy-governed and audit-defensible.",
+      crux: "TicketIQ automates secure identity/access management, employee support, and access provisioning, keeping every action policy-governed and audit-defensible.",
       focusAreas:
         "Identity & Access · Employee IT Support · Governance-Driven Provisioning · Audit Readiness · Compliance",
       outcome: "Faster L1 resolution · Audit-ready operations · Stronger access governance",
@@ -435,7 +435,7 @@ export const AgenticAIITSMPage = () => {
       title: "Healthcare",
       subtitle:
         "Hospital and clinical IT support automation with secure access workflows.",
-      crux: "Automate hospital IT support, clinical application access, and device troubleshooting — reducing delays while maintaining strict identity and access controls.",
+      crux: "Automate hospital IT support, clinical application access, and device troubleshooting, reducing delays while maintaining strict identity and access controls.",
       focusAreas:
         "Hospital IT Support · Clinical App Access · Workstation Troubleshooting · Secure Workflows · IT Governance",
       outcome: "Faster clinical IT support · Reduced workstation downtime · Secure access compliance",
@@ -444,7 +444,7 @@ export const AgenticAIITSMPage = () => {
       title: "Retail & E-Commerce",
       subtitle:
         "Store and workforce IT support automation across distributed operations.",
-      crux: "TicketIQ resolves store IT issues, POS problems, and onboarding/access provisioning — keeping stores running without an in-store IT engineer.",
+      crux: "TicketIQ resolves store IT issues, POS problems, and onboarding/access provisioning, keeping stores running without an in-store IT engineer.",
       focusAreas:
         "Store IT Support · POS Resolution · Network Troubleshooting · Onboarding Automation · Distributed Workforce",
       outcome: "Higher store uptime · Faster onboarding · Reduced field IT cost",
@@ -453,7 +453,7 @@ export const AgenticAIITSMPage = () => {
       title: "IT & Technology Services",
       subtitle:
         "Developer environment provisioning and shared service desk automation at scale.",
-      crux: "Automate developer setup, app/infra support, and service desk workflows — freeing IT engineers from repetitive work and accelerating enablement.",
+      crux: "Automate developer setup, app/infra support, and service desk workflows, freeing IT engineers from repetitive work and accelerating enablement.",
       focusAreas:
         "Developer Environments · App & Infra Support · ITSM Automation · Shared Service Desk · Enterprise IT",
       outcome: "Faster developer onboarding · Lower L1 load · Scalable IT operations",
@@ -462,7 +462,7 @@ export const AgenticAIITSMPage = () => {
       title: "Manufacturing",
       subtitle:
         "Plant and operations IT support automation across industrial environments.",
-      crux: "TicketIQ provides plant IT support, workstation troubleshooting, and OT workflows — keeping plant systems running while respecting industrial constraints.",
+      crux: "TicketIQ provides plant IT support, workstation troubleshooting, and OT workflows, keeping plant systems running while respecting industrial constraints.",
       focusAreas:
         "Plant IT Support · Industrial Workstations · Device Management · OT Workflows · Operations Continuity",
       outcome: "Reduced plant IT downtime · Faster issue resolution · OT-aware governance",
@@ -471,7 +471,7 @@ export const AgenticAIITSMPage = () => {
       title: "Logistics & Supply Chain",
       subtitle:
         "Warehouse, endpoint, and distributed workforce IT support automation.",
-      crux: "Automate warehouse support, connectivity troubleshooting, and role-based access for distributed workers — keeping operations productive without expanding headcount.",
+      crux: "Automate warehouse support, connectivity troubleshooting, and role-based access for distributed workers, keeping operations productive without expanding headcount.",
       focusAreas:
         "Warehouse IT · Endpoint Troubleshooting · Role-Based Access · Distributed Workforce · Field Support",
       outcome: "Better logistics uptime · Scalable distributed support · Lower IT cost per worker",
@@ -480,7 +480,7 @@ export const AgenticAIITSMPage = () => {
       title: "Telecom",
       subtitle:
         "Internal workforce IT support and high-volume ticket handling automation.",
-      crux: "TicketIQ handles internal workforce support, network/collaboration issue resolution, and high-volume ticket flows — creating an autonomous operations layer.",
+      crux: "TicketIQ handles internal workforce support, network/collaboration issue resolution, and high-volume ticket flows, creating an autonomous operations layer.",
       focusAreas:
         "Workforce IT · Network Resolution · Collaboration Support · Service Desk Automation · High-Volume Handling",
       outcome: "Massive L1 deflection · Faster resolution at scale · Lower service desk cost",
@@ -527,7 +527,7 @@ export const AgenticAIITSMPage = () => {
               transition={{ delay: 0.3 }}
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              Agentic AI that resolves L1 IT tickets autonomously — understanding intent,
+              Agentic AI that resolves L1 IT tickets autonomously, understanding intent,
               executing approved actions, and enforcing enterprise governance from intake to
               audit. Built for IT teams ready to move from reactive service desks to zero-touch
               IT operations, without compromising security or control.
@@ -556,14 +556,14 @@ export const AgenticAIITSMPage = () => {
             >
               Enterprise IT support is stuck in a loop the business can’t scale out
               of. The vast majority of tickets flowing into service desks are
-              repetitive L1 work — password resets, account unlocks, VPN issues,
-              software installs, mailbox access — yet each ticket still consumes a
+              repetitive L1 work, password resets, account unlocks, VPN issues,
+              software installs, mailbox access, yet each ticket still consumes a
               human agent, an hour or more of resolution time, and an employee’s
               entire workflow until it’s closed. Service desks scale headcount to
               keep up. Employees lose hours waiting on routine fixes. And the IT
               teams who should be enabling transformation spend their best capacity
               firefighting the same five requests every day. Traditional chatbots and
-              scripted automations promise to fix this — but break the moment a
+              scripted automations promise to fix this, but break the moment a
               request is ambiguous, requires real action inside enterprise systems, or
               needs governance the business can defend.
             </motion.p>
@@ -631,7 +631,7 @@ export const AgenticAIITSMPage = () => {
             </h3>
             <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
               The result: ticket backlogs, slower response and resolution times, rising operational cost,
-              overloaded support teams, and degraded employee experience — while capacity that should fund
+              overloaded support teams, and degraded employee experience, while capacity that should fund
               modernization gets spent on repetitive work.
             </p>
           </motion.div>
@@ -670,7 +670,7 @@ export const AgenticAIITSMPage = () => {
               TicketIQ is an agentic AI ITSM platform that autonomously manages and
               resolves L1 IT tickets across the enterprise. It captures requests from
               email, Teams, Slack, and portals; classifies intent; verifies identity;
-              and executes approved actions inside connected systems — ensuring
+              and executes approved actions inside connected systems, ensuring
               security, consistency, and traceability.
             </motion.p>
           </div>
@@ -701,7 +701,7 @@ export const AgenticAIITSMPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 italic"
             >
-              Purpose-built for enterprises with high-volume IT service desks —
+              Purpose-built for enterprises with high-volume IT service desks , 
               wherever repetitive L1 tickets, governance demands, and scaling pressure
               collide.
             </motion.h3>
@@ -794,7 +794,7 @@ export const AgenticAIITSMPage = () => {
             >
               TicketIQ is designed as an ITSM-native, integration-flexible platform.
               Whether your docs are in SharePoint or Confluence, your endpoints in
-              Intune or Jamf, and your service desk in ServiceNow or Jira — TicketIQ
+              Intune or Jamf, and your service desk in ServiceNow or Jira, TicketIQ
               connects through pre-built integrations and APIs to take autonomous
               action.
             </motion.p>

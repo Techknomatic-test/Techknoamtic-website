@@ -177,9 +177,9 @@ const IndustryCard = ({
 export const AssistIQPage = () => {
   const capabilities = [
     {
-      title: "Capability 1 — AI-Powered Customer Query Handling",
+      title: "Capability 1, AI-Powered Customer Query Handling",
       outcome:
-        "Autonomous handling of routine and high-volume customer interactions — instantly, 24×7.",
+        "Autonomous handling of routine and high-volume customer interactions, instantly, 24×7.",
       items: [
         "Product and service inquiries handled conversationally",
         "Account, order, and status-tracking queries",
@@ -191,7 +191,7 @@ export const AssistIQPage = () => {
       icon: Sparkles,
     },
     {
-      title: "Capability 2 — Intelligent FAQ Automation",
+      title: "Capability 2, Intelligent FAQ Automation",
       outcome:
         "From static FAQ pages to dynamic conversational self-service.",
       items: [
@@ -205,7 +205,7 @@ export const AssistIQPage = () => {
       icon: MessageSquare,
     },
     {
-      title: "Capability 3 — AI Avatars & Human-Like Interactions",
+      title: "Capability 3, AI Avatars & Human-Like Interactions",
       outcome:
         "Engaging, brand-aligned digital assistants for customer-facing experiences.",
       items: [
@@ -219,9 +219,9 @@ export const AssistIQPage = () => {
       icon: Video,
     },
     {
-      title: "Capability 4 — Workflow Automation Through Conversations",
+      title: "Capability 4, Workflow Automation Through Conversations",
       outcome:
-        "Beyond answers — the AI agent executes real business workflows.",
+        "Beyond answers, the AI agent executes real business workflows.",
       items: [
         "Appointment booking and rescheduling",
         "Service request submission and tracking",
@@ -233,7 +233,7 @@ export const AssistIQPage = () => {
       icon: Workflow,
     },
     {
-      title: "Capability 5 — Multi-Channel Customer Engagement",
+      title: "Capability 5, Multi-Channel Customer Engagement",
       outcome:
         "One AI agent. Every customer channel. Consistent experience.",
       items: [
@@ -247,9 +247,9 @@ export const AssistIQPage = () => {
       icon: Globe,
     },
     {
-      title: "Capability 6 — AI Knowledge Intelligence",
+      title: "Capability 6, AI Knowledge Intelligence",
       outcome:
-        "Accurate answers grounded in enterprise knowledge — not generic AI.",
+        "Accurate answers grounded in enterprise knowledge, not generic AI.",
       items: [
         "FAQ and SOP repository integration",
         "Product catalogs and pricing data",
@@ -261,9 +261,9 @@ export const AssistIQPage = () => {
       icon: Brain,
     },
     {
-      title: "Capability 7 — Intelligent Escalation Framework",
+      title: "Capability 7, Intelligent Escalation Framework",
       outcome:
-        "AI knows what it can answer — and exactly when to hand off to a human.",
+        "AI knows what it can answer, and exactly when to hand off to a human.",
       items: [
         "Automatic escalation on complex customer scenarios",
         "Low-confidence response detection and handoff",
@@ -275,7 +275,7 @@ export const AssistIQPage = () => {
       icon: ArrowRightLeft,
     },
     {
-      title: "Capability 8 — Analytics & Conversation Insights",
+      title: "Capability 8, Analytics & Conversation Insights",
       outcome:
         "Every conversation becomes operational and customer intelligence.",
       items: [
@@ -294,7 +294,7 @@ export const AssistIQPage = () => {
     {
       title: "Retail & E-Commerce",
       description:
-        "AI agents that handle order tracking, returns, recommendations, and promotions — 24×7.",
+        "AI agents that handle order tracking, returns, recommendations, and promotions, 24×7.",
       image: `${ASSIST_IMG}/Retail & E-Commerce.jpg`,
     },
     {
@@ -330,7 +330,7 @@ export const AssistIQPage = () => {
     {
       title: "Government & Public Services",
       description:
-        "AI citizen-service portals for schemes, applications, and public information — at digital scale.",
+        "AI citizen-service portals for schemes, applications, and public information, at digital scale.",
       image: `${ASSIST_IMG}/Government & Public Services.jpg`,
     },
   ];
@@ -339,7 +339,7 @@ export const AssistIQPage = () => {
     {
       title: "Intent Capture",
       content:
-        "Customer query is captured across web, mobile, WhatsApp, voice, kiosk, or portal — with channel-native context carried into the conversation.",
+        "Customer query is captured across web, mobile, WhatsApp, voice, kiosk, or portal, with channel-native context carried into the conversation.",
       icon: MessageSquare,
     },
     {
@@ -351,13 +351,13 @@ export const AssistIQPage = () => {
     {
       title: "Respond",
       content:
-        "Conversational response is generated in the customer’s language and channel — delivered via LLM-powered agent or avatar.",
+        "Conversational response is generated in the customer’s language and channel, delivered via LLM-powered agent or avatar.",
       icon: UserCircle,
     },
     {
       title: "Execute",
       content:
-        "When intent requires action, AssistIQ executes the workflow autonomously — bookings, status lookups, or service requests.",
+        "When intent requires action, AssistIQ executes the workflow autonomously, bookings, status lookups, or service requests.",
       icon: Zap,
     },
     {
@@ -369,7 +369,7 @@ export const AssistIQPage = () => {
     {
       title: "Learn",
       content:
-        "Every conversation feeds analytics and continuous AI optimization — improving intent accuracy and refining escalation thresholds.",
+        "Every conversation feeds analytics and continuous AI optimization, improving intent accuracy and refining escalation thresholds.",
       icon: Sparkles,
     },
   ];
@@ -430,7 +430,7 @@ export const AssistIQPage = () => {
       title: "Retail & E-Commerce",
       subtitle:
         "24×7 AI customer assistance for orders, returns, and shopper engagement.",
-      crux: "AssistIQ automates customer query handling, order tracking and returns assistance, product recommendation conversations, and promotional engagement — turning support into a revenue channel.",
+      crux: "AssistIQ automates customer query handling, order tracking and returns assistance, product recommendation conversations, and promotional engagement, turning support into a revenue channel.",
       focusAreas:
         "Query Automation · Order Tracking · Returns Assistance · Product Recommendation · Promotional Engagement",
       outcome: "Higher CSAT · Faster resolution · Lower support cost per order",
@@ -439,7 +439,7 @@ export const AssistIQPage = () => {
       title: "BFSI",
       subtitle:
         "Conversational AI for banking, cards, loans, and onboarding self-service.",
-      crux: "Handle account queries, loan/card support, and onboarding journeys through AI agents that operate inside your CRM and core systems — with secure human escalation.",
+      crux: "Handle account queries, loan/card support, and onboarding journeys through AI agents that operate inside your CRM and core systems, with secure human escalation.",
       focusAreas:
         "Account Queries · Loan & Card Support · Claims Assistance · Payments · Onboarding Guidance",
       outcome: "Faster customer service · Lower call-center load · Safer escalation",
@@ -448,7 +448,7 @@ export const AssistIQPage = () => {
       title: "Telecom",
       subtitle:
         "AI self-service for plans, recharges, complaints, and service requests.",
-      crux: "AssistIQ automates plan/recharge assistance, complaint registration, and SIM guidance — deflecting routine queries from contact centers and improving resolution times.",
+      crux: "AssistIQ automates plan/recharge assistance, complaint registration, and SIM guidance, deflecting routine queries from contact centers and improving resolution times.",
       focusAreas:
         "Plans & Recharge · Complaint Registration · SIM Activation · Service Requests · Customer Channels",
       outcome: "Higher deflection · Faster resolution · Lower contact-center cost",
@@ -457,7 +457,7 @@ export const AssistIQPage = () => {
       title: "Healthcare",
       subtitle:
         "AI agents and avatars for appointments, patient queries, and hospital services.",
-      crux: "Automate appointment booking, patient query assistance, and prescription guidance — freeing clinical and admin teams from routine query load while ensuring safe handoffs.",
+      crux: "Automate appointment booking, patient query assistance, and prescription guidance, freeing clinical and admin teams from routine query load while ensuring safe handoffs.",
       focusAreas:
         "Appointment Booking · Patient Queries · Prescription Guidance · Hospital Services · Safe Escalation",
       outcome: "Faster patient response · Reduced admin load · Better patient experience",
@@ -466,7 +466,7 @@ export const AssistIQPage = () => {
       title: "Logistics",
       subtitle:
         "Conversational AI for shipment tracking, delivery issues, and customer updates.",
-      crux: "AssistIQ provides instant shipment tracking, delivery issue resolution, and proactive communication — reducing 'Where is my order?' contacts and improving delivery CX.",
+      crux: "AssistIQ provides instant shipment tracking, delivery issue resolution, and proactive communication, reducing 'Where is my order?' contacts and improving delivery CX.",
       focusAreas:
         "Shipment Tracking · Delivery Issues · Customer Communication · Status Notifications · Proactive Updates",
       outcome: "Fewer WISMO calls · Better delivery experience · Lower support cost",
@@ -484,7 +484,7 @@ export const AssistIQPage = () => {
       title: "Government & Public Services",
       subtitle:
         "AI citizen-service portals for schemes, applications, and public information.",
-      crux: "Deploy AI agents and avatars across citizen portals to guide scheme applications and answer queries — enabling 24×7 citizen access at scale.",
+      crux: "Deploy AI agents and avatars across citizen portals to guide scheme applications and answer queries, enabling 24×7 citizen access at scale.",
       focusAreas:
         "Citizen Portals · Scheme Guidance · Public Information · Application Assistance · Digital Services",
       outcome: "Better citizen access · Reduced departmental load · Standardized public service",
@@ -532,7 +532,7 @@ export const AssistIQPage = () => {
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
               AI-powered conversational agents and intelligent avatars that autonomously handle
-              customer queries, execute workflows, and deliver human-like self-service — 24×7,
+              customer queries, execute workflows, and deliver human-like self-service, 24×7,
               across every digital channel. Built for enterprises ready to move from manual
               customer support to intelligent autonomous engagement.
             </motion.p>
@@ -560,13 +560,13 @@ export const AssistIQPage = () => {
             >
               Customer expectations have outrun the support models built to serve
               them. Today’s customers expect instant responses across every channel
-              they use — web, app, WhatsApp, voice — yet most enterprises still
+              they use, web, app, WhatsApp, voice, yet most enterprises still
               answer them through shift-based contact centers, static FAQ pages, and
               ticket queues. The result is a constant tension: repetitive queries
               flood support teams, wait times stretch, costs rise, and customers
               churn quietly to faster competitors. Meanwhile, the business case for
               AI-led self-service has shifted from ‘nice to have’ to operational
-              necessity — with one condition: the AI has to actually work, sound
+              necessity, with one condition: the AI has to actually work, sound
               human, and know when to escalate.
             </motion.p>
           </div>
@@ -632,7 +632,7 @@ export const AssistIQPage = () => {
             </h3>
             <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
               The result: poor customer satisfaction, reduced operational efficiency, higher support
-              overheads, lost engagement and conversion opportunities — and a widening gap between the
+              overheads, lost engagement and conversion opportunities, and a widening gap between the
               experience customers expect and the support model built to deliver it.
             </p>
           </motion.div>
@@ -671,7 +671,7 @@ export const AssistIQPage = () => {
             >
               Every conversation is an opportunity. AssistIQ unifies your business
               knowledge into an intelligent conversational engine that handles routine
-              inquiries, executes workflows, and escalates complex scenarios —
+              inquiries, executes workflows, and escalates complex scenarios , 
               ensuring 24/7 engagement without the manual overhead.
             </motion.p>
           </motion.div>
@@ -702,7 +702,7 @@ export const AssistIQPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 italic"
             >
-              Purpose-built for customer-facing enterprises — wherever customer
+              Purpose-built for customer-facing enterprises, wherever customer
               expectations have outpaced traditional support models.
             </motion.h3>
           </div>
@@ -737,7 +737,7 @@ export const AssistIQPage = () => {
               captures customer intent, understands meaning through
               enterprise-grounded knowledge, responds in human-like conversation,
               executes workflows autonomously, escalates safely, and learns
-              continuously — transforming 0ost-effective engagement
+              continuously, transforming 0ost-effective engagement
               layer.
             </motion.p>
           </div>
@@ -794,9 +794,9 @@ export const AssistIQPage = () => {
               className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
             >
               AssistIQ is a channel-first, integration-flexible platform. Whether
-              web, mobile, WhatsApp, or voice — AssistIQ deploys with unified
+              web, mobile, WhatsApp, or voice, AssistIQ deploys with unified
               context. It plugs into your CRM, ticketing, and operational systems
-              through pre-built connectors and APIs — operating on top of the CX
+              through pre-built connectors and APIs, operating on top of the CX
               stack you already run.
             </motion.p>
           </div>

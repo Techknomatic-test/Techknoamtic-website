@@ -149,7 +149,7 @@ const IndustryCard = ({ title, description, image, delay = 0 }: { title: string;
 export const CallOpsAIPage = () => {
   const capabilities = [
     {
-      title: "Capability 1 — AI-Powered Inbound Calling",
+      title: "Capability 1, AI-Powered Inbound Calling",
       outcome: "Always-on, intelligent handling of every incoming customer call.",
       items: [
         "Customer support and query handling",
@@ -162,7 +162,7 @@ export const CallOpsAIPage = () => {
       icon: PhoneCall
     },
     {
-      title: "Capability 2 — Intelligent Outbound Calling Engine",
+      title: "Capability 2, Intelligent Outbound Calling Engine",
       outcome: "Scale high-volume outbound engagement without expanding headcount.",
       items: [
         "Lead follow-ups and qualification",
@@ -175,7 +175,7 @@ export const CallOpsAIPage = () => {
       icon: Zap
     },
     {
-      title: "Capability 3 — Conversational AI Voice Agents",
+      title: "Capability 3, Conversational AI Voice Agents",
       outcome: "Natural, human-like conversations across every touchpoint.",
       items: [
         "Natural language understanding (NLU)",
@@ -188,7 +188,7 @@ export const CallOpsAIPage = () => {
       icon: Sparkles
     },
     {
-      title: "Capability 4 — Bulk Calling at Enterprise Scale",
+      title: "Capability 4, Bulk Calling at Enterprise Scale",
       outcome: "Launch and manage thousands of concurrent conversations effortlessly.",
       items: [
         "Simultaneous bulk outbound calling",
@@ -201,7 +201,7 @@ export const CallOpsAIPage = () => {
       icon: Layers
     },
     {
-      title: "Capability 5 — Call Analytics & Conversation Intelligence",
+      title: "Capability 5, Call Analytics & Conversation Intelligence",
       outcome: "Turn every conversation into structured business intelligence.",
       items: [
         "Full call logs and conversation history",
@@ -214,7 +214,7 @@ export const CallOpsAIPage = () => {
       icon: BarChart3
     },
     {
-      title: "Capability 6 — Intelligent Follow-Ups & Reminders",
+      title: "Capability 6, Intelligent Follow-Ups & Reminders",
       outcome: "No customer interaction slips through the cracks.",
       items: [
         "Automated lead nurturing sequences",
@@ -262,11 +262,11 @@ export const CallOpsAIPage = () => {
   ];
 
   const steps = [
-    { title: "Connect", content: "Calls flow in/out via SIP, cloud telephony, and CCaaS integrations — supporting inbound queues and outbound dialers.", icon: Network },
+    { title: "Connect", content: "Calls flow in/out via SIP, cloud telephony, and CCaaS integrations, supporting inbound queues and outbound dialers.", icon: Network },
     { title: "Observe", content: "Real-time speech recognition converts customer voice into text with low latency and accent adaptability.", icon: Ear },
-    { title: "Validate", content: "AI models detect intent, entities, and conversational context — driving the next best action.", icon: Search },
+    { title: "Validate", content: "AI models detect intent, entities, and conversational context, driving the next best action.", icon: Search },
     { title: "Govern", content: "LLM-powered reasoning generates context-aware, human-like responses across multi-turn conversations.", icon: Brain },
-    { title: "Act", content: "AI agent executes business workflows — CRM updates, scheduling, ticket creation, payment links, and delivery via TTS.", icon: Zap }
+    { title: "Act", content: "AI agent executes business workflows, CRM updates, scheduling, ticket creation, payment links, and delivery via TTS.", icon: Zap }
   ];
 
   const stack = [
@@ -320,7 +320,7 @@ export const CallOpsAIPage = () => {
   const useCases = [
     {
       title: "Collections Automation",
-      subtitle: "Recover overdue payments at scale — without expanding collections teams.",
+      subtitle: "Recover overdue payments at scale, without expanding collections teams.",
       crux: "CallOps AI runs intelligent outbound campaigns for overdue accounts, EMI reminders, and dues recovery. Agents negotiate context-aware payment options, capture commitments, and escalate exceptions.",
       focusAreas: "EMI · Overdue · Recovery",
       outcome: "Lower cost-per-call · Improved recovery rates"
@@ -342,14 +342,14 @@ export const CallOpsAIPage = () => {
     {
       title: "24×7 Support",
       subtitle: "Replace rigid IVRs with conversational AI that actually resolves issues.",
-      crux: "AI agents handle inbound support calls round-the-clock — answering FAQs, registering complaints, routing complex issues to human agents with full context, and capturing every interaction in the CRM.",
+      crux: "AI agents handle inbound support calls round-the-clock, answering FAQs, registering complaints, routing complex issues to human agents with full context, and capturing every interaction in the CRM.",
       focusAreas: "FAQs · Complaints · Routing",
       outcome: "Instant Resolution · Zero wait times"
     },
     {
       title: "Renewal Campaigns",
       subtitle: "Run high-volume outbound voice campaigns without a tele-calling floor.",
-      crux: "Trigger AI-powered campaigns for policy renewals, product promotions, customer surveys, and re-engagement — at thousands of concurrent calls. Every conversation is logged and sentiment-scored.",
+      crux: "Trigger AI-powered campaigns for policy renewals, product promotions, customer surveys, and re-engagement, at thousands of concurrent calls. Every conversation is logged and sentiment-scored.",
       focusAreas: "Renewals · Promo · Surveys",
       outcome: "Campaign scale · Actionable sentiment insights"
     },
@@ -403,7 +403,7 @@ export const CallOpsAIPage = () => {
               transition={{ delay: 0.3 }}
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              AI-powered inbound and outbound calling — available 24×7. CallOps AI deploys
+              AI-powered inbound and outbound calling, available 24×7. CallOps AI deploys
               autonomous voice agents that engage customers naturally, execute workflows in real
               time, and scale instantly without expanding teams.
             </motion.p>
@@ -430,7 +430,7 @@ export const CallOpsAIPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
             >
-              Every enterprise — retail, BFSI, healthcare, logistics, real estate — depends on voice as a primary channel for customer engagement, support, collections, reminders, and lead conversion. Yet most calling operations still rely on shift-based human teams, rigid IVRs, and outdated dialer infrastructure. As call volumes rise, organizations face an impossible trade-off: scale headcount and inflate costs, or accept slower response times, missed follow-ups, and inconsistent customer experiences.
+              Every enterprise, retail, BFSI, healthcare, logistics, real estate, depends on voice as a primary channel for customer engagement, support, collections, reminders, and lead conversion. Yet most calling operations still rely on shift-based human teams, rigid IVRs, and outdated dialer infrastructure. As call volumes rise, organizations face an impossible trade-off: scale headcount and inflate costs, or accept slower response times, missed follow-ups, and inconsistent customer experiences.
             </motion.p>
           </div>
 
@@ -528,7 +528,7 @@ export const CallOpsAIPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
             >
-              CallOps AI is built on a layered voice AI architecture that combines telephony, speech recognition, LLM-powered reasoning, and enterprise workflow execution — orchestrated in real time so AI agents can listen, understand, decide, and act within a single conversation. Scaling your calling floor from 10 to 1,000 agents is now a matter of configuration, not recruitment.
+              CallOps AI is built on a layered voice AI architecture that combines telephony, speech recognition, LLM-powered reasoning, and enterprise workflow execution, orchestrated in real time so AI agents can listen, understand, decide, and act within a single conversation. Scaling your calling floor from 10 to 1,000 agents is now a matter of configuration, not recruitment.
             </motion.p>
           </div>
 
@@ -559,7 +559,7 @@ export const CallOpsAIPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 leading-snug"
             >
-              High-impact deployments where AI voice agents are replacing — and outperforming — traditional human calling teams across sectors.
+              High-impact deployments where AI voice agents are replacing, and outperforming, traditional human calling teams across sectors.
             </motion.h3>
           </div>
 
@@ -590,7 +590,7 @@ export const CallOpsAIPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
             >
-              CallOps AI converts voice into structured intelligence and action. Our engine supports ultra-low latency speech-to-text, context-aware intent detection, and human-like voice synthesis — all while making real-time calls to your CRM and business applications.
+              CallOps AI converts voice into structured intelligence and action. Our engine supports ultra-low latency speech-to-text, context-aware intent detection, and human-like voice synthesis, all while making real-time calls to your CRM and business applications.
             </motion.p>
           </div>
 
@@ -642,7 +642,7 @@ export const CallOpsAIPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
             >
-              Voice agents only deliver real outcomes when they can read from and write to the systems your operations already run on. CallOps AI is API-first and CCaaS-native — connecting to CRMs, telephony providers, and campaign engines so every conversation is informed by live context.
+              Voice agents only deliver real outcomes when they can read from and write to the systems your operations already run on. CallOps AI is API-first and CCaaS-native, connecting to CRMs, telephony providers, and campaign engines so every conversation is informed by live context.
             </motion.p>
           </div>
 
@@ -698,7 +698,7 @@ export const CallOpsAIPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
             >
-              Six high-impact deployments where CallOps AI is replacing — and outperforming — traditional calling teams.
+              Six high-impact deployments where CallOps AI is replacing, and outperforming, traditional calling teams.
             </motion.p>
           </div>
 

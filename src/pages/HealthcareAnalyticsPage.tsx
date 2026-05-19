@@ -159,7 +159,7 @@ export const HealthcareAnalyticsPage = () => {
               transition={{ delay: 0.2 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
-              Intelligent Healthcare Operations — Data-Driven Outcomes for a Healthier World.
+              Intelligent Healthcare Operations, Data-Driven Outcomes for a Healthier World.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

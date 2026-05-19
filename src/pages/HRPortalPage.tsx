@@ -198,7 +198,7 @@ export const HRPortalPage = () => {
                transition={{ delay: 0.2 }}
                className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
-              Our accelerator is more than a database; it is a cultural hub. We focus on 'Culture of Care' by designing for warmth and usability, ensuring that every touchpoint—from onboarding to performance reviews—reinforces your employer brand. Secure, mobile-friendly, and ready for global deployment, we turn HR operations into a competitive advantage.
+              Our accelerator is more than a database; it is a cultural hub. We focus on 'Culture of Care' by designing for warmth and usability, ensuring that every touchpoint, from onboarding to performance reviews, reinforces your employer brand. Secure, mobile-friendly, and ready for global deployment, we turn HR operations into a competitive advantage.
             </motion.p>
           </div>
         </div>
@@ -313,7 +313,7 @@ export const HRPortalPage = () => {
                   Culture of Care
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400 font-medium mb-8 leading-relaxed text-[15px]">
-                  An HR portal isn't just a database — it's where your employees
+                  An HR portal isn't just a database, it's where your employees
                   interact with the company. We design for usability and warmth,
                   ensuring every touchpoint reinforces your employer brand.
                 </p>

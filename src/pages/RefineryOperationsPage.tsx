@@ -298,7 +298,7 @@ export const RefineryOperationsPage = () => {
                transition={{ delay: 0.1 }}
                className="text-[17px] md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-7xl"
             >
-              The Oil & Gas sector operates in one of the world's most data-rich yet data-underutilized environments. Sensor streams from refineries, pipeline telemetry, SCADA systems, and logistics networks generate enormous volumes of operational data daily — most of it siloed and underanalyzed. In an industry where unplanned downtime costs millions per hour and environmental compliance is non-negotiable, Techknomatic brings full-stack data and AI capabilities purpose-built for upstream, midstream, and downstream operations.
+              The Oil & Gas sector operates in one of the world's most data-rich yet data-underutilized environments. Sensor streams from refineries, pipeline telemetry, SCADA systems, and logistics networks generate enormous volumes of operational data daily, most of it siloed and underanalyzed. In an industry where unplanned downtime costs millions per hour and environmental compliance is non-negotiable, Techknomatic brings full-stack data and AI capabilities purpose-built for upstream, midstream, and downstream operations.
             </motion.p>
           </div>
         </div>
@@ -473,7 +473,7 @@ export const RefineryOperationsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             <UseCaseCard 
               title="Predictive Equipment Maintenance"
-              description="An upstream operator predicted failures up to 2 weeks in advance using ML models on sensor data — predicting failures up to 2 weeks in advance."
+              description="An upstream operator predicted failures up to 2 weeks in advance using ML models on sensor data, predicting failures up to 2 weeks in advance."
               impact="X% Downtime Reduction"
               icon={Settings}
             />

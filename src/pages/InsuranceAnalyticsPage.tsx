@@ -507,7 +507,7 @@ export const InsuranceAnalyticsPage = () => {
             />
             <UseCaseCard
               title="Underwriting Risk Intelligence"
-              description="A leading insurer improved risk scoring accuracy by X% using geospatial and behavioral data — enabling more precise premium pricing."
+              description="A leading insurer improved risk scoring accuracy by X% using geospatial and behavioral data, enabling more precise premium pricing."
               impact="X%"
               delay={0.1}
               icon={BrainCircuit}

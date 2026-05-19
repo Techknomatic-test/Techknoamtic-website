@@ -212,7 +212,7 @@ export const CareersPage = () => {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="text-xl md:text-2xl text-white/90 font-medium max-w-3xl leading-relaxed"
               >
-                At Techknomatic, you won’t just build dashboards — you’ll solve
+                At Techknomatic, you won’t just build dashboards, you’ll solve
                 real business problems for enterprises across industries.
               </motion.p>
 
@@ -257,7 +257,7 @@ export const CareersPage = () => {
               <span className="text-slate-400">Choose Techknomatic.</span>
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
-              Most companies talk about culture — we focus on your career
+              Most companies talk about culture, we focus on your career
               acceleration and consulting depth.
             </p>
           </div>
@@ -372,7 +372,7 @@ export const CareersPage = () => {
               Choose Your <span className="text-accent">Growth Path.</span>
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
-              We don’t just hire roles — we build careers with structured
+              We don’t just hire roles, we build careers with structured
               progression.
             </p>
           </div>
