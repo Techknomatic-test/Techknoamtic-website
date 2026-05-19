@@ -440,11 +440,11 @@ const Counter = ({
 
 const StatsSection = () => {
   const stats = [
-    { value: 7, suffix: "+", label: "Years of Solution Delivery" },
-    { value: 15, suffix: "+", label: "Domains Served" },
-    { value: 200, suffix: "+", label: "Projects Completed" },
-    { value: 5000, suffix: "+", label: "Dashboards Delivered" },
-    { value: 10000, suffix: "+", label: "Consulting Hours" },
+    { value: 11, suffix: "+", label: "Years of Solution Delivery" },
+    { value: 25, suffix: "+", label: "Domains Served" },
+    { value: 1000, suffix: "+", label: "Projects Completed" },
+    { value: 20, suffix: "K+", label: "Dashboards Delivered" },
+    { value: 500, suffix: "K+", label: "Consulting Hours" },
   ];
 
   return (
