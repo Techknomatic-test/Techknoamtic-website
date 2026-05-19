@@ -653,6 +653,26 @@ const SolutionsSection = () => {
       dark: false,
       href: "/insurance-analytics",
     },
+     {
+      category: "Oil & Gas",
+      title: "Oil & Gas Analytics",
+      description:
+        "Refinery operations, asset performance, energy monitoring, and safety, SCADA-integrated. 18% downtime reduction.",
+      moreLabel: "View Solution",
+      imageUrl: OIL_GAS_CARD_IMG,
+      dark: false,
+      href: "/refinery-operations",
+    },
+     {
+      category: "IT Operations",
+      title: "ITSM Analytics",
+      description:
+        "Complete visibility into SLAs, assets, team performance, and vendor contracts. SLA compliance lifted from 68% to 91%.",
+      moreLabel: "View Solution",
+      imageUrl: "Images/home/33931.jpg",
+      dark: false,
+      href: "/itsm-analytics",
+    },
     {
       category: "Manufacturing",
       title: "Manufacturing Analytics",
@@ -663,26 +683,8 @@ const SolutionsSection = () => {
       dark: false,
       href: "/manufacturing-analytics",
     },
-    {
-      category: "Oil & Gas",
-      title: "Oil & Gas Analytics",
-      description:
-        "Refinery operations, asset performance, energy monitoring, and safety, SCADA-integrated. 18% downtime reduction.",
-      moreLabel: "View Solution",
-      imageUrl: OIL_GAS_CARD_IMG,
-      dark: false,
-      href: "/refinery-operations",
-    },
-    {
-      category: "IT Operations",
-      title: "ITSM Analytics",
-      description:
-        "Complete visibility into SLAs, assets, team performance, and vendor contracts. SLA compliance lifted from 68% to 91%.",
-      moreLabel: "View Solution",
-      imageUrl: "Images/home/33931.jpg",
-      dark: false,
-      href: "/itsm-analytics",
-    },
+   
+   
   ];
 
   return (
@@ -1229,8 +1231,7 @@ const ClientSlider = () => {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-10 max-w-[120px] w-auto object-contain opacity-80 grayscale saturate-0 transition-[filter,opacity] duration-300 ease-out group-hover/logo:grayscale-0 group-hover/logo:saturate-100 group-hover/logo:opacity-100 hover:grayscale-0 hover:saturate-100 hover:opacity-100"
-                  referrerPolicy="no-referrer"
+                  className="max-h-10 max-w-[120px] w-auto object-contain opacity-100 transition-all duration-300 ease-out group-hover/logo:scale-105"
                 />
               </div>
             ),
