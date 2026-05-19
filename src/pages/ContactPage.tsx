@@ -133,12 +133,21 @@ const ContactVisual = () => {
 };
 
 export const ContactPage = () => {
+  const interestOptions = [
+    "Dashboarding",
+    "Data Engineering",
+    "AI & GenAI",
+    "Geospatial Analytics",
+    "Other",
+  ] as const;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     role: "",
-    interest: "Dashboarding",
+    interest: "Dashboarding" as (typeof interestOptions)[number],
+    interestOther: "",
     message: "",
   });
 
@@ -358,12 +367,36 @@ export const ContactPage = () => {
               <label className="text-[11px] font-black uppercase tracking-widest text-brand-950 dark:text-white px-1">
                 What are you looking for?
               </label>
-              <select className="w-full bg-slate-50 dark:bg-white/5 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-accent outline-none transition-all appearance-none cursor-pointer">
-                <option>Dashboarding</option>
-                <option>Data Engineering</option>
-                <option>AI & GenAI</option>
-                <option>Geospatial Analytics</option>
+              <select
+                value={formData.interest}
+                onChange={(e) => {
+                  const value = e.target.value as (typeof interestOptions)[number];
+                  setFormData((prev) => ({
+                    ...prev,
+                    interest: value,
+                    interestOther: value === "Other" ? prev.interestOther : "",
+                  }));
+                }}
+                className="w-full bg-slate-50 dark:bg-white/5 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-accent outline-none transition-all appearance-none cursor-pointer"
+              >
+                {interestOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
               </select>
+              {formData.interest === "Other" && (
+                <input
+                  type="text"
+                  value={formData.interestOther}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, interestOther: e.target.value }))
+                  }
+                  placeholder="Please specify what you're looking for"
+                  required
+                  className="w-full bg-slate-50 dark:bg-white/5 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-accent outline-none transition-all mt-2"
+                />
+              )}
             </div>
 
             <div className="space-y-2">
@@ -379,7 +412,7 @@ export const ContactPage = () => {
 
             <div className="flex justify-center pt-4">
               <button className="px-12 py-5 bg-accent text-white font-bold rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 shadow-2xl shadow-accent/20 active:scale-95 group">
-                Get My Custom Solution Plan{" "}
+                Submit{" "}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
