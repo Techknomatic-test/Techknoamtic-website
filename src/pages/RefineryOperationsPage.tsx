@@ -147,7 +147,6 @@ const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { ti
     
     <div className="space-y-6 flex-1 text-left">
       <div>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Context</h4>
         <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
           {description}
         </p>
@@ -283,14 +282,7 @@ export const RefineryOperationsPage = () => {
       <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-7xl space-y-12 text-left">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase"
-            >
-              About The Industry
-            </motion.h2>
+            
             <motion.p 
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
@@ -330,14 +322,7 @@ export const RefineryOperationsPage = () => {
       <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-7xl mx-auto text-left">
           <div className="mb-10 text-left">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
-            >
-              Analytics Hub
-            </motion.h2>
+            
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -359,14 +344,7 @@ export const RefineryOperationsPage = () => {
       <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 text-left">
-             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[12px] font-black tracking-[0.3em] text-accent uppercase mb-4"
-            >
-              Process Intelligence
-            </motion.h2>
+           
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -412,7 +390,7 @@ export const RefineryOperationsPage = () => {
                         className="flex items-center gap-3"
                       >
                         <div className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)]" />
-                        <span className="text-[16px] font-bold text-brand-950 dark:text-white uppercase tracking-tight">
+                        <span className="text-[16px] text-brand-950 dark:text-white uppercase tracking-tight">
                           {system.split(' (')[0]}
                         </span>
                       </motion.li>
@@ -453,14 +431,7 @@ export const RefineryOperationsPage = () => {
       <section className="py-[40px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-7xl mx-auto text-left">
           <div className="mb-10 text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[11px] font-black tracking-[0.3em] text-accent uppercase bg-accent/5 rounded-full border border-accent/20"
-            >
-              Success Stories
-            </motion.div>
+            
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
