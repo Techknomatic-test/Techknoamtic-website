@@ -149,7 +149,7 @@ const IndustryCard = ({ title, description, image, delay = 0 }: { title: string;
 export const CallOpsAIPage = () => {
   const capabilities = [
     {
-      title: "Capability 1, AI-Powered Inbound Calling",
+      title: "AI-Powered Inbound Calling",
       outcome: "Always-on, intelligent handling of every incoming customer call.",
       items: [
         "Customer support and query handling",
@@ -162,7 +162,7 @@ export const CallOpsAIPage = () => {
       icon: PhoneCall
     },
     {
-      title: "Capability 2, Intelligent Outbound Calling Engine",
+      title: "Intelligent Outbound Calling Engine",
       outcome: "Scale high-volume outbound engagement without expanding headcount.",
       items: [
         "Lead follow-ups and qualification",
@@ -175,7 +175,7 @@ export const CallOpsAIPage = () => {
       icon: Zap
     },
     {
-      title: "Capability 3, Conversational AI Voice Agents",
+      title: "Conversational AI Voice Agents",
       outcome: "Natural, human-like conversations across every touchpoint.",
       items: [
         "Natural language understanding (NLU)",
@@ -188,7 +188,7 @@ export const CallOpsAIPage = () => {
       icon: Sparkles
     },
     {
-      title: "Capability 4, Bulk Calling at Enterprise Scale",
+      title: "Bulk Calling at Enterprise Scale",
       outcome: "Launch and manage thousands of concurrent conversations effortlessly.",
       items: [
         "Simultaneous bulk outbound calling",
@@ -201,7 +201,7 @@ export const CallOpsAIPage = () => {
       icon: Layers
     },
     {
-      title: "Capability 5, Call Analytics & Conversation Intelligence",
+      title: "Call Analytics & Conversation Intelligence",
       outcome: "Turn every conversation into structured business intelligence.",
       items: [
         "Full call logs and conversation history",
@@ -214,7 +214,7 @@ export const CallOpsAIPage = () => {
       icon: BarChart3
     },
     {
-      title: "Capability 6, Intelligent Follow-Ups & Reminders",
+      title: "Intelligent Follow-Ups & Reminders",
       outcome: "No customer interaction slips through the cracks.",
       items: [
         "Automated lead nurturing sequences",
@@ -415,14 +415,6 @@ export const CallOpsAIPage = () => {
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
-            >
-              The Call Center Reality Challenge
-            </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -491,7 +483,7 @@ export const CallOpsAIPage = () => {
               Impact Framing
             </h3>
             <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
-              The result: rising cost-per-conversation, lower lead conversion, missed customer touchpoints, weaker
+              The result- rising cost-per-conversation, lower lead conversion, missed customer touchpoints, weaker
               collections performance, and a customer experience that hasn&apos;t kept pace with digital-first
               expectations.
             </p>
