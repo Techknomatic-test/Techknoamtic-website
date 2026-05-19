@@ -301,22 +301,21 @@ export const ParseIQPage = () => {
       </section>
 
       {/* Challenge Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-4xl mb-16">
-           
-            <motion.h3 
+      <section className="overflow-hidden border-b border-slate-100 bg-white px-6 py-[60px] text-left dark:border-white/5 dark:bg-brand-950">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16">
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl font-bold text-brand-950/70 dark:text-white/70 leading-snug"
+              className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
             >
               Every enterprise runs on documents, but most still process them manually.
-            </motion.h3>
+            </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid items-center gap-20 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -336,7 +335,10 @@ export const ParseIQPage = () => {
               </div>
             </motion.div>
 
-            <div className="space-y-8">
+            <div className="space-y-6 self-start lg:pt-4">
+              <h4 className="mb-8 text-[14px] font-black uppercase tracking-widest text-accent">
+                Common Operational Pain Points
+              </h4>
               {[
                 "Manual data entry and validation across systems",
                 "Slow turnaround and operational bottlenecks",
@@ -351,11 +353,11 @@ export const ParseIQPage = () => {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="flex items-start gap-4 text-slate-500 dark:text-slate-400 font-medium"
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className="group flex items-start gap-4"
                 >
-                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                  <span className="text-[15px] leading-relaxed">{item}</span>
+                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                  <p className="text-[16px] leading-tight text-brand-950 dark:text-white">{item}</p>
                 </motion.div>
               ))}
             </div>
