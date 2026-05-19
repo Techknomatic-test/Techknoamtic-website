@@ -178,19 +178,19 @@ const OEMSection = () => {
 const MarketSection = () => {
   const regions = [
     {
-      country: "🇴🇲 Oman",
+      country: "Oman",
       partner: "Primer Trading",
       desc: "Driving market engagement and solution delivery in Oman",
       icon: Building2,
     },
     {
-      country: "🇦🇪 UAE",
+      country: "UAE",
       partner: "Aintisar Technologies",
       desc: "Supporting business development and client execution in the UAE",
       icon: Building2,
     },
     {
-      country: "🇺🇸 United States",
+      country: "United States",
       partner: "Inspirational Global",
       desc: "Enabling go-to-market and solution expansion in the United States",
       icon: Building2,
