@@ -179,7 +179,7 @@ const IndustryCard = ({
 export const AgenticAIITSMPage = () => {
   const capabilities = [
     {
-      title: "Capability 1, Multi-Channel Request Intake",
+      title: "Multi-Channel Request Intake",
       outcome:
         "Every employee channel, captured, unstructured conversation turned into structured action.",
       items: [
@@ -193,7 +193,7 @@ export const AgenticAIITSMPage = () => {
       icon: Search,
     },
     {
-      title: "Capability 2, AI Intent Classification Engine",
+      title: "AI Intent Classification Engine",
       outcome:
         "Advanced AI that understands what the employee actually needs, even when they don’t say it clearly.",
       items: [
@@ -207,7 +207,7 @@ export const AgenticAIITSMPage = () => {
       icon: Brain,
     },
     {
-      title: "Capability 3, Autonomous Resolution Engine",
+      title: "Autonomous Resolution Engine",
       outcome:
         "Agentic AI that doesn’t just respond, it executes real IT actions inside enterprise systems.",
       items: [
@@ -221,7 +221,7 @@ export const AgenticAIITSMPage = () => {
       icon: Zap,
     },
     {
-      title: "Capability 4, Security-First Governance Layer",
+      title: "Security-First Governance Layer",
       outcome:
         "Enterprise security and policy enforcement built into every autonomous action.",
       items: [
@@ -235,7 +235,7 @@ export const AgenticAIITSMPage = () => {
       icon: ShieldCheck,
     },
     {
-      title: "Capability 5, Intelligent Escalation Framework",
+      title: "Intelligent Escalation Framework",
       outcome:
         "The AI knows what it can resolve, and exactly when to hand off to a human engineer.",
       items: [
@@ -249,7 +249,7 @@ export const AgenticAIITSMPage = () => {
       icon: ArrowRightLeft,
     },
     {
-      title: "Capability 6, Conversational Clarification AI",
+      title: "Conversational Clarification AI",
       outcome:
         "When information is missing, the agent asks, instead of acting on incomplete requests.",
       items: [
@@ -263,7 +263,7 @@ export const AgenticAIITSMPage = () => {
       icon: MessageSquare,
     },
     {
-      title: "Capability 7, Enterprise Knowledge & Self-Service AI",
+      title: "Enterprise Knowledge & Self-Service AI",
       outcome:
         "Instant answers to IT knowledge queries, grounded in your enterprise knowledge base.",
       items: [
@@ -277,7 +277,7 @@ export const AgenticAIITSMPage = () => {
       icon: Database,
     },
     {
-      title: "Capability 8, Automated Ticketing & Audit Trails",
+      title: "Automated Ticketing & Audit Trails",
       outcome:
         "Every interaction logged with full decision history, enterprise-grade governance.",
       items: [
@@ -539,14 +539,7 @@ export const AgenticAIITSMPage = () => {
       <section className="py-[80px] bg-white dark:bg-brand-950 px-6 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
-            >
-              The Enterprise IT Support Challenge
-            </motion.h2>
+           
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -630,7 +623,7 @@ export const AgenticAIITSMPage = () => {
               Impact Framing
             </h3>
             <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
-              The result: ticket backlogs, slower response and resolution times, rising operational cost,
+              The result - ticket backlogs, slower response and resolution times, rising operational cost,
               overloaded support teams, and degraded employee experience, while capacity that should fund
               modernization gets spent on repetitive work.
             </p>
@@ -657,7 +650,7 @@ export const AgenticAIITSMPage = () => {
               transition={{ delay: 0.1 }}
               className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
-              From Reactive IT Support → Autonomous IT Operations. Intake. Classify. Verify. Resolve.
+              From Reactive IT Support to Autonomous IT Operations. Intake. Classify. Verify. Resolve.
               Audit.
             </motion.h3>
             <motion.p
