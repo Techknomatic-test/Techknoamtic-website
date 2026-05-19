@@ -92,7 +92,6 @@ const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: 
     
     <div className="space-y-6 mb-10 flex-1">
       <div>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Crux</h4>
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
@@ -510,7 +509,7 @@ export const CallOpsAIPage = () => {
               transition={{ delay: 0.1 }}
               className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
-              From Manual Calling Operations → Autonomous Voice Intelligence. Connect. Hear. Understand. Respond.
+              From Manual Calling Operations to Autonomous Voice Intelligence. Connect. Hear. Understand. Respond.
               Act.
             </motion.h3>
             <motion.p

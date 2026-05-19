@@ -106,9 +106,7 @@ const UseCaseCard = ({
 
     <div className="space-y-6 mb-10 flex-1">
       <div>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
-          Crux
-        </h4>
+       
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
@@ -776,7 +774,7 @@ export const AgenticAIITSMPage = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
             >
-              Built to Plug Into Your Enterprise IT Stack
+              Built To Plug Into Your Enterprise IT Stack
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
