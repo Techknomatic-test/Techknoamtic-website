@@ -167,7 +167,7 @@ const IndustryCard = ({
 export const CXONexusPage = () => {
   const capabilities = [
     {
-      title: "Capability 1, Natural Language Querying",
+      title: "Natural Language Querying",
       outcome: "Ask business questions in plain English, no SQL, no BI tickets, no waiting.",
       items: [
         "“Show monthly sales trends by region”, answered instantly",
@@ -180,7 +180,7 @@ export const CXONexusPage = () => {
       icon: MessageSquare,
     },
     {
-      title: "Capability 2, Direct Database & System Connectivity",
+      title: "Direct Database & System Connectivity",
       outcome: "Unified access across structured enterprise data ecosystems, wherever it lives.",
       items: [
         "SQL databases (PostgreSQL, MySQL, SQL Server, Oracle)",
@@ -193,7 +193,7 @@ export const CXONexusPage = () => {
       icon: Database,
     },
     {
-      title: "Capability 3, AI-Powered Insights Engine",
+      title: "AI-Powered Insights Engine",
       outcome: "Beyond data retrieval, contextual intelligence that explains what numbers mean.",
       items: [
         "Trend identification across time series and KPIs",
@@ -206,7 +206,7 @@ export const CXONexusPage = () => {
       icon: Zap,
     },
     {
-      title: "Capability 4, RAG-Powered Knowledge Intelligence",
+      title: "RAG-Powered Knowledge Intelligence",
       outcome: "Answers grounded in YOUR enterprise data and documents, not a generic model.",
       items: [
         "Retrieval-Augmented Generation across enterprise sources",
@@ -219,7 +219,7 @@ export const CXONexusPage = () => {
       icon: Brain,
     },
     {
-      title: "Capability 5, Smart Dashboard Generation",
+      title: "Smart Dashboard Generation",
       outcome: "From plain-English question to a live dashboard, in seconds.",
       items: [
         "Real-time visualizations rendered from conversational prompts",
@@ -232,7 +232,7 @@ export const CXONexusPage = () => {
       icon: LayoutDashboard,
     },
     {
-      title: "Capability 6, Multi-Source Data Intelligence",
+      title: "Multi-Source Data Intelligence",
       outcome: "One conversational layer across every domain of enterprise data.",
       items: [
         "Finance and revenue analytics",
@@ -245,7 +245,7 @@ export const CXONexusPage = () => {
       icon: PieChart,
     },
     {
-      title: "Capability 7, Executive Decision Intelligence",
+      title: "Executive Decision Intelligence",
       outcome: "Purpose-built for CXOs and leadership teams, strategic intelligence on demand.",
       items: [
         "Business performance monitoring at executive depth",
@@ -489,14 +489,7 @@ export const CXONexusPage = () => {
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
-            >
-              The Enterprise Decision Intelligence Challenge
-            </motion.h2>
+           
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -576,7 +569,7 @@ export const CXONexusPage = () => {
               Impact Framing
             </h3>
             <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
-              The result: delayed business decisions, reduced operational agility, low data accessibility across teams,
+              The result- delayed business decisions, reduced operational agility, low data accessibility across teams,
               increased dependency on technical resources, and decisions made on stale dashboards or gut feel.
             </p>
           </motion.div>
@@ -602,7 +595,7 @@ export const CXONexusPage = () => {
               transition={{ delay: 0.1 }}
               className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
-              From BI Ticket Queues → Conversational Decision Intelligence. Ask. Retrieve. Ground. Visualize.
+              From BI Ticket Queues to Conversational Decision Intelligence. Ask. Retrieve. Ground. Visualize.
               Decide.
             </motion.h3>
             <motion.p
