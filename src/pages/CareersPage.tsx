@@ -20,6 +20,7 @@ import {
   Heart,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PreFooterCTA } from "../components/PreFooterCTA";
 
 const CAREERS_BASE = "Images/Careers";
 
@@ -693,29 +694,7 @@ export const CareersPage = () => {
         </div>
       </section>
 
-      {/* 10. Strong Closing CTA */}
-      <section className="py-[60px] px-6 bg-accent relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.15),transparent_70%)]" />
-        <div className="max-w-4xl mx-auto md:text-center text-white relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1 mb-8 text-[10px] font-black tracking-[0.3em] uppercase bg-white/10 rounded-full border border-white/20">
-            Join the Mission
-          </div>
-          <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-12 leading-tight">
-            Ready to build a career that
-            <br />
-            grows faster than average?
-          </h2>
-          <Link to="/contact">
-            <button className="px-10 py-5 bg-white text-accent rounded-full font-black tracking-widest uppercase text-[12px] shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2 md:mx-auto">
-              ðŸš€ Apply Now{" "}
-              <ArrowRight className="w-4 h-4 border border-accent rounded-full p-[2px]" />
-            </button>
-          </Link>
-        </div>
-      </section>
-
-      {/* Footer info */}
-      
+      <PreFooterCTA />
     </div>
   );
 };

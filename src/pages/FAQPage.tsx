@@ -1,16 +1,14 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import {
-  ChevronDown,
-  HelpCircle,
-  ArrowUp,
-  ArrowDown,
-  Heart,
-  ThumbsDown,
-  ArrowRight,
-} from "lucide-react";
-import { Link } from "react-router-dom";
+import { ChevronDown, Sparkles } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+
+const FAQ_IMG = "Images/FAQ";
+const faqImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...FAQ_IMG.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+const FAQ_HERO_IMG = faqImg("herobanner.jpg");
 
 const AccordionItem = ({
   question,
@@ -78,48 +76,132 @@ const AccordionItem = ({
 };
 
 export const FAQPage = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [careerOpenIndex, setCareerOpenIndex] = useState<number | null>(0);
+  const [contactOpenIndex, setContactOpenIndex] = useState<number | null>(null);
 
-  const faqs = [
+  const careerFaqs = [
     {
-      q: "What does Techknomatic do?",
-      a: "Techknomatic is a data analytics and AI consultancy. We help enterprises build BI dashboards, data platforms, AI solutions, and geospatial analytics. We work across Insurance, Manufacturing, Energy, Pharma, FMCG, and Public Sector.",
+      q: "Why should I join Techknomatic Careers?",
+      a: "At Techknomatic, you get the opportunity to work on real-world Data Analytics, AI, Business Intelligence, and Digital Transformation projects across multiple industries and global markets. We focus on innovation, ownership, learning, and career growth.",
     },
     {
-      q: "Which industries do you serve?",
-      a: "We specialize in Insurance, Manufacturing, Oil & Gas, FMCG, Pharma, Airlines, ITSM, HSE, and Public Sector across India, the Middle East, and Southeast Asia.",
+      q: "What kind of roles does Techknomatic hire for?",
+      a: "We hire for roles across: Data Engineering, Business Intelligence & Visualization, AI & Machine Learning, Geospatial Analytics, Cloud & Data Platforms, Full Stack Development, QA & Automation, Sales & Business Development, Project Management, Marketing & Operations.",
     },
     {
-      q: "Where are you located?",
-      a: "Our headquarters are in India (Pune), with regional presence in UAE and Oman. We deliver projects globally through onsite, hybrid, and offshore models.",
+      q: "Do you hire freshers?",
+      a: "Yes. We actively hire freshers and early-career professionals who are passionate about analytics, technology, and problem-solving.",
     },
     {
-      q: "What BI tools do you work with?",
-      a: "We are experts in Microsoft Power BI, Tableau, and Qlik Sense. We help clients choose the right tool for their needs and maximize the value of their existing licenses.",
+      q: "What technologies can I work on at Techknomatic?",
+      a: "You may get opportunities to work on technologies like: Qlik, Microsoft Power BI, Esri, SQL & Cloud Platforms, Python & AI frameworks, Modern Data Engineering tools, Automation & Integration platforms.",
     },
     {
-      q: "Do you offer data engineering services?",
-      a: "Yes. We design and build modern data architectures including cloud data warehouses (Snowflake, BigQuery, Synapse), robust ETL/ELT pipelines, and real-time streaming solutions to ensure your data is clean, reliable, and ready for analysis.",
+      q: "Does Techknomatic provide training and certifications?",
+      a: "Yes. We encourage continuous learning and support employees with training programs, certifications, mentorship, and hands-on project exposure.",
     },
     {
-      q: "Can you build custom applications beyond standard dashboards?",
-      a: "Absolutely. Our Custom Development practice builds bespoke BI portals, AI-powered tools, mobile analytics apps, and data integration utilities tailored to your specific processes.",
+      q: "What is the work culture like at Techknomatic?",
+      a: "We promote a collaborative, growth-oriented, and innovation-driven culture where employees are encouraged to take ownership, share ideas, and grow professionally.",
     },
     {
-      q: "Are you a certified Microsoft partner?",
-      a: "Yes. We are a certified Microsoft Partner with expertise across Power BI, Azure Data Factory, Azure Synapse, and the broader Microsoft data stack.",
+      q: "Are there opportunities to work on international projects?",
+      a: "Yes. Our teams work on projects across India, Oman, UAE, Saudi Arabia, Kuwait, and other global markets.",
     },
     {
-      q: "Are you a Qlik partner?",
-      a: "Yes. We are a certified Qlik Partner delivering Qlik Sense, Qlik AutoML, and embedded Qlik analytics across enterprise clients.",
+      q: "Does Techknomatic offer hybrid or remote work options?",
+      a: "Depending on the role and project requirements, we offer flexible work models including onsite, hybrid, and remote opportunities.",
     },
     {
-      q: "What is your ESRI partnership?",
-      a: "Techknomatic is an ESRI Silver Partner, meaning we are certified to implement and integrate ESRI's ArcGIS platform for enterprise geospatial projects.",
+      q: "What is the hiring process at Techknomatic?",
+      a: "The hiring process typically includes: Resume Screening, Initial Discussion, Technical/Functional Assessment, Interview Rounds, Final HR Discussion.",
     },
     {
-      q: "What is DataGuard?",
-      a: "DataGuard is Techknomatic's AI-powered data reliability platform. It combines data quality monitoring, governance, AI recommendations, an autonomous data agent, and business rule management in a single platform.",
+      q: "What kind of growth opportunities can I expect?",
+      a: "Employees get opportunities to: Work on enterprise-scale projects, Learn emerging technologies, Move across domains and technologies, Take leadership responsibilities, Build client-facing expertise.",
+    },
+    {
+      q: "Do you offer internship opportunities?",
+      a: "Yes. We offer internship opportunities for students and graduates interested in Data Analytics, AI, BI, Software Development, and related domains.",
+    },
+    {
+      q: "How can I apply for a job at Techknomatic?",
+      a: "You can apply through the Careers page by submitting your profile or sharing your resume with our recruitment team.",
+    },
+    {
+      q: "What qualities do you look for in candidates?",
+      a: "We value: Problem-solving mindset, Willingness to learn, Ownership & accountability, Communication skills, Technical curiosity, Team collaboration.",
+    },
+    {
+      q: "Will I get exposure to clients and real business problems?",
+      a: "Yes. Our teams work closely with customers to solve real business challenges, giving employees valuable industry exposure and practical learning.",
+    },
+    {
+      q: "Does Techknomatic support career progression internally?",
+      a: "Absolutely. We believe in growing talent internally and provide opportunities for role expansion, leadership growth, and cross-functional exposure.",
+    },
+  ];
+
+  const contactFaqs = [
+    {
+      q: "How can I contact Techknomatic?",
+      a: "You can reach our team through the Contact Us form on the website, email us directly, or connect with our regional offices for business inquiries, partnerships, and support.",
+    },
+    {
+      q: "How quickly can I expect a response?",
+      a: "Our team usually responds within 24 business hours for all inquiries related to services, partnerships, demos, and support requests.",
+    },
+    {
+      q: "Can I request a demo of your solutions?",
+      a: "Yes. You can request a personalized demo for our Business Intelligence, AI, Data Engineering, Geospatial Analytics, and automation solutions.",
+    },
+    {
+      q: "Do you provide consultation sessions before starting a project?",
+      a: "Absolutely. We offer initial discovery and consultation sessions to understand your business challenges, existing systems, and analytics requirements.",
+    },
+    {
+      q: "Can Techknomatic support projects outside Oman or India?",
+      a: "Yes. We work with clients across multiple countries including Oman, UAE, Saudi Arabia, Kuwait, India, and other international markets.",
+    },
+    {
+      q: "What types of businesses do you work with?",
+      a: "We work with startups, enterprises, government organizations, and large corporations across industries such as Insurance, Oil & Gas, Banking, Manufacturing, Logistics, Retail, and Utilities.",
+    },
+    {
+      q: "Can I contact Techknomatic for partnership opportunities?",
+      a: "Yes. We welcome collaboration opportunities with technology partners, OEMs, system integrators, and consulting firms.",
+    },
+    {
+      q: "Do you offer support for existing analytics platforms?",
+      a: "Yes. We provide support, optimization, migration, and enhancement services for existing BI, Data Engineering, and AI environments.",
+    },
+    {
+      q: "Can I request onsite meetings or workshops?",
+      a: "Yes. Our team can arrange onsite meetings, workshops, capability presentations, and solution walkthroughs based on project requirements and location.",
+    },
+    {
+      q: "Do you provide Proof of Concept (POC) services?",
+      a: "Yes. We can help organizations validate use cases through pilot implementations and Proof of Concepts before full-scale deployment.",
+    },
+    {
+      q: "What information should I share while submitting an inquiry?",
+      a: "To help us respond effectively, you can share: Business requirement, Current challenges, Existing systems/tools, Project timelines, Preferred engagement model.",
+    },
+    {
+      q: "Can I contact Techknomatic for career opportunities?",
+      a: "Yes. If you are looking to join our team, you can submit your resume through the Careers page or contact our HR team directly.",
+    },
+    {
+      q: "Does Techknomatic provide post-implementation support?",
+      a: "Yes. We provide ongoing support, maintenance, enhancements, user training, and managed services after project go-live.",
+    },
+    {
+      q: "Can Techknomatic help with technology selection and licensing?",
+      a: "Yes. As implementation and OEM partners, we help organizations choose the right analytics and AI technologies along with licensing guidance.",
+    },
+    {
+      q: "How do I schedule a meeting with your team?",
+      a: "You can submit your details through the Contact Us page, and our team will coordinate a suitable time for a discussion or session.",
     },
   ];
 
@@ -129,58 +211,92 @@ export const FAQPage = () => {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/5 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
-      {/* Hero Banner - Full Width */}
-      <section className="relative mb-24 overflow-hidden border-b border-slate-100 dark:border-white/5">
-        <div className="w-full">
-          <div className="relative min-h-[min(50vh,480px)] flex items-center justify-center py-12 md:py-14 group">
-            <div className="absolute inset-0 z-0">
-              <div className="absolute inset-0 bg-gradient-to-b from-slate-100/50 via-white to-slate-50 dark:from-brand-950 dark:via-brand-900/40 dark:to-brand-950 z-10" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(241,126,33,0.05),transparent)] z-10" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.03),transparent)] z-10" />
-            </div>
+      {/* Hero Banner — same dimensions as BI Services page */}
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] border-b border-slate-100 dark:border-white/5">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src={FAQ_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
+        </div>
 
-            <motion.div className="relative z-20 w-full text-center px-6 max-w-4xl">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-950 dark:text-white tracking-tight leading-[1.2] mb-6"
-              >
-                Got <span className="text-accent">Questions?</span> <br />
-                We've got{" "}
-                <span className="relative inline-block mt-1">
-                  Answers.{" "}
-                  <div className="absolute bottom-1.5 left-0 w-full h-2 bg-accent/10 dark:bg-accent/20 -z-10" />
-                </span>
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-slate-500 dark:text-slate-400 text-base md:text-xl font-medium max-w-2xl mx-auto leading-relaxed"
-              >
-                Explore our detailed knowledge hub to find answers about our
-                services and technical stack.
-              </motion.p>
-            </motion.div>
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-3 px-4 py-1.5 mb-6 text-[11px] font-bold tracking-[0.4em] text-accent uppercase bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-sm"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            Help Center
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
+          >
+            Got <span className="text-accent">Questions?</span> <br />
+            We've got{" "}
+            <span className="relative inline-block mt-1">
+              Answers.{" "}
+              <span className="absolute bottom-1.5 left-0 w-full h-2 bg-accent/20 -z-10" />
+            </span>
+          </motion.h1>
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
+            >
+              Explore our detailed knowledge hub to find answers about our
+              services, careers, and partnerships.
+            </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Accordion Section */}
-      <section className="px-6 max-w-4xl mx-auto relative z-10">
+      {/* Career FAQ Section */}
+      <section className="px-6 max-w-4xl mx-auto relative z-10 pt-20 pb-20">
         <div className="w-full">
-          <h3 className="text-2xl md:text-3xl font-bold text-brand-950 dark:text-white mb-10 text-center tracking-tight">
-            General Questions
+          <h3 className="text-2xl md:text-5xl font-bold text-brand-950 dark:text-white mb-10 text-center tracking-tight">
+            Careers <span className="text-accent">FAQs</span>
           </h3>
           <div className="space-y-2">
-            {faqs.map((faq, i) => (
+            {careerFaqs.map((faq, i) => (
               <AccordionItem
                 key={i}
                 question={faq.q}
                 answer={faq.a}
-                isOpen={openIndex === i}
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                isOpen={careerOpenIndex === i}
+                onClick={() => setCareerOpenIndex(careerOpenIndex === i ? null : i)}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact FAQ Section */}
+      <section className="px-6 max-w-4xl mx-auto relative z-10 pb-20">
+        <div className="w-full border-t border-slate-100 dark:border-white/5 pt-20">
+          <h3 className="text-2xl md:text-5xl font-bold text-brand-950 dark:text-white mb-10 text-center tracking-tight">
+            Contact Us <span className="text-accent">FAQs</span>
+          </h3>
+          <div className="space-y-2">
+            {contactFaqs.map((faq, i) => (
+              <AccordionItem
+                key={i}
+                question={faq.q}
+                answer={faq.a}
+                isOpen={contactOpenIndex === i}
+                onClick={() => setContactOpenIndex(contactOpenIndex === i ? null : i)}
               />
             ))}
           </div>
