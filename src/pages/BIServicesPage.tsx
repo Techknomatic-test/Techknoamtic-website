@@ -5,7 +5,6 @@ import {
   ShieldCheck,
   Target,
   Zap,
-  RefreshCw,
   ChevronDown,
   ChevronUp,
   Activity,
@@ -13,6 +12,13 @@ import {
   Factory,
   ShoppingBag,
   LucideIcon,
+  TrendingUp,
+  LayoutDashboard,
+  Users,
+  Database,
+  Search,
+  Layers,
+  Cpu,
 } from "lucide-react";
 
 const BI_IMG = "Images/Services/Business Intelligence";
@@ -93,11 +99,13 @@ const CapabilityCard = ({
   title,
   description,
   items,
+  icon: Icon,
   delay = 0,
 }: {
   title: string;
   description: string;
   items: string[];
+  icon: LucideIcon;
   delay?: number;
 }) => (
   <motion.div
@@ -108,7 +116,7 @@ const CapabilityCard = ({
     className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full text-left"
   >
     <div className="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-6 transition-transform">
-      <Zap className="w-7 h-7" />
+      <Icon className="w-7 h-7" />
     </div>
     <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
@@ -133,11 +141,13 @@ const ApproachStep = ({
   num,
   title,
   description,
+  icon: Icon,
   delay = 0,
 }: {
   num: string;
   title: string;
   description: string;
+  icon: LucideIcon;
   delay?: number;
 }) => (
   <motion.div
@@ -151,7 +161,7 @@ const ApproachStep = ({
       {num}
     </div>
     <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-white/10 flex items-center justify-center mb-8 text-accent group-hover:scale-110 transition-transform">
-      <RefreshCw className="w-5 h-5" />
+      <Icon className="w-5 h-5" />
     </div>
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
       {title}
@@ -268,6 +278,7 @@ export const BIServicesPage = () => {
   const offerings = [
     {
       title: "BI Strategy & Roadmap",
+      icon: TrendingUp,
       description:
         "Define the analytics future state, platform, data, governance, and adoption, before writing the first dashboard.",
       items: [
@@ -280,6 +291,7 @@ export const BIServicesPage = () => {
     },
     {
       title: " Dashboard Design & Development",
+      icon: LayoutDashboard,
       description:
         "Design-led dashboards engineered for executive clarity, operational decision speed, and analyst depth.",
       items: [
@@ -293,6 +305,7 @@ export const BIServicesPage = () => {
     },
     {
       title: "BI Governance & Centre of Excellence",
+      icon: ShieldCheck,
       description:
         "Defensible governance that scales analytics without creating bottlenecks, trust as a delivery outcome.",
       items: [
@@ -306,6 +319,7 @@ export const BIServicesPage = () => {
     },
     {
       title: "Self-Service & Embedded Analytics",
+      icon: Users,
       description:
         "Extend BI beyond the BI team, with self-service for business users and embedded analytics.",
       items: [
@@ -319,6 +333,7 @@ export const BIServicesPage = () => {
     },
     {
       title: "BI Modernization & Migration",
+      icon: Database,
       description:
         "Move from legacy BI estates to modern cloud analytics, without losing adoption or metadata.",
       items: [
@@ -354,30 +369,35 @@ export const BIServicesPage = () => {
     {
       num: "01",
       title: "Discover",
+      icon: Search,
       description:
         "Assess current BI estate, priorities, and gaps. Define success criteria and target outcomes.",
     },
     {
       num: "02",
       title: "Design",
+      icon: Layers,
       description:
         "Architect solution, data model, semantic layer, dashboard structure, and governance model.",
     },
     {
       num: "03",
       title: "Build",
+      icon: Cpu,
       description:
         "Develop dashboards and models on chosen platform (Power BI / Tableau / Qlik) with iterative reviews.",
     },
     {
       num: "04",
       title: "Deploy",
+      icon: Zap,
       description:
         "Roll out with workspace setup, RLS, deployment pipelines, and performance tuning.",
     },
     {
       num: "05",
       title: "Sustain",
+      icon: Activity,
       description:
         "Drive adoption through training, CoE enablement, and continuous improvement cycles.",
     },
