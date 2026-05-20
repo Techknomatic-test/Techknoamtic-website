@@ -30,6 +30,10 @@ const careersImg = (...segments: string[]) =>
     .join("/")}`;
 
 const CAREERS_HERO = careersImg("herobanner.jpg");
+const GROWTH_PATH = "Choose Your Growth Path";
+const GROWTH_FRESHERS_IMG = careersImg(GROWTH_PATH, "Freshers.jpg");
+const GROWTH_MID_LEVEL_IMG = careersImg(GROWTH_PATH, "Mid-Level.jpg");
+const GROWTH_EXPERIENCED_IMG = careersImg(GROWTH_PATH, "Experienced.jpg");
 
 const JobCard = ({ id, title, exp, location, skills, description }: any) => (
   <motion.div
@@ -419,14 +423,12 @@ export const CareersPage = () => {
               {
                 level: "Freshers (0-2 Years)",
                 roles: ["BI Developer", "Data Analyst", "Dashboard Engineer"],
-                icon: Zap,
-                image: careersImg("Choose Your Growth Path", "Freshers.jpg"),
+                image: GROWTH_FRESHERS_IMG,
               },
               {
                 level: "Mid-Level (2-5 Years)",
                 roles: ["Senior Analyst", "BI Consultant", "Data Engineer"],
-                icon: Briefcase,
-                image: careersImg("Choose Your Growth Path", "Mid-Level.jpg"),
+                image: GROWTH_MID_LEVEL_IMG,
               },
               {
                 level: "Experienced (5+ Years)",
@@ -435,8 +437,7 @@ export const CareersPage = () => {
                   "Solution Architect",
                   "Consulting Manager",
                 ],
-                icon: Users,
-                image: careersImg("Choose Your Growth Path", "Experienced.jpg"),
+                image: GROWTH_EXPERIENCED_IMG,
               },
             ].map((track, i) => (
               <motion.div
@@ -450,10 +451,8 @@ export const CareersPage = () => {
                     src={track.image}
                     alt={track.level}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
                   />
-                  <div className="absolute bottom-4 left-4 z-20 w-10 h-10 bg-white dark:bg-brand-900 border border-slate-100 text-accent rounded-full flex items-center justify-center shadow-lg">
-                    <track.icon className="w-4 h-4" />
-                  </div>
                 </div>
 
                 <div className="p-10 flex-1 flex flex-col">
