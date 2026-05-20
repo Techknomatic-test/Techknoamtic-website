@@ -1036,6 +1036,7 @@ const SolutionsSection = () => {
 };
 
 const ACCELERATOR_SLIDE_INTERVAL_MS = 2000;
+const TESTIMONIAL_SLIDE_INTERVAL_MS = 5000;
 
 const AcceleratorsSection = () => {
   const sectionRef = useRef(null);
@@ -1305,6 +1306,7 @@ const TestimonialsSection = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
@@ -1313,7 +1315,21 @@ const TestimonialsSection = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const totalSlides = isMobile ? testimonials.length : testimonials.length - 2;
+  const visibleCount = isMobile ? 1 : 3;
+  const totalSlides = testimonials.length - visibleCount;
+
+  useEffect(() => {
+    if (isPaused || totalSlides < 0) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev >= totalSlides ? 0 : prev + 1));
+    }, TESTIMONIAL_SLIDE_INTERVAL_MS);
+    return () => clearInterval(interval);
+  }, [isPaused, totalSlides]);
+
+  const goToPrev = () =>
+    setActiveIndex((prev) => (prev <= 0 ? totalSlides : prev - 1));
+  const goToNext = () =>
+    setActiveIndex((prev) => (prev >= totalSlides ? 0 : prev + 1));
 
   return (
     <section className="py-[40px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden relative">
@@ -1347,7 +1363,11 @@ const TestimonialsSection = () => {
             </motion.p>
         </div>
 
-        <div className="relative">
+        <div
+          className="relative overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           <motion.div
             animate={{
               x: isMobile
@@ -1355,12 +1375,12 @@ const TestimonialsSection = () => {
                 : `-${activeIndex * 33.333}%`,
             }}
             transition={{ type: "spring", stiffness: 100, damping: 22 }}
-            className="flex gap-6 w-full"
+            className="flex w-full"
           >
             {testimonials.map((t, i) => (
               <motion.div
                 key={i}
-                className="w-full lg:w-[calc(33.333%-16px)] shrink-0"
+                className="w-full lg:w-1/3 shrink-0 px-3"
               >
                 <div className="h-full bg-white dark:bg-brand-950 p-10 md:p-12 rounded-[3.5rem] border border-slate-100 dark:border-white/10 flex flex-col min-h-[520px] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-500 text-left hover:border-accent/30 group relative">
                   <div className="absolute top-10 right-10 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
@@ -1409,18 +1429,16 @@ const TestimonialsSection = () => {
         <div className="mt-10 flex flex-col items-center justify-center gap-6">
           <div className="flex gap-4">
             <button
-              onClick={() => setActiveIndex((prev) => Math.max(0, prev - 1))}
-              className="w-14 h-14 rounded-2xl bg-white dark:bg-brand-950 border border-slate-200 dark:border-white/10 flex items-center justify-center text-brand-950 dark:text-white hover:bg-accent hover:text-white hover:border-accent transition-all active:scale-95 shadow-xl shadow-black/5 disabled:opacity-30 disabled:cursor-not-allowed group"
-              disabled={activeIndex === 0}
+              type="button"
+              onClick={goToPrev}
+              className="w-14 h-14 rounded-2xl bg-white dark:bg-brand-950 border border-slate-200 dark:border-white/10 flex items-center justify-center text-brand-950 dark:text-white hover:bg-accent hover:text-white hover:border-accent transition-all active:scale-95 shadow-xl shadow-black/5 group"
             >
               <ChevronRight className="w-6 h-6 rotate-180 transition-transform group-hover:-translate-x-1" />
             </button>
             <button
-              onClick={() =>
-                setActiveIndex((prev) => Math.min(totalSlides, prev + 1))
-              }
-              className="w-14 h-14 rounded-2xl bg-white dark:bg-brand-950 border border-slate-200 dark:border-white/10 flex items-center justify-center text-brand-950 dark:text-white hover:bg-accent hover:text-white hover:border-accent transition-all active:scale-95 shadow-xl shadow-black/5 disabled:opacity-30 disabled:cursor-not-allowed group"
-              disabled={activeIndex >= totalSlides}
+              type="button"
+              onClick={goToNext}
+              className="w-14 h-14 rounded-2xl bg-white dark:bg-brand-950 border border-slate-200 dark:border-white/10 flex items-center justify-center text-brand-950 dark:text-white hover:bg-accent hover:text-white hover:border-accent transition-all active:scale-95 shadow-xl shadow-black/5 group"
             >
               <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
             </button>
