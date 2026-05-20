@@ -436,7 +436,7 @@ export const CareersPage = () => {
                   "Consulting Manager",
                 ],
                 icon: Users,
-                image: careersImg("Choose Techknomatic", "Experienced.jpg"),
+                image: careersImg("Choose Your Growth Path", "Experienced.jpg"),
               },
             ].map((track, i) => (
               <motion.div
