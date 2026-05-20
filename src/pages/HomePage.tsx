@@ -918,7 +918,7 @@ const ServicesSection = () => {
             className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight"
           >
             End-to-End Analytics. <br />
-            One Strategic Partner.
+            One Strategic Partner
           </motion.h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -991,9 +991,9 @@ const SolutionsSection = () => {
             transition={{ duration: 0.8 }}
             className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight"
           >
-            Built For Your Industry.
+            Built For Your Industry
             <br />
-            Not Just Your Technology Stack.
+            Not Just Your Technology Stack
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -1021,7 +1021,7 @@ const SolutionsSection = () => {
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
             <h3 className="text-4xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight max-w-xl leading-tight">
               Don't see your industry? <br />
-              There's a good chance we've been there — just ask.
+              There's a good chance we've been there — just ask
             </h3>
             <Link
               to={contactFormLinkTo}
@@ -1334,7 +1334,7 @@ const TestimonialsSection = () => {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-6"
             >
-              Voices of Impact.
+              Voices of Impact
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -1475,7 +1475,7 @@ const WhyUsSection = () => {
           >
             <h2 className="text-4xl md:text-6xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 leading-tight">
               Why Enterprises <br />
-              Choose Techknomatic.
+              Choose Techknomatic
             </h2>
             <div className="w-16 h-1 bg-accent mb-8" />
             <p className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-md">
