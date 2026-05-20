@@ -636,7 +636,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 italic"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10"
             >
               Purpose-built for any data-rich enterprise, wherever leadership decision speed depends on access to
               operational and business intelligence.
@@ -777,7 +777,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium italic"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Seven industry-specific deployments where CXO Nexus is replacing BI ticket queues with conversational
               decision intelligence.
