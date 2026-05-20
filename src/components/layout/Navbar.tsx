@@ -85,10 +85,34 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
     </div>
   );
 
+  const navItemGap = isScrolled ? 'gap-2' : 'gap-2 xl:gap-3';
+  const navTextSize = isScrolled ? 'text-[12px]' : 'text-[12px] xl:text-[13px]';
+
+  const themeButton = (
+    <button
+      type="button"
+      onClick={toggleTheme}
+      className="p-1.5 rounded-xl bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white hover:text-accent transition-all border border-transparent hover:border-accent/30 shrink-0"
+      aria-label="Toggle theme"
+    >
+      {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+    </button>
+  );
+
+  const conversationLink = (
+    <Link
+      to={contactFormLinkTo}
+      className={`px-3 py-1.5 ${navTextSize} font-medium bg-accent text-white rounded-xl hover:bg-accent/90 transition-all group items-center gap-1.5 shadow-lg shadow-accent/20 whitespace-nowrap shrink-0 inline-flex`}
+    >
+      Start a Conversation
+      <ArrowUpRight className="w-3.5 h-3.5 group-hover:rotate-45 transition-transform shrink-0" />
+    </Link>
+  );
+
   return (
     <>
       <nav
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between gap-3 px-4 sm:px-5 transition-all duration-500 rounded-2xl ${isScrolled ? 'w-[92%] lg:w-[90%] xl:w-[88%] py-2 glass shadow-xl border-slate-200/50 dark:border-white/10' : 'w-[94%] lg:w-[96%] xl:w-[92%] py-3 bg-transparent border-transparent'}`}
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex w-max max-w-[min(96vw,100%)] items-center ${navItemGap} transition-all duration-500 rounded-2xl ${isScrolled ? 'px-4 py-2 glass shadow-xl border-slate-200/50 dark:border-white/10' : 'px-4 sm:px-5 py-3 bg-transparent border-transparent'}`}
       >
         <Link
           to="/"
@@ -100,7 +124,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
         </Link>
 
         <div
-          className={`hidden lg:flex flex-1 items-center justify-center min-w-0 font-medium text-slate-600 dark:text-slate-300 transition-all duration-300 ${isScrolled ? 'gap-2 xl:gap-3 text-[12px]' : 'gap-3 xl:gap-4 text-[12px] xl:text-[13px]'}`}
+          className={`hidden lg:flex items-center min-w-0 font-medium text-slate-600 dark:text-slate-300 transition-all duration-300 ${navItemGap} ${navTextSize}`}
         >
           <NavDropdown title="Services" items={navData.services} />
           <NavDropdown title="Enterprise AI" items={navData.enterpriseAI} />
@@ -114,30 +138,17 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
           >
             Contact Us
           </Link>
+          {themeButton}
+          {conversationLink}
         </div>
 
-        <div className="flex items-center shrink-0 gap-3 sm:gap-4 lg:ml-2">
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="p-1.5 rounded-xl bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white hover:text-accent transition-all border border-transparent hover:border-accent/30 hidden sm:flex shrink-0"
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
-
-          <Link
-            to={contactFormLinkTo}
-            className="hidden sm:flex px-3 py-1.5 text-[12px] xl:text-[13px] font-medium bg-accent text-white rounded-xl hover:bg-accent/90 transition-all group items-center gap-1.5 shadow-lg shadow-accent/20 whitespace-nowrap shrink-0"
-          >
-            Start a Conversation
-            <ArrowUpRight className="w-3.5 h-3.5 group-hover:rotate-45 transition-transform shrink-0" />
-          </Link>
-
+        <div className={`flex items-center shrink-0 ${navItemGap} lg:hidden`}>
+          <span className="hidden sm:contents">{themeButton}</span>
+          <span className="hidden sm:contents">{conversationLink}</span>
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2.5 lg:hidden rounded-xl bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white hover:text-accent transition-all border border-transparent hover:border-accent/30"
+            className="p-2.5 rounded-xl bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white hover:text-accent transition-all border border-transparent hover:border-accent/30"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
