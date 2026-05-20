@@ -23,8 +23,6 @@ const stories = [
     title: "Insurance Analytics Transformation – Oman",
     description:
       "A leading insurance provider transformed fragmented reporting into a centralized analytics ecosystem with executive dashboards, claims insights, branch performance monitoring, and policy analytics — enabling faster decision-making and improved operational visibility",
-    image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80",
     icon: ShieldCheck,
     tag: "Insurance",
   },
@@ -32,8 +30,6 @@ const stories = [
     title: "Smart ITSM Command Center – Middle East",
     description:
       "Implemented an intelligent ITSM analytics platform with SLA monitoring, ticket trend analysis, escalation tracking, and command center dashboards that significantly improved service visibility and operational efficiency",
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
     icon: Layout,
     tag: "ITSM",
   },
@@ -41,8 +37,6 @@ const stories = [
     title: "Enterprise Data Warehouse Modernization – UAE warehouse",
     description:
       "Designed and implemented a scalable cloud-ready data warehouse integrating multiple ERP and business systems, enabling unified reporting, faster analytics, and improved data governance across department",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=800&q=80",
     icon: Database,
     tag: "Data Platform",
   },
@@ -50,8 +44,6 @@ const stories = [
     title: "Logistics & Freight Intelligence Platform – GCC",
     description:
       "Developed a freight analytics and pricing intelligence solution that provided real-time shipment visibility, pricing optimization, route performance analysis, and operational dashboards for leadership team",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
     icon: Truck,
     tag: "Logistics",
   },
@@ -59,8 +51,6 @@ const stories = [
     title: "Manufacturing Performance Analytics – India",
     description:
       "Built a real-time production and operational analytics platform integrating plant data, quality systems, and ERP data to improve production monitoring, operational efficiency, and executive reporting",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
     icon: Target,
     tag: "Manufacturing",
   },
@@ -120,14 +110,6 @@ export const CustomerStoriesPage = () => {
                 transition={{ delay: i * 0.1 }}
                 className="group relative flex flex-col bg-white dark:bg-brand-900 rounded-[2.5rem] border border-slate-100 dark:border-white/10 overflow-hidden shadow-xl shadow-slate-100/80 dark:shadow-brand-950/20 hover:shadow-2xl hover:shadow-accent/10 dark:hover:shadow-brand-950/40 hover:border-accent/30 transition-all duration-500"
               >
-                <div className="relative h-52 w-full overflow-hidden bg-slate-100 dark:bg-white/5">
-                  <img
-                    src={story.image}
-                    alt={story.title}
-                    className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
                 <div className="p-10 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-8">
                     <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
