@@ -30,76 +30,28 @@ const aboutusImg = (...segments: string[]) =>
     .map(encodeURIComponent)
     .join("/")}`;
 
-const LIFE_AT_OLD_IMAGES = [
+const LIFE_AT_IMAGES = [
+  "life-at-1.jpg",
   "life-at-2.jpg",
+  "life-at-3.jpg",
   "life-at-4.jpg",
   "life-at-5.jpg",
   "life-at-6.jpg",
   "life-at-7.jpg",
-  "life-at-9.jpg",
+  "life-at-8.jpg",
+  "life-at-9.jpeg",
   "life-at-10.jpg",
-  "DSC_0006.JPG",
-].map((file) =>
-  aboutusImg("Life at Techknomatic", "Old", "Old", file),
-);
-
-const LIFE_AT_NEW_IMAGES = [
-  "DSC_0006.jpg",
-  "DSC_0013.jpg",
-  "DSC_0018.jpg",
-  "DSC_0025.jpg",
-  "DSC_0026.jpg",
-  "DSC_0047.jpg",
-  "DSC_0064.jpg",
-  "DSC_0068.jpg",
-  "DSC_0069.jpg",
-  "DSC_0073.jpg",
-  "DSC_0085.jpg",
-  "DSC_0086.jpg",
-  "DSC_0095.jpg",
-  "DSC_0097.jpg",
-  "DSC_0101.jpg",
-  "DSC_0102.jpg",
-  "DSC_0105.jpg",
-  "DSC_0106.jpg",
-  "DSC_0107.jpg",
-  "DSC_0116.jpg",
-  "DSC_0118.jpg",
-  "DSC_0119.jpg",
-  "DSC_0122.jpg",
-  "DSC_0123.jpg",
-  "DSC_0124.jpg",
-  "DSC_0128.jpg",
-  "DSC_0130.jpg",
-  "DSC_0132.jpg",
-  "DSC_0133.jpg",
-  "DSC_0194.jpg",
-  "DSC_0195.jpg",
-  "DSC_0199.jpg",
-  "DSC_0202.jpg",
-  "DSC_0203.jpg",
-  "DSC_0214.jpg",
-  "DSC_0217.jpg",
-  "DSC_0220.jpg",
-  "DSC_0236.jpg",
-  "DSC_0238.jpg",
-  "DSC_0244.jpg",
-  "DSC_0245.jpg",
-  "DSC_0246.jpg",
-  "DSC_0250.jpg",
-  "DSC_0254.jpg",
-  "DSC_0255.jpg",
-  "DSC_0288.jpg",
-  "DSC_0293.jpg",
-  "DSC_0294.jpg",
-  "DSC_0297.jpg",
-  "DSC_0314.jpg",
-  "DSC_0317.jpg",
-  "DSC_0427.jpg",
-  "DSC_0431.jpg",
-].map((file) =>
-  aboutusImg("Life at Techknomatic", "New Images", file),
-);
+  "life-at-11.jpg",
+  "life-at-12.jpg",
+  "life-at-13.jpg",
+  "life-at-14.jpg",
+  "life-at-15.jpg",
+  "life-at-16.jpg",
+  "life-at-17.jpg",
+  "life-at-18.jpg",
+  "life-at-19.jpg",
+  "life-at-20.jpg",
+].map((file) => aboutusImg("Life at Techknomatic", file));
 
 const AccordionItem = ({
   id,
@@ -259,7 +211,7 @@ export const AboutUsPage = () => {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  const lifeImages = [...LIFE_AT_OLD_IMAGES, ...LIFE_AT_NEW_IMAGES];
+  const lifeImages = LIFE_AT_IMAGES;
 
   return (
     <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
