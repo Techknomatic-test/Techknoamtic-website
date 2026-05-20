@@ -48,7 +48,7 @@ const PARSE_IQ_HERO = parseIqImg("herobanner.jpg");
 const PARSE_IQ_CHALLENGE = parseIqImg("The Enterprise Document Challenge.jpg");
 const PARSE_IQ_WORKS = parseIqImg("How ParseIQ Works.jpg");
 
-const CapabilityCard = ({ title, items, delay = 0 }: { title: string; items: string[]; delay?: number }) => (
+const CapabilityCard = ({ title, items, icon: Icon, delay = 0 }: { title: string; items: string[]; icon: any; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ const CapabilityCard = ({ title, items, delay = 0 }: { title: string; items: str
     className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
   >
     <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-      <Brain className="w-6 h-6 text-accent" />
+      <Icon className="w-6 h-6 text-accent" />
     </div>
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight leading-tight">
       {title}
@@ -175,26 +175,32 @@ export const ParseIQPage = () => {
   const capabilities = [
     {
       title: "Smart OCR System",
+      icon: Scan,
       items: ["Handwritten text recognition", "Printed document extraction", "Multi-format document support", "Automated field detection", "Structured data conversion", "API-driven integrations"]
     },
     {
       title: "AI-Powered Document Understanding",
+      icon: Brain,
       items: ["Context-aware extraction", "Intelligent field mapping", "Document classification", "Semantic understanding", "Multi-layout interpretation", "Adaptive learning models"]
     },
     {
       title: "LLM-Powered PDF Extraction",
+      icon: FileSearch,
       items: ["Complex table extraction", "Contextual data interpretation", "Multi-page document understanding", "Structured output generation", "Custom extraction workflows", "AI-assisted compliance processing"]
     },
     {
       title: "Passport & Identity Data Extraction",
+      icon: ShieldCheck,
       items: ["MRZ extraction", "Passport and ID data parsing", "Identity verification support", "Authenticity validation", "KYC-ready integrations"]
     },
     {
       title: "Automated Data Structuring",
+      icon: Database,
       items: ["JSON, CSV, and API payload outputs", "Database-ready records", "ERP and CRM integration formats", "Schema-validated outputs", "Custom output templates"]
     },
     {
       title: "Custom AI Model Training",
+      icon: Cpu,
       items: ["Industry-specific templates", "Custom field extraction", "Domain-specific validation logic", "Enterprise compliance requirements", "Continuous model refinement"]
     }
   ];
