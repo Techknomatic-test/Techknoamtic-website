@@ -1037,6 +1037,8 @@ const SolutionsSection = () => {
   );
 };
 
+const ACCELERATOR_SLIDE_INTERVAL_MS = 2000;
+
 const AcceleratorsSection = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -1125,7 +1127,7 @@ const AcceleratorsSection = () => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev >= totalSlides ? 0 : prev + 1));
-    }, 3000);
+    }, ACCELERATOR_SLIDE_INTERVAL_MS);
     return () => clearInterval(interval);
   }, [isPaused, totalSlides]);
 
@@ -1185,7 +1187,7 @@ const AcceleratorsSection = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-6xl font-medium text-white tracking-tight mb-6 leading-tight">
-              Go Faster With Our Accelerators.
+              Go Faster With Our Accelerators
             </h2>
             <div className="w-12 h-1 bg-accent mb-6" />
             <p className="text-lg text-slate-300 font-medium leading-relaxed max-w-2xl">
