@@ -317,7 +317,8 @@ export const ParseIQPage = () => {
               transition={{ delay: 0.1 }}
               className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
             >
-              Every enterprise runs on documents, but most still process them manually.
+              Every enterprise runs on documents invoices, contracts, KYC forms, passports, claims, shipment paperwork, onboarding records, and operational PDFs. Yet despite digital transformation investments, most document workflows still remain manual, fragmented, and heavily dependent on human effort. Traditional OCR systems can extract text, but they fail to understand context, layouts, handwritten content, or complex multi-page documents. Teams spend countless hours validating fields, correcting extraction errors, re-entering data into ERP and CRM systems, and managing compliance-heavy verification processes manually
+              The result is an operational bottleneck hidden inside back-office workflows: slower customer onboarding, delayed approvals, rising operational costs, compliance risks, and poor scalability. As document volumes grow, organizations are forced to scale teams instead of intelligence making automation expensive, inconsistent, and difficult to sustain
             </motion.p>
           </div>
 
