@@ -118,7 +118,7 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
   </motion.div>
 );
 
-const ApproachStep = ({ num, title, description, delay = 0 }: { num: string; title: string; description: string; delay?: number }) => (
+const ApproachStep = ({ num, title, description, icon: Icon, delay = 0 }: { num: string; title: string; description: string; icon: any; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ const ApproachStep = ({ num, title, description, delay = 0 }: { num: string; tit
       {num.split('.')[1]}
     </div>
     <div className="w-12 h-12 rounded-xl bg-white dark:bg-white/10 flex items-center justify-center mb-8 text-accent shadow-sm group-hover:scale-110 transition-transform">
-      <Code className="w-5 h-5" />
+      <Icon className="w-5 h-5" />
     </div>
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
       {title}
@@ -141,7 +141,7 @@ const ApproachStep = ({ num, title, description, delay = 0 }: { num: string; tit
   </motion.div>
 );
 
-const DifferentiatorCard = ({ title, description, idx }: { title: string; description: string; idx: number }) => (
+const DifferentiatorCard = ({ title, description, icon: Icon, idx }: { title: string; description: string; icon: any; idx: number }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.95 }}
     whileInView={{ opacity: 1, scale: 1 }}
@@ -149,8 +149,8 @@ const DifferentiatorCard = ({ title, description, idx }: { title: string; descri
     transition={{ delay: idx * 0.1 }}
     className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full"
   >
-    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-      <CheckCircle2 className="w-6 h-6 text-accent" />
+    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 text-accent">
+      <Icon className="w-6 h-6" />
     </div>
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
       {title}
@@ -246,20 +246,20 @@ export const DataEngineeringPage = () => {
   ];
 
   const steps = [
-    { num: "01.", title: "Assess", description: "Inventory data sources, integration points, and pipeline bottlenecks. Define the target architecture." },
-    { num: "02.", title: "Architect", description: "Design end-to-end data flow, ingestion, transformation, storage, and serving layers. Agree SLAs upfront" },
-    { num: "03.", title: "Build & Automate", description: "Develop pipelines with CI/CD, parameterized configurations, and automated quality checks at every stage." },
-    { num: "04.", title: "Test & Monitor", description: "Run data-quality assertions, lineage validation, and load tests. Stand up alerting and SLA dashboards." },
-    { num: "05.", title: "Operate & Optimize", description: "Hand off to managed operations or upskill your team. Continuously tune cost and performance." },
+    { num: "01.", title: "Assess", description: "Inventory data sources, integration points, and pipeline bottlenecks. Define the target architecture.", icon: Search },
+    { num: "02.", title: "Architect", description: "Design end-to-end data flow, ingestion, transformation, storage, and serving layers. Agree SLAs upfront", icon: Layers },
+    { num: "03.", title: "Build & Automate", description: "Develop pipelines with CI/CD, parameterized configurations, and automated quality checks at every stage.", icon: Code },
+    { num: "04.", title: "Test & Monitor", description: "Run data-quality assertions, lineage validation, and load tests. Stand up alerting and SLA dashboards.", icon: Activity },
+    { num: "05.", title: "Operate & Optimize", description: "Hand off to managed operations or upskill your team. Continuously tune cost and performance.", icon: RefreshCw },
   ];
 
   const differentiators = [
-    { title: "End-to-End Ownership", description: "One accountable partner from source systems → pipelines → platform → BI & AI." },
-    { title: "Deep Ecosystem Expertise", description: "Proven experience with Salesforce, SAP, Oracle, IoT, and legacy data systems." },
-    { title: "Strong Certified Talent", description: "Azure and Snowflake implementation teams led by certified architects." },
-    { title: "Pre-Built Accelerators", description: "Reusable connectors, templates, and frameworks for faster, lower-risk delivery." },
-    { title: "100+ Pipelines Delivered", description: "Production-grade pipelines across BFSI, Manufacturing, Pharma, and Energy." },
-    { title: "SLA-Governed Delivery", description: "Monitored, governed pipelines with SLA guarantees, no black-box solutions." },
+    { title: "End-to-End Ownership", description: "One accountable partner from source systems → pipelines → platform → BI & AI.", icon: ShieldCheck },
+    { title: "Deep Ecosystem Expertise", description: "Proven experience with Salesforce, SAP, Oracle, IoT, and legacy data systems.", icon: Globe },
+    { title: "Strong Certified Talent", description: "Azure and Snowflake implementation teams led by certified architects.", icon: Brain },
+    { title: "Pre-Built Accelerators", description: "Reusable connectors, templates, and frameworks for faster, lower-risk delivery.", icon: Zap },
+    { title: "100+ Pipelines Delivered", description: "Production-grade pipelines across BFSI, Manufacturing, Pharma, and Energy.", icon: Server },
+    { title: "SLA-Governed Delivery", description: "Monitored, governed pipelines with SLA guarantees, no black-box solutions.", icon: Clock },
   ];
 
   const useCases = [
@@ -486,7 +486,7 @@ export const DataEngineeringPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {differentiators.map((diff, idx) => (
-              <DifferentiatorCard key={idx} title={diff.title} description={diff.description} idx={idx} />
+              <DifferentiatorCard key={idx} {...diff} idx={idx} />
             ))}
           </div>
         </div>
