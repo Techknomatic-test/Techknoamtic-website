@@ -1291,7 +1291,7 @@ const TestimonialsSection = () => {
       role: "VP Delivery, Oil & Gas Sector",
       company: "Oil & Gas Sector",
       location: "Oman",
-      text: "In oil & gas, unplanned downtime isn't a metric — it's a crisis. Techknomatic built us a live operational dashboard that consolidates field data across our assets and flags efficiency dips before they escalate. We've moved from reactive firefighting to proactive control, and the difference is measurable.",
+      text: "Before CXO Nexus, our data was scattered across systems. Now we have a unified platform with real-time visibility into sales trends, operational performance, and overall business health ,simplifying reporting and enabling faster, more confident decisions. I'd highly recommend Techknomatic to any organization looking for a single source of truth.",
     },
     {
       headline: "From reactive to data-driven",
