@@ -691,7 +691,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 italic"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 "
             >
               Purpose-built for customer-facing enterprises, wherever customer
               expectations have outpaced traditional support models.
