@@ -276,7 +276,7 @@ export const CareersPage = () => {
       {/* 2. Why Techknomatic */}
       <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-20 text-left">
+          <div className="max-w-3xl mb-10 text-left">
             <h2 className="text-4xl md:text-[56px] font-bold text-brand-950 dark:text-white tracking-tight leading-tight mb-6">
               Why High-Performers <br />
               <span>Choose Techknomatic</span>
@@ -349,9 +349,9 @@ export const CareersPage = () => {
       {/* 3. Work Culture & How We Work */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-20">
+          <div className="text-left mb-10">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
-              How We Work.
+              How We Work
             </h2>
           </div>
 
@@ -406,7 +406,7 @@ export const CareersPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-20">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6">
-              Choose Your <span className="text-accent">Growth Path.</span>
+              Choose Your <span className="text-accent">Growth Path</span>
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
               We donâ€™t just hire roles, we build careers with structured
@@ -481,10 +481,10 @@ export const CareersPage = () => {
       {/* 5. L&D Section */}
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 transition-colors duration-500">
         <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-20">
+          <div className="text-left mb-10">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
               We Invest in <br />
-              <span className="text-accent">Your Growth.</span>
+              <span className="text-accent">Your Growth</span>
             </h2>
           </div>
 
@@ -551,10 +551,10 @@ export const CareersPage = () => {
       {/* 6. Life at Techknomatic */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-8">
             <div className="text-left">
               <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight">
-                Life at <span className="text-accent">Techknomatic.</span>
+                Life at <span className="text-accent">Techknomatic</span>
               </h2>
             </div>
           </div>
@@ -611,9 +611,9 @@ export const CareersPage = () => {
         className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-20">
+          <div className="text-left mb-10">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white mb-6 tracking-tight">
-              Current <span className="text-accent">Opportunities.</span>
+              Current <span className="text-accent">Opportunities</span>
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
               Join a mission that matters.
@@ -649,12 +649,12 @@ export const CareersPage = () => {
       {/* 9. Hiring Process */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-50 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-20">
+          <div className="text-left mb-10">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-4">
-              Our Hiring Process.
+              Our Hiring Process
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
-              Simple, transparent, and fast.
+              Simple, transparent, and fast
             </p>
           </div>
 
