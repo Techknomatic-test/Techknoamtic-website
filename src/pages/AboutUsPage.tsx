@@ -110,7 +110,7 @@ const DifferentSection = () => {
       id: 1,
       title: "Experienced Team",
       description:
-        "We have experienced professionals with hands-on experience in delivering end-to-end data solutions. We can leverage BI tools to help clients convert their data into insights within less time.",
+        "We have experienced professionals with hands-on experience in delivering end-to-end data solutions. We can leverage BI tools to help clients convert their data into insights within less time",
       imageUrl: aboutusImg(
         "What Makes Us Different",
         "Experienced Team.jpg",
@@ -120,7 +120,7 @@ const DifferentSection = () => {
       id: 2,
       title: "Proven Methodology",
       description:
-        "By following a systematic approach, we construct BI solutions with well-defined processes that make it easy for you to manage all of the dashboards and changes.",
+        "By following a systematic approach, we construct BI solutions with well-defined processes that make it easy for you to manage all of the dashboards and changes",
       imageUrl: aboutusImg(
         "What Makes Us Different",
         "Proven Methodology.jpg",
@@ -130,7 +130,7 @@ const DifferentSection = () => {
       id: 3,
       title: "Less Turnaround Time",
       description:
-        "In this dynamically changing analytics world, we give a minimum turnaround time for all our BI deliverables so you can make informed decisions anytime, anywhere.",
+        "In this dynamically changing analytics world, we give a minimum turnaround time for all our BI deliverables so you can make informed decisions anytime, anywhere",
       imageUrl: aboutusImg(
         "What Makes Us Different",
         "Less Turnaround Time.jpg",
@@ -236,7 +236,7 @@ export const AboutUsPage = () => {
             >
               We are a team with <br />
               <span className="text-accent decoration-white/20 underline-offset-8">
-                knowledge and experience.
+                knowledge and experience
               </span>
             </motion.h1>
             <motion.p
@@ -247,7 +247,7 @@ export const AboutUsPage = () => {
             >
               We are a trusted BI technology and implementation partner for data
               analytics and visualization requirements, helping leaders turn
-              complexity into clarity.
+              complexity into clarity
             </motion.p>
 
             <div className="flex flex-wrap gap-5">
@@ -273,12 +273,12 @@ export const AboutUsPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-16">
             <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
-              Our Culture and Values.
+              Our Culture and Values
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-4xl">
               At Techknomatic, we strive to create a culture that empowers a
               self-driven, creative, and independent workforce. We focus on
-              building a diverse and equitable organization.
+              building a diverse and equitable organization
             </p>
           </div>
 
@@ -314,7 +314,7 @@ export const AboutUsPage = () => {
       <section className="py-[60px] bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-left">
           <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
-            Life at <span className="text-accent">Techknomatic.</span>
+            Life at <span className="text-accent">Techknomatic</span>
           </h2>
         </div>
 
@@ -342,7 +342,7 @@ export const AboutUsPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16 text-left">
             <h3 className="text-2xl md:text-3xl font-bold text-brand-950 dark:text-white tracking-tight">
-              Our <span className="text-accent">Leadership & Team.</span>
+              Our <span className="text-accent">Leadership & Team</span>
             </h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-100 dark:border-white/5">
