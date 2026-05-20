@@ -734,7 +734,7 @@ const StatsSection = () => {
     { value: 25, suffix: "+", label: "Domains Served" },
     { value: 1000, suffix: "+", label: "Projects Completed" },
     { value: 20, suffix: "K+", label: "Dashboards Delivered" },
-    { value: 500, suffix: "K+", label: "Consulting Hours" },
+    { value: 500, suffix: "K+", label: "Consulting Hours" }, 
   ];
 
   return (
@@ -752,9 +752,7 @@ const StatsSection = () => {
             >
               <h3 className="text-5xl md:text-6xl font-bold text-accent tracking-tighter mb-4 group-hover:scale-105 transition-transform duration-500 whitespace-nowrap">
                 <Counter value={stat.value} />
-                <span className="text-[0.4em] font-medium ml-1 inline-block translate-y-[-0.2em]">
-                  {stat.suffix}
-                </span>
+                <span className="font-bold">{stat.suffix}</span>
               </h3>
               <p className="text-[12px] font-black text-slate-400 dark:text-slate-500 tracking-[0.25em] leading-tight">
                 {stat.label}
