@@ -61,7 +61,7 @@ export const navData: SiteNavData = {
   industries: [
     { label: 'Insurance', href: '/insurance-analytics', icon: ShieldCheck },
     { label: 'Oil & Gas', href: '/refinery-operations', icon: Activity },
-    { label: 'IT Services Management (ITSM)', href: '/itsm-analytics', icon: Layout },
+    { label: 'ITSM', href: '/itsm-analytics', icon: Layout },
     { label: 'Manufacturing', href: '/manufacturing-analytics', icon: Target },
   ],
   aboutUs: [
