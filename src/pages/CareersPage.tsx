@@ -80,7 +80,7 @@ const JobCard = ({ id, title, exp, location, skills, description }: any) => (
   </motion.div>
 );
 
-const WhyTechkoCard = ({ title, desc, icon: Icon, delay, image }: any) => (
+const WhyTechkoCard = ({ title, desc, delay, image }: any) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -89,15 +89,12 @@ const WhyTechkoCard = ({ title, desc, icon: Icon, delay, image }: any) => (
     className="bg-white dark:bg-brand-900 overflow-hidden rounded-[2.5rem] border border-slate-100 dark:border-white/5 shadow-[0_15px_30px_-10px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all text-left flex flex-col group"
   >
     <div className="relative h-48 w-full bg-slate-100 dark:bg-white/5 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 to-transparent z-10 mixture-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
       <img
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
       />
-      <div className="absolute bottom-4 left-4 z-20 w-12 h-12 bg-accent text-white rounded-2xl flex items-center justify-center shadow-lg">
-        <Icon className="w-6 h-6" />
-      </div>
     </div>
     <div className="p-8 flex-1 flex flex-col">
       <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
@@ -282,7 +279,7 @@ export const CareersPage = () => {
           <div className="max-w-3xl mb-20 text-left">
             <h2 className="text-4xl md:text-[56px] font-bold text-brand-950 dark:text-white tracking-tight leading-tight mb-6">
               Why High-Performers <br />
-              <span className="text-slate-400">Choose Techknomatic.</span>
+              <span>Choose Techknomatic</span>
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
               Most companies talk about culture, we focus on your career
@@ -292,7 +289,6 @@ export const CareersPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <WhyTechkoCard
-              icon={Target}
               title="Real Consulting Exposure"
               desc="Work directly with business stakeholders, driving strategy rather than just backend execution."
               delay={0.1}
@@ -302,7 +298,6 @@ export const CareersPage = () => {
               )}
             />
             <WhyTechkoCard
-              icon={TrendingUp}
               title="Fast Career Growth"
               desc="Accelerated learning paths across BI, Data Engineering & AI foundations for rapid progression."
               delay={0.2}
@@ -312,7 +307,6 @@ export const CareersPage = () => {
               )}
             />
             <WhyTechkoCard
-              icon={Globe}
               title="Global Client Exposure"
               desc="Deliver high-impact projects across India, Middle East, USA, and other global markets."
               delay={0.3}
@@ -322,7 +316,6 @@ export const CareersPage = () => {
               )}
             />
             <WhyTechkoCard
-              icon={Zap}
               title="Ownership from Day One"
               desc="Solve real business problems with full accountability, not just closing development tickets."
               delay={0.4}
@@ -332,7 +325,6 @@ export const CareersPage = () => {
               )}
             />
             <WhyTechkoCard
-              icon={Brain}
               title="Skill Compounding"
               desc="Learn the intersection of technical tools, business context, and visual storytelling."
               delay={0.5}
@@ -342,7 +334,6 @@ export const CareersPage = () => {
               )}
             />
             <WhyTechkoCard
-              icon={Star}
               title="Elite Peer Group"
               desc="Collaborate with some of the sharpest minds in the data and analytics ecosystem."
               delay={0.6}
