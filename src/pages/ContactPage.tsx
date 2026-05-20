@@ -217,7 +217,7 @@ export const ContactPage = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-10 text-white"
             >
               Let’s Turn Your Data Into <br />
-              <span className="text-accent">Decisions</span> That Drive Growth.
+              <span className="text-accent">Decisions</span> That Drive Growth
             </motion.h1>
 
             <div className="mb-14">

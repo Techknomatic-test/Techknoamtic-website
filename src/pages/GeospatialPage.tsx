@@ -214,7 +214,7 @@ export const GeospatialPage = () => {
     },
     {
       title: "Geo-Dashboards & Visualisations",
-      description: "Interactive map visualisations built in ArcGIS, Power BI Maps, Tableau, and Qlik.",
+      description: "Interactive map visualisations built in ArcGIS, Power BI Maps, Tableau, and Qlik",
       image: `${GEO_IMG}/Geo Dashboards Visualisations.jpg`,
     },
     {
@@ -351,7 +351,7 @@ export const GeospatialPage = () => {
               transition={{ delay: 0.2 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
-              Location-Driven Intelligence for Smarter Decisions.
+              Location-Driven Intelligence for Smarter Decisions
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

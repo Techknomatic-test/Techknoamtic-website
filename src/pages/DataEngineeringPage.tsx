@@ -207,7 +207,7 @@ export const DataEngineeringPage = () => {
   const capabilities = [
     {
       title: "ETL/ELT Pipelines & Automation",
-      description: "Reliable, scalable pipelines built with Talend, Azure Data Factory, Informatica, dbt, and Python.",
+      description: "Reliable, scalable pipelines built with Talend, Azure Data Factory, Informatica, dbt, and Python",
       image: `${DE_CAP_IMG}/ETLELT Pipelines & Automation.jpg`,
     },
     {
@@ -232,7 +232,7 @@ export const DataEngineeringPage = () => {
     },
     {
       title: "Data Quality & Governance",
-      description: "Automated quality checks, cleansing routines, and governance frameworks for trusted data.",
+      description: "Automated quality checks, cleansing routines, and governance frameworks for trusted data",
       image: `${DE_CAP_IMG}/Data Quality & Governance.jpg`,
     },
   ];
@@ -272,13 +272,13 @@ export const DataEngineeringPage = () => {
     {
       title: "Real-Time Operational Intelligence Platforms",
       description: "Transform enterprise operational data into actionable, real-time business intelligence",
-      crux: "Build event-driven analytics platforms on AWS, Redshift, Glue, Kinesis, Lambda, MSK, and S3, using Kafka streaming, CDC pipelines, and dimensional modeling. Consolidate ERP, CRM, IoT, ITSM, and transactional data into low-latency operational views for faster decisions.",
+      crux: "Build event-driven analytics platforms on AWS, Redshift, Glue, Kinesis, Lambda, MSK, and S3, using Kafka streaming, CDC pipelines, and dimensional modeling. Consolidate ERP, CRM, IoT, ITSM, and transactional data into low-latency operational views for faster decisions",
       industries: "Oil & Gas · Logistics · ITSM · Telecom · Supply Chain"
     },
     {
       title: "Data Quality, Reconciliation & Observability",
       description: "Engineer trust into every stage of the data lifecycle",
-      crux: "Embed automated validation, reconciliation, schema-drift detection, lineage tracking, and SLA monitoring directly into transformation layers. Built on Snowflake and GCP, BigQuery, Dataflow, Pub/Sub, to surface data issues before they impact reporting or compliance.",
+      crux: "Embed automated validation, reconciliation, schema-drift detection, lineage tracking, and SLA monitoring directly into transformation layers. Built on Snowflake and GCP, BigQuery, Dataflow, Pub/Sub, to surface data issues before they impact reporting or compliance",
       industries: "BFSI · Insurance · Healthcare · Government · Regulated Enterprises"
     }
   ];
@@ -315,7 +315,7 @@ export const DataEngineeringPage = () => {
               transition={{ delay: 0.2 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
-              Build a Foundation for Scalable, Trusted, and Intelligent Data.
+              Build a Foundation for Scalable, Trusted, and Intelligent Data
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
