@@ -198,12 +198,10 @@ const UseCaseCard = ({
       {subtitle}
     </p>
 
-    <div className="space-y-6 mt-auto">
-      <div>
-        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-          {crux}
-        </p>
-      </div>
+    <div className="space-y-6 flex-1">
+      <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+        {crux}
+      </p>
 
       {techStack && (
         <div>
@@ -211,19 +209,19 @@ const UseCaseCard = ({
           <p className="text-[13px] font-bold text-brand-950 dark:text-white">{techStack}</p>
         </div>
       )}
+    </div>
 
-      <div className="pt-4 border-t border-slate-100 dark:border-white/5 grid grid-cols-2 gap-4">
-        <div>
-          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Industries</h4>
-          <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">{industries}</p>
-        </div>
-        {impact && (
-          <div>
-            <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Impact</h4>
-            <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">{impact}</p>
-          </div>
-        )}
+    <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5 grid grid-cols-2 gap-4">
+      <div>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Industries</h4>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">{industries}</p>
       </div>
+      {impact && (
+        <div>
+          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Impact</h4>
+          <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">{impact}</p>
+        </div>
+      )}
     </div>
   </motion.div>
 );
@@ -495,7 +493,7 @@ export const AIServicesPage = () => {
       {/* Tools & Technology Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-10">
+          <div className="mb-8">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
