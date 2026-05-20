@@ -88,19 +88,19 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between px-4 sm:px-6 py-3 transition-all duration-500 rounded-2xl ${isScrolled ? 'w-[90%] lg:w-[85%] xl:w-[80%] glass shadow-xl border-slate-200/50 dark:border-white/10' : 'w-[94%] lg:w-[96%] xl:w-[85%] bg-transparent border-transparent'}`}
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between gap-3 px-4 sm:px-5 transition-all duration-500 rounded-2xl ${isScrolled ? 'w-[92%] lg:w-[90%] xl:w-[88%] py-2 glass shadow-xl border-slate-200/50 dark:border-white/10' : 'w-[94%] lg:w-[96%] xl:w-[92%] py-3 bg-transparent border-transparent'}`}
       >
         <Link
           to="/"
           aria-label="Techknomatic home"
-          className="relative block h-12 w-[min(180px,42vw)] shrink-0 overflow-hidden rounded-lg bg-contain bg-left bg-no-repeat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 sm:h-16 sm:w-[200px] lg:w-[220px]"
+          className={`relative block shrink-0 overflow-hidden rounded-lg bg-contain bg-left bg-no-repeat transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 ${isScrolled ? 'h-9 w-[120px] sm:h-10 sm:w-[140px]' : 'h-10 w-[min(150px,36vw)] sm:h-12 sm:w-[170px] lg:w-[190px]'}`}
           style={{ backgroundImage: `url(${NAV_LOGO_URL})` }}
         >
           <span className="sr-only">Techknomatic</span>
         </Link>
 
         <div
-          className={`hidden lg:flex items-center transition-all duration-300 text-[13px] xl:text-[14px] font-medium text-slate-600 dark:text-slate-300 ${isScrolled ? 'gap-3 xl:gap-5' : 'gap-5 xl:gap-8'}`}
+          className={`hidden lg:flex flex-1 items-center justify-center min-w-0 font-medium text-slate-600 dark:text-slate-300 transition-all duration-300 ${isScrolled ? 'gap-2 xl:gap-3 text-[12px]' : 'gap-3 xl:gap-4 text-[12px] xl:text-[13px]'}`}
         >
           <NavDropdown title="Services" items={navData.services} />
           <NavDropdown title="Enterprise AI" items={navData.enterpriseAI} />
@@ -108,16 +108,19 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
           <NavDropdown title="Industries" items={navData.industries} />
           <NavDropdown title="About Us" items={navData.aboutUs} />
           <NavDropdown title="Resources" items={navData.resources} />
-          <Link to="/contact" className="hover:text-accent transition-colors whitespace-nowrap">
+          <Link
+            to="/contact"
+            className="hover:text-accent transition-colors whitespace-nowrap shrink-0"
+          >
             Contact Us
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center shrink-0 gap-3 sm:gap-4 lg:ml-2">
           <button
             type="button"
             onClick={toggleTheme}
-            className="p-2 rounded-xl bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white hover:text-accent transition-all border border-transparent hover:border-accent/30 hidden sm:flex"
+            className="p-1.5 rounded-xl bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white hover:text-accent transition-all border border-transparent hover:border-accent/30 hidden sm:flex shrink-0"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -125,10 +128,10 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
 
           <Link
             to={contactFormLinkTo}
-            className="hidden sm:flex px-4 xl:px-6 py-2.5 text-[13px] xl:text-[14px] font-medium bg-accent text-white rounded-xl hover:bg-accent/90 transition-all group items-center gap-2 shadow-lg shadow-accent/20 whitespace-nowrap"
+            className="hidden sm:flex px-3 py-1.5 text-[12px] xl:text-[13px] font-medium bg-accent text-white rounded-xl hover:bg-accent/90 transition-all group items-center gap-1.5 shadow-lg shadow-accent/20 whitespace-nowrap shrink-0"
           >
             Start a Conversation
-            <ArrowUpRight className="w-3.5 h-3.5 group-hover:rotate-45 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 group-hover:rotate-45 transition-transform shrink-0" />
           </Link>
 
           <button

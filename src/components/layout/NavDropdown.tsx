@@ -65,7 +65,10 @@ export const NavDropdown = ({ title, items }: NavDropdownProps) => {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <button type="button" className="flex items-center gap-1 hover:text-accent transition-colors">
+      <button
+        type="button"
+        className="flex items-center gap-1 hover:text-accent transition-colors whitespace-nowrap shrink-0"
+      >
         {title}
         <ChevronDown
           className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
