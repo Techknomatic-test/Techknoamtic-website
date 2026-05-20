@@ -196,7 +196,7 @@ const DifferentSection = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight"
           >
-            What Makes Us Different.
+            What Makes Us Different
           </motion.h2>
         </div>
 
@@ -264,25 +264,18 @@ export const AboutUsPage = () => {
   return (
     <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
       {/* 1. Hero Section - Styled as per Airline Hero */}
-      <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-10 md:pt-14 md:pb-12 overflow-hidden px-6 bg-brand-950">
-        <div className="absolute inset-0 z-0">
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
+        <div className="absolute inset-0 z-0 overflow-hidden bg-[#020617] pointer-events-none">
           <img
             src={aboutusImg("Herobanner.jpg")}
             alt="About Us Background"
-            className="w-full h-full object-cover"
+            className="absolute inset-0 h-full w-full object-contain object-center"
             referrerPolicy="no-referrer"
           />
         </div>
 
-        <motion.div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="relative z-10 max-w-7xl mx-auto w-full drop-shadow-md">
           <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[10px] font-black tracking-[0.3em] text-white uppercase bg-white/10 rounded-full border border-white/20"
-            >
-              Knowledge & Experience
-            </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -317,7 +310,7 @@ export const AboutUsPage = () => {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* 2. Different Section (Accordion Redesign) */}
