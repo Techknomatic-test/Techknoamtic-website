@@ -7,28 +7,36 @@ import {
   ShieldCheck,
   Zap,
   Award,
-  Globe,
   Database,
   Cpu,
   Map,
-  Building2,
   Handshake,
   MessageSquare,
   Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const PARTNERSHIP_IMG = "Images/partnership";
+const partnershipImg = (file: string) =>
+  `${import.meta.env.BASE_URL}${[...PARTNERSHIP_IMG.split("/"), file]
+    .map(encodeURIComponent)
+    .join("/")}`;
+const PARTNERSHIP_HERO_IMG = partnershipImg("Partnershipbanner.jpg");
+
 const PartnershipHero = () => {
   return (
     <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-brand-950">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
-          src="Images/7660.jpg"
+          src={PARTNERSHIP_HERO_IMG}
           alt="Partnerships Background"
-          className="w-full h-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-brand-950/60" />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+          aria-hidden
+        />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
@@ -181,19 +189,19 @@ const MarketSection = () => {
       country: "Oman",
       partner: "Primer Trading",
       desc: "Driving market engagement and solution delivery in Oman",
-      icon: Building2,
+      logoImage: partnershipImg("prime.png"),
     },
     {
       country: "UAE",
       partner: "Aintisar Technologies",
       desc: "Supporting business development and client execution in the UAE",
-      icon: Building2,
+      logoImage: partnershipImg("Aintisar Technologies.png"),
     },
     {
       country: "United States",
       partner: "Inspirational Global",
       desc: "Enabling go-to-market and solution expansion in the United States",
-      icon: Building2,
+      logoImage: partnershipImg("Inspirational Global.png"),
     },
   ];
 
@@ -230,8 +238,13 @@ const MarketSection = () => {
               transition={{ delay: i * 0.1 }}
               className="bg-slate-50 dark:bg-brand-900 p-12 rounded-[3.5rem] border border-slate-100 dark:border-white/5 hover:border-accent/30 transition-all group"
             >
-              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-950 flex items-center justify-center text-accent mb-8 shadow-sm group-hover:scale-110 transition-transform">
-                <Globe className="w-6 h-6" />
+              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-950 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform overflow-hidden p-2">
+                <img
+                  src={region.logoImage}
+                  alt={region.partner}
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
               </div>
               <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2">
                 {region.country}
