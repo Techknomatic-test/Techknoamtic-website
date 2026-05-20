@@ -126,8 +126,8 @@ const ApproachStep = ({ num, title, description, icon: Icon, delay = 0 }: { num:
     transition={{ delay }}
     className="relative flex-1 min-w-[240px] p-8 rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group"
   >
-    <div className="absolute top-8 right-8 text-4xl font-black text-slate-200 dark:text-white/5 group-hover:text-accent/20 transition-colors">
-      {num.split('.')[1]}
+    <div className="absolute top-8 right-8 text-4xl font-black text-slate-100 dark:text-white/5 group-hover:text-accent/10 transition-colors">
+      {num.replace(".", "")}
     </div>
     <div className="w-12 h-12 rounded-xl bg-white dark:bg-white/10 flex items-center justify-center mb-8 text-accent shadow-sm group-hover:scale-110 transition-transform">
       <Icon className="w-5 h-5" />
