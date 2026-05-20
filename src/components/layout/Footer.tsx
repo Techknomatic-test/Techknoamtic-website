@@ -23,7 +23,7 @@ const footerQuickLinks = [
   { label: 'Careers', href: '/careers' },
   { label: 'Partnerships', href: '/partnerships' },
   { label: 'FAQ', href: '/faq' },
-  { label: 'Customer Stories', href: '#' },
+  { label: 'Customer Stories', href: '/customer-stories' },
   { label: 'Contact Us', href: '/contact' },
 ];
 

@@ -7,6 +7,7 @@ import { AssistIQPage } from '../pages/AssistIQPage';
 import { BIServicesPage } from '../pages/BIServicesPage';
 import { CallOpsAIPage } from '../pages/CallOpsAiPage';
 import { CareersPage } from '../pages/CareersPage';
+import { CustomerStoriesPage } from '../pages/CustomerStoriesPage';
 import { ContactPage } from '../pages/ContactPage';
 import { CXONexusPage } from '../pages/CXONexusPage';
 import { CustomDevPage } from '../pages/CustomDevPage';
@@ -38,6 +39,7 @@ export const AppRoutes = () => {
       <Route path="/about" element={<AboutUsPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/careers" element={<CareersPage />} />
+      <Route path="/customer-stories" element={<CustomerStoriesPage />} />
       <Route path="/bi-services" element={<BIServicesPage />} />
       <Route path="/ai-services" element={<AIServicesPage />} />
       <Route path="/data-engineering" element={<DataEngineeringPage />} />

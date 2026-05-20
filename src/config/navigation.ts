@@ -71,6 +71,6 @@ export const navData: SiteNavData = {
   ],
   resources: [
     { label: 'FAQs', href: '/faq', icon: Sparkles },
-    { label: 'Customer Stories', href: '#', icon: Users },
+    { label: 'Customer Stories', href: '/customer-stories', icon: Users },
   ],
 };
