@@ -236,25 +236,28 @@ const MarketSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-slate-50 dark:bg-brand-900 p-12 rounded-[3.5rem] border border-slate-100 dark:border-white/5 hover:border-accent/30 transition-all group"
+              className="bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 rounded-[2.5rem] flex flex-col h-full hover:border-accent/30 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 group overflow-hidden"
             >
-              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-brand-950 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform overflow-hidden p-2">
+              <div className="relative h-64 w-full bg-slate-50/50 dark:bg-white/5 overflow-hidden">
                 <img
                   src={region.logoImage}
                   alt={region.partner}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
+                <div className="absolute inset-0 bg-brand-950/10 group-hover:bg-brand-950/0 transition-colors duration-500" />
               </div>
-              <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2">
-                {region.country}
-              </h3>
-              <p className="text-accent font-black text-[12px] uppercase tracking-widest mb-6">
-                {region.partner}
-              </p>
-              <p className="text-lg font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                {region.desc}
-              </p>
+              <div className="flex flex-col flex-1 p-10">
+                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                  {region.country}
+                </h3>
+                <p className="text-accent font-black text-[12px] uppercase tracking-widest mb-6">
+                  {region.partner}
+                </p>
+                <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                  {region.desc}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
