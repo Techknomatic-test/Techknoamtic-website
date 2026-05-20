@@ -23,6 +23,8 @@ const cxoHeroImg = (file: string) =>
   `${import.meta.env.BASE_URL}${[...CXO_IMG.split("/"), file]
     .map(encodeURIComponent)
     .join("/")}`;
+const CXO_HERO_IMG = cxoHeroImg("herobanner.jpg");
+const CXO_PAIN_POINTS_IMG = cxoHeroImg("Pain Points.jpg");
 
 const CapabilityCard = ({
   title,
@@ -263,42 +265,42 @@ export const CXONexusPage = () => {
       title: "BFSI & Insurance",
       description:
         "Risk, claims, policy performance, and fraud analytics through conversational executive insights.",
-      image: `${CXO_IMG}/Insurance.jpg`,
+      image: cxoHeroImg("BFSI.jpg"),
     },
     {
       title: "Retail & E-Commerce",
       description: "Sales, customer behavior, inventory, and campaign performance, ask in plain English.",
-      image: `${CXO_IMG}/industry-retail.jpg`,
+      image: cxoHeroImg("Retail.jpg"),
     },
     {
       title: "Healthcare",
       description:
         "Operational and patient service analytics, hospital performance, and executive healthcare dashboards.",
-      image: `${CXO_IMG}/industry-healthcare.jpg`,
+      image: cxoHeroImg("Healthcare.jpg"),
     },
     {
       title: "IT & ITSM",
       description:
         "SLA, incident, infrastructure, and service intelligence through conversational IT operations analytics.",
-      image: `${CXO_IMG}/industry-it-itsm.jpg`,
+      image: cxoHeroImg("IT.jpg"),
     },
     {
       title: "Manufacturing",
       description:
         "Production KPIs, supply chain, plant performance, and predictive operational insights on demand.",
-      image: `${CXO_IMG}/industry-manufacturing.jpg`,
+      image: cxoHeroImg("Manufacturing.jpg"),
     },
     {
       title: "Logistics & Supply Chain",
       description:
         "Shipment, delivery, fleet, and bottleneck analytics through real-time conversational visibility.",
-      image: `${CXO_IMG}/industry-logistics.jpg`,
+      image: cxoHeroImg("Logistics.jpg"),
     },
     {
       title: "Telecom",
       description:
         "Subscriber, network, revenue, and churn intelligence, accessible to every business leader.",
-      image: `${CXO_IMG}/industry-telecom.jpg`,
+      image: cxoHeroImg("Telecom.jpg"),
     },
   ];
 
@@ -447,8 +449,17 @@ export const CXONexusPage = () => {
     <div className="pt-[110px]">
       {/* Hero Section */}
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-brand-950">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src={CXO_HERO_IMG}
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
+          />
         </div>
         <div className="max-w-7xl mx-auto relative z-10 w-full text-left">
           <motion.h1
@@ -510,7 +521,7 @@ export const CXONexusPage = () => {
             <div className="lg:col-span-3 text-left">
               <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
                 <img
-                  src={cxoHeroImg("challenge.jpg")}
+                  src={CXO_PAIN_POINTS_IMG}
                   alt="Decision Intelligence"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
