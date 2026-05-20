@@ -283,7 +283,7 @@ export const ITSMAnalyticsPage = () => {
               transition={{ delay: 0.2 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance leading-relaxed"
             >
-              Resolve Faster. Predict Smarter. Serve Better â€” AI for Modern ITSM
+              Resolve Faster. Predict Smarter. Serve Better AI for modern ITSM
             </motion.h2>
           </div>
         </div>
@@ -301,7 +301,7 @@ export const ITSMAnalyticsPage = () => {
                transition={{ delay: 0.1 }}
                className="text-[17px] md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-7xl"
             >
-              IT Service Management teams are the backbone of enterprise operations â€” and under immense pressure. Ticket volumes are exploding, SLAs are tightening, and end-user expectations have never been higher. Yet most ITSM operations still rely on manual triaging, keyword-based routing, and reactive problem-solving. Techknomatic brings AI and analytics to ITSM â€” automating the repetitive, surfacing the critical, and helping IT leaders make proactive decisions before incidents become outages.
+              IT Service Management teams are the backbone of enterprise operations  and under immense pressure. Ticket volumes are exploding, SLAs are tightening, and end-user expectations have never been higher. Yet most ITSM operations still rely on manual triaging, keyword-based routing, and reactive problem-solving. Techknomatic brings AI and analytics to ITSM automating the repetitive, surfacing the critical, and helping IT leaders make proactive decisions before incidents become outages.
             </motion.p>
           </div>
         </div>
@@ -444,7 +444,7 @@ export const ITSMAnalyticsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             <UseCaseCard 
               title="Intelligent Ticket Auto-Resolution"
-              description="An enterprise IT team achieved significant auto-resolution of L1 tickets using TicketIQ on ServiceNow â€” freeing staff to focus on complex incidents."
+              description="An enterprise IT team achieved significant auto-resolution of L1 tickets using TicketIQ on ServiceNow freeing staff to focus on complex incidents."
               impact="X% Auto-Resolution"
               icon={Zap}
             />
@@ -456,7 +456,7 @@ export const ITSMAnalyticsPage = () => {
             />
             <UseCaseCard 
               title="CIO-Level ITSM Visibility"
-              description="A global enterprise replaced 6 weekly manual reports with a single Executive Dashboard â€” consolidating ticket trends, vendor SLAs, and change success rates live."
+              description="A global enterprise replaced 6 weekly manual reports with a single Executive Dashboard consolidating ticket trends, vendor SLAs, and change success rates live."
               impact="Real-time Visibility"
               icon={LayoutDashboard}
             />

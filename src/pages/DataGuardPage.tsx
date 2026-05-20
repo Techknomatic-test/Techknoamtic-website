@@ -548,9 +548,9 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="mb-6 text-xl font-bold leading-tight text-brand-950 dark:text-white md:text-2xl"
+              className="mb-6 text-xl leading-tight text-brand-950 dark:text-white md:text-2xl"
             >
-              From reactive data monitoring → autonomous data reliability. Connect. Observe. Validate. Govern. Act.
+              From reactive data monitoring to autonomous data reliability. Connect. Observe. Validate. Govern. Act.
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -737,7 +737,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg font-medium italic text-slate-500 dark:text-slate-400"
+              className="text-lg font-medium text-slate-500 dark:text-slate-400"
             >
               Six domain-specific deployments where DataPulseIQ is replacing reactive data monitoring with intelligent,
               autonomous data reliability.
