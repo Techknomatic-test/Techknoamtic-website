@@ -173,18 +173,6 @@ const UseCaseCard = ({
         </p>
       </div>
     </div>
-
-    <div className="mt-auto pt-8 border-t border-slate-100 dark:border-white/5 text-left">
-      <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-          <Target className="w-4 h-4 text-accent" />
-        </div>
-        <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
-          <span className="text-accent uppercase tracking-wider mr-2 not-italic">Outcome:</span>
-          {impact} Improvement
-        </p>
-      </div>
-    </div>
   </motion.div>
 );
 
