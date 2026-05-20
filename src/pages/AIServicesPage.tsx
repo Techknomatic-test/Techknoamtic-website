@@ -7,6 +7,17 @@ import {
   ChevronDown,
   ChevronUp,
   Monitor,
+  Search,
+  Workflow,
+  Code2,
+  Zap,
+  RefreshCw,
+  Database,
+  Brain,
+  Globe,
+  ShieldCheck,
+  FileSearch,
+  Sparkles,
 } from "lucide-react";
 
 const DAIS_IMG = "Images/Services/data-ai-strategy";
@@ -113,11 +124,13 @@ const ApproachStep = ({
   num,
   title,
   description,
+  icon: Icon,
   delay = 0,
 }: {
   num: string;
   title: string;
   description: string;
+  icon: any;
   delay?: number;
 }) => (
   <motion.div
@@ -131,7 +144,7 @@ const ApproachStep = ({
       {num}
     </div>
     <div className="w-12 h-12 rounded-xl bg-white dark:bg-white/10 flex items-center justify-center mb-8 text-accent shadow-sm group-hover:scale-110 transition-transform">
-      <Settings className="w-5 h-5" />
+      <Icon className="w-5 h-5" />
     </div>
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
       {title}
@@ -145,10 +158,12 @@ const ApproachStep = ({
 const DifferentiatorCard = ({
   title,
   description,
+  icon: Icon,
   idx,
 }: {
   title: string;
   description: string;
+  icon: any;
   idx: number;
 }) => (
   <motion.div
@@ -158,8 +173,8 @@ const DifferentiatorCard = ({
     transition={{ delay: idx * 0.1 }}
     className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full text-left"
   >
-    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-      <CheckCircle2 className="w-6 h-6 text-accent" />
+    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 text-accent">
+      <Icon className="w-6 h-6" />
     </div>
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
       {title}
@@ -301,28 +316,33 @@ export const AIServicesPage = () => {
       title: "Discover",
       description:
         "Identify high-impact use cases, assess data readiness, and define success metrics and guardrails.",
+      icon: Search,
     },
     {
       num: "02",
       title: "Design",
       description:
         "Prompt engineering, model selection, and responsible-AI architecture design, including fallback logic.",
+      icon: Workflow,
     },
     {
       num: "03",
       title: "Build & Fine-Tune",
       description: "RAG implementation, domain adaptation, and performance optimisation with evaluation harnesses.",
+      icon: Code2,
     },
     {
       num: "04",
       title: "Deploy",
       description:
         "API integration, safety logging, security hardening, and monitoring setup in your cloud environment.",
+      icon: Zap,
     },
     {
       num: "05",
       title: "Improve",
       description: "Hallucination reduction, feedback loops, continuous evaluation, and model refresh cycles.",
+      icon: RefreshCw,
     },
   ];
 
@@ -331,28 +351,34 @@ export const AIServicesPage = () => {
       title: "AI + Data Engineering Under One Roof",
       description:
         "We build your AI and your data infrastructure, so they work together by design, not by accident.",
+      icon: Database,
     },
     {
       title: "Multi-Model Expertise",
       description:
         "Claude, OpenAI, Azure OpenAI, Mistral, open-source, we select the right model for your needs and budget.",
+      icon: Brain,
     },
     {
       title: "Cross-Industry Experience",
       description: "Live deployments across BFSI, Pharma, Energy, Manufacturing, and Retail.",
+      icon: Globe,
     },
     {
       title: "Enterprise-Grade by Default",
       description: "Secure, governed, observable, and scalable, built for enterprise requirements from day one.",
+      icon: ShieldCheck,
     },
     {
       title: "No Black Boxes",
       description:
         "Full transparency on model behaviour, biases, and decision rationale, with auditable evaluation harnesses.",
+      icon: FileSearch,
     },
     {
       title: "Rapid Prototyping",
       description: "Working AI prototypes in days, validate the concept before full commitment.",
+      icon: Sparkles,
     },
   ];
 
@@ -602,7 +628,7 @@ export const AIServicesPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {differentiators.map((diff, idx) => (
-              <DifferentiatorCard key={idx} title={diff.title} description={diff.description} idx={idx} />
+              <DifferentiatorCard key={idx} {...diff} idx={idx} />
             ))}
           </div>
         </div>
