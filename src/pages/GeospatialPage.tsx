@@ -122,7 +122,7 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
   </motion.div>
 );
 
-const ApproachStep = ({ num, title, description, delay = 0 }: { num: string; title: string; description: string; delay?: number }) => (
+const ApproachStep = ({ num, title, description, icon: Icon, delay = 0 }: { num: string; title: string; description: string; icon: any; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ const ApproachStep = ({ num, title, description, delay = 0 }: { num: string; tit
       {num}
     </div>
     <div className="w-12 h-12 rounded-xl bg-white dark:bg-white/10 flex items-center justify-center mb-8 text-accent shadow-sm group-hover:scale-110 transition-transform">
-      <Code className="w-5 h-5" />
+      <Icon className="w-5 h-5" />
     </div>
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
       {title}
@@ -145,7 +145,7 @@ const ApproachStep = ({ num, title, description, delay = 0 }: { num: string; tit
   </motion.div>
 );
 
-const DifferentiatorCard = ({ title, description, idx }: { title: string; description: string; idx: number }) => (
+const DifferentiatorCard = ({ title, description, icon: Icon, idx }: { title: string; description: string; icon: any; idx: number }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.95 }}
     whileInView={{ opacity: 1, scale: 1 }}
@@ -153,8 +153,8 @@ const DifferentiatorCard = ({ title, description, idx }: { title: string; descri
     transition={{ delay: idx * 0.1 }}
     className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full text-left"
   >
-    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-      <CheckCircle2 className="w-6 h-6 text-accent" />
+    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 text-accent">
+      <Icon className="w-6 h-6" />
     </div>
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
       {title}
@@ -247,37 +247,43 @@ export const GeospatialPage = () => {
   ];
 
   const approachSteps = [
-    { num: "01", title: "Discover", description: "Understand spatial business questions, assess available location data, and map integration points" },
-    { num: "02", title: "Design", description: "Define GIS architecture, data layers, coordinate systems, integration topology, and visualization strategy" },
-    { num: "03", title: "Build", description: "Configure the ArcGIS environment, build geo-dashboards, and integrate with source systems and BI tools" },
-    { num: "04", title: "Field-Enable", description: "Deploy mobile tools for field force, configure data collection forms, and establish real-time sync." },
-    { num: "05", title: "Scale & Govern", description: "Establish geodata governance, automate refresh pipelines, and expand to new use cases and regions" },
+    { num: "01", title: "Discover", description: "Understand spatial business questions, assess available location data, and map integration points", icon: Search },
+    { num: "02", title: "Design", description: "Define GIS architecture, data layers, coordinate systems, integration topology, and visualization strategy", icon: Layers },
+    { num: "03", title: "Build", description: "Configure the ArcGIS environment, build geo-dashboards, and integrate with source systems and BI tools", icon: Code },
+    { num: "04", title: "Field-Enable", description: "Deploy mobile tools for field force, configure data collection forms, and establish real-time sync.", icon: Smartphone },
+    { num: "05", title: "Scale & Govern", description: "Establish geodata governance, automate refresh pipelines, and expand to new use cases and regions", icon: ShieldCheck },
   ];
 
   const differentiators = [
     {
       title: "ESRI Silver Partner",
       description: "Authorised reseller and implementation partner for the ArcGIS platform, direct vendor support and licensing.",
+      icon: Award,
     },
     {
       title: "GIS + BI Integration Experts",
       description: "We combine geospatial precision with best-in-class BI for unified, location-aware insights",
+      icon: Layers,
     },
     {
       title: "Cross-Industry Delivery",
       description: "GIS projects delivered across BFSI, Mining, Pharma, Government, Retail, and Agriculture",
+      icon: Globe,
     },
     {
       title: "Full-Stack Ownership",
       description: "Strategy → Build → Deploy → Support. One accountable partner across the entire GIS lifecycle.",
+      icon: Settings,
     },
     {
       title: "Proven ROI",
       description: "GIS projects delivered across India, UAE, and Oman, with measurable, documented business outcomes",
+      icon: Target,
     },
     {
       title: "Field-to-Enterprise Coverage",
       description: "From mobile field data collection to executive geo-dashboards, we cover the full spectrum",
+      icon: Smartphone,
     },
   ];
 
@@ -525,7 +531,7 @@ export const GeospatialPage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {differentiators.map((it, i) => (
-              <DifferentiatorCard key={i} title={it.title} description={it.description} idx={i} />
+              <DifferentiatorCard key={i} {...it} idx={i} />
             ))}
           </div>
         </div>
