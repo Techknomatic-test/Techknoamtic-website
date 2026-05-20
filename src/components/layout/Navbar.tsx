@@ -112,7 +112,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex w-max max-w-[min(96vw,100%)] items-center ${navItemGap} transition-all duration-500 rounded-2xl ${isScrolled ? 'px-4 py-2 glass shadow-xl border-slate-200/50 dark:border-white/10' : 'px-4 sm:px-5 py-3 bg-transparent border-transparent'}`}
+        className={`fixed top-6 inset-x-4 z-50 flex w-auto max-w-none items-center justify-between ${navItemGap} transition-all duration-500 rounded-2xl lg:inset-x-auto lg:left-1/2 lg:right-auto lg:w-max lg:max-w-[min(96vw,100%)] lg:-translate-x-1/2 lg:justify-start ${isScrolled ? 'px-4 py-2 glass shadow-xl border-slate-200/50 dark:border-white/10' : 'px-4 sm:px-5 py-3 bg-transparent border-transparent'}`}
       >
         <Link
           to="/"
