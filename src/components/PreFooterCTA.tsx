@@ -2,9 +2,15 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export const PreFooterCTA = () => {
+type PreFooterCTAProps = {
+  className?: string;
+};
+
+export const PreFooterCTA = ({ className }: PreFooterCTAProps = {}) => {
   return (
-    <section className="py-[120px] bg-slate-100 dark:bg-white/5 px-6 relative overflow-hidden transition-colors duration-500">
+    <section
+      className={`bg-slate-100 dark:bg-white/5 px-6 relative overflow-hidden transition-colors duration-500 ${className ?? "py-[120px]"}`}
+    >
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-950 dark:bg-white rounded-full blur-[120px]" />
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-accent rounded-full blur-[120px]" />

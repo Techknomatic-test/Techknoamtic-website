@@ -206,7 +206,7 @@ export const FAQPage = () => {
   ];
 
   return (
-    <div className="pt-[110px] relative pb-32 overflow-hidden bg-[#FDFDFD] dark:bg-brand-950 transition-colors duration-500">
+    <div className="pt-[110px] relative overflow-hidden bg-[#FDFDFD] dark:bg-brand-950 transition-colors duration-500">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/5 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
@@ -284,7 +284,7 @@ export const FAQPage = () => {
       </section>
 
       {/* Contact FAQ Section */}
-      <section className="px-6 max-w-4xl mx-auto relative z-10 pb-20">
+      <section className="px-6 max-w-4xl mx-auto relative z-10 pb-0">
         <div className="w-full border-t border-slate-100 dark:border-white/5 pt-20">
           <h3 className="text-2xl md:text-5xl font-bold text-brand-950 dark:text-white mb-10 text-center tracking-tight">
             Contact Us <span className="text-accent">FAQs</span>
@@ -302,7 +302,7 @@ export const FAQPage = () => {
           </div>
         </div>
       </section>
-      <PreFooterCTA />
+      <PreFooterCTA className="pt-16 pb-[120px]" />
     </div>
   );
 };
