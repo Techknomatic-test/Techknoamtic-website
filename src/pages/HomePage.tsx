@@ -1559,7 +1559,7 @@ const WhyUsSection = () => {
 const ClientSlider = () => {
   const toLogoItems = (folder: string, files: string[]) =>
     files.map((file) => ({
-      src: `Images/home/${folder}/${encodeURIComponent(file)}`,
+      src: `${import.meta.env.BASE_URL}Images/home/${folder}/${encodeURIComponent(file)}`,
       alt: file.replace(/\.[^.]+$/, "").replace(/[_-]+/g, " ").trim(),
     }));
 
@@ -1581,7 +1581,7 @@ const ClientSlider = () => {
     "keventers.png",
     "malpani-group-logo.jpg",
     "marketing-strategy-of-trent-trent-limited-logo-e1721457798938-85604e26b126834de5a36d237555f96c.png",
-    "tvs-credit 1.png",
+    "tvs-credit 1 1.png",
     "images (1).png",
     "images (2).png",
     "images.png",
@@ -1648,12 +1648,13 @@ const ClientSlider = () => {
             (logo, i) => (
               <div
                 key={`${logo.src}-${i}`}
-                className="group/logo relative z-20 w-40 h-16 shrink-0 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 rounded-xl flex items-center justify-center px-5 shadow-sm hover:border-accent/30 transition-colors cursor-pointer"
+                className="group/logo relative z-20 w-40 h-16 shrink-0 bg-slate-50 dark:bg-white/10 border border-slate-100 dark:border-white/5 rounded-xl flex items-center justify-center px-5 shadow-sm hover:border-accent/30 transition-colors cursor-pointer"
               >
                 <img
                   loading="lazy"
                   src={logo.src}
                   alt={logo.alt}
+                  referrerPolicy="no-referrer"
                   className="max-h-10 max-w-[120px] w-auto object-contain opacity-100 transition-all duration-300 ease-out group-hover/logo:scale-105"
                 />
               </div>

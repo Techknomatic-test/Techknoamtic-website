@@ -180,7 +180,7 @@ export const CareersPage = () => {
 
     {
       id: "azure-data-engineer",
-      title: "Azure Data Engineer (ADF)",
+      title: "Azure Data Engineer",
       exp: "3+ yr",
       location: "Pune",
       skills: ["Azure Data Factory", "SQL", "Azure Data Lake", "ETL/ELT", "ADF Pipelines"],
