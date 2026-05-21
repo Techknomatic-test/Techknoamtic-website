@@ -434,20 +434,20 @@ export const RefineryOperationsPage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             <UseCaseCard 
-              title="Predictive Equipment Maintenance"
-              description="An upstream operator predicted failures up to 2 weeks in advance using ML models on sensor data, predicting failures up to 2 weeks in advance."
+              title="Fleet Performance Optimization"
+              description="A leading oil & gas enterprise improved fleet visibility, maintenance efficiency, and vessel reliability through a data-driven solution."
               impact="X% Downtime Reduction"
               icon={Settings}
             />
             <UseCaseCard 
-              title="Refinery Energy Optimization"
-              description="A refinery deployed the Energy Dashboard module and identified inefficiencies resulting in X% reduction in energy cost per barrel within the first quarter."
+              title="Analytics for Oil & Gas Refinery Operations"
+              description="A leading oil & gas enterprise streamlined reporting and enabled real-time insights through a modern analytics platform, driving faster decision-making and improved operational efficiency."
               impact="X% Energy Savings"
               icon={Zap}
             />
             <UseCaseCard 
-              title="HSE & Safety Incident Reduction"
-              description="By integrating Safety Analytics with their PTW system, an O&G operator reduced near-miss incidents by X% and improved compliance tracking."
+              title="HSE & Safety Optimization"
+              description="An oil & gas operator enhanced safety monitoring by integrating analytics with the PTW system, reducing incidents and improving compliance and risk management."
               impact="X% Incident Reduction"
               icon={HardHat}
             />
