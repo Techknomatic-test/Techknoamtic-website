@@ -12,6 +12,7 @@ import {
   Target,
   Truck,
   Users,
+  Ticket 
 } from 'lucide-react';
 import type { NavItem } from '../types/navigation';
 
@@ -40,7 +41,7 @@ export const navData: SiteNavData = {
     {
       label: 'TicketIQ - AI Agents for Intelligent Ticket Handling',
       href: '/agentic-ai-itsm',
-      icon: Sparkles,
+      icon: Ticket,
     },
     {
       label: 'CallOps AI - AI-Powered Call Operations',
