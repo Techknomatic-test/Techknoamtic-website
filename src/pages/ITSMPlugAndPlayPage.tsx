@@ -362,32 +362,32 @@ export const ITSMPlugAndPlayPage = () => {
     {
       title: "ITSM Platforms",
       image: ismAsset(ISM_STACK_FOLDER, "ITSM Platforms.jpg"),
-      items: ["ServiceNow", "BMC Remedy", "Jira Service Management", "SolarWinds", "Extensible to any ITSM platform"],
+      items: ["ServiceNow", "BMC Remedy", "Jira Service Management", "SolarWinds", "Extensible to any ITSM platform."],
     },
     {
       title: "Connectivity Methods",
       image: ismAsset(ISM_STACK_FOLDER, "ConnectivityMethods.jpg"),
-      items: ["REST APIs", "Native database connectivity", "Webhooks", "Automated schema discovery"],
+      items: ["REST APIs", "Native database connectivity", "Webhooks", "Automated schema discovery."],
     },
     {
       title: "Data Refresh Modes",
       image: ismAsset(ISM_STACK_FOLDER, "Data Refresh Modes.jpg"),
-      items: ["Sampled (validation phase)", "Batch (production)", "Near real-time", "Change-based synchronization"],
+      items: ["Sampled (validation phase)", "Batch (production)", "Near real-time", "Change-based synchronization."],
     },
     {
       title: "BI & Visualization Layer",
       image: ismAsset(ISM_STACK_FOLDER, "bivisulization.jpg"),
-      items: ["Pre-built InsightSM dashboards", "Export to Power BI", "Tableau", "Qlik (optional)"],
+      items: ["Pre-built InsightSM dashboards", "Export to Power BI", "Tableau", "Qlik (optional)."],
     },
     {
       title: "Security & Access",
       image: ismAsset(ISM_STACK_FOLDER, "securityaccess.jpg"),
-      items: ["Role-based access control (RBAC)", "Multi-tenant data isolation", "Audit logging", "Governance controls"],
+      items: ["Role-based access control (RBAC)", "Multi-tenant data isolation", "Audit logging", "Governance controls."],
     },
     {
       title: "Deployment Modes",
       image: ismAsset(ISM_STACK_FOLDER, "Deployment Modes.jpg"),
-      items: ["AWS", "Azure", "GCP", "On-premise", "Hybrid"],
+      items: ["AWS", "Azure", "GCP", "On-premise", "Hybrid."],
     },
   ];
 
