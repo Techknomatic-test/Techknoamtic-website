@@ -861,7 +861,7 @@ const ServicesSection = () => {
       category: "Visualization",
       title: "Business Intelligence",
       description:
-        "Turning data into decisions at speed and scale. Power BI, Tableau, Qlik, 500+ dashboards across industries.",
+        "Turning data into decisions at speed and scale. Power BI, Tableau, Qlik, 20K+ dashboards across industries.",
       moreLabel: "BI Services",
       icon: BarChart3,
       imageUrl: "Images/3d-graph-computer-illustration.jpg",

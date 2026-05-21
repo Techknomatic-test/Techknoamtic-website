@@ -446,7 +446,7 @@ export const ContactPage = () => {
                 <FolderCheck className="w-6 h-6" strokeWidth={1.5} />
               </div>
               <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
-                <Counter value={200} suffix="+" />
+                <Counter value={1000} suffix="+" />
               </div>
               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
                 Projects Delivered
@@ -457,7 +457,7 @@ export const ContactPage = () => {
                 <LayoutDashboard className="w-6 h-6" strokeWidth={1.5} />
               </div>
               <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
-                <Counter value={5000} suffix="+" />
+                <Counter value={20000} suffix="+" />
               </div>
               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
                 Dashboards Built
@@ -468,7 +468,7 @@ export const ContactPage = () => {
                 <Globe className="w-6 h-6" strokeWidth={1.5} />
               </div>
               <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
-                <Counter value={15} suffix="+" />
+                <Counter value={25} suffix="+" />
               </div>
               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
                 Industries Served
@@ -479,7 +479,7 @@ export const ContactPage = () => {
                 <Clock className="w-6 h-6" strokeWidth={1.5} />
               </div>
               <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
-                <Counter value={100000} suffix="+" />
+                <Counter value={500000} suffix="+" />
               </div>
               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
                 Consulting Hours
@@ -566,7 +566,7 @@ export const ContactPage = () => {
                     flag: "🇮🇳"
                   },
                   {
-                    title: "US",
+                    title: "USA",
                     address: "2538 Raleigh Road,Hummelstown, PA 17036",
                     country: "US",
                     flag: "🇺🇸"
