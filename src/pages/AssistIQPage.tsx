@@ -104,7 +104,7 @@ const UseCaseCard = ({
 
     <div className="space-y-6 mb-10 flex-1">
       <div>
-        
+
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
@@ -376,50 +376,50 @@ export const AssistIQPage = () => {
     {
       title: "Customer Channels",
       content:
-        "Web · Mobile apps (iOS / Android) · WhatsApp · Messaging platforms · Voice · IVR · Kiosk · Social channels",
+        "Web · Mobile apps (iOS / Android) · WhatsApp · Messaging platforms · Voice · IVR · Kiosk · Social channels.",
       icon: Globe,
     },
     {
       title: "CRM & Customer Systems",
       content:
-        "Salesforce · HubSpot · Microsoft Dynamics · Zoho · Custom enterprise CRMs",
+        "Salesforce · HubSpot · Microsoft Dynamics · Zoho · Custom enterprise CRMs.",
       icon: Users,
     },
     {
       title: "Contact Center & Ticketing",
       icon: PhoneCall,
       content:
-        "Zendesk · Freshdesk · ServiceNow · Genesys · Cisco · Custom ticketing systems",
+        "Zendesk · Freshdesk · ServiceNow · Genesys · Cisco · Custom ticketing systems.",
     },
     {
       title: "Knowledge & Content Sources",
       icon: Database,
       content:
-        "Knowledge bases · SOPs and policy repositories · Product catalogs · SharePoint and document stores",
+        "Knowledge bases · SOPs and policy repositories · Product catalogs · SharePoint and document stores.",
     },
     {
       title: "Workflow & Operational Systems",
       icon: Settings,
       content:
-        "ERP · Order management · Booking systems · Policy and claims platforms · Custom workflow APIs",
+        "ERP · Order management · Booking systems · Policy and claims platforms · Custom workflow APIs.",
     },
     {
       title: "Analytics & BI Layer",
       icon: BarChart3,
       content:
-        "Conversation analytics export · CSAT signals · Power BI · Tableau · Custom dashboards",
+        "Conversation analytics export · CSAT signals · Power BI · Tableau · Custom dashboards.",
     },
     {
       title: "Security & Compliance",
       icon: ShieldCheck,
       content:
-        "Role-based access control · Data encryption · PII redaction · Audit logging · Region-specific data residency",
+        "Role-based access control · Data encryption · PII redaction · Audit logging · Region-specific data residency.",
     },
     {
       title: "Deployment Modes",
       icon: Layers,
       content:
-        "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated industries)",
+        "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated industries).",
     },
   ];
 
@@ -541,7 +541,7 @@ export const AssistIQPage = () => {
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
-           
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -662,7 +662,7 @@ export const AssistIQPage = () => {
             >
               Every conversation is an opportunity. AssistIQ unifies your business
               knowledge into an intelligent conversational engine that handles routine
-              inquiries, executes workflows, and escalates complex scenarios , 
+              inquiries, executes workflows, and escalates complex scenarios ,
               ensuring 24/7 engagement without the manual overhead.
             </motion.p>
           </motion.div>

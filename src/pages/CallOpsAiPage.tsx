@@ -272,46 +272,46 @@ export const CallOpsAIPage = () => {
     {
       title: "Telephony & CCaaS",
       content:
-        "Twilio · Ecotel · Plivo · SIP trunks · Genesys · Amazon Connect",
+        "Twilio · Ecotel · Plivo · SIP trunks · Genesys · Amazon Connect.",
       image: `${CO_IMG}/stack-telephony.jpg`,
     },
     {
       title: "CRM Platforms",
       content:
-        "Salesforce · HubSpot · Zoho · MS Dynamics · Custom CRMs via REST",
+        "Salesforce · HubSpot · Zoho · MS Dynamics · Custom CRMs via REST.",
       image: `${CO_IMG}/stack-crm.jpg`,
     },
     {
       title: "Ticketing & Support",
-      content: "Zendesk · Freshdesk · ServiceNow · Intercom",
+      content: "Zendesk · Freshdesk · ServiceNow · Intercom.",
       image: `${CO_IMG}/stack-ticketing.jpg`,
     },
     {
       title: "Campaign & Marketing",
       content:
-        "Marketing automation tools · Lead management systems · Dialer platforms",
+        "Marketing automation tools · Lead management systems · Dialer platforms.",
       image: `${CO_IMG}/stack-campaign.jpg`,
     },
     {
       title: "Calendar & Scheduling",
-      content: "Google Calendar · Outlook · Calendly · Custom booking systems",
+      content: "Google Calendar · Outlook · Calendly · Custom booking systems.",
       image: `${CO_IMG}/stack-calendar.jpg`,
     },
     {
       title: "Compliance & Security",
       content:
-        "DNC list integration · Call recording archives · Audit log export · Encryption",
+        "DNC list integration · Call recording archives · Audit log export · Encryption.",
       image: `${CO_IMG}/stack-compliance.jpg`,
     },
     {
       title: "APIs & Webhooks",
-      content: "REST APIs · Webhooks · Real-time event streams · SDK access",
+      content: "REST APIs · Webhooks · Real-time event streams · SDK access.",
       image: `${CO_IMG}/stack-apis.jpg`,
     },
     {
       title: "Deployment Modes",
       content:
-        "Cloud SaaS · Private VPC · Hybrid · On-premise (regulated industries)",
+        "Cloud SaaS · Private VPC · Hybrid · On-premise (regulated industries).",
       image: `${CO_IMG}/stack-deployment.jpg`,
     },
   ];

@@ -106,7 +106,7 @@ const UseCaseCard = ({
 
     <div className="space-y-6 mb-10 flex-1">
       <div>
-       
+
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
@@ -379,43 +379,43 @@ export const AgenticAIITSMPage = () => {
       title: "Identity & Access",
       icon: Users,
       content:
-        "Azure Active Directory · Okta · Active Directory · SailPoint · Custom IAM systems",
+        "Azure Active Directory · Okta · Active Directory · SailPoint · Custom IAM systems.",
     },
     {
       title: "Endpoint & Device Management",
       icon: Computer,
       content:
-        "Microsoft Intune · Jamf · SCCM · Workspace ONE · Custom endpoint platforms",
+        "Microsoft Intune · Jamf · SCCM · Workspace ONE · Custom endpoint platforms.",
     },
     {
       title: "Collaboration & Email",
       icon: Globe,
       content:
-        "Microsoft 365 · Exchange · Google Workspace · Outlook · Mail and calendar systems",
+        "Microsoft 365 · Exchange · Google Workspace · Outlook · Mail and calendar systems.",
     },
     {
       title: "Automation & Orchestration",
       icon: Workflow,
       content:
-        "REST APIs · Webhooks · PowerShell and scripting orchestration · RPA and workflow platforms",
+        "REST APIs · Webhooks · PowerShell and scripting orchestration · RPA and workflow platforms.",
     },
     {
       title: "Knowledge Sources",
       icon: Database,
       content:
-        "Enterprise IT knowledge bases · SOPs and runbooks · SharePoint · Confluence · Internal documentation",
+        "Enterprise IT knowledge bases · SOPs and runbooks · SharePoint · Confluence · Internal documentation.",
     },
     {
       title: "Security & Compliance",
       icon: ShieldCheck,
       content:
-        "MFA / OTP verification · RBAC · Approval workflows · Audit logging · PII controls",
+        "MFA / OTP verification · RBAC · Approval workflows · Audit logging · PII controls.",
     },
     {
       title: "Deployment Modes",
       icon: Layers,
       content:
-        "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated and government environments)",
+        "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated and government environments).",
     },
   ];
 
@@ -537,7 +537,7 @@ export const AgenticAIITSMPage = () => {
       <section className="py-[80px] bg-white dark:bg-brand-950 px-6 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-           
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -692,7 +692,7 @@ export const AgenticAIITSMPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10"
             >
-              Purpose-built for enterprises with high-volume IT service desks , 
+              Purpose-built for enterprises with high-volume IT service desks ,
               wherever repetitive L1 tickets, governance demands, and scaling pressure
               collide.
             </motion.h3>

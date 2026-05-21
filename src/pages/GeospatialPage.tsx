@@ -61,11 +61,10 @@ const AccordionItem = ({
           {title}
         </span>
         <div
-          className={`p-2 rounded-full transition-all duration-300 ${
-            isOpen
+          className={`p-2 rounded-full transition-all duration-300 ${isOpen
               ? "bg-accent text-white"
               : "bg-slate-50 dark:bg-white/5 text-slate-400 group-hover:bg-slate-100 dark:group-hover:bg-white/10"
-          }`}
+            }`}
         >
           {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
         </div>
@@ -178,7 +177,7 @@ const UseCaseCard = ({ title, subtitle, crux, industries, impact }: { title: str
     <p className="text-[15px] font-bold text-brand-950/80 dark:text-white/80 mb-8 leading-snug">
       {subtitle}
     </p>
-    
+
     <div className="space-y-6 flex-1">
       <div>
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -369,21 +368,21 @@ export const GeospatialPage = () => {
       <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-5xl space-y-8 text-left">
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.1 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Most enterprise decisions have a "where" attached to them, where customers live, where assets move, where risks concentrate, where territories overlap. Yet location data often sits trapped in source systems, disconnected from analytics layers and invisible to decision-makers. Techknomatic helps organizations unlock that intelligence with end-to-end geospatial analytics services built on the ESRI ArcGIS platform.
             </motion.p>
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               As an ESRI Silver Partner, we deliver full-stack GIS implementations, from ArcGIS Enterprise and Online setup to mobile field operations, geo-dashboards, route optimisation, and spatial risk analytics. Our work spans BFSI, Mining & Energy, Pharma, Utilities, Retail, and Agriculture, with proven delivery across India, UAE, and Oman, giving enterprises the location intelligence layer that traditional BI alone can't provide.
             </motion.p>
@@ -425,7 +424,7 @@ export const GeospatialPage = () => {
       <section className="py-[40px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -433,7 +432,7 @@ export const GeospatialPage = () => {
             >
               Tools & Technology
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -459,7 +458,7 @@ export const GeospatialPage = () => {
                   referrerPolicy="no-referrer"
                 />
               </div>
-            
+
             </motion.div>
             <div className="bg-white dark:bg-transparent rounded-2xl">
               {toolsAccordions.map((item, index) => (
@@ -480,7 +479,7 @@ export const GeospatialPage = () => {
       <section className="py-[40px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="mb-10 text-left">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -488,7 +487,7 @@ export const GeospatialPage = () => {
             >
               Our Approach
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -498,7 +497,7 @@ export const GeospatialPage = () => {
               A proven 5-step delivery framework that takes you from spatial discovery to enterprise-scale GIS adoption.
             </motion.p>
           </div>
-          
+
           <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
             {approachSteps.map((step, idx) => (
               <ApproachStep key={idx} {...step} delay={idx * 0.1} />
@@ -511,7 +510,7 @@ export const GeospatialPage = () => {
       <section className="py-[40px] px-6 bg-slate-100 dark:bg-brand-900/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -519,7 +518,7 @@ export const GeospatialPage = () => {
             >
               Why Techknomatic for Geospatial Analytics
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -541,7 +540,7 @@ export const GeospatialPage = () => {
       <section className="py-[40px] px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto text-left">
           <div className="mb-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -549,7 +548,7 @@ export const GeospatialPage = () => {
             >
               Use Cases
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

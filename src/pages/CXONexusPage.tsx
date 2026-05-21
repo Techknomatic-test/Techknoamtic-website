@@ -348,47 +348,47 @@ export const CXONexusPage = () => {
       title: "Databases",
       icon: Database,
       content:
-        "PostgreSQL · MySQL · SQL Server · Oracle · NoSQL stores · Document and time-series databases",
+        "PostgreSQL · MySQL · SQL Server · Oracle · NoSQL stores · Document and time-series databases.",
     },
     {
       title: "Data Warehouses & Lakehouses",
       icon: Server,
-      content: "Snowflake · Databricks · BigQuery · Redshift · Synapse · Open lakehouse formats",
+      content: "Snowflake · Databricks · BigQuery · Redshift · Synapse · Open lakehouse formats.",
     },
     {
       title: "ERP & Operational Systems",
       icon: Settings,
-      content: "SAP · Oracle EBS · Microsoft Dynamics · NetSuite · Custom enterprise systems",
+      content: "SAP · Oracle EBS · Microsoft Dynamics · NetSuite · Custom enterprise systems.",
     },
     {
       title: "CRM & Business Systems",
       icon: Users,
-      content: "Salesforce · HubSpot · Zoho · Microsoft Dynamics CRM · Custom CRMs",
+      content: "Salesforce · HubSpot · Zoho · Microsoft Dynamics CRM · Custom CRMs.",
     },
     {
       title: "Knowledge & Document Sources",
       icon: FileText,
-      content: "SharePoint · Confluence · Internal knowledge bases · SOPs, policies, and document repositories",
+      content: "SharePoint · Confluence · Internal knowledge bases · SOPs, policies, and document repositories.",
     },
     {
       title: "BI & Visualization Layer",
       icon: BarChart3,
-      content: "Power BI · Tableau · Qlik · Looker · Native CXO Nexus dashboards",
+      content: "Power BI · Tableau · Qlik · Looker · Native CXO Nexus dashboards.",
     },
     {
       title: "Conversational Surfaces",
       icon: MessageSquare,
-      content: "Web interface · Teams · Slack · Mobile · Embedded BI surfaces",
+      content: "Web interface · Teams · Slack · Mobile · Embedded BI surfaces.",
     },
     {
       title: "Security & Governance",
       icon: ShieldCheck,
-      content: "Role-based access control (RBAC) · Row-level security · Data masking · Audit logging",
+      content: "Role-based access control (RBAC) · Row-level security · Data masking · Audit logging.",
     },
     {
       title: "Deployment Modes",
       icon: Layers,
-      content: "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated industries)",
+      content: "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated industries).",
     },
   ];
 
