@@ -22,35 +22,35 @@ const stories = [
   {
     title: "Insurance Analytics Transformation – Oman",
     description:
-      "A leading insurance provider transformed fragmented reporting into a centralized analytics ecosystem with executive dashboards, claims insights, branch performance monitoring, and policy analytics — enabling faster decision-making and improved operational visibility",
+      "A leading insurance provider transformed fragmented reporting into a centralized analytics ecosystem with executive dashboards, claims insights, branch performance monitoring, and policy analytics — enabling faster decision-making and improved operational visibility.",
     icon: ShieldCheck,
     tag: "Insurance",
   },
   {
     title: "Smart ITSM Command Center – Middle East",
     description:
-      "Implemented an intelligent ITSM analytics platform with SLA monitoring, ticket trend analysis, escalation tracking, and command center dashboards that significantly improved service visibility and operational efficiency",
+      "Implemented an intelligent ITSM analytics platform with SLA monitoring, ticket trend analysis, escalation tracking, and command center dashboards that significantly improved service visibility and operational efficiency.",
     icon: Layout,
     tag: "ITSM",
   },
   {
     title: "Enterprise Data Warehouse Modernization – UAE warehouse",
     description:
-      "Designed and implemented a scalable cloud-ready data warehouse integrating multiple ERP and business systems, enabling unified reporting, faster analytics, and improved data governance across department",
+      "Designed and implemented a scalable cloud-ready data warehouse integrating multiple ERP and business systems, enabling unified reporting, faster analytics, and improved data governance across department.",
     icon: Database,
     tag: "Data Platform",
   },
   {
     title: "Logistics & Freight Intelligence Platform – GCC",
     description:
-      "Developed a freight analytics and pricing intelligence solution that provided real-time shipment visibility, pricing optimization, route performance analysis, and operational dashboards for leadership team",
+      "Developed a freight analytics and pricing intelligence solution that provided real-time shipment visibility, pricing optimization, route performance analysis, and operational dashboards for leadership team.",
     icon: Truck,
     tag: "Logistics",
   },
   {
     title: "Manufacturing Performance Analytics – India",
     description:
-      "Built a real-time production and operational analytics platform integrating plant data, quality systems, and ERP data to improve production monitoring, operational efficiency, and executive reporting",
+      "Built a real-time production and operational analytics platform integrating plant data, quality systems, and ERP data to improve production monitoring, operational efficiency, and executive reporting.",
     icon: Target,
     tag: "Manufacturing",
   },
