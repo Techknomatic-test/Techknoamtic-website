@@ -13,8 +13,32 @@ type NavbarProps = {
   toggleTheme: () => void;
 };
 
+const mobileLinkBaseClass =
+  'flex items-center gap-4 p-4 rounded-2xl text-[15px] font-bold transition-all border';
+
 const mobileLinkClass =
-  'flex items-center gap-4 p-4 rounded-2xl bg-slate-50 dark:bg-white/5 text-[15px] font-bold text-slate-700 dark:text-white hover:bg-accent/10 hover:text-accent transition-all border border-transparent hover:border-accent/20';
+  `${mobileLinkBaseClass} bg-slate-50 dark:bg-white/5 text-slate-700 dark:text-white hover:bg-accent/10 hover:text-accent border-transparent hover:border-accent/20`;
+
+const mobileLinkActiveClass =
+  `${mobileLinkBaseClass} bg-accent/10 text-accent border-accent/30 dark:bg-accent/15`;
+
+const mobileSectionTitleClass =
+  'text-[12px] font-black tracking-[0.3em] text-[#45556c] uppercase';
+
+const mobileSections: { key: string; title: string; items: (typeof navData.services) }[] = [
+  { key: 'services', title: 'Services', items: navData.services },
+  { key: 'enterpriseAI', title: 'Enterprise AI', items: navData.enterpriseAI },
+  { key: 'platforms', title: 'Platforms', items: navData.platforms },
+  { key: 'industries', title: 'Industries', items: navData.industries },
+  { key: 'aboutUs', title: 'About Us', items: navData.aboutUs },
+  { key: 'resources', title: 'Resources', items: navData.resources },
+];
+
+const isNavPathActive = (pathname: string, href: string) =>
+  href !== '#' && (pathname === href || pathname === `${href}/`);
+
+const findMobileSectionForPath = (pathname: string) =>
+  mobileSections.find(({ items }) => items.some((item) => isNavPathActive(pathname, item.href)))?.key ?? null;
 
 export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,13 +60,22 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const section = findMobileSectionForPath(location.pathname);
+    if (section) setExpandedSection(section);
+  }, [isMobileMenuOpen, location.pathname]);
+
   const renderMobileItem = (item: (typeof navData.services)[0]) => {
+    const isActive = isNavPathActive(location.pathname, item.href);
+    const linkClass = isActive ? mobileLinkActiveClass : mobileLinkClass;
+
     if (item.href === '#') {
       return (
         <a
           key={item.label}
           href="#"
-          className={mobileLinkClass}
+          className={linkClass}
           onClick={(e) => e.preventDefault()}
         >
           {item.icon && <item.icon className="w-5 h-5 text-accent" />}
@@ -51,7 +84,12 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
       );
     }
     return (
-      <Link key={item.label} to={item.href} className={mobileLinkClass}>
+      <Link
+        key={item.label}
+        to={item.href}
+        className={linkClass}
+        aria-current={isActive ? 'page' : undefined}
+      >
         {item.icon && <item.icon className="w-5 h-5 text-accent" />}
         {item.label}
       </Link>
@@ -65,7 +103,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
         onClick={() => toggleSection(key)}
         className="w-full flex items-center justify-between py-4 px-1 group"
       >
-        <h3 className="text-[12px] font-black tracking-[0.3em] text-accent uppercase">{title}</h3>
+        <h3 className={mobileSectionTitleClass}>{title}</h3>
         <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-white/5 flex items-center justify-center text-slate-400 group-hover:text-accent transition-all">
           {expandedSection === key ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
         </div>
@@ -174,7 +212,13 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
                 {mobileSection('aboutUs', 'About Us', navData.aboutUs)}
                 {mobileSection('resources', 'Resources', navData.resources)}
 
-                <Link to="/contact" className={mobileLinkClass}>
+                <Link
+                  to="/contact"
+                  className={
+                    isNavPathActive(location.pathname, '/contact') ? mobileLinkActiveClass : mobileLinkClass
+                  }
+                  aria-current={isNavPathActive(location.pathname, '/contact') ? 'page' : undefined}
+                >
                   <Mail className="w-5 h-5 text-accent" />
                   Contact Us
                 </Link>
