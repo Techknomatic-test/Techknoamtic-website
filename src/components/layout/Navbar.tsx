@@ -117,7 +117,7 @@ export const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
         <Link
           to="/"
           aria-label="Techknomatic home"
-          className={`relative block shrink-0 overflow-hidden rounded-lg bg-contain bg-left bg-no-repeat transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 ${isScrolled ? 'h-9 w-[120px] sm:h-10 sm:w-[140px]' : 'h-10 w-[min(150px,36vw)] sm:h-12 sm:w-[170px] lg:w-[190px]'}`}
+          className={`relative block shrink-0 overflow-hidden rounded-lg bg-contain bg-left bg-no-repeat transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 dark:focus-visible:ring-offset-brand-950 ${isScrolled ? 'h-11 w-[145px] sm:h-12 sm:w-[170px]' : 'h-12 w-[min(180px,44vw)] sm:h-14 sm:w-[210px] lg:h-[3.75rem] lg:w-[240px]'}`}
           style={{ backgroundImage: `url(${NAV_LOGO_URL})` }}
         >
           <span className="sr-only">Techknomatic</span>
