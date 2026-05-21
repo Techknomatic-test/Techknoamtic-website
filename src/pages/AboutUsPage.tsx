@@ -221,8 +221,12 @@ export const AboutUsPage = () => {
           <img
             src={aboutusImg("Herobanner.jpg")}
             alt="About Us Background"
-            className="absolute inset-0 h-full w-full object-contain object-center"
+            className="absolute inset-0 h-full w-full min-h-full min-w-full object-cover object-center scale-105"
             referrerPolicy="no-referrer"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-[#020617]/90 via-[#020617]/50 to-[#020617]/30"
+            aria-hidden
           />
         </div>
 
