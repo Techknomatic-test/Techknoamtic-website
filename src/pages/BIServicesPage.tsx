@@ -461,7 +461,7 @@ export const BIServicesPage = () => {
     },
     {
       industry: "Oil & Gas",
-      subtitle: "Operational visibility across upstream and midstream functions.",
+      subtitle: "Operational visibility across Midstream and downstream functions.",
       crux: "Advanced analytics for production monitoring, drilling performance, and asset utilization to optimize field operations and reduce downtime.",
       examples: "Production KPIs · Refinery Performance · Asset Utilization · HSE Compliance",
       outcome: "Reduced downtime · Enhanced compliance visibility",

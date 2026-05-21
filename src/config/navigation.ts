@@ -1,6 +1,7 @@
 import {
   Activity,
   BarChart3,
+  PhoneCall,
   Database,
   Globe,
   Layout,
@@ -44,7 +45,7 @@ export const navData: SiteNavData = {
     {
       label: 'CallOps AI - AI-Powered Call Operations',
       href: '/callops-ai',
-      icon: Activity,
+      icon: PhoneCall,
     },
     {
       label: 'CXO Nexus - Conversational AI for CXOs',
