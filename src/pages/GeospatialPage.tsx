@@ -209,32 +209,32 @@ export const GeospatialPage = () => {
   const capabilities = [
     {
       title: "ArcGIS Platform Implementation",
-      description: "Full-stack ArcGIS implementation across Enterprise, Online, and Pro for enterprise-grade GIS environments",
+      description: "Full-stack ArcGIS implementation across Enterprise, Online, and Pro for enterprise-grade GIS environments.",
       image: `${GEO_IMG}/ArcGIS Platform Implementation.jpg`,
     },
     {
       title: "Geo-Dashboards & Visualisations",
-      description: "Interactive map visualisations built in ArcGIS, Power BI Maps, Tableau, and Qlik",
+      description: "Interactive map visualisations built in ArcGIS, Power BI Maps, Tableau, and Qlik.",
       image: `${GEO_IMG}/Geo Dashboards Visualisations.jpg`,
     },
     {
       title: "Field Operations & Mobile GIS",
-      description: "ArcGIS Field Maps and Survey123 for real-time field data collection and asset management",
+      description: "ArcGIS Field Maps and Survey123 for real-time field data collection and asset management.",
       image: `${GEO_IMG}/Field Operations & Mobile GIS.jpg`,
     },
     {
       title: "Location Data Integration",
-      description: "Seamless integration with SAP, Salesforce, IoT systems, and external geodata sources",
+      description: "Seamless integration with SAP, Salesforce, IoT systems, and external geodata sources.",
       image: `${GEO_IMG}/Location Data Integration.jpg`,
     },
     {
       title: "Route Optimisation & Territory Planning",
-      description: "Data-driven territory design and route optimisation for sales, service, and logistics teams",
+      description: "Data-driven territory design and route optimisation for sales, service, and logistics teams.",
       image: `${GEO_IMG}/Route Optimisation & Territory Planning.jpg`,
     },
     {
       title: "Spatial Risk & Pattern Detection",
-      description: "Heatmaps, fraud clustering, and spatial pattern analysis for risk management and underwriting",
+      description: "Heatmaps, fraud clustering, and spatial pattern analysis for risk management and underwriting.",
       image: `${GEO_IMG}/Spatial Risk & Pattern Detection.jpg`,
     },
   ];
@@ -247,11 +247,11 @@ export const GeospatialPage = () => {
   ];
 
   const approachSteps = [
-    { num: "01", title: "Discover", description: "Understand spatial business questions, assess available location data, and map integration points", icon: Search },
-    { num: "02", title: "Design", description: "Define GIS architecture, data layers, coordinate systems, integration topology, and visualization strategy", icon: Layers },
-    { num: "03", title: "Build", description: "Configure the ArcGIS environment, build geo-dashboards, and integrate with source systems and BI tools", icon: Code },
+    { num: "01", title: "Discover", description: "Understand spatial business questions, assess available location data, and map integration points.", icon: Search },
+    { num: "02", title: "Design", description: "Define GIS architecture, data layers, coordinate systems, integration topology, and visualization strategy.", icon: Layers },
+    { num: "03", title: "Build", description: "Configure the ArcGIS environment, build geo-dashboards, and integrate with source systems and BI tools.", icon: Code },
     { num: "04", title: "Field-Enable", description: "Deploy mobile tools for field force, configure data collection forms, and establish real-time sync.", icon: Smartphone },
-    { num: "05", title: "Scale & Govern", description: "Establish geodata governance, automate refresh pipelines, and expand to new use cases and regions", icon: ShieldCheck },
+    { num: "05", title: "Scale & Govern", description: "Establish geodata governance, automate refresh pipelines, and expand to new use cases and regions.", icon: ShieldCheck },
   ];
 
   const differentiators = [
@@ -262,12 +262,12 @@ export const GeospatialPage = () => {
     },
     {
       title: "GIS + BI Integration Experts",
-      description: "We combine geospatial precision with best-in-class BI for unified, location-aware insights",
+      description: "We combine geospatial precision with best-in-class BI for unified, location-aware insights.",
       icon: Layers,
     },
     {
       title: "Cross-Industry Delivery",
-      description: "GIS projects delivered across BFSI, Mining, Pharma, Government, Retail, and Agriculture",
+      description: "GIS projects delivered across BFSI, Mining, Pharma, Government, Retail, and Agriculture.",
       icon: Globe,
     },
     {
@@ -277,12 +277,12 @@ export const GeospatialPage = () => {
     },
     {
       title: "Proven ROI",
-      description: "GIS projects delivered across India, UAE, and Oman, with measurable, documented business outcomes",
+      description: "GIS projects delivered across India, UAE, and Oman, with measurable, documented business outcomes.",
       icon: Target,
     },
     {
       title: "Field-to-Enterprise Coverage",
-      description: "From mobile field data collection to executive geo-dashboards, we cover the full spectrum",
+      description: "From mobile field data collection to executive geo-dashboards, we cover the full spectrum.",
       icon: Smartphone,
     },
   ];
