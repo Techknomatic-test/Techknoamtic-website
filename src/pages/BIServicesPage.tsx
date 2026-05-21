@@ -513,7 +513,7 @@ export const BIServicesPage = () => {
           >
             Business Intelligence
           </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
+          <div className="w-full max-w-none">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -526,7 +526,7 @@ export const BIServicesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty text-justify"
             >
               Enterprise-grade BI strategy, dashboard development, and governance, engineered for
               adoption, not just delivery. Built on certified Power BI, Tableau, and Qlik expertise,
@@ -539,7 +539,7 @@ export const BIServicesPage = () => {
 
       {/* Intro Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="max-w-7xl space-y-8 text-left">
            
             <motion.div className="space-y-8 text-left">
