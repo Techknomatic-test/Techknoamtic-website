@@ -95,6 +95,7 @@ const WhyTechkoCard = ({ title, desc, delay, image }: any) => (
     <div className="relative h-48 w-full bg-slate-100 dark:bg-white/5 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -176,6 +177,7 @@ export const CareersPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
         <div className="absolute inset-0 z-0">
           <img
+            loading="lazy"
             src={CAREERS_HERO}
             alt="Careers at Techknomatic"
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
@@ -448,6 +450,7 @@ export const CareersPage = () => {
                 <div className="relative h-48 w-full bg-slate-100 dark:bg-white/5 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 to-transparent z-10 mixture-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity" />
                   <img
+                    loading="lazy"
                     src={track.image}
                     alt={track.level}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -524,6 +527,7 @@ export const CareersPage = () => {
               >
                 <div className="relative h-40 w-full bg-slate-100 dark:bg-white/5 overflow-hidden">
                   <img
+                    loading="lazy"
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

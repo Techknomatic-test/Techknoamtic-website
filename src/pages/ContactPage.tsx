@@ -164,6 +164,7 @@ export const ContactPage = () => {
       <section className="relative min-h-[80vh] flex flex-col justify-center pt-[60px] pb-[60px] overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
         <div className="absolute inset-0 z-0">
           <img
+            loading="lazy"
             src={CONTACT_HERO_IMG}
             alt=""
             className="absolute inset-0 h-full w-full object-cover object-center"

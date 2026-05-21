@@ -147,6 +147,7 @@ const IndustryCard = ({
   >
     <div className="relative h-48 overflow-hidden">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -451,6 +452,7 @@ export const CXONexusPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-brand-950">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src={CXO_HERO_IMG}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
@@ -521,6 +523,7 @@ export const CXONexusPage = () => {
             <div className="lg:col-span-3 text-left">
               <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
                 <img
+                  loading="lazy"
                   src={CXO_PAIN_POINTS_IMG}
                   alt="Decision Intelligence"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

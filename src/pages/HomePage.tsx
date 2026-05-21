@@ -458,6 +458,7 @@ const HeroVisual = ({ index }: { index: number }) => {
                   className="w-7 h-7 rounded-full bg-slate-100 dark:bg-white/10 border-2 border-white dark:border-brand-900 overflow-hidden"
                 >
                   <img
+                    loading="lazy"
                     src={`https://i.pravatar.cc/100?u=tech${i}`}
                     alt="user"
                     className="w-full h-full object-cover"
@@ -795,6 +796,7 @@ const ServiceCard = ({
           className={`relative ${isHorizontal ? "w-full md:w-1/2 h-[320px] md:h-full" : "w-full h-[280px]"} overflow-hidden`}
         >
           <img
+            loading="lazy"
             src={service.imageUrl}
             alt={service.title}
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -1169,6 +1171,7 @@ const AcceleratorsSection = () => {
       <div className="absolute inset-0 z-0 scale-110">
         <motion.div style={{ y }} className="w-full h-full">
           <img
+            loading="lazy"
             src="Images/slider.jpg"
             alt="Accelerators Background"
             className="w-full h-full object-cover"
@@ -1648,6 +1651,7 @@ const ClientSlider = () => {
                 className="group/logo relative z-20 w-40 h-16 shrink-0 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 rounded-xl flex items-center justify-center px-5 shadow-sm hover:border-accent/30 transition-colors cursor-pointer"
               >
                 <img
+                  loading="lazy"
                   src={logo.src}
                   alt={logo.alt}
                   className="max-h-10 max-w-[120px] w-auto object-contain opacity-100 transition-all duration-300 ease-out group-hover/logo:scale-105"

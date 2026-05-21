@@ -90,6 +90,7 @@ const SolveCard = ({
   >
     <div className="h-60 overflow-hidden relative">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -258,6 +259,7 @@ export const InsuranceAnalyticsPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
         <motion.div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src={INSURANCE_HERO_IMG}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
@@ -379,6 +381,7 @@ export const InsuranceAnalyticsPage = () => {
               className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-white/10 group"
             >
               <img
+                loading="lazy"
                 src={INSURANCE_LOCATION_IMG}
                 alt="Spatial analytics for insurance"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -400,6 +403,7 @@ export const InsuranceAnalyticsPage = () => {
                     </p>
                     <div className="flex items-center gap-6 p-6 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 w-fit">
                       <img
+                        loading="lazy"
                         src={ESRI_LOGO_IMG}
                         alt="ESRI"
                         className="h-6 w-auto object-contain"

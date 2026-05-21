@@ -63,6 +63,7 @@ export const CustomerStoriesPage = () => {
       <section className="relative py-20 sm:py-24 md:py-32 overflow-hidden bg-brand-950 text-white">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src={CUSTOMER_STORIES_HERO}
             alt="Success Stories Banner"
             className="absolute inset-0 h-full w-full object-cover object-center"

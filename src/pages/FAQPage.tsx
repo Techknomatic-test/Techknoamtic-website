@@ -215,6 +215,7 @@ export const FAQPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] border-b border-slate-100 dark:border-white/5">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src={FAQ_HERO_IMG}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"

@@ -91,6 +91,7 @@ const SolveCard = ({
   >
     <div className="h-60 overflow-hidden relative">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -254,6 +255,7 @@ export const ManufacturingAnalyticsPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src={MFG_HERO_IMG}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
@@ -370,6 +372,7 @@ export const ManufacturingAnalyticsPage = () => {
               className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-white/10 group"
             >
               <img
+                loading="lazy"
                 src={MFG_SYSTEMS_IMG}
                 alt="Systems integration"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

@@ -164,6 +164,7 @@ const DifferentSection = () => {
             >
               <div className="h-56 w-full overflow-hidden relative">
                 <img
+                  loading="lazy"
                   src={item.imageUrl}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -219,6 +220,7 @@ export const AboutUsPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden bg-[#020617] pointer-events-none">
           <img
+            loading="lazy"
             src={aboutusImg("Herobanner.jpg")}
             alt="About Us Background"
             className="absolute inset-0 h-full w-full min-h-full min-w-full object-cover object-center scale-105"
@@ -333,6 +335,7 @@ export const AboutUsPage = () => {
                 className="inline-block shrink-0 w-[300px] md:w-[400px] aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white dark:border-white/10"
               >
                 <img
+                  loading="lazy"
                   src={img}
                   alt="Life at Techknomatic"
                   className="w-full h-full object-cover"
@@ -416,6 +419,7 @@ export const AboutUsPage = () => {
               >
                 <div className="aspect-[4/5] overflow-hidden mb-8 border border-slate-100 dark:border-white/10 relative bg-slate-50 dark:bg-brand-900 rounded-none">
                   <img
+                    loading="lazy"
                     src={member.img}
                     alt={member.name}
                     className="w-full h-full object-cover rounded-none scale-105 group-hover:scale-110 transition-transform duration-700 origin-center"

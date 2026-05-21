@@ -134,6 +134,7 @@ const IntegrationCard = ({ num, title, description, image, delay = 0 }: { num: s
   >
     <div className="relative h-40 -mx-8 -mt-8 mb-8 overflow-hidden">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -266,6 +267,7 @@ export const ParseIQPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src={PARSE_IQ_HERO}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
@@ -330,6 +332,7 @@ export const ParseIQPage = () => {
               className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
+                loading="lazy"
                 src={PARSE_IQ_CHALLENGE}
                 alt="The enterprise document challenge"
                 className="h-full w-full object-cover"
@@ -424,6 +427,7 @@ export const ParseIQPage = () => {
               className="relative aspect-[4/3] rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden shadow-2xl"
             >
               <img
+                loading="lazy"
                 src={PARSE_IQ_WORKS}
                 alt="How ParseIQ works"
                 className="h-full w-full object-cover"

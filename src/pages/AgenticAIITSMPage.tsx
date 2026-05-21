@@ -157,6 +157,7 @@ const IndustryCard = ({
   >
     <div className="relative h-48 overflow-hidden">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -490,6 +491,7 @@ export const AgenticAIITSMPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src={TIQ_HERO_IMG}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
@@ -563,6 +565,7 @@ export const AgenticAIITSMPage = () => {
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-3">
               <img
+                loading="lazy"
                 src={TIQ_PAIN_POINTS_IMG}
                 alt="Common operational pain points in enterprise IT support"
                 className="block h-auto w-full rounded-2xl"

@@ -31,6 +31,7 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
   >
     <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

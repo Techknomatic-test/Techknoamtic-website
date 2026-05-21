@@ -257,6 +257,7 @@ const DifferentiatorCard = ({
   >
     <div className="relative h-52 -mx-8 -mt-8 mb-8 overflow-hidden">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -491,6 +492,7 @@ export const BIServicesPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src={BI_HERO_IMG}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
@@ -639,6 +641,7 @@ export const BIServicesPage = () => {
             >
               <div className="relative aspect-[4/3] w-full lg:aspect-[5/4]">
                 <img
+                  loading="lazy"
                   src={BI_TOOLS_IMG}
                   alt="Business intelligence tools and technology"
                   className="absolute inset-0 h-full w-full object-cover"

@@ -28,6 +28,7 @@ const PartnershipHero = () => {
     <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-brand-950">
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
+          loading="lazy"
           src={PARTNERSHIP_HERO_IMG}
           alt="Partnerships Background"
           className="absolute inset-0 h-full w-full object-cover object-center"
@@ -149,6 +150,7 @@ const OEMSection = () => {
             >
               <div className="h-64 w-full bg-slate-50/50 dark:bg-white/5 flex items-center justify-center overflow-hidden relative">
                 <img
+                  loading="lazy"
                   src={oem.imageUrl}
                   alt={oem.name}
                   className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"

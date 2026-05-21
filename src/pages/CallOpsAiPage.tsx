@@ -128,6 +128,7 @@ const IndustryCard = ({ title, description, image, delay = 0 }: { title: string;
   >
     <div className="relative h-48 overflow-hidden">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -367,6 +368,7 @@ export const CallOpsAIPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src={CO_HERO_IMG}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
@@ -428,6 +430,7 @@ export const CallOpsAIPage = () => {
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-3">
               <img
+                loading="lazy"
                 src={CO_PAIN_POINTS_IMG}
                 alt="Common operational pain points in call center operations"
                 className="block h-auto w-full rounded-2xl"
@@ -650,6 +653,7 @@ export const CallOpsAIPage = () => {
                 >
                   <div className="h-40 overflow-hidden">
                     <img
+                      loading="lazy"
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

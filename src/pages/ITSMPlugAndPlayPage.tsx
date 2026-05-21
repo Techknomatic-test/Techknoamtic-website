@@ -86,6 +86,7 @@ const IndustryCard = ({
   >
     <div className="relative h-48 overflow-hidden">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -124,6 +125,7 @@ const ConnectorCard = ({
   >
     <div className="relative h-48 overflow-hidden">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -442,6 +444,7 @@ export const ITSMPlugAndPlayPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center overflow-hidden bg-[#020617] px-6 py-12 md:py-14">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <img
+            loading="lazy"
             src={ISM_HERO_IMG}
             alt=""
             className="absolute inset-0 h-full w-full object-cover object-center"
@@ -514,6 +517,7 @@ export const ITSMPlugAndPlayPage = () => {
               className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
             >
               <img
+                loading="lazy"
                 src={ISM_CHALLENGE_IMG}
                 alt="ITSM challenge"
                 className="h-full w-full object-cover"

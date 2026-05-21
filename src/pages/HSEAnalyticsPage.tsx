@@ -36,6 +36,7 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
   >
     <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
       <img
+        loading="lazy"
         src={image}
         alt={title}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -131,6 +132,7 @@ export const HSEAnalyticsPage = () => {
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
+            loading="lazy"
             src="Images/slider.jpg"
             alt="HSE Background"
             className="absolute inset-0 w-full h-full object-cover opacity-30 scale-105"
