@@ -466,7 +466,7 @@ export const ITSMPlugAndPlayPage = () => {
           >
             InsightSM
           </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
+          <div className="w-full max-w-none">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -479,7 +479,7 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-sm font-normal leading-relaxed text-slate-400"
+              className="text-sm font-normal leading-relaxed text-slate-400 text-justify w-full"
             >
               An AI-powered analytics wrapper that sits on top of your existing ITSM ecosystem, turning fragmented
               operational data into unified, real-time intelligence. Deploy production-grade ITSM dashboards in days,
@@ -490,7 +490,7 @@ export const ITSMPlugAndPlayPage = () => {
       </section>
 
       <section className="overflow-hidden border-b border-slate-100 bg-white px-6 py-[60px] text-left dark:border-white/5 dark:bg-brand-950">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-16">
            
             <motion.p
@@ -498,7 +498,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
+              className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400 text-justify"
             >
               Most large enterprises run their IT operations on multiple ITSM platforms simultaneously, ServiceNow in
               one business unit, BMC Remedy in another, Jira Service Management for engineering, SolarWinds for
@@ -561,7 +561,7 @@ export const ITSMPlugAndPlayPage = () => {
       </section>
 
       <section className="bg-slate-50/50 px-6 py-[60px] text-left dark:bg-brand-900/20">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-left">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -584,7 +584,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="w-full text-lg font-medium text-slate-500 dark:text-slate-400"
+              className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400 text-justify"
             >
               InsightSM is a rapid ITSM analytics accelerator that sits on top of your existing ITSM ecosystem , 
               delivering enterprise-grade operational intelligence in days. The platform connects multiple ITSM tools,
@@ -647,9 +647,9 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="max-w-5xl text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
+              className="w-full max-w-none text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400 text-justify"
             >
-              InsightSM follows a systematic, four-stage deployment architecture designed for speed, accuracy, and
+               InsightSM follows a systematic, four-stage deployment architecture designed for speed, accuracy, and
               enterprise scale. By separating the validation phase from the production rollout, we allow stakeholders to
               align on KPIs and dashboard usability with zero data risk, ensuring the final production environment is built
               on trust, efficiency, and proven operational value. Our unique sample-first deployment flow transforms the
@@ -689,7 +689,7 @@ export const ITSMPlugAndPlayPage = () => {
       </section>
 
       <section className="bg-white px-6 py-[60px] text-left dark:bg-brand-950">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -704,7 +704,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="w-full text-lg font-medium text-slate-500 dark:text-slate-400"
+              className="w-full text-lg font-medium text-slate-500 dark:text-slate-400 text-justify"
             >
               InsightSM is designed as a connector-first, deployment-flexible platform. Whether your operations live in
               ServiceNow, BMC Remedy, Jira Service Management, SolarWinds, or a combination of all four, InsightSM
@@ -744,7 +744,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="mt-4 max-w-3xl text-lg font-medium text-slate-500 dark:text-slate-400"
+              className="mt-4 w-full max-w-none text-lg font-medium text-slate-500 dark:text-slate-400 text-justify"
             >
               Six domain-specific deployments where InsightSM is replacing manual ITSM reporting with unified operational
               intelligence.
