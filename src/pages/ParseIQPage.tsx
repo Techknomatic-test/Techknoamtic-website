@@ -217,37 +217,37 @@ export const ParseIQPage = () => {
     {
       num: "01",
       title: "APIs & Developer Access",
-      description: "REST APIs · Webhooks · Batch endpoints · SDK access",
+      description: "REST APIs · Webhooks · Batch endpoints · SDK access.",
       image: parseIqImg("APIsDeveloper Access.jpg"),
     },
     {
       num: "02",
       title: "ERP Systems",
-      description: "SAP · Oracle · Microsoft Dynamics · NetSuite",
+      description: "SAP · Oracle · Microsoft Dynamics · NetSuite.",
       image: parseIqImg("ERP Systems.jpg"),
     },
     {
       num: "03",
       title: "CRM Platforms",
-      description: "Salesforce · HubSpot · Zoho",
+      description: "Salesforce · HubSpot · Zoho.",
       image: parseIqImg("CRM Platforms.jpg"),
     },
     {
       num: "04",
       title: "Workflow & Automation Engines",
-      description: "Camunda · Power Automate · Custom BPM tools",
+      description: "Camunda · Power Automate · Custom BPM tools.",
       image: parseIqImg("Workflow Automation Engines.jpg"),
     },
     {
       num: "05",
       title: "Document Management Systems",
-      description: "SharePoint · Box · OpenText · Custom DMS",
+      description: "SharePoint · Box · OpenText · Custom DMS.",
       image: parseIqImg("Document Management Systems.jpg"),
     },
     {
       num: "06",
       title: "Deployment Modes",
-      description: "Cloud · On-premise · Hybrid · Private VPC",
+      description: "Cloud · On-premise · Hybrid · Private VPC.",
       image: parseIqImg("Deployment Modes.jpg"),
     },
   ];

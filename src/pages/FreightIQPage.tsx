@@ -320,37 +320,37 @@ export const FreightIQPage = () => {
     {
       title: "Carrier Systems",
       content:
-        "Direct carrier APIs · Multi-carrier aggregator integrations · Sea / Air / Road carrier connectivity",
+        "Direct carrier APIs · Multi-carrier aggregator integrations · Sea / Air / Road carrier connectivity.",
       icon: Anchor,
     },
     {
       title: "TMS Platforms",
-      content: "Transportation Management Systems · Freight execution platforms · Custom TMS via REST",
+      content: "Transportation Management Systems · Freight execution platforms · Custom TMS via REST.",
       icon: Truck,
     },
     {
       title: "ERP Systems",
-      content: "SAP · Oracle · Microsoft Dynamics · NetSuite · Custom ERPs",
+      content: "SAP · Oracle · Microsoft Dynamics · NetSuite · Custom ERPs.",
       icon: Database,
     },
     {
       title: "CRM & Sales Platforms",
-      content: "Salesforce · HubSpot · Zoho · Custom CRMs · Quote-to-cash workflows",
+      content: "Salesforce · HubSpot · Zoho · Custom CRMs · Quote-to-cash workflows.",
       icon: Users,
     },
     {
       title: "APIs & Developer Access",
-      content: "REST APIs · Webhooks · Real-time pricing endpoints · SDK access",
+      content: "REST APIs · Webhooks · Real-time pricing endpoints · SDK access.",
       icon: Code2,
     },
     {
       title: "Data Refresh Modes",
-      content: "Real-time carrier rate sync · Scheduled refresh · On-demand rate fetch",
+      content: "Real-time carrier rate sync · Scheduled refresh · On-demand rate fetch.",
       icon: Clock,
     },
     {
       title: "Deployment Modes",
-      content: "Cloud SaaS · Private VPC · Hybrid · On-premise (enterprise logistics)",
+      content: "Cloud SaaS · Private VPC · Hybrid · On-premise (enterprise logistics).",
       icon: Server,
     },
   ];
