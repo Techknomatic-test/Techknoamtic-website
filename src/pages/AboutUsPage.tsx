@@ -315,14 +315,14 @@ export const AboutUsPage = () => {
       </section>
 
       {/* 4. Life at Techknomatic (Auto-Slider + Team Gallery) */}
-      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-16 text-left">
+      <section className="py-[40px] bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-5 text-left">
           <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
             Life at <span className="text-accent">Techknomatic</span>
           </h2>
         </div>
 
-        <div className="relative mb-24">
+        <div className="relative mb-20">
           <div
             ref={scrollRef}
             className="flex gap-6 overflow-x-hidden whitespace-nowrap py-10"
@@ -344,7 +344,7 @@ export const AboutUsPage = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16 text-left">
+          <div className="mb-5 text-left">
             <h3 className="text-2xl md:text-3xl font-bold text-brand-950 dark:text-white tracking-tight">
               Our <span className="text-accent">Leadership & Team</span>
             </h3>
