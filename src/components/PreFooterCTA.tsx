@@ -43,7 +43,7 @@ export const PreFooterCTA = ({ className }: PreFooterCTAProps = {}) => {
           className="text-4xl md:text-6xl font-normal text-brand-950 dark:text-white tracking-tight leading-[1.1] mb-12"
         >
           Tell us about your challenge. <br />
-          We'll tell you exactly how we'd approach it.
+          We'll tell you exactly how we'd approach it
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
