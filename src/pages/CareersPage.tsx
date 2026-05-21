@@ -11,7 +11,6 @@ import {
   Target,
   Brain,
   Globe,
-  Star,
   CheckCircle2,
   Mail,
   Search,
@@ -495,25 +494,21 @@ export const CareersPage = () => {
               {
                 title: "Structured Learning",
                 desc: "Defined paths in BI, Engineering & AI.",
-                icon: Brain,
                 image: careersImg("Your Growth", "Structured Learning.jpg"),
               },
               {
                 title: "Hands-on Mastery",
                 desc: "Project exposure from Day 1.",
-                icon: Target,
                 image: careersImg("Your Growth", "Hands-on Mastery.jpg"),
               },
               {
                 title: "Mentorship",
                 desc: "Learn from senior consultants.",
-                icon: Users,
                 image: careersImg("Your Growth", "Mentorship.jpg"),
               },
               {
                 title: "Certification",
                 desc: "Full support & learning reimbursements.",
-                icon: Star,
                 image: careersImg("Your Growth", "Certification.jpg"),
               },
             ].map((item, i) => (
@@ -533,9 +528,6 @@ export const CareersPage = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
-                  <motion.div className="absolute bottom-4 left-4 w-10 h-10 rounded-full border border-accent/20 bg-white/90 dark:bg-brand-900/90 flex items-center justify-center text-accent shadow-sm">
-                    <item.icon className="w-5 h-5" />
-                  </motion.div>
                 </div>
                 <div className="p-8 flex flex-col items-start flex-1">
                   <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-3">
