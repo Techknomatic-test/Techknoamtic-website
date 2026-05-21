@@ -1,12 +1,23 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import {
+  ACCELERATORS_SECTION_ID,
+  acceleratorsSectionLinkTo,
+} from "../config/homeNavigation";
+import { scrollToElement } from "../utils/scrollToElement";
 
 type PreFooterCTAProps = {
   className?: string;
 };
 
 export const PreFooterCTA = ({ className }: PreFooterCTAProps = {}) => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
+  const ourSolutionsClassName =
+    "px-8 py-3.5 bg-transparent border-2 border-brand-950 dark:border-white text-brand-950 dark:text-white font-medium rounded-2xl hover:bg-brand-950/5 dark:hover:bg-white/10 transition-all flex items-center gap-3 group active:scale-95";
+
   return (
     <section
       className={`bg-slate-100 dark:bg-white/5 px-6 relative overflow-hidden transition-colors duration-500 ${className ?? "py-[60px]"}`}
@@ -48,13 +59,21 @@ export const PreFooterCTA = ({ className }: PreFooterCTAProps = {}) => {
             Contact Us{" "}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <a
-            href={`${import.meta.env.BASE_URL}#solutions`}
-            className="px-8 py-3.5 bg-transparent border-2 border-brand-950 dark:border-white text-brand-950 dark:text-white font-medium rounded-2xl hover:bg-brand-950/5 dark:hover:bg-white/10 transition-all flex items-center gap-3 group active:scale-95"
-          >
-            Our Solutions{" "}
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          {isHome ? (
+            <button
+              type="button"
+              onClick={() => scrollToElement(ACCELERATORS_SECTION_ID)}
+              className={ourSolutionsClassName}
+            >
+              Our Solutions{" "}
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+          ) : (
+            <Link to={acceleratorsSectionLinkTo} className={ourSolutionsClassName}>
+              Our Solutions{" "}
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          )}
         </motion.div>
       </div>
     </section>
