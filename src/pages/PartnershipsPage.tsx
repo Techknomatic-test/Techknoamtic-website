@@ -189,19 +189,19 @@ const MarketSection = () => {
       country: "Oman",
       partner: "Primer Trading",
       desc: "Driving market engagement and solution delivery in Oman.",
-      logoImage: partnershipImg("prime.png"),
+      logoImage: partnershipImg("prime.webp"),
     },
     {
       country: "UAE",
       partner: "Aintisar Technologies",
       desc: "Supporting business development and client execution in the UAE.",
-      logoImage: partnershipImg("Aintisar Technologies.png"),
+      logoImage: partnershipImg("Aintisar Technologies.webp"),
     },
     {
       country: "United States",
       partner: "Inspirational Global",
       desc: "Enabling go-to-market and solution expansion in the United States.",
-      logoImage: partnershipImg("Inspirational Global.png"),
+      logoImage: partnershipImg("Inspirational Global.webp"),
     },
   ];
 
@@ -238,14 +238,15 @@ const MarketSection = () => {
               transition={{ delay: i * 0.1 }}
               className="bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 rounded-[2.5rem] flex flex-col h-full hover:border-accent/30 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 group overflow-hidden"
             >
-              <div className="relative h-64 w-full bg-slate-50/50 dark:bg-white/5 overflow-hidden">
+              <div className="relative h-56 sm:h-64 w-full bg-slate-50/50 dark:bg-white/5 overflow-hidden p-8 sm:p-10">
                 <img
                   src={region.logoImage}
                   alt={region.partner}
-                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                  className="h-full w-full object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
-                <div className="absolute inset-0 bg-brand-950/10 group-hover:bg-brand-950/0 transition-colors duration-500" />
               </div>
               <div className="flex flex-col flex-1 p-10">
                 <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 group-hover:text-accent transition-colors">
