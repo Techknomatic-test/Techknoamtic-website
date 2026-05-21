@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { CAREER_JOBS } from "../data/careersJobs";
 
 const CAREERS_BASE = "Images/Careers";
 
@@ -137,75 +138,6 @@ export const CareersPage = () => {
       title: "Offer",
       desc: "Welcome to the team where your exponential growth begins.",
       icon: Heart,
-    },
-  ];
-
-  const jobs = [
-    {
-      id: "bi-consultant",
-      title: "Power BI Developer(Sr.)",
-      exp: "4-6 yr",
-      location: "Pune",
-      skills: ["Oracle", "Power BI", "SQL"],
-      description:
-        "Lead and drive the development in BI domain using Power BI eco-system with deep technical and BI ecosystem knowledge.",
-    },
-    {
-      id: "bi-consultant",
-      title: "Power BI Developer(Sr.)",
-      exp: "3-4 yr",
-      location: "Bangalore",
-      skills: ["Oracle", "Power BI", "SQL"],
-      description:
-        "Lead and drive the development in BI domain using Power BI eco-system with deep technical and BI ecosystem knowledge.",
-    },
-    {
-      id: "bi-consultant",
-      title: "Power BI Developer (H&G)",
-      exp: "2-3 yr",
-      location: "Pune",
-      skills: ["Oracle", "Power BI", "SQL"],
-      description:
-        "Lead and drive the development in BI domain using Power BI eco-system with deep technical and BI ecosystem knowledge.",
-    },
-    {
-      id: "data-engineer-bi",
-      title: "Data Engineer / BI Specialist",
-      exp: "4-6 yr",
-      location: "Pune",
-      skills: ["Alteryx", "Denodo", "Tableau", "Teradata", "SQL"],
-      description:
-        "Design and develop scalable ETL workflows, data virtualization solutions, and interactive BI dashboards using Alteryx, Denodo, Tableau, and Teradata to support enterprise-scale analytics and business decision-making.",
-    },
-
-    {
-      id: "azure-data-engineer",
-      title: "Azure Data Engineer (ADF)",
-      exp: "3+ yr",
-      location: "Pune",
-      skills: ["Azure Data Factory", "SQL", "Azure Data Lake", "ETL/ELT", "ADF Pipelines"],
-      description:
-        "Design and implement scalable ETL/ELT pipelines using Azure Data Factory, SQL, and Azure data services to enable reliable data integration, transformation, and enterprise-scale analytics solutions.",
-    },
-
-    {
-      id: "data-engineer-pyspark",
-      title: "Data Engineer (Python & PySpark)",
-      exp: "3+ yr",
-      location: "Pune",
-      skills: ["Python", "PySpark", "SQL", "Spark", "ETL/ELT"],
-      description:
-        "Design and develop scalable data pipelines using Python, PySpark, and SQL while contributing to data architecture, distributed processing, and enterprise-scale data platform optimization.",
-    },
-
-    {
-      id: "qlik-sense-developer",
-      title: "Qlik Sense Developer",
-      exp: "3-4 yr",
-      location: "Pune",
-      skills: ["Qlik Sense", "QlikScript", "SQL", "ETL", "Data Modeling"],
-      description:
-        "Design and develop interactive Qlik Sense dashboards, data models, and ETL solutions to deliver scalable business intelligence and data visualization solutions for enterprise analytics.",
     },
   ];
 
@@ -655,8 +587,8 @@ export const CareersPage = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
-            {jobs.map((job, i) => (
-              <JobCard key={i} {...job} />
+            {CAREER_JOBS.map((job) => (
+              <JobCard key={job.id} {...job} />
             ))}
           </div>
 
