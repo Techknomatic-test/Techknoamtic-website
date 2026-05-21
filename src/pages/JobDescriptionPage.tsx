@@ -183,7 +183,8 @@ export const JobDescriptionPage = () => {
                     </label>
                     <input 
                       required
-                      type="text" 
+                      type="text"
+                      name="name"
                       placeholder="John Doe"
                       className="w-full px-6 py-4 rounded-xl bg-white dark:bg-brand-950 border border-slate-100 dark:border-white/5 focus:border-accent/50 outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-white/10 text-brand-950 dark:text-white font-medium"
                     />
@@ -197,7 +198,23 @@ export const JobDescriptionPage = () => {
                     <input 
                       required
                       type="email" 
+                      name="email"
                       placeholder="john@example.com"
+                      className="w-full px-6 py-4 rounded-xl bg-white dark:bg-brand-950 border border-slate-100 dark:border-white/5 focus:border-accent/50 outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-white/10 text-brand-950 dark:text-white font-medium"
+                    />
+                  </div>
+
+                  {/* Mobile Number */}
+                  <div className="space-y-2">
+                    <label className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">
+                      Mobile Number
+                    </label>
+                    <input
+                      required
+                      type="tel"
+                      name="mobile"
+                      autoComplete="tel"
+                      placeholder="+91 98765 43210"
                       className="w-full px-6 py-4 rounded-xl bg-white dark:bg-brand-950 border border-slate-100 dark:border-white/5 focus:border-accent/50 outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-white/10 text-brand-950 dark:text-white font-medium"
                     />
                   </div>
