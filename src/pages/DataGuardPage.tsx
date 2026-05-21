@@ -323,37 +323,37 @@ export const DataGuardPage = () => {
   const stack = [
     {
       title: "Cloud Platforms",
-      content: "AWS · Azure · GCP · Multi-cloud and hybrid deployments",
+      content: "AWS · Azure · GCP · Multi-cloud and hybrid deployments.",
       image: dpiqAsset(DPIQ_STACK_FOLDER, "CloudPlatforms.jpg"),
     },
     {
       title: "Data Warehouses & Lakehouses",
-      content: "Snowflake · Databricks · BigQuery · Redshift · Synapse · Open lakehouse formats",
+      content: "Snowflake · Databricks · BigQuery · Redshift · Synapse · Open lakehouse formats.",
       image: dpiqAsset(DPIQ_STACK_FOLDER, "DataWarehouses.jpg"),
     },
     {
       title: "Databases",
-      content: "PostgreSQL · Oracle · SQL Server · MySQL · Extensible connector framework",
+      content: "PostgreSQL · Oracle · SQL Server · MySQL · Extensible connector framework.",
       image: dpiqAsset(DPIQ_STACK_FOLDER, "Databases.jpg"),
     },
     {
       title: "ERP & Operational Systems",
-      content: "SAP · Oracle EBS · Microsoft Dynamics · NetSuite · Custom operational systems",
+      content: "SAP · Oracle EBS · Microsoft Dynamics · NetSuite · Custom operational systems.",
       image: dpiqAsset(DPIQ_STACK_FOLDER, "ERP.jpg"),
     },
     {
       title: "BI & Visualization Layer",
-      content: "Power BI · Tableau · Qlik · Looker · Export of quality scores and governance signals",
+      content: "Power BI · Tableau · Qlik · Looker · Export of quality scores and governance signals.",
       image: dpiqAsset(DPIQ_STACK_FOLDER, "BIVisualization.jpg"),
     },
     {
       title: "Security & Access",
-      content: "Role-based access control (RBAC) · Encrypted credential vault · Audit logging · Governance controls",
+      content: "Role-based access control (RBAC) · Encrypted credential vault · Audit logging · Governance controls.",
       image: dpiqAsset(DPIQ_STACK_FOLDER, "SecurityAccess.jpg"),
     },
     {
       title: "Deployment Modes",
-      content: "Cloud SaaS · Private VPC · Hybrid · On-premise (regulated industries)",
+      content: "Cloud SaaS · Private VPC · Hybrid · On-premise (regulated industries).",
       image: dpiqAsset(DPIQ_STACK_FOLDER, "DeploymentModes.jpg"),
     },
   ];
