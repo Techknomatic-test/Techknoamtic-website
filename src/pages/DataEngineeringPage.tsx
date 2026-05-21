@@ -57,11 +57,10 @@ const AccordionItem = ({
           {title}
         </span>
         <div
-          className={`p-2 rounded-full transition-all duration-300 ${
-            isOpen
+          className={`p-2 rounded-full transition-all duration-300 ${isOpen
               ? "bg-accent text-white"
               : "bg-slate-50 dark:bg-white/5 text-slate-400 group-hover:bg-slate-100 dark:group-hover:bg-white/10"
-          }`}
+            }`}
         >
           {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
         </div>
@@ -174,7 +173,7 @@ const UseCaseCard = ({ title, description, crux, industries }: { title: string; 
     <p className="text-[15px] font-bold text-brand-950/80 dark:text-white/80 mb-8 leading-snug">
       {description}
     </p>
-    
+
     <div className="space-y-6">
       <div>
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -207,32 +206,32 @@ export const DataEngineeringPage = () => {
   const capabilities = [
     {
       title: "ETL/ELT Pipelines & Automation",
-      description: "Reliable, scalable pipelines built with Talend, Azure Data Factory, Informatica, dbt, and Python",
+      description: "Reliable, scalable pipelines built with Talend, Azure Data Factory, Informatica, dbt, and Python.",
       image: `${DE_CAP_IMG}/ETLELT Pipelines & Automation.jpg`,
     },
     {
       title: "Cloud & Platform Setup",
-      description: "Modern data platforms on Azure Synapse, Snowflake, Databricks, and Redshift, engineered to scale",
+      description: "Modern data platforms on Azure Synapse, Snowflake, Databricks, and Redshift, engineered to scale.",
       image: `${DE_CAP_IMG}/Cloud & Platform Setup.jpg`,
     },
     {
       title: "Salesforce Cloud Integration",
-      description: "Seamless Salesforce data integration to power a unified enterprise customer view",
+      description: "Seamless Salesforce data integration to power a unified enterprise customer view.",
       image: `${DE_CAP_IMG}/Salesforce Cloud Integration.jpg`,
     },
     {
       title: "Metadata & Master Data Management",
-      description: "Trusted data assets through MDM, metadata governance, and enterprise data catalogs",
+      description: "Trusted data assets through MDM, metadata governance, and enterprise data catalogs.",
       image: `${DE_CAP_IMG}/Metadata & Master Data Management.jpg`,
     },
     {
       title: "Real-Time & IoT Engineering",
-      description: "Streaming pipelines on Kafka, Event Hubs, and Spark Streaming for low-latency insights",
+      description: "Streaming pipelines on Kafka, Event Hubs, and Spark Streaming for low-latency insights.",
       image: `${DE_CAP_IMG}/RealTimeIoT Engineering.jpg`,
     },
     {
       title: "Data Quality & Governance",
-      description: "Automated quality checks, cleansing routines, and governance frameworks for trusted data",
+      description: "Automated quality checks, cleansing routines, and governance frameworks for trusted data.",
       image: `${DE_CAP_IMG}/Data Quality & Governance.jpg`,
     },
   ];
@@ -247,7 +246,7 @@ export const DataEngineeringPage = () => {
 
   const steps = [
     { num: "01.", title: "Assess", description: "Inventory data sources, integration points, and pipeline bottlenecks. Define the target architecture.", icon: Search },
-    { num: "02.", title: "Architect", description: "Design end-to-end data flow, ingestion, transformation, storage, and serving layers. Agree SLAs upfront", icon: Layers },
+    { num: "02.", title: "Architect", description: "Design end-to-end data flow, ingestion, transformation, storage, and serving layers. Agree SLAs upfront.", icon: Layers },
     { num: "03.", title: "Build & Automate", description: "Develop pipelines with CI/CD, parameterized configurations, and automated quality checks at every stage.", icon: Code },
     { num: "04.", title: "Test & Monitor", description: "Run data-quality assertions, lineage validation, and load tests. Stand up alerting and SLA dashboards.", icon: Activity },
     { num: "05.", title: "Operate & Optimize", description: "Hand off to managed operations or upskill your team. Continuously tune cost and performance.", icon: RefreshCw },
@@ -266,19 +265,19 @@ export const DataEngineeringPage = () => {
     {
       title: "Data Platform Modernization",
       description: "Re-architect legacy data ecosystems into a scalable cloud-native foundation",
-      crux: "Migrate fragmented ETL workflows and legacy warehouses into a governed lakehouse on Databricks and Azure. Using Medallion Architecture, Delta Lake, ADF, and Airflow, we build Bronze–Silver–Gold layers that power enterprise BI, analytics, and AI at scale",
+      crux: "Migrate fragmented ETL workflows and legacy warehouses into a governed lakehouse on Databricks and Azure. Using Medallion Architecture, Delta Lake, ADF, and Airflow, we build Bronze–Silver–Gold layers that power enterprise BI, analytics, and AI at scale.",
       industries: "BFSI · Insurance · Manufacturing · Retail · Telecom"
     },
     {
       title: "Real-Time Operational Intelligence Platforms",
       description: "Transform enterprise operational data into actionable, real-time business intelligence",
-      crux: "Build event-driven analytics platforms on AWS, Redshift, Glue, Kinesis, Lambda, MSK, and S3, using Kafka streaming, CDC pipelines, and dimensional modeling. Consolidate ERP, CRM, IoT, ITSM, and transactional data into low-latency operational views for faster decisions",
+      crux: "Build event-driven analytics platforms on AWS, Redshift, Glue, Kinesis, Lambda, MSK, and S3, using Kafka streaming, CDC pipelines, and dimensional modeling. Consolidate ERP, CRM, IoT, ITSM, and transactional data into low-latency operational views for faster decisions.",
       industries: "Oil & Gas · Logistics · ITSM · Telecom · Supply Chain"
     },
     {
       title: "Data Quality, Reconciliation & Observability",
       description: "Engineer trust into every stage of the data lifecycle",
-      crux: "Embed automated validation, reconciliation, schema-drift detection, lineage tracking, and SLA monitoring directly into transformation layers. Built on Snowflake and GCP, BigQuery, Dataflow, Pub/Sub, to surface data issues before they impact reporting or compliance",
+      crux: "Embed automated validation, reconciliation, schema-drift detection, lineage tracking, and SLA monitoring directly into transformation layers. Built on Snowflake and GCP, BigQuery, Dataflow, Pub/Sub, to surface data issues before they impact reporting or compliance.",
       industries: "BFSI · Insurance · Healthcare · Government · Regulated Enterprises"
     }
   ];
@@ -287,7 +286,7 @@ export const DataEngineeringPage = () => {
     <div className="pt-[110px]">
       {/* Hero Section */}
       <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
-         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src={DE_HERO_IMG}
             alt=""
@@ -333,21 +332,21 @@ export const DataEngineeringPage = () => {
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-5xl space-y-8 text-left">
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.1 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Enterprise data is only as powerful as the platform that moves, governs, and serves it. Techknomatic helps organizations modernize fragmented data ecosystems into unified, cloud-native foundations built on Azure, AWS, GCP, Snowflake, and Databricks. From high-throughput ETL/ELT pipelines and real-time streaming to lakehouse architectures and governance frameworks, we deliver data engineering that is reliable, observable, and audit-ready.
             </motion.p>
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
-               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Our solutions combine deep platform expertise with reusable accelerators, connectors, transformation frameworks, and quality libraries, that compress delivery timelines and reduce risk. The result is a scalable data foundation that powers BI, advanced analytics, and AI/ML initiatives across the enterprise.
             </motion.p>
@@ -381,7 +380,7 @@ export const DataEngineeringPage = () => {
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -389,7 +388,7 @@ export const DataEngineeringPage = () => {
             >
               Tools & Technology
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -415,7 +414,7 @@ export const DataEngineeringPage = () => {
                 />
               </div>
             </motion.div>
-            
+
             <div className="bg-white dark:bg-transparent rounded-2xl">
               {accordions.map((item, index) => (
                 <AccordionItem
@@ -435,7 +434,7 @@ export const DataEngineeringPage = () => {
       <section className="py-[60px] px-6 bg-[#020617] dark:bg-white/5 relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="mb-16">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -443,7 +442,7 @@ export const DataEngineeringPage = () => {
             >
               Our Approach
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -453,7 +452,7 @@ export const DataEngineeringPage = () => {
               A proven 5-step delivery framework that takes you from assessment to optimized operations.
             </motion.p>
           </div>
-          
+
           <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
             {steps.map((step, idx) => (
               <ApproachStep key={idx} {...step} delay={idx * 0.1} />
@@ -466,7 +465,7 @@ export const DataEngineeringPage = () => {
       <section className="py-[60px] px-6 bg-slate-100 dark:bg-brand-900/50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -474,7 +473,7 @@ export const DataEngineeringPage = () => {
             >
               Why Techknomatic for Data Engineering
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -496,7 +495,7 @@ export const DataEngineeringPage = () => {
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
