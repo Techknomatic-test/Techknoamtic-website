@@ -56,14 +56,7 @@ const powerBiListing = (
 });
 
 export const CAREER_JOBS: CareerJob[] = [
-  powerBiListing("power-bi-developer-sr-pune", "Power BI Developer(Sr.)", "4-6 yr", "Pune"),
-  powerBiListing(
-    "power-bi-developer-sr-bangalore",
-    "Power BI Developer(Sr.)",
-    "3-4 yr",
-    "Bangalore",
-  ),
-  powerBiListing("power-bi-developer-hg-pune", "Power BI Developer (H&G)", "2-3 yr", "Pune"),
+  powerBiListing("power-bi-developer-sr-pune", "Power BI Developer", "2-6 yr", "Pune"),
   {
     id: "data-engineer-bi-specialist",
     title: "Alteryx Developer",
@@ -198,6 +191,8 @@ export const CAREER_JOBS: CareerJob[] = [
 const LEGACY_JOB_ID_MAP: Record<string, string> = {
   "bi-consultant": "power-bi-developer-sr-pune",
   "power-bi-developer-pune": "power-bi-developer-sr-pune",
+  "power-bi-developer-sr-bangalore": "power-bi-developer-sr-pune",
+  "power-bi-developer-hg-pune": "power-bi-developer-sr-pune",
   "data-engineer-bi": "data-engineer-bi-specialist",
   "azure-data-engineer": "azure-data-engineer-adf-pune",
   "data-engineer-pyspark": "data-engineer-pyspark-pune",
