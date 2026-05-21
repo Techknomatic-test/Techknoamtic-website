@@ -163,27 +163,27 @@ export const ITSMAnalyticsPage = () => {
   const whatWeSolve = [
     {
       title: "Support Team Overload",
-      description: "High ticket volumes overwhelming L1 and L2 support teams",
+      description: "High ticket volumes overwhelming L1 and L2 support teams.",
       image: `${ITSM_IMG}/1supportteams.jpg`,
     },
     {
       title: "SLA Breaches",
-      description: "SLA breaches caused by poor ticket routing and prioritization",
+      description: "SLA breaches caused by poor ticket routing and prioritization.",
       image: `${ITSM_IMG}/SLA breache.jpg`,
     },
     {
       title: "Self-Service Gap",
-      description: "No self-service options forcing users to log every minor request",
+      description: "No self-service options forcing users to log every minor request.",
       image: `${ITSM_IMG}/3users to log.jpg`,
     },
     {
       title: "Reactive Incidents",
-      description: "Reactive incident management with no early warning signals",
+      description: "Reactive incident management with no early warning signals.",
       image: `${ITSM_IMG}/4warningsignals.jpg`,
     },
     {
       title: "Siloed ITSM Data",
-      description: "Siloed ITSM data that never gets turned into actionable intelligence",
+      description: "Siloed ITSM data that never gets turned into actionable intelligence.",
       image: `${ITSM_IMG}/5SiloedITSMdata.jpg`,
     },
   ];
@@ -191,42 +191,42 @@ export const ITSMAnalyticsPage = () => {
   const modules = [
     {
       title: "Executive Dashboard",
-      description: "CIO-level KPI overview",
+      description: "CIO-level KPI overview.",
       icon: LayoutDashboard
     },
     {
       title: "SLA Dashboard",
-      description: "Breach risk and compliance",
+      description: "Breach risk and compliance.",
       icon: Clock
     },
     {
       title: "Incident Analytics",
-      description: "Trends and patterns in ticket data",
+      description: "Trends and patterns in ticket data.",
       icon: Activity
     },
     {
       title: "Change Management",
-      description: "Change success rates and risk assessment",
+      description: "Change success rates and risk assessment.",
       icon: RefreshCw
     },
     {
       title: "Asset CMDB",
-      description: "Hardware and software asset tracking",
+      description: "Hardware and software asset tracking.",
       icon: Monitor
     },
     {
       title: "Vendor Performance",
-      description: "Vendor SLA tracking and management",
+      description: "Vendor SLA tracking and management.",
       icon: ShieldCheck
     },
     {
       title: "Team Productivity",
-      description: "Agent and group performance metrics",
+      description: "Agent and group performance metrics.",
       icon: Users
     },
     {
       title: "Service Request",
-      description: "SR categorization and fulfillment cycle",
+      description: "SR categorization and fulfillment cycle.",
       icon: FileText
     }
   ];

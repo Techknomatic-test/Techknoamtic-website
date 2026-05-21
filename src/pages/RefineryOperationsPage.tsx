@@ -161,27 +161,27 @@ export const RefineryOperationsPage = () => {
   const whatWeSolve = [
     {
       title: "Unplanned Failures",
-      description: "Unplanned equipment failures due to reactive rather than predictive maintenance",
+      description: "Unplanned equipment failures due to reactive rather than predictive maintenance.",
       image: `${OIL_GAS_IMG}/1Unplanned equipment.jpg`,
     },
     {
       title: "Fragmented Data",
-      description: "Fragmented data across SCADA, DCS, ERP, and historian systems",
+      description: "Fragmented data across SCADA, DCS, ERP, and historian systems.",
       image: `${OIL_GAS_IMG}/2Fragmented data.jpg`,
     },
     {
       title: "Visibility Gap",
-      description: "Lack of real-time visibility into refinery unit performance and energy consumption",
+      description: "Lack of real-time visibility into refinery unit performance and energy consumption.",
       image: `${OIL_GAS_IMG}/3realtimevisibility.jpg`,
     },
     {
       title: "HSE Reporting Bottlenecks",
-      description: "HSE compliance and safety reporting bottlenecks from disconnected systems",
+      description: "HSE compliance and safety reporting bottlenecks from disconnected systems.",
       image: `${OIL_GAS_IMG}/4disconnected systems.jpg`,
     },
     {
       title: "Supply Chain Inefficiency",
-      description: "Inefficient logistics and supply chain coordination driving up cost-per-barrel",
+      description: "Inefficient logistics and supply chain coordination driving up cost-per-barrel.",
       image: `${OIL_GAS_IMG}/5supplychain.jpg`,
     },
   ];
@@ -189,32 +189,32 @@ export const RefineryOperationsPage = () => {
   const modules = [
     {
       title: "Operations Overview",
-      description: "Real-time production KPIs and targets",
+      description: "Real-time production KPIs and targets.",
       icon: Layers
     },
     {
       title: "Unit Performance",
-      description: "Distillation, conversion, yield analysis",
+      description: "Distillation, conversion, yield analysis.",
       icon: Activity
     },
     {
       title: "Energy Dashboard",
-      description: "Fuel consumption, steam balance, efficiency",
+      description: "Fuel consumption, steam balance, efficiency.",
       icon: Zap
     },
     {
       title: "Equipment Health",
-      description: "Vibration, temperature, run-length tracking",
+      description: "Vibration, temperature, run-length tracking.",
       icon: Thermometer
     },
     {
       title: "Environmental",
-      description: "Emissions, water, waste tracking",
+      description: "Emissions, water, waste tracking.",
       icon: Cloud
     },
     {
       title: "Safety Analytics",
-      description: "Incidents, near-misses, PTW tracking",
+      description: "Incidents, near-misses, PTW tracking.",
       icon: ShieldCheck
     }
   ];

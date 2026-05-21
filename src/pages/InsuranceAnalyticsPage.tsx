@@ -215,32 +215,32 @@ export const InsuranceAnalyticsPage = () => {
   const modules = [
     {
       title: "Claims Analytics",
-      description: "TAT tracking, settlement analysis, provider performance",
+      description: "TAT tracking, settlement analysis, provider performance.",
       icon: FileText,
     },
     {
       title: "Policy Performance",
-      description: "Portfolio analysis, renewal rates, lapse prediction",
+      description: "Portfolio analysis, renewal rates, lapse prediction.",
       icon: BarChart3,
     },
     {
       title: "Underwriting Insights",
-      description: "Risk scoring, pricing optimization, case prioritization",
+      description: "Risk scoring, pricing optimization, case prioritization.",
       icon: Target,
     },
     {
       title: "Agent Productivity",
-      description: "Sales metrics, activity tracking, pipeline management",
+      description: "Sales metrics, activity tracking, pipeline management.",
       icon: UserCheck,
     },
     {
       title: "Fraud Detection",
-      description: "Pattern recognition, anomaly detection, investigation support",
+      description: "Pattern recognition, anomaly detection, investigation support.",
       icon: AlertTriangle,
     },
     {
       title: "Customer Analytics",
-      description: "Churn prediction, cross-sell opportunities, NPS tracking",
+      description: "Churn prediction, cross-sell opportunities, NPS tracking.",
       icon: Users,
     },
   ];

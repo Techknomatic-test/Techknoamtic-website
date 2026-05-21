@@ -164,27 +164,27 @@ export const ManufacturingAnalyticsPage = () => {
   const whatWeSolve = [
     {
       title: "Machine Downtime",
-      description: "Unplanned machine downtime eating into OEE and production targets",
+      description: "Unplanned machine downtime eating into OEE and production targets.",
       image: `${MFG_IMG}/1Unplannedmachinedowntime.jpg`,
     },
     {
       title: "Late Quality Detection",
-      description: "Quality defects detected too late in the cycle, driving costly rework and waste",
+      description: "Quality defects detected too late in the cycle, driving costly rework and waste.",
       image: `${MFG_IMG}/2Quality defects detected.jpg`,
     },
     {
       title: "Supply Chain Blind Spots",
-      description: "Supply chain blind spots causing procurement delays and line stoppages",
+      description: "Supply chain blind spots causing procurement delays and line stoppages.",
       image: `${MFG_IMG}/3Supply chain blind spots.jpg`,
     },
     {
       title: "Disconnected Systems",
-      description: "Disconnected ERP, MES, and SCADA systems making plant data invisible to leadership",
+      description: "Disconnected ERP, MES, and SCADA systems making plant data invisible to leadership.",
       image: `${MFG_IMG}/5Disconnected ERP.jpg`,
     },
     {
       title: "Manual Reporting Lag",
-      description: "Manual production reporting that is always lagging, never live",
+      description: "Manual production reporting that is always lagging, never live.",
       image: `${MFG_IMG}/6Manualproductionreporting.jpg`,
     },
   ];
@@ -192,42 +192,42 @@ export const ManufacturingAnalyticsPage = () => {
   const dashboardModules = [
     {
       title: "OEE Dashboard",
-      description: "Availability, performance, quality",
+      description: "Availability, performance, quality.",
       icon: BarChart3,
     },
     {
       title: "Production Line",
-      description: "Output, cycle time, rejects",
+      description: "Output, cycle time, rejects.",
       icon: Factory,
     },
     {
       title: "Maintenance",
-      description: "PM schedules, work orders, costs",
+      description: "PM schedules, work orders, costs.",
       icon: Settings,
     },
     {
       title: "Quality Control",
-      description: "Defects, FPY, CAPA",
+      description: "Defects, FPY, CAPA.",
       icon: ClipboardCheck,
     },
     {
       title: "Energy & Utilities",
-      description: "Consumption, costs, targets",
+      description: "Consumption, costs, targets.",
       icon: Zap,
     },
     {
       title: "Inventory",
-      description: "WIP, finished goods, warehousing",
+      description: "WIP, finished goods, warehousing.",
       icon: Boxes,
     },
     {
       title: "Supply Chain",
-      description: "Inbound, outbound, lead times",
+      description: "Inbound, outbound, lead times.",
       icon: Truck,
     },
     {
       title: "Cost Analytics",
-      description: "Per unit, per plant, per shift",
+      description: "Per unit, per plant, per shift.",
       icon: TrendingUp,
     }
   ];
