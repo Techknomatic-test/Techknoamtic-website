@@ -93,7 +93,7 @@ const OEMSection = () => {
       name: "Qlik",
       imageUrl: "Images/Qlik.webp",
       description:
-        "Enabling real-time analytics, data integration, and active intelligence",
+        "Enabling real-time analytics, data integration, and active intelligence.",
       features: [
         "Real-time Data Integration",
         "Active Intelligence",
@@ -104,7 +104,7 @@ const OEMSection = () => {
       name: "Esri",
       imageUrl: "Images/esri.jpg",
       description:
-        "Powering geospatial intelligence and location-driven decision systems",
+        "Powering geospatial intelligence and location-driven decision systems.",
       features: [
         "Spatial Analytics",
         "ArcGIS Enterprise",
@@ -115,7 +115,7 @@ const OEMSection = () => {
       name: "Microsoft",
       imageUrl: "Images/Microsoft.webp",
       description:
-        "Delivering cloud-scale data platforms, AI capabilities, and enterprise architectures",
+        "Delivering cloud-scale data platforms, AI capabilities, and enterprise architectures.",
       features: [
         "Azure Data Services",
         "Power BI ecosystem",
@@ -188,19 +188,19 @@ const MarketSection = () => {
     {
       country: "Oman",
       partner: "Primer Trading",
-      desc: "Driving market engagement and solution delivery in Oman",
+      desc: "Driving market engagement and solution delivery in Oman.",
       logoImage: partnershipImg("prime.png"),
     },
     {
       country: "UAE",
       partner: "Aintisar Technologies",
-      desc: "Supporting business development and client execution in the UAE",
+      desc: "Supporting business development and client execution in the UAE.",
       logoImage: partnershipImg("Aintisar Technologies.png"),
     },
     {
       country: "United States",
       partner: "Inspirational Global",
-      desc: "Enabling go-to-market and solution expansion in the United States",
+      desc: "Enabling go-to-market and solution expansion in the United States.",
       logoImage: partnershipImg("Inspirational Global.png"),
     },
   ];

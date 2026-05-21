@@ -74,7 +74,7 @@ const JobCard = ({ id, title, exp, location, skills, description }: any) => (
         ))}
       </div>
 
-      <Link 
+      <Link
         to={`/job-description/${id}`}
         className="w-full py-4 bg-brand-950 dark:bg-accent text-white rounded-xl font-black tracking-widest uppercase text-[11px] hover:bg-accent transition-all flex items-center justify-center gap-2"
       >
@@ -264,12 +264,12 @@ export const CareersPage = () => {
             >
               <a href="#roles">
                 <button className="px-10 py-5 bg-accent text-white font-black tracking-widest rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 uppercase text-[12px] shadow-2xl shadow-accent/20 active:scale-95 group">
-                   Explore Open Roles
+                  Explore Open Roles
                 </button>
               </a>
               <Link to="/contact">
                 <button className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black tracking-widest rounded-2xl hover:bg-white/10 transition-all flex items-center gap-3 uppercase text-[12px] active:scale-95 group">
-                   Apply Now
+                  Apply Now
                 </button>
               </Link>
             </motion.div>
@@ -294,7 +294,7 @@ export const CareersPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <WhyTechkoCard
               title="Real Consulting Exposure"
-              desc="Work directly with business stakeholders, driving strategy rather than just backend execution"
+              desc="Work directly with business stakeholders, driving strategy rather than just backend execution."
               delay={0.1}
               image={careersImg(
                 "Choose Techknomatic",
@@ -303,7 +303,7 @@ export const CareersPage = () => {
             />
             <WhyTechkoCard
               title="Fast Career Growth"
-              desc="Accelerated learning paths across BI, Data Engineering & AI foundations for rapid progression"
+              desc="Accelerated learning paths across BI, Data Engineering & AI foundations for rapid progression."
               delay={0.2}
               image={careersImg(
                 "Choose Techknomatic",
@@ -312,7 +312,7 @@ export const CareersPage = () => {
             />
             <WhyTechkoCard
               title="Global Client Exposure"
-              desc="Deliver high-impact projects across India, Middle East, USA, and other global markets"
+              desc="Deliver high-impact projects across India, Middle East, USA, and other global markets."
               delay={0.3}
               image={careersImg(
                 "Choose Techknomatic",
@@ -321,7 +321,7 @@ export const CareersPage = () => {
             />
             <WhyTechkoCard
               title="Ownership from Day One"
-              desc="Solve real business problems with full accountability, not just closing development tickets"
+              desc="Solve real business problems with full accountability, not just closing development tickets."
               delay={0.4}
               image={careersImg(
                 "Choose Techknomatic",
@@ -330,7 +330,7 @@ export const CareersPage = () => {
             />
             <WhyTechkoCard
               title="Skill Compounding"
-              desc="Learn the intersection of technical tools, business context, and visual storytelling"
+              desc="Learn the intersection of technical tools, business context, and visual storytelling."
               delay={0.5}
               image={careersImg(
                 "Choose Techknomatic",
@@ -339,7 +339,7 @@ export const CareersPage = () => {
             />
             <WhyTechkoCard
               title="Elite Peer Group"
-              desc="Collaborate with some of the sharpest minds in the data and analytics ecosystem"
+              desc="Collaborate with some of the sharpest minds in the data and analytics ecosystem."
               delay={0.6}
               image={careersImg(
                 "Choose Techknomatic",
@@ -363,22 +363,22 @@ export const CareersPage = () => {
             {[
               {
                 title: "Problem Solvers",
-                desc: "We value problem solvers over task executors",
+                desc: "We value problem solvers over task executors.",
                 icon: Zap,
               },
               {
                 title: "Ownership",
-                desc: "We prefer ownership over supervision",
+                desc: "We prefer ownership over supervision.",
                 icon: Target,
               },
               {
                 title: "Curiosity",
-                desc: "We encourage questions, not blind execution",
+                desc: "We encourage questions, not blind execution.",
                 icon: Brain,
               },
               {
                 title: "Business Impact",
-                desc: "We focus on business impact, not just dashboards",
+                desc: "We focus on business impact, not just dashboards.",
                 icon: TrendingUp,
               },
             ].map((item, i) => (

@@ -68,13 +68,13 @@ const CapabilityCard = ({
   </motion.div>
 );
 
-const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: { 
-  title: string; 
-  subtitle: string; 
-  crux: string; 
+const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: {
+  title: string;
+  subtitle: string;
+  crux: string;
   focusAreas: string;
-  outcome: string; 
-  delay?: number 
+  outcome: string;
+  delay?: number
 }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -89,7 +89,7 @@ const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: 
     <p className="text-[15px] font-bold text-brand-950/70 dark:text-white/70 mb-8 leading-snug">
       {subtitle}
     </p>
-    
+
     <div className="space-y-6 mb-10 flex-1">
       <div>
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -103,7 +103,7 @@ const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: 
         </p>
       </div>
     </div>
-    
+
     <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
@@ -494,7 +494,7 @@ export const CallOpsAIPage = () => {
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -566,7 +566,7 @@ export const CallOpsAIPage = () => {
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -618,7 +618,7 @@ export const CallOpsAIPage = () => {
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -674,7 +674,7 @@ export const CallOpsAIPage = () => {
       <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
