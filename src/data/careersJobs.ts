@@ -19,7 +19,7 @@ export const CAREER_JOBS: CareerJob[] = [
 
   title: "Power BI Developer",
 
-  exp: "4-6 yr",
+  exp: "2-6 yr",
 
   location: "Pune",
 
@@ -78,142 +78,9 @@ export const CAREER_JOBS: CareerJob[] = [
   ],
 
 },
- 
- {
-
-  id: "power-bi-developer-sr-bangalore",
-
-  title: "Power BI Developer",
-
-  exp: "3-4 yr",
-
-  location: "Banglore",
-
-  skills: ["Power BI", "SQL","Oracle"],
-
-  description:
-
-    "Develop and deliver interactive BI dashboards, reports, and visualization solutions using the Power BI ecosystem with strong expertise in data modeling and business intelligence technologies.",
-
-  type: "Full-time",
-
-  posted: "Recently",
-
-  aboutRole:
-
-    "As a Power BI Developer in Pune, you will design, develop, and deliver business intelligence dashboards and reporting solutions using Power BI and related BI technologies. You will collaborate with stakeholders to transform complex datasets into meaningful visual insights and scalable reporting solutions.",
-
-  responsibilities: [
-
-    "Design and develop interactive dashboards and visualization reports using Power BI.",
-
-    "Connect, import, transform, and model data from multiple enterprise data sources.",
-
-    "Develop automated reporting solutions and schedule report refresh processes.",
-
-    "Collaborate with business teams to understand reporting requirements and deliver BI solutions.",
-
-    "Implement data integration, testing, and validation processes for reporting accuracy.",
-
-    "Work with SQL Server, Oracle, and other databases for data extraction and transformation.",
-
-    "Ensure dashboard performance, usability, and data quality standards.",
-
-    "Support and maintain BI reports, visualizations, and reporting infrastructure.",
-
-  ],
-
-  requirements: [
-
-    "3-5 years of experience in DWBI development and BI reporting projects.",
-
-    "Minimum 2 years of hands-on experience with Power BI development.",
-
-    "Strong expertise in SQL, PL/SQL, and data modeling concepts.",
-
-    "Experience with BI and visualization tools such as Power BI, Tableau, or SSRS.",
-
-    "Knowledge of Microsoft SQL Server, Oracle, and related database technologies.",
-
-    "Understanding of data integration, testing, and reporting best practices.",
-
-    "Strong analytical thinking, problem-solving, and communication skills.",
-
-    "Bachelor’s degree in Computer Science or a related field.",
-
-  ],
-
-},
- 
- {
-
-  id: "power-bi-developer-hg-pune",
-
-  title: "Power BI Developer(H&G)",
-
-  exp: "2-3 yr",
-
-  location: "Pune",
-
-  skills: ["Power BI", "SQL","Oracle"],
-
-  description:
-
-    "Develop and deliver interactive BI dashboards, reports, and visualization solutions using the Power BI ecosystem with strong expertise in data modeling and business intelligence technologies.",
-
-  type: "Full-time",
-
-  posted: "Recently",
-
-  aboutRole:
-
-    "As a Power BI Developer in Pune, you will design, develop, and deliver business intelligence dashboards and reporting solutions using Power BI and related BI technologies. You will collaborate with stakeholders to transform complex datasets into meaningful visual insights and scalable reporting solutions.",
-
-  responsibilities: [
-
-    "Design and develop interactive dashboards and visualization reports using Power BI.",
-
-    "Connect, import, transform, and model data from multiple enterprise data sources.",
-
-    "Develop automated reporting solutions and schedule report refresh processes.",
-
-    "Collaborate with business teams to understand reporting requirements and deliver BI solutions.",
-
-    "Implement data integration, testing, and validation processes for reporting accuracy.",
-
-    "Work with SQL Server, Oracle, and other databases for data extraction and transformation.",
-
-    "Ensure dashboard performance, usability, and data quality standards.",
-
-    "Support and maintain BI reports, visualizations, and reporting infrastructure.",
-
-  ],
-
-  requirements: [
-
-    "3-5 years of experience in DWBI development and BI reporting projects.",
-
-    "Minimum 2 years of hands-on experience with Power BI development.",
-
-    "Strong expertise in SQL, PL/SQL, and data modeling concepts.",
-
-    "Experience with BI and visualization tools such as Power BI, Tableau, or SSRS.",
-
-    "Knowledge of Microsoft SQL Server, Oracle, and related database technologies.",
-
-    "Understanding of data integration, testing, and reporting best practices.",
-
-    "Strong analytical thinking, problem-solving, and communication skills.",
-
-    "Bachelor’s degree in Computer Science or a related field.",
-
-  ],
-
-},
- 
   {
     id: "data-engineer-bi-specialist",
-    title: "Data Engineer / BI Specialist",
+    title: "Alteryx Developer",
     exp: "4-6 yr",
     location: "Pune",
     skills: ["Alteryx", "Denodo", "Tableau", "Teradata", "SQL"],
