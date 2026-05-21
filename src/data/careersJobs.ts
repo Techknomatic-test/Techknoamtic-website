@@ -13,93 +13,204 @@ export type CareerJob = {
 };
 
 export const CAREER_JOBS: CareerJob[] = [
-  {
-    id: "power-bi-developer-sr-pune",
-    title: "Power BI Developer (Sr.)",
-    exp: "4-6 yr",
-    location: "Pune",
-    skills: ["Oracle", "Power BI", "SQL"],
-    description:
-      "Lead and drive the development in BI domain using Power BI eco-system with deep technical and BI ecosystem knowledge.",
-    type: "Full-time",
-    posted: "Recently",
-    aboutRole:
-      "As a Senior Power BI Developer in Pune, you will own end-to-end analytics delivery—from data modeling and DAX optimization to enterprise dashboard design. You will partner with consultants and clients to translate business needs into scalable Power BI solutions.",
-    responsibilities: [
-      "Design and develop enterprise-grade Power BI reports, dashboards, and semantic models.",
-      "Optimize DAX measures, data models, and query performance for large datasets.",
-      "Integrate Power BI with Oracle and SQL data sources via gateways and pipelines.",
-      "Collaborate with BI consultants to gather requirements and deliver client-ready solutions.",
-      "Establish development standards, documentation, and reusable templates for the team.",
-      "Mentor junior developers and review code for quality and best practices.",
-    ],
-    requirements: [
-      "4–6 years of experience in Power BI development and data visualization.",
-      "Strong proficiency in DAX, Power Query (M), and data modeling concepts.",
-      "Hands-on experience with Oracle and SQL for data extraction and transformation.",
-      "Understanding of row-level security, deployment, and Power BI Service administration.",
-      "Excellent communication skills for client-facing delivery.",
-      "Bachelor's degree in Computer Science, IT, or a related field.",
-    ],
-  },
-  {
-    id: "power-bi-developer-sr-bangalore",
-    title: "Power BI Developer (Sr.)",
-    exp: "3-4 yr",
-    location: "Bangalore",
-    skills: ["Oracle", "Power BI", "SQL"],
-    description:
-      "Lead and drive the development in BI domain using Power BI eco-system with deep technical and BI ecosystem knowledge.",
-    type: "Full-time",
-    posted: "Recently",
-    aboutRole:
-      "Join our Bangalore team as a Senior Power BI Developer to build impactful analytics for enterprise clients. You will work on diverse industry projects while growing your technical depth in the Microsoft BI stack.",
-    responsibilities: [
-      "Build and maintain interactive Power BI dashboards aligned with business KPIs.",
-      "Develop efficient data models and write optimized DAX for reporting accuracy.",
-      "Connect and transform data from Oracle, SQL Server, and other enterprise sources.",
-      "Work closely with project leads to scope, estimate, and deliver BI engagements.",
-      "Troubleshoot performance issues in reports, datasets, and refresh schedules.",
-      "Contribute to internal knowledge sharing and solution accelerators.",
-    ],
-    requirements: [
-      "3–4 years of hands-on Power BI development experience.",
-      "Solid SQL skills and experience working with relational databases (Oracle preferred).",
-      "Proficiency in Power Query, data shaping, and star-schema modeling.",
-      "Ability to work independently on client deliverables with minimal supervision.",
-      "Strong analytical mindset and attention to detail.",
-      "Bachelor's degree in a technical discipline.",
-    ],
-  },
-  {
-    id: "power-bi-developer-hg-pune",
-    title: "Power BI Developer (H&G)",
-    exp: "2-3 yr",
-    location: "Pune",
-    skills: ["Oracle", "Power BI", "SQL"],
-    description:
-      "Lead and drive the development in BI domain using Power BI eco-system with deep technical and BI ecosystem knowledge.",
-    type: "Full-time",
-    posted: "Recently",
-    aboutRole:
-      "This role focuses on Hospitality & Gaming (H&G) analytics—building specialized Power BI solutions for clients in these verticals. You will apply domain context while delivering polished, performance-tuned reports.",
-    responsibilities: [
-      "Develop Power BI dashboards tailored to Hospitality & Gaming business metrics.",
-      "Model and integrate data from Oracle and SQL sources for H&G use cases.",
-      "Implement calculated measures, hierarchies, and drill-through experiences for end users.",
-      "Support UAT, defect fixes, and enhancements based on stakeholder feedback.",
-      "Document data definitions, report logic, and deployment steps.",
-      "Coordinate with senior developers on architecture and coding standards.",
-    ],
-    requirements: [
-      "2–3 years of experience in Power BI or enterprise BI development.",
-      "Working knowledge of SQL and Oracle data access patterns.",
-      "Familiarity with hospitality, gaming, or similar operational reporting is a plus.",
-      "Comfortable working in agile, client-facing project environments.",
-      "Good problem-solving skills and eagerness to learn domain nuances.",
-      "Bachelor's degree or equivalent practical experience.",
-    ],
-  },
+{
+
+  id: "power-bi-developer-sr-pune",
+
+  title: "Power BI Developer",
+
+  exp: "4-6 yr",
+
+  location: "Pune",
+
+  skills: ["Power BI", "SQL","Oracle"],
+
+  description:
+
+    "Develop and deliver interactive BI dashboards, reports, and visualization solutions using the Power BI ecosystem with strong expertise in data modeling and business intelligence technologies.",
+
+  type: "Full-time",
+
+  posted: "Recently",
+
+  aboutRole:
+
+    "As a Power BI Developer in Pune, you will design, develop, and deliver business intelligence dashboards and reporting solutions using Power BI and related BI technologies. You will collaborate with stakeholders to transform complex datasets into meaningful visual insights and scalable reporting solutions.",
+
+  responsibilities: [
+
+    "Design and develop interactive dashboards and visualization reports using Power BI.",
+
+    "Connect, import, transform, and model data from multiple enterprise data sources.",
+
+    "Develop automated reporting solutions and schedule report refresh processes.",
+
+    "Collaborate with business teams to understand reporting requirements and deliver BI solutions.",
+
+    "Implement data integration, testing, and validation processes for reporting accuracy.",
+
+    "Work with SQL Server, Oracle, and other databases for data extraction and transformation.",
+
+    "Ensure dashboard performance, usability, and data quality standards.",
+
+    "Support and maintain BI reports, visualizations, and reporting infrastructure.",
+
+  ],
+
+  requirements: [
+
+    "3-5 years of experience in DWBI development and BI reporting projects.",
+
+    "Minimum 2 years of hands-on experience with Power BI development.",
+
+    "Strong expertise in SQL, PL/SQL, and data modeling concepts.",
+
+    "Experience with BI and visualization tools such as Power BI, Tableau, or SSRS.",
+
+    "Knowledge of Microsoft SQL Server, Oracle, and related database technologies.",
+
+    "Understanding of data integration, testing, and reporting best practices.",
+
+    "Strong analytical thinking, problem-solving, and communication skills.",
+
+    "Bachelor’s degree in Computer Science or a related field.",
+
+  ],
+
+},
+ 
+ {
+
+  id: "power-bi-developer-sr-bangalore",
+
+  title: "Power BI Developer",
+
+  exp: "3-4 yr",
+
+  location: "Banglore",
+
+  skills: ["Power BI", "SQL","Oracle"],
+
+  description:
+
+    "Develop and deliver interactive BI dashboards, reports, and visualization solutions using the Power BI ecosystem with strong expertise in data modeling and business intelligence technologies.",
+
+  type: "Full-time",
+
+  posted: "Recently",
+
+  aboutRole:
+
+    "As a Power BI Developer in Pune, you will design, develop, and deliver business intelligence dashboards and reporting solutions using Power BI and related BI technologies. You will collaborate with stakeholders to transform complex datasets into meaningful visual insights and scalable reporting solutions.",
+
+  responsibilities: [
+
+    "Design and develop interactive dashboards and visualization reports using Power BI.",
+
+    "Connect, import, transform, and model data from multiple enterprise data sources.",
+
+    "Develop automated reporting solutions and schedule report refresh processes.",
+
+    "Collaborate with business teams to understand reporting requirements and deliver BI solutions.",
+
+    "Implement data integration, testing, and validation processes for reporting accuracy.",
+
+    "Work with SQL Server, Oracle, and other databases for data extraction and transformation.",
+
+    "Ensure dashboard performance, usability, and data quality standards.",
+
+    "Support and maintain BI reports, visualizations, and reporting infrastructure.",
+
+  ],
+
+  requirements: [
+
+    "3-5 years of experience in DWBI development and BI reporting projects.",
+
+    "Minimum 2 years of hands-on experience with Power BI development.",
+
+    "Strong expertise in SQL, PL/SQL, and data modeling concepts.",
+
+    "Experience with BI and visualization tools such as Power BI, Tableau, or SSRS.",
+
+    "Knowledge of Microsoft SQL Server, Oracle, and related database technologies.",
+
+    "Understanding of data integration, testing, and reporting best practices.",
+
+    "Strong analytical thinking, problem-solving, and communication skills.",
+
+    "Bachelor’s degree in Computer Science or a related field.",
+
+  ],
+
+},
+ 
+ {
+
+  id: "power-bi-developer-hg-pune",
+
+  title: "Power BI Developer(H&G)",
+
+  exp: "2-3 yr",
+
+  location: "Pune",
+
+  skills: ["Power BI", "SQL","Oracle"],
+
+  description:
+
+    "Develop and deliver interactive BI dashboards, reports, and visualization solutions using the Power BI ecosystem with strong expertise in data modeling and business intelligence technologies.",
+
+  type: "Full-time",
+
+  posted: "Recently",
+
+  aboutRole:
+
+    "As a Power BI Developer in Pune, you will design, develop, and deliver business intelligence dashboards and reporting solutions using Power BI and related BI technologies. You will collaborate with stakeholders to transform complex datasets into meaningful visual insights and scalable reporting solutions.",
+
+  responsibilities: [
+
+    "Design and develop interactive dashboards and visualization reports using Power BI.",
+
+    "Connect, import, transform, and model data from multiple enterprise data sources.",
+
+    "Develop automated reporting solutions and schedule report refresh processes.",
+
+    "Collaborate with business teams to understand reporting requirements and deliver BI solutions.",
+
+    "Implement data integration, testing, and validation processes for reporting accuracy.",
+
+    "Work with SQL Server, Oracle, and other databases for data extraction and transformation.",
+
+    "Ensure dashboard performance, usability, and data quality standards.",
+
+    "Support and maintain BI reports, visualizations, and reporting infrastructure.",
+
+  ],
+
+  requirements: [
+
+    "3-5 years of experience in DWBI development and BI reporting projects.",
+
+    "Minimum 2 years of hands-on experience with Power BI development.",
+
+    "Strong expertise in SQL, PL/SQL, and data modeling concepts.",
+
+    "Experience with BI and visualization tools such as Power BI, Tableau, or SSRS.",
+
+    "Knowledge of Microsoft SQL Server, Oracle, and related database technologies.",
+
+    "Understanding of data integration, testing, and reporting best practices.",
+
+    "Strong analytical thinking, problem-solving, and communication skills.",
+
+    "Bachelor’s degree in Computer Science or a related field.",
+
+  ],
+
+},
+ 
   {
     id: "data-engineer-bi-specialist",
     title: "Data Engineer / BI Specialist",
@@ -171,26 +282,30 @@ export const CAREER_JOBS: CareerJob[] = [
     location: "Pune",
     skills: ["Python", "PySpark", "SQL", "Spark", "ETL/ELT"],
     description:
-      "Design and develop scalable data pipelines using Python, PySpark, and SQL while contributing to data architecture, distributed processing, and enterprise-scale data platform optimization.",
+      "Build scalable data pipelines and distributed processing solutions using Python, PySpark, and SQL while contributing to enterprise data architecture and platform optimization.",
     type: "Full-time",
     posted: "Recently",
     aboutRole:
-      "You will engineer large-scale data pipelines using Python and PySpark—processing high-volume datasets and supporting modern analytics platforms with robust, performant data infrastructure.",
+      "As a Data Engineer in Pune, you will design and optimize large-scale data processing pipelines using Python, PySpark, and SQL. You will work closely with data architects and analytics teams to build scalable, high-performance data platforms and contribute to strategic data engineering initiatives.",
     responsibilities: [
-      "Develop PySpark jobs and Python scripts for data ingestion and transformation.",
-      "Design scalable ETL/ELT workflows on distributed processing frameworks.",
-      "Write and optimize SQL for staging, validation, and analytical layers.",
-      "Implement data quality checks, logging, and pipeline orchestration.",
-      "Collaborate on data architecture decisions and platform modernization initiatives.",
-      "Troubleshoot production pipeline failures and performance bottlenecks.",
+      "Design and implement scalable batch and incremental data pipelines using Python and PySpark.",
+      "Develop and optimize PySpark jobs for distributed data processing and large-scale transformations.",
+      "Write complex SQL queries for analytics, transformation, and validation use cases.",
+      "Contribute to data architecture, modeling, and storage strategy decisions.",
+      "Optimize pipeline performance using partitioning, caching, and execution tuning techniques.",
+      "Ensure data quality, consistency, governance, and reliability across data workflows.",
+      "Troubleshoot pipeline failures, bottlenecks, and processing issues.",
+      "Collaborate with cross-functional teams to improve scalability and data platform efficiency.",
     ],
     requirements: [
-      "3+ years of data engineering experience with Python and PySpark/Spark.",
-      "Strong SQL and understanding of distributed computing concepts.",
-      "Experience building production-grade ETL pipelines and data lake patterns.",
-      "Familiarity with cloud or on-prem big-data ecosystems is a plus.",
-      "Good coding practices, version control, and documentation habits.",
-      "Bachelor's degree in Computer Science, Data Engineering, or related field.",
+      "3+ years of experience in Data Engineering or Analytics platforms.",
+      "Strong hands-on experience with Python and PySpark for distributed data processing.",
+      "Expertise in SQL, including joins, aggregations, CTEs, and window functions.",
+      "Experience building ETL/ELT pipelines and handling large-scale datasets.",
+      "Good understanding of data modeling, warehousing, and lakehouse concepts.",
+      "Exposure to Spark optimization, partitioning, and performance tuning techniques.",
+      "Familiarity with cloud platforms such as Azure, AWS, or GCP is a plus.",
+      "Bachelor’s degree in Computer Science, Engineering, IT, or a related field.",
     ],
   },
   {
