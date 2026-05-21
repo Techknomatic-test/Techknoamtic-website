@@ -445,7 +445,7 @@ export const ContactPage = () => {
               <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent mx-auto mb-6">
                 <FolderCheck className="w-6 h-6" strokeWidth={1.5} />
               </div>
-              <div className="text-3xl sm:text-4xl font-black text-white mb-3">
+              <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
                 <Counter value={200} suffix="+" />
               </div>
               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
@@ -456,7 +456,7 @@ export const ContactPage = () => {
               <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent mx-auto mb-6">
                 <LayoutDashboard className="w-6 h-6" strokeWidth={1.5} />
               </div>
-              <div className="text-3xl sm:text-4xl font-black text-white mb-3">
+              <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
                 <Counter value={5000} suffix="+" />
               </div>
               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
@@ -467,7 +467,7 @@ export const ContactPage = () => {
               <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent mx-auto mb-6">
                 <Globe className="w-6 h-6" strokeWidth={1.5} />
               </div>
-              <div className="text-3xl sm:text-4xl font-black text-white mb-3">
+              <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
                 <Counter value={15} suffix="+" />
               </div>
               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
@@ -478,7 +478,7 @@ export const ContactPage = () => {
               <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent mx-auto mb-6">
                 <Clock className="w-6 h-6" strokeWidth={1.5} />
               </div>
-              <div className="text-3xl sm:text-4xl font-black text-white mb-3">
+              <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
                 <Counter value={100000} suffix="+" />
               </div>
               <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
@@ -566,7 +566,7 @@ export const ContactPage = () => {
                     flag: "🇮🇳"
                   },
                   {
-                    title: "US (US)",
+                    title: "US",
                     address: "2538 Raleigh Road,Hummelstown, PA 17036",
                     country: "US",
                     flag: "🇺🇸"
