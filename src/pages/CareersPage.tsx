@@ -143,30 +143,69 @@ export const CareersPage = () => {
   const jobs = [
     {
       id: "bi-consultant",
-      title: "BI Consultant",
-      exp: "2-5 Years",
-      location: "Pune / Mumbai",
-      skills: ["Qlik", "Power BI", "SQL"],
+      title: "Power BI Developer(Sr.)",
+      exp: "4-6 yr",
+      location: "Pune",
+      skills: ["Oracle", "Power BI", "SQL"],
       description:
-        "Lead enterprise BI transformations, turning complex data into actionable business intelligence for global clients.",
+        "Lead and drive the development in BI domain using Power BI eco-system with deep technical and BI ecosystem knowledge.",
     },
     {
-      id: "data-engineer",
-      title: "Data Engineer",
-      exp: "3-6 Years",
-      location: "Remote / Hybrid",
-      skills: ["Azure", "Python", "ETL"],
+      id: "bi-consultant",
+      title: "Power BI Developer(Sr.)",
+      exp: "3-4 yr",
+      location: "Bangalore",
+      skills: ["Oracle", "Power BI", "SQL"],
       description:
-        "Build robust data pipelines and scalable foundations for enterprise-grade analytics and AI systems.",
+        "Lead and drive the development in BI domain using Power BI eco-system with deep technical and BI ecosystem knowledge.",
     },
     {
-      id: "solution-architect",
-      title: "Solution Architect",
-      exp: "6+ Years",
-      location: "Mumbai",
-      skills: ["Architecture", "Strategy", "AI"],
+      id: "bi-consultant",
+      title: "Power BI Developer (H&G)",
+      exp: "2-3 yr",
+      location: "Pune",
+      skills: ["Oracle", "Power BI", "SQL"],
       description:
-        "Design future-ready data ecosystems and lead technical strategy for mission-critical consulting projects.",
+        "Lead and drive the development in BI domain using Power BI eco-system with deep technical and BI ecosystem knowledge.",
+    },
+    {
+      id: "data-engineer-bi",
+      title: "Data Engineer / BI Specialist",
+      exp: "4-6 yr",
+      location: "Pune",
+      skills: ["Alteryx", "Denodo", "Tableau", "Teradata", "SQL"],
+      description:
+        "Design and develop scalable ETL workflows, data virtualization solutions, and interactive BI dashboards using Alteryx, Denodo, Tableau, and Teradata to support enterprise-scale analytics and business decision-making.",
+    },
+
+    {
+      id: "azure-data-engineer",
+      title: "Azure Data Engineer (ADF)",
+      exp: "3+ yr",
+      location: "Pune",
+      skills: ["Azure Data Factory", "SQL", "Azure Data Lake", "ETL/ELT", "ADF Pipelines"],
+      description:
+        "Design and implement scalable ETL/ELT pipelines using Azure Data Factory, SQL, and Azure data services to enable reliable data integration, transformation, and enterprise-scale analytics solutions.",
+    },
+
+    {
+      id: "data-engineer-pyspark",
+      title: "Data Engineer (Python & PySpark)",
+      exp: "3+ yr",
+      location: "Pune",
+      skills: ["Python", "PySpark", "SQL", "Spark", "ETL/ELT"],
+      description:
+        "Design and develop scalable data pipelines using Python, PySpark, and SQL while contributing to data architecture, distributed processing, and enterprise-scale data platform optimization.",
+    },
+
+    {
+      id: "qlik-sense-developer",
+      title: "Qlik Sense Developer",
+      exp: "3-4 yr",
+      location: "Pune",
+      skills: ["Qlik Sense", "QlikScript", "SQL", "ETL", "Data Modeling"],
+      description:
+        "Design and develop interactive Qlik Sense dashboards, data models, and ETL solutions to deliver scalable business intelligence and data visualization solutions for enterprise analytics.",
     },
   ];
 
