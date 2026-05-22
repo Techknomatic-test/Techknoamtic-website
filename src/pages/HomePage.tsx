@@ -609,30 +609,39 @@ const Hero = () => {
               transition={{ duration: 0.6, ease: "easeInOut" }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
             >
-            <div className="max-w-2xl">
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-8 text-brand-950 dark:text-white transition-colors duration-500"
-              >
-                {slides[currentSlide].title}
-              </motion.h1>
+            <div className="max-w-2xl flex flex-col">
+              <div className="min-h-[140px] sm:min-h-[160px] lg:min-h-[180px] flex items-end">
+                <motion.h1
+                  key={`title-${currentSlide}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight text-brand-950 dark:text-white transition-colors duration-500"
+                >
+                  {slides[currentSlide].title}
+                </motion.h1>
+              </div>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-[15px] text-slate-600 dark:text-slate-400 max-w-xl mb-14 leading-relaxed font-medium tracking-[0.2px] transition-colors duration-500"
-              >
-                {slides[currentSlide].description}
-              </motion.p>
+              <div className="relative min-h-[168px] sm:min-h-[132px] lg:min-h-[108px] mt-8 mb-10">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={`desc-${currentSlide}`}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.4 }}
+                    className="text-[15px] text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed font-medium tracking-[0.2px] transition-colors duration-500"
+                  >
+                    {slides[currentSlide].description}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex flex-wrap gap-5"
+                className="flex flex-wrap gap-5 shrink-0"
               >
                 <a
                   href="#solutions"
