@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import type { LucideIcon } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   BarChart,
   CheckCircle,
@@ -48,9 +49,7 @@ const CapabilityCard = ({
     transition={{ delay }}
     className="group flex h-full flex-col rounded-[2.5rem] border border-slate-100 bg-white p-8 text-left shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
   >
-    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-50 text-accent shadow-sm transition-transform duration-500 group-hover:scale-110 dark:bg-brand-900/50">
-      <Icon className="h-6 w-6" />
-    </div>
+    <SectionIcon icon={Icon} size="lg" className="mb-8" />
     <h3 className="mb-2 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
       {title}
     </h3>
@@ -669,9 +668,7 @@ export const ITSMPlugAndPlayPage = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="group rounded-[2.5rem] border border-slate-100 bg-white p-8 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
                 >
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent transition-transform group-hover:scale-110">
-                    <Icon className="h-6 w-6" />
-                  </div>
+                  <SectionIcon icon={Icon} size="md" className="mb-6" />
                   <div className="mb-2 text-[11px] font-black uppercase tracking-[0.2em] text-accent/50">
                     Step 0{idx + 1}
                   </div>

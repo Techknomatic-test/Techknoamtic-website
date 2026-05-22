@@ -697,9 +697,7 @@ export const FreightIQPage = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-accent/30 transition-all flex flex-col"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-brand-950 border border-slate-100 dark:border-white/5 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
-                    <Icon className="w-5 h-5" />
-                  </div>
+                  <SectionIcon icon={Icon} size="xs" className="mb-6" hover="none" />
                   <h3 className="text-[17px] font-bold text-brand-950 dark:text-white mb-3 group-hover:text-accent transition-colors">
                     {item.title}
                   </h3>

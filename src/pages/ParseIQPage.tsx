@@ -57,9 +57,7 @@ const CapabilityCard = ({ title, items, icon: Icon, delay = 0 }: { title: string
     transition={{ delay }}
     className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
   >
-    <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-      <Icon className="w-6 h-6 text-accent" />
-    </div>
+    <SectionIcon icon={Icon} size="md" className="mb-6" />
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight leading-tight">
       {title}
     </h3>
