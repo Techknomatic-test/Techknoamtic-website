@@ -740,9 +740,9 @@ const Counter = ({
 
 const StatsSection = () => {
   const stats = [
-    { value: 11, suffix: "+", label: "Years of Solution Delivery" },
+    { value: 11, suffix: "+", label: "Years of Delivery" },
     { value: 25, suffix: "+", label: "Domains Served" },
-    { value: 1000, suffix: "+", label: "Projects Completed" },
+    { value: 800, suffix: "+", label: "Projects Completed" },
     { value: 20, suffix: "K+", label: "Dashboards Delivered" },
     { value: 500, suffix: "K+", label: "Consulting Hours" }, 
   ];
@@ -760,11 +760,11 @@ const StatsSection = () => {
               transition={{ delay: i * 0.1, duration: 0.8, ease: "easeOut" }}
               className="bg-white dark:bg-brand-950 p-10 rounded-[2.5rem] shadow-[0_15px_40px_-10px_rgba(0,0,0,0.05)] dark:shadow-none hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group text-center"
             >
-              <h3 className="text-5xl md:text-6xl font-bold text-accent tracking-tighter mb-4 group-hover:scale-105 transition-transform duration-500 whitespace-nowrap">
+              <h3 className="text-4xl md:text-5xl font-bold text-accent tracking-tighter mb-4 group-hover:scale-105 transition-transform duration-500 whitespace-nowrap">
                 <Counter value={stat.value} />
                 <span className="font-bold">{stat.suffix}</span>
               </h3>
-              <p className="text-[12px] font-black text-slate-400 dark:text-slate-500 tracking-[0.25em] leading-tight">
+              <p className="text-[12px] font-black text-slate-400 dark:text-slate-500 tracking-[0.1em] leading-tight">
                 {stat.label}
               </p>
             </motion.div>
