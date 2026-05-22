@@ -813,11 +813,7 @@ const ServiceCard = ({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <div className="absolute top-8 left-8">
-            <span
-              className={`text-[10px] font-black tracking-[0.2em] px-4 py-2 rounded-full ${service.dark ? "bg-brand-950/80 text-white" : "bg-white/90 dark:bg-brand-950/80 text-brand-950 dark:text-white"} backdrop-blur-xl shadow-lg border ${service.dark ? "border-white/10" : "border-white dark:border-white/10"} transform group-hover:-translate-y-1 transition-transform duration-500`}
-            >
-              {service.category}
-            </span>
+           
           </div>
         </div>
       ) : (
@@ -856,7 +852,7 @@ const ServiceCard = ({
             className="flex items-center gap-3 transition-all duration-500 text-accent group-hover/btn:translate-x-1"
           >
             <span className="text-[11px] font-black uppercase tracking-widest">
-              {service.moreLabel}
+              Know More
             </span>
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -1012,7 +1008,7 @@ const SolutionsSection = () => {
             className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl leading-relaxed mt-6"
           >
             Pre-built, production-ready analytics accelerators across key
-            industries, go live faster with fewer surprises.
+            industries. go live faster with fewer surprises.
           </motion.p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
