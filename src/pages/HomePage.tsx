@@ -1142,31 +1142,48 @@ const AcceleratorsSection = () => {
     acc,
   }: {
     acc: (typeof allAccelerators)[number];
-  }) => (
+  }) => {
+    const commaIndex = acc.title.indexOf(",");
+    const brand =
+      commaIndex >= 0 ? acc.title.slice(0, commaIndex).trim() : acc.title;
+    const subtitle =
+      commaIndex >= 0 ? acc.title.slice(commaIndex + 1).trim() : "";
+
+    return (
     <div className="w-full bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 rounded-[1.5rem] p-6 h-full flex flex-col relative overflow-hidden group hover:shadow-2xl hover:shadow-accent/5 transition-all duration-500">
       <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none">
         <acc.icon className="w-32 h-32 text-brand-950 dark:text-white" />
       </div>
-      <div className="relative z-10 flex-1">
-        <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white mb-6 shadow-lg">
-          <acc.icon className="w-5 h-5" />
+      <div className="relative z-10 flex-1 flex flex-col">
+        <div className="min-h-[6.5rem] sm:min-h-[6rem] md:min-h-[5.75rem] mb-4">
+          <div className="flex gap-3 items-center">
+            <div className="w-10 h-10 shrink-0 rounded-xl bg-accent flex items-center justify-center text-white shadow-lg">
+              <acc.icon className="w-5 h-5" />
+            </div>
+            <span className="text-lg font-bold text-brand-950 dark:text-white tracking-tight leading-none">
+              {brand}
+            </span>
+          </div>
+          {subtitle ? (
+            <h3 className="mt-3 text-lg font-bold text-brand-950 dark:text-white tracking-tight leading-snug">
+              {subtitle}
+            </h3>
+          ) : null}
         </div>
-        <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
-          {acc.title}
-        </h3>
         <p className="text-slate-500 dark:text-slate-400 text-[13px] font-medium leading-relaxed mb-6 flex-1">
           {acc.desc}
         </p>
       </div>
       <Link
         to={acc.href}
-        className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.2em] text-accent hover:text-accent transition-colors group/btn"
+        className="relative z-10 inline-flex items-center gap-2 text-[10px] font-black tracking-[0.2em] text-accent hover:text-accent transition-colors group/btn"
       >
         {acc.cta}
         <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
       </Link>
     </div>
-  );
+    );
+  };
 
   return (
     <section
