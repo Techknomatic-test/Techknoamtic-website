@@ -132,7 +132,7 @@ export const Footer = () => {
 
         <div className="pt-4 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-slate-500 text-[14px] font-medium">
-            © {new Date().getFullYear()} Techknomatic. All rights reserved. Precision in every byte.
+            © {new Date().getFullYear()} Techknomatic. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-10 text-[14px] font-medium text-slate-500">
             <a href="#" className="hover:text-white transition-colors">
