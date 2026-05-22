@@ -1295,7 +1295,7 @@ const TestimonialsSection = () => {
       role: "VP Delivery, Oil & Gas Sector",
       company: "Oil & Gas Sector",
       location: "Oman",
-      text: "Before CXO Nexus, our data was scattered across systems. Now we have a unified platform with real-time visibility into sales trends, operational performance, and overall business health ,simplifying reporting and enabling faster, more confident decisions. I'd highly recommend Techknomatic to any organization looking for a single source of truth.",
+      text: "In oil & gas, unplanned downtime isn't a metric — it's a crisis. Techknomatic built us a live operational dashboard that consolidates field data across our assets and flags efficiency dips before they escalate. We've moved from reactive firefighting to proactive control, and the difference is measurable.",
     },
     {
       headline: "From reactive to data-driven",
@@ -1303,7 +1303,7 @@ const TestimonialsSection = () => {
       role: "Founder",
       company: "Aintisar Technology L.L.C.",
       location: "UAE",
-      text: "Before CXO Nexus, our data was scattered across systems. Since adopting it, we have a unified platform where critical business metrics are available in real time — sales trends, operational performance, and overall business health. It has simplified our reporting and enabled faster, more confident decisions. I would highly recommend Techknomatic to any organization looking for a single source of truth.",
+      text: "Before CXO Nexus, our data was scattered across systems. Now we have a unified platform with real-time visibility into sales trends, operational performance, and overall business health ,simplifying reporting and enabling faster, more confident decisions. I'd highly recommend Techknomatic to any organization looking for a single source of truth.",
     },
   ];
 
@@ -1338,12 +1338,12 @@ const TestimonialsSection = () => {
     <section className="py-[40px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -mr-48 -mt-48" />
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-16 max-w-2xl text-left">
+        <div className="mb-8 max-w-2xl text-left">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[10px] font-black tracking-[0.3em] text-accent bg-accent/10 rounded-full border border-accent/20"
+              className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[10px] font-black tracking-[0.3em] text-accent bg-accent/10 rounded-full border border-accent/20"
             >
               Testimonials
             </motion.div>
@@ -1351,7 +1351,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-6"
+              className="text-4xl md:text-6xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-4"
             >
               Voices of Impact
             </motion.h2>
@@ -1378,50 +1378,48 @@ const TestimonialsSection = () => {
                 : `-${activeIndex * 33.333}%`,
             }}
             transition={{ type: "spring", stiffness: 100, damping: 22 }}
-            className="flex w-full"
+            className="flex w-full items-stretch"
           >
             {testimonials.map((t, i) => (
               <motion.div
                 key={i}
-                className="w-full lg:w-1/3 shrink-0 px-3"
+                className="w-full lg:w-1/3 shrink-0 px-3 flex"
               >
-                <div className="h-full bg-white dark:bg-brand-950 p-10 md:p-12 rounded-[3.5rem] border border-slate-100 dark:border-white/10 flex flex-col min-h-[520px] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-500 text-left hover:border-accent/30 group relative">
-                  <div className="absolute top-10 right-10 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
-                    <Quote className="w-24 h-24 text-brand-950 dark:text-white rotate-180" />
+                <div className="flex flex-1 flex-col bg-white dark:bg-brand-950 p-5 md:p-6 rounded-[1.75rem] border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-500 text-left hover:border-accent/30 group relative">
+                  <div className="absolute top-4 right-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none">
+                    <Quote className="w-10 h-10 text-brand-950 dark:text-white rotate-180" />
                   </div>
 
-                  <div className="mb-8">
-                    <div className="flex gap-1 mb-6 text-accent">
-                      {[...Array(5)].map((_, i) => (
+                  <div className="mb-3 shrink-0">
+                    <div className="flex gap-0.5 mb-2 text-accent">
+                      {[...Array(5)].map((_, star) => (
                         <Sparkles
-                          key={i}
-                          className="w-3.5 h-3.5 fill-current"
+                          key={star}
+                          className="w-3 h-3 fill-current"
                         />
                       ))}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight leading-[1.25]">
+                    <h3 className="text-lg md:text-xl font-bold text-brand-950 dark:text-white tracking-tight leading-snug">
                       "{t.headline}"
                     </h3>
                   </div>
 
-                  <p className="text-slate-600 dark:text-slate-400 text-lg md:text-base font-medium leading-[1.8] mb-10 flex-1">
+                  <p className="text-slate-600 dark:text-slate-400 text-sm md:text-[15px] font-medium leading-relaxed mb-4 flex-1">
                     {t.text}
                   </p>
 
-                  <div className="mt-auto pt-8 border-t border-slate-50 dark:border-white/5">
-                    <div>
-                      <h4 className="font-bold text-brand-950 dark:text-white tracking-tight">
-                        {t.name}
-                      </h4>
-                      <p className="text-[12px] font-semibold text-slate-500 dark:text-slate-400 mt-1 leading-snug">
-                        {t.role}
-                      </p>
-                      <p className="text-[11px] font-black text-slate-400 dark:text-slate-500 tracking-widest mt-2">
-                        <span className="text-accent">{t.company}</span>
-                        {" · "}
-                        {t.location}
-                      </p>
-                    </div>
+                  <div className="mt-auto pt-4 border-t border-slate-100 dark:border-white/5 shrink-0">
+                    <h4 className="font-bold text-brand-950 dark:text-white tracking-tight">
+                      {t.name}
+                    </h4>
+                    <p className="text-[12px] font-semibold text-slate-500 dark:text-slate-400 mt-1 leading-snug">
+                      {t.role}
+                    </p>
+                    <p className="text-[11px] font-bold text-slate-400 dark:text-slate-500 tracking-wide mt-1 leading-snug">
+                      <span className="text-accent">{t.company}</span>
+                      {" · "}
+                      {t.location}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -1429,7 +1427,7 @@ const TestimonialsSection = () => {
           </motion.div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-6">
+        <div className="mt-6 flex flex-col items-center justify-center gap-4">
           <div className="flex gap-4">
             <button
               type="button"
