@@ -1165,7 +1165,7 @@ const AcceleratorsSection = () => {
             </span>
           </div>
           {subtitle ? (
-            <h3 className="mt-3 text-lg font-bold text-brand-950 dark:text-white tracking-tight leading-snug">
+            <h3 className="mt-3 text-[15px] font-semibold text-brand-950 dark:text-white tracking-tight leading-snug">
               {subtitle}
             </h3>
           ) : null}
