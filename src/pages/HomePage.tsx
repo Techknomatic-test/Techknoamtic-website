@@ -147,7 +147,7 @@ const NetworkMap = () => {
             </motion.div>
           </motion.div>
 
-          <motion.div className="grid grid-cols-3 gap-4 mt-8">
+          <motion.div className="grid grid-cols-3 gap-4 mt-8 items-stretch">
             {[
               { label: "AVG ETA", value: "14.2 min", icon: <Activity className="w-3.5 h-3.5" /> },
               {
@@ -168,19 +168,19 @@ const NetworkMap = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + i * 0.1 }}
-                className="bg-slate-50/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-slate-100 dark:border-white/5 shadow-sm"
+                className="flex h-full min-h-[88px] flex-col bg-slate-50/80 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-slate-100 dark:border-white/5 shadow-sm"
               >
-                <motion.div className="flex items-center gap-2 mb-1.5">
-                  <motion.div className="text-accent">{chip.icon}</motion.div>
-                  <span className="text-[7.5px] font-black tracking-widest text-slate-400 uppercase">
+                <div className="flex min-h-[2rem] items-start gap-2">
+                  <span className="shrink-0 text-accent">{chip.icon}</span>
+                  <span className="text-[7.5px] font-black leading-tight tracking-widest text-slate-400 uppercase">
                     {chip.label}
                   </span>
-                </motion.div>
-                <motion.div
-                  className={`text-xs sm:text-sm font-bold tracking-tight ${chip.alert ? "text-red-500" : "text-brand-950 dark:text-white"}`}
+                </div>
+                <div
+                  className={`mt-auto pt-2 text-sm font-bold leading-none tabular-nums tracking-tight ${chip.alert ? "text-red-500" : "text-brand-950 dark:text-white"}`}
                 >
                   {chip.value}
-                </motion.div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
