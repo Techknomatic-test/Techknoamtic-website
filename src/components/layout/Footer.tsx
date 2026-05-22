@@ -69,30 +69,39 @@ export const Footer = () => {
   return (
     <footer className="py-14 md:py-16 lg:py-20 px-6 lg:px-12 bg-brand-950 border-t border-white/5 transition-colors duration-500 overflow-hidden text-left">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-[auto_auto_auto] gap-y-6 md:gap-x-8 lg:gap-x-16 md:gap-y-6 mb-0">
-          <div className="md:col-span-5 md:row-start-1 order-1 text-center md:text-left">
-            <Link
-              to="/"
-              aria-label="Techknomatic home"
-              className="mb-6 inline-flex justify-center md:justify-start rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-950"
-            >
-              <img
-                loading="lazy"
-                src={`${import.meta.env.BASE_URL}Images/home/footer-logo.png`}
-                alt="Techknomatic — Technology, Knowledge, Analytics"
-                className="h-14 w-auto max-w-[min(100%,280px)] object-contain object-left sm:h-16"
-              />
-            </Link>
-            <p className="text-slate-400 font-medium leading-relaxed max-w-sm mb-4 text-base mx-auto md:mx-0">
-              Techknomatic empowers teams to transform raw data into clear, compelling visuals — making
-              insights easier to share, understand, and act on.
-            </p>
-            <div className="text-[11px] font-black uppercase tracking-[0.3em] text-white/40">
-              India · UAE · Oman · USA
+        <div className="flex flex-col gap-y-6 mb-0">
+          <div className="flex flex-col items-center gap-y-8 md:grid md:grid-cols-[minmax(0,20rem)_1fr] md:items-start md:gap-x-16 lg:gap-x-24 xl:gap-x-32">
+            <div className="w-full shrink-0 text-center md:text-left">
+              <Link
+                to="/"
+                aria-label="Techknomatic home"
+                className="mb-6 inline-flex justify-center md:justify-start rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-950"
+              >
+                <img
+                  loading="lazy"
+                  src={`${import.meta.env.BASE_URL}Images/home/footer-logo.png`}
+                  alt="Techknomatic — Technology, Knowledge, Analytics"
+                  className="h-14 w-auto max-w-[min(100%,280px)] object-contain object-left sm:h-16"
+                />
+              </Link>
+              <p className="text-slate-400 font-medium leading-relaxed mb-4 text-base mx-auto md:mx-0">
+                Techknomatic empowers teams to transform raw data into clear, compelling visuals — making
+                insights easier to share, understand, and act on.
+              </p>
+              <div className="text-[11px] font-black uppercase tracking-[0.3em] text-white/40">
+                India · UAE · Oman · USA
+              </div>
+            </div>
+
+            <div className="flex w-full flex-col items-start justify-start gap-y-10 md:flex-row md:flex-wrap md:gap-x-10 lg:gap-x-12">
+              <FooterColumn title="Services" items={navData.services} />
+              <FooterColumn title="Enterprise AI" items={navData.enterpriseAI} />
+              <FooterColumn title="Platforms" items={navData.platforms} />
+              <FooterColumn title="Industries" items={navData.industries} />
             </div>
           </div>
 
-          <div className="md:col-span-5 md:row-start-2 order-2">
+          <div>
             <div className="flex items-center gap-5 justify-center md:justify-start">
               {[
                 {
@@ -118,15 +127,8 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="md:col-span-12 md:row-start-3 order-3 border-t border-white/5 pt-4 pb-4 min-w-0">
+          <div className="border-t border-white/5 pt-4 pb-4 min-w-0">
             <FooterQuickLinksNav />
-          </div>
-
-          <div className="md:col-span-7 md:col-start-6 md:row-span-2 md:row-start-1 order-4 flex w-full flex-col items-start justify-start gap-y-10 md:flex-row md:flex-wrap md:gap-x-12 lg:gap-x-16">
-            <FooterColumn title="Services" items={navData.services} />
-            <FooterColumn title="Enterprise AI" items={navData.enterpriseAI} />
-            <FooterColumn title="Platforms" items={navData.platforms} />
-            <FooterColumn title="Industries" items={navData.industries} />
           </div>
         </div>
 
