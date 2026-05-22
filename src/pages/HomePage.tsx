@@ -192,19 +192,20 @@ const NetworkMap = () => {
 
 const RefineryVisual = () => {
   return (
-    <motion.div className="relative w-full aspect-square max-w-lg mx-auto flex items-center justify-center">
-      <motion.div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="relative w-full aspect-square max-w-lg mx-auto flex items-center justify-center isolate">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
-          transition={{ duration: 10, repeat: Infinity }}
+          animate={{ scale: [1, 1.06, 1], opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
           className="absolute w-2/3 h-2/3 bg-accent/10 rounded-full blur-[100px]"
         />
-      </motion.div>
+      </div>
 
-      <motion.div className="relative w-full h-full flex flex-col items-center justify-center">
+      <div className="relative w-full h-full flex flex-col items-center justify-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative z-10 w-[90%] h-[75%] bg-white/80 dark:bg-brand-900/90 backdrop-blur-2xl rounded-[3rem] p-10 border border-white/50 dark:border-white/10 shadow-2xl flex flex-col transition-colors duration-500"
         >
           <motion.div className="flex items-center justify-between mb-8">
@@ -237,18 +238,18 @@ const RefineryVisual = () => {
               <motion.div className="absolute bottom-0 left-0 w-full h-1/2 opacity-20">
                 <motion.svg viewBox="0 0 100 40" className="w-full h-full">
                   <motion.path
-                    d="M0 20 Q 25 10, 50 20 T 100 20"
+                    d="M0 20 Q 25 14, 50 20 T 100 20"
                     fill="none"
                     stroke="#F17E21"
                     strokeWidth="2"
                     animate={{
                       d: [
-                        "M0 20 Q 25 10, 50 20 T 100 20",
-                        "M0 20 Q 25 30, 50 20 T 100 20",
-                        "M0 20 Q 25 10, 50 20 T 100 20",
+                        "M0 20 Q 25 14, 50 20 T 100 20",
+                        "M0 20 Q 25 18, 50 20 T 100 20",
+                        "M0 20 Q 25 14, 50 20 T 100 20",
                       ],
                     }}
-                    transition={{ duration: 3, repeat: Infinity }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   />
                 </motion.svg>
               </motion.div>
@@ -260,16 +261,17 @@ const RefineryVisual = () => {
               <motion.div className="text-2xl font-bold text-brand-950 dark:text-white shrink-0">
                 LOW
               </motion.div>
-              <motion.div className="mt-4 flex gap-1">
+              <div className="mt-4 flex h-6 items-end gap-1">
                 {[...Array(8)].map((_, i) => (
                   <motion.div
                     key={i}
-                    animate={{ height: [12, 24, 12] }}
-                    transition={{ duration: 1, repeat: Infinity, delay: i * 0.1 }}
-                    className="flex-1 bg-accent/40 rounded-full"
+                    initial={{ height: 12 }}
+                    animate={{ height: [12, 18, 12] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.12, ease: "easeInOut" }}
+                    className="flex-1 bg-accent/40 rounded-full origin-bottom"
                   />
                 ))}
-              </motion.div>
+              </div>
             </motion.div>
             <motion.div className="col-span-2 bg-slate-50/50 dark:bg-white/5 rounded-[1.5rem] p-6 border border-slate-100 dark:border-white/5">
               <motion.div className="flex justify-between items-center mb-4">
@@ -298,14 +300,17 @@ const RefineryVisual = () => {
                 Live Anomalies: 0
               </motion.div>
             </motion.div>
-            <motion.div className="text-[10px] font-black tracking-widest text-[#f17e21] uppercase flex items-center gap-2">
-              <motion.div className="w-1.5 h-1.5 bg-[#f17e21] rounded-full animate-ping" />
+            <div className="text-[10px] font-black tracking-widest text-[#f17e21] uppercase flex items-center gap-2">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-[#f17e21] opacity-40 animate-ping" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#f17e21]" />
+              </span>
               Monitoring Active
-            </motion.div>
+            </div>
           </motion.div>
         </motion.div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 
