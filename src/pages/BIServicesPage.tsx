@@ -513,25 +513,23 @@ export const BIServicesPage = () => {
           >
             Business Intelligence
           </motion.h1>
-          <div className="w-full max-w-none">
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.2 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
-              Turning Data into Decisions, At Speed and Scale
+              Turning Data into Decisions, at Speed and Scale
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty text-justify"
+              transition={{ delay: 0.3 }}
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              Enterprise-grade BI strategy, dashboard development, and governance, engineered for
-              adoption, not just delivery. Built on certified Power BI, Tableau, and Qlik expertise,
-              with deep industry depth in insurance, IT operations, energy, manufacturing, and
-              retail.
+              BI strategy, dashboards, and governance engineered for adoption—built on certified
+              Power BI, Tableau, and Qlik expertise.
             </motion.p>
           </div>
         </div>
