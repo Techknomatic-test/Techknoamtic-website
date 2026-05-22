@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { useState, useRef } from 'react';
 import { PreFooterCTA } from '../components/PreFooterCTA';
+import { SectionIcon } from '../components/SectionIcon';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
@@ -156,9 +157,7 @@ const BrandGuidelinesPage = () => {
             <div className="lg:col-span-4">
               <div className="sticky top-40">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 bg-accent/10 rounded-lg">
-                    <Activity className="w-5 h-5 text-accent" />
-                  </div>
+                  <SectionIcon icon={Activity} size="xs" hover="none" />
                   <h2 className="section-heading uppercase">Logo Usage</h2>
                 </div>
                 <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
@@ -217,9 +216,7 @@ const BrandGuidelinesPage = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="max-w-2xl">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-accent/10 rounded-lg text-accent">
-                  <Palette className="w-5 h-5" />
-                </div>
+                <SectionIcon icon={Palette} size="xs" hover="none" />
                 <h2 className="section-heading uppercase">Color Palette</h2>
               </div>
               <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
@@ -268,9 +265,7 @@ const BrandGuidelinesPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-accent/10 rounded-lg text-accent">
-                  <Type className="w-5 h-5" />
-                </div>
+                <SectionIcon icon={Type} size="xs" hover="none" />
                 <h2 className="section-heading uppercase">Typography</h2>
               </div>
               <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
@@ -377,9 +372,7 @@ const BrandGuidelinesPage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl mb-16">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-accent/10 rounded-lg text-accent">
-                <MousePointer2 className="w-5 h-5" />
-              </div>
+              <SectionIcon icon={MousePointer2} size="xs" hover="none" />
               <h2 className="section-heading uppercase">Interactive Elements</h2>
             </div>
           </div>
@@ -399,9 +392,7 @@ const BrandGuidelinesPage = () => {
             <div className="space-y-8 p-10 bg-white dark:bg-brand-950 rounded-[3rem] border border-slate-100 dark:border-white/10 shadow-lg shadow-slate-100/50">
               <h4 className="text-[12px] font-black uppercase tracking-widest text-slate-400">Card System</h4>
               <div className="p-6 bg-slate-50 dark:bg-white/5 rounded-2xl border border-slate-100 dark:border-white/10">
-                <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4">
-                  <Sparkles className="w-5 h-5" />
-                </div>
+                <SectionIcon icon={Sparkles} size="xs" className="mb-4" hover="none" />
                 <h5 className="text-[16px] font-bold text-brand-950 dark:text-white mb-2">Bento Pattern</h5>
                 <p className="text-[13px] text-slate-500 leading-relaxed font-medium">Cards use generous rounding and subtle borders to create a soft, high-tech interface.</p>
               </div>
@@ -411,12 +402,12 @@ const BrandGuidelinesPage = () => {
               <h4 className="text-[12px] font-black uppercase tracking-widest text-slate-400">Iconography Style</h4>
               <div className="grid grid-cols-4 gap-6">
                 {[Sparkles, Globe, Activity, Layout, Database, ShieldCheck, Target, Users].map((Icon, idx) => (
-                  <div key={idx} className="w-12 h-12 bg-white dark:bg-brand-950 rounded-xl flex items-center justify-center text-slate-400 border border-slate-100 dark:border-white/10 hover:text-accent transition-colors">
-                    <Icon className="w-6 h-6 stroke-[1.5]" />
-                  </div>
+                  <SectionIcon key={idx} icon={Icon} size="md" hover="none" />
                 ))}
               </div>
-              <p className="text-[12px] text-slate-500 font-medium leading-relaxed uppercase tracking-wider">Using Lucide Icons - 1.5pt Stroke weight</p>
+              <p className="text-[12px] text-slate-500 font-medium leading-relaxed uppercase tracking-wider">
+                Lucide icons on accent tiles — white glyph, orange background
+              </p>
             </div>
           </div>
         </div>

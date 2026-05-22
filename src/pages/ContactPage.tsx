@@ -29,6 +29,7 @@ import {
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import { acceleratorsSectionLinkTo } from "../config/homeNavigation";
 
 const CONTACT_HERO_IMG = `${import.meta.env.BASE_URL}Images/contactusHero.jpg`;
@@ -85,9 +86,9 @@ const ContactVisual = () => {
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="z-10 bg-white dark:bg-brand-900 w-32 h-32 rounded-[3.5rem] shadow-2xl flex items-center justify-center border border-slate-100 dark:border-white/10"
+          className="z-10"
         >
-          <MessageSquare className="w-12 h-12 text-accent" />
+          <SectionIcon icon={MessageSquare} size="xl" hover="none" />
         </motion.div>
 
         {[...Array(3)].map((_, i) => (
@@ -275,22 +276,18 @@ export const ContactPage = () => {
               {
                 title: "Solve complex reporting & dashboard challenges",
                 icon: Activity,
-                color: "bg-[#fff6ef] text-[#f17e21]",
               },
               {
                 title: "Reduce decision-making time with real-time insights",
                 icon: Zap,
-                color: "bg-[#fff6ef] text-[#f17e21]",
               },
               {
                 title: "Build scalable BI & analytics ecosystems",
                 icon: Building2,
-                color: "bg-[#fff6ef] text-[#f17e21]",
               },
               {
                 title: "Improve business performance across functions",
                 icon: Sparkles,
-                color: "bg-[#fff6ef] text-[#f17e21]",
               },
             ].map((item, i) => (
               <motion.div
@@ -298,11 +295,7 @@ export const ContactPage = () => {
                 whileHover={{ y: -10 }}
                 className="bg-white dark:bg-brand-950 p-10 rounded-[2rem] flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-50 dark:border-white/5 h-full"
               >
-                <div
-                  className={`w-16 h-16 rounded-2xl ${item.color} flex items-center justify-center mb-8`}
-                >
-                  <item.icon className="w-8 h-8" strokeWidth={1.5} />
-                </div>
+                <SectionIcon icon={item.icon} size="xl" className="mb-8" hover="none" />
                 <h3 className="text-[17px] font-bold text-brand-950 dark:text-white leading-snug tracking-tight">
                   {item.title}
                 </h3>
@@ -443,9 +436,7 @@ export const ContactPage = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
             <div className="text-center">
-              <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent mx-auto mb-6">
-                <FolderCheck className="w-6 h-6" strokeWidth={1.5} />
-              </div>
+              <SectionIcon icon={FolderCheck} size="lg" className="mx-auto mb-6" hover="none" />
               <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
                 <Counter value={1000} suffix="+" />
               </div>
@@ -454,9 +445,7 @@ export const ContactPage = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent mx-auto mb-6">
-                <LayoutDashboard className="w-6 h-6" strokeWidth={1.5} />
-              </div>
+              <SectionIcon icon={LayoutDashboard} size="lg" className="mx-auto mb-6" hover="none" />
               <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
                 <Counter value={20000} suffix="+" />
               </div>
@@ -465,9 +454,7 @@ export const ContactPage = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent mx-auto mb-6">
-                <Globe className="w-6 h-6" strokeWidth={1.5} />
-              </div>
+              <SectionIcon icon={Globe} size="lg" className="mx-auto mb-6" hover="none" />
               <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
                 <Counter value={25} suffix="+" />
               </div>
@@ -476,9 +463,7 @@ export const ContactPage = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent mx-auto mb-6">
-                <Clock className="w-6 h-6" strokeWidth={1.5} />
-              </div>
+              <SectionIcon icon={Clock} size="lg" className="mx-auto mb-6" hover="none" />
               <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
                 <Counter value={500000} suffix="+" />
               </div>

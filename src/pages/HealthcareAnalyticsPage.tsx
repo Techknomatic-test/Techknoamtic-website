@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   Activity,
   ArrowRight,
@@ -266,9 +267,7 @@ export const HealthcareAnalyticsPage = () => {
                 <div className="absolute top-8 right-8 text-4xl font-black text-white/5 group-hover:text-accent/20 transition-colors">
                   0{step}
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-12 transition-transform">
-                  <RefreshCw className="w-5 h-5" />
-                </div>
+                <SectionIcon icon={RefreshCw} size="md" hover="rotate" className="mb-8" />
                 <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
                   {step === 1 ? "Assess" : step === 2 ? "Architect" : step === 3 ? "Automate" : step === 4 ? "Action" : "Accelerate"}
                 </h3>

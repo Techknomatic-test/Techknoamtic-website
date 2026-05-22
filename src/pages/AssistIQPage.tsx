@@ -1,6 +1,7 @@
 import type { ComponentType } from "react";
 import { motion } from "motion/react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   UserCircle,
   MessageSquare,
@@ -49,9 +50,7 @@ const CapabilityCard = ({
     transition={{ delay }}
     className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full text-left"
   >
-    <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
-      <Icon className="w-6 h-6" />
-    </div>
+    <SectionIcon icon={Icon} size="md" className="mb-6" />
     <div className="flex-1">
       <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
         {title}
@@ -121,9 +120,7 @@ const UseCaseCard = ({
 
     <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-          <Target className="w-4 h-4 text-accent" />
-        </div>
+        <SectionIcon icon={Target} size="sm" hover="none" />
         <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
           <span className="text-accent uppercase tracking-wider mr-2 not-italic">
             Outcome:
@@ -753,9 +750,7 @@ export const AssistIQPage = () => {
                       0{idx + 1}
                     </span>
                   </div>
-                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 text-accent group-hover:scale-110 transition-transform">
-                    <Icon className="w-7 h-7" />
-                  </div>
+                  <SectionIcon icon={Icon} size="lg" className="mb-8" />
                   <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
                     {step.title}
                   </h3>
@@ -807,9 +802,7 @@ export const AssistIQPage = () => {
                   transition={{ delay: idx * 0.05 }}
                   className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-accent/30 transition-all flex flex-col"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-6 text-accent">
-                    <Icon className="w-5 h-5" />
-                  </div>
+                  <SectionIcon icon={Icon} size="xs" className="mb-6" hover="none" />
                   <h3 className="text-[17px] font-bold text-brand-950 dark:text-white mb-3 group-hover:text-accent transition-colors font-bold tracking-tight">
                     {item.title}
                   </h3>

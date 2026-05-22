@@ -59,6 +59,7 @@ import {
   shouldScrollToAccelerators,
 } from "../config/homeNavigation";
 import { scrollToElement } from "../utils/scrollToElement";
+import { SectionIcon } from "../components/SectionIcon";
 
 /** Public asset: public/Images/home/oil-gas-card.png (copy of Oil&gas1 (1).png) */
 const OIL_GAS_CARD_IMG = `${import.meta.env.BASE_URL}Images/home/oil-gas-card.png`;
@@ -211,9 +212,7 @@ const RefineryVisual = () => {
         >
           <motion.div className="flex items-center justify-between mb-8">
             <motion.div className="flex items-center gap-4">
-              <motion.div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                <Factory className="w-5 h-5 text-accent" />
-              </motion.div>
+              <SectionIcon icon={Factory} size="xs" hover="none" />
               <motion.div>
                 <h4 className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">
                   Process Intelligence
@@ -391,9 +390,7 @@ const HeroVisual = ({ index }: { index: number }) => {
         >
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-accent" />
-              </div>
+              <SectionIcon icon={BarChart3} size="xs" hover="none" />
               <div>
                 <h4 className="text-[10px] font-black tracking-[0.2em] text-slate-400">
                   Insight Architecture
@@ -1163,9 +1160,7 @@ const AcceleratorsSection = () => {
       <div className="relative z-10 flex-1 flex flex-col">
         <div className="min-h-[6.5rem] sm:min-h-[6rem] md:min-h-[5.75rem] mb-4">
           <div className="flex gap-3 items-center">
-            <div className="w-10 h-10 shrink-0 rounded-xl bg-accent flex items-center justify-center text-white shadow-lg">
-              <acc.icon className="w-5 h-5" />
-            </div>
+            <SectionIcon icon={acc.icon} size="xs" hover="none" />
             <span className="text-lg font-bold text-brand-950 dark:text-white tracking-tight leading-none">
               {brand}
             </span>

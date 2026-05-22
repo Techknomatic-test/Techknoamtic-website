@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import { CAREER_JOBS } from "../data/careersJobs";
 
 const CAREERS_BASE = "Images/Careers";
@@ -362,9 +363,7 @@ export const CareersPage = () => {
                 transition={{ delay: i * 0.1 }}
                 className="bg-slate-50 dark:bg-brand-900 rounded-[2.5rem] p-10 flex flex-col items-start border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-xl transition-all"
               >
-                <div className="w-12 h-12 rounded-full border border-accent/20 bg-accent/10 flex items-center justify-center text-accent mb-6">
-                  <item.icon className="w-5 h-5" />
-                </div>
+                <SectionIcon icon={item.icon} size="md" className="mb-6" hover="none" />
                 <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-3">
                   {item.title}
                 </h4>
@@ -556,9 +555,7 @@ export const CareersPage = () => {
                 transition={{ delay: i * 0.1 }}
                 className="bg-slate-50 dark:bg-brand-900 rounded-[2.5rem] p-10 flex flex-col items-start border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-xl transition-all group"
               >
-                <div className="w-12 h-12 rounded-full border border-accent/20 bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
-                  <item.icon className="w-5 h-5" />
-                </div>
+                <SectionIcon icon={item.icon} size="md" className="mb-6" hover="none" />
                 <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-3">
                   {item.title}
                 </h4>
@@ -593,9 +590,7 @@ export const CareersPage = () => {
           </div>
 
           <div className="max-w-4xl mx-auto bg-white dark:bg-brand-950 p-12 md:p-20 rounded-[3.5rem] text-center border-2 border-dashed border-slate-200 dark:border-white/10">
-            <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent mx-auto mb-8">
-              <Mail className="w-8 h-8" />
-            </div>
+            <SectionIcon icon={Mail} size="xl" className="mx-auto mb-8" hover="none" />
             <h3 className="text-3xl md:text-4xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight">
               Great Talent Doesn't Wait.
             </h3>
@@ -629,9 +624,7 @@ export const CareersPage = () => {
               <div key={i} className="relative flex flex-col h-full">
                 <div className="bg-slate-50 dark:bg-brand-900 border border-slate-100 dark:border-white/5 p-8 rounded-[2rem] flex flex-col h-full hover:shadow-xl transition-shadow relative z-10">
                   <div className="mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg shadow-accent/20">
-                      <step.icon className="w-7 h-7" />
-                    </div>
+                    <SectionIcon icon={step.icon} size="lg" hover="none" />
                   </div>
                   <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-4">
                     {step.title}

@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   ShieldCheck,
   ArrowRight,
@@ -158,9 +159,7 @@ const UseCaseCard = ({ title, description, icon: Icon, delay = 0 }: { title: str
     transition={{ delay }}
     className="p-10 rounded-[3rem] bg-white dark:bg-brand-900/40 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-2xl transition-all group"
   >
-    <div className="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-12 transition-transform">
-      <Icon className="w-7 h-7" />
-    </div>
+    <SectionIcon icon={Icon} size="lg" hover="rotate" className="mb-8" />
     <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight group-hover:text-accent transition-colors">
       {title}
     </h3>

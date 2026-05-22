@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   ShieldCheck,
   Target,
@@ -115,9 +116,7 @@ const CapabilityCard = ({
     transition={{ delay }}
     className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full text-left"
   >
-    <div className="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-6 transition-transform">
-      <Icon className="w-7 h-7" />
-    </div>
+    <SectionIcon icon={Icon} size="lg" hover="rotate" className="mb-8" />
     <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
@@ -160,9 +159,7 @@ const ApproachStep = ({
     <div className="absolute top-8 right-8 text-4xl font-black text-slate-100 dark:text-white/5 group-hover:text-accent/10 transition-colors">
       {num}
     </div>
-    <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-white/10 flex items-center justify-center mb-8 text-accent group-hover:scale-110 transition-transform">
-      <Icon className="w-5 h-5" />
-    </div>
+    <SectionIcon icon={Icon} size="md" className="mb-8" />
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
       {title}
     </h3>
@@ -194,9 +191,7 @@ const UseCaseCard = ({
     className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
   >
     <div className="flex items-center gap-4 mb-6">
-      <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
-        <Icon className="w-6 h-6" />
-      </div>
+      <SectionIcon icon={Icon} size="md" hover="none" />
       <div className="text-left">
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase">Industry</h4>
         <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">
@@ -225,9 +220,7 @@ const UseCaseCard = ({
 
     <div className="mt-auto pt-8 border-t border-slate-100 dark:border-white/5 text-left">
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-          <Target className="w-4 h-4 text-accent" />
-        </div>
+        <SectionIcon icon={Target} size="sm" hover="none" />
         <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
           <span className="text-accent uppercase tracking-wider mr-2 not-italic">Outcome:</span>
           {outcome}

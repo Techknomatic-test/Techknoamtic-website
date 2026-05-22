@@ -1,6 +1,7 @@
 ﻿import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   ShieldCheck,
   FileText,
@@ -138,9 +139,7 @@ const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { ti
     className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
   >
     <div className="flex items-center gap-4 mb-6">
-      <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
-        <Icon className="w-6 h-6" />
-      </div>
+      <SectionIcon icon={Icon} size="md" hover="none" />
       <div className="text-left">
         <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">
           {title}

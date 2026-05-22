@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   Database,
   Layers,
@@ -129,9 +130,7 @@ const ApproachStep = ({ num, title, description, icon: Icon, delay = 0 }: { num:
     <div className="absolute top-8 right-8 text-4xl font-black text-slate-100 dark:text-white/5 group-hover:text-accent/10 transition-colors">
       {num.replace(".", "")}
     </div>
-    <div className="w-12 h-12 rounded-xl bg-white dark:bg-white/10 flex items-center justify-center mb-8 text-accent shadow-sm group-hover:scale-110 transition-transform">
-      <Icon className="w-5 h-5" />
-    </div>
+    <SectionIcon icon={Icon} size="md" className="mb-8" />
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
       {title}
     </h3>
@@ -149,9 +148,7 @@ const DifferentiatorCard = ({ title, description, icon: Icon, idx }: { title: st
     transition={{ delay: idx * 0.1 }}
     className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full"
   >
-    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 text-accent">
-      <Icon className="w-6 h-6" />
-    </div>
+    <SectionIcon icon={Icon} size="md" className="mb-6" hover="none" />
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
       {title}
     </h3>

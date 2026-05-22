@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   Users,
   ArrowRight,
@@ -52,9 +53,7 @@ const DifferentiatorCard = ({ title, description, idx }: { title: string; descri
     transition={{ delay: idx * 0.1 }}
     className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full"
   >
-    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-      <CheckCircle2 className="w-6 h-6 text-accent" />
-    </div>
+    <SectionIcon icon={CheckCircle2} size="md" className="mb-6" hover="none" />
     <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
       {title}
     </h3>

@@ -2,6 +2,7 @@ import { motion, useInView, useMotionValue, useSpring, AnimatePresence } from "m
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   LineChart,
   Boxes,
@@ -284,9 +285,7 @@ export const FMCGAnalyticsPage = () => {
                 transition={{ delay: i * 0.1 }}
                 className="p-10 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 rounded-[2.5rem] group hover:bg-accent/5 transition-all flex flex-col text-left"
               >
-                <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <module.icon className="w-6 h-6" />
-                </div>
+                <SectionIcon icon={module.icon} size="md" className="mb-6" />
                 <h3 className="text-[20px] font-bold text-brand-950 dark:text-white mb-3 tracking-tight group-hover:text-accent transition-colors">
                   {module.title}
                 </h3>

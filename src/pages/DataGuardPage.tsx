@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import type { LucideIcon } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   Activity,
   ClipboardCheck,
@@ -110,9 +111,7 @@ const UseCaseCard = ({
 
     <div className="mt-auto border-t border-slate-100 pt-6 dark:border-white/5">
       <div className="flex items-center gap-3">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent/10">
-          <Target className="h-4 w-4 text-accent" />
-        </div>
+        <SectionIcon icon={Target} size="sm" hover="none" />
         <p className="text-[13px] font-bold italic text-brand-950 dark:text-white">
           <span className="mr-2 uppercase tracking-wider text-accent not-italic">Outcome:</span>
           {outcome}
@@ -647,9 +646,7 @@ export const DataGuardPage = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="group rounded-[2.5rem] border border-slate-100 bg-white p-8 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
                 >
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent transition-transform group-hover:scale-110">
-                    <Icon className="h-6 w-6" />
-                  </div>
+                  <SectionIcon icon={Icon} size="md" className="mb-6" />
                   <div className="mb-2 text-[11px] font-black uppercase tracking-[0.2em] text-accent/50">
                     Step 0{idx + 1}
                   </div>

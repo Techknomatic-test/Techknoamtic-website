@@ -8,6 +8,7 @@ import {
   Target,
 } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 
 const CUSTOMER_STORIES_BASE = "Images/customerstories";
 
@@ -113,9 +114,7 @@ export const CustomerStoriesPage = () => {
               >
                 <div className="p-10 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-8">
-                    <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                      <story.icon className="w-6 h-6" />
-                    </div>
+                    <SectionIcon icon={story.icon} size="md" hover="none" />
                     <span className="px-3 py-1 bg-slate-50 dark:bg-brand-950/50 rounded-full text-[9px] font-black tracking-widest text-brand-950 dark:text-white uppercase border border-slate-100 dark:border-white/10">
                       {story.tag}
                     </span>

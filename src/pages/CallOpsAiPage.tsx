@@ -1,6 +1,7 @@
 import type { ComponentType } from "react";
 import { motion } from "motion/react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import {
   PhoneCall,
   Sparkles,
@@ -44,9 +45,7 @@ const CapabilityCard = ({
     transition={{ delay }}
     className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full text-left"
   >
-    <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
-      <Icon className="w-6 h-6" />
-    </div>
+    <SectionIcon icon={Icon} size="md" className="mb-6" />
     <div className="flex-1">
       <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
         {title}
@@ -106,9 +105,7 @@ const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: 
 
     <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-          <Target className="w-4 h-4 text-accent" />
-        </div>
+        <SectionIcon icon={Target} size="sm" hover="none" />
         <p className="text-[13px] font-bold text-brand-950 dark:text-white">
           <span className="text-accent uppercase tracking-wider mr-2">Outcome:</span>
           {outcome}
@@ -600,9 +597,7 @@ export const CallOpsAIPage = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6" />
-                  </div>
+                  <SectionIcon icon={Icon} size="md" className="mb-6" hover="none" />
                   <div className="text-[11px] font-black tracking-[0.2em] text-accent/50 uppercase mb-2">Step 0{idx + 1}</div>
                   <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left capitalize">
                     {step.title}
