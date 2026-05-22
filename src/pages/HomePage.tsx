@@ -45,6 +45,7 @@ import {
   Plane,
   Cpu,
   PhoneCall,
+  Ticket,
 } from "lucide-react";
 import { useRef, useState, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -942,7 +943,7 @@ const SolutionsSection = () => {
       category: "Insurance",
       title: "Insurance Analytics",
       description:
-        "360° view across claims, policy performance, agents, and fraud trends. 22% reduction in claim turnaround on average.",
+        "360° view across claims, policy performance, agents, and fraud trends. significant reduction in claim turnaround on average.",
       moreLabel: "View Solution",
       imageUrl: "Images/12437.jpg",
       dark: false,
@@ -952,7 +953,7 @@ const SolutionsSection = () => {
       category: "Oil & Gas",
       title: "Oil & Gas Analytics",
       description:
-        "Refinery operations, asset performance, energy monitoring, and safety, SCADA-integrated. 18% downtime reduction.",
+        "Refinery operations, asset performance, energy monitoring, and safety, SCADA-integrated. significant downtime reduction.",
       moreLabel: "View Solution",
       imageUrl: OIL_GAS_CARD_IMG,
       dark: false,
@@ -1095,7 +1096,7 @@ const AcceleratorsSection = () => {
       title: "TicketIQ, AI-Powered Autonomous IT Support Platform",
       desc: "Automates ticket triaging, resolutions, and IT service workflows using Agentic AI, enabling near zero-touch L1 support operations while reducing resolution time and operational overhead",
       cta: "Explore TicketIQ",
-      icon: Sparkles,
+      icon: Ticket,
       href: "/agentic-ai-itsm",
     },
     {
@@ -1185,11 +1186,15 @@ const AcceleratorsSection = () => {
         </motion.div>
       </div>
       <div className="absolute inset-0 z-[1] bg-black/60 pointer-events-none" />
-      <div className="max-w-7xl mx-auto relative z-10 px-6">
-        <div className="mb-16">
+      <div
+        className="max-w-6xl mx-auto relative z-10 px-6"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="mb-16 text-left">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
@@ -1203,14 +1208,6 @@ const AcceleratorsSection = () => {
             </p>
           </motion.div>
         </div>
-
-      </div>
-
-      <div
-        className="relative z-10 max-w-7xl mx-auto px-6"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
         <div className="overflow-hidden">
           <motion.div
             animate={{
@@ -1222,7 +1219,10 @@ const AcceleratorsSection = () => {
             className="flex items-stretch"
           >
             {allAccelerators.map((acc, i) => (
-              <div key={i} className="w-full md:w-1/3 shrink-0 px-3">
+              <div
+                key={i}
+                className={`w-full md:w-1/3 shrink-0 ${i === 0 ? "pr-3" : "px-3"}`}
+              >
                 <AcceleratorCard acc={acc} />
               </div>
             ))}
@@ -1274,7 +1274,7 @@ const TestimonialsSection = () => {
       headline: "On time. Every time.",
       name: "Devesh K",
       role: "Delivery Manager, ITSM Sector",
-      company: "Tech Mahindra Arabia (ITSM Sector, KSA)",
+      company: "Tech Mahindra (ITSM Sector, KSA)",
       location: "Saudi Arabia",
       text: "Across a 15-month engagement covering data modelling, ETL, and full BI rollout, Techknomatic never missed a milestone. Their technical depth matched their professionalism — a rare combination at enterprise scale.",
     },
@@ -1308,7 +1308,7 @@ const TestimonialsSection = () => {
       role: "Founder",
       company: "Aintisar Technology L.L.C.",
       location: "UAE",
-      text: "Before CXO Nexus, our data was scattered across systems. Now we have a unified platform with real-time visibility into sales trends, operational performance, and overall business health ,simplifying reporting and enabling faster, more confident decisions. I'd highly recommend Techknomatic to any organization looking for a single source of truth.",
+      text: "Before CXO Nexus, our data was scattered across systems. Now we have a unified platform with real-time visibility into sales trends, operational performance, and overall business health ,simplifying reporting and enabling faster, more confident decisions.",
     },
   ];
 
@@ -1344,14 +1344,7 @@ const TestimonialsSection = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -mr-48 -mt-48" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-8 max-w-2xl text-left">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[10px] font-black tracking-[0.3em] text-accent bg-accent/10 rounded-full border border-accent/20"
-            >
-              Testimonials
-            </motion.div>
+           
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1367,7 +1360,7 @@ const TestimonialsSection = () => {
               className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-xl"
             >
               We measure our success by the growth and clarity we bring to our
-              partners across the globe.
+              partners and customers across the globe.
             </motion.p>
         </div>
 
@@ -1674,14 +1667,7 @@ const ClientSlider = () => {
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-brand-950 to-transparent z-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 mb-8">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-[10px] font-black tracking-[0.2em] text-accent bg-accent/5 rounded-full"
-            >
-              Global Reach
-            </motion.div>
+            
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
