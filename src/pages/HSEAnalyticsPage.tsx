@@ -213,7 +213,7 @@ export const HSEAnalyticsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               What We Solve
             </motion.h3>
@@ -230,7 +230,7 @@ export const HSEAnalyticsPage = () => {
       <section className="py-[40px] bg-slate-50 dark:bg-brand-900 transition-colors duration-500 px-6 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-10">
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight">
+            <h2 className="section-heading">
               HSE Analytics Dashboard Modules
             </h2>
           </div>
@@ -263,7 +263,7 @@ export const HSEAnalyticsPage = () => {
       <section className="py-[40px] bg-white dark:bg-brand-950 px-6 overflow-hidden text-left">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-10">
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
+            <h2 className="section-heading">
               Integration & Scalability
             </h2>
           </div>
@@ -329,7 +329,7 @@ export const HSEAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               Business Impact
             </motion.h2>
@@ -364,7 +364,7 @@ export const HSEAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
+              className="section-heading-on-dark mb-6"
             >
               Delivery Approach
             </motion.h2>

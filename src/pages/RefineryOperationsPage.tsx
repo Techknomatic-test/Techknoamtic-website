@@ -295,7 +295,7 @@ export const RefineryOperationsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               What We Solve
             </motion.h3>
@@ -317,7 +317,7 @@ export const RefineryOperationsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               Oil & Gas Analytics Modules
             </motion.h3>
@@ -339,7 +339,7 @@ export const RefineryOperationsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               SCADA & Process Integration
             </motion.h3>
@@ -427,7 +427,7 @@ export const RefineryOperationsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               Use Cases
             </motion.h2>

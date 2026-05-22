@@ -471,7 +471,7 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-6 text-2xl font-medium tracking-tight text-white/90 md:text-3xl"
+              className="section-heading-on-dark mb-6"
             >
               Unified IT Operations Visibility Across Every ITSM Tool
             </motion.h2>
@@ -567,7 +567,7 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6 text-3xl font-medium leading-[1.1] tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading mb-6"
             >
               What InsightSM Solves
             </motion.h2>
@@ -608,7 +608,7 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-4 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading mb-4"
             >
               Industries We Serve
             </motion.h2>
@@ -638,7 +638,7 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading mb-8"
             >
               How InsightSM Works
             </motion.h2>
@@ -695,7 +695,7 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading mb-6"
             >
               Built to Plug Into Your Enterprise IT Stack
             </motion.h2>
@@ -735,7 +735,7 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading"
             >
               Use Cases
             </motion.h2>

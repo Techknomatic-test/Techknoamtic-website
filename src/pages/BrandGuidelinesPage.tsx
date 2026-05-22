@@ -159,7 +159,7 @@ const BrandGuidelinesPage = () => {
                   <div className="p-2 bg-accent/10 rounded-lg">
                     <Activity className="w-5 h-5 text-accent" />
                   </div>
-                  <h2 className="text-2xl font-bold text-brand-950 dark:text-white tracking-tight uppercase">Logo Usage</h2>
+                  <h2 className="section-heading uppercase">Logo Usage</h2>
                 </div>
                 <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
                   The Techknomatic logo represents the intersection of data (Activity icon) and human-centric engineering. It should be used consistently to build brand recognition and trust.
@@ -220,7 +220,7 @@ const BrandGuidelinesPage = () => {
                 <div className="p-2 bg-accent/10 rounded-lg text-accent">
                   <Palette className="w-5 h-5" />
                 </div>
-                <h2 className="text-2xl font-bold text-brand-950 dark:text-white tracking-tight uppercase">Color Palette</h2>
+                <h2 className="section-heading uppercase">Color Palette</h2>
               </div>
               <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
                 Our colors are rooted in trust and energy. Deep navy provides stability, while vibrant orange brings dynamic energy to actionable elements.
@@ -271,7 +271,7 @@ const BrandGuidelinesPage = () => {
                 <div className="p-2 bg-accent/10 rounded-lg text-accent">
                   <Type className="w-5 h-5" />
                 </div>
-                <h2 className="text-2xl font-bold text-brand-950 dark:text-white tracking-tight uppercase">Typography</h2>
+                <h2 className="section-heading uppercase">Typography</h2>
               </div>
               <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
                 Clean, legible, and authoritative. Our primary typeface is Inter, designed for maximum clarity across all digital interfaces.
@@ -304,7 +304,7 @@ const BrandGuidelinesPage = () => {
                     <div className="flex items-end justify-between border-b border-slate-100 dark:border-white/5 pb-4">
                       <div>
                         <span className="text-[10px] font-black uppercase tracking-widest text-accent block mb-2">Heading 2</span>
-                        <h2 className="text-4xl font-bold tracking-tight text-brand-950 dark:text-white">Section Title</h2>
+                        <h2 className="section-heading">Section Title</h2>
                       </div>
                       <span className="text-[11px] font-mono text-slate-400">40PX / 1.2LH / BOLD</span>
                     </div>
@@ -380,7 +380,7 @@ const BrandGuidelinesPage = () => {
               <div className="p-2 bg-accent/10 rounded-lg text-accent">
                 <MousePointer2 className="w-5 h-5" />
               </div>
-              <h2 className="text-2xl font-bold text-brand-950 dark:text-white tracking-tight uppercase">Interactive Elements</h2>
+              <h2 className="section-heading uppercase">Interactive Elements</h2>
             </div>
           </div>
 

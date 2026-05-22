@@ -222,7 +222,7 @@ export const HRPortalPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               Core Solutions
             </motion.h3>
@@ -239,7 +239,7 @@ export const HRPortalPage = () => {
       <section className="py-24 px-6 bg-[#F8F9FA] dark:bg-brand-900 transition-colors duration-500">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4">
+            <h2 className="section-heading mb-4">
               Portal Modules
             </h2>
           </div>
@@ -277,7 +277,7 @@ export const HRPortalPage = () => {
       <section className="py-24 px-6 bg-white dark:bg-brand-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
+            <h2 className="section-heading">
               Platform Features
             </h2>
           </div>
@@ -338,7 +338,7 @@ export const HRPortalPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               Proven Impact
             </motion.h2>
@@ -373,7 +373,7 @@ export const HRPortalPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
+              className="section-heading-on-dark mb-6"
             >
               Delivery Approach
             </motion.h2>

@@ -400,7 +400,7 @@ export const GeospatialPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
+              className="section-heading mb-4"
             >
               What We Offer
             </motion.h2>
@@ -430,7 +430,7 @@ export const GeospatialPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6"
+              className="section-heading mb-6"
             >
               Tools & Technology
             </motion.h2>
@@ -486,7 +486,7 @@ export const GeospatialPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
+              className="section-heading-on-dark mb-6"
             >
               Our Approach
             </motion.h2>
@@ -517,7 +517,7 @@ export const GeospatialPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
+              className="section-heading mb-4"
             >
               Why Techknomatic for Geospatial Analytics
             </motion.h2>
@@ -547,7 +547,7 @@ export const GeospatialPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>

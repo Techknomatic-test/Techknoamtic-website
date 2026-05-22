@@ -40,7 +40,7 @@ export const PreFooterCTA = ({ className }: PreFooterCTAProps = {}) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-6xl font-normal text-brand-950 dark:text-white tracking-tight leading-[1.1] mb-12"
+          className="section-heading mb-12"
         >
           Tell us about your challenge. <br />
           We'll tell you exactly how we'd approach it

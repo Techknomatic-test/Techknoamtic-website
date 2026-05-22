@@ -641,7 +641,7 @@ export const AssistIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               What AssistIQ Solves
             </motion.h2>
@@ -685,7 +685,7 @@ export const AssistIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               Industries We Serve
             </motion.h2>
@@ -716,7 +716,7 @@ export const AssistIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               How AssistIQ Works
             </motion.h2>
@@ -776,7 +776,7 @@ export const AssistIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               Built to Plug Into Your Customer-Experience Stack
             </motion.h2>
@@ -830,7 +830,7 @@ export const AssistIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               Use Cases
             </motion.h2>

@@ -37,7 +37,7 @@ export const JobDescriptionPage = () => {
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Opportunities
           </Link>
-          <h1 className="text-3xl md:text-4xl font-bold text-brand-950 dark:text-white mb-4">
+          <h1 className="section-heading mb-4">
             Role not found
           </h1>
           <p className="text-slate-500 dark:text-slate-400 font-medium mb-8">
@@ -69,7 +69,7 @@ export const JobDescriptionPage = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[10px] font-black tracking-[0.3em] text-accent uppercase bg-accent/10 rounded-full border border-accent/20">
             Open Position
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-950 dark:text-white tracking-tight mb-8">
+          <h1 className="section-heading mb-8">
             {jobDetails.title}
           </h1>
           <div className="flex flex-wrap gap-8">
@@ -101,7 +101,7 @@ export const JobDescriptionPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 space-y-16">
             <section>
-              <h2 className="text-2xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight flex items-center gap-3">
+              <h2 className="section-heading mb-6 flex items-center gap-3">
                 <span className="w-8 h-1 bg-accent rounded-full" />
                 Job Description
               </h2>
@@ -111,7 +111,7 @@ export const JobDescriptionPage = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight flex items-center gap-3">
+              <h2 className="section-heading mb-6 flex items-center gap-3">
                 <span className="w-8 h-1 bg-accent rounded-full" />
                 About the role
               </h2>
@@ -121,7 +121,7 @@ export const JobDescriptionPage = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-brand-950 dark:text-white mb-8 tracking-tight flex items-center gap-3">
+              <h2 className="section-heading mb-8 flex items-center gap-3">
                 <span className="w-8 h-1 bg-accent rounded-full" />
                 Responsibilities
               </h2>
@@ -143,7 +143,7 @@ export const JobDescriptionPage = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-brand-950 dark:text-white mb-8 tracking-tight flex items-center gap-3">
+              <h2 className="section-heading mb-8 flex items-center gap-3">
                 <span className="w-8 h-1 bg-accent rounded-full" />
                 Job Requirement
               </h2>

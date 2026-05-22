@@ -266,7 +266,7 @@ export const AirlinesAnalyticsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               What We Solve
             </motion.h3>
@@ -287,7 +287,7 @@ export const AirlinesAnalyticsPage = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight"
+              className="section-heading"
             >
               Core Analytics Modules.
             </motion.h2>
@@ -335,7 +335,7 @@ export const AirlinesAnalyticsPage = () => {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 leading-tight"
+                className="section-heading mb-8 leading-tight"
               >
                 Unified Ecosystem.
                 <br />
@@ -402,7 +402,7 @@ export const AirlinesAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               Business Impact
             </motion.h2>
@@ -437,7 +437,7 @@ export const AirlinesAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
+              className="section-heading-on-dark mb-6"
             >
               Delivery Approach
             </motion.h2>
@@ -502,7 +502,7 @@ export const AirlinesAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
+              className="section-heading uppercase"
             >
               USE CASES
             </motion.h2>

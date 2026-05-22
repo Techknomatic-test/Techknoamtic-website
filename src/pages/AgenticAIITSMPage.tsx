@@ -640,7 +640,7 @@ export const AgenticAIITSMPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               What TicketIQ Solves
             </motion.h2>
@@ -684,7 +684,7 @@ export const AgenticAIITSMPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               Industries We Serve
             </motion.h2>
@@ -716,7 +716,7 @@ export const AgenticAIITSMPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               How TicketIQ Works
             </motion.h2>
@@ -775,7 +775,7 @@ export const AgenticAIITSMPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               Built To Plug Into Your Enterprise IT Stack
             </motion.h2>
@@ -829,7 +829,7 @@ export const AgenticAIITSMPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               Use Cases
             </motion.h2>

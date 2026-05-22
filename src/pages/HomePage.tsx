@@ -915,7 +915,7 @@ const ServicesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight"
+            className="section-heading"
           >
             End-to-End Analytics. <br />
             One Strategic Partner
@@ -989,7 +989,7 @@ const SolutionsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight"
+            className="section-heading"
           >
             Built For Your Industry
             <br />
@@ -1188,7 +1188,7 @@ const AcceleratorsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-6xl font-medium text-white tracking-tight mb-6 leading-tight">
+            <h2 className="section-heading-on-dark mb-6">
               Go Faster With Our Accelerators
             </h2>
             <div className="w-12 h-1 bg-accent mb-6" />
@@ -1351,7 +1351,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-4"
+              className="section-heading mb-4"
             >
               Voices of Impact
             </motion.h2>
@@ -1492,7 +1492,7 @@ const WhyUsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-6xl font-medium text-brand-950 dark:text-white tracking-tight mb-8 leading-tight">
+            <h2 className="section-heading mb-8">
               Why Enterprises <br />
               Choose Techknomatic
             </h2>
@@ -1682,7 +1682,7 @@ const ClientSlider = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-brand-950 dark:text-white tracking-tight"
+          className="section-heading"
         >
           Trusted By Industry Leaders.
         </motion.h2>

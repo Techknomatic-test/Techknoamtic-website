@@ -440,7 +440,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-6 text-2xl font-medium tracking-tight text-white md:text-3xl"
+              className="section-heading-on-dark mb-6"
             >
               Trusted Data. Intelligent Validation. Autonomous Data Operations.
             </motion.h2>
@@ -542,7 +542,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading mb-8"
             >
               What DataPulseIQ Solves
             </motion.h2>
@@ -586,7 +586,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading mb-8"
             >
               Industries We Serve
             </motion.h2>
@@ -617,7 +617,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading mb-8"
             >
               How DataPulseIQ Works
             </motion.h2>
@@ -673,7 +673,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading mb-8"
             >
               Built to Plug Into Your Enterprise Data Stack
             </motion.h2>
@@ -732,7 +732,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8 text-3xl font-medium tracking-tight text-brand-950 dark:text-white md:text-5xl"
+              className="section-heading mb-8"
             >
               Use Cases
             </motion.h2>

@@ -217,7 +217,7 @@ export const HealthcareAnalyticsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               Healthcare Analytics Capabilities
             </motion.h3>
@@ -238,7 +238,7 @@ export const HealthcareAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
+              className="section-heading-on-dark mb-6"
             >
               Delivery Approach
             </motion.h2>
@@ -297,7 +297,7 @@ export const HealthcareAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight uppercase"
+              className="section-heading uppercase"
             >
               USE CASES
             </motion.h2>

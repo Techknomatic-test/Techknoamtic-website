@@ -146,7 +146,7 @@ const DifferentSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight"
+            className="section-heading"
           >
             What Makes Us Different
           </motion.h2>
@@ -278,7 +278,7 @@ export const AboutUsPage = () => {
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-16">
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
+            <h2 className="section-heading mb-8">
               Our Culture and Values
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-4xl">
@@ -319,7 +319,7 @@ export const AboutUsPage = () => {
       {/* 4. Life at Techknomatic (Auto-Slider + Team Gallery) */}
       <section className="py-[40px] bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-5 text-left">
-          <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight">
+          <h2 className="section-heading">
             Life at <span className="text-accent">Techknomatic</span>
           </h2>
         </div>

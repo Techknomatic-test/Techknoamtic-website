@@ -129,7 +129,7 @@ const OEMSection = () => {
     <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16 text-left">
-          <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
+          <h2 className="section-heading mb-8">
             Our OEM Alliances.
           </h2>
           <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
@@ -220,7 +220,7 @@ const MarketSection = () => {
             >
               Global Network
             </motion.div>
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight leading-tight mb-8">
+            <h2 className="section-heading mb-8">
               Our Global Market Presence Through Partners.
             </h2>
             <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-none">

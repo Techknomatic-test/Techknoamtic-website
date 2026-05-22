@@ -365,7 +365,7 @@ export const DataEngineeringPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               What We Offer
             </motion.h3>
@@ -386,7 +386,7 @@ export const DataEngineeringPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6"
+              className="section-heading mb-6"
             >
               Tools & Technology
             </motion.h2>
@@ -441,7 +441,7 @@ export const DataEngineeringPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6"
+              className="section-heading-on-dark mb-6"
             >
               Our Approach
             </motion.h2>
@@ -472,7 +472,7 @@ export const DataEngineeringPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
+              className="section-heading mb-4"
             >
               Why Techknomatic for Data Engineering
             </motion.h2>
@@ -502,7 +502,7 @@ export const DataEngineeringPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               Use Cases
             </motion.h2>

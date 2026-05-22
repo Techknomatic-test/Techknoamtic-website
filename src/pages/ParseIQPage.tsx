@@ -383,7 +383,7 @@ export const ParseIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-4"
+              className="section-heading mb-4"
             >
               What ParseIQ Solves
             </motion.h2>
@@ -404,7 +404,7 @@ export const ParseIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6"
+              className="section-heading mb-6"
             >
               How ParseIQ Works
             </motion.h2>
@@ -460,7 +460,7 @@ export const ParseIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-4"
+              className="section-heading-on-dark mb-4"
             >
               System & Process Integration
             </motion.h2>
@@ -490,7 +490,7 @@ export const ParseIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight"
+              className="section-heading"
             >
               Use Cases
             </motion.h2>

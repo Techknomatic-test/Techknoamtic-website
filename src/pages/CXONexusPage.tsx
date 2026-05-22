@@ -597,7 +597,7 @@ export const CXONexusPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               What CXO Nexus Solves
             </motion.h2>
@@ -641,7 +641,7 @@ export const CXONexusPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               Industries We Serve
             </motion.h2>
@@ -673,7 +673,7 @@ export const CXONexusPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               How CXO Nexus Works
             </motion.h2>
@@ -729,7 +729,7 @@ export const CXONexusPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               Built to Plug Into Your Enterprise Data & Knowledge Stack
             </motion.h2>
@@ -782,7 +782,7 @@ export const CXONexusPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-8"
+              className="section-heading mb-8"
             >
               Use Cases
             </motion.h2>

@@ -260,7 +260,7 @@ export const ContactPage = () => {
       <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-20">
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-brand-950 dark:text-white leading-tight mb-6">
+            <h2 className="section-heading mb-6">
               Why leading teams reach out to{" "}
               <span className="text-accent">Techknomatic</span>
             </h2>
@@ -316,7 +316,7 @@ export const ContactPage = () => {
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-medium text-brand-950 dark:text-white tracking-tight mb-6">
+            <h2 className="section-heading mb-6">
               Tell Us About Your Requirement
             </h2>
             <p className="text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto">
@@ -437,7 +437,7 @@ export const ContactPage = () => {
         />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-white tracking-tight">
+            <h2 className="section-heading-on-dark">
               Trusted by Data-Driven Teams Across Industries
             </h2>
           </div>
@@ -550,7 +550,7 @@ export const ContactPage = () => {
             {/* Offices List */}
             <div className="lg:w-[65%]">
               <div className="mb-14 pt-4">
-                <h2 className="text-[48px] font-medium text-brand-950 dark:text-white tracking-tight mb-4 leading-none">
+                <h2 className="section-heading mb-4">
                   Our Presence.
                 </h2>
                 <p className="text-[20px] text-slate-500 dark:text-slate-400 font-medium">
