@@ -62,6 +62,7 @@ import { scrollToElement } from "../utils/scrollToElement";
 
 /** Public asset: public/Images/home/oil-gas-card.png (copy of Oil&gas1 (1).png) */
 const OIL_GAS_CARD_IMG = `${import.meta.env.BASE_URL}Images/home/oil-gas-card.png`;
+const INSURANCE_ANALYTICS_CARD_IMG = `${import.meta.env.BASE_URL}Images/home/InsuranceAnalytics.jpg`;
 
 const NetworkMap = () => {
   const chartData = [
@@ -950,7 +951,7 @@ const SolutionsSection = () => {
       description:
         "360° view across claims, policy performance, agents, and fraud trends. significant reduction in claim turnaround on average.",
       moreLabel: "View Solution",
-      imageUrl: "Images/12437.jpg",
+      imageUrl: INSURANCE_ANALYTICS_CARD_IMG,
       dark: false,
       href: "/insurance-analytics",
     },
