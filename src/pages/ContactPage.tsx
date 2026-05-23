@@ -393,62 +393,6 @@ export const ContactPage = () => {
         </div>
       </section>
 
-      {/* 4. Trusted Statistics (Dark Section) */}
-      <section className="py-[60px] bg-[#050a14] dark:bg-brand-950 px-6 relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage: "radial-gradient(#f17e21 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="section-heading-on-dark">
-              Trusted by Data-Driven Teams Across Industries
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
-            <div className="text-center">
-              <SectionIcon icon={FolderCheck} size="lg" className="mx-auto mb-6" hover="none" />
-              <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
-                <Counter value={1000} suffix="+" />
-              </div>
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
-                Projects Delivered
-              </p>
-            </div>
-            <div className="text-center">
-              <SectionIcon icon={LayoutDashboard} size="lg" className="mx-auto mb-6" hover="none" />
-              <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
-                <Counter value={20000} suffix="+" />
-              </div>
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
-                Dashboards Built
-              </p>
-            </div>
-            <div className="text-center">
-              <SectionIcon icon={Globe} size="lg" className="mx-auto mb-6" hover="none" />
-              <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
-                <Counter value={25} suffix="+" />
-              </div>
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
-                Industries Served
-              </p>
-            </div>
-            <div className="text-center">
-              <SectionIcon icon={Clock} size="lg" className="mx-auto mb-6" hover="none" />
-              <div className="text-3xl sm:text-4xl font-medium text-white mb-3">
-                <Counter value={500000} suffix="+" />
-              </div>
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
-                Consulting Hours
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 5. Presence / Locations Section */}
       <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -533,15 +477,15 @@ export const ContactPage = () => {
                   },
                   {
                     title: "Oman",
-                    address: "Alkhuwair, Muscat, Muscat, Sultanate of Oman",
+                    address: "Oasis Mall, Alkhuwair, Muscat, Sultanate of Oman",
                     country: "OM",
                     flag: "🇴🇲"
                   },
                   {
                     title: "Dubai",
                     address: "Office # E-84 AL Aber Real Estate Building 01, ABU Hail, Dubai P.O. Box: 85031",
-                    country: "AE",
-                    flag: "🇦🇪"
+                    country: "UAE",
+                    flag: "U🇦🇪"
                   },
                 ].map((office, idx) => (
                   <div
