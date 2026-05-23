@@ -510,7 +510,7 @@ export const ContactPage = () => {
             <div className="lg:w-[65%]">
               <div className="mb-14 pt-4">
                 <h2 className="section-heading mb-4">
-                  Our Presence.
+                  Our Presence
                 </h2>
                 <p className="text-[20px] text-slate-500 dark:text-slate-400 font-medium">
                   Serving clients globally across India, Middle East, and APAC
@@ -521,7 +521,7 @@ export const ContactPage = () => {
                 {[
                   {
                     title: "India",
-                    address: "3rd Floor, Signet Corner, Baner, Pune - 411045",
+                    address: "3rd & 4th Floor, Signet Corner, Baner, Pune - 411045",
                     country: "IN",
                     flag: "🇮🇳"
                   },
