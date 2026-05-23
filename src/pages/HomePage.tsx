@@ -1358,10 +1358,10 @@ const TestimonialsSection = () => {
     setActiveIndex((prev) => (prev >= totalSlides ? 0 : prev + 1));
 
   return (
-    <section className="py-[40px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden relative">
+    <section className="py-[40px] bg-slate-50 dark:bg-brand-900 transition-colors duration-500 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -mr-48 -mt-48" />
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-8 max-w-2xl text-left">
+      <div className="max-w-6xl mx-auto relative z-10 px-6">
+        <div className="mb-16 text-left">
            
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -1375,7 +1375,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-2xl leading-relaxed"
             >
               We measure our success by the growth and clarity we bring to our
               partners and customers across the globe.
