@@ -346,7 +346,7 @@ const HeroVisual = ({ index }: { index: number }) => {
           <div className="flex items-center gap-3 mb-2">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-[10px] font-black tracking-widest text-slate-400">
-              Live Feedback
+              Live Revenue
             </span>
           </div>
           <div className="text-xl font-black text-brand-950 dark:text-white">
@@ -393,10 +393,10 @@ const HeroVisual = ({ index }: { index: number }) => {
               <SectionIcon icon={BarChart3} size="xs" hover="none" />
               <div>
                 <h4 className="text-[10px] font-black tracking-[0.2em] text-slate-400">
-                  Insight Architecture
+                  Revenue Intelligence
                 </h4>
                 <div className="text-lg font-bold text-brand-950 dark:text-white">
-                  Global Flux
+                  Revenue Analytics
                 </div>
               </div>
             </div>
