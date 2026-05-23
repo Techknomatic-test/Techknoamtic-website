@@ -855,7 +855,7 @@ const ServiceCard = ({
             to={service.href || "#"} 
             className="flex items-center gap-3 transition-all duration-500 text-accent group-hover/btn:translate-x-1"
           >
-            <span className="text-[11px] font-black uppercase tracking-widest">
+            <span className="text-[11px] font-medium uppercase tracking-widest">
               Know More
             </span>
             <ArrowRight className="w-4 h-4" />
@@ -1292,7 +1292,7 @@ const TestimonialsSection = () => {
       headline: "On time. Every time.",
       name: "Devesh K",
       role: "Delivery Manager, ITSM Sector",
-      company: "Tech Mahindra (ITSM Sector, KSA)",
+      company: "Tech Mahindra",
       location: "Saudi Arabia",
       text: "Across a 15-month engagement covering data modelling, ETL, and full BI rollout, Techknomatic never missed a milestone. Their technical depth matched their professionalism — a rare combination at enterprise scale.",
     },
