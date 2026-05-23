@@ -345,10 +345,10 @@ export const AboutUsPage = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="mb-5 text-left">
-            <h3 className="text-2xl md:text-3xl font-bold text-brand-950 dark:text-white tracking-tight">
+          <div className="mb-8 text-left">
+            <h2 className="section-heading">
               Our Leadership & Team
-            </h3>
+            </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-100 dark:border-white/5">
             {[
