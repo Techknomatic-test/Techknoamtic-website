@@ -4,14 +4,10 @@ import { PreFooterCTA } from "../components/PreFooterCTA";
 import { SectionIcon } from "../components/SectionIcon";
 import {
   ShieldCheck,
-  Target,
   Zap,
   ChevronDown,
   ChevronUp,
   Activity,
-  Droplets,
-  Factory,
-  ShoppingBag,
   LucideIcon,
   TrendingUp,
   LayoutDashboard,
@@ -174,61 +170,54 @@ const ApproachStep = ({
 );
 
 const UseCaseCard = ({
-  industry,
+  title,
   subtitle,
   crux,
-  examples,
-  outcome,
-  icon: Icon,
+  industries,
+  impact,
 }: {
-  industry: string;
+  title: string;
   subtitle: string;
   crux: string;
-  examples: string;
-  outcome: string;
-  icon: LucideIcon;
+  industries: string;
+  impact: string;
 }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group text-left h-full flex flex-col"
   >
-    <div className="flex items-center gap-4 mb-6">
-      <SectionIcon icon={Icon} size="md" hover="none" />
-      <div className="text-left">
-        <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">
-          {industry}
-        </h3>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase">Industry</h4>
-      </div>
-    </div>
-
-    <p className="text-[15px] font-bold text-brand-950/70 dark:text-white/70 mb-8 leading-snug text-left">
+    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-2 leading-tight group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    <p className="text-[15px] font-bold text-brand-950/80 dark:text-white/80 mb-8 leading-snug">
       {subtitle}
     </p>
 
-    <div className="space-y-6 flex-1 mb-10 text-left">
+    <div className="space-y-6 flex-1">
       <div>
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
       </div>
-      <div>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
-          Dashboards
-        </h4>
-        <p className="text-[13px] font-bold text-brand-950 dark:text-white">{examples}</p>
-      </div>
-    </div>
-
-    <div className="mt-auto pt-8 border-t border-slate-100 dark:border-white/5 text-left">
-      <div className="flex items-center gap-3">
-        <SectionIcon icon={Target} size="sm" hover="none" />
-        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
-          <span className="text-accent uppercase tracking-wider mr-2 not-italic">Outcome:</span>
-          {outcome}
-        </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
+            Industries
+          </h4>
+          <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
+            {industries}
+          </p>
+        </div>
+        <div>
+          <h4 className="text-[11px] font-black tracking-widest text-green-600 uppercase mb-3">
+            Impact
+          </h4>
+          <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
+            {impact}
+          </p>
+        </div>
       </div>
     </div>
   </motion.div>
@@ -366,44 +355,48 @@ export const BIServicesPage = () => {
 
   const useCases = [
     {
-      industry: "Insurance",
+      title: "Insurance Performance & Claims Intelligence Analytics",
       subtitle: "Enterprise-wide visibility across claims, underwriting, and risk.",
-      crux: "Unified executive dashboards for claims settlement efficiency, premium leakage analysis, and agent performance to improve operational transparency.",
-      examples: "Claims TAT · Loss Ratio Monitoring · Underwriting Productivity · Renewal Trends",
-      outcome: "Improved claims efficiency · Better underwriting control",
-      icon: ShieldCheck,
+      crux: "Unify claims, policy, and customer data into an executive performance cockpit for insurance leaders. Bring together settlement timelines, premium quality indicators, and agent productivity signals to strengthen oversight of claims operations and underwriting effectiveness.",
+      industries:
+        "Insurance · InsurTech · Health Insurance · General Insurance · Bancassurance",
+      impact:
+        "Significantly improved claims efficiency · Stronger underwriting control · Enhanced operational transparency",
     },
     {
-      industry: "ITSM & IT Ops",
+      title: "ITSM & IT Ops Performance & Service Reliability Analytics",
       subtitle: "Real-time operational intelligence for enterprise IT services.",
-      crux: "Centralized platforms monitoring SLA adherence, ticket lifecycle, and incident trends to proactively identify bottlenecks in service delivery.",
-      examples: "SLA Compliance · Incident Trends · MTTR Analysis · Change Success Rate",
-      outcome: "Higher SLA adherence · Faster issue resolution",
-      icon: Activity,
+      crux: "Consolidate SLA metrics, ticket lifecycle data, and incident patterns into a unified IT operations intelligence layer. Track adherence to service commitments, identify recurring failure themes, and surface high-risk changes to proactively strengthen service reliability and user experience.",
+      industries:
+        "Technology Services · Managed Services · Telecom · SaaS Providers · Enterprise IT",
+      impact:
+        "Remarkably higher SLA adherence · Realtime SLA reporting · Stronger service reliability",
     },
     {
-      industry: "Oil & Gas",
-      subtitle: "Operational visibility across Midstream and downstream functions.",
-      crux: "Advanced analytics for production monitoring, drilling performance, and asset utilization to optimize field operations and reduce downtime.",
-      examples: "Production KPIs · Refinery Performance · Asset Utilization · HSE Compliance",
-      outcome: "Reduced downtime · Enhanced compliance visibility",
-      icon: Droplets,
+      title: "Oil & Gas Production & Operations Performance Analytics",
+      subtitle: "Operational visibility across midstream and downstream functions.",
+      crux: "Integrate production KPIs, drilling performance, asset utilization, and safety metrics into a comprehensive operational performance view. Enable operations teams to spot underperforming assets, understand process bottlenecks, and align field activities to more reliable, compliant production outcomes.",
+      industries:
+        "Oil & Gas · Energy · Petrochemicals · Refining · Pipeline Operations",
+      impact: "Enhanced compliance visibility · Optimized asset utilization",
     },
     {
-      industry: "Manufacturing",
-      subtitle: "Plant-floor visibility and supply-chain intelligence.",
-      crux: "Operational dashboards for OEE tracking, downtime root-cause analysis, and quality metrics to improve throughput and optimize planning.",
-      examples: "OEE · Downtime Analysis · Quality KPIs · Inventory Visibility",
-      outcome: "Higher productivity · Improved delivery reliability",
-      icon: Factory,
+      title: "Manufacturing OEE & Supply Chain Performance Analytics",
+      subtitle: "Plant-floor visibility and supply chain intelligence.",
+      crux: "Combine machine data, quality metrics, and inventory signals into a plant-level performance command center. Monitor OEE drivers, detect chronic downtime patterns, and align production planning with material availability to strengthen throughput and delivery reliability.",
+      industries:
+        "Discrete Manufacturing · Process Manufacturing · Automotive · Industrial Equipment · Consumer Goods",
+      impact:
+        "Higher productivity across lines · Significantly improved delivery reliability · Better visibility into bottlenecks",
     },
     {
-      industry: "Retail & E-Commerce",
+      title: "Retail & E‑Commerce Sales & Customer Intelligence Analytics",
       subtitle: "Turn transaction data into merchandising and customer intelligence.",
-      crux: "Sales intelligence dashboards for revenue trends, customer cohorts, and inventory movement to optimize promotions and retention.",
-      examples: "Sales Trends · Customer Cohorts · Inventory Turn · Basket Analytics",
-      outcome: "Smarter merchandising · Better customer retention",
-      icon: ShoppingBag,
+      crux: "Blend point-of-sale, e‑commerce, and customer behavior data into a unified sales intelligence workspace. Track product performance, understand customer cohorts and journeys, and analyze inventory movement to refine merchandising, promotions, and retention strategies.",
+      industries:
+        "Retail · E‑Commerce · D2C Brands · Marketplaces · Omni-channel Retail",
+      impact:
+        "Smarter merchandising decisions · Better customer retention · Considerably improved revenue visibility",
     },
   ];
 
@@ -639,7 +632,7 @@ export const BIServicesPage = () => {
               to operational intelligence.
             </motion.p>
           </motion.div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {useCases.map((uc, idx) => (
               <UseCaseCard key={idx} {...uc} />
             ))}
