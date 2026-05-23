@@ -895,7 +895,7 @@ const ServicesSection = () => {
       category: "Innovation",
       title: "Geospatial Analytics",
       description:
-        "ESRI Silver Partner. Location intelligence for insurance, energy, utilities, and field operations.",
+        "ESRI Partner. Location intelligence for insurance, energy, utilities, and field operations.",
       moreLabel: "Geospatial",
       icon: Globe,
       imageUrl: "Images/Geospatial Analytics.jpg",
@@ -1105,7 +1105,7 @@ const AcceleratorsSection = () => {
     {
       title: "CallOps AI, AI Voice Agents for Calling Operations",
       desc: "Human-like voice AI for automated inbound/outbound calls, integrates with your business logic for end-to-end call workflow automation",
-      cta: "Explore CallOps",
+      cta: "Explore CallOps AI",
       icon: PhoneCall,
       href: "/call-ops-ai",
     },
@@ -1177,7 +1177,7 @@ const AcceleratorsSection = () => {
       </div>
       <Link
         to={acc.href}
-        className="relative z-10 inline-flex items-center gap-2 text-[10px] font-black tracking-[0.2em] text-accent hover:text-accent transition-colors group/btn"
+        className="relative z-10 inline-flex items-center gap-2 text-[10px] font-bold text-accent hover:text-accent transition-colors group/btn"
       >
         {acc.cta}
         <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
