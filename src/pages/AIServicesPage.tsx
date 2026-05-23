@@ -13,12 +13,6 @@ import {
   Code2,
   Zap,
   RefreshCw,
-  Database,
-  Brain,
-  Globe,
-  ShieldCheck,
-  FileSearch,
-  Sparkles,
 } from "lucide-react";
 
 const DAIS_IMG = "Images/Services/data-ai-strategy";
@@ -150,34 +144,6 @@ const ApproachStep = ({
       {title}
     </h3>
     <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed px-2 border-l-2 border-accent/20">
-      {description}
-    </p>
-  </motion.div>
-);
-
-const DifferentiatorCard = ({
-  title,
-  description,
-  icon: Icon,
-  idx,
-}: {
-  title: string;
-  description: string;
-  icon: any;
-  idx: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: idx * 0.1 }}
-    className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full text-left"
-  >
-    <SectionIcon icon={Icon} size="md" className="mb-6" hover="none" />
-    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
-      {title}
-    </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
       {description}
     </p>
   </motion.div>
@@ -339,42 +305,6 @@ export const AIServicesPage = () => {
       title: "Improve",
       description: "Hallucination reduction, feedback loops, continuous evaluation, and model refresh cycles.",
       icon: RefreshCw,
-    },
-  ];
-
-  const differentiators = [
-    {
-      title: "AI + Data Engineering Under One Roof",
-      description:
-        "We build your AI and your data infrastructure, so they work together by design, not by accident.",
-      icon: Database,
-    },
-    {
-      title: "Multi-Model Expertise",
-      description:
-        "Claude, OpenAI, Azure OpenAI, Mistral, open-source, we select the right model for your needs and budget.",
-      icon: Brain,
-    },
-    {
-      title: "Cross-Industry Experience",
-      description: "Live deployments across BFSI, Pharma, Energy, Manufacturing, and Retail.",
-      icon: Globe,
-    },
-    {
-      title: "Enterprise-Grade by Default",
-      description: "Secure, governed, observable, and scalable, built for enterprise requirements from day one.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "No Black Boxes",
-      description:
-        "Full transparency on model behaviour, biases, and decision rationale, with auditable evaluation harnesses.",
-      icon: FileSearch,
-    },
-    {
-      title: "Rapid Prototyping",
-      description: "Working AI prototypes in days, validate the concept before full commitment.",
-      icon: Sparkles,
     },
   ];
 
@@ -597,36 +527,6 @@ export const AIServicesPage = () => {
           <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
             {steps.map((step, idx) => (
               <ApproachStep key={idx} {...step} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Techknomatic Section */}
-      <section className="py-[60px] px-6 bg-slate-100 dark:bg-brand-900/50 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-4"
-            >
-              Why Techknomatic for AI & GenAI
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Six differentiators that separate AI demos from AI that ships and scales.
-            </motion.p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {differentiators.map((diff, idx) => (
-              <DifferentiatorCard key={idx} {...diff} idx={idx} />
             ))}
           </div>
         </div>

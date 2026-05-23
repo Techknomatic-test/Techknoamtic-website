@@ -4,13 +4,10 @@ import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { SectionIcon } from "../components/SectionIcon";
 import {
-  Globe,
   Map as MapIcon,
   Navigation,
   ShieldCheck,
   Users,
-  Settings,
-  Target,
   ArrowRight,
   Zap,
   Layers,
@@ -20,14 +17,12 @@ import {
   Database,
   Satellite,
   Compass,
-  Award,
   CheckCircle2,
   Layout,
   Smartphone,
   RefreshCw,
   ChevronDown,
   ChevronUp,
-  Brain,
   Code
 } from "lucide-react";
 
@@ -144,24 +139,6 @@ const ApproachStep = ({ num, title, description, icon: Icon, delay = 0 }: { num:
   </motion.div>
 );
 
-const DifferentiatorCard = ({ title, description, icon: Icon, idx }: { title: string; description: string; icon: any; idx: number }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: idx * 0.1 }}
-    className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full text-left"
-  >
-    <SectionIcon icon={Icon} size="md" className="mb-6" hover="none" />
-    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
-      {title}
-    </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-      {description}
-    </p>
-  </motion.div>
-);
-
 const UseCaseCard = ({ title, subtitle, crux, industries, impact }: { title: string; subtitle: string; crux: string; industries: string; impact: string }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -249,39 +226,6 @@ export const GeospatialPage = () => {
     { num: "03", title: "Build", description: "Configure the ArcGIS environment, build geo-dashboards, and integrate with source systems and BI tools.", icon: Code },
     { num: "04", title: "Field-Enable", description: "Deploy mobile tools for field force, configure data collection forms, and establish real-time sync.", icon: Smartphone },
     { num: "05", title: "Scale & Govern", description: "Establish geodata governance, automate refresh pipelines, and expand to new use cases and regions.", icon: ShieldCheck },
-  ];
-
-  const differentiators = [
-    {
-      title: "ESRI Silver Partner",
-      description: "Authorised reseller and implementation partner for the ArcGIS platform, direct vendor support and licensing.",
-      icon: Award,
-    },
-    {
-      title: "GIS + BI Integration Experts",
-      description: "We combine geospatial precision with best-in-class BI for unified, location-aware insights.",
-      icon: Layers,
-    },
-    {
-      title: "Cross-Industry Delivery",
-      description: "GIS projects delivered across BFSI, Mining, Pharma, Government, Retail, and Agriculture.",
-      icon: Globe,
-    },
-    {
-      title: "Full-Stack Ownership",
-      description: "Strategy → Build → Deploy → Support. One accountable partner across the entire GIS lifecycle.",
-      icon: Settings,
-    },
-    {
-      title: "Proven ROI",
-      description: "GIS projects delivered across India, UAE, and Oman, with measurable, documented business outcomes.",
-      icon: Target,
-    },
-    {
-      title: "Field-to-Enterprise Coverage",
-      description: "From mobile field data collection to executive geo-dashboards, we cover the full spectrum.",
-      icon: Smartphone,
-    },
   ];
 
   const useCases = [
@@ -501,36 +445,6 @@ export const GeospatialPage = () => {
           <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
             {approachSteps.map((step, idx) => (
               <ApproachStep key={idx} {...step} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Techknomatic Section */}
-      <section className="py-[40px] px-6 bg-slate-100 dark:bg-brand-900/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-10">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-4"
-            >
-              Why Techknomatic for Geospatial Analytics
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Six differentiators that set our GIS practice apart, from platform credentials to delivery depth.
-            </motion.p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {differentiators.map((it, i) => (
-              <DifferentiatorCard key={i} {...it} idx={i} />
             ))}
           </div>
         </div>

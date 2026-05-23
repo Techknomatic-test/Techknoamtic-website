@@ -234,42 +234,6 @@ const UseCaseCard = ({
   </motion.div>
 );
 
-const DifferentiatorCard = ({
-  title,
-  description,
-  image,
-  idx,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  idx: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: idx * 0.1 }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] hover:shadow-2xl hover:border-accent/20 transition-all h-full text-left group flex flex-col overflow-hidden"
-  >
-    <div className="relative h-52 -mx-8 -mt-8 mb-8 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        referrerPolicy="no-referrer"
-      />
-    </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-      {title}
-    </h3>
-    <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4 text-left flex-1">
-      {description}
-    </p>
-  </motion.div>
-);
-
 export const BIServicesPage = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
@@ -397,45 +361,6 @@ export const BIServicesPage = () => {
       icon: Activity,
       description:
         "Drive adoption through training, CoE enablement, and continuous improvement cycles.",
-    },
-  ];
-
-  const differentiators = [
-    {
-      title: "Design-Led Development",
-      description:
-        "We design for the audience, the decision, and the moment of use. Executives, operators, and analysts each get the right density.",
-      image: biImg("Design-Led Development.jpg"),
-    },
-    {
-      title: "BI + Data Engineering",
-      description:
-        "Backed by deep Data Engineering, the pipeline behind every dashboard is as engineered as the dashboard itself.",
-      image: biImg("bi-data-engineering.jpg"),
-    },
-    {
-      title: "Multi-Platform Certified",
-      description:
-        "Certified depth in Power BI, Tableau, and Qlik. We recommend the platform that fits your stack, skills, and scale.",
-      image: biImg("multiplatform.jpg"),
-    },
-    {
-      title: "Adoption-First Delivery",
-      description:
-        "Structured adoption plans included, user enablement and BI CoE models, because success is usage.",
-      image: biImg("Adoption-First Delivery.jpg"),
-    },
-    {
-      title: "Industry-Depth Practice",
-      description:
-        "Deep experience in Insurance, ITSM, Energy, Manufacturing, and Retail, we bring domain context, not just tools.",
-      image: biImg("Industry-Depth Practice.jpg"),
-    },
-    {
-      title: "Governance & Trust",
-      description:
-        "RLS, certified datasets, and audit lineage built into every delivery, scale without liability.",
-      image: biImg("governance-and-trust.jpg"),
     },
   ];
 
@@ -688,37 +613,6 @@ export const BIServicesPage = () => {
               <ApproachStep key={idx} {...step} delay={idx * 0.1} />
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* Why Techknomatic Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/50 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto text-left">
-          <div className="mb-20 text-left">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-8"
-            >
-              Why Techknomatic for Business Intelligence
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-7xl"
-            >
-              We combine design thinking, data engineering, and multi-platform expertise to deliver
-              analytics that drive decision speed.
-            </motion.p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-            {differentiators.map((diff, idx) => (
-              <DifferentiatorCard key={idx} {...diff} idx={idx} />
-            ))}
-          </div>
         </div>
       </section>
 

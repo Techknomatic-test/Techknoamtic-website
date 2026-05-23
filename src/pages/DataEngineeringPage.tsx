@@ -12,17 +12,13 @@ import {
   Settings,
   Target,
   ArrowRight,
-  Globe,
   LayoutDashboard,
   Cpu,
   HardDrive,
   Share2,
   RefreshCw,
-  Clock,
   Cloud,
-  Server,
   CheckCircle2,
-  Brain,
   MessageSquare,
   Truck,
   Activity,
@@ -140,24 +136,6 @@ const ApproachStep = ({ num, title, description, icon: Icon, delay = 0 }: { num:
   </motion.div>
 );
 
-const DifferentiatorCard = ({ title, description, icon: Icon, idx }: { title: string; description: string; icon: any; idx: number }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: idx * 0.1 }}
-    className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full"
-  >
-    <SectionIcon icon={Icon} size="md" className="mb-6" hover="none" />
-    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
-      {title}
-    </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-      {description}
-    </p>
-  </motion.div>
-);
-
 const UseCaseCard = ({ title, description, crux, industries }: { title: string; description: string; crux: string; industries: string }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -248,15 +226,6 @@ export const DataEngineeringPage = () => {
     { num: "03.", title: "Build & Automate", description: "Develop pipelines with CI/CD, parameterized configurations, and automated quality checks at every stage.", icon: Code },
     { num: "04.", title: "Test & Monitor", description: "Run data-quality assertions, lineage validation, and load tests. Stand up alerting and SLA dashboards.", icon: Activity },
     { num: "05.", title: "Operate & Optimize", description: "Hand off to managed operations or upskill your team. Continuously tune cost and performance.", icon: RefreshCw },
-  ];
-
-  const differentiators = [
-    { title: "End-to-End Ownership", description: "One accountable partner from source systems → pipelines → platform → BI & AI.", icon: ShieldCheck },
-    { title: "Deep Ecosystem Expertise", description: "Proven experience with Salesforce, SAP, Oracle, IoT, and legacy data systems.", icon: Globe },
-    { title: "Strong Certified Talent", description: "Azure and Snowflake implementation teams led by certified architects.", icon: Brain },
-    { title: "Pre-Built Accelerators", description: "Reusable connectors, templates, and frameworks for faster, lower-risk delivery.", icon: Zap },
-    { title: "100+ Pipelines Delivered", description: "Production-grade pipelines across BFSI, Manufacturing, Pharma, and Energy.", icon: Server },
-    { title: "SLA-Governed Delivery", description: "Monitored, governed pipelines with SLA guarantees, no black-box solutions.", icon: Clock },
   ];
 
   const useCases = [
@@ -456,36 +425,6 @@ export const DataEngineeringPage = () => {
           <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
             {steps.map((step, idx) => (
               <ApproachStep key={idx} {...step} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Techknomatic Section */}
-      <section className="py-[60px] px-6 bg-slate-100 dark:bg-brand-900/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-4"
-            >
-              Why Techknomatic for Data Engineering
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Six differentiators that consistently set our delivery apart.
-            </motion.p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {differentiators.map((diff, idx) => (
-              <DifferentiatorCard key={idx} {...diff} idx={idx} />
             ))}
           </div>
         </div>

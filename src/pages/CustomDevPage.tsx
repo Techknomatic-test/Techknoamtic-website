@@ -19,7 +19,6 @@ import {
   Database,
   Terminal,
   Server,
-  CheckCircle2,
   RefreshCw
 } from "lucide-react";
 
@@ -45,26 +44,6 @@ const CapabilityCard = ({ title, description, image, delay = 0 }: { title: strin
       {title}
     </h3>
     <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
-      {description}
-    </p>
-  </motion.div>
-);
-
-const DifferentiatorCard = ({ title, description, idx }: { title: string; description: string; idx: number }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: idx * 0.1 }}
-    className="p-8 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl transition-all h-full"
-  >
-    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-      <CheckCircle2 className="w-6 h-6 text-accent" />
-    </div>
-    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight leading-tight">
-      {title}
-    </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
       {description}
     </p>
   </motion.div>
@@ -134,26 +113,6 @@ export const CustomDevPage = () => {
       title: "Deploy & Support",
       description:
         "Go-live support, documentation, and ongoing enhancements. We're here after go-live.",
-    },
-  ];
-
-  const whyTechknomaticCustom = [
-    {
-      title: "Analytics-First Thinking",
-      description:
-        "Every custom tool is built around your data, not just the UI.",
-    },
-    {
-      title: "Full Stack in One Team",
-      description: "UI, API, data pipeline, and AI, no handoffs, no gaps.",
-    },
-    {
-      title: "Agile with Business Involvement",
-      description: "Weekly demos mean you're never surprised at delivery.",
-    },
-    {
-      title: "Regulated Industry Experience",
-      description: "Insurance, pharma, energy, we understand compliance.",
     },
   ];
 
@@ -297,36 +256,6 @@ export const CustomDevPage = () => {
                   {step.description}
                 </p>
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Techknomatic Section */}
-      <section className="py-[60px] px-6 bg-slate-100 dark:bg-brand-900/50 transition-colors duration-500">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-4"
-            >
-              Why Techknomatic for Custom Development
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              We blend engineering excellence with deep business domain understanding.
-            </motion.p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {whyTechknomaticCustom.map((it, i) => (
-              <DifferentiatorCard key={i} title={it.title} description={it.description} idx={i} />
             ))}
           </div>
         </div>

@@ -85,34 +85,6 @@ const JobCard = ({ id, title, exp, location, skills, description }: any) => (
   </motion.div>
 );
 
-const WhyTechkoCard = ({ title, desc, delay, image }: any) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="bg-white dark:bg-brand-900 overflow-hidden rounded-[2.5rem] border border-slate-100 dark:border-white/5 shadow-[0_15px_30px_-10px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all text-left flex flex-col group"
-  >
-    <div className="relative h-48 w-full bg-slate-100 dark:bg-white/5 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-      />
-    </div>
-    <div className="p-8 flex-1 flex flex-col">
-      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
-        {title}
-      </h3>
-      <p className="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed mt-auto">
-        {desc}
-      </p>
-    </div>
-  </motion.div>
-);
-
 export const CareersPage = () => {
   const hiringSteps = [
     {
@@ -250,80 +222,7 @@ export const CareersPage = () => {
         </div>
       </section>
 
-      {/* 2. Why Techknomatic */}
-      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-10 text-left">
-            <h2 className="section-heading mb-6">
-              Why High-Performers <br />
-              <span>Choose Techknomatic</span>
-            </h2>
-            <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
-              Most companies talk about culture, we focus on your career
-              acceleration and consulting depth.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <WhyTechkoCard
-              title="Real Consulting Exposure"
-              desc="Work directly with business stakeholders, driving strategy rather than just backend execution."
-              delay={0.1}
-              image={careersImg(
-                "Choose Techknomatic",
-                "Real Consulting Exposure.jpg",
-              )}
-            />
-            <WhyTechkoCard
-              title="Fast Career Growth"
-              desc="Accelerated learning paths across BI, Data Engineering & AI foundations for rapid progression."
-              delay={0.2}
-              image={careersImg(
-                "Choose Techknomatic",
-                "Fast Career Growth.jpg",
-              )}
-            />
-            <WhyTechkoCard
-              title="Global Client Exposure"
-              desc="Deliver high-impact projects across India, Middle East, USA, and other global markets."
-              delay={0.3}
-              image={careersImg(
-                "Choose Techknomatic",
-                "Global Client Exposure.jpg",
-              )}
-            />
-            <WhyTechkoCard
-              title="Ownership from Day One"
-              desc="Solve real business problems with full accountability, not just closing development tickets."
-              delay={0.4}
-              image={careersImg(
-                "Choose Techknomatic",
-                "Ownership from Day One.jpg",
-              )}
-            />
-            <WhyTechkoCard
-              title="Skill Compounding"
-              desc="Learn the intersection of technical tools, business context, and visual storytelling."
-              delay={0.5}
-              image={careersImg(
-                "Choose Techknomatic",
-                "Skill Compounding.jpg",
-              )}
-            />
-            <WhyTechkoCard
-              title="Elite Peer Group"
-              desc="Collaborate with some of the sharpest minds in the data and analytics ecosystem."
-              delay={0.6}
-              image={careersImg(
-                "Choose Techknomatic",
-                "Elite Peer Group.jpg",
-              )}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Work Culture & How We Work */}
+      {/* 2. Work Culture & How We Work */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-10">
