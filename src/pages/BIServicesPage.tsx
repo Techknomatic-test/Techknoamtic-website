@@ -117,13 +117,17 @@ const CapabilityCard = ({
     className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full text-left"
   >
     <SectionIcon icon={Icon} size="lg" hover="rotate" className="mb-8" />
-    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-      {title}
-    </h3>
-    <p className="text-[15px] font-medium text-brand-950/70 dark:text-white/60 mb-8 leading-relaxed border-l-4 border-accent/20 pl-4 py-2 text-left">
-      {description}
-    </p>
-    <ul className="space-y-3 pt-6 border-t border-slate-100 dark:border-white/5 list-none m-0">
+    <div className="mb-4 min-h-[4.5rem] sm:min-h-[5rem]">
+      <h3 className="text-2xl font-bold text-brand-950 dark:text-white tracking-tight leading-tight group-hover:text-accent transition-colors line-clamp-3">
+        {title.trim()}
+      </h3>
+    </div>
+    <div className="min-h-[6rem] sm:min-h-[6.5rem]">
+      <p className="border-l-4 border-accent/20 py-1 pl-4 text-left text-[15px] font-medium leading-relaxed text-brand-950/70 dark:text-white/60">
+        {description}
+      </p>
+    </div>
+    <ul className="space-y-3 border-t border-slate-100 dark:border-white/5 pt-4 list-none m-0">
       {items.map((item, i) => (
         <li key={i} className="flex items-start gap-3 group/item">
           <div className="w-1.5 h-1.5 rounded-full bg-accent/40 mt-2 shrink-0" />
@@ -284,7 +288,7 @@ export const BIServicesPage = () => {
       ],
     },
     {
-      title: " Dashboard Design & Development",
+      title: "Dashboard Design & Development",
       icon: LayoutDashboard,
       description:
         "Design-led dashboards engineered for executive clarity, operational decision speed, and analyst depth.",
@@ -591,7 +595,7 @@ export const BIServicesPage = () => {
               roadmap to dashboard development, governance, and sustained adoption.
             </motion.p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
             {offerings.map((it, idx) => (
               <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
             ))}
