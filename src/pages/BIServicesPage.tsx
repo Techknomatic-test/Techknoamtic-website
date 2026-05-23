@@ -197,10 +197,10 @@ const UseCaseCard = ({
     <div className="flex items-center gap-4 mb-6">
       <SectionIcon icon={Icon} size="md" hover="none" />
       <div className="text-left">
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase">Industry</h4>
         <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">
           {industry}
         </h3>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase">Industry</h4>
       </div>
     </div>
 
@@ -216,7 +216,7 @@ const UseCaseCard = ({
       </div>
       <div>
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
-          Example Dashboards
+          Dashboards
         </h4>
         <p className="text-[13px] font-bold text-brand-950 dark:text-white">{examples}</p>
       </div>
@@ -635,7 +635,7 @@ export const BIServicesPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-7xl text-left"
             >
-              High-impact BI deployments across our priority industries, from executive visibility
+              High-impact BI deployments across industries, from executive visibility
               to operational intelligence.
             </motion.p>
           </motion.div>
