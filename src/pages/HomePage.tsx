@@ -179,7 +179,7 @@ const NetworkMap = () => {
                   </span>
                 </div>
                 <div
-                  className={`mt-auto pt-2 text-sm font-bold leading-none tabular-nums tracking-tight ${chip.alert ? "text-red-500" : "text-brand-950 dark:text-white"}`}
+                  className={`mt-auto pl-6 pt-2 text-sm font-bold leading-none tabular-nums tracking-tight ${chip.alert ? "text-red-500" : "text-brand-950 dark:text-white"}`}
                 >
                   {chip.value}
                 </div>
@@ -346,7 +346,7 @@ const HeroVisual = ({ index }: { index: number }) => {
           <div className="flex items-center gap-3 mb-2">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-[10px] font-black tracking-widest text-slate-400">
-              Live Revenue
+              Target Achieved
             </span>
           </div>
           <div className="text-xl font-black text-brand-950 dark:text-white">
