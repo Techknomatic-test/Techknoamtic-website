@@ -77,14 +77,6 @@ export const CustomerStoriesPage = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-accent bg-accent/10 rounded-full border border-accent/20 uppercase backdrop-blur-md"
-          >
-            <Sparkles className="w-3 h-3" />
-            Global Success Stories
-          </motion.div>
 
           <div className="max-w-5xl">
             <motion.h1

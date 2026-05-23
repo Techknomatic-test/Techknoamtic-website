@@ -229,14 +229,6 @@ export const FAQPage = () => {
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-3 px-4 py-1.5 mb-6 text-[11px] font-bold tracking-[0.4em] text-accent uppercase bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-sm"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            Help Center
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
