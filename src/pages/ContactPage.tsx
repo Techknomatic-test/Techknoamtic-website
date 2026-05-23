@@ -27,10 +27,8 @@ import {
   Calendar,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { SectionIcon } from "../components/SectionIcon";
-import { acceleratorsSectionLinkTo } from "../config/homeNavigation";
 
 const CONTACT_HERO_IMG = `${import.meta.env.BASE_URL}Images/contactusHero.jpg`;
 
@@ -152,98 +150,44 @@ export const ContactPage = () => {
 
   return (
     <div className="pt-[110px] relative pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
-      {/* 1. Hero Section - Styled as per Reference Attachment */}
-      <section className="relative min-h-[80vh] flex flex-col justify-center pt-[60px] pb-[60px] overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
-        <div className="absolute inset-0 z-0">
+      {/* Hero Section */}
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             loading="lazy"
             src={CONTACT_HERO_IMG}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
             aria-hidden
           />
           <div
-            className="absolute inset-0 bg-gradient-to-r from-[#050a14]/95 via-[#050a14]/80 to-[#050a14]/50"
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
             aria-hidden
-          />
-          {/* Enhanced Data Particle Background Effect */}
-          <div
-            className="absolute inset-0 opacity-[0.15]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 2px 2px, #f17e21 1px, transparent 0)",
-              backgroundSize: "48px 48px",
-            }}
-          />
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 50% 50%, #1e293b 0%, transparent 70%)",
-            }}
-          />
-          {/* Floating glowing orbs for depth */}
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.1, 0.2, 0.1],
-            }}
-            transition={{ duration: 8, repeat: Infinity }}
-            className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[140px]"
-          />
-          <motion.div
-            animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.1, 0.15, 0.1],
-            }}
-            transition={{ duration: 10, repeat: Infinity }}
-            className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[140px]"
           />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl drop-shadow-md">
-          <div className="max-w-5xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-10 text-white"
-            >
-              Let’s Turn Your Data Into <br />
-              <span className="text-accent">Decisions</span> That Drive Growth
-            </motion.h1>
-
-            <div className="mb-14">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-xl md:text-2xl text-white/90 font-medium max-w-3xl leading-relaxed"
-              >
-                Whether you're exploring analytics, dashboards, or enterprise BI
-                transformation, our experts are ready to help you unlock real
-                business impact.
-              </motion.p>
-            </div>
-
-            <motion.div
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
+          >
+            Let's Turn Your Data Into <br />
+            Decisions That Drive Growth
+          </motion.h1>
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-6"
+              transition={{ delay: 0.2 }}
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
-              <Link
-                to={acceleratorsSectionLinkTo}
-                className="px-10 py-5 bg-accent text-white font-black tracking-widest rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 uppercase text-[12px] shadow-2xl shadow-accent/20 active:scale-95 group"
-              >
-                <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform" />{" "}
-                Explore Solutions
-              </Link>
-              <button className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black tracking-widest rounded-2xl hover:bg-white/10 transition-all flex items-center gap-3 uppercase text-[12px] active:scale-95 group">
-                <Mail className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />{" "}
-                Talk to an Expert
-              </button>
-            </motion.div>
+              Whether you're exploring analytics, dashboards, or enterprise BI
+              transformation, our experts are ready to help you unlock real
+              business impact.
+            </motion.p>
           </div>
         </div>
       </section>
