@@ -154,7 +154,7 @@ const NetworkMap = () => {
               { label: "AVG ETA", value: "14.2 min", icon: <Activity className="w-3.5 h-3.5" /> },
               {
                 label: "COST SAVE",
-                value: "-18%",
+                value: "18%",
                 icon: <Target className="w-3.5 h-3.5" />,
                 trend: "down",
               },
