@@ -110,7 +110,7 @@ const DifferentSection = () => {
       id: 1,
       title: "Experienced Team",
       description:
-        "We have experienced professionals with hands-on experience in delivering end-to-end data solutions. We can leverage BI tools to help clients convert their data into insights within less time.",
+        "We have experienced professionals with hands-on experience in delivering end-to-end data solutions. We can leverage Technology tools to help clients convert their data into insights within less time.",
       imageUrl: aboutusImg(
         "What Makes Us Different",
         "Experienced Team.jpg",
@@ -120,7 +120,7 @@ const DifferentSection = () => {
       id: 2,
       title: "Proven Methodology",
       description:
-        "By following a systematic approach, we construct BI solutions with well-defined processes that make it easy for you to manage all of the dashboards and changes.",
+        "By following a systematic approach, we construct Technology solutions with well-defined processes that make it easy for you to manage all of the dashboards and changes.",
       imageUrl: aboutusImg(
         "What Makes Us Different",
         "Proven Methodology.jpg",
@@ -130,7 +130,7 @@ const DifferentSection = () => {
       id: 3,
       title: "Less Turnaround Time",
       description:
-        "In this dynamically changing analytics world, we give a minimum turnaround time for all our BI deliverables so you can make informed decisions anytime, anywhere.",
+        "In this dynamically changing analytics world, we give a minimum turnaround time for all our Analytics deliverables so you can make informed decisions anytime, anywhere.",
       imageUrl: aboutusImg(
         "What Makes Us Different",
         "Less Turnaround Time.jpg",
@@ -368,7 +368,7 @@ export const AboutUsPage = () => {
               },
               {
                 name: "Sunny Tatiya",
-                role: "CFO",
+                role: "Strategic Consultant",
                 img: "Images/Leadership/people/Sunny%20Tatia.jpeg",
                 objectPosition: "center 30%",
               },
