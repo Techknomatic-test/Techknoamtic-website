@@ -25,56 +25,61 @@ const PARTNERSHIP_HERO_IMG = partnershipImg("Partnershipbanner.jpg");
 
 const PartnershipHero = () => {
   return (
-    <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-brand-950">
+    <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           loading="lazy"
           src={PARTNERSHIP_HERO_IMG}
           alt="Partnerships Background"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 z-0 h-full w-full object-cover object-center"
           referrerPolicy="no-referrer"
+          aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+          className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
           aria-hidden
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="max-w-4xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-8 text-white"
-          >
-            Strategic <span className="text-accent">Partnerships</span> <br />
-            to Scale Data & AI Globally
-          </motion.h1>
-
+      <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0 }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
+        >
+          Strategic Partnerships <br />
+          to Scale Data & AI Globally
+        </motion.h1>
+        <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-lg md:text-xl text-white/80 font-medium max-w-2xl leading-relaxed mb-12"
+            transition={{ delay: 0.2 }}
+            className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
           >
             At Techknomatic, we collaborate with leading technology platforms
             and regional partners to build, deliver, and scale end-to-end data
             and AI solutions across global markets.
           </motion.p>
-
-          <div className="flex flex-wrap gap-5">
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-accent text-white rounded-2xl font-black tracking-[0.1em] uppercase text-[12px] shadow-2xl shadow-accent/20 flex items-center gap-3 active:scale-95"
-              >
-                Partner With Us <ArrowRight className="w-4 h-4" />
-              </motion.button>
-            </Link>
-          </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-wrap gap-5 mt-8"
+        >
+          <Link to="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-accent text-white rounded-2xl font-black tracking-[0.1em] uppercase text-[12px] shadow-2xl shadow-accent/20 flex items-center gap-3 active:scale-95"
+            >
+              Partner With Us <ArrowRight className="w-4 h-4" />
+            </motion.button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
