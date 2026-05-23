@@ -175,6 +175,9 @@ const deServiceImg = (folder: string, file: string) =>
     .join("/")}`;
 const DE_HERO_IMG = deServiceImg("hero", "hero2.jpg");
 const DE_TOOLS_IMG = deServiceImg("tools", "cloud.jpg");
+const DE_DATA_QUALITY_IMG = `${import.meta.env.BASE_URL}${[...DE_SERVICES_IMG.split("/"), "dataqualityngoverence.jpg"]
+  .map(encodeURIComponent)
+  .join("/")}`;
 
 export const DataEngineeringPage = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
@@ -208,7 +211,7 @@ export const DataEngineeringPage = () => {
     {
       title: "Data Quality & Governance",
       description: "Automated quality checks, cleansing routines, and governance frameworks for trusted data.",
-      image: `${DE_CAP_IMG}/Data Quality & Governance.jpg`,
+      image: DE_DATA_QUALITY_IMG,
     },
   ];
 
@@ -221,8 +224,8 @@ export const DataEngineeringPage = () => {
   ];
 
   const steps = [
-    { num: "01.", title: "Assess", description: "Inventory data sources, integration points, and pipeline bottlenecks. Define the target architecture.", icon: Search },
-    { num: "02.", title: "Architect", description: "Design end-to-end data flow, ingestion, transformation, storage, and serving layers. Agree SLAs upfront.", icon: Layers },
+    { num: "01.", title: "Assess", description: "We map your data sources, identify gaps, and define what needs fixing first.", icon: Search },
+    { num: "02.", title: "Architect", description: "We design your end-to-end data flow and align on expectations before we build.", icon: Layers },
     { num: "03.", title: "Build & Automate", description: "Develop pipelines with CI/CD, parameterized configurations, and automated quality checks at every stage.", icon: Code },
     { num: "04.", title: "Test & Monitor", description: "Run data-quality assertions, lineage validation, and load tests. Stand up alerting and SLA dashboards.", icon: Activity },
     { num: "05.", title: "Operate & Optimize", description: "Hand off to managed operations or upskill your team. Continuously tune cost and performance.", icon: RefreshCw },
