@@ -136,21 +136,12 @@ const ContactVisual = () => {
 };
 
 export const ContactPage = () => {
-  const interestOptions = [
-    "Dashboarding",
-    "Data Engineering",
-    "AI & GenAI",
-    "Geospatial Analytics",
-    "Other",
-  ] as const;
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
-    role: "",
-    interest: "Dashboarding" as (typeof interestOptions)[number],
-    interestOther: "",
+    mobile: "",
+    lookingFor: "",
     message: "",
   });
 
@@ -262,7 +253,7 @@ export const ContactPage = () => {
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-20">
             <h2 className="section-heading mb-6">
-              Why leading teams reach out to{" "}
+              Why customer teams reach out to{" "}
               <span className="text-accent">Techknomatic</span>
             </h2>
             <p className="text-slate-500 dark:text-slate-400 font-medium">
@@ -352,11 +343,15 @@ export const ContactPage = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-[11px] font-black uppercase tracking-widest text-brand-950 dark:text-white px-1">
-                  Role / Designation
+                  Mobile Number
                 </label>
                 <input
-                  type="text"
-                  placeholder="e.g. Data Engineer, CTO"
+                  type="tel"
+                  placeholder="e.g. +91 98765 43210"
+                  value={formData.mobile}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, mobile: e.target.value }))
+                  }
                   className="w-full bg-slate-50 dark:bg-white/5 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-accent outline-none transition-all"
                 />
               </div>
@@ -366,36 +361,15 @@ export const ContactPage = () => {
               <label className="text-[11px] font-black uppercase tracking-widest text-brand-950 dark:text-white px-1">
                 What are you looking for?
               </label>
-              <select
-                value={formData.interest}
-                onChange={(e) => {
-                  const value = e.target.value as (typeof interestOptions)[number];
-                  setFormData((prev) => ({
-                    ...prev,
-                    interest: value,
-                    interestOther: value === "Other" ? prev.interestOther : "",
-                  }));
-                }}
-                className="w-full bg-slate-50 dark:bg-white/5 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-accent outline-none transition-all appearance-none cursor-pointer"
-              >
-                {interestOptions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-              {formData.interest === "Other" && (
-                <input
-                  type="text"
-                  value={formData.interestOther}
-                  onChange={(e) =>
-                    setFormData((prev) => ({ ...prev, interestOther: e.target.value }))
-                  }
-                  placeholder="Please specify what you're looking for"
-                  required
-                  className="w-full bg-slate-50 dark:bg-white/5 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-accent outline-none transition-all mt-2"
-                />
-              )}
+              <input
+                type="text"
+                value={formData.lookingFor}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, lookingFor: e.target.value }))
+                }
+                placeholder="e.g. Dashboarding, Data Engineering, AI & GenAI"
+                className="w-full bg-slate-50 dark:bg-white/5 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-accent outline-none transition-all"
+              />
             </div>
 
             <div className="space-y-2">
