@@ -151,7 +151,7 @@ export const ContactPage = () => {
   return (
     <div className="pt-[110px] relative pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
       {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             loading="lazy"
@@ -174,14 +174,21 @@ export const ContactPage = () => {
             transition={{ delay: 0 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
-            Let's Turn Your Data Into <br />
-            Decisions That Drive Growth
+            Contact Us
           </motion.h1>
           <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.p
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
+            >
+              Let's Turn Your Data Into Decisions That Drive Growth
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
               className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
               Whether you're exploring analytics, dashboards, or enterprise BI
@@ -193,14 +200,14 @@ export const ContactPage = () => {
       </section>
 
       {/* 2. Why Leading Teams Section */}
-      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="mb-20">
-            <h2 className="section-heading mb-6">
+      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-10">
+            <h2 className="section-heading mb-4">
               Why customer teams reach out to{" "}
               <span className="text-accent">Techknomatic</span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 font-medium">
+            <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left">
               From PoC to enterprise-scale deployments, we partner across the
               journey.
             </p>
@@ -228,7 +235,7 @@ export const ContactPage = () => {
               <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
-                className="bg-white dark:bg-brand-950 p-10 rounded-[2rem] flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-50 dark:border-white/5 h-full"
+                className="bg-white dark:bg-brand-950 p-10 rounded-[2rem] flex flex-col text-left shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-50 dark:border-white/5 h-full"
               >
                 <SectionIcon icon={item.icon} size="xl" className="mb-8" hover="none" />
                 <h3 className="text-[17px] font-bold text-brand-950 dark:text-white leading-snug tracking-tight">
@@ -338,8 +345,8 @@ export const ContactPage = () => {
       </section>
 
       {/* 5. Presence / Locations Section */}
-      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 overflow-hidden text-left">
+        <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
             {/* Contact Box */}
             <div className="lg:w-[35%]">
@@ -396,11 +403,11 @@ export const ContactPage = () => {
 
             {/* Offices List */}
             <div className="lg:w-[65%]">
-              <div className="mb-14 pt-4">
+              <div className="mb-10 pt-4 text-left">
                 <h2 className="section-heading mb-4">
                   Our Presence
                 </h2>
-                <p className="text-[20px] text-slate-500 dark:text-slate-400 font-medium">
+                <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left">
                   Serving clients globally across India, Middle East, and APAC
                 </p>
               </div>
