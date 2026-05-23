@@ -160,14 +160,6 @@ export const CareersPage = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <div className="max-w-5xl">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-10 text-[10px] font-black tracking-[0.3em] text-accent uppercase bg-accent/10 rounded-full border border-accent/20"
-            >
-              Careers @ Techknomatic
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -175,8 +167,8 @@ export const CareersPage = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-12 text-white"
             >
               Build a Career Where <br />
-              <span className="text-accent">Data Drives</span> Real-World <br />
-              Impact.
+              Data Drives Real-World <br />
+              Impact
             </motion.h1>
 
             <div className="space-y-8 mb-16">
@@ -280,7 +272,7 @@ export const CareersPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-20">
             <h2 className="section-heading mb-6">
-              Choose Your <span className="text-accent">Growth Path</span>
+              Choose Your Growth Path
             </h2>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
               We donâ€™t just hire roles, we build careers with structured
@@ -348,125 +340,6 @@ export const CareersPage = () => {
         </div>
       </section>
 
-      {/* 5. L&D Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 transition-colors duration-500">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-10">
-            <h2 className="section-heading mb-8">
-              We Invest in <br />
-              <span className="text-accent">Your Growth</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: "Structured Learning",
-                desc: "Defined paths in BI, Engineering & AI.",
-                image: careersImg("Your Growth", "Structured Learning.jpg"),
-              },
-              {
-                title: "Hands-on Mastery",
-                desc: "Project exposure from Day 1.",
-                image: careersImg("Your Growth", "Hands-on Mastery.jpg"),
-              },
-              {
-                title: "Mentorship",
-                desc: "Learn from senior consultants.",
-                image: careersImg("Your Growth", "Mentorship.jpg"),
-              },
-              {
-                title: "Certification",
-                desc: "Full support & learning reimbursements.",
-                image: careersImg("Your Growth", "Certification.jpg"),
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white dark:bg-brand-950 rounded-[2.5rem] overflow-hidden border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-xl transition-all group flex flex-col"
-              >
-                <div className="relative h-40 w-full bg-slate-100 dark:bg-white/5 overflow-hidden">
-                  <img
-                    loading="lazy"
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="p-8 flex flex-col items-start flex-1">
-                  <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-3">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Life at Techknomatic */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-8">
-            <div className="text-left">
-              <h2 className="section-heading">
-                Life at <span className="text-accent">Techknomatic</span>
-              </h2>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: "Offsites",
-                icon: Globe,
-                desc: "Team outings & celebrations.",
-              },
-              {
-                title: "Flexibility",
-                icon: Clock,
-                desc: "Performance-driven culture.",
-              },
-              {
-                title: "Flat Structure",
-                icon: Users,
-                desc: "Non-hierarchical environment.",
-              },
-              {
-                title: "Challenges",
-                icon: Brain,
-                desc: "Work that excites you.",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-slate-50 dark:bg-brand-900 rounded-[2.5rem] p-10 flex flex-col items-start border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-xl transition-all group"
-              >
-                <SectionIcon icon={item.icon} size="md" className="mb-6" hover="none" />
-                <h4 className="text-lg font-bold text-brand-950 dark:text-white mb-3">
-                  {item.title}
-                </h4>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 7. Open Roles Section */}
       <section
         id="roles"
@@ -486,22 +359,6 @@ export const CareersPage = () => {
             {CAREER_JOBS.map((job) => (
               <JobCard key={job.id} {...job} />
             ))}
-          </div>
-
-          <div className="max-w-4xl mx-auto bg-white dark:bg-brand-950 p-12 md:p-20 rounded-[3.5rem] text-center border-2 border-dashed border-slate-200 dark:border-white/10">
-            <SectionIcon icon={Mail} size="xl" className="mx-auto mb-8" hover="none" />
-            <h3 className="text-3xl md:text-4xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight">
-              Great Talent Doesn't Wait.
-            </h3>
-            <p className="text-lg text-slate-500 dark:text-slate-400 font-medium mb-10 leading-relaxed">
-              If you believe you can create impact at Techknomatic, send your
-              profile directly to our talent team.
-            </p>
-            <div className="inline-flex items-center gap-4 px-8 py-5 bg-white dark:bg-brand-900 shadow-xl border border-slate-100 dark:border-white/5 rounded-2xl">
-              <span className="text-brand-950 dark:text-white font-bold text-sm">
-                careers@techknomatic.com
-              </span>
-            </div>
           </div>
         </div>
       </section>
