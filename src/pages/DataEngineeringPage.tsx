@@ -121,9 +121,9 @@ const ApproachStep = ({ num, title, description, icon: Icon, delay = 0 }: { num:
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="relative flex-1 min-w-[240px] p-8 rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group"
+    className="relative min-w-0 w-full p-6 lg:p-7 rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group"
   >
-    <div className="absolute top-8 right-8 text-4xl font-black text-slate-100 dark:text-white/5 group-hover:text-accent/10 transition-colors">
+    <div className="absolute top-6 right-6 lg:top-7 lg:right-7 text-3xl lg:text-4xl font-black text-accent/10 transition-colors">
       {num.replace(".", "")}
     </div>
     <SectionIcon icon={Icon} size="md" className="mb-8" />
@@ -425,7 +425,7 @@ export const DataEngineeringPage = () => {
             </motion.p>
           </div>
 
-          <div className="flex flex-nowrap overflow-x-auto lg:overflow-x-visible pb-12 gap-6 scrollbar-hide">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-4 w-full pb-12">
             {steps.map((step, idx) => (
               <ApproachStep key={idx} {...step} delay={idx * 0.1} />
             ))}
