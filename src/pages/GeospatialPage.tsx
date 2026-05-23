@@ -327,7 +327,7 @@ export const GeospatialPage = () => {
               transition={{ delay: 0.2 }}
               className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
-              As an ESRI Silver Partner, we deliver full-stack GIS implementations, from ArcGIS Enterprise and Online setup to mobile field operations, geo-dashboards, route optimisation, and spatial risk analytics. Our work spans BFSI, Mining & Energy, Pharma, Utilities, Retail, and Agriculture, with proven delivery across India, UAE, and Oman, giving enterprises the location intelligence layer that traditional BI alone can't provide.
+              As an ESRI Partner, we deliver full-stack GIS implementations, from ArcGIS Enterprise and Online setup to mobile field operations, geo-dashboards, route optimisation, and spatial risk analytics. Our work spans BFSI, Mining & Energy, Pharma, Utilities, Retail, and Agriculture, with proven delivery across India, UAE, and Oman, giving enterprises the location intelligence layer that traditional BI alone can't provide.
             </motion.p>
           </div>
         </div>

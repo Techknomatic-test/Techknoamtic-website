@@ -424,7 +424,7 @@ export const AIServicesPage = () => {
       </section>
 
       {/* What We Offer Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+      <section className="py-[50px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-10">
             <motion.h3
