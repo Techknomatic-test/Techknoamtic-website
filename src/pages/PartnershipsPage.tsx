@@ -188,7 +188,7 @@ const MarketSection = () => {
       country: "Oman",
       partner: "Primer Trading",
       desc: "Driving market engagement and solution delivery in Oman.",
-      logoImage: partnershipImg("prime.webp"),
+      logoImage: partnershipImg("prime.png"),
     },
     {
       country: "UAE",
