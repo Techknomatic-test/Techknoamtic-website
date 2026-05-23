@@ -649,10 +649,10 @@ const Hero = () => {
               >
                 <a
                   href="#solutions"
-                  className="px-8 py-3.5 bg-accent text-white text-[11px] font-black tracking-[0.2em] rounded-2xl shadow-2xl shadow-accent/20 hover:bg-accent/90 transition-all duration-300 flex items-center gap-3 active:scale-95"
+                  className="px-8 py-3.5 bg-accent text-white text-[12px] xl:text-[13px] font-medium rounded-2xl shadow-lg shadow-accent/20 hover:bg-accent/90 transition-all duration-300 flex items-center gap-2 active:scale-95 group"
                 >
                   {slides[currentSlide].ctaPrimary}
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:rotate-45 transition-transform shrink-0" />
                 </a>
                 {slides[currentSlide].ctaSecondary && (
                   <Link
