@@ -324,7 +324,6 @@ export const BIServicesPage = () => {
         "Self-service BI enablement for business and operational users",
         "Semantic model design for safe, governed self-service",
         "Embedded analytics integration into customer and internal applications",
-        "Power BI Embedded and Tableau Embedded implementation",
         "Dataset certification and shared semantic layers",
         "Business user training and analytics literacy programs",
       ],
