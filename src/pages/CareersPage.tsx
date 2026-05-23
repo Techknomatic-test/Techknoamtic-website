@@ -116,107 +116,71 @@ export const CareersPage = () => {
 
   return (
     <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
-      {/* 1. Hero Section - Styled as per Reference Attachment */}
-      <section className="relative flex min-h-[min(50vh,480px)] flex-col items-center justify-center pt-12 pb-12 md:pt-14 md:pb-14 overflow-hidden px-6 bg-[#050a14] dark:bg-brand-950">
-        <div className="absolute inset-0 z-0">
+      {/* Hero Section */}
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             loading="lazy"
             src={CAREERS_HERO}
-            alt="Careers at Techknomatic"
+            alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
             referrerPolicy="no-referrer"
-          />
-          <div
-            className="absolute inset-0 z-[1] bg-gradient-to-r from-[#050a14]/90 via-[#050a14]/55 to-[#050a14]/25"
             aria-hidden
           />
-          {/* Enhanced Data Particle Background Effect */}
           <div
-            className="absolute inset-0 z-[2] opacity-[0.12] pointer-events-none"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 2px 2px, #f17e21 1px, transparent 0)",
-              backgroundSize: "40px 40px",
-            }}
-          />
-          {/* Glowing waves/orbs for depth */}
-          <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.15, 0.25, 0.15],
-            }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 right-0 z-[2] w-[800px] h-[800px] bg-accent/20 rounded-full blur-[160px] translate-x-1/4 -translate-y-1/4 pointer-events-none"
-          />
-          <motion.div
-            animate={{
-              scale: [1.1, 1, 1.1],
-              opacity: [0.1, 0.15, 0.1],
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-0 left-0 z-[2] w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[140px] -translate-x-1/4 translate-y-1/4 pointer-events-none"
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
+            aria-hidden
           />
         </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto w-full">
-          <div className="max-w-5xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
+          >
+            Careers
+          </motion.h1>
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-12 text-white"
+              transition={{ delay: 0.2 }}
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
-              Build a Career Where <br />
-              Data Drives Real-World <br />
-              Impact
-            </motion.h1>
-
-            <div className="space-y-8 mb-16">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-xl md:text-2xl text-white/90 font-medium max-w-3xl leading-relaxed"
-              >
-                At Techknomatic, you won't just build dashboards, you'll solve
-                real business problems for enterprises across industries.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-lg md:text-xl text-slate-400 font-medium max-w-3xl leading-relaxed"
-              >
-                Work on cutting-edge analytics, collaborate with sharp minds,
-                and grow into a consultant who creates measurable impact.
-              </motion.p>
-            </div>
-
+              Build a Career Where Data Drives Real-World Impact
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty mb-8"
+            >
+              At Techknomatic, you won't just build dashboards—you'll solve real
+              business problems for enterprises across industries. Work on
+              cutting-edge analytics, collaborate with sharp minds, and grow into
+              a consultant who creates measurable impact.
+            </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-6"
+              className="flex flex-wrap gap-5"
             >
               <a href="#roles">
-                <button className="px-10 py-5 bg-accent text-white font-black tracking-widest rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 uppercase text-[12px] shadow-2xl shadow-accent/20 active:scale-95 group">
-                  Explore Open Roles
+                <button className="px-8 py-4 bg-accent text-white font-black tracking-[0.1em] rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 uppercase text-[12px] shadow-2xl shadow-accent/20 active:scale-95">
+                  Explore Open Roles <ArrowRight className="w-4 h-4" />
                 </button>
               </a>
-              <Link to="/contact">
-                <button className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black tracking-widest rounded-2xl hover:bg-white/10 transition-all flex items-center gap-3 uppercase text-[12px] active:scale-95 group">
-                  Apply Now
-                </button>
-              </Link>
+              
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* 2. Work Culture & How We Work */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
+        <div className="max-w-6xl mx-auto">
           <div className="text-left mb-10">
             <h2 className="section-heading mb-8">
               How We Work
@@ -268,14 +232,14 @@ export const CareersPage = () => {
       </section>
 
       {/* 4. Career Tracks */}
-      <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-[40px] bg-slate-50 dark:bg-brand-900 px-6 text-left">
+        <div className="max-w-6xl mx-auto">
           <div className="text-left mb-20">
             <h2 className="section-heading mb-6">
               Choose Your Growth Path
             </h2>
-            <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
-              We donâ€™t just hire roles, we build careers with structured
+            <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left">
+              We don't just hire roles, we build careers with structured
               progression.
             </p>
           </div>
@@ -319,7 +283,7 @@ export const CareersPage = () => {
                 </div>
 
                 <div className="p-10 flex-1 flex flex-col">
-                  <h4 className="text-xl font-black text-brand-950 dark:text-white mb-8 pb-6 border-b border-slate-50 dark:border-white/5">
+                  <h4 className="text-xl font-bold text-brand-950 dark:text-white mb-8 pb-6 border-b border-slate-50 dark:border-white/5">
                     {track.level}
                   </h4>
                   <div className="space-y-4 mt-auto">
@@ -343,14 +307,14 @@ export const CareersPage = () => {
       {/* 7. Open Roles Section */}
       <section
         id="roles"
-        className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6"
+        className="py-[10px] bg-slate-50 dark:bg-brand-900 px-6 text-left"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-left mb-10">
             <h2 className="section-heading mb-6">
-              Current <span className="text-accent">Opportunities</span>
+              Current Opportunities
             </h2>
-            <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
+            <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left">
               Join a mission that matters.
             </p>
           </div>
@@ -364,13 +328,13 @@ export const CareersPage = () => {
       </section>
 
       {/* 9. Hiring Process */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-50 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-50 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto">
           <div className="text-left mb-10">
             <h2 className="section-heading mb-4">
               Our Hiring Process
             </h2>
-            <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
+            <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left">
               Simple, transparent, and fast
             </p>
           </div>
