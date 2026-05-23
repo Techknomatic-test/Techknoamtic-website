@@ -42,14 +42,6 @@ const PartnershipHero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[10px] font-black tracking-[0.3em] text-white uppercase bg-white/10 rounded-full border border-white/20"
-          >
-            Collaborative Growth
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,7 +49,7 @@ const PartnershipHero = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-8 text-white"
           >
             Strategic <span className="text-accent">Partnerships</span> <br />
-            to Scale Data & AI Globally.
+            to Scale Data & AI Globally
           </motion.h1>
 
           <motion.p
