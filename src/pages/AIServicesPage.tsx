@@ -197,7 +197,9 @@ const UseCaseCard = ({
       </div>
       {impact && (
         <div>
-          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Impact</h4>
+          <h4 className="text-[11px] font-black tracking-widest text-green-600 uppercase mb-2">
+            Impact
+          </h4>
           <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">{impact}</p>
         </div>
       )}
