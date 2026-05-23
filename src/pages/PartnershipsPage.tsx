@@ -123,13 +123,13 @@ const OEMSection = () => {
   ];
 
   return (
-    <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="max-w-3xl mb-16 text-left">
-          <h2 className="section-heading mb-8">
+    <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 transition-colors duration-500 overflow-hidden text-left">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-left mb-10">
+          <h2 className="section-heading mb-4">
             Our OEM Alliances.
           </h2>
-          <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">
+          <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left">
             We partner with global technology leaders to build scalable,
             intelligent, and future-ready data ecosystems.
           </p>
@@ -143,7 +143,7 @@ const OEMSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 p-0 rounded-[2.5rem] flex flex-col h-full hover:bg-white dark:hover:bg-accent/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 group overflow-hidden"
+              className="bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 p-0 rounded-[2.5rem] flex flex-col h-full text-left hover:bg-white dark:hover:bg-accent/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 group overflow-hidden"
             >
               <div className="h-64 w-full bg-slate-50/50 dark:bg-white/5 flex items-center justify-center overflow-hidden relative">
                 <img
@@ -206,25 +206,23 @@ const MarketSection = () => {
 
   return (
     <section className="py-[60px] bg-white dark:bg-brand-950 px-6 transition-colors duration-500 text-left">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[10px] font-black tracking-[0.3em] text-accent uppercase bg-accent/10 rounded-full border border-accent/20"
-            >
-              Global Network
-            </motion.div>
-            <h2 className="section-heading mb-8">
-              Our Global Market Presence Through Partners.
-            </h2>
-            <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-none">
-              To expand our reach and deliver solutions effectively across
-              regions, we work with strong local partners.
-            </p>
-          </div>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-left mb-10">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[10px] font-black tracking-[0.3em] text-accent uppercase bg-accent/10 rounded-full border border-accent/20"
+          >
+            Global Network
+          </motion.div>
+          <h2 className="section-heading mb-4">
+            Our Global Market Presence Through Partners.
+          </h2>
+          <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left">
+            To expand our reach and deliver solutions effectively across
+            regions, we work with strong local partners.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -235,7 +233,7 @@ const MarketSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 rounded-[2.5rem] flex flex-col h-full hover:border-accent/30 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 group overflow-hidden"
+              className="bg-white dark:bg-brand-900 border border-slate-100 dark:border-white/10 rounded-[2.5rem] flex flex-col h-full text-left hover:border-accent/30 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 group overflow-hidden"
             >
               <div className="relative h-56 sm:h-64 w-full bg-slate-50/50 dark:bg-white/5 overflow-hidden p-8 sm:p-10">
                 <img
