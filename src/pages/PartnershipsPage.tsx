@@ -208,14 +208,6 @@ const MarketSection = () => {
     <section className="py-[60px] bg-white dark:bg-brand-950 px-6 transition-colors duration-500 text-left">
       <div className="max-w-6xl mx-auto">
         <div className="text-left mb-10">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[10px] font-black tracking-[0.3em] text-accent uppercase bg-accent/10 rounded-full border border-accent/20"
-          >
-            Global Network
-          </motion.div>
           <h2 className="section-heading mb-4">
             Our Global Market Presence Through Partners.
           </h2>
