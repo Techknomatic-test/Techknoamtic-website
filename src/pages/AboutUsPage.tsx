@@ -139,8 +139,8 @@ const DifferentSection = () => {
   ];
 
   return (
-    <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 overflow-hidden text-left">
+      <div className="max-w-6xl mx-auto">
         <div className="text-left mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -217,7 +217,7 @@ export const AboutUsPage = () => {
   return (
     <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
       {/* 1. Hero Section - Styled as per Airline Hero */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
         <div className="absolute inset-0 z-0 overflow-hidden bg-[#020617] pointer-events-none">
           <img
             loading="lazy"
@@ -232,24 +232,24 @@ export const AboutUsPage = () => {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full drop-shadow-md">
-          <div className="max-w-4xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[56px] font-bold leading-[1.1] tracking-tight mb-8 text-white"
-            >
-              We are a team with <br />
-              <span className="text-accent decoration-white/20 underline-offset-8">
-                knowledge and experience
-              </span>
-            </motion.h1>
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold leading-[1.1] tracking-tight mb-6 text-white"
+          >
+            We are a team with <br />
+            <span className="text-accent decoration-white/20 underline-offset-8">
+              knowledge and experience
+            </span>
+          </motion.h1>
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-xl md:text-2xl text-white/80 font-medium max-w-2xl leading-relaxed mb-12"
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty mb-8"
             >
               We are a trusted BI technology and implementation partner for data
               analytics and visualization requirements, helping leaders turn
@@ -275,13 +275,13 @@ export const AboutUsPage = () => {
       <DifferentSection />
 
       {/* 3. Culture and Values (Updated Layout) */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
+        <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <h2 className="section-heading mb-8">
               Our Culture and Values
             </h2>
-            <p className="text-xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-4xl">
+            <p className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-3xl text-left">
               At Techknomatic, we strive to create a culture that empowers a
               self-driven, creative, and independent workforce. We focus on
               building a diverse and equitable organization
@@ -302,7 +302,7 @@ export const AboutUsPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-slate-50 dark:bg-white/5 p-8 rounded-[2rem] border border-slate-100 dark:border-white/5 flex flex-col items-center text-center group hover:bg-accent transition-all duration-500"
+                className="bg-slate-50 dark:bg-white/5 p-8 rounded-[2rem] border border-slate-100 dark:border-white/5 flex flex-col items-start text-left group hover:bg-accent transition-all duration-500"
               >
                 <div className="w-14 h-14 rounded-2xl bg-accent/10 dark:bg-accent/20 flex items-center justify-center text-accent mb-6 group-hover:bg-white group-hover:text-accent transition-colors">
                   <v.icon className="w-7 h-7" />
@@ -317,8 +317,8 @@ export const AboutUsPage = () => {
       </section>
 
       {/* 4. Life at Techknomatic (Auto-Slider + Team Gallery) */}
-      <section className="py-[40px] bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-5 text-left">
+      <section className="py-[40px] bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 overflow-hidden text-left px-6">
+        <div className="max-w-6xl mx-auto mb-5 text-left">
           <h2 className="section-heading">
             Life at <span className="text-accent">Techknomatic</span>
           </h2>
@@ -346,7 +346,7 @@ export const AboutUsPage = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-5 text-left">
             <h3 className="text-2xl md:text-3xl font-bold text-brand-950 dark:text-white tracking-tight">
               Our <span className="text-accent">Leadership & Team</span>
