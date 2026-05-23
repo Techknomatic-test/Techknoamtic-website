@@ -136,31 +136,55 @@ const ApproachStep = ({ num, title, description, icon: Icon, delay = 0 }: { num:
   </motion.div>
 );
 
-const UseCaseCard = ({ title, description, crux, industries }: { title: string; description: string; crux: string; industries: string }) => (
+const UseCaseCard = ({
+  title,
+  subtitle,
+  crux,
+  industries,
+  impact,
+}: {
+  title: string;
+  subtitle: string;
+  crux: string;
+  industries: string;
+  impact: string;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group"
+    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group text-left h-full flex flex-col"
   >
-    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 leading-tight group-hover:text-accent transition-colors">
+    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-2 leading-tight group-hover:text-accent transition-colors">
       {title}
     </h3>
     <p className="text-[15px] font-bold text-brand-950/80 dark:text-white/80 mb-8 leading-snug">
-      {description}
+      {subtitle}
     </p>
 
-    <div className="space-y-6">
+    <div className="space-y-6 flex-1">
       <div>
         <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
           {crux}
         </p>
       </div>
-      <div>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Industries</h4>
-        <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
-          {industries}
-        </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
+            Industries
+          </h4>
+          <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
+            {industries}
+          </p>
+        </div>
+        <div>
+          <h4 className="text-[11px] font-black tracking-widest text-green-600 uppercase mb-3">
+            Impact
+          </h4>
+          <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
+            {impact}
+          </p>
+        </div>
       </div>
     </div>
   </motion.div>
@@ -233,23 +257,32 @@ export const DataEngineeringPage = () => {
 
   const useCases = [
     {
-      title: "Data Platform Modernization",
-      description: "Re-architect legacy data ecosystems into a scalable cloud-native foundation",
-      crux: "Migrate fragmented ETL workflows and legacy warehouses into a governed lakehouse on Databricks and Azure. Using Medallion Architecture, Delta Lake, ADF, and Airflow, we build Bronze–Silver–Gold layers that power enterprise BI, analytics, and AI at scale.",
-      industries: "BFSI · Insurance · Manufacturing · Retail · Telecom"
+      title: "Data Platform Modernization & Cloud Lakehouse Engineering",
+      subtitle:
+        "Re-architect legacy data ecosystems into a scalable cloud-native foundation.",
+      crux: "Migrate fragmented ETL workflows and legacy warehouses into a governed lakehouse built on modern cloud platforms and orchestration tools. Design Bronze–Silver–Gold data layers that unify batch and streaming data, standardize transformations, and serve analytics, AI, and BI workloads from a single trusted backbone.",
+      industries: "BFSI · Insurance · Manufacturing · Retail · Telecom",
+      impact:
+        "Significantly simplified data landscape · Remarkably faster analytics delivery · Stronger foundation for AI and advanced reporting",
     },
     {
-      title: "Real-Time Operational Intelligence Platforms",
-      description: "Transform enterprise operational data into actionable, real-time business intelligence",
-      crux: "Build event-driven analytics platforms on AWS, Redshift, Glue, Kinesis, Lambda, MSK, and S3, using Kafka streaming, CDC pipelines, and dimensional modeling. Consolidate ERP, CRM, IoT, ITSM, and transactional data into low-latency operational views for faster decisions.",
-      industries: "Oil & Gas · Logistics · ITSM · Telecom · Supply Chain"
+      title: "Real-Time Operational Intelligence & Streaming Data Platforms",
+      subtitle:
+        "Transform enterprise operational data into actionable, real-time business intelligence.",
+      crux: "Build event-driven analytics platforms using streaming, CDC, and dimensional modeling to continuously process operational signals from ERP, CRM, IoT, ITSM, and transactional systems. Consolidate these feeds into low-latency operational views that empower teams to monitor performance, detect anomalies, and act on insights as they unfold.",
+      industries: "Oil & Gas · Logistics · ITSM · Telecom · Supply Chain",
+      impact:
+        "Substantially improved decision speed · Enhanced visibility into live operations · Stronger responsiveness to business events",
     },
     {
-      title: "Data Quality, Reconciliation & Observability",
-      description: "Engineer trust into every stage of the data lifecycle",
-      crux: "Embed automated validation, reconciliation, schema-drift detection, lineage tracking, and SLA monitoring directly into transformation layers. Built on Snowflake and GCP, BigQuery, Dataflow, Pub/Sub, to surface data issues before they impact reporting or compliance.",
-      industries: "BFSI · Insurance · Healthcare · Government · Regulated Enterprises"
-    }
+      title: "Data Quality, Reconciliation & End‑to‑End Observability Analytics",
+      subtitle: "Engineer trust into every stage of the data lifecycle.",
+      crux: "Embed automated validation, reconciliation, schema-drift detection, lineage tracking, and SLA monitoring directly into data pipelines and transformation layers. Leverage cloud-native data platforms and observability tooling to surface data issues early, protect critical reports, and strengthen compliance with internal and regulatory standards.",
+      industries:
+        "BFSI · Insurance · Healthcare · Government · Regulated Enterprises",
+      impact:
+        "Considerably higher data reliability · Reduced reporting and reconciliation risk · Enhanced confidence in regulatory and management reporting",
+    },
   ];
 
   return (
@@ -434,19 +467,29 @@ export const DataEngineeringPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
+        <div className="max-w-6xl mx-auto text-left">
           <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+            >
+              Three high-impact data engineering programs for modern, trusted, and
+              real-time enterprise data platforms.
+            </motion.p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {useCases.map((uc, idx) => (
               <UseCaseCard key={idx} {...uc} />
             ))}
