@@ -204,8 +204,7 @@ export const ContactPage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-10">
             <h2 className="section-heading mb-4">
-              Why customer teams reach out to{" "}
-              <span className="text-accent">Techknomatic</span>
+              Why customer teams reach out to Techknomatic
             </h2>
             <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left">
               From PoC to enterprise-scale deployments, we partner across the
