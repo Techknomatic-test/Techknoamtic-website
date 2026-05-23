@@ -240,9 +240,7 @@ export const AboutUsPage = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold leading-[1.1] tracking-tight mb-6 text-white"
           >
             We are a team with <br />
-            <span className="text-accent decoration-white/20 underline-offset-8">
-              knowledge and experience
-            </span>
+            knowledge and experience
           </motion.h1>
           <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.p
@@ -263,7 +261,7 @@ export const AboutUsPage = () => {
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 bg-accent text-white rounded-2xl font-black tracking-[0.1em] uppercase text-[12px] shadow-2xl flex items-center gap-3 active:scale-95 transition-all"
                 >
-                  🚀 Case Studies <ArrowRight className="w-4 h-4" />
+                   Case Studies <ArrowRight className="w-4 h-4" />
                 </motion.button>
               </Link>
             </div>
@@ -320,7 +318,7 @@ export const AboutUsPage = () => {
       <section className="py-[40px] bg-slate-50 dark:bg-brand-900 border-y border-slate-100 dark:border-white/5 overflow-hidden text-left px-6">
         <div className="max-w-6xl mx-auto mb-5 text-left">
           <h2 className="section-heading">
-            Life at <span className="text-accent">Techknomatic</span>
+            Life at Techknomatic
           </h2>
         </div>
 
@@ -349,7 +347,7 @@ export const AboutUsPage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="mb-5 text-left">
             <h3 className="text-2xl md:text-3xl font-bold text-brand-950 dark:text-white tracking-tight">
-              Our <span className="text-accent">Leadership & Team</span>
+              Our Leadership & Team
             </h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-slate-100 dark:border-white/5">
