@@ -281,7 +281,7 @@ export const BIServicesPage = () => {
         "Define the analytics future state, platform, data, governance, and adoption, before writing the first dashboard.",
       items: [
         "Current-state BI maturity assessment across people, process, platform, and data",
-        "Target-state architecture and tool selection (Power BI / Tableau / Qlik / hybrid)",
+        "Target-state architecture and tool selection (Power BI / Tableau / Qlik / Hybrid)",
         "BI roadmap with phased delivery milestones and success metrics",
         "BI Centre of Excellence (CoE) design and operating model",
         "ROI modeling and business case development for analytics investments",
@@ -368,7 +368,7 @@ export const BIServicesPage = () => {
       title: "Discover",
       icon: Search,
       description:
-        "Assess current BI estate, priorities, and gaps. Define success criteria and target outcomes.",
+        "Assess current BI state, priorities, and gaps. Define success criteria and target outcomes.",
     },
     {
       num: "02",
