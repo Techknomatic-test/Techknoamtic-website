@@ -408,7 +408,7 @@ export const InsuranceAnalyticsPage = () => {
                       />
                       <div className="w-px h-6 bg-slate-200 dark:bg-white/10" />
                       <span className="text-[11px] font-black tracking-widest uppercase text-slate-500">
-                        ESRI Silver Partner Implementation
+                        ESRI Partner Implementation
                       </span>
                     </div>
                   </div>
