@@ -269,7 +269,7 @@ export const BIServicesPage = () => {
       title: "BI Governance & Centre of Excellence",
       icon: ShieldCheck,
       description:
-        "Defensible governance that scales analytics without creating bottlenecks, trust as a delivery outcome.",
+        "We put the right rules in place so your analytics stay reliable, consistent, and easy to trust at any scale.",
       items: [
         "BI governance framework definition and rollout",
         "Row-level and object-level security implementation",
