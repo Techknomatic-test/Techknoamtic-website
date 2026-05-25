@@ -276,11 +276,12 @@ export const ParseIQPage = () => {
             aria-hidden
           />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-6xl text-left drop-shadow-md">
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-black text-white mb-6 tracking-tight leading-tight"
+            transition={{ delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             ParseIQ
           </motion.h1>
@@ -288,7 +289,7 @@ export const ParseIQPage = () => {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.2 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
               AI-Powered Document Intelligence & Data Extraction Platform
@@ -296,8 +297,8 @@ export const ParseIQPage = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-sm text-slate-400 font-normal leading-relaxed text-pretty"
+              transition={{ delay: 0.3 }}
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
               Transform unstructured documents into structured, actionable intelligence. ParseIQ combines OCR, AI, and LLM-driven understanding to automate document processing at enterprise scale.
             </motion.p>
@@ -306,22 +307,22 @@ export const ParseIQPage = () => {
       </section>
 
       {/* Challenge Section */}
-      <section className="overflow-hidden border-b border-slate-100 bg-white px-6 py-[60px] text-left dark:border-white/5 dark:bg-brand-950">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-16">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl space-y-8 text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Every enterprise runs on documents invoices, contracts, KYC forms, passports, claims, shipment paperwork, onboarding records, and operational PDFs. Yet despite digital transformation investments, most document workflows still remain manual, fragmented, and heavily dependent on human effort. Traditional OCR systems can extract text, but they fail to understand context, layouts, handwritten content, or complex multi-page documents. Teams spend countless hours validating fields, correcting extraction errors, re-entering data into ERP and CRM systems, and managing compliance-heavy verification processes manually
               The result is an operational bottleneck hidden inside back-office workflows: slower customer onboarding, delayed approvals, rising operational costs, compliance risks, and poor scalability. As document volumes grow, organizations are forced to scale teams instead of intelligence making automation expensive, inconsistent, and difficult to sustain
             </motion.p>
           </div>
 
-          <div className="grid items-center gap-20 lg:grid-cols-2">
+          <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -373,14 +374,14 @@ export const ParseIQPage = () => {
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-4"
+              className="section-heading mb-6"
             >
               What ParseIQ Solves
             </motion.h2>
@@ -394,10 +395,10 @@ export const ParseIQPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <motion.h2 
+          <div className="text-left mb-16">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -405,14 +406,14 @@ export const ParseIQPage = () => {
             >
               How ParseIQ Works
             </motion.h2>
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl font-bold text-accent mb-12 tracking-wider"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
             >
-              5-STEP ARCHITECTURE
+              5-step architecture: ingest, understand, extract, validate, and integrate structured document intelligence.
             </motion.h3>
           </div>
 
@@ -450,26 +451,26 @@ export const ParseIQPage = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-[60px] px-6 bg-brand-950 text-left relative overflow-hidden">
+      <section className="py-[60px] px-6 bg-[#020617] text-left relative overflow-hidden border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="mb-16">
-            <motion.h2 
+          <div className="text-left mb-16">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading-on-dark mb-4"
+              className="section-heading-on-dark mb-6"
             >
               System & Process Integration
             </motion.h2>
-            <motion.h3 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl font-bold text-white/50"
+              className="text-xl text-white/60 font-medium max-w-3xl"
             >
-              Supported Integrations
-            </motion.h3>
+              Connector-first integrations across ERP, CRM, workflow engines, and document systems your teams already run.
+            </motion.p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {integrations.map((item, idx) => (
@@ -480,19 +481,28 @@ export const ParseIQPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2 
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-6xl mx-auto text-left">
+          <div className="mb-10">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+            >
+              High-impact document automation across BFSI, logistics, healthcare, and public-sector operations.
+            </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
             {useCases.map((uc, idx) => (
               <UseCaseCard key={idx} {...uc} delay={idx * 0.1} />
             ))}
