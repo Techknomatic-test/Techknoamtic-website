@@ -413,14 +413,15 @@ export const ITSMPlugAndPlayPage = () => {
             >
               What InsightSM Solves
             </motion.h2>
-            <motion.div
+            <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/50 px-4 py-2 text-[12px] font-bold text-brand-950/70 dark:border-white/10 dark:bg-white/5 dark:text-white/60"
+              transition={{ delay: 0.1 }}
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
               From fragmented ITSM data to unified operational intelligence
-            </motion.div>
+            </motion.h3>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
