@@ -490,13 +490,13 @@ export const ITSMPlugAndPlayPage = () => {
 
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-5xl space-y-8 text-left mb-16">
+          <div className="w-full text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Most large enterprises run their IT operations on multiple ITSM platforms simultaneously, ServiceNow in
               one business unit, BMC Remedy in another, Jira Service Management for engineering, SolarWinds for

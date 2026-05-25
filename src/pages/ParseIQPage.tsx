@@ -309,13 +309,13 @@ export const ParseIQPage = () => {
       {/* Challenge Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-5xl space-y-8 text-left mb-16">
+          <div className="w-full text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Every enterprise runs on documents invoices, contracts, KYC forms, passports, claims, shipment paperwork, onboarding records, and operational PDFs. Yet despite digital transformation investments, most document workflows still remain manual, fragmented, and heavily dependent on human effort. Traditional OCR systems can extract text, but they fail to understand context, layouts, handwritten content, or complex multi-page documents. Teams spend countless hours validating fields, correcting extraction errors, re-entering data into ERP and CRM systems, and managing compliance-heavy verification processes manually
               The result is an operational bottleneck hidden inside back-office workflows: slower customer onboarding, delayed approvals, rising operational costs, compliance risks, and poor scalability. As document volumes grow, organizations are forced to scale teams instead of intelligence making automation expensive, inconsistent, and difficult to sustain
