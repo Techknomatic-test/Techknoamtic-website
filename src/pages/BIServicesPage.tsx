@@ -506,7 +506,7 @@ export const BIServicesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium text-left"
             >
               Five core service offerings that span the full BI lifecycle, from strategy and
               roadmap to dashboard development, governance, and sustained adoption.
@@ -537,7 +537,7 @@ export const BIServicesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Deep, certified expertise across the three platforms that dominate enterprise BI, we
               recommend the right tool for your context, not the one we know best.
@@ -626,7 +626,7 @@ export const BIServicesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium text-left"
             >
               High-impact BI deployments across industries, from executive visibility
               to operational intelligence.

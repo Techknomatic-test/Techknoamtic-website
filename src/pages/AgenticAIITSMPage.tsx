@@ -645,7 +645,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
               From Reactive IT Support to Autonomous IT Operations. Intake. Classify. Verify. Resolve.
               Audit.
@@ -655,7 +655,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               TicketIQ is an agentic AI ITSM platform that autonomously manages and
               resolves L1 IT tickets across the enterprise. It captures requests from
@@ -689,7 +689,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 max-w-3xl"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60"
             >
               Purpose-built for enterprises with high-volume IT service desks ,
               wherever repetitive L1 tickets, governance demands, and scaling pressure
@@ -721,7 +721,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               TicketIQ is built as a layered agentic AI architecture purpose-built for
               IT operations. It captures requests across employee channels, classifies
@@ -778,7 +778,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               TicketIQ is designed as an ITSM-native, integration-flexible platform.
               Whether your docs are in SharePoint or Confluence, your endpoints in
@@ -830,7 +830,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Seven industry-specific deployments where TicketIQ is replacing manual
               L1 IT support with autonomous, governance-driven AI resolution.

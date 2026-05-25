@@ -464,7 +464,7 @@ export const AIServicesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               A cutting-edge tech stack for the AI era, optimized for performance, scalability, and trust.
             </motion.p>
@@ -551,7 +551,7 @@ export const AIServicesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium mt-4 max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium mt-4"
             >
               Four high-impact AI programs we deliver for enterprises, across document intelligence, data migration,
               autonomous operations, and customer experience.

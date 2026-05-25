@@ -546,7 +546,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
               From manual freight pricing to intelligent real-time rate optimization. Quote faster. Optimize better.
               Scale smarter.
@@ -556,7 +556,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               FreightIQ is an AI-powered freight pricing and rate automation platform that intelligently calculates,
               optimizes, and automates freight quotations across logistics operations. The platform combines real-time
@@ -590,7 +590,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Purpose-built for freight-intensive operations across the global logistics value chain.
             </motion.p>
@@ -621,7 +621,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               FreightIQ is built as a layered pricing intelligence platform that connects to carrier systems in real
               time, applies AI-driven dynamic pricing logic, optimizes across cost / speed / margin, and generates
@@ -675,7 +675,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               FreightIQ is designed as an API-first platform that plugs into the operational systems freight businesses
               already run on. Whether you're issuing quotations from a CRM, executing shipments through a TMS, posting
@@ -727,7 +727,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               High-impact deployments where FreightIQ is transforming manual pricing into intelligent rate automation.
             </motion.p>

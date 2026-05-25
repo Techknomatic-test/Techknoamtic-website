@@ -547,7 +547,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
               From reactive data monitoring to autonomous data reliability. Connect. Observe. Validate. Govern. Act.
             </motion.h3>
@@ -556,7 +556,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               DataPulseIQ is an AI-powered data quality and reliability framework that unifies observability, business-rule
               validation, governance, and autonomous data intelligence into a single operational platform. It connects to
@@ -591,7 +591,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Purpose-built for any data-heavy enterprise, wherever data fragmentation, governance gaps, or reliability
               issues slow down decisions.
@@ -622,7 +622,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               DataPulseIQ is built as a layered data reliability platform that connects to enterprise data sources,
               continuously observes quality across tables and columns, applies business-aware validation logic, embeds
@@ -676,7 +676,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               DataPulseIQ is designed as a connector-first, deployment-flexible platform. Whether your enterprise data lives
               in Snowflake, Databricks, BigQuery, Redshift, an on-prem warehouse, an ERP, or a combination of all of them , 
@@ -735,7 +735,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Six domain-specific deployments where DataPulseIQ is replacing reactive data monitoring with intelligent,
               autonomous data reliability.

@@ -380,7 +380,7 @@ export const GeospatialPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               A platform-agnostic stack, we choose the right tool for your architecture, not the other way around.
             </motion.p>

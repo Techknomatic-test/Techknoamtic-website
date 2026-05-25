@@ -602,7 +602,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
               From BI Ticket Queues to Conversational Decision Intelligence. Ask. Retrieve. Ground. Visualize.
               Decide.
@@ -612,7 +612,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               CXO Nexus is an enterprise conversational AI platform that turns natural-language questions into grounded
               business insights. It connects directly to enterprise databases, warehouses, ERP, CRM, and knowledge
@@ -646,7 +646,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 max-w-3xl"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60"
             >
               Purpose-built for any data-rich enterprise, wherever leadership decision speed depends on access to
               operational and business intelligence.
@@ -678,7 +678,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               CXO Nexus is built as a layered conversational analytics architecture that captures business questions,
               interprets executive intent, retrieves relevant data, grounds responses in actual knowledge through RAG,
@@ -732,7 +732,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               CXO Nexus is designed as a data-source-first, deployment-flexible AI platform. Connect through reusable
               connectors and grounds every answer in real enterprise context. Deploy in our cloud, your cloud, or
@@ -783,7 +783,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Seven industry-specific deployments where CXO Nexus is replacing BI ticket queues with conversational
               decision intelligence.

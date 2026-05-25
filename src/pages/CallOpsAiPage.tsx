@@ -507,7 +507,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
               From Manual Calling Operations to Autonomous Voice Intelligence. Connect. Hear. Understand. Respond.
               Act.
@@ -517,7 +517,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               CallOps AI is built on a layered voice AI architecture that combines telephony, speech recognition, LLM-powered reasoning, and enterprise workflow execution, orchestrated in real time so AI agents can listen, understand, decide, and act within a single conversation. Scaling your calling floor from 10 to 1,000 agents is now a matter of configuration, not recruitment.
             </motion.p>
@@ -548,7 +548,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 max-w-3xl leading-snug"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 leading-snug"
             >
               High-impact deployments where AI voice agents are replacing, and outperforming, traditional human calling teams across sectors.
             </motion.h3>
@@ -579,7 +579,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               CallOps AI converts voice into structured intelligence and action. Our engine supports ultra-low latency speech-to-text, context-aware intent detection, and human-like voice synthesis, all while making real-time calls to your CRM and business applications.
             </motion.p>
@@ -629,7 +629,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Voice agents only deliver real outcomes when they can read from and write to the systems your operations already run on. CallOps AI is API-first and CCaaS-native, connecting to CRMs, telephony providers, and campaign engines so every conversation is informed by live context.
             </motion.p>
@@ -686,7 +686,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Six high-impact deployments where CallOps AI is replacing, and outperforming, traditional calling teams.
             </motion.p>

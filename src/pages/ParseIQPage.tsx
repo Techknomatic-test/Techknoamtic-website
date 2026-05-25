@@ -411,7 +411,7 @@ export const ParseIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
               5-step architecture: ingest, understand, extract, validate, and integrate structured document intelligence.
             </motion.h3>
@@ -467,7 +467,7 @@ export const ParseIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-white/60 font-medium max-w-3xl"
+              className="text-xl text-white/60 font-medium"
             >
               Connector-first integrations across ERP, CRM, workflow engines, and document systems your teams already run.
             </motion.p>
@@ -497,7 +497,7 @@ export const ParseIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               High-impact document automation across BFSI, logistics, healthcare, and public-sector operations.
             </motion.p>
