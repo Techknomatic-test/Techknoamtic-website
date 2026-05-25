@@ -95,7 +95,7 @@ const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: 
         </p>
       </div>
       <div>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Call Types</h4>
+        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Focus Areas</h4>
         <p className="text-[13px] font-bold text-brand-950 dark:text-white">
           {focusAreas}
         </p>
