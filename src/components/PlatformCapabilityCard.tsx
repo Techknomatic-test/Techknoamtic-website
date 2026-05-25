@@ -12,6 +12,8 @@ type PlatformCapabilityCardProps = {
   outcome?: string;
   /** When false and no outcome, bullets follow the title (e.g. ParseIQ). */
   reserveOutcomeSpace?: boolean;
+  /** Prefix outcome with "Outcome:" (enterprise AI pages). */
+  prependOutcomeLabel?: boolean;
   delay?: number;
   titleClassName?: string;
 };
@@ -23,6 +25,7 @@ export function PlatformCapabilityCard({
   icon,
   outcome,
   reserveOutcomeSpace = true,
+  prependOutcomeLabel = false,
   delay = 0,
   titleClassName = "",
 }: PlatformCapabilityCardProps) {
@@ -42,7 +45,7 @@ export function PlatformCapabilityCard({
       </h3>
       {outcome !== undefined ? (
         <p className="mb-4 min-h-[3.25rem] text-[13px] font-bold leading-snug text-brand-950/70 line-clamp-3 dark:text-white/60">
-          {outcome}
+          {prependOutcomeLabel ? `Outcome: ${outcome}` : outcome}
         </p>
       ) : reserveOutcomeSpace ? (
         <div className="mb-4 min-h-[3.25rem]" aria-hidden />
