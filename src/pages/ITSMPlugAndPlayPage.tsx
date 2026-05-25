@@ -46,7 +46,7 @@ const CapabilityCard = ({
     <h3 className="mb-2 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
       {title}
     </h3>
-    <p className="mb-6 text-[13px] font-bold italic text-brand-950/70 dark:text-white/60">{outcome}</p>
+    <p className="mb-6 text-[13px] font-bold text-brand-950/70 dark:text-white/60">{outcome}</p>
     <div className="mt-auto space-y-3 border-t border-slate-100 pt-6 dark:border-white/5">
       {items.map((item, i) => (
         <div key={i} className="flex items-start gap-3">
@@ -89,7 +89,7 @@ const UseCaseCard = ({
 
       <div>
         <h4 className="mb-3 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
-        <p className="text-[14px] font-bold italic text-brand-950 dark:text-white">{focusAreas}</p>
+        <p className="text-[14px] font-bold text-brand-950 dark:text-white">{focusAreas}</p>
       </div>
 
       <div className="border-t border-slate-100 pt-4 dark:border-white/5">

@@ -49,7 +49,7 @@ const CapabilityCard = ({
       <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
         {title}
       </h3>
-      <p className="text-[13px] font-bold text-brand-950/70 dark:text-white/60 mb-6 italic leading-snug">
+      <p className="text-[13px] font-bold text-brand-950/70 dark:text-white/60 mb-6 leading-snug">
         Outcome: {outcome}
       </p>
       <ul className="space-y-3 pt-6 border-t border-slate-100 dark:border-white/5 list-none">
@@ -106,7 +106,7 @@ const UseCaseCard = ({
         <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
           Focus Areas
         </h4>
-        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
           {focusAreas}
         </p>
       </div>
@@ -115,8 +115,8 @@ const UseCaseCard = ({
     <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
       <div className="flex items-center gap-3">
         <SectionIcon icon={Target} size="sm" hover="none" />
-        <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
-          <span className="text-accent uppercase tracking-wider mr-2 not-italic">
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
+          <span className="text-accent uppercase tracking-wider mr-2">
             Outcome:
           </span>
           {outcome}

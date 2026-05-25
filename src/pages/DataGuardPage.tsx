@@ -48,7 +48,7 @@ const CapabilityCard = ({
       <h3 className="mb-4 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
         {title}
       </h3>
-      <p className="mb-6 text-[13px] font-bold italic leading-snug text-brand-950/70 dark:text-white/60">{outcome}</p>
+      <p className="mb-6 text-[13px] font-bold leading-snug text-brand-950/70 dark:text-white/60">{outcome}</p>
       <ul className="list-none space-y-3 border-t border-slate-100 pt-6 dark:border-white/5">
         {items.map((item, i) => (
           <li key={i} className="group/item flex items-start gap-3">
@@ -96,15 +96,15 @@ const UseCaseCard = ({
       </div>
       <div>
         <h4 className="mb-3 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
-        <p className="text-[13px] font-bold italic text-brand-950 dark:text-white">{focusAreas}</p>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">{focusAreas}</p>
       </div>
     </div>
 
     <div className="mt-auto border-t border-slate-100 pt-6 dark:border-white/5">
       <div className="flex items-center gap-3">
         <SectionIcon icon={Target} size="sm" hover="none" />
-        <p className="text-[13px] font-bold italic text-brand-950 dark:text-white">
-          <span className="mr-2 uppercase tracking-wider text-accent not-italic">Outcome:</span>
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
+          <span className="mr-2 uppercase tracking-wider text-accent">Outcome:</span>
           {outcome}
         </p>
       </div>

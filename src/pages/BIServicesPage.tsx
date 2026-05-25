@@ -206,7 +206,7 @@ const UseCaseCard = ({
           <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
             Industries
           </h4>
-          <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
+          <p className="text-[14px] font-bold text-brand-950 dark:text-white">
             {industries}
           </p>
         </div>
@@ -214,7 +214,7 @@ const UseCaseCard = ({
           <h4 className="text-[11px] font-black tracking-widest text-green-600 uppercase mb-3">
             Impact
           </h4>
-          <p className="text-[14px] font-bold text-brand-950 dark:text-white italic">
+          <p className="text-[14px] font-bold text-brand-950 dark:text-white">
             {impact}
           </p>
         </div>

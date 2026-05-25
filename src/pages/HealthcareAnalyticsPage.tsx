@@ -80,14 +80,14 @@ const UseCaseCard = ({ title, subtitle, crux, industries, impact }: {
       <div className="pt-4 border-t border-slate-100 dark:border-white/5 grid grid-cols-2 gap-4">
         <div>
           <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Industries</h4>
-          <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+          <p className="text-[13px] font-bold text-brand-950 dark:text-white">
             {industries}
           </p>
         </div>
         {impact && (
           <div>
             <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-2">Impact</h4>
-            <p className="text-[13px] font-bold text-brand-950 dark:text-white italic">
+            <p className="text-[13px] font-bold text-brand-950 dark:text-white">
               {impact}
             </p>
           </div>
