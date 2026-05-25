@@ -421,7 +421,7 @@ export const FreightIQPage = () => {
             aria-hidden
           />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-7xl text-left drop-shadow-md">
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -430,12 +430,12 @@ export const FreightIQPage = () => {
           >
             FreightIQ
           </motion.h1>
-          <div className="w-full max-w-none">
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight text-balance leading-tight"
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
               Intelligent Freight Pricing for Faster Quotes and Higher Profitability
             </motion.h2>
@@ -443,7 +443,7 @@ export const FreightIQPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-sm text-slate-400 font-normal leading-relaxed text-pretty text-justify"
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
               AI-powered dynamic freight pricing, real-time carrier rates, multi-modal support, and instant quote
               generation. Built for logistics enterprises that compete on speed and margin.
@@ -454,15 +454,14 @@ export const FreightIQPage = () => {
 
       {/* Challenge Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl space-y-8 text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-none text-justify"
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Every freight quote is a race against the clock. Customers expect rates in minutes. Carriers update
               pricing daily. Routes shift with seasonality, capacity, and fuel. Yet most logistics providers still build
@@ -472,7 +471,7 @@ export const FreightIQPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid items-center gap-20 lg:grid-cols-2">
+          <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -531,14 +530,14 @@ export const FreightIQPage = () => {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               What FreightIQ Solves
             </motion.h2>
@@ -547,7 +546,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl  text-brand-950 dark:text-white mb-6 leading-tight"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
             >
               From manual freight pricing to intelligent real-time rate optimization. Quote faster. Optimize better.
               Scale smarter.
@@ -557,7 +556,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-none text-justify"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               FreightIQ is an AI-powered freight pricing and rate automation platform that intelligently calculates,
               optimizes, and automates freight quotations across logistics operations. The platform combines real-time
@@ -575,14 +574,14 @@ export const FreightIQPage = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8 "
+              className="section-heading mb-6"
             >
               Industries We Serve
             </motion.h2>
@@ -591,7 +590,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Purpose-built for freight-intensive operations across the global logistics value chain.
             </motion.p>
@@ -606,14 +605,14 @@ export const FreightIQPage = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               How FreightIQ Works
             </motion.h2>
@@ -622,7 +621,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-none text-justify"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               FreightIQ is built as a layered pricing intelligence platform that connects to carrier systems in real
               time, applies AI-driven dynamic pricing logic, optimizes across cost / speed / margin, and generates
@@ -660,14 +659,14 @@ export const FreightIQPage = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Built to Plug Into Your Logistics Stack
             </motion.h2>
@@ -676,7 +675,7 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="w-full text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-none text-justify"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               FreightIQ is designed as an API-first platform that plugs into the operational systems freight businesses
               already run on. Whether you're issuing quotations from a CRM, executing shipments through a TMS, posting
@@ -712,14 +711,14 @@ export const FreightIQPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-6xl mx-auto text-left">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8 "
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
@@ -728,13 +727,13 @@ export const FreightIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               High-impact deployments where FreightIQ is transforming manual pricing into intelligent rate automation.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
             {useCases.map((uc, idx) => (
               <UseCaseCard key={idx} {...uc} delay={idx * 0.05} />
             ))}
