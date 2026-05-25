@@ -582,7 +582,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               InsightSM is a rapid ITSM analytics accelerator that sits on top of your existing ITSM ecosystem, 
               delivering enterprise-grade operational intelligence in days. The platform connects multiple ITSM tools,
@@ -615,7 +615,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Purpose-built for any IT-heavy enterprise, wherever ITSM data fragmentation slows operational
               decision-making.
@@ -645,7 +645,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               InsightSM follows a systematic, four-stage deployment architecture designed for speed, accuracy, and
               enterprise scale. By separating the validation phase from the production rollout, we allow stakeholders to
@@ -700,7 +700,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               InsightSM is designed as a connector-first, deployment-flexible platform. Whether your operations live in
               ServiceNow, BMC Remedy, Jira Service Management, SolarWinds, or a combination of all four, InsightSM
@@ -740,7 +740,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Six domain-specific deployments where InsightSM is replacing manual ITSM reporting with unified operational
               intelligence.

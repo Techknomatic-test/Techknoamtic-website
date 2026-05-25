@@ -646,7 +646,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
             >
               From Manual Customer Support to Intelligent Autonomous Self-Service. Instant. Conversational.
               Scalable. Safe
@@ -657,7 +657,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Every conversation is an opportunity. AssistIQ unifies your business
               knowledge into an intelligent conversational engine that handles routine
@@ -690,7 +690,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 max-w-3xl"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60"
             >
               Purpose-built for customer-facing enterprises, wherever customer
               expectations have outpaced traditional support models.
@@ -721,7 +721,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               AssistIQ is built as a layered conversational AI architecture that
               captures customer intent, understands meaning through
@@ -779,7 +779,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               AssistIQ is a channel-first, integration-flexible platform. Whether
               web, mobile, WhatsApp, or voice, AssistIQ deploys with unified
@@ -831,7 +831,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
               Seven industry-specific deployments where AssistIQ is replacing manual
               customer support with intelligent, autonomous AI self-service.
