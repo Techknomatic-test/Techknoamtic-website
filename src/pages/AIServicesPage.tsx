@@ -520,7 +520,7 @@ export const AIServicesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-white/60 font-medium max-w-2xl"
+              className="text-xl text-white/60 font-medium"
             >
               A proven 5-step delivery framework, from use case to production-grade, continuously improving AI.
             </motion.p>
