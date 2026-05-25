@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-import type { LucideIcon } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
 import { SectionIcon } from "../components/SectionIcon";
 import {
   BarChart,
@@ -21,42 +21,6 @@ const ismRootImg = (file: string) =>
 
 const ISM_HERO_IMG = ismRootImg("Herobanner.jpg");
 const ISM_CHALLENGE_IMG = ismRootImg("Challenge.jpg");
-
-const CapabilityCard = ({
-  title,
-  outcome,
-  items,
-  icon: Icon,
-  delay = 0,
-}: {
-  title: string;
-  outcome: string;
-  items: string[];
-  icon: LucideIcon;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="group flex h-full flex-col rounded-[2.5rem] border border-slate-100 bg-white p-8 text-left shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
-  >
-    <SectionIcon icon={Icon} size="lg" className="mb-8" />
-    <h3 className="mb-2 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
-      {title}
-    </h3>
-    <p className="mb-6 text-[13px] font-bold text-brand-950/70 dark:text-white/60">{outcome}</p>
-    <div className="mt-auto space-y-3 border-t border-slate-100 pt-6 dark:border-white/5">
-      {items.map((item, i) => (
-        <div key={i} className="flex items-start gap-3">
-          <div className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-          <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400">{item}</span>
-        </div>
-      ))}
-    </div>
-  </motion.div>
-);
 
 const UseCaseCard = ({
   title,
@@ -434,9 +398,9 @@ export const ITSMPlugAndPlayPage = () => {
               visibility across IT operations.
             </motion.p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((it, idx) => (
-              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
+              <PlatformCapabilityCard key={idx} {...it} delay={idx * 0.1} />
             ))}
           </div>
         </div>

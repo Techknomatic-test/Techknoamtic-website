@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-import type { LucideIcon } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
 import { SectionIcon } from "../components/SectionIcon";
 import {
   Database,
@@ -21,48 +21,6 @@ const fiqImg = (file: string) =>
 
 const FIQ_HERO = fiqImg("herobanner.jpg");
 const FIQ_CHALLENGE = fiqImg("GlobalShippingTransport.jpg");
-
-const CapabilityCard = ({
-  title,
-  outcome,
-  items,
-  icon: Icon,
-  delay = 0,
-}: {
-  title: string;
-  outcome: string;
-  items: string[];
-  icon: LucideIcon;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full text-left"
-  >
-    <SectionIcon icon={Icon} size="md" className="mb-6" />
-    <div className="flex-1">
-      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors capitalize">
-        {title}
-      </h3>
-      <p className="text-[13px] font-bold text-brand-950/70 dark:text-white/60 mb-6 leading-snug">
-        {outcome}
-      </p>
-      <ul className="space-y-3 pt-6 border-t border-slate-100 dark:border-white/5 list-none">
-        {items.map((item, i) => (
-          <li key={i} className="flex items-start gap-3 group/item">
-            <div className="w-1.5 h-1.5 rounded-full bg-accent/40 mt-1.5 flex-shrink-0" />
-            <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400 group-hover/item:text-brand-950 dark:group-hover/item:text-white transition-colors">
-              {item}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </motion.div>
-);
 
 const UseCaseCard = ({
   title,
@@ -439,9 +397,9 @@ export const FreightIQPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((it, idx) => (
-              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
+              <PlatformCapabilityCard key={idx} {...it} delay={idx * 0.1} titleClassName="capitalize" />
             ))}
           </div>
         </div>
