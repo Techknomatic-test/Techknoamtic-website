@@ -529,7 +529,7 @@ export const ITSMPlugAndPlayPage = () => {
             </motion.div>
 
             <div className="space-y-6 self-start lg:pt-4">
-              <h4 className="mb-8 text-[14px] font-black uppercase tracking-widest text-accent">
+              <h4 className="mb-8 text-[14px] font-black uppercase tracking-widest">
                 Common Operational Pain Points
               </h4>
               {[
