@@ -71,32 +71,6 @@ const CapabilityCard = ({ title, items, icon: Icon, delay = 0 }: { title: string
   </motion.div>
 );
 
-const IntegrationCard = ({ num, title, description, image, delay = 0 }: { num: string; title: string; description: string; image: string; delay?: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:border-accent/40 transition-all group h-full overflow-hidden"
-  >
-    <div className="relative h-40 -mx-8 -mt-8 mb-8 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-      />
-    </div>
-    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight group-hover:text-accent transition-colors">
-      {title}
-    </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed px-2 border-l-2 border-accent/20">
-      {description}
-    </p>
-  </motion.div>
-);
-
 const UseCaseCard = ({ title, description, icon: Icon, delay = 0 }: { title: string; description: string; icon: any; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -155,45 +129,6 @@ export const ParseIQPage = () => {
     { title: "AI Classification & Layout Understanding", content: "AI models identify document type, layout, and key regions.", icon: Brain },
     { title: "LLM-Driven Contextual Extraction", content: "LLMs interpret context, extract complex tables, validate fields, and reason across multi-page documents.", icon: Cpu },
     { title: "Structured Output & Delivery", content: "Clean JSON, CSV, or API payloads are delivered downstream.", icon: Share2 },
-  ];
-
-  const integrations = [
-    {
-      num: "01",
-      title: "APIs & Developer Access",
-      description: "REST APIs · Webhooks · Batch endpoints · SDK access.",
-      image: parseIqImg("APIsDeveloper Access.jpg"),
-    },
-    {
-      num: "02",
-      title: "ERP Systems",
-      description: "SAP · Oracle · Microsoft Dynamics · NetSuite.",
-      image: parseIqImg("ERP Systems.jpg"),
-    },
-    {
-      num: "03",
-      title: "CRM Platforms",
-      description: "Salesforce · HubSpot · Zoho.",
-      image: parseIqImg("CRM Platforms.jpg"),
-    },
-    {
-      num: "04",
-      title: "Workflow & Automation Engines",
-      description: "Camunda · Power Automate · Custom BPM tools.",
-      image: parseIqImg("Workflow Automation Engines.jpg"),
-    },
-    {
-      num: "05",
-      title: "Document Management Systems",
-      description: "SharePoint · Box · OpenText · Custom DMS.",
-      image: parseIqImg("Document Management Systems.jpg"),
-    },
-    {
-      num: "06",
-      title: "Deployment Modes",
-      description: "Cloud · On-premise · Hybrid · Private VPC.",
-      image: parseIqImg("Deployment Modes.jpg"),
-    },
   ];
 
   const useCases = [
@@ -388,36 +323,6 @@ export const ParseIQPage = () => {
                 </motion.div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Section */}
-      <section className="py-[60px] px-6 bg-[#020617] text-left relative overflow-hidden border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading-on-dark mb-6"
-            >
-              System & Process Integration
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-white/60 font-medium"
-            >
-              Connector-first integrations across ERP, CRM, workflow engines, and document systems your teams already run.
-            </motion.p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {integrations.map((item, idx) => (
-              <IntegrationCard key={idx} {...item} delay={idx * 0.1} />
-            ))}
           </div>
         </div>
       </section>
