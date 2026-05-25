@@ -45,28 +45,24 @@ const UseCaseCard = ({
     transition={{ delay }}
     className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
   >
-    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-2 leading-tight group-hover:text-accent transition-colors">
+    <h3 className="mb-2 min-h-[2.5rem] text-2xl font-bold leading-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
       {title}
     </h3>
-    <p className="text-[15px] font-bold text-brand-950/70 dark:text-white/70 mb-8 leading-snug">
+    <p className="mb-5 min-h-[3rem] text-[15px] font-bold leading-snug text-brand-950/70 dark:text-white/70">
       {subtitle}
     </p>
 
-    <div className="space-y-6 mb-10 flex-1">
+    <div className="mb-6 flex flex-1 flex-col space-y-4">
+      <p className="min-h-[4.5rem] text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
+        {crux}
+      </p>
       <div>
-        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-          {crux}
-        </p>
-      </div>
-      <div>
-        <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Focus Areas</h4>
-        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
-          {focusAreas}
-        </p>
+        <h4 className="mb-2 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
+        <p className="min-h-[2.5rem] text-[14px] font-bold text-brand-950 dark:text-white">{focusAreas}</p>
       </div>
     </div>
 
-    <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
+    <div className="mt-auto border-t border-slate-100 pt-4 dark:border-white/5">
       <div className="flex items-center gap-3">
         <SectionIcon icon={Target} size="sm" hover="none" />
         <p className="text-[13px] font-bold text-brand-950 dark:text-white">

@@ -51,13 +51,13 @@ const UseCaseCard = ({ title, description, icon: Icon, delay = 0 }: { title: str
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-brand-900/40 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-2xl transition-all group"
+    className="group flex h-full flex-col rounded-[3rem] border border-slate-100 bg-white p-10 text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] transition-all hover:shadow-2xl dark:border-white/10 dark:bg-brand-900/40"
   >
-    <SectionIcon icon={Icon} size="lg" hover="rotate" className="mb-8" />
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight group-hover:text-accent transition-colors">
+    <SectionIcon icon={Icon} size="lg" hover="rotate" className="mb-5" />
+    <h3 className="mb-3 min-h-[2.5rem] text-xl font-bold tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
       {title}
     </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+    <p className="min-h-[4.5rem] text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
       {description}
     </p>
   </motion.div>
