@@ -504,7 +504,7 @@ export const AssistIQPage = () => {
             aria-hidden
           />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 w-full text-left drop-shadow-md">
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -513,7 +513,7 @@ export const AssistIQPage = () => {
           >
             AssistIQ
           </motion.h1>
-          <motion.div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -533,20 +533,19 @@ export const AssistIQPage = () => {
               across every digital channel. Built for enterprises ready to move from manual
               customer support to intelligent autonomous engagement.
             </motion.p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
-
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl space-y-8 text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Customer expectations have outrun the support models built to serve
               them. Today’s customers expect instant responses across every channel
@@ -611,7 +610,7 @@ export const AssistIQPage = () => {
       </section>
       {/* Impact Framing Section */}
       <section className="pt-4 pb-[40px] px-6 bg-white dark:bg-brand-950 text-left">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -631,14 +630,14 @@ export const AssistIQPage = () => {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <motion.div className="mb-10">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               What AssistIQ Solves
             </motion.h2>
@@ -647,7 +646,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
             >
               From Manual Customer Support to Intelligent Autonomous Self-Service. Instant. Conversational.
               Scalable. Safe
@@ -658,14 +657,14 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Every conversation is an opportunity. AssistIQ unifies your business
               knowledge into an intelligent conversational engine that handles routine
               inquiries, executes workflows, and escalates complex scenarios ,
               ensuring 24/7 engagement without the manual overhead.
             </motion.p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {capabilities.map((it, idx) => (
@@ -676,13 +675,13 @@ export const AssistIQPage = () => {
       </section>
 
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Industries We Serve
             </motion.h2>
@@ -691,7 +690,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 "
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 max-w-3xl"
             >
               Purpose-built for customer-facing enterprises, wherever customer
               expectations have outpaced traditional support models.
@@ -706,14 +705,14 @@ export const AssistIQPage = () => {
         </div>
       </section>
 
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               How AssistIQ Works
             </motion.h2>
@@ -722,14 +721,14 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               AssistIQ is built as a layered conversational AI architecture that
               captures customer intent, understands meaning through
               enterprise-grounded knowledge, responds in human-like conversation,
               executes workflows autonomously, escalates safely, and learns
-              continuously, transforming 0ost-effective engagement
-              layer.
+              continuously, transforming customer support into a scalable,
+              cost-effective engagement layer.
             </motion.p>
           </div>
 
@@ -765,13 +764,13 @@ export const AssistIQPage = () => {
       </section>
 
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Built to Plug Into Your Customer-Experience Stack
             </motion.h2>
@@ -780,7 +779,7 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               AssistIQ is a channel-first, integration-flexible platform. Whether
               web, mobile, WhatsApp, or voice, AssistIQ deploys with unified
@@ -816,14 +815,14 @@ export const AssistIQPage = () => {
         </div>
       </section>
 
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-6xl mx-auto text-left">
           <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
@@ -832,14 +831,14 @@ export const AssistIQPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Seven industry-specific deployments where AssistIQ is replacing manual
               customer support with intelligent, autonomous AI self-service.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
             {useCases.map((uc, idx) => (
               <UseCaseCard key={idx} {...uc} delay={idx * 0.1} />
             ))}
