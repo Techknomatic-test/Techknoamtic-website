@@ -460,7 +460,7 @@ export const CXONexusPage = () => {
             aria-hidden
           />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 w-full text-left">
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -495,16 +495,15 @@ export const CXONexusPage = () => {
       </section>
 
       {/* Challenge Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
-
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl space-y-8 text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Enterprises sit on extraordinary volumes of operational and business data, yet the leaders who most need
               that data to decide are the furthest from it. Every executive question becomes a BI ticket. Every
@@ -516,7 +515,7 @@ export const CXONexusPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-20 items-start">
+          <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-3 text-left">
               <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
                 <img
@@ -568,7 +567,7 @@ export const CXONexusPage = () => {
 
       {/* Impact Framing Section */}
       <section className="pt-4 pb-[40px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -587,14 +586,14 @@ export const CXONexusPage = () => {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               What CXO Nexus Solves
             </motion.h2>
@@ -603,7 +602,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
             >
               From BI Ticket Queues to Conversational Decision Intelligence. Ask. Retrieve. Ground. Visualize.
               Decide.
@@ -613,7 +612,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               CXO Nexus is an enterprise conversational AI platform that turns natural-language questions into grounded
               business insights. It connects directly to enterprise databases, warehouses, ERP, CRM, and knowledge
@@ -632,13 +631,13 @@ export const CXONexusPage = () => {
 
       {/* Industries Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Industries We Serve
             </motion.h2>
@@ -647,7 +646,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 max-w-3xl"
             >
               Purpose-built for any data-rich enterprise, wherever leadership decision speed depends on access to
               operational and business intelligence.
@@ -663,14 +662,14 @@ export const CXONexusPage = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16 text-left">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               How CXO Nexus Works
             </motion.h2>
@@ -679,7 +678,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               CXO Nexus is built as a layered conversational analytics architecture that captures business questions,
               interprets executive intent, retrieves relevant data, grounds responses in actual knowledge through RAG,
@@ -718,13 +717,13 @@ export const CXONexusPage = () => {
 
       {/* Integration Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Built to Plug Into Your Enterprise Data & Knowledge Stack
             </motion.h2>
@@ -733,7 +732,7 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               CXO Nexus is designed as a data-source-first, deployment-flexible AI platform. Connect through reusable
               connectors and grounds every answer in real enterprise context. Deploy in our cloud, your cloud, or
@@ -768,14 +767,14 @@ export const CXONexusPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-6xl mx-auto text-left">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
@@ -784,14 +783,14 @@ export const CXONexusPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Seven industry-specific deployments where CXO Nexus is replacing BI ticket queues with conversational
               decision intelligence.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
             {useCases.map((uc, idx) => (
               <UseCaseCard key={idx} {...uc} delay={idx * 0.1} />
             ))}
