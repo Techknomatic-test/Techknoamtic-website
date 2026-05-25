@@ -366,13 +366,6 @@ export const FreightIQPage = () => {
                 className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-brand-950/80 via-transparent to-transparent p-8">
-                <p className="border-l-4 border-accent pl-4 text-[15px] font-bold leading-relaxed text-white">
-                  The result: slower quote turnaround, reduced competitiveness, revenue leakage through under-priced
-                  shipments, higher operational overhead, and weaker customer experience, exactly when logistics buyers
-                  expect faster, sharper, more transparent pricing.
-                </p>
-              </div>
             </motion.div>
 
             <div className="space-y-6 self-start lg:pt-4">

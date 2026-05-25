@@ -372,13 +372,6 @@ export const DataGuardPage = () => {
                 className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-brand-950/80 via-transparent to-transparent p-8">
-                <p className="border-l-4 border-accent pl-4 text-[15px] font-bold leading-relaxed text-white">
-                  The result: low trust in dashboards and analytics, delayed business decisions, increased operational
-                  overhead, compliance and governance risk, and slower AI and digital transformation initiatives, exactly
-                  when the business needs faster, sharper, more trusted data to compete.
-                </p>
-              </div>
             </motion.div>
 
             <div className="space-y-6 self-start lg:pt-4">
