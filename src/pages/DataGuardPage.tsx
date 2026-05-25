@@ -423,12 +423,12 @@ export const DataGuardPage = () => {
             aria-hidden
           />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-7xl text-left drop-shadow-md">
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[52px]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             DataPulseIQ
           </motion.h1>
@@ -437,7 +437,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="section-heading-on-dark mb-6"
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
               Trusted Data. Intelligent Validation. Autonomous Data Operations.
             </motion.h2>
@@ -445,7 +445,7 @@ export const DataGuardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-sm font-normal leading-relaxed text-slate-400"
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
               AI-powered data quality and reliability framework, continuously monitor, validate, govern, and improve data
               across every source system. Built for enterprises ready to move from reactive data firefighting to autonomous
@@ -455,16 +455,15 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="border-b border-slate-100 bg-white px-6 py-[60px] text-left dark:border-white/5 dark:bg-brand-950">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
-           
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl space-y-8 text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Every strategic decision, every CXO dashboard, every AI initiative depends on one assumption: the data is
               reliable. Yet across most enterprises, that assumption breaks down daily. Data flows in from dozens of source
@@ -475,7 +474,7 @@ export const DataGuardPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid items-center gap-20 lg:grid-cols-2">
+          <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -532,14 +531,14 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="border-b border-slate-100 bg-slate-50 px-6 py-[60px] text-left dark:border-white/5 dark:bg-white/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               What DataPulseIQ Solves
             </motion.h2>
@@ -548,7 +547,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="mb-6 text-xl leading-tight text-brand-950 dark:text-white md:text-2xl"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
             >
               From reactive data monitoring to autonomous data reliability. Connect. Observe. Validate. Govern. Act.
             </motion.h3>
@@ -557,7 +556,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               DataPulseIQ is an AI-powered data quality and reliability framework that unifies observability, business-rule
               validation, governance, and autonomous data intelligence into a single operational platform. It connects to
@@ -576,14 +575,14 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-[60px] text-left dark:bg-brand-950">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Industries We Serve
             </motion.h2>
@@ -592,7 +591,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Purpose-built for any data-heavy enterprise, wherever data fragmentation, governance gaps, or reliability
               issues slow down decisions.
@@ -607,14 +606,14 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-slate-50 px-6 py-[60px] text-left dark:bg-white/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               How DataPulseIQ Works
             </motion.h2>
@@ -623,7 +622,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               DataPulseIQ is built as a layered data reliability platform that connects to enterprise data sources,
               continuously observes quality across tables and columns, applies business-aware validation logic, embeds
@@ -661,14 +660,14 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-[60px] text-left dark:bg-brand-950">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Built to Plug Into Your Enterprise Data Stack
             </motion.h2>
@@ -677,7 +676,7 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               DataPulseIQ is designed as a connector-first, deployment-flexible platform. Whether your enterprise data lives
               in Snowflake, Databricks, BigQuery, Redshift, an on-prem warehouse, an ERP, or a combination of all of them , 
@@ -720,14 +719,14 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="bg-slate-50 px-6 py-[60px] text-left dark:bg-white/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-6xl mx-auto text-left">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
@@ -736,14 +735,14 @@ export const DataGuardPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg font-medium text-slate-500 dark:text-slate-400"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Six domain-specific deployments where DataPulseIQ is replacing reactive data monitoring with intelligent,
               autonomous data reliability.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
             {useCases.map((uc, idx) => (
               <UseCaseCard key={idx} {...uc} delay={idx * 0.1} />
             ))}
