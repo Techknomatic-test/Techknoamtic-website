@@ -456,21 +456,21 @@ export const ITSMPlugAndPlayPage = () => {
           <div className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
           <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/5 blur-[100px]" />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-7xl text-left drop-shadow-md">
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mb-10 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[56px]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             InsightSM
           </motion.h1>
-          <div className="w-full max-w-none">
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="section-heading-on-dark mb-6"
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
               Unified IT Operations Visibility Across Every ITSM Tool
             </motion.h2>
@@ -478,7 +478,7 @@ export const ITSMPlugAndPlayPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-sm font-normal leading-relaxed text-slate-400 text-justify w-full"
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
               An AI-powered analytics wrapper that sits on top of your existing ITSM ecosystem, turning fragmented
               operational data into unified, real-time intelligence. Deploy production-grade ITSM dashboards in days,
@@ -488,16 +488,15 @@ export const ITSMPlugAndPlayPage = () => {
         </div>
       </section>
 
-      <section className="overflow-hidden border-b border-slate-100 bg-white px-6 py-[60px] text-left dark:border-white/5 dark:bg-brand-950">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
-           
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl space-y-8 text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400 text-justify"
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Most large enterprises run their IT operations on multiple ITSM platforms simultaneously, ServiceNow in
               one business unit, BMC Remedy in another, Jira Service Management for engineering, SolarWinds for
@@ -508,7 +507,7 @@ export const ITSMPlugAndPlayPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid items-center gap-20 lg:grid-cols-2">
+          <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -559,9 +558,9 @@ export const ITSMPlugAndPlayPage = () => {
         </div>
       </section>
 
-      <section className="bg-slate-50/50 px-6 py-[60px] text-left dark:bg-brand-900/20">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-left">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -583,9 +582,9 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="w-full text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400 text-justify"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
-              InsightSM is a rapid ITSM analytics accelerator that sits on top of your existing ITSM ecosystem , 
+              InsightSM is a rapid ITSM analytics accelerator that sits on top of your existing ITSM ecosystem, 
               delivering enterprise-grade operational intelligence in days. The platform connects multiple ITSM tools,
               harmonizes operational data, standardizes KPIs, and deploys validated dashboards before committing to
               full-scale enterprise rollout. No rip-and-replace. No multi-month BI projects. Just immediate, unified
@@ -600,14 +599,14 @@ export const ITSMPlugAndPlayPage = () => {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-[60px] text-left dark:bg-brand-950">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-4"
+              className="section-heading mb-6"
             >
               Industries We Serve
             </motion.h2>
@@ -616,7 +615,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg font-medium text-slate-500 dark:text-slate-400"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Purpose-built for any IT-heavy enterprise, wherever ITSM data fragmentation slows operational
               decision-making.
@@ -630,14 +629,14 @@ export const ITSMPlugAndPlayPage = () => {
         </div>
       </section>
 
-      <section className="bg-slate-50 px-6 py-[60px] text-left dark:bg-white/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               How InsightSM Works
             </motion.h2>
@@ -646,9 +645,9 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="w-full max-w-none text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400 text-justify"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
-               InsightSM follows a systematic, four-stage deployment architecture designed for speed, accuracy, and
+              InsightSM follows a systematic, four-stage deployment architecture designed for speed, accuracy, and
               enterprise scale. By separating the validation phase from the production rollout, we allow stakeholders to
               align on KPIs and dashboard usability with zero data risk, ensuring the final production environment is built
               on trust, efficiency, and proven operational value. Our unique sample-first deployment flow transforms the
@@ -685,9 +684,9 @@ export const ITSMPlugAndPlayPage = () => {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-[60px] text-left dark:bg-brand-950">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -701,7 +700,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="w-full text-lg font-medium text-slate-500 dark:text-slate-400 text-justify"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               InsightSM is designed as a connector-first, deployment-flexible platform. Whether your operations live in
               ServiceNow, BMC Remedy, Jira Service Management, SolarWinds, or a combination of all four, InsightSM
@@ -725,14 +724,14 @@ export const ITSMPlugAndPlayPage = () => {
         </div>
       </section>
 
-      <section className="bg-slate-50 px-6 py-[60px] text-left dark:bg-white/5">
-        <div className="mx-auto max-w-6xl">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-6xl mx-auto text-left">
           <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
@@ -741,7 +740,7 @@ export const ITSMPlugAndPlayPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="mt-4 w-full max-w-none text-lg font-medium text-slate-500 dark:text-slate-400 text-justify"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Six domain-specific deployments where InsightSM is replacing manual ITSM reporting with unified operational
               intelligence.
