@@ -10,6 +10,7 @@ import {
   MessageSquare,
   Network,
   ShieldCheck,
+  Target,
   Workflow,
   Zap,
 } from "lucide-react";
@@ -60,8 +61,13 @@ const UseCaseCard = ({
     </div>
 
     <div className="mt-auto border-t border-slate-100 pt-4 dark:border-white/5">
-      <h4 className="mb-1.5 text-[11px] font-black uppercase tracking-widest text-accent">Outcome</h4>
-      <p className="text-[13px] font-bold tracking-tight text-brand-950 dark:text-white">{outcome}</p>
+      <div className="flex items-center gap-3">
+        <SectionIcon icon={Target} size="sm" hover="none" />
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
+          <span className="mr-2 uppercase tracking-wider text-accent">Outcome:</span>
+          {outcome}
+        </p>
+      </div>
     </div>
   </motion.div>
 );
