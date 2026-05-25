@@ -8,15 +8,11 @@ import {
   Database,
   Brain,
   BarChart3,
-  Layers,
-  Settings,
   ShieldCheck,
   Target,
-  Users,
   Zap,
   PieChart,
   FileText,
-  Server,
 } from "lucide-react";
 
 const CXO_IMG = "Images/CXONexus";
@@ -124,45 +120,6 @@ const UseCaseCard = ({
   </motion.div>
 );
 
-const IndustryCard = ({
-  title,
-  description,
-  image,
-  delay = 0,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all h-full text-left group overflow-hidden rounded-[2.5rem] flex flex-col"
-  >
-    <div className="relative h-48 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        referrerPolicy="no-referrer"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 to-transparent" />
-    </div>
-    <div className="p-10 flex-1 flex flex-col">
-      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-        {description}
-      </p>
-    </div>
-  </motion.div>
-);
-
 export const CXONexusPage = () => {
   const capabilities = [
     {
@@ -258,50 +215,6 @@ export const CXONexusPage = () => {
     },
   ];
 
-  const industries = [
-    {
-      title: "BFSI & Insurance",
-      description:
-        "Risk, claims, policy performance, and fraud analytics through conversational executive insights.",
-      image: cxoHeroImg("BFSI.jpg"),
-    },
-    {
-      title: "Retail & E-Commerce",
-      description: "Sales, customer behavior, inventory, and campaign performance, ask in plain English.",
-      image: cxoHeroImg("Retail.jpg"),
-    },
-    {
-      title: "Healthcare",
-      description:
-        "Operational and patient service analytics, hospital performance, and executive healthcare dashboards.",
-      image: cxoHeroImg("Healthcare.jpg"),
-    },
-    {
-      title: "IT & ITSM",
-      description:
-        "SLA, incident, infrastructure, and service intelligence through conversational IT operations analytics.",
-      image: cxoHeroImg("IT.jpg"),
-    },
-    {
-      title: "Manufacturing",
-      description:
-        "Production KPIs, supply chain, plant performance, and predictive operational insights on demand.",
-      image: cxoHeroImg("Manufacturing.jpg"),
-    },
-    {
-      title: "Logistics & Supply Chain",
-      description:
-        "Shipment, delivery, fleet, and bottleneck analytics through real-time conversational visibility.",
-      image: cxoHeroImg("Logistics.jpg"),
-    },
-    {
-      title: "Telecom",
-      description:
-        "Subscriber, network, revenue, and churn intelligence, accessible to every business leader.",
-      image: cxoHeroImg("Telecom.jpg"),
-    },
-  ];
-
   const steps = [
     {
       title: "Ask",
@@ -338,55 +251,6 @@ export const CXONexusPage = () => {
       content:
         "An AI-written insight summary accompanies every response, interpreting data in business language and surfacing anomalies.",
       icon: FileText,
-    },
-  ];
-
-  const stack = [
-    {
-      title: "Databases",
-      icon: Database,
-      content:
-        "PostgreSQL · MySQL · SQL Server · Oracle · NoSQL stores · Document and time-series databases.",
-    },
-    {
-      title: "Data Warehouses & Lakehouses",
-      icon: Server,
-      content: "Snowflake · Databricks · BigQuery · Redshift · Synapse · Open lakehouse formats.",
-    },
-    {
-      title: "ERP & Operational Systems",
-      icon: Settings,
-      content: "SAP · Oracle EBS · Microsoft Dynamics · NetSuite · Custom enterprise systems.",
-    },
-    {
-      title: "CRM & Business Systems",
-      icon: Users,
-      content: "Salesforce · HubSpot · Zoho · Microsoft Dynamics CRM · Custom CRMs.",
-    },
-    {
-      title: "Knowledge & Document Sources",
-      icon: FileText,
-      content: "SharePoint · Confluence · Internal knowledge bases · SOPs, policies, and document repositories.",
-    },
-    {
-      title: "BI & Visualization Layer",
-      icon: BarChart3,
-      content: "Power BI · Tableau · Qlik · Looker · Native CXO Nexus dashboards.",
-    },
-    {
-      title: "Conversational Surfaces",
-      icon: MessageSquare,
-      content: "Web interface · Teams · Slack · Mobile · Embedded BI surfaces.",
-    },
-    {
-      title: "Security & Governance",
-      icon: ShieldCheck,
-      content: "Role-based access control (RBAC) · Row-level security · Data masking · Audit logging.",
-    },
-    {
-      title: "Deployment Modes",
-      icon: Layers,
-      content: "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated industries).",
     },
   ];
 
@@ -629,38 +493,6 @@ export const CXONexusPage = () => {
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Industries We Serve
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60"
-            >
-              Purpose-built for any data-rich enterprise, wherever leadership decision speed depends on access to
-              operational and business intelligence.
-            </motion.h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-            {industries.map((industry, idx) => (
-              <IndustryCard key={idx} {...industry} delay={idx * 0.05} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* How It Works Section */}
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto">
@@ -707,57 +539,6 @@ export const CXONexusPage = () => {
                   </h3>
                   <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Built to Plug Into Your Enterprise Data & Knowledge Stack
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              CXO Nexus is designed as a data-source-first, deployment-flexible AI platform. Connect through reusable
-              connectors and grounds every answer in real enterprise context. Deploy in our cloud, your cloud, or
-              on-premise. Push insights into the BI and collaboration tools your teams already use.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {stack.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-accent/30 transition-all flex flex-col text-left"
-                >
-                  <SectionIcon icon={Icon} size="xs" className="mb-6" hover="none" />
-                  <h3 className="text-[17px] font-bold text-brand-950 dark:text-white mb-3 group-hover:text-accent transition-colors font-bold tracking-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {item.content}
                   </p>
                 </motion.div>
               );

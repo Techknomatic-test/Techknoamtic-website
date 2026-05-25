@@ -11,15 +11,10 @@ import {
   Brain,
   Video,
   Workflow,
-  Layers,
   Target,
-  PhoneCall,
   ShieldCheck,
   BarChart3,
   ArrowRightLeft,
-  Settings,
-  Database,
-  Users,
 } from "lucide-react";
 
 const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
@@ -128,44 +123,6 @@ const UseCaseCard = ({
           {outcome}
         </p>
       </div>
-    </div>
-  </motion.div>
-);
-
-const IndustryCard = ({
-  title,
-  description,
-  image,
-  delay = 0,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all group flex flex-col h-full text-left overflow-hidden"
-  >
-    <div className="relative h-48 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-      />
-    </div>
-    <div className="p-8">
-      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-        {description}
-      </p>
     </div>
   </motion.div>
 );
@@ -286,51 +243,6 @@ export const AssistIQPage = () => {
     },
   ];
 
-  const industries = [
-    {
-      title: "Retail & E-Commerce",
-      description:
-        "AI agents that handle order tracking, returns, recommendations, and promotions, 24×7.",
-      image: `${ASSIST_IMG}/Retail & E-Commerce.jpg`,
-    },
-    {
-      title: "BFSI",
-      description:
-        "Conversational AI for account, card, loan, and onboarding queries with secure customer assistance.",
-      image: `${ASSIST_IMG}/BFSI.jpg`,
-    },
-    {
-      title: "Telecom",
-      description:
-        "AI self-service for plans, recharges, complaints, SIM activation, and service requests.",
-      image: `${ASSIST_IMG}/Telecom.jpg`,
-    },
-    {
-      title: "Healthcare",
-      description:
-        "Appointment booking, patient queries, and hospital service support through AI agents and avatars.",
-      image: `${ASSIST_IMG}/Healthcare.jpg`,
-    },
-    {
-      title: "Logistics",
-      description:
-        "Shipment tracking, delivery issue resolution, and customer communication automation.",
-      image: `${ASSIST_IMG}/Logistics.jpg`,
-    },
-    {
-      title: "Insurance",
-      description:
-        "Policy, claims, renewals, and customer self-service journeys powered by conversational AI.",
-      image: `${ASSIST_IMG}/Insurance.jpg`,
-    },
-    {
-      title: "Government & Public Services",
-      description:
-        "AI citizen-service portals for schemes, applications, and public information, at digital scale.",
-      image: `${ASSIST_IMG}/Government & Public Services.jpg`,
-    },
-  ];
-
   const steps = [
     {
       title: "Intent Capture",
@@ -367,57 +279,6 @@ export const AssistIQPage = () => {
       content:
         "Every conversation feeds analytics and continuous AI optimization, improving intent accuracy and refining escalation thresholds.",
       icon: Sparkles,
-    },
-  ];
-
-  const stack = [
-    {
-      title: "Customer Channels",
-      content:
-        "Web · Mobile apps (iOS / Android) · WhatsApp · Messaging platforms · Voice · IVR · Kiosk · Social channels.",
-      icon: Globe,
-    },
-    {
-      title: "CRM & Customer Systems",
-      content:
-        "Salesforce · HubSpot · Microsoft Dynamics · Zoho · Custom enterprise CRMs.",
-      icon: Users,
-    },
-    {
-      title: "Contact Center & Ticketing",
-      icon: PhoneCall,
-      content:
-        "Zendesk · Freshdesk · ServiceNow · Genesys · Cisco · Custom ticketing systems.",
-    },
-    {
-      title: "Knowledge & Content Sources",
-      icon: Database,
-      content:
-        "Knowledge bases · SOPs and policy repositories · Product catalogs · SharePoint and document stores.",
-    },
-    {
-      title: "Workflow & Operational Systems",
-      icon: Settings,
-      content:
-        "ERP · Order management · Booking systems · Policy and claims platforms · Custom workflow APIs.",
-    },
-    {
-      title: "Analytics & BI Layer",
-      icon: BarChart3,
-      content:
-        "Conversation analytics export · CSAT signals · Power BI · Tableau · Custom dashboards.",
-    },
-    {
-      title: "Security & Compliance",
-      icon: ShieldCheck,
-      content:
-        "Role-based access control · Data encryption · PII redaction · Audit logging · Region-specific data residency.",
-    },
-    {
-      title: "Deployment Modes",
-      icon: Layers,
-      content:
-        "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated industries).",
     },
   ];
 
@@ -673,37 +534,6 @@ export const AssistIQPage = () => {
         </div>
       </section>
 
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Industries We Serve
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60"
-            >
-              Purpose-built for customer-facing enterprises, wherever customer
-              expectations have outpaced traditional support models.
-            </motion.h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-            {industries.map((industry, idx) => (
-              <IndustryCard key={idx} {...industry} delay={idx * 0.05} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
@@ -754,58 +584,6 @@ export const AssistIQPage = () => {
                   </h3>
                   <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Built to Plug Into Your Customer-Experience Stack
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              AssistIQ is a channel-first, integration-flexible platform. Whether
-              web, mobile, WhatsApp, or voice, AssistIQ deploys with unified
-              context. It plugs into your CRM, ticketing, and operational systems
-              through pre-built connectors and APIs, operating on top of the CX
-              stack you already run.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stack.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-accent/30 transition-all flex flex-col"
-                >
-                  <SectionIcon icon={Icon} size="xs" className="mb-6" hover="none" />
-                  <h3 className="text-[17px] font-bold text-brand-950 dark:text-white mb-3 group-hover:text-accent transition-colors font-bold tracking-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {item.content}
                   </p>
                 </motion.div>
               );

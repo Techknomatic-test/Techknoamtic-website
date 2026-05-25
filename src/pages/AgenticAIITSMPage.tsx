@@ -9,14 +9,9 @@ import {
   Search,
   Brain,
   MessageSquare,
-  Workflow,
-  Layers,
   Target,
   ArrowRightLeft,
   Database,
-  Users,
-  Computer,
-  Globe,
 } from "lucide-react";
 
 /** TicketIQ-only assets (no AssistIQ equivalent). */
@@ -28,9 +23,6 @@ const tiqHeroImg = (file: string) =>
     .join("/")}`;
 const TIQ_HERO_IMG = tiqHeroImg("Tickethero.jpg");
 const TIQ_PAIN_POINTS_IMG = tiqHeroImg("Pain Points.jpg");
-
-/** Shared industry images with AssistIQ (Entrprise_Ai/AssistIQ). */
-const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
 
 const CapabilityCard = ({
   title,
@@ -130,44 +122,6 @@ const UseCaseCard = ({
           {outcome}
         </p>
       </div>
-    </div>
-  </motion.div>
-);
-
-const IndustryCard = ({
-  title,
-  description,
-  image,
-  delay = 0,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all h-full text-left group overflow-hidden rounded-[2.5rem] flex flex-col"
-  >
-    <div className="relative h-48 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        referrerPolicy="no-referrer"
-      />
-    </div>
-    <div className="p-10 flex-1 flex flex-col">
-      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-        {description}
-      </p>
     </div>
   </motion.div>
 );
@@ -288,51 +242,6 @@ export const AgenticAIITSMPage = () => {
     },
   ];
 
-  const industries = [
-    {
-      title: "BFSI & Financial Services",
-      description:
-        "Secure identity, access, and audit-ready IT support automation for regulated banking operations.",
-      image: `${ASSIST_IMG}/BFSI.jpg`,
-    },
-    {
-      title: "Healthcare",
-      description:
-        "Hospital and clinical IT support automation with secure workstation and application access management.",
-      image: `${ASSIST_IMG}/Healthcare.jpg`,
-    },
-    {
-      title: "Retail & E-Commerce",
-      description:
-        "Store, POS, and workforce IT support, automated onboarding, access, and connectivity resolution.",
-      image: `${ASSIST_IMG}/Retail & E-Commerce.jpg`,
-    },
-    {
-      title: "IT & Technology Services",
-      description:
-        "Developer environment provisioning and enterprise shared service desk automation at scale.",
-      image: `${TIQ_IMG}/it-technology.jpg`,
-    },
-    {
-      title: "Manufacturing",
-      description:
-        "Plant and operations IT support, industrial workstation troubleshooting and OT-friendly workflows.",
-      image: `${TIQ_ENT_IMG}/Manufacturing.jpg`,
-    },
-    {
-      title: "Logistics & Supply Chain",
-      description:
-        "Warehouse and distributed workforce IT support, endpoint troubleshooting, and role-based access.",
-      image: `${ASSIST_IMG}/Logistics.jpg`,
-    },
-    {
-      title: "Telecom",
-      description:
-        "Internal workforce IT support, network and collaboration resolution, and high-volume ticket handling.",
-      image: `${ASSIST_IMG}/Telecom.jpg`,
-    },
-  ];
-
   const steps = [
     {
       title: "Intake",
@@ -369,51 +278,6 @@ export const AgenticAIITSMPage = () => {
       content:
         "Every interaction is logged into ITSM and audit systems, decision history, approvals, and SLA tracking captured.",
       icon: BarChart3,
-    },
-  ];
-
-  const stack = [
-    {
-      title: "Identity & Access",
-      icon: Users,
-      content:
-        "Azure Active Directory · Okta · Active Directory · SailPoint · Custom IAM systems.",
-    },
-    {
-      title: "Endpoint & Device Management",
-      icon: Computer,
-      content:
-        "Microsoft Intune · Jamf · SCCM · Workspace ONE · Custom endpoint platforms.",
-    },
-    {
-      title: "Collaboration & Email",
-      icon: Globe,
-      content:
-        "Microsoft 365 · Exchange · Google Workspace · Outlook · Mail and calendar systems.",
-    },
-    {
-      title: "Automation & Orchestration",
-      icon: Workflow,
-      content:
-        "REST APIs · Webhooks · PowerShell and scripting orchestration · RPA and workflow platforms.",
-    },
-    {
-      title: "Knowledge Sources",
-      icon: Database,
-      content:
-        "Enterprise IT knowledge bases · SOPs and runbooks · SharePoint · Confluence · Internal documentation.",
-    },
-    {
-      title: "Security & Compliance",
-      icon: ShieldCheck,
-      content:
-        "MFA / OTP verification · RBAC · Approval workflows · Audit logging · PII controls.",
-    },
-    {
-      title: "Deployment Modes",
-      icon: Layers,
-      content:
-        "Cloud SaaS · Private cloud · Hybrid · On-premise (regulated and government environments).",
     },
   ];
 
@@ -673,38 +537,6 @@ export const AgenticAIITSMPage = () => {
         </div>
       </section>
 
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Industries We Serve
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60"
-            >
-              Purpose-built for enterprises with high-volume IT service desks ,
-              wherever repetitive L1 tickets, governance demands, and scaling pressure
-              collide.
-            </motion.h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-            {industries.map((industry, idx) => (
-              <IndustryCard key={idx} {...industry} delay={idx * 0.05} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
@@ -754,58 +586,6 @@ export const AgenticAIITSMPage = () => {
                   </h3>
                   <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Built To Plug Into Your Enterprise IT Stack
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              TicketIQ is designed as an ITSM-native, integration-flexible platform.
-              Whether your docs are in SharePoint or Confluence, your endpoints in
-              Intune or Jamf, and your service desk in ServiceNow or Jira, TicketIQ
-              connects through pre-built integrations and APIs to take autonomous
-              action.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stack.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-accent/30 transition-all flex flex-col"
-                >
-                  <SectionIcon icon={Icon} size="xs" className="mb-6" hover="none" />
-                  <h3 className="text-[17px] font-bold text-brand-950 dark:text-white mb-3 group-hover:text-accent transition-colors tracking-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {item.content}
                   </p>
                 </motion.div>
               );

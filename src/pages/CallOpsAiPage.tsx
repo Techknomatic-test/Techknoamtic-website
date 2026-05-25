@@ -16,7 +16,6 @@ import {
   Layers
 } from "lucide-react";
 
-const CO_IMG = "Images/CallOpsAI";
 const CO_ENT_IMG = "Images/Entrprise_Ai/callopsAI";
 const coHeroImg = (file: string) =>
   `${import.meta.env.BASE_URL}${[...CO_ENT_IMG.split("/"), file]
@@ -115,34 +114,6 @@ const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: 
   </motion.div>
 );
 
-const IndustryCard = ({ title, description, image, delay = 0 }: { title: string; description: string; image: string; delay?: number }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all h-full text-left group overflow-hidden rounded-[2.5rem] flex flex-col"
-  >
-    <div className="relative h-48 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        referrerPolicy="no-referrer"
-      />
-    </div>
-    <div className="p-10 flex-1 flex flex-col">
-      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-        {description}
-      </p>
-    </div>
-  </motion.div>
-);
-
 export const CallOpsAIPage = () => {
   const capabilities = [
     {
@@ -225,93 +196,12 @@ export const CallOpsAIPage = () => {
     }
   ];
 
-  const industries = [
-    {
-      title: "Retail",
-      description:
-        "Automate order confirmations, promotional outreach, and customer engagement at scale.",
-      image: `${CO_ENT_IMG}/Industries We Serve/Retail.jpg`,
-    },
-    {
-      title: "BFSI",
-      description:
-        "Streamline collections, payment reminders, customer verification, and policy renewals.",
-      image: `${CO_ENT_IMG}/Industries We Serve/BFSI.jpg`,
-    },
-    {
-      title: "Healthcare",
-      description:
-        "Automate appointment scheduling, patient follow-ups, and reminder workflows.",
-      image: `${CO_ENT_IMG}/Industries We Serve/Healthcare.jpg`,
-    },
-    {
-      title: "Logistics",
-      description:
-        "Coordinate deliveries, shipment updates, and driver–customer communication.",
-      image: `${CO_ENT_IMG}/Industries We Serve/Logistics.jpg`,
-    },
-    {
-      title: "Real Estate",
-      description:
-        "Qualify leads, schedule site visits, and run automated follow-up engagement.",
-      image: `${CO_ENT_IMG}/Industries We Serve/Real Estate.jpg`,
-    },
-  ];
-
   const steps = [
     { title: "Connect", content: "Calls flow in/out via SIP, cloud telephony, and CCaaS integrations, supporting inbound queues and outbound dialers.", icon: Network },
     { title: "Observe", content: "Real-time speech recognition converts customer voice into text with low latency and accent adaptability.", icon: Ear },
     { title: "Validate", content: "AI models detect intent, entities, and conversational context, driving the next best action.", icon: Search },
     { title: "Govern", content: "LLM-powered reasoning generates context-aware, human-like responses across multi-turn conversations.", icon: Brain },
     { title: "Act", content: "AI agent executes business workflows, CRM updates, scheduling, ticket creation, payment links, and delivery via TTS.", icon: Zap }
-  ];
-
-  const stack = [
-    {
-      title: "Telephony & CCaaS",
-      content:
-        "Twilio · Ecotel · Plivo · SIP trunks · Genesys · Amazon Connect.",
-      image: `${CO_IMG}/stack-telephony.jpg`,
-    },
-    {
-      title: "CRM Platforms",
-      content:
-        "Salesforce · HubSpot · Zoho · MS Dynamics · Custom CRMs via REST.",
-      image: `${CO_IMG}/stack-crm.jpg`,
-    },
-    {
-      title: "Ticketing & Support",
-      content: "Zendesk · Freshdesk · ServiceNow · Intercom.",
-      image: `${CO_IMG}/stack-ticketing.jpg`,
-    },
-    {
-      title: "Campaign & Marketing",
-      content:
-        "Marketing automation tools · Lead management systems · Dialer platforms.",
-      image: `${CO_IMG}/stack-campaign.jpg`,
-    },
-    {
-      title: "Calendar & Scheduling",
-      content: "Google Calendar · Outlook · Calendly · Custom booking systems.",
-      image: `${CO_IMG}/stack-calendar.jpg`,
-    },
-    {
-      title: "Compliance & Security",
-      content:
-        "DNC list integration · Call recording archives · Audit log export · Encryption.",
-      image: `${CO_IMG}/stack-compliance.jpg`,
-    },
-    {
-      title: "APIs & Webhooks",
-      content: "REST APIs · Webhooks · Real-time event streams · SDK access.",
-      image: `${CO_IMG}/stack-apis.jpg`,
-    },
-    {
-      title: "Deployment Modes",
-      content:
-        "Cloud SaaS · Private VPC · Hybrid · On-premise (regulated industries).",
-      image: `${CO_IMG}/stack-deployment.jpg`,
-    },
   ];
 
   const useCases = [
@@ -531,37 +421,6 @@ export const CallOpsAIPage = () => {
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Industries We Serve
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 leading-snug"
-            >
-              High-impact deployments where AI voice agents are replacing, and outperforming, traditional human calling teams across sectors.
-            </motion.h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, idx) => (
-              <IndustryCard key={idx} {...industry} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* How It Works Section */}
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5 overflow-hidden">
         <div className="max-w-6xl mx-auto">
@@ -605,63 +464,6 @@ export const CallOpsAIPage = () => {
                   <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     {step.content}
                   </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Built to Plug Into Your Enterprise Stack
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Voice agents only deliver real outcomes when they can read from and write to the systems your operations already run on. CallOps AI is API-first and CCaaS-native, connecting to CRMs, telephony providers, and campaign engines so every conversation is informed by live context.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stack.map((item, idx) => {
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-accent/30 transition-all flex flex-col overflow-hidden"
-                >
-                  <div className="h-40 overflow-hidden">
-                    <img
-                      loading="lazy"
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="p-8 flex-1">
-                    <h3 className="text-[17px] font-bold text-brand-950 dark:text-white mb-3 group-hover:text-accent transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                      {item.content}
-                    </p>
-                  </div>
                 </motion.div>
               );
             })}
