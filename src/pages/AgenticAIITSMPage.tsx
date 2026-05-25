@@ -500,7 +500,7 @@ export const AgenticAIITSMPage = () => {
             aria-hidden
           />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 w-full text-left drop-shadow-md">
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -509,7 +509,7 @@ export const AgenticAIITSMPage = () => {
           >
             TicketIQ
           </motion.h1>
-          <motion.div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
+          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -529,20 +529,19 @@ export const AgenticAIITSMPage = () => {
               audit. Built for IT teams ready to move from reactive service desks to zero-touch
               IT operations, without compromising security or control.
             </motion.p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <section className="py-[80px] bg-white dark:bg-brand-950 px-6 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl space-y-8 text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Enterprise IT support is stuck in a loop the business can’t scale out
               of. The vast majority of tickets flowing into service desks are
@@ -610,7 +609,7 @@ export const AgenticAIITSMPage = () => {
 
       {/* Impact Framing Section */}
       <section className="pt-4 pb-[40px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -630,14 +629,14 @@ export const AgenticAIITSMPage = () => {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-[80px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               What TicketIQ Solves
             </motion.h2>
@@ -646,7 +645,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
             >
               From Reactive IT Support to Autonomous IT Operations. Intake. Classify. Verify. Resolve.
               Audit.
@@ -656,7 +655,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               TicketIQ is an agentic AI ITSM platform that autonomously manages and
               resolves L1 IT tickets across the enterprise. It captures requests from
@@ -674,14 +673,14 @@ export const AgenticAIITSMPage = () => {
         </div>
       </section>
 
-      <section className="py-[80px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Industries We Serve
             </motion.h2>
@@ -690,7 +689,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 max-w-3xl"
             >
               Purpose-built for enterprises with high-volume IT service desks ,
               wherever repetitive L1 tickets, governance demands, and scaling pressure
@@ -706,14 +705,14 @@ export const AgenticAIITSMPage = () => {
         </div>
       </section>
 
-      <section className="py-[80px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               How TicketIQ Works
             </motion.h2>
@@ -722,7 +721,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               TicketIQ is built as a layered agentic AI architecture purpose-built for
               IT operations. It captures requests across employee channels, classifies
@@ -763,14 +762,14 @@ export const AgenticAIITSMPage = () => {
         </div>
       </section>
 
-      <section className="py-[80px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Built To Plug Into Your Enterprise IT Stack
             </motion.h2>
@@ -779,7 +778,7 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               TicketIQ is designed as an ITSM-native, integration-flexible platform.
               Whether your docs are in SharePoint or Confluence, your endpoints in
@@ -815,14 +814,14 @@ export const AgenticAIITSMPage = () => {
         </div>
       </section>
 
-      <section className="py-[80px] px-6 bg-slate-50 dark:bg-white/5 text-left">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-6xl mx-auto text-left">
           <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
@@ -831,14 +830,14 @@ export const AgenticAIITSMPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium italic"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Seven industry-specific deployments where TicketIQ is replacing manual
               L1 IT support with autonomous, governance-driven AI resolution.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
             {useCases.map((uc, idx) => (
               <UseCaseCard key={idx} {...uc} delay={idx * 0.1} />
             ))}
