@@ -574,7 +574,7 @@ export const AssistIQPage = () => {
                   className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative"
                 >
                   <div className="absolute top-0 right-0 p-8">
-                    <span className="text-4xl font-black text-slate-100 dark:text-white/5">
+                    <span className="text-4xl font-black text- text-accent/10 dark:text-white/5">
                       0{idx + 1}
                     </span>
                   </div>
