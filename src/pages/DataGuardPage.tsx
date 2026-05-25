@@ -376,9 +376,10 @@ export const DataGuardPage = () => {
 
             <div className="space-y-6 self-start lg:pt-4">
               <div className="mb-12">
-                <h3 className="mb-2 text-xl font-bold leading-tight text-brand-950 dark:text-white">
+                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight">
                   Common Operational Pain Points
                 </h3>
+                <div className="w-12 h-1 bg-accent rounded-full" />
               </div>
               <ul className="list-none space-y-5">
                 {[

@@ -368,9 +368,12 @@ export const ITSMPlugAndPlayPage = () => {
             </motion.div>
 
             <div className="space-y-6 self-start lg:pt-4">
-              <h4 className="mb-8 text-[14px] font-black uppercase tracking-widest">
-                Common Operational Pain Points
-              </h4>
+              <div className="mb-12">
+                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight">
+                  Common Operational Pain Points
+                </h3>
+                <div className="w-12 h-1 bg-accent rounded-full" />
+              </div>
               {[
                 "No unified visibility across IT operations and ITSM platforms",
                 "Inconsistent KPI definitions and SLA reporting across teams",
