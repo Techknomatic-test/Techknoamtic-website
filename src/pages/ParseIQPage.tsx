@@ -5,7 +5,6 @@ import { SectionIcon } from "../components/SectionIcon";
 import {
   ShieldCheck,
   ArrowRight,
-  CheckCircle2,
   Database,
   Zap,
   Activity,
@@ -51,20 +50,24 @@ const CapabilityCard = ({ title, items, icon: Icon, delay = 0 }: { title: string
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full"
+    className="group flex h-full flex-col rounded-[2.5rem] border border-slate-100 bg-white p-8 text-left shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
   >
     <SectionIcon icon={Icon} size="md" className="mb-6" />
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight leading-tight">
-      {title}
-    </h3>
-    <ul className="space-y-3 flex-1">
-      {items.map((item, i) => (
-        <li key={i} className="flex items-start gap-3">
-          <CheckCircle2 className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-          <span className="text-[14px] font-medium text-slate-500 dark:text-slate-400">{item}</span>
-        </li>
-      ))}
-    </ul>
+    <div className="flex-1">
+      <h3 className="mb-4 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+        {title}
+      </h3>
+      <ul className="list-none space-y-3 border-t border-slate-100 pt-6 dark:border-white/5">
+        {items.map((item, i) => (
+          <li key={i} className="group/item flex items-start gap-3">
+            <div className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent/40" />
+            <span className="text-[13px] font-medium text-slate-500 transition-colors group-hover/item:text-brand-950 dark:text-slate-400 dark:group-hover/item:text-white">
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   </motion.div>
 );
 
