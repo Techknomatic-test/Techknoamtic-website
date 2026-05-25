@@ -465,7 +465,7 @@ export const ITSMPlugAndPlayPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {steps.map((step, idx) => {
               const Icon = step.icon;
               return (
@@ -475,16 +475,18 @@ export const ITSMPlugAndPlayPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group rounded-[2.5rem] border border-slate-100 bg-white p-8 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
+                  className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative"
                 >
-                  <SectionIcon icon={Icon} size="md" className="mb-6" />
-                  <div className="mb-2 text-[11px] font-black uppercase tracking-[0.2em] text-accent/50">
-                    Step 0{idx + 1}
+                  <div className="absolute top-0 right-0 p-8">
+                    <span className="text-4xl font-black text-accent/10 dark:text-white/5">
+                      0{idx + 1}
+                    </span>
                   </div>
-                  <h3 className="mb-4 text-left text-xl font-bold capitalize text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+                  <SectionIcon icon={Icon} size="lg" className="mb-8" />
+                  <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="text-left text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
+                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     {step.content}
                   </p>
                 </motion.div>

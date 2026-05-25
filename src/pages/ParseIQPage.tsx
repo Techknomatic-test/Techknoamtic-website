@@ -1,5 +1,4 @@
-import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { SectionIcon } from "../components/SectionIcon";
@@ -19,8 +18,6 @@ import {
   Cpu,
   Mail,
   FileSearch,
-  ChevronUp,
-  ChevronDown,
   LayoutDashboard,
   Layers,
   Globe,
@@ -47,7 +44,6 @@ const parseIqImg = (file: string) =>
 
 const PARSE_IQ_HERO = parseIqImg("herobanner.jpg");
 const PARSE_IQ_CHALLENGE = parseIqImg("The Enterprise Document Challenge.jpg");
-const PARSE_IQ_WORKS = parseIqImg("How ParseIQ Works.jpg");
 
 const CapabilityCard = ({ title, items, icon: Icon, delay = 0 }: { title: string; items: string[]; icon: any; delay?: number }) => (
   <motion.div
@@ -70,57 +66,6 @@ const CapabilityCard = ({ title, items, icon: Icon, delay = 0 }: { title: string
       ))}
     </ul>
   </motion.div>
-);
-
-const AccordionItem = ({
-  step,
-  title,
-  content,
-  isOpen,
-  onClick,
-}: {
-  step: string;
-  title: string;
-  content: string;
-  isOpen: boolean;
-  onClick: () => void;
-}) => (
-  <div className="border-b border-slate-100 dark:border-white/5 last:border-0 overflow-hidden">
-    <button
-      onClick={onClick}
-      className="w-full py-8 flex items-start gap-6 text-left group transition-all"
-    >
-      <span className="text-[14px] font-black text-accent mt-1 opacity-50 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-        {step}
-      </span>
-      <div className="flex-1">
-        <h3 className={`text-[20px] font-bold transition-colors ${isOpen ? "text-accent" : "text-brand-950 dark:text-white"}`}>
-          {title}
-        </h3>
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <p className="mt-4 text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl">
-                {content}
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-      <div
-        className={`mt-1 p-2 rounded-full transition-all duration-300 ${
-          isOpen ? "bg-accent text-white" : "text-slate-400 group-hover:text-accent"
-        }`}
-      >
-        {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-      </div>
-    </button>
-  </div>
 );
 
 const IntegrationCard = ({ num, title, description, image, delay = 0 }: { num: string; title: string; description: string; image: string; delay?: number }) => (
@@ -168,8 +113,6 @@ const UseCaseCard = ({ title, description, icon: Icon, delay = 0 }: { title: str
 );
 
 export const ParseIQPage = () => {
-  const [activeStep, setActiveStep] = useState<number | null>(0);
-
   const capabilities = [
     {
       title: "Smart OCR System",
@@ -204,11 +147,11 @@ export const ParseIQPage = () => {
   ];
 
   const steps = [
-    { step: "01.", title: "Ingestion", content: "Documents enter via API, watch-folder, email, or batch upload." },
-    { step: "02.", title: "Smart OCR & Pre-Processing", content: "Image enhancement, deskewing, and OCR extraction." },
-    { step: "03.", title: "AI Classification & Layout Understanding", content: "AI models identify document type, layout, and key regions." },
-    { step: "04.", title: "LLM-Driven Contextual Extraction", content: "LLMs interpret context, extract complex tables, validate fields, and reason across multi-page documents." },
-    { step: "05.", title: "Structured Output & Delivery", content: "Clean JSON, CSV, or API payloads are delivered downstream." }
+    { title: "Ingestion", content: "Documents enter via API, watch-folder, email, or batch upload.", icon: Mail },
+    { title: "Smart OCR & Pre-Processing", content: "Image enhancement, deskewing, and OCR extraction.", icon: Scan },
+    { title: "AI Classification & Layout Understanding", content: "AI models identify document type, layout, and key regions.", icon: Brain },
+    { title: "LLM-Driven Contextual Extraction", content: "LLMs interpret context, extract complex tables, validate fields, and reason across multi-page documents.", icon: Cpu },
+    { title: "Structured Output & Delivery", content: "Clean JSON, CSV, or API payloads are delivered downstream.", icon: Share2 },
   ];
 
   const integrations = [
@@ -390,7 +333,7 @@ export const ParseIQPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
             <motion.h2
@@ -412,35 +355,33 @@ export const ParseIQPage = () => {
             </motion.h3>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative aspect-[4/3] rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden shadow-2xl"
-            >
-              <img
-                loading="lazy"
-                src={PARSE_IQ_WORKS}
-                alt="How ParseIQ works"
-                className="h-full w-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
-            </motion.div>
-
-            <div className="max-w-xl">
-              {steps.map((step, idx) => (
-                <AccordionItem
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {steps.map((step, idx) => {
+              const Icon = step.icon;
+              return (
+                <motion.div
                   key={idx}
-                  step={step.step}
-                  title={step.title}
-                  content={step.content}
-                  isOpen={activeStep === idx}
-                  onClick={() => setActiveStep(activeStep === idx ? null : idx)}
-                />
-              ))}
-            </div>
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative"
+                >
+                  <div className="absolute top-0 right-0 p-8">
+                    <span className="text-4xl font-black text-accent/10 dark:text-white/5">
+                      0{idx + 1}
+                    </span>
+                  </div>
+                  <SectionIcon icon={Icon} size="lg" className="mb-8" />
+                  <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
+                    {step.title}
+                  </h3>
+                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {step.content}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
