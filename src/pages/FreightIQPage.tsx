@@ -3,21 +3,15 @@ import type { LucideIcon } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { SectionIcon } from "../components/SectionIcon";
 import {
-  Truck,
   Database,
   Zap,
-  Clock,
   BarChart3,
   Target,
-  Users,
   Search,
   Network,
   Cpu,
   Layers,
   FileText,
-  Anchor,
-  Server,
-  Code2,
 } from "lucide-react";
 
 const FIQ_BASE = "Images/FreightIQ";
@@ -125,45 +119,6 @@ const UseCaseCard = ({
   </motion.div>
 );
 
-const IndustryCard = ({
-  title,
-  description,
-  image,
-  delay = 0,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all h-full text-left group overflow-hidden rounded-[2.5rem] flex flex-col"
-  >
-    <div className="relative h-48 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        referrerPolicy="no-referrer"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 to-transparent" />
-    </div>
-    <div className="p-10 flex-1 flex flex-col">
-      <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-        {description}
-      </p>
-    </div>
-  </motion.div>
-);
-
 export const FreightIQPage = () => {
   const capabilities = [
     {
@@ -246,41 +201,6 @@ export const FreightIQPage = () => {
     },
   ];
 
-  const industries = [
-    {
-      title: "Freight Forwarding & 3PL",
-      description:
-        "Instant multi-carrier quoting and margin optimization for forwarders and 3PL providers.",
-      image: fiqImg("3PL.jpg"),
-    },
-    {
-      title: "Import & Export",
-      description: "Dynamic landed-cost visibility and shipment cost estimation for global trade operations.",
-      image: fiqImg("ImportExport.jpg"),
-    },
-    {
-      title: "E-Commerce & Retail Logistics",
-      description:
-        "Real-time shipping cost optimization and multi-modal pricing for retail supply chains.",
-      image: fiqImg("Retail.jpg"),
-    },
-    {
-      title: "Manufacturing & Industrial",
-      description: "Inbound and outbound shipment pricing automation for industrial supply chains.",
-      image: fiqImg("Manufacturing.jpg"),
-    },
-    {
-      title: "Air Cargo & Express",
-      description: "Dynamic, urgency-based pricing for time-critical air and express logistics.",
-      image: fiqImg("AirCargoExpress.jpg"),
-    },
-    {
-      title: "Global Shipping & Transport",
-      description: "Enterprise-wide freight pricing standardization across regions and routes.",
-      image: fiqImg("GlobalShippingTransport.jpg"),
-    },
-  ];
-
   const steps = [
     {
       title: "Carrier Connectivity",
@@ -311,45 +231,6 @@ export const FreightIQPage = () => {
       content:
         "Customer-ready freight quotations are generated automatically and delivered to sales teams or directly to customers via integrations.",
       icon: FileText,
-    },
-  ];
-
-  const stack = [
-    {
-      title: "Carrier Systems",
-      content:
-        "Direct carrier APIs · Multi-carrier aggregator integrations · Sea / Air / Road carrier connectivity.",
-      icon: Anchor,
-    },
-    {
-      title: "TMS Platforms",
-      content: "Transportation Management Systems · Freight execution platforms · Custom TMS via REST.",
-      icon: Truck,
-    },
-    {
-      title: "ERP Systems",
-      content: "SAP · Oracle · Microsoft Dynamics · NetSuite · Custom ERPs.",
-      icon: Database,
-    },
-    {
-      title: "CRM & Sales Platforms",
-      content: "Salesforce · HubSpot · Zoho · Custom CRMs · Quote-to-cash workflows.",
-      icon: Users,
-    },
-    {
-      title: "APIs & Developer Access",
-      content: "REST APIs · Webhooks · Real-time pricing endpoints · SDK access.",
-      icon: Code2,
-    },
-    {
-      title: "Data Refresh Modes",
-      content: "Real-time carrier rate sync · Scheduled refresh · On-demand rate fetch.",
-      icon: Clock,
-    },
-    {
-      title: "Deployment Modes",
-      content: "Cloud SaaS · Private VPC · Hybrid · On-premise (enterprise logistics).",
-      icon: Server,
     },
   ];
 
@@ -573,37 +454,6 @@ export const FreightIQPage = () => {
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Industries We Serve
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Purpose-built for freight-intensive operations across the global logistics value chain.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, idx) => (
-              <IndustryCard key={idx} {...industry} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* How It Works Section */}
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5 overflow-hidden">
         <div className="max-w-6xl mx-auto">
@@ -650,58 +500,6 @@ export const FreightIQPage = () => {
                   </h3>
                   <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Built to Plug Into Your Logistics Stack
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              FreightIQ is designed as an API-first platform that plugs into the operational systems freight businesses
-              already run on. Whether you're issuing quotations from a CRM, executing shipments through a TMS, posting
-              costs into an ERP, or coordinating carriers directly, FreightIQ connects without disrupting your existing
-              workflows, and pushes intelligent, optimized pricing into every quote your team generates.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {stack.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group hover:border-accent/30 transition-all flex flex-col"
-                >
-                  <SectionIcon icon={Icon} size="xs" className="mb-6" hover="none" />
-                  <h3 className="text-[17px] font-bold text-brand-950 dark:text-white mb-3 group-hover:text-accent transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {item.content}
                   </p>
                 </motion.div>
               );

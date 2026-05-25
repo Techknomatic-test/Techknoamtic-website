@@ -16,16 +16,9 @@ import {
 } from "lucide-react";
 
 const DPIQ_BASE = "Images/DataPulseIQ";
-const DPIQ_INDUSTRIES_FOLDER = "Industries We Serv";
-const DPIQ_STACK_FOLDER = "Enterprise Data Stack";
 
 const dpiqRootImg = (file: string) =>
   `${import.meta.env.BASE_URL}${[...DPIQ_BASE.split("/"), file].map(encodeURIComponent).join("/")}`;
-
-const dpiqAsset = (folder: string, file: string) =>
-  `${import.meta.env.BASE_URL}${[...DPIQ_BASE.split("/"), folder, file]
-    .map(encodeURIComponent)
-    .join("/")}`;
 
 const DPIQ_HERO_IMG = dpiqRootImg("Hero.jpg");
 const DPIQ_PAIN_POINTS_IMG = dpiqRootImg("painpoints.jpg");
@@ -115,43 +108,6 @@ const UseCaseCard = ({
           {outcome}
         </p>
       </div>
-    </div>
-  </motion.div>
-);
-
-const IndustryCard = ({
-  title,
-  description,
-  image,
-  delay = 0,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="group flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-slate-100 bg-white text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
-  >
-    <div className="relative h-48 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 to-transparent" />
-    </div>
-    <div className="flex flex-1 flex-col p-10">
-      <h3 className="mb-4 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
-        {title}
-      </h3>
-      <p className="text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">{description}</p>
     </div>
   </motion.div>
 );
@@ -251,40 +207,6 @@ export const DataGuardPage = () => {
     },
   ];
 
-  const industries = [
-    {
-      title: "Banking & Financial Services",
-      description:
-        "Trusted data for regulatory reporting, risk analytics, and customer intelligence across banking systems.",
-      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "BFSI.jpg"),
-    },
-    {
-      title: "Healthcare & Life Sciences",
-      description: "Patient data integrity, clinical reliability, and compliance-grade governance for healthcare analytics.",
-      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "HealthcareLife Sciences.jpg"),
-    },
-    {
-      title: "Retail & E-Commerce",
-      description: "Customer, product, and order data reliability for personalization and omnichannel operations.",
-      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "RetailE-Commerce.jpg"),
-    },
-    {
-      title: "Manufacturing & Supply Chain",
-      description: "Master data harmonization and supply chain data reliability across ERP and operational systems.",
-      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "ManufacturingSupply Chain.jpg"),
-    },
-    {
-      title: "Telecom & Technology",
-      description: "Subscriber, network, and operational KPI data quality at AI-ready scale.",
-      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "Telecom Technology.jpg"),
-    },
-    {
-      title: "Government & Public Sector",
-      description: "Citizen-data governance, compliance monitoring, and cross-department data reliability.",
-      image: dpiqAsset(DPIQ_INDUSTRIES_FOLDER, "GovernmentPublic Sector.jpg"),
-    },
-  ];
-
   const steps = [
     {
       title: "Connect",
@@ -315,44 +237,6 @@ export const DataGuardPage = () => {
       content:
         "AI recommendations engine and autonomous data agent translate observability into action, guided remediation, conversational diagnostics, and intelligent optimization across the data ecosystem.",
       icon: Zap,
-    },
-  ];
-
-  const stack = [
-    {
-      title: "Cloud Platforms",
-      content: "AWS · Azure · GCP · Multi-cloud and hybrid deployments.",
-      image: dpiqAsset(DPIQ_STACK_FOLDER, "CloudPlatforms.jpg"),
-    },
-    {
-      title: "Data Warehouses & Lakehouses",
-      content: "Snowflake · Databricks · BigQuery · Redshift · Synapse · Open lakehouse formats.",
-      image: dpiqAsset(DPIQ_STACK_FOLDER, "DataWarehouses.jpg"),
-    },
-    {
-      title: "Databases",
-      content: "PostgreSQL · Oracle · SQL Server · MySQL · Extensible connector framework.",
-      image: dpiqAsset(DPIQ_STACK_FOLDER, "Databases.jpg"),
-    },
-    {
-      title: "ERP & Operational Systems",
-      content: "SAP · Oracle EBS · Microsoft Dynamics · NetSuite · Custom operational systems.",
-      image: dpiqAsset(DPIQ_STACK_FOLDER, "ERP.jpg"),
-    },
-    {
-      title: "BI & Visualization Layer",
-      content: "Power BI · Tableau · Qlik · Looker · Export of quality scores and governance signals.",
-      image: dpiqAsset(DPIQ_STACK_FOLDER, "BIVisualization.jpg"),
-    },
-    {
-      title: "Security & Access",
-      content: "Role-based access control (RBAC) · Encrypted credential vault · Audit logging · Governance controls.",
-      image: dpiqAsset(DPIQ_STACK_FOLDER, "SecurityAccess.jpg"),
-    },
-    {
-      title: "Deployment Modes",
-      content: "Cloud SaaS · Private VPC · Hybrid · On-premise (regulated industries).",
-      image: dpiqAsset(DPIQ_STACK_FOLDER, "DeploymentModes.jpg"),
     },
   ];
 
@@ -575,37 +459,6 @@ export const DataGuardPage = () => {
         </div>
       </section>
 
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Industries We Serve
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Purpose-built for any data-heavy enterprise, wherever data fragmentation, governance gaps, or reliability
-              issues slow down decisions.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {industries.map((industry, idx) => (
-              <IndustryCard key={idx} {...industry} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
@@ -656,65 +509,6 @@ export const DataGuardPage = () => {
                 </motion.div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Built to Plug Into Your Enterprise Data Stack
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              DataPulseIQ is designed as a connector-first, deployment-flexible platform. Whether your enterprise data lives
-              in Snowflake, Databricks, BigQuery, Redshift, an on-prem warehouse, an ERP, or a combination of all of them , 
-              DataPulseIQ connects through reusable connectors and ingests metadata without disrupting your existing pipelines.
-              Deploy it in our cloud, your cloud, or on-premise. Push governance signals and reliability scores to the BI
-              tools your teams already use.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {stack.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group flex flex-col overflow-hidden rounded-[2.5rem] border border-slate-100 bg-slate-50 transition-all hover:border-accent/30 dark:border-white/10 dark:bg-white/5"
-              >
-                <div className="h-40 overflow-hidden">
-                  <img
-                    loading="lazy"
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="flex-1 p-8">
-                  <h3 className="mb-3 text-[17px] font-bold text-brand-950 transition-colors group-hover:text-accent dark:text-white">
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
-                    {item.content}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

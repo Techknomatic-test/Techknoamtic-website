@@ -15,16 +15,9 @@ import {
 } from "lucide-react";
 
 const ISM_BASE = "Images/InsightSM";
-const ISM_INDUSTRIES_FOLDER = "Industries We Serve";
-const ISM_STACK_FOLDER = "Enterprise IT Stack";
 
 const ismRootImg = (file: string) =>
   `${import.meta.env.BASE_URL}${[...ISM_BASE.split("/"), file].map(encodeURIComponent).join("/")}`;
-
-const ismAsset = (folder: string, file: string) =>
-  `${import.meta.env.BASE_URL}${[...ISM_BASE.split("/"), folder, file]
-    .map(encodeURIComponent)
-    .join("/")}`;
 
 const ISM_HERO_IMG = ismRootImg("Herobanner.jpg");
 const ISM_CHALLENGE_IMG = ismRootImg("Challenge.jpg");
@@ -61,87 +54,6 @@ const CapabilityCard = ({
           <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400">{item}</span>
         </div>
       ))}
-    </div>
-  </motion.div>
-);
-
-const IndustryCard = ({
-  title,
-  description,
-  image,
-  delay = 0,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="group flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-slate-100 bg-white text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:border-white/10 dark:bg-white/5"
-  >
-    <div className="relative h-48 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 to-transparent" />
-    </div>
-    <div className="flex flex-1 flex-col p-10">
-      <h3 className="mb-4 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
-        {title}
-      </h3>
-      <p className="text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">{description}</p>
-    </div>
-  </motion.div>
-);
-
-const ConnectorCard = ({
-  title,
-  items,
-  image,
-  index,
-  delay = 0,
-}: {
-  title: string;
-  items: string[];
-  image: string;
-  index: number;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-100 bg-white text-left shadow-lg dark:border-white/10 dark:bg-white/5"
-  >
-    <div className="relative h-48 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-    </div>
-    <div className="flex flex-grow flex-col p-8">
-      <h3 className="mb-4 text-lg font-bold text-brand-950 transition-colors group-hover:text-accent dark:text-white">
-        {title}
-      </h3>
-      <div className="mt-auto flex flex-wrap gap-2 text-[12px] font-medium text-slate-500 dark:text-slate-400">
-        {items.map((item, i) => (
-          <span key={i} className="after:ml-2 after:content-['·'] last:after:content-['']">
-            {item}
-          </span>
-        ))}
-      </div>
     </div>
   </motion.div>
 );
@@ -297,41 +209,6 @@ export const ITSMPlugAndPlayPage = () => {
     },
   ];
 
-  const industries = [
-    {
-      title: "Banking & Financial Services",
-      description:
-        "Centralized SLA and incident analytics across banking operations and compliance reporting.",
-      image: ismAsset(ISM_INDUSTRIES_FOLDER, "banking-finace.jpg"),
-    },
-    {
-      title: "Healthcare",
-      description: "Hospital IT monitoring, application incident tracking, and uptime analytics for critical systems.",
-      image: ismAsset(ISM_INDUSTRIES_FOLDER, "Healthcare.jpg"),
-    },
-    {
-      title: "Telecom",
-      description: "Network operations SLA monitoring, outage analytics, and multi-vendor operational visibility.",
-      image: ismAsset(ISM_INDUSTRIES_FOLDER, "Telecom.jpg"),
-    },
-    {
-      title: "Retail & E-Commerce",
-      description:
-        "Store operations support, POS incident monitoring, and peak-season SLA performance tracking.",
-      image: ismAsset(ISM_INDUSTRIES_FOLDER, "retailecommerce.jpg"),
-    },
-    {
-      title: "Manufacturing",
-      description: "Plant IT operations, production support incident analytics, and operational downtime tracking.",
-      image: ismAsset(ISM_INDUSTRIES_FOLDER, "Manufacturing.jpg"),
-    },
-    {
-      title: "Government & Public Sector",
-      description: "Citizen service analytics, cross-department ITSM visibility, and shared services reporting.",
-      image: ismAsset(ISM_INDUSTRIES_FOLDER, "goverment-publicsector.jpg"),
-    },
-  ];
-
   const steps = [
     {
       title: "Connect",
@@ -356,39 +233,6 @@ export const ITSMPlugAndPlayPage = () => {
       content:
         "Once validated, InsightSM transitions to enterprise production mode, full historical ingestion, incremental pipelines, and near real-time refresh, without rebuilding the analytics layer.",
       icon: Zap,
-    },
-  ];
-
-  const stack = [
-    {
-      title: "ITSM Platforms",
-      image: ismAsset(ISM_STACK_FOLDER, "ITSM Platforms.jpg"),
-      items: ["ServiceNow", "BMC Remedy", "Jira Service Management", "SolarWinds", "Extensible to any ITSM platform."],
-    },
-    {
-      title: "Connectivity Methods",
-      image: ismAsset(ISM_STACK_FOLDER, "ConnectivityMethods.jpg"),
-      items: ["REST APIs", "Native database connectivity", "Webhooks", "Automated schema discovery."],
-    },
-    {
-      title: "Data Refresh Modes",
-      image: ismAsset(ISM_STACK_FOLDER, "Data Refresh Modes.jpg"),
-      items: ["Sampled (validation phase)", "Batch (production)", "Near real-time", "Change-based synchronization."],
-    },
-    {
-      title: "BI & Visualization Layer",
-      image: ismAsset(ISM_STACK_FOLDER, "bivisulization.jpg"),
-      items: ["Pre-built InsightSM dashboards", "Export to Power BI", "Tableau", "Qlik (optional)."],
-    },
-    {
-      title: "Security & Access",
-      image: ismAsset(ISM_STACK_FOLDER, "securityaccess.jpg"),
-      items: ["Role-based access control (RBAC)", "Multi-tenant data isolation", "Audit logging", "Governance controls."],
-    },
-    {
-      title: "Deployment Modes",
-      image: ismAsset(ISM_STACK_FOLDER, "Deployment Modes.jpg"),
-      items: ["AWS", "Azure", "GCP", "On-premise", "Hybrid."],
     },
   ];
 
@@ -599,36 +443,6 @@ export const ITSMPlugAndPlayPage = () => {
         </div>
       </section>
 
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Industries We Serve
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Purpose-built for any IT-heavy enterprise, wherever ITSM data fragmentation slows operational
-              decision-making.
-            </motion.p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {industries.map((ind, idx) => (
-              <IndustryCard key={idx} {...ind} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-left mb-16">
@@ -680,46 +494,6 @@ export const ITSMPlugAndPlayPage = () => {
                 </motion.div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              Built to Plug Into Your Enterprise IT Stack
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              InsightSM is designed as a connector-first, deployment-flexible platform. Whether your operations live in
-              ServiceNow, BMC Remedy, Jira Service Management, SolarWinds, or a combination of all four, InsightSM
-              connects through reusable plug-and-play connectors and ingests data without disrupting your existing ITSM
-              workflows.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {stack.map((group, idx) => (
-              <ConnectorCard
-                key={idx}
-                index={idx}
-                title={group.title}
-                items={group.items}
-                image={group.image}
-                delay={idx * 0.1}
-              />
-            ))}
           </div>
         </div>
       </section>
