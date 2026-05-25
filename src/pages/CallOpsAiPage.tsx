@@ -457,7 +457,6 @@ export const CallOpsAIPage = () => {
                   className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.1)] transition-all group"
                 >
                   <SectionIcon icon={Icon} size="md" className="mb-6" hover="none" />
-                  <div className="text-[11px] font-black tracking-[0.2em] text-accent/50 uppercase mb-2">Step 0{idx + 1}</div>
                   <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left capitalize">
                     {step.title}
                   </h3>
