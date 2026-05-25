@@ -377,7 +377,7 @@ export const CallOpsAIPage = () => {
             aria-hidden
           />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10 w-full text-left drop-shadow-md">
+        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -410,15 +410,15 @@ export const CallOpsAIPage = () => {
       </section>
 
       {/* Challenge Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl space-y-8 text-left mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Every enterprise, retail, BFSI, healthcare, logistics, real estate, depends on voice as a primary channel for customer engagement, support, collections, reminders, and lead conversion. Yet most calling operations still rely on shift-based human teams, rigid IVRs, and outdated dialer infrastructure. As call volumes rise, organizations face an impossible trade-off: scale headcount and inflate costs, or accept slower response times, missed follow-ups, and inconsistent customer experiences.
             </motion.p>
@@ -471,7 +471,7 @@ export const CallOpsAIPage = () => {
 
       {/* Impact Framing Section */}
       <section className="pt-4 pb-[40px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -491,14 +491,14 @@ export const CallOpsAIPage = () => {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               What CallOps AI Solves
             </motion.h2>
@@ -507,7 +507,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
+              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight max-w-3xl"
             >
               From Manual Calling Operations to Autonomous Voice Intelligence. Connect. Hear. Understand. Respond.
               Act.
@@ -517,7 +517,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               CallOps AI is built on a layered voice AI architecture that combines telephony, speech recognition, LLM-powered reasoning, and enterprise workflow execution, orchestrated in real time so AI agents can listen, understand, decide, and act within a single conversation. Scaling your calling floor from 10 to 1,000 agents is now a matter of configuration, not recruitment.
             </motion.p>
@@ -533,13 +533,13 @@ export const CallOpsAIPage = () => {
 
       {/* Industries Section */}
       <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <motion.div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Industries We Serve
             </motion.h2>
@@ -548,7 +548,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 mb-10 leading-snug"
+              className="text-lg md:text-xl font-bold text-brand-950/70 dark:text-white/60 max-w-3xl leading-snug"
             >
               High-impact deployments where AI voice agents are replacing, and outperforming, traditional human calling teams across sectors.
             </motion.h3>
@@ -559,18 +559,18 @@ export const CallOpsAIPage = () => {
               <IndustryCard key={idx} {...industry} delay={idx * 0.1} />
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               How CallOps AI Works
             </motion.h2>
@@ -579,7 +579,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               CallOps AI converts voice into structured intelligence and action. Our engine supports ultra-low latency speech-to-text, context-aware intent detection, and human-like voice synthesis, all while making real-time calls to your CRM and business applications.
             </motion.p>
@@ -613,14 +613,14 @@ export const CallOpsAIPage = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-6"
             >
               Built to Plug Into Your Enterprise Stack
             </motion.h2>
@@ -629,7 +629,7 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Voice agents only deliver real outcomes when they can read from and write to the systems your operations already run on. CallOps AI is API-first and CCaaS-native, connecting to CRMs, telephony providers, and campaign engines so every conversation is informed by live context.
             </motion.p>
@@ -670,14 +670,14 @@ export const CallOpsAIPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-slate-50 dark:bg-white/5 text-left">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-6xl mx-auto text-left">
           <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading mb-8"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
@@ -686,13 +686,13 @@ export const CallOpsAIPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
             >
               Six high-impact deployments where CallOps AI is replacing, and outperforming, traditional calling teams.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
             {useCases.map((uc, idx) => (
               <UseCaseCard key={idx} {...uc} delay={idx * 0.1} />
             ))}
