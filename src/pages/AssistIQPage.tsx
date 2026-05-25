@@ -530,8 +530,7 @@ export const AssistIQPage = () => {
             >
               AI-powered conversational agents and intelligent avatars that autonomously handle
               customer queries, execute workflows, and deliver human-like self-service, 24×7,
-              across every digital channel. Built for enterprises ready to move from manual
-              customer support to intelligent autonomous engagement.
+              across every digital channel.
             </motion.p>
           </div>
         </div>
@@ -617,7 +616,7 @@ export const AssistIQPage = () => {
             viewport={{ once: true }}
             className="p-10 rounded-3xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20"
           >
-            <h3 className="text-[12px] font-black tracking-[0.3em] text-orange-600 dark:text-orange-400 uppercase mb-4">
+            <h3 className="text-[12px] font-black tracking-[0.1em] text-orange-600 dark:text-orange-400 uppercase mb-4">
               Impact Framing
             </h3>
             <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
