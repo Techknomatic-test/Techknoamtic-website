@@ -255,15 +255,7 @@ export const AboutUsPage = () => {
             </motion.p>
 
             <div className="flex flex-wrap gap-5">
-              <Link to="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-accent text-white rounded-2xl font-black tracking-[0.1em] uppercase text-[12px] shadow-2xl flex items-center gap-3 active:scale-95 transition-all"
-                >
-                   Case Studies <ArrowRight className="w-4 h-4" />
-                </motion.button>
-              </Link>
+          
             </div>
           </div>
         </div>
@@ -431,7 +423,7 @@ export const AboutUsPage = () => {
                   <h4 className="text-lg font-bold text-brand-950 dark:text-white tracking-tight mb-1">
                     {member.name}
                   </h4>
-                  <p className="text-[11px] font-black uppercase tracking-[0.2em] text-accent">
+                  <p className="text-[11px] font-black uppercase tracking-[0.1em] text-accent">
                     {member.role}
                   </p>
                 </div>
