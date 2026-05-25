@@ -452,15 +452,14 @@ export const BIServicesPage = () => {
       {/* Intro Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="space-y-8 text-left">
-           
-            <motion.div className="space-y-8 text-left">
+          <div className="w-full space-y-8 text-left">
+            <motion.div className="w-full space-y-8 text-left">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+                className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
               >
                 Most enterprises don’t suffer from a lack of data, they suffer from a lack of
                 trusted, actionable insights. Dashboards exist, but adoption is low. Reports are
@@ -474,7 +473,7 @@ export const BIServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+                className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
               >
                 Built on deep, certified expertise across Power BI, Tableau, Qlik, and custom
                 analytics platforms, and backed by strong data engineering capabilities, our BI

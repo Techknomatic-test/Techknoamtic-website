@@ -335,13 +335,13 @@ export const DataEngineeringPage = () => {
       {/* Intro Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-5xl space-y-8 text-left">
+          <div className="w-full space-y-8 text-left">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Enterprise data is only as powerful as the platform that moves, governs, and serves it. Techknomatic helps organizations modernize fragmented data ecosystems into unified, cloud-native foundations built on Azure, AWS, GCP, Snowflake, and Databricks. From high-throughput ETL/ELT pipelines and real-time streaming to lakehouse architectures and governance frameworks, we deliver data engineering that is reliable, observable, and audit-ready.
             </motion.p>
@@ -350,7 +350,7 @@ export const DataEngineeringPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
+              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Our solutions combine deep platform expertise with reusable accelerators, connectors, transformation frameworks, and quality libraries, that compress delivery timelines and reduce risk. The result is a scalable data foundation that powers BI, advanced analytics, and AI/ML initiatives across the enterprise.
             </motion.p>
