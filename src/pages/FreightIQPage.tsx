@@ -369,7 +369,7 @@ export const FreightIQPage = () => {
             </motion.div>
 
             <div className="space-y-6 self-start lg:pt-4">
-              <div className="mb-12">
+              <div className="mb-6">
                 <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight">
                   Common Operational Pain Points
                 </h3>
