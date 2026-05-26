@@ -67,8 +67,8 @@ const FooterColumn = ({ title, items }: { title: string; items: NavItem[] }) => 
 
 export const Footer = () => {
   return (
-    <footer className="py-14 md:py-16 lg:py-20 px-6 lg:px-12 bg-brand-950 border-t border-white/5 transition-colors duration-500 overflow-hidden text-left">
-      <div className="max-w-7xl mx-auto">
+    <footer className="py-14 md:py-16 lg:py-20 px-6 bg-brand-950 border-t border-white/5 transition-colors duration-500 overflow-hidden text-left">
+      <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col gap-y-6 mb-0">
           <div className="flex flex-col items-center gap-y-8 md:grid md:grid-cols-[minmax(0,20rem)_1fr] md:items-start md:gap-x-16 lg:gap-x-24 xl:gap-x-32">
             <div className="w-full shrink-0 text-center md:text-left">
