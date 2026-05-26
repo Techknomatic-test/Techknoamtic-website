@@ -1209,17 +1209,17 @@ const AcceleratorsSection = () => {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="mb-16 text-left">
+        <div className="mb-10 text-left">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="section-heading-on-dark mb-6">
+            <h2 className="section-heading-on-dark mb-2">
               Go Faster With Our Accelerators
             </h2>
-            <div className="w-12 h-1 bg-accent mb-6" />
+            <div className="w-12 h-1 bg-accent mb-4" />
             <p className="text-lg text-slate-300 font-medium leading-relaxed w-full">
               Accelerate your engineering journey with hyper-specialized IP and
               pre-built intelligence components.
