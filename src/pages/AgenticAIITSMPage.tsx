@@ -373,50 +373,51 @@ export const AgenticAIITSMPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
-            <div className="lg:col-span-3">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
+            >
               <img
                 loading="lazy"
                 src={TIQ_PAIN_POINTS_IMG}
                 alt="Common operational pain points in enterprise IT support"
-                className="block h-auto w-full rounded-2xl"
+                className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
               />
-            </div>
+            </motion.div>
 
-            <div className="lg:col-span-2 space-y-6">
-              <div className="mb-10 text-left">
-                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight tracking-tight">
+            <div className="space-y-6 self-start lg:pt-4">
+              <div className="mb-6">
+                <h3 className="mb-2 text-xl font-bold leading-tight text-brand-950 dark:text-white">
                   Common Operational Pain Points
                 </h3>
-                <div className="w-12 h-1 bg-accent rounded-full" />
+                <div className="h-1 w-12 rounded-full bg-accent" />
               </div>
-              <ul className="space-y-4">
-                {[
-                  "High volumes of repetitive L1 tickets",
-                  "Manual triaging and classification delays",
-                  "Endless clarification loops with employees",
-                  "Slow resolution times for routine issues",
-                  "Rising service desk operational costs",
-                  "Overloaded teams unable to focus on strategy",
-                  "Poor employee experience and productivity loss",
-                  "Scripted chatbots that fail on ambiguity",
-                ].map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 + i * 0.05 }}
-                    className="flex items-start gap-3 group list-none text-left"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                    <p className="text-[17px] text-brand-950 dark:text-white leading-tight">
-                      {item}
-                    </p>
-                  </motion.li>
-                ))}
-              </ul>
+              {[
+                "High volumes of repetitive L1 tickets",
+                "Manual triaging and classification delays",
+                "Endless clarification loops with employees",
+                "Slow resolution times for routine issues",
+                "Rising service desk operational costs",
+                "Overloaded teams unable to focus on strategy",
+                "Poor employee experience and productivity loss",
+                "Scripted chatbots that fail on ambiguity",
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className="group flex items-start gap-4"
+                >
+                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                  <p className="text-[16px] leading-tight text-brand-950 dark:text-white">{item}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>

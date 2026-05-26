@@ -333,51 +333,51 @@ export const CXONexusPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
-            <div className="lg:col-span-3 text-left">
-              <div className="relative aspect-video rounded-[3rem] bg-slate-50 dark:bg-white/5 overflow-hidden group shadow-2xl border border-slate-100 dark:border-white/10">
-                <img
-                  loading="lazy"
-                  src={CXO_PAIN_POINTS_IMG}
-                  alt="Decision Intelligence"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
-              </div>
-            </div>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
+            >
+              <img
+                loading="lazy"
+                src={CXO_PAIN_POINTS_IMG}
+                alt="Decision Intelligence"
+                className="h-full w-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
 
-            <div className="lg:col-span-2 space-y-6">
-              <div className="mb-10 text-left">
-                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight tracking-tight">
+            <div className="space-y-6 self-start lg:pt-4">
+              <div className="mb-6">
+                <h3 className="mb-2 text-xl font-bold leading-tight text-brand-950 dark:text-white">
                   Common Operational Pain Points
                 </h3>
-                <div className="w-12 h-1 bg-accent rounded-full" />
+                <div className="h-1 w-12 rounded-full bg-accent" />
               </div>
-              <ul className="space-y-4">
-                {[
-                  "Heavy dependency on BI teams for every question",
-                  "Delayed access to critical insights, weeks for dashboards",
-                  "SQL and technical requirements blocking non-technical leaders",
-                  "Fragmented data across ERP, CRM, and operational systems",
-                  "Limited analytics accessibility for business teams",
-                  "Slow dashboard creation cycles tied to backlogs",
-                  "Lack of contextual business intelligence explanation",
-                  "Generic AI tools that don’t see real enterprise data",
-                ].map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 + i * 0.05 }}
-                    className="flex items-start gap-3 group list-none text-left"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                    <p className="text-[17px] text-brand-950 dark:text-white leading-tight">{item}</p>
-                  </motion.li>
-                ))}
-              </ul>
+              {[
+                "Heavy dependency on BI teams for every question",
+                "Delayed access to critical insights, weeks for dashboards",
+                "SQL and technical requirements blocking non-technical leaders",
+                "Fragmented data across ERP, CRM, and operational systems",
+                "Limited analytics accessibility for business teams",
+                "Slow dashboard creation cycles tied to backlogs",
+                "Lack of contextual business intelligence explanation",
+                "Generic AI tools that don’t see real enterprise data",
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className="group flex items-start gap-4"
+                >
+                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                  <p className="text-[16px] leading-tight text-brand-950 dark:text-white">{item}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
