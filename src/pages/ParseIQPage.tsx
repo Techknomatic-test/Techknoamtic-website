@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
 import { SectionIcon } from "../components/SectionIcon";
@@ -32,7 +31,8 @@ import {
   FileCheck2,
   Terminal,
   Network,
-  Share2
+  Share2,
+  Target,
 } from "lucide-react";
 
 const PARSE_IQ_BASE = "Images/ParseIQ";
@@ -45,21 +45,54 @@ const parseIqImg = (file: string) =>
 const PARSE_IQ_HERO = parseIqImg("herobanner.jpg");
 const PARSE_IQ_CHALLENGE = parseIqImg("The Enterprise Document Challenge.jpg");
 
-const UseCaseCard = ({ title, description, icon: Icon, delay = 0 }: { title: string; description: string; icon: any; delay?: number }) => (
+const UseCaseCard = ({
+  title,
+  subtitle,
+  crux,
+  focusAreas,
+  outcome,
+  delay = 0,
+}: {
+  title: string;
+  subtitle: string;
+  crux: string;
+  focusAreas: string;
+  outcome: string;
+  delay?: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay }}
-    className="group flex h-full flex-col rounded-[3rem] border border-slate-100 bg-white p-10 text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] transition-all hover:shadow-2xl dark:border-white/10 dark:bg-brand-900/40"
+    className="group flex h-full flex-col rounded-[3rem] border border-slate-100 bg-white p-10 text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] transition-all hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] dark:border-white/10 dark:bg-white/5"
   >
-    <SectionIcon icon={Icon} size="lg" hover="rotate" className="mb-5" />
-    <h3 className="mb-3 min-h-[2.5rem] text-xl font-bold tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+    <h3 className="mb-2 min-h-[2.5rem] text-2xl font-bold leading-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
       {title}
     </h3>
-    <p className="min-h-[4.5rem] text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
-      {description}
+    <p className="mb-5 min-h-[3rem] text-[15px] font-bold leading-snug text-brand-950/70 dark:text-white/70">
+      {subtitle}
     </p>
+
+    <div className="mb-6 flex flex-1 flex-col space-y-4">
+      <p className="min-h-[4.5rem] text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
+        {crux}
+      </p>
+      <div>
+        <h4 className="mb-2 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
+        <p className="min-h-[2.5rem] text-[14px] font-bold text-brand-950 dark:text-white">{focusAreas}</p>
+      </div>
+    </div>
+
+    <div className="mt-auto border-t border-slate-100 pt-4 dark:border-white/5">
+      <div className="flex items-center gap-3">
+        <SectionIcon icon={Target} size="sm" hover="none" />
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
+          <span className="mr-2 uppercase tracking-wider text-accent">Outcome:</span>
+          {outcome}
+        </p>
+      </div>
+    </div>
   </motion.div>
 );
 
@@ -106,11 +139,48 @@ export const ParseIQPage = () => {
   ];
 
   const useCases = [
-    { title: "KYC & Identity Verification Automation", description: "AI-powered extraction and validation of passports, national IDs, and proof-of-address documents.", icon: ShieldCheck },
-    { title: "Claims & Policy Document Processing", description: "Automate insurance claims intake and structured data extraction.", icon: FileCheck2 },
-    { title: "Invoice & Vendor Document Automation", description: "Touchless AP processing across logistics and operations.", icon: Truck },
-    { title: "Medical Records & Healthcare Forms Digitization", description: "Convert paper-based patient data into structured records.", icon: Stethoscope },
-    { title: "Government Citizen Document Processing", description: "Automate citizen-facing application and verification workflows.", icon: Vote }
+    {
+      title: "KYC & Identity Verification Automation",
+      subtitle:
+        "AI-powered extraction and validation of identity documents for compliant customer onboarding.",
+      crux: "ParseIQ automates the capture, classification, and validation of passports, national IDs, driver's licenses, and proof-of-address documents, cross-checking extracted fields against KYC rules and watchlists to accelerate onboarding while reducing compliance risk.",
+      focusAreas:
+        "Document Classification · Field Extraction · ID Validation · Address Verification · Compliance Checks",
+      outcome: "Faster onboarding · Lower KYC operational cost · Reduced compliance risk",
+    },
+    {
+      title: "Claims & Policy Document Processing",
+      subtitle:
+        "Automated insurance claims intake and structured data extraction across forms and supporting documents.",
+      crux: "ParseIQ ingests claim forms, policy documents, medical bills, and supporting evidence, extracting key fields, line items, and entities into structured records that flow directly into core insurance systems for faster adjudication and settlement.",
+      focusAreas:
+        "Claims Intake · Policy Extraction · Line-Item Capture · Evidence Processing · Core System Integration",
+      outcome: "Faster claim settlement · Reduced manual data entry · Improved adjudication accuracy",
+    },
+    {
+      title: "Invoice & Vendor Document Automation",
+      subtitle: "Touchless accounts payable processing across logistics, procurement, and operations.",
+      crux: "ParseIQ automates invoice ingestion, line-item extraction, PO matching, and vendor document validation across multi-format inputs, eliminating manual AP entry and accelerating the procure-to-pay cycle for finance and operations teams.",
+      focusAreas:
+        "Invoice Capture · Line-Item Extraction · PO Matching · Vendor Validation · ERP Integration",
+      outcome: "Lower AP processing cost · Faster payment cycles · Higher data accuracy",
+    },
+    {
+      title: "Medical Records & Healthcare Forms Digitization",
+      subtitle: "AI-driven conversion of paper-based patient records and clinical forms into structured digital data.",
+      crux: "ParseIQ digitizes patient intake forms, prescriptions, lab reports, and handwritten clinical notes, extracting structured patient, diagnosis, and treatment data that integrates with EMR and hospital information systems to support clinical workflows.",
+      focusAreas:
+        "Patient Form Capture · Prescription Extraction · Lab Report Parsing · EMR Integration · Clinical Data Structuring",
+      outcome: "Faster patient onboarding · Reduced clerical load · Improved record accuracy",
+    },
+    {
+      title: "Government Citizen Document Processing",
+      subtitle: "Automated citizen-facing application intake and verification for public-sector services.",
+      crux: "ParseIQ processes citizen applications, identity proofs, and supporting documents across welfare, licensing, and registration workflows, extracting and validating data to accelerate service delivery while maintaining audit trails for compliance and transparency.",
+      focusAreas:
+        "Application Intake · Identity Verification · Document Validation · Workflow Routing · Audit Trail",
+      outcome: "Faster citizen service delivery · Reduced backlog · Improved transparency",
+    },
   ];
 
   return (
@@ -327,7 +397,7 @@ export const ParseIQPage = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-slate-500 dark:text-slate-400 font-medium"
             >
-              High-impact document automation across BFSI, logistics, healthcare, and public-sector operations.
+              Five domain-specific deployments where ParseIQ is replacing manual document handling with intelligent, automated extraction and validation.
             </motion.p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
