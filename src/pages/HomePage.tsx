@@ -1578,7 +1578,7 @@ const ClientSlider = () => {
     }));
 
   const clientLogos = toLogoItems("Client_logo", [
-    "ANI-20230801113821.jpg",
+    "ANI-20230801113821.png",
     "BDO_Unibank_(logo).svg.png",
     "DBS_Bank_Logo_(alternative).svg.png",
     "Honeywell_logo.svg.png",
@@ -1593,7 +1593,7 @@ const ClientSlider = () => {
     "Teradata_Logo.png",
     "ZS_Associates 1.png",
     "keventers.png",
-    "malpani-group-logo.jpg",
+    "malpani-group-logo.png",
     "marketing-strategy-of-trent-trent-limited-logo-e1721457798938-85604e26b126834de5a36d237555f96c.png",
     "tvs-credit 1 1.png",
     "images (1).png",
