@@ -10,11 +10,9 @@ import {
   Layers,
   Thermometer,
   Cloud,
-  Settings,
-  HardHat,
+  Target,
   ChevronDown,
   ChevronUp,
-  LucideIcon,
 } from "lucide-react";
 
 const OIL_GAS_IMG = "Images/Oil&Gas";
@@ -109,27 +107,49 @@ const SolveCard = ({
   </motion.div>
 );
 
-const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { title: string; description: string; impact: string; delay?: number; icon: LucideIcon }) => (
+const UseCaseCard = ({
+  title,
+  subtitle,
+  crux,
+  focusAreas,
+  outcome,
+}: {
+  title: string;
+  subtitle: string;
+  crux: string;
+  focusAreas: string;
+  outcome: string;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
+    className="group flex h-full flex-col rounded-[3rem] border border-slate-100 bg-white p-10 text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] transition-all hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] dark:border-white/10 dark:bg-white/5"
   >
-    <div className="flex items-center gap-4 mb-6">
-      <SectionIcon icon={Icon} size="md" hover="none" />
-      <div className="text-left">
-        <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">
-          {title}
-        </h3>
+    <h3 className="mb-2 min-h-[2.5rem] text-2xl font-bold leading-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+      {title}
+    </h3>
+    <p className="mb-5 min-h-[3rem] text-[15px] font-bold leading-snug text-brand-950/70 dark:text-white/70">
+      {subtitle}
+    </p>
+
+    <div className="mb-6 flex flex-1 flex-col space-y-4">
+      <p className="min-h-[4.5rem] text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
+        {crux}
+      </p>
+
+      <div>
+        <h4 className="mb-2 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
+        <p className="min-h-[2.5rem] text-[14px] font-bold text-brand-950 dark:text-white">{focusAreas}</p>
       </div>
     </div>
-    
-    <div className="space-y-6 flex-1 text-left">
-      <div>
-        <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
-          {description}
+
+    <div className="mt-auto border-t border-slate-100 pt-4 dark:border-white/5">
+      <div className="flex items-center gap-3">
+        <SectionIcon icon={Target} size="sm" hover="none" />
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
+          <span className="mr-2 uppercase tracking-wider text-accent">Outcome:</span>
+          {outcome}
         </p>
       </div>
     </div>
@@ -251,6 +271,33 @@ export const RefineryOperationsPage = () => {
         "Provide live HSE scorecards for supervisors and leadership teams.",
       ],
       icon: ShieldCheck,
+    },
+  ];
+
+  const useCases = [
+    {
+      title: "Predictive equipment maintenance",
+      subtitle: "ML-driven failure forecasting on sensor data",
+      crux: "An upstream operator predicted equipment failures up to weeks in advance using ML models trained on real-time sensor data, significantly cutting unplanned downtime and maintenance costs.",
+      focusAreas:
+        "Sensor Data Monitoring · Failure Prediction · Downtime Reduction · Maintenance Scheduling",
+      outcome: "Earlier warning of failures · Reduced downtime · Lower maintenance spend",
+    },
+    {
+      title: "Refinery energy optimization",
+      subtitle: "Energy dashboard for cost-per-barrel reduction",
+      crux: "A refinery deployed the Energy Dashboard module and identified operational inefficiencies, resulting in a remarkable reduction in energy cost per barrel within the first quarter of deployment.",
+      focusAreas:
+        "Energy Consumption Tracking · Inefficiency Detection · Cost-Per-Barrel Analytics · Process Optimization",
+      outcome: "Significant cost reduction · Faster ROI · Improved throughput efficiency",
+    },
+    {
+      title: "HSE & safety incident reduction",
+      subtitle: "Safety analytics integrated with PTW systems",
+      crux: "By integrating Safety Analytics with their Permit-to-Work system, an O&G operator achieved a significant drop in near-miss incidents and markedly better compliance tracking across sites.",
+      focusAreas:
+        "Near-Miss Tracking · PTW Integration · Compliance Monitoring · Risk Alerts",
+      outcome: "Fewer incidents · Stronger compliance · Safer worksites",
     },
   ];
 
@@ -453,38 +500,32 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <div className="max-w-6xl mx-auto text-left">
-          <div className="mb-8 text-left">
-            
-            <motion.h2 
+          <div className="mb-10">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
+            >
+              Three high-impact deployments where AI analytics is transforming oil & gas operations — from
+              predictive maintenance to energy optimization to HSE.
+            </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-            <UseCaseCard 
-              title="Predictive Equipment Maintenance"
-              description="An upstream operator predicted failures up to 2 weeks in advance using ML models on sensor data, predicting failures up to 2 weeks in advance."
-              impact="X% Downtime Reduction"
-              icon={Settings}
-            />
-            <UseCaseCard 
-              title="Refinery Energy Optimization"
-              description="A refinery deployed the Energy Dashboard module and identified inefficiencies resulting in X% reduction in energy cost per barrel within the first quarter."
-              impact="X% Energy Savings"
-              icon={Zap}
-            />
-            <UseCaseCard 
-              title="HSE & Safety Incident Reduction"
-              description="By integrating Safety Analytics with their PTW system, an O&G operator reduced near-miss incidents by X% and improved compliance tracking."
-              impact="X% Incident Reduction"
-              icon={HardHat}
-            />
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {useCases.map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} />
+            ))}
           </div>
         </div>
       </section>
