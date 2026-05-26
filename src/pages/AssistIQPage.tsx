@@ -1,11 +1,15 @@
-import { motion } from "motion/react";
 import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import {
+  CapabilityGridSection,
+  ImpactFramingSection,
+  PainPointsSection,
+  PlatformCapabilityCard,
+  ProcessStepsSection,
+  UseCasesSection,
+} from "../components/product-page";
 import { buildAssetUrl } from "../utils/buildAssetUrl";
-import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
-import { SectionIcon } from "../components/SectionIcon";
-import { UseCasesSection } from "../components/UseCasesSection";
 import {
   UserCircle,
   MessageSquare,
@@ -15,7 +19,6 @@ import {
   Brain,
   Video,
   Workflow,
-  ShieldCheck,
   BarChart3,
   ArrowRightLeft,
 } from "lucide-react";
@@ -24,6 +27,20 @@ const ASSIST_IMG = "Images/Entrprise_Ai/AssistIQ";
 const assistHeroImg = (file: string) => buildAssetUrl(ASSIST_IMG, file);
 const ASSIST_HERO_IMG = assistHeroImg("Assit_hero.jpg");
 const ASSIST_PAIN_POINTS_IMG = assistHeroImg("common_opertional.jpg");
+
+const ASSIST_INTRO =
+  "Customer expectations have outrun the support models built to serve them. Today's customers expect instant responses across every channel they use, web, app, WhatsApp, voice, yet most enterprises still answer them through shift-based contact centers, static FAQ pages, and ticket queues. The result is a constant tension: repetitive queries flood support teams, wait times stretch, costs rise, and customers churn quietly to faster competitors. Meanwhile, the business case for AI-led self-service has shifted from 'nice to have' to operational necessity, with one condition: the AI has to actually work, sound human, and know when to escalate.";
+
+const ASSIST_PAIN_ITEMS = [
+  "High volumes of repetitive customer queries draining capacity",
+  "Long support wait times across calls, email, and chat",
+  "Rising contact center and support operational costs",
+  "Inconsistent customer experiences across channels",
+  "Limited support availability outside business hours",
+  "Heavy dependency on manual support for routine queries",
+  "Slow resolution cycles for routine requests",
+  "Static FAQ pages that customers abandon",
+];
 
 export const AssistIQPage = () => {
   const capabilities = [
@@ -157,7 +174,7 @@ export const AssistIQPage = () => {
     {
       title: "Respond",
       content:
-        "Conversational response is generated in the customer’s language and channel, delivered via LLM-powered agent or avatar.",
+        "Conversational response is generated in the customer's language and channel, delivered via LLM-powered agent or avatar.",
       icon: UserCircle,
     },
     {
@@ -255,201 +272,35 @@ export const AssistIQPage = () => {
         imageSrc={ASSIST_HERO_IMG}
       />
 
-      <section className="pt-[60px] pb-8 bg-white dark:bg-brand-950 px-6 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="w-full text-left mb-16">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Customer expectations have outrun the support models built to serve
-              them. Today’s customers expect instant responses across every channel
-              they use, web, app, WhatsApp, voice, yet most enterprises still
-              answer them through shift-based contact centers, static FAQ pages, and
-              ticket queues. The result is a constant tension: repetitive queries
-              flood support teams, wait times stretch, costs rise, and customers
-              churn quietly to faster competitors. Meanwhile, the business case for
-              AI-led self-service has shifted from ‘nice to have’ to operational
-              necessity, with one condition: the AI has to actually work, sound
-              human, and know when to escalate.
-            </motion.p>
-          </div>
+      <PainPointsSection
+        intro={ASSIST_INTRO}
+        imageSrc={ASSIST_PAIN_POINTS_IMG}
+        imageAlt="Common operational pain points in customer service"
+        items={ASSIST_PAIN_ITEMS}
+        sectionClassName="pt-[60px] pb-8 bg-white dark:bg-brand-950 px-6 text-left"
+      />
 
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
-            >
-              <img
-                loading="lazy"
-                src={ASSIST_PAIN_POINTS_IMG}
-                alt="Common operational pain points in customer service"
-                className="h-full w-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
+      <ImpactFramingSection>
+        The result- poor customer satisfaction, reduced operational efficiency, higher support
+        overheads, lost engagement and conversion opportunities, and a widening gap between the
+        experience customers expect and the support model built to deliver it.
+      </ImpactFramingSection>
 
-            <div className="space-y-6 self-start lg:pt-4">
-              <div className="mb-6">
-                <h3 className="mb-2 text-xl font-bold leading-tight text-brand-950 dark:text-white">
-                  Common Operational Pain Points
-                </h3>
-                <div className="h-1 w-12 rounded-full bg-accent" />
-              </div>
-              {[
-                "High volumes of repetitive customer queries draining capacity",
-                "Long support wait times across calls, email, and chat",
-                "Rising contact center and support operational costs",
-                "Inconsistent customer experiences across channels",
-                "Limited support availability outside business hours",
-                "Heavy dependency on manual support for routine queries",
-                "Slow resolution cycles for routine requests",
-                "Static FAQ pages that customers abandon",
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="group flex items-start gap-4"
-                >
-                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                  <p className="text-[16px] leading-tight text-brand-950 dark:text-white">{item}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Impact Framing Section */}
-      <section className="pb-8 px-6 bg-white dark:bg-brand-950 text-left">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20"
-          >
-            <h3 className="text-[12px] font-black tracking-[0.1em] text-orange-600 dark:text-orange-400 uppercase mb-4">
-              Impact Framing
-            </h3>
-            <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
-              The result- poor customer satisfaction, reduced operational efficiency, higher support
-              overheads, lost engagement and conversion opportunities, and a widening gap between the
-              experience customers expect and the support model built to deliver it.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <CapabilityGridSection
+        title="What AssistIQ Solves"
+        tagline="From Manual Customer Support to Intelligent Autonomous Self-Service. Instant. Conversational. Scalable. Safe"
+        description="Every conversation is an opportunity. AssistIQ unifies your business knowledge into an intelligent conversational engine that handles routine inquiries, executes workflows, and escalates complex scenarios , ensuring 24/7 engagement without the manual overhead."
+      >
+        {capabilities.map((it, idx) => (
+          <PlatformCapabilityCard key={it.title} {...it} delay={idx * 0.05} prependOutcomeLabel />
+        ))}
+      </CapabilityGridSection>
 
-      {/* Solutions Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              What AssistIQ Solves
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
-            >
-              From Manual Customer Support to Intelligent Autonomous Self-Service. Instant. Conversational.
-              Scalable. Safe
-            </motion.h3>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Every conversation is an opportunity. AssistIQ unifies your business
-              knowledge into an intelligent conversational engine that handles routine
-              inquiries, executes workflows, and escalates complex scenarios ,
-              ensuring 24/7 engagement without the manual overhead.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((it, idx) => (
-              <PlatformCapabilityCard key={idx} {...it} delay={idx * 0.05} prependOutcomeLabel />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              How AssistIQ Works
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              AssistIQ is built as a layered conversational AI architecture that
-              captures customer intent, understands meaning through
-              enterprise-grounded knowledge, responds in human-like conversation,
-              executes workflows autonomously, escalates safely, and learns
-              continuously, transforming customer support into a scalable,
-              cost-effective engagement layer.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative"
-                >
-                  <div className="absolute top-0 right-0 p-8">
-                    <span className="text-4xl font-black text- text-accent/10 dark:text-white/5">
-                      0{idx + 1}
-                    </span>
-                  </div>
-                  <SectionIcon icon={Icon} size="lg" className="mb-8" />
-                  <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
-                    {step.title}
-                  </h3>
-                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ProcessStepsSection
+        title="How AssistIQ Works"
+        description="AssistIQ is built as a layered conversational AI architecture that captures customer intent, understands meaning through enterprise-grounded knowledge, responds in human-like conversation, executes workflows autonomously, escalates safely, and learns continuously, transforming customer support into a scalable, cost-effective engagement layer."
+        steps={steps}
+      />
 
       <UseCasesSection
         description="Seven industry-specific deployments where AssistIQ is replacing manual customer support with intelligent, autonomous AI self-service."

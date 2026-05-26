@@ -1,11 +1,14 @@
-import { PageHero } from "../components/PageHero";
+﻿import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { buildAssetUrl } from "../utils/buildAssetUrl";
-import { motion } from "motion/react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
-import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
-import { SectionIcon } from "../components/SectionIcon";
-import { UseCasesSection } from "../components/UseCasesSection";
+import {
+  CapabilityGridSection,
+  PainPointsSection,
+  PlatformCapabilityCard,
+  ProcessStepsSection,
+  UseCasesSection,
+} from "../components/product-page";
 import {
   Database,
   Zap,
@@ -22,6 +25,19 @@ const fiqImg = (file: string) => buildAssetUrl(FIQ_BASE, file);
 
 const FIQ_HERO = fiqImg("herobanner.jpg");
 const FIQ_CHALLENGE = fiqImg("GlobalShippingTransport.jpg");
+
+const FIQ_INTRO =
+  "Every freight quote is a race against the clock. Customers expect rates in minutes. Carriers update pricing daily. Routes shift with seasonality, capacity, and fuel. Yet most logistics providers still build quotations through spreadsheets, email chains, and disconnected carrier portals, losing deals to faster competitors and leaving margin on the table with every shipment. The pricing operations that should drive profitability instead drain it.";
+
+const FIQ_PAIN_ITEMS = [
+  "Manual freight rate calculations across multiple carriers and modes",
+  "Delayed customer quote responses, hours or days, not minutes",
+  "Inconsistent pricing across carriers, regions, and sales teams",
+  "Rapidly changing market rates that spreadsheets can't keep up with",
+  "Lack of centralized pricing intelligence across the business",
+  "Difficulty optimizing margins across high-volume shipments",
+  "Limited visibility into historical pricing trends and carrier performance",
+];
 
 export const FreightIQPage = () => {
   const capabilities = [
@@ -144,47 +160,47 @@ export const FreightIQPage = () => {
       subtitle: "Instant multi-carrier quoting and margin optimization for forwarders and 3PLs.",
       crux: "FreightIQ generates instant freight quotations across carriers, compares rates, and applies customer-specific pricing rules. Sales teams quote faster, manage LCL/FCL shipments centrally, and gain operational pricing intelligence that lifts both win rate and margin.",
       focusAreas:
-        "Instant Quotes · Multi-Carrier Comparison · Margin Optimization · LCL/FCL Management · Sales Intelligence",
-      outcome: "Faster quote turnaround · Higher win rate · Improved margin discipline",
+        "Instant Quotes Â· Multi-Carrier Comparison Â· Margin Optimization Â· LCL/FCL Management Â· Sales Intelligence",
+      outcome: "Faster quote turnaround Â· Higher win rate Â· Improved margin discipline",
     },
     {
       title: "Import & Export Businesses",
       subtitle: "Dynamic landed cost visibility for international trade.",
       crux: "Estimate shipment costs across international routes, optimize carrier selection for exports, and gain dynamic landed-cost visibility for container shipments. FreightIQ also supports freight budgeting and procurement analytics for cross-border trade operations.",
-      focusAreas: "Landed Cost · Route Optimization · Carrier Selection · Container Pricing · Freight Budgeting",
-      outcome: "Sharper cost estimation · Better trade margin · Smarter procurement",
+      focusAreas: "Landed Cost Â· Route Optimization Â· Carrier Selection Â· Container Pricing Â· Freight Budgeting",
+      outcome: "Sharper cost estimation Â· Better trade margin Â· Smarter procurement",
     },
     {
       title: "E-Commerce & Retail Logistics",
       subtitle: "Real-time shipping cost optimization across the retail supply chain.",
       crux: "Optimize shipping costs in real time across multi-modal logistics, analyze regional delivery costs, and manage warehouse-to-customer shipment pricing. FreightIQ also provides peak-season freight pricing visibility for retail and D2C operations.",
       focusAreas:
-        "Shipping Cost Optimization · Multi-Modal Pricing · Regional Delivery Analysis · Last-Mile Costs · Peak-Season Pricing",
-      outcome: "Lower shipping spend · Better peak-season readiness · Higher fulfillment margin",
+        "Shipping Cost Optimization Â· Multi-Modal Pricing Â· Regional Delivery Analysis Â· Last-Mile Costs Â· Peak-Season Pricing",
+      outcome: "Lower shipping spend Â· Better peak-season readiness Â· Higher fulfillment margin",
     },
     {
       title: "Manufacturing & Industrial Supply Chains",
       subtitle: "Inbound and outbound shipment pricing for industrial supply chains.",
       crux: "Automate inbound and outbound shipment pricing, compare vendor freight costs, and apply intelligent bulk cargo and container pricing. FreightIQ delivers supply chain transportation analytics and production logistics cost optimization across the industrial value chain.",
       focusAreas:
-        "Inbound/Outbound Pricing · Vendor Comparison · Bulk Cargo · Supply Chain Analytics · Production Logistics",
-      outcome: "Lower transportation cost · Better vendor benchmarking · Stronger supply chain visibility",
+        "Inbound/Outbound Pricing Â· Vendor Comparison Â· Bulk Cargo Â· Supply Chain Analytics Â· Production Logistics",
+      outcome: "Lower transportation cost Â· Better vendor benchmarking Â· Stronger supply chain visibility",
     },
     {
       title: "Air Cargo & Express Logistics",
       subtitle: "Urgency-aware pricing for time-critical air and express logistics.",
       crux: "Optimize pricing for urgent shipments, compare carrier availability and cost dynamically, and apply priority-based pricing logic. FreightIQ also enables express logistics margin analysis and international air freight quotation automation at enterprise scale.",
       focusAreas:
-        "Urgent Shipment Pricing · Carrier Availability · Priority-Based Pricing · Express Margin Analysis · Air Freight Quoting",
-      outcome: "Faster express quoting · Stronger margin on urgency · Better carrier match",
+        "Urgent Shipment Pricing Â· Carrier Availability Â· Priority-Based Pricing Â· Express Margin Analysis Â· Air Freight Quoting",
+      outcome: "Faster express quoting Â· Stronger margin on urgency Â· Better carrier match",
     },
     {
       title: "Global Shipping & Transportation Enterprises",
       subtitle: "Enterprise-wide freight pricing standardization across regions and routes.",
       crux: "Standardize freight pricing across the enterprise, monitor global route pricing intelligence, and analyze cross-region carrier performance. FreightIQ also delivers historical freight trend analysis and centralized pricing governance for global logistics networks.",
       focusAreas:
-        "Enterprise Pricing Standardization · Global Route Intelligence · Cross-Region Analytics · Historical Trends · Pricing Governance",
-      outcome: "Consistent global pricing · Stronger governance · Network-wide intelligence",
+        "Enterprise Pricing Standardization Â· Global Route Intelligence Â· Cross-Region Analytics Â· Historical Trends Â· Pricing Governance",
+      outcome: "Consistent global pricing Â· Stronger governance Â· Network-wide intelligence",
     },
   ];
 
@@ -198,176 +214,31 @@ export const FreightIQPage = () => {
         sectionBg="bg-brand-950"
       />
 
-      {/* Challenge Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="w-full text-left mb-16">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Every freight quote is a race against the clock. Customers expect rates in minutes. Carriers update
-              pricing daily. Routes shift with seasonality, capacity, and fuel. Yet most logistics providers still build
-              quotations through spreadsheets, email chains, and disconnected carrier portals, losing deals to faster
-              competitors and leaving margin on the table with every shipment. The pricing operations that should drive
-              profitability instead drain it.
-            </motion.p>
-          </div>
+      <PainPointsSection
+        intro={FIQ_INTRO}
+        imageSrc={FIQ_CHALLENGE}
+        imageAlt="Freight pricing challenge"
+        items={FIQ_PAIN_ITEMS}
+        asList
+        bulletClassName="text-[17px] text-brand-950 dark:text-white leading-tight"
+        imageWrapperClassName="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl lg:aspect-square"
+      />
 
-          <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl lg:aspect-square"
-            >
-              <img
-                loading="lazy"
-                src={FIQ_CHALLENGE}
-                alt="Freight pricing challenge"
-                className="h-full w-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
+      <CapabilityGridSection
+        title="What FreightIQ Solves"
+        tagline="From manual freight pricing to intelligent real-time rate optimization. Quote faster. Optimize better. Scale smarter."
+        description="FreightIQ is an AI-powered freight pricing and rate automation platform that intelligently calculates, optimizes, and automates freight quotations across logistics operations. The platform combines real-time carrier connectivity, AI-driven dynamic pricing, multi-modal support, and historical analytics to deliver freight quotes in seconds, with the margin discipline of a centralized pricing function."
+      >
+        {capabilities.map((it, idx) => (
+          <PlatformCapabilityCard key={it.title} {...it} delay={idx * 0.1} titleClassName="capitalize" />
+        ))}
+      </CapabilityGridSection>
 
-            <div className="space-y-6 self-start lg:pt-4">
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight">
-                  Common Operational Pain Points
-                </h3>
-                <div className="w-12 h-1 bg-accent rounded-full" />
-              </div>
-              <ul className="space-y-5 list-none">
-                {[
-                  "Manual freight rate calculations across multiple carriers and modes",
-                  "Delayed customer quote responses, hours or days, not minutes",
-                  "Inconsistent pricing across carriers, regions, and sales teams",
-                  "Rapidly changing market rates that spreadsheets can't keep up with",
-                  "Lack of centralized pricing intelligence across the business",
-                  "Difficulty optimizing margins across high-volume shipments",
-                  "Limited visibility into historical pricing trends and carrier performance",
-                ].map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 + i * 0.1 }}
-                    className="flex items-start gap-3 group"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                    <p className="text-[17px] text-brand-950 dark:text-white leading-tight">{item}</p>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              What FreightIQ Solves
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
-            >
-              From manual freight pricing to intelligent real-time rate optimization. Quote faster. Optimize better.
-              Scale smarter.
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              FreightIQ is an AI-powered freight pricing and rate automation platform that intelligently calculates,
-              optimizes, and automates freight quotations across logistics operations. The platform combines real-time
-              carrier connectivity, AI-driven dynamic pricing, multi-modal support, and historical analytics to deliver
-              freight quotes in seconds, with the margin discipline of a centralized pricing function.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((it, idx) => (
-              <PlatformCapabilityCard key={idx} {...it} delay={idx * 0.1} titleClassName="capitalize" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              How FreightIQ Works
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              FreightIQ is built as a layered pricing intelligence platform that connects to carrier systems in real
-              time, applies AI-driven dynamic pricing logic, optimizes across cost / speed / margin, and generates
-              customer-ready quotations, all within a single automated flow.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative"
-                >
-                  <div className="absolute top-0 right-0 p-8">
-                    <span className="text-4xl font-black text-accent/10 dark:text-white/5">
-                      0{idx + 1}
-                    </span>
-                  </div>
-                  <SectionIcon icon={Icon} size="lg" className="mb-8" />
-                  <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
-                    {step.title}
-                  </h3>
-                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
+      <ProcessStepsSection
+        title="How FreightIQ Works"
+        description="FreightIQ is built as a layered pricing intelligence platform that connects to carrier systems in real time, applies AI-driven dynamic pricing logic, optimizes across cost / speed / margin, and generates customer-ready quotations, all within a single automated flow."
+        steps={steps}
+      />
       <UseCasesSection
         description="High-impact deployments where FreightIQ is transforming manual pricing into intelligent rate automation."
         cases={useCases}

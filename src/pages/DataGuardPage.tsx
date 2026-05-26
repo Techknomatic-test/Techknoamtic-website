@@ -1,11 +1,14 @@
-import { motion } from "motion/react";
-import { PageHero } from "../components/PageHero";
+﻿import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import {
+  CapabilityGridSection,
+  PainPointsSection,
+  PlatformCapabilityCard,
+  ProcessStepsSection,
+  UseCasesSection,
+} from "../components/product-page";
 import { buildAssetUrl } from "../utils/buildAssetUrl";
-import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
-import { SectionIcon } from "../components/SectionIcon";
-import { UseCasesSection } from "../components/UseCasesSection";
 import {
   Activity,
   ClipboardCheck,
@@ -24,6 +27,19 @@ const dpiqRootImg = (file: string) => buildAssetUrl(DPIQ_BASE, file);
 
 const DPIQ_HERO_IMG = dpiqRootImg("Hero.jpg");
 const DPIQ_PAIN_POINTS_IMG = dpiqRootImg("painpoints.jpg");
+
+const DPIQ_INTRO =
+  "Every strategic decision, every CXO dashboard, every AI initiative depends on one assumption: the data is reliable. Yet across most enterprises, that assumption breaks down daily. Data flows in from dozens of source systems with inconsistent quality. Issues surface in production dashboards, not before. Governance lives in static documentation instead of operational workflows. And engineering teams spend their best hours writing SQL to debug data problems that should never have reached the warehouse. The result is a quiet but expensive crisis: low trust in analytics, slow decisions, and AI programs blocked by data that isn't ready.";
+
+const DPIQ_PAIN_ITEMS = [
+  "Inconsistent data quality across cloud, on-prem, and hybrid source systems",
+  "Reactive issue detection, data problems surface in dashboards, not in pipelines",
+  "Lack of business-aware validation rules tied to real KPIs and operational logic",
+  "Fragmented governance and compliance processes spread across teams and tools",
+  "Manual debugging and SQL-heavy troubleshooting draining engineering capacity",
+  "No centralized visibility into data reliability across the enterprise stack",
+  "PII and sensitive-data risk surfacing only during audits, not in operations",
+];
 
 export const DataGuardPage = () => {
   const capabilities = [
@@ -159,47 +175,47 @@ export const DataGuardPage = () => {
       subtitle: "Trusted data for regulatory reporting, risk analytics, and customer intelligence.",
       crux: "DataPulseIQ continuously monitors customer and transaction data quality, validates regulatory reporting datasets, enforces PII governance, and reconciles financial data across systems, so banks can run risk, fraud, and compliance analytics on data they fully trust.",
       focusAreas:
-        "Transaction Data Quality · Regulatory Reporting · PII Governance · Risk Analytics Reliability · Cross-System Reconciliation",
-      outcome: "Audit-ready compliance · Trusted risk analytics · Reduced reconciliation effort",
+        "Transaction Data Quality Â· Regulatory Reporting Â· PII Governance Â· Risk Analytics Reliability Â· Cross-System Reconciliation",
+      outcome: "Audit-ready compliance Â· Trusted risk analytics Â· Reduced reconciliation effort",
     },
     {
       title: "Healthcare & Life Sciences",
       subtitle: "Patient data integrity and compliance-grade governance for healthcare analytics.",
       crux: "Validate patient records across clinical and operational systems, enforce healthcare data compliance, and continuously observe medical records consistency. DataPulseIQ also ensures data reliability for healthcare analytics platforms and research-grade clinical datasets.",
       focusAreas:
-        "Patient Data Integrity · Healthcare Compliance · Clinical Observability · Records Consistency · Analytics Reliability",
-      outcome: "Higher clinical data trust · Stronger compliance posture · Audit-ready records",
+        "Patient Data Integrity Â· Healthcare Compliance Â· Clinical Observability Â· Records Consistency Â· Analytics Reliability",
+      outcome: "Higher clinical data trust Â· Stronger compliance posture Â· Audit-ready records",
     },
     {
       title: "Retail & E-Commerce",
       subtitle: "Reliable customer, product, and order data for personalization and analytics.",
       crux: "Monitor customer master data quality, validate inventory and order datasets, detect duplicate customer and product records, and enforce pricing and sales consistency, so retail and D2C operations run personalization and customer analytics on reliable data.",
       focusAreas:
-        "Customer MDM · Inventory & Order Validation · Duplicate Detection · Pricing Consistency · Personalization Reliability",
-      outcome: "Cleaner customer data · Sharper personalization · Trusted retail analytics",
+        "Customer MDM Â· Inventory & Order Validation Â· Duplicate Detection Â· Pricing Consistency Â· Personalization Reliability",
+      outcome: "Cleaner customer data Â· Sharper personalization Â· Trusted retail analytics",
     },
     {
       title: "Manufacturing & Supply Chain",
       subtitle: "Master data harmonization and supply chain data reliability across ERP systems.",
       crux: "DataPulseIQ validates supply chain data consistency, monitors ERP and operational data quality, governs vendor and shipment datasets, and harmonizes master data across plants and systems, strengthening reliability for production analytics and supply-chain decisions.",
       focusAreas:
-        "Supply Chain Validation · ERP Data Quality · Vendor & Shipment Governance · Production Analytics · Master Data Harmonization",
-      outcome: "Reliable supply-chain analytics · Stronger vendor data · Consolidated master data",
+        "Supply Chain Validation Â· ERP Data Quality Â· Vendor & Shipment Governance Â· Production Analytics Â· Master Data Harmonization",
+      outcome: "Reliable supply-chain analytics Â· Stronger vendor data Â· Consolidated master data",
     },
     {
       title: "Telecom & Technology",
       subtitle: "Subscriber, network, and operational KPI reliability at AI-ready scale.",
       crux: "Validate subscriber and network data, monitor operational KPI datasets, detect schema drift and anomalies, and reconcile data across platforms. DataPulseIQ also prepares enterprise data for advanced analytics and AI workloads at telecom scale.",
-      focusAreas: "Subscriber Data · Network KPIs · Schema Drift · Cross-Platform Reconciliation · AI-Ready Data Prep",
-      outcome: "Trusted operational KPIs · Faster anomaly detection · AI-ready data foundations",
+      focusAreas: "Subscriber Data Â· Network KPIs Â· Schema Drift Â· Cross-Platform Reconciliation Â· AI-Ready Data Prep",
+      outcome: "Trusted operational KPIs Â· Faster anomaly detection Â· AI-ready data foundations",
     },
     {
       title: "Government & Public Sector",
       subtitle: "Citizen-data governance and trusted reporting for public-sector analytics.",
       crux: "Govern and validate citizen data across departments, run compliance-focused data quality monitoring, detect and mask sensitive information, and deliver cross-department reliability for shared services, enabling trusted reporting across public-sector analytics initiatives.",
       focusAreas:
-        "Citizen Data Governance · Compliance Monitoring · Cross-Department Reliability · Sensitive Data Detection · Public-Sector Reporting",
-      outcome: "Trusted citizen analytics · Stronger compliance · Cross-department visibility",
+        "Citizen Data Governance Â· Compliance Monitoring Â· Cross-Department Reliability Â· Sensitive Data Detection Â· Public-Sector Reporting",
+      outcome: "Trusted citizen analytics Â· Stronger compliance Â· Cross-department visibility",
     },
   ];
 
@@ -213,176 +229,30 @@ export const DataGuardPage = () => {
         sectionBg="bg-brand-950"
       />
 
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="w-full text-left mb-16">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Every strategic decision, every CXO dashboard, every AI initiative depends on one assumption: the data is
-              reliable. Yet across most enterprises, that assumption breaks down daily. Data flows in from dozens of source
-              systems with inconsistent quality. Issues surface in production dashboards, not before. Governance lives in
-              static documentation instead of operational workflows. And engineering teams spend their best hours writing
-              SQL to debug data problems that should never have reached the warehouse. The result is a quiet but expensive
-              crisis: low trust in analytics, slow decisions, and AI programs blocked by data that isn’t ready.
-            </motion.p>
-          </div>
+      <PainPointsSection
+        intro={DPIQ_INTRO}
+        imageSrc={DPIQ_PAIN_POINTS_IMG}
+        imageAlt="Common operational pain points in enterprise data reliability"
+        items={DPIQ_PAIN_ITEMS}
+        asList
+        bulletClassName="text-[17px] leading-tight text-brand-950 dark:text-white"
+      />
 
-          <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
-            >
-              <img
-                loading="lazy"
-                src={DPIQ_PAIN_POINTS_IMG}
-                alt="Common operational pain points in enterprise data reliability"
-                className="h-full w-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
+      <CapabilityGridSection
+        title="What DataPulseIQ Solves"
+        tagline="From reactive data monitoring to autonomous data reliability. Connect. Observe. Validate. Govern. Act."
+        description="DataPulseIQ is an AI-powered data quality and reliability framework that unifies observability, business-rule validation, governance, and autonomous data intelligence into a single operational platform. It connects to enterprise data sources with minimal setup, continuously monitors quality across tables and columns, applies business-aware validation logic, surfaces AI-driven recommendations, and enables conversational data operations through an autonomous AI agent, so data teams move from manual firefighting to intelligent, business-ready data ecosystems."
+      >
+        {capabilities.map((it, idx) => (
+          <PlatformCapabilityCard key={it.title} {...it} delay={idx * 0.1} />
+        ))}
+      </CapabilityGridSection>
 
-            <div className="space-y-6 self-start lg:pt-4">
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-2 leading-tight">
-                  Common Operational Pain Points
-                </h3>
-                <div className="w-12 h-1 bg-accent rounded-full" />
-              </div>
-              <ul className="list-none space-y-5">
-                {[
-                  "Inconsistent data quality across cloud, on-prem, and hybrid source systems",
-                  "Reactive issue detection, data problems surface in dashboards, not in pipelines",
-                  "Lack of business-aware validation rules tied to real KPIs and operational logic",
-                  "Fragmented governance and compliance processes spread across teams and tools",
-                  "Manual debugging and SQL-heavy troubleshooting draining engineering capacity",
-                  "No centralized visibility into data reliability across the enterprise stack",
-                  "PII and sensitive-data risk surfacing only during audits, not in operations",
-                ].map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 + i * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                    <p className="text-[17px] leading-tight text-brand-950 dark:text-white">{item}</p>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              What DataPulseIQ Solves
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
-            >
-              From reactive data monitoring to autonomous data reliability. Connect. Observe. Validate. Govern. Act.
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              DataPulseIQ is an AI-powered data quality and reliability framework that unifies observability, business-rule
-              validation, governance, and autonomous data intelligence into a single operational platform. It connects to
-              enterprise data sources with minimal setup, continuously monitors quality across tables and columns, applies
-              business-aware validation logic, surfaces AI-driven recommendations, and enables conversational data operations
-              through an autonomous AI agent, so data teams move from manual firefighting to intelligent, business-ready
-              data ecosystems.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((it, idx) => (
-              <PlatformCapabilityCard key={idx} {...it} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              How DataPulseIQ Works
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              DataPulseIQ is built as a layered data reliability platform that connects to enterprise data sources,
-              continuously observes quality across tables and columns, applies business-aware validation logic, embeds
-              governance into operational workflows, and surfaces AI-driven recommendations and conversational diagnostics , 
-              transforming raw data ecosystems into trusted, AI-ready data operations.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative"
-                >
-                  <div className="absolute top-0 right-0 p-8">
-                    <span className="text-4xl font-black text-accent/10 dark:text-white/5">
-                      0{idx + 1}
-                    </span>
-                  </div>
-                  <SectionIcon icon={Icon} size="lg" className="mb-8" />
-                  <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
-                    {step.title}
-                  </h3>
-                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
+      <ProcessStepsSection
+        title="How DataPulseIQ Works"
+        description="DataPulseIQ is built as a layered data reliability platform that connects to enterprise data sources, continuously observes quality across tables and columns, applies business-aware validation logic, embeds governance into operational workflows, and surfaces AI-driven recommendations and conversational diagnostics , transforming raw data ecosystems into trusted, AI-ready data operations."
+        steps={steps}
+      />
       <UseCasesSection
         description="Six domain-specific deployments where DataPulseIQ is replacing reactive data monitoring with intelligent, autonomous data reliability."
         cases={useCases}

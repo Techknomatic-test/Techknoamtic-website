@@ -1,11 +1,15 @@
-import { motion } from "motion/react";
 import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import {
+  CapabilityGridSection,
+  ImpactFramingSection,
+  PainPointsSection,
+  PlatformCapabilityCard,
+  ProcessStepsSection,
+  UseCasesSection,
+} from "../components/product-page";
 import { buildAssetUrl } from "../utils/buildAssetUrl";
-import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
-import { SectionIcon } from "../components/SectionIcon";
-import { UseCasesSection } from "../components/UseCasesSection";
 import {
   Zap,
   ShieldCheck,
@@ -23,6 +27,20 @@ const TIQ_ENT_IMG = "Images/Entrprise_Ai/TiketIq";
 const tiqHeroImg = (file: string) => buildAssetUrl(TIQ_ENT_IMG, file);
 const TIQ_HERO_IMG = tiqHeroImg("Tickethero.jpg");
 const TIQ_PAIN_POINTS_IMG = tiqHeroImg("Pain Points.jpg");
+
+const TIQ_INTRO =
+  "Enterprise IT support is stuck in a loop the business can't scale out of. The vast majority of tickets flowing into service desks are repetitive L1 work, password resets, account unlocks, VPN issues, software installs, mailbox access, yet each ticket still consumes a human agent, an hour or more of resolution time, and an employee's entire workflow until it's closed. Service desks scale headcount to keep up. Employees lose hours waiting on routine fixes. And the IT teams who should be enabling transformation spend their best capacity firefighting the same five requests every day. Traditional chatbots and scripted automations promise to fix this, but break the moment a request is ambiguous, requires real action inside enterprise systems, or needs governance the business can defend.";
+
+const TIQ_PAIN_ITEMS = [
+  "High volumes of repetitive L1 tickets",
+  "Manual triaging and classification delays",
+  "Endless clarification loops with employees",
+  "Slow resolution times for routine issues",
+  "Rising service desk operational costs",
+  "Overloaded teams unable to focus on strategy",
+  "Poor employee experience and productivity loss",
+  "Scripted chatbots that fail on ambiguity",
+];
 
 export const AgenticAIITSMPage = () => {
   const capabilities = [
@@ -254,203 +272,35 @@ export const AgenticAIITSMPage = () => {
         imageSrc={TIQ_HERO_IMG}
       />
 
-      <section className="pt-[60px] pb-8 bg-white dark:bg-brand-950 px-6 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="w-full text-left mb-16">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Enterprise IT support is stuck in a loop the business can’t scale out
-              of. The vast majority of tickets flowing into service desks are
-              repetitive L1 work, password resets, account unlocks, VPN issues,
-              software installs, mailbox access, yet each ticket still consumes a
-              human agent, an hour or more of resolution time, and an employee’s
-              entire workflow until it’s closed. Service desks scale headcount to
-              keep up. Employees lose hours waiting on routine fixes. And the IT
-              teams who should be enabling transformation spend their best capacity
-              firefighting the same five requests every day. Traditional chatbots and
-              scripted automations promise to fix this, but break the moment a
-              request is ambiguous, requires real action inside enterprise systems, or
-              needs governance the business can defend.
-            </motion.p>
-          </div>
+      <PainPointsSection
+        intro={TIQ_INTRO}
+        imageSrc={TIQ_PAIN_POINTS_IMG}
+        imageAlt="Common operational pain points in enterprise IT support"
+        items={TIQ_PAIN_ITEMS}
+        sectionClassName="pt-[60px] pb-8 bg-white dark:bg-brand-950 px-6 text-left"
+      />
 
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
-            >
-              <img
-                loading="lazy"
-                src={TIQ_PAIN_POINTS_IMG}
-                alt="Common operational pain points in enterprise IT support"
-                className="h-full w-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
+      <ImpactFramingSection sectionClassName="pb-8 px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        The result - ticket backlogs, slower response and resolution times, rising operational cost,
+        overloaded support teams, and degraded employee experience, while capacity that should fund
+        modernization gets spent on repetitive work.
+      </ImpactFramingSection>
 
-            <div className="space-y-6 self-start lg:pt-4">
-              <div className="mb-6">
-                <h3 className="mb-2 text-xl font-bold leading-tight text-brand-950 dark:text-white">
-                  Common Operational Pain Points
-                </h3>
-                <div className="h-1 w-12 rounded-full bg-accent" />
-              </div>
-              {[
-                "High volumes of repetitive L1 tickets",
-                "Manual triaging and classification delays",
-                "Endless clarification loops with employees",
-                "Slow resolution times for routine issues",
-                "Rising service desk operational costs",
-                "Overloaded teams unable to focus on strategy",
-                "Poor employee experience and productivity loss",
-                "Scripted chatbots that fail on ambiguity",
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="group flex items-start gap-4"
-                >
-                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                  <p className="text-[16px] leading-tight text-brand-950 dark:text-white">{item}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CapabilityGridSection
+        title="What TicketIQ Solves"
+        tagline="From Reactive IT Support to Autonomous IT Operations. Intake. Classify. Verify. Resolve. Audit."
+        description="TicketIQ is an agentic AI ITSM platform that autonomously manages and resolves L1 IT tickets across the enterprise. It captures requests from email, Teams, Slack, and portals; classifies intent; verifies identity; and executes approved actions inside connected systems, ensuring security, consistency, and traceability."
+      >
+        {capabilities.map((it, idx) => (
+          <PlatformCapabilityCard key={it.title} {...it} delay={idx * 0.05} prependOutcomeLabel />
+        ))}
+      </CapabilityGridSection>
 
-      {/* Impact Framing Section */}
-      <section className="pb-8 px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20"
-          >
-            <h3 className="text-[12px] font-black tracking-[0.1em] text-orange-600 dark:text-orange-400 uppercase mb-4">
-              Impact Framing
-            </h3>
-            <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
-              The result - ticket backlogs, slower response and resolution times, rising operational cost,
-              overloaded support teams, and degraded employee experience, while capacity that should fund
-              modernization gets spent on repetitive work.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              What TicketIQ Solves
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
-            >
-              From Reactive IT Support to Autonomous IT Operations. Intake. Classify. Verify. Resolve.
-              Audit.
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              TicketIQ is an agentic AI ITSM platform that autonomously manages and
-              resolves L1 IT tickets across the enterprise. It captures requests from
-              email, Teams, Slack, and portals; classifies intent; verifies identity;
-              and executes approved actions inside connected systems, ensuring
-              security, consistency, and traceability.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((it, idx) => (
-              <PlatformCapabilityCard key={idx} {...it} delay={idx * 0.05} prependOutcomeLabel />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              How TicketIQ Works
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              TicketIQ is built as a layered agentic AI architecture purpose-built for
-              IT operations. It captures requests across employee channels, classifies
-              intent, verifies identity and policy, executes approved workflows via
-              APIs, escalates intelligently, and logs every step into ITSM and audit
-              systems.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative"
-                >
-                  <div className="absolute top-0 right-0 p-8">
-                    <span className="text-4xl font-black text- text-accent/10 dark:text-white/5">
-                      0{idx + 1}
-                    </span>
-                  </div>
-                  <SectionIcon icon={Icon} size="lg" className="mb-8" />
-                  <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
-                    {step.title}
-                  </h3>
-                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ProcessStepsSection
+        title="How TicketIQ Works"
+        description="TicketIQ is built as a layered agentic AI architecture purpose-built for IT operations. It captures requests across employee channels, classifies intent, verifies identity and policy, executes approved workflows via APIs, escalates intelligently, and logs every step into ITSM and audit systems."
+        steps={steps}
+      />
 
       <UseCasesSection
         description="Seven industry-specific deployments where TicketIQ is replacing manual L1 IT support with autonomous, governance-driven AI resolution."

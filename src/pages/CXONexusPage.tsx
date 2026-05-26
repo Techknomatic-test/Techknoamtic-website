@@ -1,11 +1,15 @@
-import { PageHero } from "../components/PageHero";
+﻿import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { buildAssetUrl } from "../utils/buildAssetUrl";
-import { motion } from "motion/react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
-import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
-import { SectionIcon } from "../components/SectionIcon";
-import { UseCasesSection } from "../components/UseCasesSection";
+import {
+  CapabilityGridSection,
+  ImpactFramingSection,
+  PainPointsSection,
+  PlatformCapabilityCard,
+  ProcessStepsSection,
+  UseCasesSection,
+} from "../components/product-page";
 import {
   LayoutDashboard,
   MessageSquare,
@@ -24,17 +28,31 @@ const cxoHeroImg = (file: string) => buildAssetUrl(CXO_IMG, file);
 const CXO_HERO_IMG = cxoHeroImg("herobanner.jpg");
 const CXO_PAIN_POINTS_IMG = cxoHeroImg("Pain Points.jpg");
 
+const CXO_INTRO =
+  "Enterprises sit on extraordinary volumes of operational and business data, yet the leaders who most need that data to decide are the furthest from it. Every executive question becomes a BI ticket. Every dashboard takes weeks. Every cross-system question requires someone who can write SQL, navigate three platforms, and translate the answer back into business language. The bottleneck isn't the data, and it isn't the BI team, it's the gap between a business question and a trustworthy answer. Meanwhile, generic AI chat tools tempt leaders with instant answers but can't see the actual enterprise data, which is exactly the trust problem CXOs can't afford.";
+
+const CXO_PAIN_ITEMS = [
+  "Heavy dependency on BI teams for every question",
+  "Delayed access to critical insights, weeks for dashboards",
+  "SQL and technical requirements blocking non-technical leaders",
+  "Fragmented data across ERP, CRM, and operational systems",
+  "Limited analytics accessibility for business teams",
+  "Slow dashboard creation cycles tied to backlogs",
+  "Lack of contextual business intelligence explanation",
+  "Generic AI tools that don't see real enterprise data",
+];
+
 export const CXONexusPage = () => {
   const capabilities = [
     {
       title: "Natural Language Querying",
       outcome: "Ask business questions in plain English, no SQL, no BI tickets, no waiting.",
       items: [
-        "“Show monthly sales trends by region”, answered instantly",
-        "“Which branches have the highest claim ratios?”, answered with chart",
-        "“Compare revenue growth quarter-over-quarter”, cross-period analytics",
-        "“Which customers are likely to churn?”, predictive intelligence",
-        "“Show SLA breach trends for the last 30 days”, operational visibility",
+        "â€œShow monthly sales trends by regionâ€, answered instantly",
+        "â€œWhich branches have the highest claim ratios?â€, answered with chart",
+        "â€œCompare revenue growth quarter-over-quarterâ€, cross-period analytics",
+        "â€œWhich customers are likely to churn?â€, predictive intelligence",
+        "â€œShow SLA breach trends for the last 30 daysâ€, operational visibility",
         "Conversational follow-ups and drill-downs without restarting the query",
       ],
       icon: MessageSquare,
@@ -61,7 +79,7 @@ export const CXONexusPage = () => {
         "Anomaly detection and outlier highlighting",
         "KPI interpretation in business language",
         "Business performance summaries on demand",
-        "Insight recommendations and “what to look at next” guidance",
+        "Insight recommendations and â€œwhat to look at nextâ€ guidance",
       ],
       icon: Zap,
     },
@@ -163,51 +181,51 @@ export const CXONexusPage = () => {
       title: "BFSI & Insurance",
       subtitle: "Conversational executive intelligence for risk, claims, and policy operations.",
       crux: "CXO Nexus delivers conversational access to risk and claims analytics, policy performance monitoring, and fraud detection insights, grounded in real data.",
-      focusAreas: "Risk Analytics · Claims Insights · Policy Performance · Fraud Detection · Executive KPIs",
-      outcome: "Faster risk decisions · Audit-traceable insights · Leadership-grade visibility",
+      focusAreas: "Risk Analytics Â· Claims Insights Â· Policy Performance Â· Fraud Detection Â· Executive KPIs",
+      outcome: "Faster risk decisions Â· Audit-traceable insights Â· Leadership-grade visibility",
     },
     {
       title: "Retail & E-Commerce",
       subtitle: "Sales, customer, and campaign intelligence, on demand, in plain English.",
       crux: "Ask sales questions, surface customer behavior intelligence, and monitor inventory/supply chain, all without waiting for a BI report.",
-      focusAreas: "Sales Analytics · Customer Behavior · Inventory Visibility · Campaign Performance · Self-Service BI",
-      outcome: "Faster commercial decisions · Higher analytics adoption · Reduced BI dependency",
+      focusAreas: "Sales Analytics Â· Customer Behavior Â· Inventory Visibility Â· Campaign Performance Â· Self-Service BI",
+      outcome: "Faster commercial decisions Â· Higher analytics adoption Â· Reduced BI dependency",
     },
     {
       title: "Healthcare",
       subtitle: "Hospital, operational, and patient service intelligence for leadership.",
       crux: "CXO Nexus enables hospital performance monitoring, patient service analytics, and resource utilization insights, decision intelligence for clinical teams.",
       focusAreas:
-        "Hospital Performance · Patient Service Analytics · Resource Utilization · Executive Dashboards · Operational KPIs",
-      outcome: "Faster operational decisions · Better resource visibility · Empowered healthcare leaders",
+        "Hospital Performance Â· Patient Service Analytics Â· Resource Utilization Â· Executive Dashboards Â· Operational KPIs",
+      outcome: "Faster operational decisions Â· Better resource visibility Â· Empowered healthcare leaders",
     },
     {
       title: "IT & ITSM",
       subtitle: "Real-time conversational IT operations and service intelligence.",
       crux: "Surface SLA and incident trend analysis, operational service intelligence, and infrastructure analytics through plain-English questions.",
-      focusAreas: "SLA Analytics · Incident Trends · Infrastructure Insights · Service Intelligence · IT Operations Visibility",
-      outcome: "Faster IT operational decisions · Higher CIO visibility · Reduced BI cycle time",
+      focusAreas: "SLA Analytics Â· Incident Trends Â· Infrastructure Insights Â· Service Intelligence Â· IT Operations Visibility",
+      outcome: "Faster IT operational decisions Â· Higher CIO visibility Â· Reduced BI cycle time",
     },
     {
       title: "Manufacturing",
       subtitle: "Plant, production, and supply chain intelligence for industrial leadership.",
       crux: "Monitor production KPIs, surface supply chain intelligence, and analyze plant performance through conversational analytics, enabling manufacturing leaders to act.",
-      focusAreas: "Production KPIs · Supply Chain Intelligence · Plant Performance · Predictive Insights · Operational Visibility",
-      outcome: "Faster plant decisions · Better supply visibility · Predictive operational intelligence",
+      focusAreas: "Production KPIs Â· Supply Chain Intelligence Â· Plant Performance Â· Predictive Insights Â· Operational Visibility",
+      outcome: "Faster plant decisions Â· Better supply visibility Â· Predictive operational intelligence",
     },
     {
       title: "Logistics & Supply Chain",
       subtitle: "Shipment, fleet, and operational intelligence, conversational and real-time.",
       crux: "Ask shipment and delivery analytics questions, detect bottlenecks, and monitor route intelligence, turning logistics data into a decision layer.",
-      focusAreas: "Shipment Analytics · Bottleneck Detection · Fleet Intelligence · Route Optimization · Real-Time Dashboards",
-      outcome: "Faster ops decisions · Real-time supply visibility · Better fleet performance",
+      focusAreas: "Shipment Analytics Â· Bottleneck Detection Â· Fleet Intelligence Â· Route Optimization Â· Real-Time Dashboards",
+      outcome: "Faster ops decisions Â· Real-time supply visibility Â· Better fleet performance",
     },
     {
       title: "Telecom",
       subtitle: "Subscriber, network, and revenue intelligence for telecom CXOs.",
       crux: "CXO Nexus delivers subscriber and usage analytics, network performance monitoring, and churn intelligence, purpose-built for telecom leadership.",
-      focusAreas: "Subscriber Analytics · Network Performance · Revenue Intelligence · Churn Insights · Operational Trends",
-      outcome: "Faster commercial decisions · Sharper churn intelligence · Empowered CXOs",
+      focusAreas: "Subscriber Analytics Â· Network Performance Â· Revenue Intelligence Â· Churn Insights Â· Operational Trends",
+      outcome: "Faster commercial decisions Â· Sharper churn intelligence Â· Empowered CXOs",
     },
   ];
 
@@ -221,194 +239,35 @@ export const CXONexusPage = () => {
         sectionBg="bg-brand-950"
       />
 
-      {/* Challenge Section */}
-      <section className="pt-[60px] pb-8 bg-white dark:bg-brand-950 px-6 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="w-full text-left mb-16">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Enterprises sit on extraordinary volumes of operational and business data, yet the leaders who most need
-              that data to decide are the furthest from it. Every executive question becomes a BI ticket. Every
-              dashboard takes weeks. Every cross-system question requires someone who can write SQL, navigate three
-              platforms, and translate the answer back into business language. The bottleneck isn’t the data, and it
-              isn’t the BI team, it’s the gap between a business question and a trustworthy answer. Meanwhile, generic
-              AI chat tools tempt leaders with instant answers but can’t see the actual enterprise data, which is exactly
-              the trust problem CXOs can’t afford.
-            </motion.p>
-          </div>
+      <PainPointsSection
+        intro={CXO_INTRO}
+        imageSrc={CXO_PAIN_POINTS_IMG}
+        imageAlt="Decision Intelligence"
+        items={CXO_PAIN_ITEMS}
+        sectionClassName="pt-[60px] pb-8 bg-white dark:bg-brand-950 px-6 text-left"
+      />
 
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
-            >
-              <img
-                loading="lazy"
-                src={CXO_PAIN_POINTS_IMG}
-                alt="Decision Intelligence"
-                className="h-full w-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
+      <ImpactFramingSection sectionClassName="pb-8 px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        The result- delayed business decisions, reduced operational agility, low data accessibility across teams,
+        increased dependency on technical resources, and decisions made on stale dashboards or gut feel.
+      </ImpactFramingSection>
 
-            <div className="space-y-6 self-start lg:pt-4">
-              <div className="mb-6">
-                <h3 className="mb-2 text-xl font-bold leading-tight text-brand-950 dark:text-white">
-                  Common Operational Pain Points
-                </h3>
-                <div className="h-1 w-12 rounded-full bg-accent" />
-              </div>
-              {[
-                "Heavy dependency on BI teams for every question",
-                "Delayed access to critical insights, weeks for dashboards",
-                "SQL and technical requirements blocking non-technical leaders",
-                "Fragmented data across ERP, CRM, and operational systems",
-                "Limited analytics accessibility for business teams",
-                "Slow dashboard creation cycles tied to backlogs",
-                "Lack of contextual business intelligence explanation",
-                "Generic AI tools that don’t see real enterprise data",
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="group flex items-start gap-4"
-                >
-                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                  <p className="text-[16px] leading-tight text-brand-950 dark:text-white">{item}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CapabilityGridSection
+        title="What CXO Nexus Solves"
+        tagline="From BI Ticket Queues to Conversational Decision Intelligence. Ask. Retrieve. Ground. Visualize. Decide."
+        description="CXO Nexus is an enterprise conversational AI platform that turns natural-language questions into grounded business insights. It connects directly to enterprise databases, warehouses, ERP, CRM, and knowledge repositories, then uses RAG and an intelligent insights engine to interpret questions and explain answers in business language."
+      >
+        {capabilities.map((it, idx) => (
+          <PlatformCapabilityCard key={it.title} {...it} delay={idx * 0.05} prependOutcomeLabel />
+        ))}
+      </CapabilityGridSection>
 
-      {/* Impact Framing Section */}
-      <section className="pb-8 px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20"
-          >
-            <h3 className="text-[12px] font-black tracking-[0.1em] text-orange-600 dark:text-orange-400 uppercase mb-4">
-              Impact Framing
-            </h3>
-            <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
-              The result- delayed business decisions, reduced operational agility, low data accessibility across teams,
-              increased dependency on technical resources, and decisions made on stale dashboards or gut feel.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              What CXO Nexus Solves
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
-            >
-              From BI Ticket Queues to Conversational Decision Intelligence. Ask. Retrieve. Ground. Visualize.
-              Decide.
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              CXO Nexus is an enterprise conversational AI platform that turns natural-language questions into grounded
-              business insights. It connects directly to enterprise databases, warehouses, ERP, CRM, and knowledge
-              repositories, then uses RAG and an intelligent insights engine to interpret questions and explain answers
-              in business language.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((it, idx) => (
-              <PlatformCapabilityCard key={idx} {...it} delay={idx * 0.05} prependOutcomeLabel />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              How CXO Nexus Works
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              CXO Nexus is built as a layered conversational analytics architecture that captures business questions,
-              interprets executive intent, retrieves relevant data, grounds responses in actual knowledge through RAG,
-              generates live visualizations, and explains the answer in business language.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative text-left"
-                >
-                  <div className="absolute top-0 right-0 p-8">
-                    <span className="text-4xl font-black text- text-accent/10 dark:text-white/5">0{idx + 1}</span>
-                  </div>
-                  <SectionIcon icon={Icon} size="lg" className="mb-8" />
-                  <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors tracking-tight">
-                    {step.title}
-                  </h3>
-                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ProcessStepsSection
+        title="How CXO Nexus Works"
+        description="CXO Nexus is built as a layered conversational analytics architecture that captures business questions, interprets executive intent, retrieves relevant data, grounds responses in actual knowledge through RAG, generates live visualizations, and explains the answer in business language."
+        steps={steps}
+        gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+      />
 
       <UseCasesSection
         description="Seven industry-specific deployments where CXO Nexus is replacing BI ticket queues with conversational decision intelligence."

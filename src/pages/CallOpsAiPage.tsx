@@ -1,11 +1,15 @@
 import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { buildAssetUrl } from "../utils/buildAssetUrl";
-import { motion } from "motion/react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
-import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
-import { SectionIcon } from "../components/SectionIcon";
-import { UseCasesSection } from "../components/UseCasesSection";
+import {
+  CapabilityGridSection,
+  ImpactFramingSection,
+  PainPointsSection,
+  PlatformCapabilityCard,
+  ProcessStepsSection,
+  UseCasesSection,
+} from "../components/product-page";
 import {
   PhoneCall,
   Sparkles,
@@ -23,6 +27,20 @@ const CO_ENT_IMG = "Images/Entrprise_Ai/callopsAI";
 const coHeroImg = (file: string) => buildAssetUrl(CO_ENT_IMG, file);
 const CO_HERO_IMG = coHeroImg("Herocallops.jpg");
 const CO_PAIN_POINTS_IMG = coHeroImg("Operational Pain Points.jpg");
+
+const CO_INTRO =
+  "Every enterprise, retail, BFSI, healthcare, logistics, real estate, depends on voice as a primary channel for customer engagement, support, collections, reminders, and lead conversion. Yet most calling operations still rely on shift-based human teams, rigid IVRs, and outdated dialer infrastructure. As call volumes rise, organizations face an impossible trade-off: scale headcount and inflate costs, or accept slower response times, missed follow-ups, and inconsistent customer experiences.";
+
+const CO_PAIN_ITEMS = [
+  "High operational and staffing costs for calling teams",
+  "Manual hiring, training, and quality-assurance overhead",
+  "Limited scalability during campaign peaks and surges",
+  "Delayed customer response times across inbound queues",
+  "Inconsistent conversation quality across human agents",
+  "Difficulty managing high-volume outbound campaigns",
+  "Lack of structured, actionable conversation intelligence",
+  "Missed follow-ups, payment reminders, and renewals",
+];
 
 export const CallOpsAIPage = () => {
   const capabilities = [
@@ -168,186 +186,35 @@ export const CallOpsAIPage = () => {
         imageSrc={CO_HERO_IMG}
       />
 
-      {/* Challenge Section */}
-      <section className="pt-[60px] pb-8 bg-white dark:bg-brand-950 px-6 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="w-full text-left mb-16">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
-            >
-              Every enterprise, retail, BFSI, healthcare, logistics, real estate, depends on voice as a primary channel for customer engagement, support, collections, reminders, and lead conversion. Yet most calling operations still rely on shift-based human teams, rigid IVRs, and outdated dialer infrastructure. As call volumes rise, organizations face an impossible trade-off: scale headcount and inflate costs, or accept slower response times, missed follow-ups, and inconsistent customer experiences.
-            </motion.p>
-          </div>
+      <PainPointsSection
+        intro={CO_INTRO}
+        imageSrc={CO_PAIN_POINTS_IMG}
+        imageAlt="Common operational pain points in call center operations"
+        items={CO_PAIN_ITEMS}
+        sectionClassName="pt-[60px] pb-8 bg-white dark:bg-brand-950 px-6 text-left"
+      />
 
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[3rem] shadow-2xl"
-            >
-              <img
-                loading="lazy"
-                src={CO_PAIN_POINTS_IMG}
-                alt="Common operational pain points in call center operations"
-                className="h-full w-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
+      <ImpactFramingSection sectionClassName="pb-8 px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+        The result- rising cost-per-conversation, lower lead conversion, missed customer touchpoints, weaker
+        collections performance, and a customer experience that hasn&apos;t kept pace with digital-first
+        expectations.
+      </ImpactFramingSection>
 
-            <div className="space-y-6 self-start lg:pt-4">
-              <div className="mb-6">
-                <h3 className="mb-2 text-xl font-bold leading-tight text-brand-950 dark:text-white">
-                  Common Operational Pain Points
-                </h3>
-                <div className="h-1 w-12 rounded-full bg-accent" />
-              </div>
-              {[
-                "High operational and staffing costs for calling teams",
-                "Manual hiring, training, and quality-assurance overhead",
-                "Limited scalability during campaign peaks and surges",
-                "Delayed customer response times across inbound queues",
-                "Inconsistent conversation quality across human agents",
-                "Difficulty managing high-volume outbound campaigns",
-                "Lack of structured, actionable conversation intelligence",
-                "Missed follow-ups, payment reminders, and renewals",
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="group flex items-start gap-4"
-                >
-                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                  <p className="text-[16px] leading-tight text-brand-950 dark:text-white">{item}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CapabilityGridSection
+        title="What CallOps AI Solves"
+        tagline="From Manual Calling Operations to Autonomous Voice Intelligence. Connect. Hear. Understand. Respond. Act."
+        description="CallOps AI is built on a layered voice AI architecture that combines telephony, speech recognition, LLM-powered reasoning, and enterprise workflow execution, orchestrated in real time so AI agents can listen, understand, decide, and act within a single conversation. Scaling your calling floor from 10 to 1,000 agents is now a matter of configuration, not recruitment."
+      >
+        {capabilities.map((it, idx) => (
+          <PlatformCapabilityCard key={it.title} {...it} delay={idx * 0.1} prependOutcomeLabel />
+        ))}
+      </CapabilityGridSection>
 
-      {/* Impact Framing Section */}
-      <section className="pb-8 px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20"
-          >
-            <h3 className="text-[12px] font-black tracking-[0.1em] text-orange-600 dark:text-orange-400 uppercase mb-4">
-              Impact Framing
-            </h3>
-            <p className="text-[15px] font-medium text-brand-950 dark:text-white leading-relaxed">
-              The result- rising cost-per-conversation, lower lead conversion, missed customer touchpoints, weaker
-              collections performance, and a customer experience that hasn&apos;t kept pace with digital-first
-              expectations.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              What CallOps AI Solves
-            </motion.h2>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-[16px] font-bold text-brand-950 dark:text-white mb-6 leading-tight tracking-tight"
-            >
-              From Manual Calling Operations to Autonomous Voice Intelligence. Connect. Hear. Understand. Respond.
-              Act.
-            </motion.h3>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              CallOps AI is built on a layered voice AI architecture that combines telephony, speech recognition, LLM-powered reasoning, and enterprise workflow execution, orchestrated in real time so AI agents can listen, understand, decide, and act within a single conversation. Scaling your calling floor from 10 to 1,000 agents is now a matter of configuration, not recruitment.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((it, idx) => (
-              <PlatformCapabilityCard key={idx} {...it} delay={idx * 0.1} prependOutcomeLabel />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-6"
-            >
-              How CallOps AI Works
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              CallOps AI converts voice into structured intelligence and action. Our engine supports ultra-low latency speech-to-text, context-aware intent detection, and human-like voice synthesis, all while making real-time calls to your CRM and business applications.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-10 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group overflow-hidden relative"
-                >
-                  <div className="absolute top-0 right-0 p-8">
-                    <span className="text-4xl font-black text-accent/10 dark:text-white/5">
-                      0{idx + 1}
-                    </span>
-                  </div>
-                  <SectionIcon icon={Icon} size="lg" className="mb-8" />
-                  <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-4 group-hover:text-accent transition-colors text-left tracking-tight">
-                    {step.title}
-                  </h3>
-                  <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {step.content}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ProcessStepsSection
+        title="How CallOps AI Works"
+        description="CallOps AI converts voice into structured intelligence and action. Our engine supports ultra-low latency speech-to-text, context-aware intent detection, and human-like voice synthesis, all while making real-time calls to your CRM and business applications."
+        steps={steps}
+      />
 
       <UseCasesSection
         description="Six high-impact deployments where CallOps AI is replacing, and outperforming, traditional calling teams."

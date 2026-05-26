@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
-import { UseCasesSection } from "../components/UseCasesSection";
+import { SolveCardsSection, UseCasesSection } from "../components/product-page";
 import {
   FileText,
   UserCheck,
@@ -69,44 +69,6 @@ const AccordionItem = ({
     </motion.div>
   );
 };
-
-const SolveCard = ({
-  title,
-  description,
-  image,
-  delay = 0,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="flex flex-col rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 overflow-hidden group h-full"
-  >
-    <div className="h-60 overflow-hidden relative">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        referrerPolicy="no-referrer"
-      />
-    </div>
-    <div className="p-10 flex flex-col flex-grow text-left">
-      <h4 className="text-2xl font-bold text-brand-950 dark:text-white mb-6 tracking-tight group-hover:text-accent transition-colors">
-        {title}
-      </h4>
-      <p className="text-[17px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-        {description}
-      </p>
-    </div>
-  </motion.div>
-);
 
 export const InsuranceAnalyticsPage = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
@@ -296,27 +258,11 @@ export const InsuranceAnalyticsPage = () => {
         </div>
       </section>
 
-      {/* What We Solve Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-left mb-8">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="section-heading mb-4"
-            >
-              What We Solve
-            </motion.h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whatWeSolve.map((item, idx) => (
-              <SolveCard key={idx} title={item.title} description={item.description} image={item.image} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <SolveCardsSection
+        title="What We Solve"
+        items={whatWeSolve}
+        gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      />
 
       {/* Analytics Modules Section */}
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-y border-slate-100 dark:border-white/5">

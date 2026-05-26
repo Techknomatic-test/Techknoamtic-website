@@ -1,10 +1,16 @@
 import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { buildAssetUrl } from "../utils/buildAssetUrl";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import {
+  ChipAccordionItem,
+  ServiceApproachStep,
+  ServiceImageCapabilityCard,
+  ServiceUseCasesSection,
+} from "../components/product-page";
 import { SectionIcon } from "../components/SectionIcon";
 import {
   Map as MapIcon,
@@ -24,8 +30,6 @@ import {
   Layout,
   Smartphone,
   RefreshCw,
-  ChevronDown,
-  ChevronUp,
   Code
 } from "lucide-react";
 
@@ -33,149 +37,6 @@ const GEO_IMG = "Images/Services/Geospatial Analytics";
 const geoImg = (file: string) => buildAssetUrl(GEO_IMG, file);
 const GEO_HERO_IMG = geoImg("GISHero.jpg");
 const GEO_TOOLS_IMG = geoImg("tolsandtech.jpg");
-
-const AccordionItem = ({
-  title,
-  content,
-  isOpen,
-  onClick,
-}: {
-  title: string;
-  content: string;
-  isOpen: boolean;
-  onClick: () => void;
-}) => {
-  const chips = content.split("·").map((s) => s.trim());
-
-  return (
-    <div className="border-b border-slate-100 dark:border-white/5 last:border-0 overflow-hidden">
-      <button
-        onClick={onClick}
-        className="w-full py-6 flex items-center justify-between text-left group transition-all"
-      >
-        <span className="text-[15px] font-bold text-brand-950 dark:text-white group-hover:text-accent transition-colors">
-          {title}
-        </span>
-        <div
-          className={`p-2 rounded-full transition-all duration-300 ${isOpen
-              ? "bg-accent text-white"
-              : "bg-slate-50 dark:bg-white/5 text-slate-400 group-hover:bg-slate-100 dark:group-hover:bg-white/10"
-            }`}
-        >
-          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-        </div>
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            <div className="pb-6">
-              <div className="flex flex-wrap gap-2">
-                {chips.map((chip, i) => (
-                  <span
-                    key={i}
-                    className="px-4 py-1.5 bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 rounded-full text-[12px] font-bold text-slate-600 dark:text-slate-400"
-                  >
-                    {chip}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
-const CapabilityCard = ({ title, description, image, delay = 0 }: { title: string; description: string; image: string; delay?: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
-  >
-    <div className="relative h-52 -mx-8 -mt-8 mb-8 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        referrerPolicy="no-referrer"
-      />
-    </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-      {title}
-    </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1 text-left">
-      {description}
-    </p>
-  </motion.div>
-);
-
-const ApproachStep = ({ num, title, description, icon: Icon, delay = 0 }: { num: string; title: string; description: string; icon: any; delay?: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="relative min-w-0 w-full p-6 lg:p-7 rounded-[2.5rem] bg-slate-50 dark:bg-white/5 border border-transparent hover:border-accent/20 transition-all duration-500 group"
-  >
-    <div className="absolute top-6 right-6 lg:top-7 lg:right-7 text-3xl lg:text-4xl font-black text-accent/10 transition-colors">
-      {num}
-    </div>
-    <SectionIcon icon={Icon} size="md" className="mb-8" />
-    <h3 className="text-lg font-bold text-brand-950 dark:text-white mb-3 tracking-tight">
-      {title}
-    </h3>
-    <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed px-2 border-l-2 border-accent/20 text-left">
-      {description}
-    </p>
-  </motion.div>
-);
-
-const UseCaseCard = ({ title, subtitle, crux, industries, impact }: { title: string; subtitle: string; crux: string; industries: string; impact: string }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group text-left h-full flex flex-col"
-  >
-    <h3 className="text-2xl font-bold text-brand-950 dark:text-white mb-2 leading-tight group-hover:text-accent transition-colors">
-      {title}
-    </h3>
-    <p className="text-[15px] font-bold text-brand-950/80 dark:text-white/80 mb-8 leading-snug">
-      {subtitle}
-    </p>
-
-    <div className="space-y-6 flex-1">
-      <div>
-        <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-          {crux}
-        </p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div>
-          <h4 className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">Industries</h4>
-          <p className="text-[14px] font-bold text-brand-950 dark:text-white">
-            {industries}
-          </p>
-        </div>
-        <div>
-          <h4 className="text-[11px] font-black tracking-widest text-green-600 uppercase mb-3">Impact</h4>
-          <p className="text-[14px] font-bold text-brand-950 dark:text-white">
-            {impact}
-          </p>
-        </div>
-      </div>
-    </div>
-  </motion.div>
-);
 
 export const GeospatialPage = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
@@ -318,7 +179,7 @@ export const GeospatialPage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {capabilities.map((it, idx) => (
-              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
+              <ServiceImageCapabilityCard key={it.title} {...it} delay={idx * 0.1} />
             ))}
           </div>
         </div>
@@ -367,7 +228,7 @@ export const GeospatialPage = () => {
             </motion.div>
             <div className="bg-white dark:bg-transparent rounded-2xl">
               {toolsAccordions.map((item, index) => (
-                <AccordionItem
+                <ChipAccordionItem
                   key={index}
                   title={item.title}
                   content={item.content}
@@ -405,41 +266,18 @@ export const GeospatialPage = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-4 w-full pb-12">
             {approachSteps.map((step, idx) => (
-              <ApproachStep key={idx} {...step} delay={idx * 0.1} />
+              <ServiceApproachStep key={step.title} {...step} variant="slate" delay={idx * 0.1} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-[40px] px-6 bg-white dark:bg-brand-950">
-        <div className="max-w-6xl mx-auto text-left">
-          <div className="mb-10">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-4"
-            >
-              Use Cases
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Four high-impact geospatial intelligence programs we deliver for enterprises.
-            </motion.p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {useCases.map((uc, i) => (
-              <UseCaseCard key={i} {...uc} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceUseCasesSection
+        description="Four high-impact geospatial intelligence programs we deliver for enterprises."
+        cases={useCases}
+        sectionClassName="py-[40px] px-6 bg-white dark:bg-brand-950"
+        titleClassName="section-heading mb-4"
+      />
 
       <PreFooterCTA />
     </PageShell>
