@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
 import { SectionIcon } from "../components/SectionIcon";
 import {
   FileText,
@@ -109,34 +110,6 @@ const SolveCard = ({
   </motion.div>
 );
 
-const ModuleCard = ({
-  title,
-  description,
-  icon: Icon,
-  delay = 0,
-}: {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  delay?: number;
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-2xl transition-all group flex flex-col h-full text-left"
-  >
-    <SectionIcon icon={Icon} size="lg" hover="rotate" className="mb-8" />
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight">
-      {title}
-    </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
-      {description}
-    </p>
-  </motion.div>
-);
-
 const UseCaseCard = ({
   title,
   description,
@@ -213,32 +186,86 @@ export const InsuranceAnalyticsPage = () => {
   const modules = [
     {
       title: "Claims Analytics",
-      description: "TAT tracking, settlement analysis, provider performance.",
+      outcome:
+        "Improve claims visibility and reduce turnaround delays with end-to-end, stage-wise monitoring.",
+      items: [
+        "Track claim volumes by product, geography, line of business, and channel.",
+        "Monitor TAT across FNOL, assessment, approval, and settlement stages.",
+        "Analyze settlement ratios, reopen rates, and repudiation trends.",
+        "Benchmark provider, assessor, and TPA performance on cost and speed.",
+        "Identify high-severity claims and backlog risk before SLAs are breached.",
+        "Surface root causes for delays to drive process and policy improvements.",
+      ],
       icon: FileText,
     },
     {
       title: "Policy Performance",
-      description: "Portfolio analysis, renewal rates, lapse prediction.",
+      outcome:
+        "Optimize the health of your portfolio with deep visibility into renewals, lapses, and profitability.",
+      items: [
+        "Analyze portfolio mix by product, tenure, geography, and risk band.",
+        "Track renewal, persistency, and lapse rates across customer cohorts.",
+        "Monitor premium growth, loss ratio, and combined ratio by segment.",
+        "Detect early-warning signals for underperforming or declining products.",
+        "Compare performance across channels, partners, and regions.",
+        "Identify segments where pricing, features, or distribution need correction.",
+      ],
       icon: BarChart3,
     },
     {
       title: "Underwriting Insights",
-      description: "Risk scoring, pricing optimization, case prioritization.",
+      outcome:
+        "Strengthen underwriting decisions with unified risk views and data-driven pricing intelligence.",
+      items: [
+        "Consolidate customer, asset, behavioral, and location data into a single view.",
+        "Track quote-to-bind conversion across products, channels, and segments.",
+        "Analyze risk scores, loadings, and discount patterns across the book.",
+        "Prioritize complex, high-value, or high-risk cases for senior underwriters.",
+        "Monitor referral volumes, approval turnaround time, and exceptions.",
+        "Support premium and coverage optimization with historical performance data.",
+      ],
       icon: Target,
     },
     {
       title: "Agent Productivity",
-      description: "Sales metrics, activity tracking, pipeline management.",
+      outcome:
+        "Boost top-line growth by making every advisor, branch, and channel more productive.",
+      items: [
+        "Track leads, opportunities, and issued policies at agent and team level.",
+        "Measure conversion rates across every stage of the sales funnel.",
+        "Compare productivity across agents, branches, partners, and regions.",
+        "Monitor renewal follow-ups, missed touchpoints, and cross-sell activity.",
+        "Link performance to incentive and commission structures transparently.",
+        "Surface best-performing behaviors and playbooks for targeted coaching.",
+      ],
       icon: UserCheck,
     },
     {
       title: "Fraud Detection",
-      description: "Pattern recognition, anomaly detection, investigation support.",
+      outcome:
+        "Reduce leakage by spotting suspicious patterns early and prioritizing investigations that matter most.",
+      items: [
+        "Detect anomalous patterns in claim amounts, frequencies, and timelines.",
+        "Flag repeat claimants, providers, and networks with elevated risk scores.",
+        "Map fraud hotspots across locations, product lines, and channels.",
+        "Prioritize investigation queues based on potential exposure and probability of fraud.",
+        "Monitor false positives to continuously refine fraud rules and models.",
+        "Track recovered amounts and prevented leakage as measurable outcomes.",
+      ],
       icon: AlertTriangle,
     },
     {
       title: "Customer Analytics",
-      description: "Churn prediction, cross-sell opportunities, NPS tracking.",
+      outcome:
+        "Protect retention and grow share-of-wallet with a clear view of every customer segment.",
+      items: [
+        "Predict churn and non-renewal risk well before policy expiry.",
+        "Track customer lifetime value across products and channels.",
+        "Identify cross-sell, upsell, and next-best-offer opportunities.",
+        "Monitor complaints, grievances, and service tickets by segment.",
+        "Track NPS, CSAT, and interaction sentiment across touchpoints.",
+        "Prioritize outreach lists for retention and win-back campaigns.",
+      ],
       icon: Users,
     },
   ];
@@ -335,24 +362,23 @@ export const InsuranceAnalyticsPage = () => {
       </section>
 
       {/* Analytics Modules Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto text-left">
-          <div className="mb-8 text-left">
-           
-            <motion.h3
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-y border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-6"
             >
               Insurance Analytics Modules
-            </motion.h3>
+            </motion.h2>
           </div>
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
             {modules.map((module, i) => (
-              <ModuleCard key={i} {...module} delay={i * 0.1} />
+              <PlatformCapabilityCard key={i} {...module} delay={i * 0.1} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
