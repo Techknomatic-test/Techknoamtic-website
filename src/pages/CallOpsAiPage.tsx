@@ -254,7 +254,7 @@ export const CallOpsAIPage = () => {
       </section>
 
       {/* Challenge Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+      <section className="pt-[60px] pb-8 bg-white dark:bg-brand-950 px-6 text-left">
         <div className="max-w-6xl mx-auto">
           <div className="w-full text-left mb-16">
             <motion.p
@@ -319,13 +319,13 @@ export const CallOpsAIPage = () => {
       </section>
 
       {/* Impact Framing Section */}
-      <section className="pt-4 pb-[40px] px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
+      <section className="pb-8 px-6 bg-white dark:bg-brand-950 text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-10 rounded-3xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20"
+            className="p-8 rounded-3xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20"
           >
             <h3 className="text-[12px] font-black tracking-[0.1em] text-orange-600 dark:text-orange-400 uppercase mb-4">
               Impact Framing
