@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import {
-  Sparkles,
   ShieldCheck,
   Layout,
   Database,
@@ -105,12 +104,12 @@ export const CustomerStoriesPage = () => {
                 className="group relative flex flex-col bg-white dark:bg-brand-900 rounded-[2.5rem] border border-slate-100 dark:border-white/10 overflow-hidden shadow-xl shadow-slate-100/80 dark:shadow-brand-950/20 hover:shadow-2xl hover:shadow-accent/10 dark:hover:shadow-brand-950/40 hover:border-accent/30 transition-all duration-500"
               >
                 <div className="p-10 flex flex-col flex-1">
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="mb-8">
                     <SectionIcon icon={story.icon} size="md" hover="none" />
-                    <span className="px-3 py-1 bg-slate-50 dark:bg-brand-950/50 rounded-full text-[9px] font-black tracking-widest text-brand-950 dark:text-white uppercase border border-slate-100 dark:border-white/10">
-                      {story.tag}
-                    </span>
                   </div>
+                  <p className="text-[11px] font-black tracking-widest text-accent uppercase mb-3">
+                    {story.tag}
+                  </p>
 
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-[1.3] tracking-tight group-hover:text-accent transition-colors duration-300">
