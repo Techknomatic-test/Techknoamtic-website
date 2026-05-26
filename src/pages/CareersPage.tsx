@@ -271,10 +271,10 @@ export const CareersPage = () => {
                 </div>
 
                 <div className="p-10 flex-1 flex flex-col">
-                  <h4 className="text-xl font-bold text-brand-950 dark:text-white mb-8 pb-6 border-b border-slate-50 dark:border-white/5">
+                  <h4 className="text-xl font-bold text-brand-950 dark:text-white pb-6 border-b border-slate-50 dark:border-white/5">
                     {track.level}
                   </h4>
-                  <div className="space-y-4 mt-auto">
+                  <div className="space-y-2 mt-auto">
                     {track.roles.map((role, j) => (
                       <div
                         key={j}
