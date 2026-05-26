@@ -236,12 +236,12 @@ export const CareersPage = () => {
             {[
               {
                 level: "Freshers (0-2 Years)",
-                roles: ["BI Developer", "Data Analyst", "Dashboard Engineer"],
+                roles: ["BI Developer", "Data Analyst", "Data Engineer"],
                 image: GROWTH_FRESHERS_IMG,
               },
               {
                 level: "Mid-Level (2-5 Years)",
-                roles: ["Senior Analyst", "BI Consultant", "Data Engineer"],
+                roles: ["Python + PySpark Developer", "Azure Data Engineer", "Alteryx Developer "],
                 image: GROWTH_MID_LEVEL_IMG,
               },
               {
