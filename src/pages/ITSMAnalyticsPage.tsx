@@ -429,7 +429,7 @@ export const ITSMAnalyticsPage = () => {
               viewport={{ once: true }}
               className="section-heading mb-6"
             >
-              ITSM Analytics Dashboard Modules
+              ITSM Analytics Modules
             </motion.h2>
           </div>
           <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
