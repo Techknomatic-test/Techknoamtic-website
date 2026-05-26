@@ -375,6 +375,15 @@ export const ITSMAnalyticsPage = () => {
             >
               Resolve Faster. Predict Smarter. Serve Better AI for modern ITSM
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
+            >
+              Transform service data into faster resolution and smarter support. Boost SLA
+              performance, agent productivity, and user experience.
+            </motion.p>
           </div>
         </div>
       </section>

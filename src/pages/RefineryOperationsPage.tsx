@@ -346,6 +346,15 @@ export const RefineryOperationsPage = () => {
             >
               From Wellhead To Boardroom Intelligence That Drives Every Decision
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
+            >
+              Connect field, plant, and operational data in one clear view. Improve
+              reliability, safety, and production decisions with analytics.
+            </motion.p>
           </div>
         </div>
       </section>

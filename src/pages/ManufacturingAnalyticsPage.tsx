@@ -383,6 +383,15 @@ export const ManufacturingAnalyticsPage = () => {
             >
               Smart Factories Start with Smarter Data, AI for Modern Manufacturing
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
+            >
+              Unify production, quality, and supply chain insights in real time. Drive
+              efficiency, reduce downtime, and improve plant performance.
+            </motion.p>
           </div>
         </div>
       </section>
