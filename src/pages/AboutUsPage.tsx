@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { SectionIcon } from "../components/SectionIcon";
 import { useState, useEffect, useRef } from "react";
 
 const ABOUTUS_BASE = "Images/Aboutus";
@@ -294,9 +295,7 @@ export const AboutUsPage = () => {
                 transition={{ delay: i * 0.1 }}
                 className="bg-slate-50 dark:bg-white/5 p-8 rounded-[2rem] border border-slate-100 dark:border-white/5 flex flex-col items-start text-left group hover:bg-accent transition-all duration-500"
               >
-                <div className="w-14 h-14 rounded-2xl bg-accent/10 dark:bg-accent/20 flex items-center justify-center text-accent mb-6 group-hover:bg-white group-hover:text-accent transition-colors">
-                  <v.icon className="w-7 h-7" />
-                </div>
+                <SectionIcon icon={v.icon} size="lg" className="mb-6" hover="none" />
                 <h4 className="text-lg font-bold text-brand-950 dark:text-white tracking-tight group-hover:text-white transition-colors">
                   {v.label}
                 </h4>
