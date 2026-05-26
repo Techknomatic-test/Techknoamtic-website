@@ -5,12 +5,12 @@ import { motion } from "motion/react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
 import { SectionIcon } from "../components/SectionIcon";
+import { UseCasesSection } from "../components/UseCasesSection";
 import {
   PhoneCall,
   Sparkles,
   Zap,
   BarChart3,
-  Target,
   Network,
   Search,
   Brain,
@@ -23,50 +23,6 @@ const CO_ENT_IMG = "Images/Entrprise_Ai/callopsAI";
 const coHeroImg = (file: string) => buildAssetUrl(CO_ENT_IMG, file);
 const CO_HERO_IMG = coHeroImg("Herocallops.jpg");
 const CO_PAIN_POINTS_IMG = coHeroImg("Operational Pain Points.jpg");
-
-const UseCaseCard = ({ title, subtitle, crux, focusAreas, outcome, delay = 0 }: {
-  title: string;
-  subtitle: string;
-  crux: string;
-  focusAreas: string;
-  outcome: string;
-  delay?: number
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
-  >
-    <h3 className="mb-2 min-h-[2.5rem] text-2xl font-bold leading-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
-      {title}
-    </h3>
-    <p className="mb-5 min-h-[3rem] text-[15px] font-bold leading-snug text-brand-950/70 dark:text-white/70">
-      {subtitle}
-    </p>
-
-    <div className="mb-6 flex flex-1 flex-col space-y-4">
-      <p className="min-h-[4.5rem] text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
-        {crux}
-      </p>
-      <div>
-        <h4 className="mb-2 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
-        <p className="min-h-[2.5rem] text-[14px] font-bold text-brand-950 dark:text-white">{focusAreas}</p>
-      </div>
-    </div>
-
-    <div className="mt-auto border-t border-slate-100 pt-4 dark:border-white/5">
-      <div className="flex items-center gap-3">
-        <SectionIcon icon={Target} size="sm" hover="none" />
-        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
-          <span className="text-accent uppercase tracking-wider mr-2">Outcome:</span>
-          {outcome}
-        </p>
-      </div>
-    </div>
-  </motion.div>
-);
 
 export const CallOpsAIPage = () => {
   const capabilities = [
@@ -393,36 +349,11 @@ export const CallOpsAIPage = () => {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
-        <div className="max-w-6xl mx-auto text-left">
-          <div className="mb-10">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading mb-4"
-            >
-              Use Cases
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
-            >
-              Six high-impact deployments where CallOps AI is replacing, and outperforming, traditional calling teams.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
-            {useCases.map((uc, idx) => (
-              <UseCaseCard key={idx} {...uc} delay={idx * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <UseCasesSection
+        description="Six high-impact deployments where CallOps AI is replacing, and outperforming, traditional calling teams."
+        cases={useCases}
+        staggerDelays
+      />
 
       <PreFooterCTA />
     </PageShell>
