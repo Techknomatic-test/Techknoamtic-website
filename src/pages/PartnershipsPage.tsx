@@ -64,22 +64,7 @@ const PartnershipHero = () => {
           </motion.p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="flex flex-wrap gap-5 mt-8"
-        >
-          <Link to="/contact">
-            <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-accent text-white rounded-2xl font-black tracking-[0.1em] uppercase text-[12px] shadow-2xl shadow-accent/20 flex items-center gap-3 active:scale-95"
-            >
-              Partner With Us <ArrowRight className="w-4 h-4" />
-            </motion.button>
-          </Link>
-        </motion.div>
+      
       </div>
     </section>
   );
