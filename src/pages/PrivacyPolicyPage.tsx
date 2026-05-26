@@ -292,9 +292,9 @@ export const PrivacyPolicyPage = () => {
               We use cookies and similar tracking technologies on our website to enhance your browsing
               experience and to understand how visitors interact with our site. For detailed information
               on the types of cookies we use and how you can manage them, please refer to our{' '}
-              <a href="#" className="text-accent hover:underline">
+              <Link to="/cookie-policy" className="text-accent hover:underline">
                 Cookie Policy
-              </a>
+              </Link>
               .
             </p>
           </Section>

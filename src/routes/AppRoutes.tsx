@@ -30,6 +30,7 @@ import { ParseIQPage } from '../pages/ParseIQPage';
 import { PartnershipsPage } from '../pages/PartnershipsPage';
 import { PrivacyPolicyPage } from '../pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from '../pages/TermsOfServicePage';
+import { CookiePolicyPage } from '../pages/CookiePolicyPage';
 import { RefineryOperationsPage } from '../pages/RefineryOperationsPage';
 import BrandGuidelinesPage from '../pages/BrandGuidelinesPage';
 
@@ -67,6 +68,7 @@ export const AppRoutes = () => {
       <Route path="/partnerships" element={<PartnershipsPage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+      <Route path="/cookie-policy" element={<CookiePolicyPage />} />
       <Route path="/job-description/:jobId" element={<JobDescriptionPage />} />
       <Route path="/brand" element={<BrandGuidelinesPage />} />
     </Routes>
