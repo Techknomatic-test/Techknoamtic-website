@@ -647,13 +647,13 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="flex flex-wrap gap-5 shrink-0"
               >
-                <a
-                  href="#solutions"
+                <Link
+                  to={contactFormLinkTo}
                   className="px-8 py-3.5 bg-accent text-white text-[12px] xl:text-[13px] font-medium rounded-2xl shadow-lg shadow-accent/20 hover:bg-accent/90 transition-all duration-300 flex items-center gap-2 active:scale-95 group"
                 >
                   {slides[currentSlide].ctaPrimary}
                   <ArrowUpRight className="w-3.5 h-3.5 group-hover:rotate-45 transition-transform shrink-0" />
-                </a>
+                </Link>
                 {slides[currentSlide].ctaSecondary && (
                   <Link
                     to="/contact"
