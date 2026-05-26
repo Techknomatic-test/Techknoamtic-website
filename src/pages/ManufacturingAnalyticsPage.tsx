@@ -1,6 +1,7 @@
 ﻿import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
 import { SectionIcon } from "../components/SectionIcon";
 import {
   Factory,
@@ -110,26 +111,6 @@ const SolveCard = ({
   </motion.div>
 );
 
-const ModuleCard = ({ title, description, icon: Icon, delay = 0 }: { title: string; description: string; icon: LucideIcon; delay?: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-2xl transition-all group flex flex-col h-full text-left"
-  >
-    <div className="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center mb-8 shadow-lg shadow-accent/20 group-hover:rotate-6 transition-transform">
-      <Icon className="w-7 h-7" />
-    </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-      {title}
-    </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
-      {description}
-    </p>
-  </motion.div>
-);
-
 const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { title: string; description: string; impact: string; delay?: number; icon: LucideIcon }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -192,53 +173,125 @@ export const ManufacturingAnalyticsPage = () => {
   const dashboardModules = [
     {
       title: "OEE Dashboard",
-      description: "Availability, performance, quality.",
+      outcome:
+        "Raise factory-floor performance with live Availability, Performance, and Quality visibility per line and shift.",
+      items: [
+        "Track OEE at machine, cell, and line level against target benchmarks.",
+        "Break down downtime into planned stops, breakdowns, and minor losses.",
+        "Identify top downtime contributors by shift, operator, and product SKU.",
+        "Monitor real-time production rate vs. design speed and optimal throughput.",
+        "Highlight quality scrap and rework input that erodes net OEE.",
+        "Enable continuous improvement with OEE trend analytics and benchmarking.",
+      ],
       icon: BarChart3,
     },
     {
       title: "Production Line",
-      description: "Output, cycle time, rejects.",
+      outcome:
+        "Bring every production line into focus with real-time output, cycle time, and rejection tracking.",
+      items: [
+        "Capture output volumes and throughput per line, station, and product family.",
+        "Track cycle time trends and identify which stations are slowing the line.",
+        "Monitor WIP movement between stations and detect queue bottlenecks.",
+        "Log reject counts and defect types at each station for rapid root-cause analysis.",
+        "Provide shift-wise and operator-wise performance visibility for team huddles.",
+        "Highlight underperforming lines that need process or equipment intervention.",
+      ],
       icon: Factory,
     },
     {
       title: "Maintenance",
-      description: "PM schedules, work orders, costs.",
+      outcome:
+        "Move from reactive to planned maintenance with scheduled PM visibility, work orders, and cost control.",
+      items: [
+        "Track scheduled vs. actual preventive maintenance (PM) completion rates.",
+        "Monitor work order status — open, in progress, closed, and overdue.",
+        "Identify repeat breakdowns and components that drive unplanned maintenance cost.",
+        "Link breakdown events to production loss for maintenance ROI visibility.",
+        "Track maintenance cost per machine, shift, and plant against budget.",
+        "Provide CMMS-integrated dashboards for planner and supervisor oversight.",
+      ],
       icon: Settings,
     },
     {
       title: "Quality Control",
-      description: "Defects, FPY, CAPA.",
+      outcome:
+        "Reduce defects and improve first-pass quality with deep defect, FPY, and CAPA visibility.",
+      items: [
+        "Track defects by type, station, SKU, and shift for targeted quality action.",
+        "Monitor first-pass yield (FPY) and pass rate (合格率) per line and product.",
+        "Analyze rejection reasons and trending defect patterns over time.",
+        "Track corrective and preventive action (CAPA) status and closure rates.",
+        "Link quality events to machine, operator, raw material lot, or process parameter.",
+        "Enable SPC chart visibility for critical-to-quality characteristics.",
+      ],
       icon: ClipboardCheck,
     },
     {
       title: "Energy & Utilities",
-      description: "Consumption, costs, targets.",
+      outcome:
+        "Cut energy cost per unit with granular consumption, cost, and target tracking across the plant.",
+      items: [
+        "Track electricity, gas, water, steam, and compressed air consumption per line and shift.",
+        "Calculate specific energy consumption (SEC) per unit and per product family.",
+        "Compare consumption against daily, monthly, and annual energy targets.",
+        "Identify off-spec consumption and waste hotspots for quick savings wins.",
+        "Correlate energy usage with production volumes and operating hours.",
+        "Track utility cost allocation per plant, department, and cost center.",
+      ],
       icon: Zap,
     },
     {
       title: "Inventory",
-      description: "WIP, finished goods, warehousing.",
+      outcome:
+        "Eliminate surprises in WIP and finished goods with real-time stock, movement, and aging analytics.",
+      items: [
+        "Monitor raw material stock levels, consumption patterns, and safety stock alerts.",
+        "Track WIP across process stages with aging analysis and queue time visibility.",
+        "Track finished goods by warehouse, line, and customer segment.",
+        "Highlight slow-moving or obsolete inventory that ties up working capital.",
+        "Provide pegging between demand, production orders, and available stock.",
+        "Enable replenishment signals based on consumption and lead time data.",
+      ],
       icon: Boxes,
     },
     {
       title: "Supply Chain",
-      description: "Inbound, outbound, lead times.",
+      outcome:
+        "Bring clarity to inbound, outbound, and lead time performance for better planning and reliability.",
+      items: [
+        "Track inbound delivery performance by supplier and commodity.",
+        "Monitor outbound shipment status, dispatch adherence, and on-time delivery.",
+        "Calculate lead time by supplier, route, and mode for planning accuracy.",
+        "Flag supplier delays and logistics bottlenecks before they impact production.",
+        "Provide vendor scorecards with lead time, OTIF, and quality data.",
+        "Link procurement commitments to production schedules for coordinated execution.",
+      ],
       icon: Truck,
     },
     {
       title: "Cost Analytics",
-      description: "Per unit, per plant, per shift.",
+      outcome:
+        "See cost per unit, per plant, and per shift with full operational cost transparency.",
+      items: [
+        "Calculate manufacturing cost per unit, per SKU, and per product family.",
+        "Allocate direct material, labor, energy, and maintenance costs accurately.",
+        "Compare cost performance across plants and shifts.",
+        "Track cost trending and identify periods or lines with cost escalation.",
+        "Surface cost drivers that benefit most from lean or Kaizen intervention.",
+        "Provide management with unit cost, productivity, and margin dashboards.",
+      ],
       icon: TrendingUp,
-    }
+    },
   ];
 
   const systemsIntegrationList = [
-    "SAP (PP, QM, PM modules)",
-    "Oracle ERP",
-    "Microsoft Dynamics",
-    "MES Systems",
-    "SCADA and IoT Sensors",
-    "CMMS for Maintenance"
+    "SAP (PP, QM, PM modules) — Orders, Quality, and Maintenance data",
+    "Oracle ERP — Finance, procurement, and inventory feeds",
+    "Microsoft Dynamics — Cross-module manufacturing operations support",
+    "MES Systems — Real-time production and quality data ingestion",
+    "SCADA and IoT Sensors — Machine-level telemetry and alarm integration",
+    "CMMS for Maintenance — Work orders, schedules, and failure history",
   ];
 
   const industryVerticals = [
@@ -328,21 +381,21 @@ export const ManufacturingAnalyticsPage = () => {
       </section>
 
       {/* Analytics Modules Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto text-left">
-          <div className="mb-8 text-left">
-            <motion.h3 
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-y border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-6"
             >
               Manufacturing Dashboard Modules
-            </motion.h3>
+            </motion.h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
             {dashboardModules.map((module, i) => (
-              <ModuleCard key={i} {...module} delay={i * 0.1} />
+              <PlatformCapabilityCard key={i} {...module} delay={i * 0.1} />
             ))}
           </div>
         </div>
@@ -352,14 +405,23 @@ export const ManufacturingAnalyticsPage = () => {
       <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8 text-left">
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-4"
             >
               Systems Integration
             </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl"
+            >
+              Built to integrate seamlessly with your existing manufacturing stack.
+            </motion.p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-20 items-center">
