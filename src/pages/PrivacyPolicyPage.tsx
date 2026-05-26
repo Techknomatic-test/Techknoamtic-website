@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { useEffect, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield } from 'lucide-react';
 
 const Section = ({
   id,
@@ -63,28 +62,31 @@ export const PrivacyPolicyPage = () => {
 
   return (
     <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
+      <section className="relative flex items-center py-8 md:py-10 px-6 overflow-hidden bg-[#1D79B4] text-left">
         <div
-          className="absolute inset-0 z-0 bg-gradient-to-br from-brand-950 via-brand-900 to-[#020617]"
+          className="absolute inset-0 z-0 bg-gradient-to-r from-[#1D79B4] via-[#1a6fa8] to-[#165f94]"
           aria-hidden
         />
-        <div className="absolute inset-0 z-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent" aria-hidden />
+        <div
+          className="absolute inset-0 z-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent"
+          aria-hidden
+        />
 
         <div className="max-w-4xl mx-auto relative z-10 w-full">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight leading-[1.1]"
+            className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight leading-[1.15]"
           >
             Privacy Policy
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-slate-300/90 text-sm md:text-base font-medium"
+            className="text-white/90 text-sm md:text-[15px] font-medium"
           >
-            Techknomatic Services Pvt Ltd 
+            Techknomatic Services Pvt Ltd · Last Updated: 29 May 2026
           </motion.p>
         </div>
       </section>
