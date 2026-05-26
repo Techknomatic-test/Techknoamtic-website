@@ -102,7 +102,6 @@ export const JobDescriptionPage = () => {
           <div className="lg:col-span-7 space-y-16">
             <section>
               <h2 className="section-heading mb-6 flex items-center gap-3">
-                <span className="w-8 h-1 bg-accent rounded-full" />
                 Job Description
               </h2>
               <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
@@ -112,7 +111,6 @@ export const JobDescriptionPage = () => {
 
             <section>
               <h2 className="section-heading mb-6 flex items-center gap-3">
-                <span className="w-8 h-1 bg-accent rounded-full" />
                 About the role
               </h2>
               <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
@@ -122,7 +120,6 @@ export const JobDescriptionPage = () => {
 
             <section>
               <h2 className="section-heading mb-8 flex items-center gap-3">
-                <span className="w-8 h-1 bg-accent rounded-full" />
                 Responsibilities
               </h2>
               <div className="grid grid-cols-1 gap-4">
