@@ -1062,7 +1062,7 @@ const AcceleratorsSection = () => {
       desc: "Unifies operational visibility across enterprise ITSM tools through standardized KPIs, pre-built dashboards, and real-time analytics — accelerating IT operations intelligence and SLA governance",
       cta: "Explore InsightSM",
       icon: Layout,
-      href: "/insight-sm",
+      href: "/itsm-plug-and-play",
     },
     {
       title: "DataPulse IQ, AI-Powered Data Reliability Platform",
@@ -1093,7 +1093,7 @@ const AcceleratorsSection = () => {
       desc: "Photorealistic avatar + AI support agents for 24/7 query resolution, deflects L1 support load with conversational self-service",
       cta: "Explore AssistIQ",
       icon: Sparkles,
-      href: "/assist-iq",
+      href: "/assistiq",
     },
     {
       title: "TicketIQ, AI-Powered Autonomous IT Support Platform",
@@ -1107,7 +1107,7 @@ const AcceleratorsSection = () => {
       desc: "Human-like voice AI for automated inbound/outbound calls, integrates with your business logic for end-to-end call workflow automation",
       cta: "Explore CallOps AI",
       icon: PhoneCall,
-      href: "/call-ops-ai",
+      href: "/callops-ai",
     },
     {
       title: "CXO Nexus, Strategic Conversational AI",
