@@ -1000,7 +1000,7 @@ const SolutionsSection = () => {
             transition={{ duration: 0.8 }}
             className="section-heading"
           >
-            Built For Your Industry
+            Built For Your Industry,
             <br />
             Not Just Your Technology Stack
           </motion.h2>
