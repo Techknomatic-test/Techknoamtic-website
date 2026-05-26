@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
 import { SectionIcon } from "../components/SectionIcon";
 import {
   ShieldCheck,
@@ -108,24 +109,6 @@ const SolveCard = ({
   </motion.div>
 );
 
-const ModuleCard = ({ title, description, icon: Icon, delay = 0 }: { title: string; description: string; icon: LucideIcon; delay?: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-2xl transition-all group flex flex-col h-full text-left"
-  >
-    <SectionIcon icon={Icon} size="lg" hover="rotate" className="mb-8" />
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight">
-      {title}
-    </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
-      {description}
-    </p>
-  </motion.div>
-);
-
 const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { title: string; description: string; impact: string; delay?: number; icon: LucideIcon }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -187,34 +170,88 @@ export const RefineryOperationsPage = () => {
   const modules = [
     {
       title: "Operations Overview",
-      description: "Real-time production KPIs and targets.",
-      icon: Layers
+      outcome:
+        "Get a single, real-time view of production performance from wellhead to refinery control room.",
+      items: [
+        "Track production KPIs by field, asset, and unit against plan and budget.",
+        "Monitor throughput, uptime, and utilization for upstream, midstream, and downstream.",
+        "Compare daily production with rolling averages and historical baselines.",
+        "Surface bottlenecks across wells, lines, and refinery units in one dashboard.",
+        "Drill down from enterprise view to asset, shift, and operator-level performance.",
+        "Enable leadership with board-ready views that refresh in near real time.",
+      ],
+      icon: Layers,
     },
     {
       title: "Unit Performance",
-      description: "Distillation, conversion, yield analysis.",
-      icon: Activity
+      outcome:
+        "Optimize every refinery unit with granular yield, quality, and constraint analytics.",
+      items: [
+        "Analyze crude blend vs. unit performance across distillation, cracking, and reforming.",
+        "Track key quality parameters and off-spec production in real time.",
+        "Monitor yield by cut, product slate, and unit operating mode.",
+        "Identify underperforming units and campaigns with margin impact.",
+        "Compare actuals vs. planning targets for throughput and recovery.",
+        "Highlight opportunity barrels where minor changes unlock major value.",
+      ],
+      icon: Activity,
     },
     {
       title: "Energy Dashboard",
-      description: "Fuel consumption, steam balance, efficiency.",
-      icon: Zap
+      outcome:
+        "Reduce energy cost per barrel through continuous visibility into fuel and utilities performance.",
+      items: [
+        "Track fuel gas, power, steam, and cooling water consumption by unit.",
+        "Monitor energy efficiency KPIs (e.g., SEC) against design and best-in-class benchmarks.",
+        "Identify units and time windows with abnormal energy intensity.",
+        "Correlate operating modes, load, and ambient conditions with energy usage.",
+        "Quantify savings potential from optimization projects and campaigns.",
+        "Provide management with CO₂ and energy footprint visibility across the site.",
+      ],
+      icon: Zap,
     },
     {
       title: "Equipment Health",
-      description: "Vibration, temperature, run-length tracking.",
-      icon: Thermometer
+      outcome:
+        "Move from reactive to predictive maintenance with live condition monitoring across critical assets.",
+      items: [
+        "Consolidate vibration, temperature, pressure, and run-length data for rotating equipment.",
+        "Track health indices for pumps, compressors, turbines, and heat exchangers.",
+        "Detect abnormal patterns and emerging failures well before breakdown.",
+        "Prioritize maintenance work orders based on criticality and risk.",
+        "Analyze repeat failures to address root causes, not just symptoms.",
+        "Link downtime events to production and margin impact for better planning.",
+      ],
+      icon: Thermometer,
     },
     {
       title: "Environmental",
-      description: "Emissions, water, waste tracking.",
-      icon: Cloud
+      outcome:
+        "Strengthen compliance and ESG reporting with unified emissions and environmental monitoring.",
+      items: [
+        "Track flaring, venting, and stack emissions across units and sites.",
+        "Monitor water intake, discharge, and waste generation against limits.",
+        "Generate regulatory and internal reports from a single source of truth.",
+        "Identify emission and waste hotspots for targeted mitigation.",
+        "Correlate operating modes and campaigns with environmental footprint.",
+        "Provide leadership with ESG dashboards that are audit-ready.",
+      ],
+      icon: Cloud,
     },
     {
       title: "Safety Analytics",
-      description: "Incidents, near-misses, PTW tracking.",
-      icon: ShieldCheck
-    }
+      outcome:
+        "Reduce incidents and strengthen safety culture with data-driven HSE visibility.",
+      items: [
+        "Monitor incidents, near misses, and unsafe conditions by location and activity.",
+        "Track PTW (Permit to Work) compliance across shifts and contractors.",
+        "Analyze root causes, contributing factors, and recurring patterns.",
+        "Identify high-risk tasks, zones, and time windows for focused interventions.",
+        "Measure the impact of safety campaigns and training over time.",
+        "Provide live HSE scorecards for supervisors and leadership teams.",
+      ],
+      icon: ShieldCheck,
+    },
   ];
 
   const systems = [
@@ -307,22 +344,21 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* Analytics Modules Section */}
-      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-6xl mx-auto text-left">
-          <div className="mb-8 text-left">
-            
-            <motion.h3 
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left border-y border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-16">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-6"
             >
               Oil & Gas Analytics Modules
-            </motion.h3>
+            </motion.h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
             {modules.map((module, i) => (
-              <ModuleCard key={i} {...module} delay={i * 0.1} />
+              <PlatformCapabilityCard key={i} {...module} delay={i * 0.1} />
             ))}
           </div>
         </div>
