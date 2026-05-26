@@ -368,7 +368,7 @@ export const AIServicesPage = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
-            AI & Data Strategy
+            Data & AI Strategy
           </motion.h1>
           <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
             <motion.h2
