@@ -137,9 +137,9 @@ export const Footer = () => {
             © {new Date().getFullYear()} Techknomatic. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-10 text-[14px] font-medium text-slate-500">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
-            </a>
+            </Link>
             <a href="#" className="hover:text-white transition-colors">
               Terms of Service
             </a>

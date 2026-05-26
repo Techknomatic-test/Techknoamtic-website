@@ -28,6 +28,7 @@ import { JobDescriptionPage } from '../pages/JobDescriptionPage';
 import { ManufacturingAnalyticsPage } from '../pages/ManufacturingAnalyticsPage';
 import { ParseIQPage } from '../pages/ParseIQPage';
 import { PartnershipsPage } from '../pages/PartnershipsPage';
+import { PrivacyPolicyPage } from '../pages/PrivacyPolicyPage';
 import { RefineryOperationsPage } from '../pages/RefineryOperationsPage';
 import BrandGuidelinesPage from '../pages/BrandGuidelinesPage';
 
@@ -63,6 +64,7 @@ export const AppRoutes = () => {
       <Route path="/cxo-nexus" element={<CXONexusPage />} />
       <Route path="/hr-portal" element={<HRPortalPage />} />
       <Route path="/partnerships" element={<PartnershipsPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="/job-description/:jobId" element={<JobDescriptionPage />} />
       <Route path="/brand" element={<BrandGuidelinesPage />} />
     </Routes>
