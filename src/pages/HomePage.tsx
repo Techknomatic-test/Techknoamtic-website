@@ -1177,7 +1177,7 @@ const AcceleratorsSection = () => {
       </div>
       <Link
         to={acc.href}
-        className="relative z-10 inline-flex items-center gap-2 text-[10px] font-bold text-accent hover:text-accent transition-colors group/btn"
+        className="relative z-10 inline-flex items-center gap-2 text-[10px] font-bold text-accent hover:text-accent transition-colors group/btn uppercase"
       >
         {acc.cta}
         <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -1306,7 +1306,7 @@ const TestimonialsSection = () => {
     },
     {
       headline: "Built to scale with us",
-      name: "Sanjay Taskar",
+      name: "Sanjay T",
       role: "Technology Leadership",
       company: "Assimilate Technologies",
       location: "India",
@@ -1315,14 +1315,14 @@ const TestimonialsSection = () => {
     {
       headline: "Downtime we can see coming",
       name: "Kunal J",
-      role: "VP Delivery, Oil & Gas Sector",
+      role: "VP Delivery",
       company: "Oil & Gas Sector",
       location: "Oman",
       text: "In oil & gas, unplanned downtime isn't a metric — it's a crisis. Techknomatic built us a live operational dashboard that consolidates field data across our assets and flags efficiency dips before they escalate. We've moved from reactive firefighting to proactive control, and the difference is measurable.",
     },
     {
       headline: "From reactive to data-driven",
-      name: "Anup Sangli",
+      name: "Anup S",
       role: "Founder",
       company: "Aintisar Technology L.L.C.",
       location: "UAE",
@@ -1693,7 +1693,7 @@ const ClientSlider = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="section-heading"
         >
-          Trusted By Industry Leaders.
+          Trusted By Industry Leaders
         </motion.h2>
       </div>
       <div className="space-y-4 relative">
