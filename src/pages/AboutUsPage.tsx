@@ -1,3 +1,6 @@
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Lightbulb,
@@ -216,51 +219,16 @@ export const AboutUsPage = () => {
   const lifeImages = LIFE_AT_IMAGES;
 
   return (
-    <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
-      {/* 1. Hero Section - Styled as per Airline Hero */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
-        <div className="absolute inset-0 z-0 overflow-hidden bg-[#020617] pointer-events-none">
-          <img
-            loading="lazy"
-            src={aboutusImg("Herobanner.jpg")}
-            alt="About Us Background"
-            className="absolute inset-0 h-full w-full min-h-full min-w-full object-cover object-center scale-105"
-            referrerPolicy="no-referrer"
-          />
-          <div
-            className="absolute inset-0 bg-gradient-to-r from-[#020617]/90 via-[#020617]/50 to-[#020617]/30"
-            aria-hidden
-          />
-        </div>
-
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold leading-[1.1] tracking-tight mb-6 text-white"
-          >
-            We are a team with <br />
-            knowledge and experience
-          </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty mb-8"
-            >
-              We are a trusted BI technology and implementation partner for data
-              analytics and visualization requirements, helping leaders turn
-              complexity into clarity
-            </motion.p>
-
-            <div className="flex flex-wrap gap-5">
-          
-            </div>
-          </div>
-        </div>
-      </section>
+    <PageShell className="pb-0 overflow-hidden bg-white dark:bg-brand-950">
+            <PageHero
+        title={<>We are a team with <br />
+            knowledge and experience</>}
+        description="We are a trusted BI technology and implementation partner for data analytics and visualization requirements, helping leaders turn complexity into clarity"
+        descriptionClassName="mb-8"
+        imageSrc={aboutusImg("Herobanner.jpg")}
+        overlay="about"
+        imageClassName="absolute inset-0 h-full w-full min-h-full min-w-full object-cover object-center scale-105"
+      />
 
       {/* 2. Different Section (Accordion Redesign) */}
       <DifferentSection />
@@ -433,6 +401,6 @@ export const AboutUsPage = () => {
       </section>
 
       <PreFooterCTA />
-    </div>
+    </PageShell>
   );
 };

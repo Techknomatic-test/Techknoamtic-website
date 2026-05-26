@@ -1,3 +1,6 @@
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 import { motion } from "motion/react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
@@ -15,9 +18,7 @@ import {
 } from "lucide-react";
 
 const FIQ_BASE = "Images/FreightIQ";
-
-const fiqImg = (file: string) =>
-  `${import.meta.env.BASE_URL}${[...FIQ_BASE.split("/"), file].map(encodeURIComponent).join("/")}`;
+const fiqImg = (file: string) => buildAssetUrl(FIQ_BASE, file);
 
 const FIQ_HERO = fiqImg("herobanner.jpg");
 const FIQ_CHALLENGE = fiqImg("GlobalShippingTransport.jpg");
@@ -239,53 +240,14 @@ export const FreightIQPage = () => {
   ];
 
   return (
-    <div className="pt-[110px]">
-      {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center overflow-hidden bg-brand-950 px-6 py-12 md:py-14">
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-          <img
-            loading="lazy"
-            src={FIQ_HERO}
-            alt=""
-            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-            referrerPolicy="no-referrer"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
-            aria-hidden
-          />
-        </div>
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
-          >
-            FreightIQ
-          </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
-            >
-              Intelligent Freight Pricing for Faster Quotes and Higher Profitability
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
-            >
-              AI-powered dynamic freight pricing, real-time carrier rates, multi-modal support, and instant quote
-              generation. Built for logistics enterprises that compete on speed and margin.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+    <PageShell bare>
+            <PageHero
+        title="FreightIQ"
+        tagline="Intelligent Freight Pricing for Faster Quotes and Higher Profitability"
+        description="AI-powered dynamic freight pricing, real-time carrier rates, multi-modal support, and instant quote generation. Built for logistics enterprises that compete on speed and margin."
+        imageSrc={FIQ_HERO}
+        sectionBg="bg-brand-950"
+      />
 
       {/* Challenge Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
@@ -489,6 +451,6 @@ export const FreightIQPage = () => {
       </section>
 
       <PreFooterCTA />
-    </div>
+    </PageShell>
   );
 };

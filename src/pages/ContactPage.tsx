@@ -1,3 +1,6 @@
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -149,55 +152,13 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="pt-[110px] relative pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
-      {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img
-            loading="lazy"
-            src={CONTACT_HERO_IMG}
-            alt=""
-            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-            referrerPolicy="no-referrer"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
-            aria-hidden
-          />
-        </div>
-
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
-          >
-            Contact Us
-          </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
-            >
-              Let's Turn Your Data Into Decisions That Drive Growth
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
-            >
-              Whether you're exploring analytics, dashboards, or enterprise BI
-              transformation, our experts are ready to help you unlock real
-              business impact.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+    <PageShell className="relative pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
+            <PageHero
+        title="Contact Us"
+        tagline="Let's Turn Your Data Into Decisions That Drive Growth"
+        description="Whether you're exploring analytics, dashboards, or enterprise BI transformation, our experts are ready to help you unlock real business impact."
+        imageSrc={CONTACT_HERO_IMG}
+      />
 
       {/* 2. Why Leading Teams Section */}
       <section className="py-[60px] bg-slate-50 dark:bg-brand-900 px-6 text-left">
@@ -464,7 +425,6 @@ export const ContactPage = () => {
       </section>
 
       <PreFooterCTA />
-     
-    </div>
+    </PageShell>
   );
 };

@@ -1,3 +1,6 @@
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 ﻿import { motion } from "motion/react";
 import {
   Users,
@@ -115,56 +118,14 @@ export const CareersPage = () => {
   ];
 
   return (
-    <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
-      {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img
-            loading="lazy"
-            src={CAREERS_HERO}
-            alt=""
-            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-            referrerPolicy="no-referrer"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
-            aria-hidden
-          />
-        </div>
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
-          >
-            Careers
-          </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
-            >
-              Build a Career Where Data Drives Real-World Impact
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty mb-8"
-            >
-              At Techknomatic, you won't just build dashboards—you'll solve real
-              business problems for enterprises across industries. Work on
-              cutting-edge analytics, collaborate with sharp minds, and grow into
-              a consultant who creates measurable impact.
-            </motion.p>
-            
-          </div>
-        </div>
-      </section>
+    <PageShell className="pb-0 overflow-hidden bg-white dark:bg-brand-950 transition-colors duration-500">
+            <PageHero
+        title="Careers"
+        tagline="Build a Career Where Data Drives Real-World Impact"
+        description="At Techknomatic, you won't just build dashboards—you'll solve real business problems for enterprises across industries. Work on cutting-edge analytics, collaborate with sharp minds, and grow into a consultant who creates measurable impact."
+        descriptionClassName="mb-8"
+        imageSrc={CAREERS_HERO}
+      />
 
       {/* 2. Work Culture & How We Work */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 text-left">
@@ -353,6 +314,6 @@ export const CareersPage = () => {
       </section>
 
       <PreFooterCTA />
-    </div>
+    </PageShell>
   );
 };

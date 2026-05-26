@@ -1,3 +1,6 @@
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 import { motion, useInView, useMotionValue, useSpring, AnimatePresence } from "motion/react";
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -163,48 +166,15 @@ export const FMCGAnalyticsPage = () => {
   ];
 
   return (
-    <div className="pt-[110px]">
-      {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
-         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img
-            loading="lazy"
-            src="Images/slider.jpg"
-            alt="FMCG Background"
-            className="absolute inset-0 w-full h-full object-cover opacity-30 scale-105"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent blur-[120px]" />
-        </div>
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
-          >
-            FMCG Analytics Suite
-          </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
-            >
-              Intelligence for Consumer Goods.
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-sm text-slate-400 font-normal leading-relaxed text-pretty"
-            >
-              Drive secondary sales growth, optimize distribution networks, and maximize trade spend efficiency with unified market data.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+    <PageShell bare>
+      <PageHero
+        title="FMCG Analytics Suite"
+        tagline="Intelligence for Consumer Goods."
+        description="Drive secondary sales growth, optimize distribution networks, and maximize trade spend efficiency with unified market data."
+        imageSrc={buildAssetUrl("Images", "slider.jpg")}
+        imageClassName="absolute inset-0 w-full h-full object-cover opacity-30 scale-105"
+        overlay="none"
+      />
 
       {/* Intro Section */}
       <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
@@ -442,6 +412,6 @@ export const FMCGAnalyticsPage = () => {
       </section>
 
       <PreFooterCTA />
-    </div>
+    </PageShell>
   );
 };

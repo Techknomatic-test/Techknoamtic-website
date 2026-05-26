@@ -1,3 +1,6 @@
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
@@ -19,10 +22,7 @@ import {
 } from "lucide-react";
 
 const BI_IMG = "Images/Services/Business Intelligence";
-const biImg = (file: string) =>
-  `${import.meta.env.BASE_URL}${[...BI_IMG.split("/"), file]
-    .map(encodeURIComponent)
-    .join("/")}`;
+const biImg = (file: string) => buildAssetUrl(BI_IMG, file);
 const BI_HERO_IMG = biImg("hero.jpg");
 const BI_TOOLS_IMG = biImg("tools-and-technology.jpg");
 
@@ -401,53 +401,13 @@ export const BIServicesPage = () => {
   ];
 
   return (
-    <div className="pt-[110px]">
-      {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img
-            loading="lazy"
-            src={BI_HERO_IMG}
-            alt=""
-            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-            referrerPolicy="no-referrer"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
-            aria-hidden
-          />
-        </div>
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
-          >
-            Business Intelligence
-          </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
-            >
-              Turning Data into Decisions, at Speed and Scale
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
-            >
-              BI strategy, dashboards, and governance engineered for adoption—built on certified
-              Power BI, Tableau, and Qlik expertise.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+    <PageShell bare>
+            <PageHero
+        title="Business Intelligence"
+        tagline="Turning Data into Decisions, at Speed and Scale"
+        description="BI strategy, dashboards, and governance engineered for adoption—built on certified Power BI, Tableau, and Qlik expertise."
+        imageSrc={BI_HERO_IMG}
+      />
 
       {/* Intro Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
@@ -640,7 +600,7 @@ export const BIServicesPage = () => {
       </section>
 
       <PreFooterCTA />
-    </div>
+    </PageShell>
   );
 };
 

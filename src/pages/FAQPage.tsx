@@ -1,13 +1,13 @@
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { ChevronDown, Sparkles } from "lucide-react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 
 const FAQ_IMG = "Images/FAQ";
-const faqImg = (file: string) =>
-  `${import.meta.env.BASE_URL}${[...FAQ_IMG.split("/"), file]
-    .map(encodeURIComponent)
-    .join("/")}`;
+const faqImg = (file: string) => buildAssetUrl(FAQ_IMG, file);
 const FAQ_HERO_IMG = faqImg("herobanner.jpg");
 
 const AccordionItem = ({
@@ -206,55 +206,24 @@ export const FAQPage = () => {
   ];
 
   return (
-    <div className="pt-[110px] relative overflow-hidden bg-[#FDFDFD] dark:bg-brand-950 transition-colors duration-500">
+    <PageShell className="relative overflow-hidden bg-[#FDFDFD] dark:bg-brand-950 transition-colors duration-500">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/5 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
-      {/* Hero Banner — same dimensions as BI Services page */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] border-b border-slate-100 dark:border-white/5">
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img
-            loading="lazy"
-            src={FAQ_HERO_IMG}
-            alt=""
-            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-            referrerPolicy="no-referrer"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
-            aria-hidden
-          />
-        </div>
-
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
-          >
-            Got <span className="text-accent">Questions?</span> <br />
+            <PageHero
+        title={<>Got <span className="text-accent">Questions?</span> <br />
             We've got{" "}
             <span className="relative inline-block mt-1">
               Answers.{" "}
               <span className="absolute bottom-1.5 left-0 w-full h-2 bg-accent/20 -z-10" />
-            </span>
-          </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
-            >
-              Explore our detailed knowledge hub to find answers about our
-              services, careers, and partnerships.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+            </span></>}
+        description="Explore our detailed knowledge hub to find answers about our services, careers, and partnerships."
+        imageSrc={FAQ_HERO_IMG}
+        borderBottom={true}
+        titleAnimationDelay={0.15}
+        descriptionAnimationDelay={0.3}
+      />
 
       {/* Career FAQ Section */}
       <section className="px-6 max-w-4xl mx-auto relative z-10 pt-20 pb-20">
@@ -295,7 +264,7 @@ export const FAQPage = () => {
           </div>
         </div>
       </section>
-      <PreFooterCTA/>
-    </div>
+      <PreFooterCTA />
+    </PageShell>
   );
 };

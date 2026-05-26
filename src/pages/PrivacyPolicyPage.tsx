@@ -1,6 +1,7 @@
-import { motion } from 'motion/react';
 import { useEffect, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { PageHero } from '../components/PageHero';
+import { PageShell } from '../components/PageShell';
 
 const Section = ({
   id,
@@ -61,35 +62,16 @@ export const PrivacyPolicyPage = () => {
   }, []);
 
   return (
-    <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
-      <section className="relative flex items-center py-8 md:py-10 px-6 overflow-hidden bg-[#1D79B4] text-left">
-        <div
-          className="absolute inset-0 z-0 bg-gradient-to-r from-[#1D79B4] via-[#1a6fa8] to-[#165f94]"
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 z-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent"
-          aria-hidden
-        />
-
-        <div className="max-w-4xl mx-auto relative z-10 w-full">
-          <motion.h1
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight leading-[1.15]"
-          >
-            Privacy Policy
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-white/90 text-sm md:text-[15px] font-medium"
-          >
-            Techknomatic Services Pvt Ltd · Last Updated: 29 May 2026
-          </motion.p>
-        </div>
-      </section>
+    <PageShell>
+      <PageHero
+        variant="solid"
+        size="compact"
+        contentMaxWidth="4xl"
+        title="Privacy Policy"
+        description="Techknomatic Services Pvt Ltd · Last Updated: 29 May 2026"
+        titleAnimationDelay={0}
+        descriptionAnimationDelay={0.1}
+      />
 
       <article className="pb-14 md:pb-20 px-6 bg-white dark:bg-brand-950 transition-colors duration-500">
         <div className="max-w-4xl mx-auto space-y-12 md:space-y-14 text-left">
@@ -397,6 +379,6 @@ export const PrivacyPolicyPage = () => {
           </p>
         </div>
       </article>
-    </div>
+    </PageShell>
   );
 };

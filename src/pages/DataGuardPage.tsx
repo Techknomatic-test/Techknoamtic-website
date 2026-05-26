@@ -1,5 +1,8 @@
 import { motion } from "motion/react";
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
 import { SectionIcon } from "../components/SectionIcon";
 import {
@@ -17,8 +20,7 @@ import {
 
 const DPIQ_BASE = "Images/DataPulseIQ";
 
-const dpiqRootImg = (file: string) =>
-  `${import.meta.env.BASE_URL}${[...DPIQ_BASE.split("/"), file].map(encodeURIComponent).join("/")}`;
+const dpiqRootImg = (file: string) => buildAssetUrl(DPIQ_BASE, file);
 
 const DPIQ_HERO_IMG = dpiqRootImg("Hero.jpg");
 const DPIQ_PAIN_POINTS_IMG = dpiqRootImg("painpoints.jpg");
@@ -253,53 +255,14 @@ export const DataGuardPage = () => {
   ];
 
   return (
-    <div className="pt-[110px]">
-      <section className="relative flex min-h-[min(50vh,480px)] items-center overflow-hidden bg-brand-950 px-6 py-12 md:py-14">
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-          <img
-            loading="lazy"
-            src={DPIQ_HERO_IMG}
-            alt=""
-            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-            referrerPolicy="no-referrer"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
-            aria-hidden
-          />
-        </div>
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
-          >
-            DataPulseIQ
-          </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
-            >
-              Trusted Data. Intelligent Validation. Autonomous Data Operations.
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
-            >
-              AI-powered data quality and reliability framework, continuously monitor, validate, govern, and improve data
-              across every source system. Built for enterprises ready to move from reactive data firefighting to autonomous
-              data operations.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+    <PageShell bare>
+      <PageHero
+        title="DataPulseIQ"
+        tagline="Trusted Data. Intelligent Validation. Autonomous Data Operations."
+        description="AI-powered data quality and reliability framework, continuously monitor, validate, govern, and improve data across every source system. Built for enterprises ready to move from reactive data firefighting to autonomous data operations."
+        imageSrc={DPIQ_HERO_IMG}
+        sectionBg="bg-brand-950"
+      />
 
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
         <div className="max-w-6xl mx-auto">
@@ -503,6 +466,6 @@ export const DataGuardPage = () => {
       </section>
 
       <PreFooterCTA />
-    </div>
+    </PageShell>
   );
 };

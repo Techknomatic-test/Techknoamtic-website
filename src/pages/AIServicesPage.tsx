@@ -1,6 +1,9 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 import { SectionIcon } from "../components/SectionIcon";
 import {
   Settings,
@@ -16,7 +19,7 @@ import {
 } from "lucide-react";
 
 const DAIS_IMG = "Images/Services/data-ai-strategy";
-const daisImg = (file: string) => `${import.meta.env.BASE_URL}${DAIS_IMG}/${file}`;
+const daisImg = (file: string) => buildAssetUrl(DAIS_IMG, file);
 const DAIS_HERO_IMG = daisImg("data-hero.jpg");
 const DAIS_TOOLS_IMG = daisImg("toolsandtech.jpg");
 
@@ -344,53 +347,13 @@ export const AIServicesPage = () => {
   ];
 
   return (
-    <div className="pt-[110px]">
-      {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img
-            loading="lazy"
-            src={DAIS_HERO_IMG}
-            alt=""
-            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-            referrerPolicy="no-referrer"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
-            aria-hidden
-          />
-        </div>
-        <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
-          >
-            Data & AI Strategy
-          </motion.h1>
-          <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
-            >
-              From Models to Momentum: Enterprise AI, Built for Impact
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
-            >
-              Strategy, GenAI applications, agentic workflows, and production-grade model deployment, engineered to
-              move enterprises from AI experimentation to measurable business outcomes.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+    <PageShell bare>
+      <PageHero
+        title="Data & AI Strategy"
+        tagline="From Models to Momentum: Enterprise AI, Built for Impact"
+        description="Strategy, GenAI applications, agentic workflows, and production-grade model deployment, engineered to move enterprises from AI experimentation to measurable business outcomes."
+        imageSrc={DAIS_HERO_IMG}
+      />
 
       {/* Intro Section */}
       <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
@@ -566,6 +529,6 @@ export const AIServicesPage = () => {
       </section>
 
       <PreFooterCTA />
-    </div>
+    </PageShell>
   );
 };

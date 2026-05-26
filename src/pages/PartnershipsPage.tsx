@@ -1,59 +1,12 @@
 import { motion } from "motion/react";
+import { PageHero } from "../components/PageHero";
+import { PageShell } from "../components/PageShell";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { buildAssetUrl } from "../utils/buildAssetUrl";
 
 const PARTNERSHIP_IMG = "Images/partnership";
-const partnershipImg = (file: string) =>
-  `${import.meta.env.BASE_URL}${[...PARTNERSHIP_IMG.split("/"), file]
-    .map(encodeURIComponent)
-    .join("/")}`;
+const partnershipImg = (file: string) => buildAssetUrl(PARTNERSHIP_IMG, file);
 const PARTNERSHIP_HERO_IMG = partnershipImg("Partnershipbanner.jpg");
-
-const PartnershipHero = () => {
-  return (
-    <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <img
-          loading="lazy"
-          src={PARTNERSHIP_HERO_IMG}
-          alt="Partnerships Background"
-          className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-          referrerPolicy="no-referrer"
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/45"
-          aria-hidden
-        />
-      </div>
-
-      <div className="max-w-6xl mx-auto relative z-10 w-full text-left drop-shadow-md">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
-        >
-          Strategic Partnerships <br />
-          to Scale Data & AI Globally
-        </motion.h1>
-        <div className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch]">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
-          >
-            At Techknomatic, we collaborate with leading technology platforms
-            and regional partners to build, deliver, and scale end-to-end data
-            and AI solutions across global markets.
-          </motion.p>
-        </div>
-
-      
-      </div>
-    </section>
-  );
-};
 
 const OEMSection = () => {
   const oems = [
@@ -230,12 +183,24 @@ const MarketSection = () => {
 
 export const PartnershipsPage = () => {
   return (
-    <div className="pt-[110px] pb-0 overflow-hidden bg-white dark:bg-brand-950">
-      <PartnershipHero />
+    <PageShell>
+      <PageHero
+        title={
+          <>
+            Strategic Partnerships <br />
+            to Scale Data & AI Globally
+          </>
+        }
+        description="At Techknomatic, we collaborate with leading technology platforms and regional partners to build, deliver, and scale end-to-end data and AI solutions across global markets."
+        imageSrc={PARTNERSHIP_HERO_IMG}
+        imageAlt="Partnerships Background"
+        titleAnimationDelay={0}
+        descriptionAnimationDelay={0.2}
+      />
       <OEMSection />
       <MarketSection />
 
       <PreFooterCTA />
-    </div>
+    </PageShell>
   );
 };
