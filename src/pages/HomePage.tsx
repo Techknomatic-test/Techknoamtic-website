@@ -1009,7 +1009,7 @@ const SolutionsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl leading-relaxed mt-6"
+            className="text-lg text-slate-500 dark:text-slate-400 font-medium w-full leading-relaxed mt-6"
           >
             Pre-built, production-ready analytics accelerators across key
             industries. go live faster with fewer surprises.
@@ -1220,7 +1220,7 @@ const AcceleratorsSection = () => {
               Go Faster With Our Accelerators
             </h2>
             <div className="w-12 h-1 bg-accent mb-6" />
-            <p className="text-lg text-slate-300 font-medium leading-relaxed max-w-2xl">
+            <p className="text-lg text-slate-300 font-medium leading-relaxed w-full">
               Accelerate your engineering journey with hyper-specialized IP and
               pre-built intelligence components.
             </p>
@@ -1375,7 +1375,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-2xl leading-relaxed"
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium w-full leading-relaxed"
             >
               We measure our success by the growth and clarity we bring to our
               partners and customers across the globe.
