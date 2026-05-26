@@ -91,7 +91,7 @@ export const PrivacyPolicyPage = () => {
         </div>
       </section>
 
-      <article className="py-14 md:py-20 px-6 bg-white dark:bg-brand-950 transition-colors duration-500">
+      <article className="pb-14 md:pb-20 px-6 bg-white dark:bg-brand-950 transition-colors duration-500">
         <div className="max-w-4xl mx-auto space-y-12 md:space-y-14 text-left">
           <Section id="introduction" title="1. Introduction">
             <p>
