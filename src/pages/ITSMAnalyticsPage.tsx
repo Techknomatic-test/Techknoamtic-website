@@ -6,16 +6,14 @@ import { SectionIcon } from "../components/SectionIcon";
 import {
   ShieldCheck,
   FileText,
-  Zap,
   Activity,
   Users,
   LayoutDashboard,
   Clock,
-  TrendingUp,
   Monitor,
   ChevronDown,
   ChevronUp,
-  LucideIcon,
+  Target,
   RefreshCw,
 } from "lucide-react";
 
@@ -111,27 +109,49 @@ const SolveCard = ({
   </motion.div>
 );
 
-const UseCaseCard = ({ title, description, impact, delay = 0, icon: Icon }: { title: string; description: string; impact: string; delay?: number; icon: LucideIcon }) => (
+const UseCaseCard = ({
+  title,
+  subtitle,
+  crux,
+  focusAreas,
+  outcome,
+}: {
+  title: string;
+  subtitle: string;
+  crux: string;
+  focusAreas: string;
+  outcome: string;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
+    className="group flex h-full flex-col rounded-[3rem] border border-slate-100 bg-white p-10 text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] transition-all hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] dark:border-white/10 dark:bg-white/5"
   >
-    <div className="flex items-center gap-4 mb-6">
-      <SectionIcon icon={Icon} size="md" hover="none" />
-      <div className="text-left">
-        <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">
-          {title}
-        </h3>
+    <h3 className="mb-2 min-h-[2.5rem] text-2xl font-bold leading-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+      {title}
+    </h3>
+    <p className="mb-5 min-h-[3rem] text-[15px] font-bold leading-snug text-brand-950/70 dark:text-white/70">
+      {subtitle}
+    </p>
+
+    <div className="mb-6 flex flex-1 flex-col space-y-4">
+      <p className="min-h-[4.5rem] text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
+        {crux}
+      </p>
+
+      <div>
+        <h4 className="mb-2 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
+        <p className="min-h-[2.5rem] text-[14px] font-bold text-brand-950 dark:text-white">{focusAreas}</p>
       </div>
     </div>
-    
-    <div className="space-y-6 flex-1 text-left">
-      <div>
-        <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
-          {description}
+
+    <div className="mt-auto border-t border-slate-100 pt-4 dark:border-white/5">
+      <div className="flex items-center gap-3">
+        <SectionIcon icon={Target} size="sm" hover="none" />
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
+          <span className="mr-2 uppercase tracking-wider text-accent">Outcome:</span>
+          {outcome}
         </p>
       </div>
     </div>
@@ -281,6 +301,33 @@ export const ITSMAnalyticsPage = () => {
         "Identify demand forecasting opportunities for capacity and resource planning.",
       ],
       icon: FileText,
+    },
+  ];
+
+  const useCases = [
+    {
+      title: "Intelligent ticket auto-resolution",
+      subtitle: "AI-driven L1 ticket handling on ServiceNow",
+      crux: "An enterprise IT team achieved significant automated resolution of L1 tickets using TicketIQ on ServiceNow, freeing staff to focus on complex incidents and reducing overall resolution time in a remarkable way.",
+      focusAreas:
+        "L1 Ticket Automation · Auto-Classification · ServiceNow Integration · Agent Deflection",
+      outcome: "Higher auto-resolution rate · Faster TAT · Staff freed for complex work",
+    },
+    {
+      title: "SLA breach prediction & prevention",
+      subtitle: "Early breach alerts with dynamic re-prioritization",
+      crux: "With early breach alerts from the SLA Dashboard, an IT ops team saw a significant reduction in SLA violations through dynamic re-prioritization of at-risk tickets before deadlines were missed.",
+      focusAreas:
+        "SLA Monitoring · Breach Prediction · Dynamic Prioritization · Escalation Automation",
+      outcome: "Fewer SLA violations · Better QoQ performance · More proactive escalation",
+    },
+    {
+      title: "CIO-level ITSM visibility",
+      subtitle: "Live executive dashboard replacing manual reports",
+      crux: "A global enterprise replaced multiple weekly manual reports with a single Executive Dashboard that consolidated ticket trends, vendor SLAs, and change success rates — giving CIOs and leaders remarkably clearer, real-time visibility without manual effort.",
+      focusAreas:
+        "Executive Reporting · Ticket Trend Analysis · Vendor SLA Tracking · Change Success Metrics",
+      outcome: "Richer executive reports · Real-time visibility · Zero manual reporting effort",
     },
   ];
 
@@ -471,38 +518,32 @@ export const ITSMAnalyticsPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <div className="max-w-6xl mx-auto text-left">
-          <div className="mb-8 text-left">
-           
-            <motion.h2 
+          <div className="mb-10">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
+            >
+              Three high-impact deployments where AI-powered ITSM analytics is automating ticket
+              resolution, preventing SLA breaches, and delivering real-time executive visibility.
+            </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-            <UseCaseCard 
-              title="Intelligent Ticket Auto-Resolution"
-              description="An enterprise IT team achieved significant auto-resolution of L1 tickets using TicketIQ on ServiceNow freeing staff to focus on complex incidents."
-              impact="X% Auto-Resolution"
-              icon={Zap}
-            />
-            <UseCaseCard 
-              title="SLA Breach Prediction & Prevention"
-              description="With early breach alerts from the SLA Dashboard, an IT ops team reduced SLA violations quarter-on-quarter through dynamic re-prioritization."
-              impact="X% Breach Reduction"
-              icon={TrendingUp}
-            />
-            <UseCaseCard 
-              title="CIO-Level ITSM Visibility"
-              description="A global enterprise replaced 6 weekly manual reports with a single Executive Dashboard consolidating ticket trends, vendor SLAs, and change success rates live."
-              impact="Real-time Visibility"
-              icon={LayoutDashboard}
-            />
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {useCases.map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} />
+            ))}
           </div>
         </div>
       </section>
