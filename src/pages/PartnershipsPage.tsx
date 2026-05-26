@@ -1,20 +1,5 @@
 import { motion } from "motion/react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
-import {
-  CheckCircle2,
-  ArrowRight,
-  Medal,
-  ShieldCheck,
-  Zap,
-  Award,
-  Database,
-  Cpu,
-  Map,
-  Handshake,
-  MessageSquare,
-  Sparkles,
-} from "lucide-react";
-import { Link } from "react-router-dom";
 
 const PARTNERSHIP_IMG = "Images/partnership";
 const partnershipImg = (file: string) =>
@@ -147,17 +132,19 @@ const OEMSection = () => {
                 <p className="text-[14px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-6 flex-1">
                   {oem.description}
                 </p>
-                <div className="space-y-3 pt-6 border-t border-slate-50 dark:border-white/5">
+                <ul className="space-y-3 border-t border-slate-50 dark:border-white/5 pt-6 list-none m-0">
                   {oem.features.map((feature, j) => (
-                    <div
-                      key={j}
-                      className="flex items-center gap-3 text-[13px] font-bold text-slate-400 dark:text-slate-500"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-accent" />
-                      {feature}
-                    </div>
+                    <li key={j} className="flex items-start gap-3">
+                      <span
+                        className="mt-2 w-1.5 h-1.5 shrink-0 rounded-full bg-accent/40"
+                        aria-hidden
+                      />
+                      <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                        {feature}
+                      </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </motion.div>
           ))}
