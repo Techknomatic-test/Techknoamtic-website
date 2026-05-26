@@ -229,13 +229,14 @@ export const RefineryOperationsPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             loading="lazy"
             src={OIL_GAS_HERO_IMG}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
             aria-hidden
           />
           <div
@@ -247,7 +248,7 @@ export const RefineryOperationsPage = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             Oil & Gas
@@ -257,7 +258,7 @@ export const RefineryOperationsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance leading-relaxed"
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
               From Wellhead To Boardroom Intelligence That Drives Every Decision
             </motion.h2>
@@ -266,16 +267,16 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* About The Industry Section */}
-      <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-7xl space-y-12 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="w-full space-y-8 text-left">
             
             <motion.p 
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.1 }}
-               className="text-[17px] md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-7xl"
+               className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               The Oil & Gas sector operates in one of the world's most data-rich yet data-underutilized environments. Sensor streams from refineries, pipeline telemetry, SCADA systems, and logistics networks generate enormous volumes of operational data daily, most of it siloed and underanalyzed. In an industry where unplanned downtime costs millions per hour and environmental compliance is non-negotiable, Techknomatic brings full-stack data and AI capabilities purpose-built for upstream, midstream, and downstream operations.
             </motion.p>
@@ -284,15 +285,15 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* What We Solve Section */}
-      <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-10">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-8">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="section-heading"
+              className="section-heading mb-4"
             >
               What We Solve
             </motion.h3>
@@ -306,9 +307,9 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* Analytics Modules Section */}
-      <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-7xl mx-auto text-left">
-          <div className="mb-10 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto text-left">
+          <div className="mb-8 text-left">
             
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
@@ -328,9 +329,9 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10 text-left">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8 text-left">
            
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
@@ -416,9 +417,9 @@ export const RefineryOperationsPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[40px] px-6 bg-white dark:bg-brand-950 text-left">
-        <div className="max-w-7xl mx-auto text-left">
-          <div className="mb-10 text-left">
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
+        <div className="max-w-6xl mx-auto text-left">
+          <div className="mb-8 text-left">
             
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}

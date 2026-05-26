@@ -251,13 +251,14 @@ export const ManufacturingAnalyticsPage = () => {
   return (
     <div className="pt-[110px]">
       {/* Hero Section */}
-      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617] text-left">
-         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <section className="relative flex min-h-[min(50vh,480px)] items-center py-12 md:py-14 px-6 overflow-hidden bg-[#020617]">
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             loading="lazy"
             src={MFG_HERO_IMG}
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            referrerPolicy="no-referrer"
             aria-hidden
           />
           <div
@@ -269,7 +270,7 @@ export const ManufacturingAnalyticsPage = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[52px] font-bold text-white mb-6 tracking-tight leading-[1.1]"
           >
             Manufacturing
@@ -279,7 +280,7 @@ export const ManufacturingAnalyticsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance leading-relaxed"
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-4 tracking-tight text-balance"
             >
               Smart Factories Start with Smarter Data, AI for Modern Manufacturing
             </motion.h2>
@@ -288,49 +289,48 @@ export const ManufacturingAnalyticsPage = () => {
       </section>
 
       {/* About The Industry Section */}
-      <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
-        <motion.div className="max-w-7xl mx-auto">
-          <motion.div className="max-w-7xl space-y-12 text-left">
-           
-            <motion.p 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.1 }}
-               className="text-[17px] md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-7xl"
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-b border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto">
+          <div className="w-full space-y-8 text-left">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="w-full text-[17px] md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium"
             >
               Manufacturing is in the midst of a fundamental transformation. Industry 4.0 has unlocked massive potential, but most manufacturers are still struggling to connect their ERP, MES, and SCADA systems, make sense of shop floor data, and translate operational metrics into strategic decisions. Whether managing discrete, process, or hybrid manufacturing, the challenges of downtime, quality failures, supply chain disruption, and energy costs demand an intelligent, data-driven response. Techknomatic brings that intelligence to your floor, and your boardroom.
             </motion.p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* What We Solve Section */}
-      <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left overflow-hidden">
-        <motion.div className="max-w-7xl mx-auto">
-          <motion.div className="text-left mb-10">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-left mb-8">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="section-heading"
+              className="section-heading mb-4"
             >
               What We Solve
             </motion.h3>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whatWeSolve.map((it, idx) => (
               <SolveCard key={idx} title={it.title} description={it.description} image={it.image} delay={idx * 0.1} />
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Analytics Modules Section */}
-      <section className="py-[40px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
-        <div className="max-w-7xl mx-auto text-left">
-          <div className="mb-10 text-left">
+      <section className="py-[60px] bg-white dark:bg-brand-950 px-6 border-y border-slate-100 dark:border-white/5 text-left">
+        <div className="max-w-6xl mx-auto text-left">
+          <div className="mb-8 text-left">
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -349,9 +349,9 @@ export const ManufacturingAnalyticsPage = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-[40px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10 text-left">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/50 overflow-hidden text-left border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8 text-left">
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -379,7 +379,7 @@ export const ManufacturingAnalyticsPage = () => {
               />
             </motion.div>
 
-            <div className="text-left space-y-12">
+            <div className="text-left space-y-4">
               <div className="space-y-4">
                 <AccordionItem
                   title="Supported Platforms"
@@ -426,19 +426,18 @@ export const ManufacturingAnalyticsPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[40px] px-6 bg-white dark:bg-brand-950 text-left">
-        <motion.div className="max-w-7xl mx-auto text-left">
-          <motion.div className="mb-10 text-left">
-           
-            <motion.h2 
+      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
+        <div className="max-w-6xl mx-auto text-left">
+          <div className="mb-8 text-left">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-8"
             >
               Use Cases
             </motion.h2>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             <UseCaseCard 
               title="OEE Improvement Across Production Lines"
@@ -461,7 +460,7 @@ export const ManufacturingAnalyticsPage = () => {
               icon={Users}
             />
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <PreFooterCTA />
