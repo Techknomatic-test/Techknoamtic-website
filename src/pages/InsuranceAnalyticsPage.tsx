@@ -13,8 +13,6 @@ import {
   ChevronUp,
   Users,
   BarChart3,
-  BrainCircuit,
-  LucideIcon,
 } from "lucide-react";
 
 const INSURANCE_IMG = "Images/insurance";
@@ -112,35 +110,47 @@ const SolveCard = ({
 
 const UseCaseCard = ({
   title,
-  description,
-  impact,
-  delay = 0,
-  icon: Icon,
+  subtitle,
+  crux,
+  focusAreas,
+  outcome,
 }: {
   title: string;
-  description: string;
-  impact: string;
-  delay?: number;
-  icon: LucideIcon;
+  subtitle: string;
+  crux: string;
+  focusAreas: string;
+  outcome: string;
 }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-10 rounded-[3rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] transition-all group flex flex-col h-full text-left"
+    className="group flex h-full flex-col rounded-[3rem] border border-slate-100 bg-white p-10 text-left shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] transition-all hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] dark:border-white/10 dark:bg-white/5"
   >
-    <div className="flex items-center gap-4 mb-6">
-      <SectionIcon icon={Icon} size="md" hover="none" />
-      <div className="text-left">
-        <h3 className="text-2xl font-bold text-brand-950 dark:text-white leading-tight">{title}</h3>
+    <h3 className="mb-2 min-h-[2.5rem] text-2xl font-bold leading-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
+      {title}
+    </h3>
+    <p className="mb-5 min-h-[3rem] text-[15px] font-bold leading-snug text-brand-950/70 dark:text-white/70">
+      {subtitle}
+    </p>
+
+    <div className="mb-6 flex flex-1 flex-col space-y-4">
+      <p className="min-h-[4.5rem] text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
+        {crux}
+      </p>
+
+      <div>
+        <h4 className="mb-2 text-[11px] font-black uppercase tracking-widest text-accent">Focus Areas</h4>
+        <p className="min-h-[2.5rem] text-[14px] font-bold text-brand-950 dark:text-white">{focusAreas}</p>
       </div>
     </div>
 
-    <div className="space-y-6 flex-1 mb-10 text-left">
-      <div>
-        <p className="text-[15px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed border-l-2 border-accent/20 pl-4">
-          {description}
+    <div className="mt-auto border-t border-slate-100 pt-4 dark:border-white/5">
+      <div className="flex items-center gap-3">
+        <SectionIcon icon={Target} size="sm" hover="none" />
+        <p className="text-[13px] font-bold text-brand-950 dark:text-white">
+          <span className="mr-2 uppercase tracking-wider text-accent">Outcome:</span>
+          {outcome}
         </p>
       </div>
     </div>
@@ -267,6 +277,33 @@ export const InsuranceAnalyticsPage = () => {
         "Prioritize outreach lists for retention and win-back campaigns.",
       ],
       icon: Users,
+    },
+  ];
+
+  const useCases = [
+    {
+      title: "Automated claims triage",
+      subtitle: "AI-driven classification at intake",
+      crux: "An insurance carrier reduced claims processing TAT using AI-driven triage that auto-classifies claims by complexity, coverage type, and fraud risk, delivering a significant improvement in speed and accuracy.",
+      focusAreas:
+        "Complexity Scoring · Coverage Classification · Fraud Risk Flagging · Routing Automation",
+      outcome: "Faster TAT · Lower manual workload · Reduced leakage",
+    },
+    {
+      title: "Underwriting risk intelligence",
+      subtitle: "Geospatial & behavioral risk scoring",
+      crux: "A leading insurer improved risk scoring accuracy by using geospatial and behavioral data, enabling more precise premium pricing and a remarkable uplift in underwriting confidence.",
+      focusAreas:
+        "Geospatial Mapping · Behavioral Data · Risk Score Calibration · Premium Optimization",
+      outcome: "Higher accuracy · Better pricing precision · Lower exposure",
+    },
+    {
+      title: "Churn prediction & retention",
+      subtitle: "Proactive policyholder engagement",
+      crux: "An insurer identified at-risk policyholders well before renewal, enabling proactive outreach that drove a significant improvement in retention rates and relationship quality.",
+      focusAreas:
+        "Churn Propensity Modelling · Early Warning Signals · Renewal Outreach · Loyalty Analytics",
+      outcome: "Higher retention · Timely intervention · Improved NPS",
     },
   ];
 
@@ -480,39 +517,32 @@ export const InsuranceAnalyticsPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left">
+      <section className="py-[60px] px-6 bg-slate-50/50 dark:bg-brand-900/20 text-left">
         <div className="max-w-6xl mx-auto text-left">
-          <div className="mb-8 text-left">
+          <div className="mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="section-heading mb-4"
             >
               Use Cases
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-slate-500 dark:text-slate-400 font-medium"
+            >
+              Three high-impact deployments where AI analytics is transforming insurance operations — from
+              claims to underwriting to retention.
+            </motion.p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-            <UseCaseCard
-              title="Automated Claims Triage"
-              description="An insurance carrier reduced claims processing TAT by X% using AI-driven triage that auto-classifies claims by complexity, coverage type, and fraud risk."
-              impact="X%"
-              icon={Zap}
-            />
-            <UseCaseCard
-              title="Underwriting Risk Intelligence"
-              description="A leading insurer improved risk scoring accuracy by X% using geospatial and behavioral data, enabling more precise premium pricing."
-              impact="X%"
-              delay={0.1}
-              icon={BrainCircuit}
-            />
-            <UseCaseCard
-              title="Churn Prediction & Retention"
-              description="An insurer identified at-risk policyholders 60 days before renewal, enabling proactive outreach that improved retention rates by X%."
-              impact="X%"
-              delay={0.2}
-              icon={Users}
-            />
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {useCases.map((uc, idx) => (
+              <UseCaseCard key={idx} {...uc} />
+            ))}
           </div>
         </div>
       </section>
