@@ -295,7 +295,7 @@ export const FAQPage = () => {
           </div>
         </div>
       </section>
-      <PreFooterCTA className="pt-16 pb-[120px]" />
+      <PreFooterCTA/>
     </div>
   );
 };
