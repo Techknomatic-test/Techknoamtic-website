@@ -1,11 +1,15 @@
 import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { buildAssetUrl } from "../utils/buildAssetUrl";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
-import { SolveCardsSection, UseCasesSection } from "../components/product-page";
+import {
+  ExpandableAccordionItem,
+  SolveCardsSection,
+  UseCasesSection,
+} from "../components/product-page";
 import {
   ShieldCheck,
   Zap,
@@ -13,8 +17,6 @@ import {
   Layers,
   Thermometer,
   Cloud,
-  ChevronDown,
-  ChevronUp,
 } from "lucide-react";
 
 const OIL_GAS_IMG = "Images/Oil&Gas";
@@ -22,54 +24,6 @@ const oilGasHeroImg = (file: string) =>
   `${import.meta.env.BASE_URL}${OIL_GAS_IMG}/${encodeURIComponent(file)}`;
 const OIL_GAS_HERO_IMG = oilGasHeroImg("hero.jpg");
 const OIL_GAS_SCADA_IMG = `${OIL_GAS_IMG}/SCADA & Process Integration.png`;
-
-const AccordionItem = ({
-  title,
-  isOpen,
-  onClick,
-  children,
-}: {
-  title: string;
-  isOpen: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) => {
-  return (
-    <div className="border-b border-slate-100 dark:border-white/5 last:border-0 overflow-hidden">
-      <button
-        onClick={onClick}
-        className="w-full py-6 flex items-center justify-between text-left group transition-all"
-      >
-        <span className="text-[17px] font-bold text-brand-950 dark:text-white group-hover:text-accent transition-colors">
-          {title}
-        </span>
-        <div
-          className={`p-2 rounded-full transition-all duration-300 ${
-            isOpen
-              ? "bg-accent text-white"
-              : "bg-slate-50 dark:bg-white/5 text-slate-400 group-hover:bg-slate-100 dark:group-hover:bg-white/10"
-          }`}
-        >
-          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-        </div>
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            <div className="pb-8">
-              {children}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
 
 export const RefineryOperationsPage = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
@@ -314,7 +268,7 @@ export const RefineryOperationsPage = () => {
             {/* Right side: Accordion */}
             <div className="text-left">
               <div className="space-y-4">
-                <AccordionItem
+                <ExpandableAccordionItem
                   title="Systems We Connect"
                   isOpen={openAccordion === 0}
                   onClick={() => setOpenAccordion(openAccordion === 0 ? null : 0)}
@@ -336,9 +290,9 @@ export const RefineryOperationsPage = () => {
                       </motion.li>
                     ))}
                   </ul>
-                </AccordionItem>
+                </ExpandableAccordionItem>
                 
-                <AccordionItem
+                <ExpandableAccordionItem
                   title="Real-Time Data Pipeline"
                   isOpen={openAccordion === 1}
                   onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
@@ -360,7 +314,7 @@ export const RefineryOperationsPage = () => {
                       </div>
                     </div>
                   </div>
-                </AccordionItem>
+                </ExpandableAccordionItem>
               </div>
             </div>
           </div>

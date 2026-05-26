@@ -1,19 +1,21 @@
 import { PageHero } from "../components/PageHero";
 import { PageShell } from "../components/PageShell";
 import { buildAssetUrl } from "../utils/buildAssetUrl";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { PreFooterCTA } from "../components/PreFooterCTA";
 import { PlatformCapabilityCard } from "../components/PlatformCapabilityCard";
-import { SolveCardsSection, UseCasesSection } from "../components/product-page";
+import {
+  ExpandableAccordionItem,
+  SolveCardsSection,
+  UseCasesSection,
+} from "../components/product-page";
 import {
   FileText,
   UserCheck,
   AlertTriangle,
   Target,
   Zap,
-  ChevronDown,
-  ChevronUp,
   Users,
   BarChart3,
 } from "lucide-react";
@@ -23,52 +25,6 @@ const insuranceHeroImg = (file: string) => buildAssetUrl(INSURANCE_IMG, file);
 const INSURANCE_HERO_IMG = insuranceHeroImg("Hero.jpg");
 const INSURANCE_LOCATION_IMG = `${INSURANCE_IMG}/Location Intelligence For Insurance.jpg`;
 const ESRI_LOGO_IMG = `${import.meta.env.BASE_URL}Images/esri.jpg`;
-
-const AccordionItem = ({
-  title,
-  isOpen,
-  onClick,
-  children,
-}: {
-  title: string;
-  isOpen: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) => {
-  return (
-    <motion.div className="border-b border-slate-100 dark:border-white/5 last:border-0 overflow-hidden">
-      <button
-        onClick={onClick}
-        className="w-full py-6 flex items-center justify-between text-left group transition-all"
-      >
-        <span className="text-[17px] font-bold text-brand-950 dark:text-white group-hover:text-accent transition-colors">
-          {title}
-        </span>
-        <motion.div
-          className={`p-2 rounded-full transition-all duration-300 ${
-            isOpen
-              ? "bg-accent text-white"
-              : "bg-slate-50 dark:bg-white/5 text-slate-400 group-hover:bg-slate-100 dark:group-hover:bg-white/10"
-          }`}
-        >
-          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-        </motion.div>
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            <motion.div className="pb-8">{children}</motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-};
 
 export const InsuranceAnalyticsPage = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
@@ -318,7 +274,7 @@ export const InsuranceAnalyticsPage = () => {
 
             <div className="text-left">
               <div className="space-y-4">
-                <AccordionItem
+                <ExpandableAccordionItem
                   title="Real-World Impact"
                   isOpen={openAccordion === 0}
                   onClick={() => setOpenAccordion(openAccordion === 0 ? null : 0)}
@@ -342,9 +298,9 @@ export const InsuranceAnalyticsPage = () => {
                       </span>
                     </div>
                   </div>
-                </AccordionItem>
+                </ExpandableAccordionItem>
 
-                <AccordionItem
+                <ExpandableAccordionItem
                   title="ESRI-Powered Geo-Analytics"
                   isOpen={openAccordion === 1}
                   onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
@@ -357,9 +313,9 @@ export const InsuranceAnalyticsPage = () => {
                       </li>
                     ))}
                   </ul>
-                </AccordionItem>
+                </ExpandableAccordionItem>
 
-                <AccordionItem
+                <ExpandableAccordionItem
                   title="Geospatial Underwriting & Risk Exposure"
                   isOpen={openAccordion === 2}
                   onClick={() => setOpenAccordion(openAccordion === 2 ? null : 2)}
@@ -375,7 +331,7 @@ export const InsuranceAnalyticsPage = () => {
                       <span className="text-[13px] font-bold uppercase tracking-wider">Predictive Exposure Analysis</span>
                     </div>
                   </div>
-                </AccordionItem>
+                </ExpandableAccordionItem>
               </div>
             </div>
           </div>

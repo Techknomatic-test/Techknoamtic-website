@@ -7,6 +7,7 @@ export type ServiceUseCasesSectionProps = {
   title?: string;
   sectionClassName?: string;
   titleClassName?: string;
+  descriptionClassName?: string;
 };
 
 const DEFAULT_SECTION = 'py-[60px] px-6 bg-white dark:bg-brand-950 text-left';
@@ -18,6 +19,7 @@ export function ServiceUseCasesSection({
   title = 'Use Cases',
   sectionClassName = DEFAULT_SECTION,
   titleClassName = 'section-heading mb-8',
+  descriptionClassName = 'text-left text-lg font-medium text-slate-500 dark:text-slate-400',
 }: ServiceUseCasesSectionProps) {
   return (
     <section className={sectionClassName}>
@@ -36,7 +38,7 @@ export function ServiceUseCasesSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-left text-lg font-medium text-slate-500 dark:text-slate-400"
+            className={descriptionClassName}
           >
             {description}
           </motion.p>

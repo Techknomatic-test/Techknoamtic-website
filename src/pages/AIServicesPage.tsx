@@ -8,7 +8,7 @@ import {
   ChipAccordionItem,
   ServiceApproachStep,
   ServiceImageCapabilityCard,
-  ServiceUseCaseCard,
+  ServiceUseCasesSection,
 } from "../components/product-page";
 import {
   Search,
@@ -314,36 +314,13 @@ export const AIServicesPage = () => {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-[60px] px-6 bg-white dark:bg-brand-950 text-left pb-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-10">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading"
-            >
-              Use Cases
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-500 dark:text-slate-400 font-medium mt-4"
-            >
-              Four high-impact AI programs we deliver for enterprises, across document intelligence, data migration,
-              autonomous operations, and customer experience.
-            </motion.p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {useCases.map((uc) => (
-              <ServiceUseCaseCard key={uc.title} {...uc} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceUseCasesSection
+        description="Four high-impact AI programs we deliver for enterprises, across document intelligence, data migration, autonomous operations, and customer experience."
+        cases={useCases}
+        sectionClassName="py-[60px] px-6 bg-white dark:bg-brand-950 text-left pb-20"
+        titleClassName="section-heading"
+        descriptionClassName="text-lg text-slate-500 dark:text-slate-400 font-medium mt-4"
+      />
 
       <PreFooterCTA />
     </PageShell>

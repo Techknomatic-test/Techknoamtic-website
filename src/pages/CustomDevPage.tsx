@@ -4,6 +4,7 @@ import { buildAssetUrl } from "../utils/buildAssetUrl";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 import { PreFooterCTA } from "../components/PreFooterCTA";
+import { ServiceImageCapabilityCard } from "../components/product-page";
 import {
   Code,
   Layout,
@@ -24,33 +25,6 @@ import {
   Server,
   RefreshCw
 } from "lucide-react";
-
-const CapabilityCard = ({ title, description, image, delay = 0 }: { title: string; description: string; image: string; delay?: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay }}
-    className="p-8 rounded-[2.5rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500 group flex flex-col h-full overflow-hidden"
-  >
-    <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-brand-950/20 to-transparent opacity-40" />
-    </div>
-    <h3 className="text-xl font-bold text-brand-950 dark:text-white mb-4 tracking-tight leading-tight group-hover:text-accent transition-colors">
-      {title}
-    </h3>
-    <p className="text-[14px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
-      {description}
-    </p>
-  </motion.div>
-);
 
 export const CustomDevPage = () => {
     const caps = [
@@ -177,7 +151,14 @@ export const CustomDevPage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caps.map((it, idx) => (
-              <CapabilityCard key={idx} {...it} delay={idx * 0.1} />
+              <ServiceImageCapabilityCard
+                key={idx}
+                {...it}
+                delay={idx * 0.1}
+                imageHeightClassName="h-48"
+                imageHoverClassName="group-hover:scale-110"
+                showImageGradient
+              />
             ))}
           </div>
         </div>

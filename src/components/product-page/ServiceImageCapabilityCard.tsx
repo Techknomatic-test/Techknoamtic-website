@@ -8,6 +8,8 @@ export type ServiceImageCapabilityCardProps = {
   imageHeightClassName?: string;
   imageHoverClassName?: string;
   descriptionClassName?: string;
+  /** Industry analytics pages: gradient overlay on image */
+  showImageGradient?: boolean;
 };
 
 /** Capability card with top image (Geospatial, Data Engineering). */
@@ -19,6 +21,7 @@ export function ServiceImageCapabilityCard({
   imageHeightClassName = 'h-52',
   imageHoverClassName = 'group-hover:scale-105',
   descriptionClassName = 'flex-1 text-left text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400',
+  showImageGradient = false,
 }: ServiceImageCapabilityCardProps) {
   return (
     <motion.div
@@ -38,6 +41,9 @@ export function ServiceImageCapabilityCard({
           className={`h-full w-full object-cover transition-transform duration-700 ${imageHoverClassName}`}
           referrerPolicy="no-referrer"
         />
+        {showImageGradient && (
+          <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-40 dark:from-brand-950/20" />
+        )}
       </div>
       <h3 className="mb-4 text-xl font-bold leading-tight tracking-tight text-brand-950 transition-colors group-hover:text-accent dark:text-white">
         {title}

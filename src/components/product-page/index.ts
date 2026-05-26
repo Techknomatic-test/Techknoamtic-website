@@ -1,5 +1,8 @@
 /** Shared UI for Enterprise AI, Platforms, Services, and Industries product pages. */
 
+export { ExpandableAccordionItem } from './ExpandableAccordionItem';
+export type { ExpandableAccordionItemProps } from './ExpandableAccordionItem';
+
 export { ChipAccordionItem } from './ChipAccordionItem';
 export type { ChipAccordionItemProps } from './ChipAccordionItem';
 
@@ -44,4 +47,8 @@ export { UseCaseCard } from '../UseCaseCard';
 export type { UseCaseItem, UseCaseCardProps } from '../UseCaseCard';
 export { UseCasesSection } from '../UseCasesSection';
 export type { UseCasesSectionProps } from '../UseCasesSection';
+export { IndustryUseCaseCard } from '../IndustryUseCaseCard';
+export type { IndustryUseCaseItem, IndustryUseCaseCardProps } from '../IndustryUseCaseCard';
+export { IndustryUseCasesSection } from '../IndustryUseCasesSection';
+export type { IndustryUseCasesSectionProps } from '../IndustryUseCasesSection';
 export { PlatformCapabilityCard } from '../PlatformCapabilityCard';
