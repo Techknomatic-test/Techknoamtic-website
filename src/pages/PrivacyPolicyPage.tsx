@@ -71,18 +71,6 @@ export const PrivacyPolicyPage = () => {
         <div className="absolute inset-0 z-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent" aria-hidden />
 
         <div className="max-w-4xl mx-auto relative z-10 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-3 mb-4"
-          >
-            <span className="inline-flex w-10 h-10 rounded-xl bg-accent/20 border border-accent/30 items-center justify-center text-accent">
-              <Shield className="w-5 h-5" aria-hidden />
-            </span>
-            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-white/50">
-              Legal
-            </span>
-          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,7 +84,7 @@ export const PrivacyPolicyPage = () => {
             transition={{ delay: 0.1 }}
             className="text-slate-300/90 text-sm md:text-base font-medium"
           >
-            Techknomatic Services Pvt Ltd · Last Updated: 29 May 2026
+            Techknomatic Services Pvt Ltd 
           </motion.p>
         </div>
       </section>
