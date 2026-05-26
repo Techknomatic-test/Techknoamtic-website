@@ -161,19 +161,7 @@ export const CareersPage = () => {
               cutting-edge analytics, collaborate with sharp minds, and grow into
               a consultant who creates measurable impact.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-5"
-            >
-              <a href="#roles">
-                <button className="px-8 py-4 bg-accent text-white font-black tracking-[0.1em] rounded-2xl hover:bg-accent/90 transition-all flex items-center gap-3 uppercase text-[12px] shadow-2xl shadow-accent/20 active:scale-95">
-                  Explore Open Roles <ArrowRight className="w-4 h-4" />
-                </button>
-              </a>
-              
-            </motion.div>
+            
           </div>
         </div>
       </section>
