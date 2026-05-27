@@ -134,7 +134,7 @@ const MarketSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-left mb-10">
           <h2 className="section-heading mb-4">
-            Our Global Market Presence Through Partners.
+            Our Global Market Presence Through Partners
           </h2>
           <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl text-left">
             To expand our reach and deliver solutions effectively across
