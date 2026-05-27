@@ -314,24 +314,6 @@ export const InsuranceAnalyticsPage = () => {
                     ))}
                   </ul>
                 </ExpandableAccordionItem>
-
-                <ExpandableAccordionItem
-                  title="Geospatial Underwriting & Risk Exposure"
-                  isOpen={openAccordion === 2}
-                  onClick={() => setOpenAccordion(openAccordion === 2 ? null : 2)}
-                >
-                  <div className="space-y-4">
-                    <p className="text-[16px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-                      Aggregate geospatial data to visualize accumulation risk and catastrophe exposure across
-                      portfolios, enabling faster response during active events and more precise local pricing
-                      modules.
-                    </p>
-                    <div className="flex items-center gap-2 text-accent">
-                      <Zap className="w-4 h-4" />
-                      <span className="text-[13px] font-bold uppercase tracking-wider">Predictive Exposure Analysis</span>
-                    </div>
-                  </div>
-                </ExpandableAccordionItem>
               </div>
             </div>
           </div>
