@@ -212,7 +212,7 @@ export const FAQPage = () => {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/5 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
             <PageHero
-        title={<>Got <span className="text-accent">Questions?</span> <br />
+            title={<>Got  Questions? <br />
             We've got{" "}
             <span className="relative inline-block mt-1">
               Answers.{" "}

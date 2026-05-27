@@ -84,7 +84,7 @@ export const CustomerStoriesPage = () => {
               transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white mb-6 tracking-tight leading-[1.1] text-left"
             >
-              Customer Success <span className="text-accent">Stories</span>
+              Customer Success Stories
             </motion.h1>
           </div>
         </div>
