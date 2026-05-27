@@ -348,16 +348,25 @@ export const AboutUsPage = () => {
                 objectPosition: "center 28%",
               },
               {
-                name: "Apoorva Gowda",
-                role: "Sales Manager (UAE)",
-                img: "Images/Leadership/people/Apoorva.jpeg",
-                objectPosition: "center 30%",
-              },
-              {
                 name: "Hemant Jadhav",
                 role: "AVP - Sales (India)",
                 img: "Images/Leadership/people/hemant_.jpeg",
                 objectPosition: "center 32%",
+              },
+              {
+                name: "Uthaiah Ganpathi",
+                role: "Growth Consultant",
+                img: "Images/Leadership/people/Uthaiah_Ganpathi.jpeg",
+                objectPosition: "center 30%",
+              },
+              {
+                spacer: true,
+              },
+              {
+                name: "Mohammed Nizar Said Al Shanfari",
+                role: "Business Partner Oman",
+                img: "Images/Leadership/people/mohamad.jpeg",
+                objectPosition: "center 30%",
               },
               {
                 name: "Anup Sangli",
@@ -365,7 +374,20 @@ export const AboutUsPage = () => {
                 img: "Images/Leadership/people/anup_sangli.jpeg",
                 objectPosition: "center 30%",
               },
+              {
+                name: "Apoorva Gowda",
+                role: "Sales Manager (UAE)",
+                img: "Images/Leadership/people/Apoorva.jpeg",
+                objectPosition: "center 30%",
+              },
             ].map((member, i) => (
+              member.spacer ? (
+                <div
+                  key={`spacer-${i}`}
+                  className="hidden lg:block border-r border-b border-slate-100 dark:border-white/5 bg-white dark:bg-brand-950"
+                  aria-hidden
+                />
+              ) : (
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}
@@ -395,6 +417,7 @@ export const AboutUsPage = () => {
                   </p>
                 </div>
               </motion.div>
+              )
             ))}
           </div>
         </div>
