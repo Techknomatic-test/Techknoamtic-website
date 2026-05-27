@@ -90,7 +90,7 @@ export const CustomerStoriesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-              className="max-w-[50ch] sm:max-w-[55ch] lg:max-w-[60ch] text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
+              className="max-w-4xl text-sm text-slate-200/90 font-normal leading-relaxed text-pretty"
             >
               Real-world implementations where complex enterprise data became
               clear, actionable, and trusted for decision-making. Explore how
