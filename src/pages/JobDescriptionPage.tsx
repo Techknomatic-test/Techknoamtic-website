@@ -3,7 +3,6 @@ import {
   ArrowLeft,
   MapPin,
   Briefcase,
-  CheckCircle2,
   Upload,
   Send,
   Calendar,
@@ -144,21 +143,22 @@ export const JobDescriptionPage = () => {
               <h2 className="section-heading mb-8 flex items-center gap-3">
                 Job Requirement
               </h2>
-              <div className="grid grid-cols-1 gap-4">
+              <ul className="grid grid-cols-1 gap-4 list-none m-0 p-0">
                 {jobDetails.requirements.map((item, i) => (
-                  <div
+                  <li
                     key={i}
                     className="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-brand-900/50 border border-slate-100 dark:border-white/5 group hover:border-accent/30 transition-all"
                   >
-                    <div className="w-6 h-6 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 mt-0.5">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                    </div>
+                    <span
+                      className="mt-2.5 w-1.5 h-1.5 shrink-0 rounded-full bg-accent/40"
+                      aria-hidden
+                    />
                     <span className="text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
                       {item}
                     </span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </section>
           </div>
 
