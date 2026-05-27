@@ -396,7 +396,8 @@ export const ContactPage = () => {
                     title: "Dubai",
                     address: "Office # E-84 AL Aber Real Estate Building 01, ABU Hail, Dubai P.O. Box: 85031",
                     country: "UAE",
-                    flag: "U🇦🇪"
+                    flag: "UAE",
+                    flagClassName: "text-[11px] font-bold tracking-wide",
                   },
                 ].map((office, idx) => (
                   <div
@@ -404,7 +405,9 @@ export const ContactPage = () => {
                     className="bg-white dark:bg-brand-950 px-[32px] pt-[32px] pb-[32px] rounded-[2rem] border border-slate-100 dark:border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.03)] group hover:border-[#f17e21]/40 transition-all flex flex-col h-full"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-[14px] bg-[#fff6ef] dark:bg-[#f17e21]/10 flex items-center justify-center text-[#f17e21] shrink-0 text-xl">
+                      <div
+                        className={`w-12 h-12 rounded-[14px] bg-[#fff6ef] dark:bg-[#f17e21]/10 flex items-center justify-center text-[#f17e21] shrink-0 ${"flagClassName" in office ? office.flagClassName : "text-xl"}`}
+                      >
                         {office.flag}
                       </div>
                       <div className="pt-1">
