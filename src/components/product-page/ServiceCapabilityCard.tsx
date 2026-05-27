@@ -33,7 +33,7 @@ export function ServiceCapabilityCard({
         </h3>
       </div>
       <div className="min-h-[6rem] sm:min-h-[6.5rem]">
-        <p className="border-l-4 border-accent/20 py-1 pl-4 text-left text-[15px] font-medium leading-relaxed text-brand-950/70 dark:text-white/60">
+        <p className="text-left text-[14px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
           {description}
         </p>
       </div>

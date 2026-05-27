@@ -41,13 +41,7 @@ export function ServiceApproachStep({
       <h3 className="mb-3 text-lg font-bold tracking-tight text-brand-950 dark:text-white">
         {title}
       </h3>
-      <p
-        className={
-          variant === 'slate'
-            ? 'border-l-2 border-accent/20 px-2 text-left text-[13px] font-medium leading-relaxed text-slate-500 dark:text-slate-400'
-            : 'border-l-2 border-accent/30 pl-4 text-[13px] font-medium leading-relaxed text-slate-500 dark:text-slate-400'
-        }
-      >
+      <p className="text-left text-[13px] font-medium leading-relaxed text-slate-500 dark:text-slate-400">
         {description}
       </p>
     </motion.div>
