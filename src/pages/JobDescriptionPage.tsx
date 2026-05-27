@@ -142,7 +142,6 @@ export const JobDescriptionPage = () => {
 
             <section>
               <h2 className="section-heading mb-8 flex items-center gap-3">
-                <span className="w-8 h-1 bg-accent rounded-full" />
                 Job Requirement
               </h2>
               <div className="grid grid-cols-1 gap-4">
