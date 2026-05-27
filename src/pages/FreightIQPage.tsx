@@ -160,47 +160,47 @@ export const FreightIQPage = () => {
       subtitle: "Instant multi-carrier quoting and margin optimization for forwarders and 3PLs.",
       crux: "FreightIQ generates instant freight quotations across carriers, compares rates, and applies customer-specific pricing rules. Sales teams quote faster, manage LCL/FCL shipments centrally, and gain operational pricing intelligence that lifts both win rate and margin.",
       focusAreas:
-        "Instant Quotes Â· Multi-Carrier Comparison Â· Margin Optimization Â· LCL/FCL Management Â· Sales Intelligence",
-      outcome: "Faster quote turnaround Â· Higher win rate Â· Improved margin discipline",
+        "Instant Quotes · Multi-Carrier Comparison · Margin Optimization · LCL/FCL Management · Sales Intelligence",
+      outcome: "Faster quote turnaround · Higher win rate · Improved margin discipline",
     },
     {
       title: "Import & Export Businesses",
       subtitle: "Dynamic landed cost visibility for international trade.",
       crux: "Estimate shipment costs across international routes, optimize carrier selection for exports, and gain dynamic landed-cost visibility for container shipments. FreightIQ also supports freight budgeting and procurement analytics for cross-border trade operations.",
-      focusAreas: "Landed Cost Â· Route Optimization Â· Carrier Selection Â· Container Pricing Â· Freight Budgeting",
-      outcome: "Sharper cost estimation Â· Better trade margin Â· Smarter procurement",
+      focusAreas: "Landed Cost · Route Optimization · Carrier Selection · Container Pricing · Freight Budgeting",
+      outcome: "Sharper cost estimation · Better trade margin · Smarter procurement",
     },
     {
       title: "E-Commerce & Retail Logistics",
       subtitle: "Real-time shipping cost optimization across the retail supply chain.",
       crux: "Optimize shipping costs in real time across multi-modal logistics, analyze regional delivery costs, and manage warehouse-to-customer shipment pricing. FreightIQ also provides peak-season freight pricing visibility for retail and D2C operations.",
       focusAreas:
-        "Shipping Cost Optimization Â· Multi-Modal Pricing Â· Regional Delivery Analysis Â· Last-Mile Costs Â· Peak-Season Pricing",
-      outcome: "Lower shipping spend Â· Better peak-season readiness Â· Higher fulfillment margin",
+        "Shipping Cost Optimization · Multi-Modal Pricing · Regional Delivery Analysis · Last-Mile Costs · Peak-Season Pricing",
+      outcome: "Lower shipping spend · Better peak-season readiness · Higher fulfillment margin",
     },
     {
       title: "Manufacturing & Industrial Supply Chains",
       subtitle: "Inbound and outbound shipment pricing for industrial supply chains.",
       crux: "Automate inbound and outbound shipment pricing, compare vendor freight costs, and apply intelligent bulk cargo and container pricing. FreightIQ delivers supply chain transportation analytics and production logistics cost optimization across the industrial value chain.",
       focusAreas:
-        "Inbound/Outbound Pricing Â· Vendor Comparison Â· Bulk Cargo Â· Supply Chain Analytics Â· Production Logistics",
-      outcome: "Lower transportation cost Â· Better vendor benchmarking Â· Stronger supply chain visibility",
+        "Inbound/Outbound Pricing · Vendor Comparison · Bulk Cargo · Supply Chain Analytics · Production Logistics",
+      outcome: "Lower transportation cost · Better vendor benchmarking · Stronger supply chain visibility",
     },
     {
       title: "Air Cargo & Express Logistics",
       subtitle: "Urgency-aware pricing for time-critical air and express logistics.",
       crux: "Optimize pricing for urgent shipments, compare carrier availability and cost dynamically, and apply priority-based pricing logic. FreightIQ also enables express logistics margin analysis and international air freight quotation automation at enterprise scale.",
       focusAreas:
-        "Urgent Shipment Pricing Â· Carrier Availability Â· Priority-Based Pricing Â· Express Margin Analysis Â· Air Freight Quoting",
-      outcome: "Faster express quoting Â· Stronger margin on urgency Â· Better carrier match",
+        "Urgent Shipment Pricing · Carrier Availability · Priority-Based Pricing · Express Margin Analysis · Air Freight Quoting",
+      outcome: "Faster express quoting · Stronger margin on urgency · Better carrier match",
     },
     {
       title: "Global Shipping & Transportation Enterprises",
       subtitle: "Enterprise-wide freight pricing standardization across regions and routes.",
       crux: "Standardize freight pricing across the enterprise, monitor global route pricing intelligence, and analyze cross-region carrier performance. FreightIQ also delivers historical freight trend analysis and centralized pricing governance for global logistics networks.",
       focusAreas:
-        "Enterprise Pricing Standardization Â· Global Route Intelligence Â· Cross-Region Analytics Â· Historical Trends Â· Pricing Governance",
-      outcome: "Consistent global pricing Â· Stronger governance Â· Network-wide intelligence",
+        "Enterprise Pricing Standardization · Global Route Intelligence · Cross-Region Analytics · Historical Trends · Pricing Governance",
+      outcome: "Consistent global pricing · Stronger governance · Network-wide intelligence",
     },
   ];
 
