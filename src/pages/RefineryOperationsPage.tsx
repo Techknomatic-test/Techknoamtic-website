@@ -171,12 +171,12 @@ export const RefineryOperationsPage = () => {
   ];
 
   const systems = [
-    "SCADA (Wonderware, InTouch, Ignition)",
-    "DCS (Honeywell, Yokogawa, ABB)",
+    "SCADA",
+    "DCS",
     "PI System and Historians",
     "LIMS for Quality Data",
     "ERP for Logistics and Maintenance",
-    "IoT Sensors for Equipment Monitoring"
+    "IoT Sensors for Equipment Monitoring",
   ];
 
   return (
@@ -284,8 +284,12 @@ export const RefineryOperationsPage = () => {
                         className="flex items-center gap-3"
                       >
                         <div className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)]" />
-                        <span className="text-[16px] text-brand-950 dark:text-white uppercase tracking-tight">
-                          {system.split(' (')[0]}
+                        <span
+                          className={`text-[16px] text-brand-950 dark:text-white tracking-tight ${
+                            i < 2 ? "uppercase" : ""
+                          }`}
+                        >
+                          {system}
                         </span>
                       </motion.li>
                     ))}
