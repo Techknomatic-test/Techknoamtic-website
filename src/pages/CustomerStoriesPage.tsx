@@ -86,6 +86,17 @@ export const CustomerStoriesPage = () => {
             >
               Customer Success Stories
             </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+              className="max-w-4xl text-base sm:text-lg md:text-xl text-slate-100/95 leading-relaxed"
+            >
+              Real-world implementations where complex enterprise data became
+              clear, actionable, and trusted for decision-making. Explore how
+              Techknomatic partners with customers across regions to modernize
+              analytics, platforms, and operation.
+            </motion.p>
           </div>
         </div>
       </section>
