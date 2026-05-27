@@ -67,6 +67,9 @@ export const PrivacyPolicyPage = () => {
         variant="solid"
         size="compact"
         contentMaxWidth="4xl"
+        sectionClassName="bg-brand-950"
+        solidColor="#020617"
+        solidGradient="from-brand-950 via-brand-950 to-brand-950"
         title="Privacy Policy"
         description="Techknomatic Services Pvt Ltd · Last Updated: 29 May 2026"
         titleAnimationDelay={0}
