@@ -79,7 +79,7 @@ export const CXONexusPage = () => {
         "Anomaly detection and outlier highlighting",
         "KPI interpretation in business language",
         "Business performance summaries on demand",
-        "Insight recommendations and â€œwhat to look at next guidance",
+        "Insight recommendations and what to look at next guidance",
       ],
       icon: Zap,
     },
