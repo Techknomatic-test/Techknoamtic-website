@@ -274,33 +274,7 @@ export const InsuranceAnalyticsPage = () => {
 
             <div className="text-left">
               <div className="space-y-4">
-                <ExpandableAccordionItem
-                  title="Real-World Impact"
-                  isOpen={openAccordion === 0}
-                  onClick={() => setOpenAccordion(openAccordion === 0 ? null : 0)}
-                >
-                  <div className="space-y-8">
-                    <p className="text-[17px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-                      Our Insurance GIS analytics have helped carriers reduce claim TAT by 22% and improve renewal
-                      targeting through location-based customer insights.
-                    </p>
-                    <div className="flex items-center gap-6 p-6 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 w-fit">
-                      <img
-                        loading="lazy"
-                        src={ESRI_LOGO_IMG}
-                        alt="ESRI"
-                        className="h-6 w-auto object-contain"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="w-px h-6 bg-slate-200 dark:bg-white/10" />
-                      <span className="text-[11px] font-black tracking-widest uppercase text-slate-500">
-                        ESRI Partner Implementation
-                      </span>
-                    </div>
-                  </div>
-                </ExpandableAccordionItem>
-
-                <ExpandableAccordionItem
+                 <ExpandableAccordionItem
                   title="ESRI-Powered Geo-Analytics"
                   isOpen={openAccordion === 1}
                   onClick={() => setOpenAccordion(openAccordion === 1 ? null : 1)}
@@ -313,6 +287,20 @@ export const InsuranceAnalyticsPage = () => {
                       </li>
                     ))}
                   </ul>
+                </ExpandableAccordionItem>
+                
+                <ExpandableAccordionItem
+                  title="Real-World Impact"
+                  isOpen={openAccordion === 0}
+                  onClick={() => setOpenAccordion(openAccordion === 0 ? null : 0)}
+                >
+                  <div className="space-y-8">
+                    <p className="text-[17px] font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+                      Our Insurance GIS analytics have helped carriers reduce claim TAT by 22% and improve renewal
+                      targeting through location-based customer insights.
+                    </p>
+                    
+                  </div>
                 </ExpandableAccordionItem>
               </div>
             </div>
