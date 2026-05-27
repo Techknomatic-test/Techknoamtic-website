@@ -106,7 +106,7 @@ export const CookiePolicyPage = () => {
         descriptionAnimationDelay={0.1}
       />
 
-      <article className="pb-14 md:pb-20 px-6 bg-white dark:bg-brand-950 transition-colors duration-500">
+      <article className="pt-10 md:pt-14 pb-14 md:pb-20 px-6 bg-white dark:bg-brand-950 transition-colors duration-500">
         <div className="max-w-4xl mx-auto space-y-12 md:space-y-14 text-left">
           <Section id="what-are-cookies" title="1. What Are Cookies?">
             <p>
