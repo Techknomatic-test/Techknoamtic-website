@@ -40,7 +40,7 @@ const AccordionItem = ({
         >
           <div className="flex-1 min-w-0">
             <span
-              className={`text-lg md:text-2xl font-medium tracking-tight transition-colors duration-300 block leading-snug ${isOpen ? "text-brand-950 dark:text-white" : "text-brand-950 dark:text-slate-200 group-hover:text-accent"}`}
+              className={`text-lg md:text-xl font-medium tracking-tight transition-colors duration-300 block leading-snug ${isOpen ? "text-brand-950 dark:text-white" : "text-brand-950 dark:text-slate-200 group-hover:text-accent"}`}
             >
               {question}
             </span>
