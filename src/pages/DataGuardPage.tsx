@@ -175,47 +175,47 @@ export const DataGuardPage = () => {
       subtitle: "Trusted data for regulatory reporting, risk analytics, and customer intelligence.",
       crux: "DataPulseIQ continuously monitors customer and transaction data quality, validates regulatory reporting datasets, enforces PII governance, and reconciles financial data across systems, so banks can run risk, fraud, and compliance analytics on data they fully trust.",
       focusAreas:
-        "Transaction Data Quality Â· Regulatory Reporting Â· PII Governance Â· Risk Analytics Reliability Â· Cross-System Reconciliation",
-      outcome: "Audit-ready compliance Â· Trusted risk analytics Â· Reduced reconciliation effort",
+        "Transaction Data Quality · Regulatory Reporting · PII Governance · Risk Analytics Reliability · Cross-System Reconciliation",
+      outcome: "Audit-ready compliance · Trusted risk analytics · Reduced reconciliation effort",
     },
     {
       title: "Healthcare & Life Sciences",
       subtitle: "Patient data integrity and compliance-grade governance for healthcare analytics.",
       crux: "Validate patient records across clinical and operational systems, enforce healthcare data compliance, and continuously observe medical records consistency. DataPulseIQ also ensures data reliability for healthcare analytics platforms and research-grade clinical datasets.",
       focusAreas:
-        "Patient Data Integrity Â· Healthcare Compliance Â· Clinical Observability Â· Records Consistency Â· Analytics Reliability",
-      outcome: "Higher clinical data trust Â· Stronger compliance posture Â· Audit-ready records",
+        "Patient Data Integrity · Healthcare Compliance · Clinical Observability · Records Consistency · Analytics Reliability",
+      outcome: "Higher clinical data trust · Stronger compliance posture · Audit-ready records",
     },
     {
       title: "Retail & E-Commerce",
       subtitle: "Reliable customer, product, and order data for personalization and analytics.",
       crux: "Monitor customer master data quality, validate inventory and order datasets, detect duplicate customer and product records, and enforce pricing and sales consistency, so retail and D2C operations run personalization and customer analytics on reliable data.",
       focusAreas:
-        "Customer MDM Â· Inventory & Order Validation Â· Duplicate Detection Â· Pricing Consistency Â· Personalization Reliability",
-      outcome: "Cleaner customer data Â· Sharper personalization Â· Trusted retail analytics",
+        "Customer MDM · Inventory & Order Validation · Duplicate Detection · Pricing Consistency · Personalization Reliability",
+      outcome: "Cleaner customer data · Sharper personalization · Trusted retail analytics",
     },
     {
       title: "Manufacturing & Supply Chain",
       subtitle: "Master data harmonization and supply chain data reliability across ERP systems.",
       crux: "DataPulseIQ validates supply chain data consistency, monitors ERP and operational data quality, governs vendor and shipment datasets, and harmonizes master data across plants and systems, strengthening reliability for production analytics and supply-chain decisions.",
       focusAreas:
-        "Supply Chain Validation Â· ERP Data Quality Â· Vendor & Shipment Governance Â· Production Analytics Â· Master Data Harmonization",
-      outcome: "Reliable supply-chain analytics Â· Stronger vendor data Â· Consolidated master data",
+        "Supply Chain Validation · ERP Data Quality · Vendor & Shipment Governance · Production Analytics · Master Data Harmonization",
+      outcome: "Reliable supply-chain analytics · Stronger vendor data · Consolidated master data",
     },
     {
       title: "Telecom & Technology",
       subtitle: "Subscriber, network, and operational KPI reliability at AI-ready scale.",
       crux: "Validate subscriber and network data, monitor operational KPI datasets, detect schema drift and anomalies, and reconcile data across platforms. DataPulseIQ also prepares enterprise data for advanced analytics and AI workloads at telecom scale.",
-      focusAreas: "Subscriber Data Â· Network KPIs Â· Schema Drift Â· Cross-Platform Reconciliation Â· AI-Ready Data Prep",
-      outcome: "Trusted operational KPIs Â· Faster anomaly detection Â· AI-ready data foundations",
+      focusAreas: "Subscriber Data · Network KPIs · Schema Drift · Cross-Platform Reconciliation · AI-Ready Data Prep",
+      outcome: "Trusted operational KPIs · Faster anomaly detection · AI-ready data foundations",
     },
     {
       title: "Government & Public Sector",
       subtitle: "Citizen-data governance and trusted reporting for public-sector analytics.",
       crux: "Govern and validate citizen data across departments, run compliance-focused data quality monitoring, detect and mask sensitive information, and deliver cross-department reliability for shared services, enabling trusted reporting across public-sector analytics initiatives.",
       focusAreas:
-        "Citizen Data Governance Â· Compliance Monitoring Â· Cross-Department Reliability Â· Sensitive Data Detection Â· Public-Sector Reporting",
-      outcome: "Trusted citizen analytics Â· Stronger compliance Â· Cross-department visibility",
+        "Citizen Data Governance · Compliance Monitoring · Cross-Department Reliability · Sensitive Data Detection · Public-Sector Reporting",
+      outcome: "Trusted citizen analytics · Stronger compliance · Cross-department visibility",
     },
   ];
 
