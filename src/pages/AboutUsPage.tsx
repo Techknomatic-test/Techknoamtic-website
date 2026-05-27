@@ -364,7 +364,7 @@ export const AboutUsPage = () => {
               },
               {
                 name: "Mohammed Nizar Said Al Shanfari",
-                role: "Business Partner Oman",
+                role: "Business Partner (Oman)",
                 img: "Images/Leadership/people/mohamad.jpeg",
                 objectPosition: "center 30%",
               },
