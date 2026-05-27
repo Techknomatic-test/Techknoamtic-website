@@ -229,7 +229,7 @@ export const FAQPage = () => {
       <section className="px-6 max-w-4xl mx-auto relative z-10 pt-20 pb-20">
         <div className="w-full">
           <h2 className="section-heading mb-10 text-center">
-            Careers <span className="text-accent">FAQs</span>
+            Careers FAQs
           </h2>
           <div className="space-y-2">
             {careerFaqs.map((faq, i) => (
@@ -249,7 +249,7 @@ export const FAQPage = () => {
       <section className="px-6 max-w-4xl mx-auto relative z-10 pb-0">
         <div className="w-full border-t border-slate-100 dark:border-white/5 pt-20">
           <h2 className="section-heading mb-10 text-center">
-            Contact Us <span className="text-accent">FAQs</span>
+            Contact Us FAQs
           </h2>
           <div className="space-y-2">
             {contactFaqs.map((faq, i) => (
