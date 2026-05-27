@@ -1065,9 +1065,9 @@ const AcceleratorsSection = () => {
       href: "/itsm-plug-and-play",
     },
     {
-      title: "DataPulse IQ, AI-Powered Data Reliability Platform",
+      title: "DataPulseIQ, AI-Powered Data Reliability Platform",
       desc: "Monitors, validates, governs, and auto-remediates data issues across the enterprise stack, cuts data issue resolution time by 30–50%.",
-      cta: "Explore DataPulse IQ",
+      cta: "Explore DataPulseIQ",
       icon: ShieldCheck,
       href: "/dataguard",
     },

@@ -56,7 +56,7 @@ export const navData: SiteNavData = {
   ],
   platforms: [
     { label: 'InsightSM', href: '/itsm-plug-and-play', icon: Layout },
-    { label: 'DataPulse IQ', href: '/dataguard', icon: ShieldCheck },
+    { label: 'DataPulseIQ', href: '/dataguard', icon: ShieldCheck },
     { label: 'ParseIQ', href: '/parse-iq', icon: Database },
     { label: 'FreightIQ', href: '/freight-iq', icon: Truck },
   ],
